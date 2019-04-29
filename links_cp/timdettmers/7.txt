@@ -1,0 +1,3 @@
+In my last blog post I showed what to look out for when you build a GPU cluster. Most importantly, you want a fast network connection between your servers and using MPI in your programming will make things much easier than to use the options available in CUDA itself. 
+ In this blog post I explain how to utilize such a cluster to parallelize neural networks in different ways and what the advantages and downfalls are for such algorithms. The two different algorithms are data and model parallelism. In this blog entry I will focus on data parallelism. 
+ 

@@ -1,0 +1,3482 @@
+<!DOCTYPE html>
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<title>Our quest for robust time series forecasting at scale</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content='#eaeaea' name='theme-color'/>
+<!-- Windows Phone -->
+<meta content='#eaeaea' name='msapplication-navbutton-color'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.unofficialgoogledatascience.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="http://www.unofficialgoogledatascience.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="The Unofficial Google Data Science Blog - RSS" href="http://www.unofficialgoogledatascience.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="https://www.blogger.com/feeds/5825758052688213474/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="http://www.unofficialgoogledatascience.com/feeds/4732004365167765860/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href='https://lh6.googleusercontent.com/Vrd24K6K6UMR_QZuk1SV-PKSLG6PPLL3bbXaTsEDlmRSGFUrm2h9B5UlDsNbDT7z81hCr4kSmVoaq9W2PoNM2iyuHljlyQdkvqsN4BIEFVyJX3kJwQwJ1wa4MzuArXTFTEGqSC-n' rel='image_src'/>
+<meta content='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' property='og:url'/>
+<meta content='Our quest for robust time series forecasting at scale' property='og:title'/>
+<meta content='by ERIC TASSONE, FARZAN ROHANI   We were part of a team of data scientists in Search Infrastructure at Google that took on the task of devel...' property='og:description'/>
+<meta content='https://lh6.googleusercontent.com/Vrd24K6K6UMR_QZuk1SV-PKSLG6PPLL3bbXaTsEDlmRSGFUrm2h9B5UlDsNbDT7z81hCr4kSmVoaq9W2PoNM2iyuHljlyQdkvqsN4BIEFVyJX3kJwQwJ1wa4MzuArXTFTEGqSC-n=w1200-h630-p-k-no-nu' property='og:image'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<style type='text/css'>@font-face{font-family:'Roboto';font-style:italic;font-weight:300;src:local('Roboto Light Italic'),local('Roboto-LightItalic'),url(//fonts.gstatic.com/s/roboto/v19/KFOjCnqEu92Fr1Mu51TjASc6CsE.ttf)format('truetype');}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),url(//fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxP.ttf)format('truetype');}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local('Roboto-Bold'),url(//fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc9.ttf)format('truetype');}</style>
+<style id='page-skin-1' type='text/css'><!--
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+/* 
+<!-- Constants -->
+
+<Variable name="damionRegular36" description="Damion Regular 36" type="font" default="400 36px Damion, cursive" hideEditor="true" />
+<Variable name="damionRegular62" description="Damion Regular 62" type="font" default="400 62px Damion, cursive" hideEditor="true" />
+<Variable name="playfairDisplayBlack28" description="Playfair Display Black 28" type="font" default="900 28px Playfair Display, serif" hideEditor="true" />
+<Variable name="playfairDisplayBlack36" description="Playfair Display Black 36" type="font" default="900 36px Playfair Display, serif" hideEditor="true" />
+<Variable name="playfairDisplayBlack44" description="Playfair Display Black 44" type="font" default="900 44px Playfair Display, serif" hideEditor="true" />
+<Variable name="robotoNormal15" description="Roboto Normal 15" type="font" default="15px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoNormal16" description="Roboto Normal 16" type="font" default="16px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoLightItalic15" description="Roboto Light Italic 15" type="font" default="italic 300 15px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold22" description="Roboto Bold 22" type="font" default="bold 22px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold30" description="Roboto Bold 30" type="font" default="bold 30px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold45" description="Roboto Bold 45" type="font" default="bold 45px Roboto, sans-serif" hideEditor="true" />
+
+<!-- Variable definitions -->
+
+<Variable name="keycolor" description="Main Color" type="color" default="#2196f3" />
+<Variable name="startSide" description="Start side in blog language" type="automatic" default="left" hideEditor="true" />
+<Variable name="endSide" description="End side in blog language" type="automatic" default="right" hideEditor="true" />
+
+<Group description="Page Text">
+  <Variable name="body.text.font" description="Font"
+      type="font"
+      default="15px Roboto, sans-serif" />
+  <Variable name="body.text.color" description="Color"
+      type="color"
+      default="#757575" />
+</Group>
+
+<Group description="Backgrounds">
+  <Variable name="body.background.height" description="Background height"
+      type="length"
+      min="420px"
+      max="640px"
+      default="480px" />
+  <Variable name="body.background" description="Background"
+      color="#eaeaea"
+      type="background"
+      default="$(color) none repeat scroll top left" />
+  <Variable name="body.background.color" description="Body background color"
+      type="color"
+      default="#eee" />
+  <Variable name="posts.background.color" description="Post background color"
+      type="color"
+      default="#fff" />
+  <Variable name="body.background.blur" description="Background blur"
+      type="length"
+      min="0px"
+      max="50px"
+      default="0px" />
+</Group>
+
+<Group description="Links">
+  <Variable name="body.link.color" description="Link color"
+      type="color"
+      default="#2196f3" />
+  <Variable name="body.link.visited.color" description="Visited link color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="body.link.hover.color" description="Link Hover Color"
+      type="color"
+      default="#3c79a7" />
+</Group>
+
+<Group description="Blog title" selector="div.widget.Header">
+  <Variable name="blog.title.font" description="Font"
+      type="font"
+      default="bold 45px Roboto, sans-serif" />
+  <Variable name="blog.title.color" description="Color"
+      type="color"
+      default="#fff" />
+  <Variable name="header.icons.color"
+      description="Background icons color"
+      type="color"
+      default="#fff" />
+</Group>
+
+<Group description="Tabs text" selector="div.widget.PageList">
+  <Variable name="tabs.font" description="Font"
+      type="font"
+      family="Roboto, sans-serif"
+      size="15px"
+      default="700 normal $(size) $(family)" />
+  <Variable name="tabs.color" description="Text color"
+      type="color"
+      default="#ccc" />
+  <Variable name="tabs.selected.color" description="Selected color"
+      type="color"
+      default="#fff" />
+  <Variable name="tabs.overflow.background.color" description="Popup background color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="tabs.overflow.color" description="Popup text color"
+      type="color"
+      default="#4e4e4e" />
+  <Variable name="tabs.overflow.selected.color" description="Popup selected color"
+      type="color"
+      default="#3b3b3b" />
+</Group>
+
+<Group description="Posts" selector="div.widget.Blog">
+  <Variable name="posts.title.color" description="Post title color"
+      type="color"
+      default="#212121" />
+  <Variable name="posts.title.font" description="Post title font"
+      type="font"
+      default="bold 22px Roboto, sans-serif" />
+  <Variable name="posts.stream.title.font" description="Post title stream font"
+      type="font"
+      default="bold 30px Roboto, sans-serif" />
+  <Variable name="posts.text.font" description="Post text font"
+      type="font"
+      default="15px Roboto, sans-serif" />
+  <Variable name="posts.text.color" description="Post text color"
+      type="color"
+      default="#666666" />
+  <Variable name="posts.byline.color" description="Post byline color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="blockquote.font" description="Blockquote font"
+      type="font"
+      default="italic 300 15px Roboto, sans-serif" />
+  <Variable name="blockquote.color" description="Blockquote color"
+      type="color"
+      default="#444" />
+  <Variable name="posts.icons.color"
+      description="Post icons color"
+      type="color"
+      default="#707070" />
+</Group>
+
+<Group description="Search">
+  <Variable name="search.input.color" description="Input color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="search.input.font" description="Input font"
+      type="font"
+      default="16px Roboto, sans-serif" />
+  <Variable name="search.placeholder.color" description="Placeholder text color"
+      type="color"
+      default="#ffffff" />
+</Group>
+
+<Group description="Sharing">
+  <Variable name="sharing.background.color"
+      description="Sharing background color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="sharing.text.color" description="Sharing text color"
+      type="color"
+      default="#3b3b3b" />
+  <Variable name="sharing.icons.color"
+      description="Sharing icons color"
+      type="color"
+      default="#212121" />
+</Group>
+
+<Group description="Popular posts" selector="div.widget.PopularPosts">
+  <Variable name="popularposts.background.color"
+      description="Popular post background color"
+      type="color"
+      default="#eaeaea" />
+  <Variable name="popularposts.byline.color"
+      description="Popular post byline color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="popularposts.title.color"
+      description="Popular post title color"
+      type="color"
+      default="#3b3b3b" />
+  <Variable name="popularposts.text.color"
+      description="Popular post text color"
+      type="color"
+      default="#4e4e4e" />
+  <Variable name="popularposts.link.color"
+      description="Popular post link color"
+      type="color"
+      default="#3c79a7" />
+</Group>
+
+<Group description="Post navigation" selector='div.blog-pager'>
+  <Variable name="posts.navigation.link.color"
+      description="Post navigation links color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="posts.navigation.link.visited.color"
+      description="Post navigation links visited color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="posts.navigation.link.hover.color"
+      description="Post navigations links hover color"
+      type="color"
+      default="#2196f3" />
+</Group>
+
+<Group description="Sidebar" selector="div.sidebar-container">
+  <Variable name="sidebar.backgroundColorTop"
+      description="Background color (Top)"
+      type="color"
+      default="#f7f7f7" />
+  <Variable name="sidebar.backgroundColorTopHD"
+      description="Background color (Top) - HD"
+      type="color"
+      default="rgba(255, 255, 255, 1)" />
+  <Variable name="sidebar.backgroundColorBottom"
+      description="Background color (Bottom)"
+      type="color"
+      default="#fff" />
+  <Variable name="sidebar.separator.color"
+      description="Separator color"
+      type="color"
+      default="#ccc" />
+  <Variable name="widget.title.color"
+      description="Gadget title color"
+      type="color"
+      default="#212121" />
+  <Variable name="sidebar.icons.color"
+      description="Sidebar icons color"
+      type="color"
+      default="#707070" />
+</Group>
+
+<Group description="Author profile" selector='.widget.Profile'>
+  <Variable name="profile.title.color" description="Profile title color"
+      type="color"
+      default="rgba(0,0,0,0.52)" />
+  <Variable name="profile.text.color" description="Profile text color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="profile.link.color" description="Profile link color"
+      type="color"
+      default="#3b3b3b" />
+</Group>
+
+<Group description="Labels" selector=".widget.Label">
+  <Variable name="labels.text.color"
+      description="Label text color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="labels.background.color"
+      description="Label background color"
+      type="color"
+      red="0"
+      green="0"
+      blue="0"
+      default="rgba($red, $green, $blue, 0.05)" />
+</Group>
+
+<Group description="Attribution" selector=".widget.Attribution">
+  <Variable name="attribution.text.color" description="Attribution text color"
+      type="color"
+      default="#666666" />
+  <Variable name="attribution.link.color" description="Attribution link color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="attribution.icon.color" description="Attribution icon color"
+      type="color"
+      default="#707070"
+      hideEditor="true" />
+</Group>
+
+<Group description="Widths">
+  <Variable name="sidebar.width" description="Sidebar width" type="length"
+            min="100px" max="1000px" default="284px" />
+  <Variable name="content.width" description="Content width" type="length"
+            min="600px" max="2400px" default="922px" />
+  <Variable name="content.margin" description="Content margin" type="length"
+            min="0px" max="1000px" default="117px" />
+</Group>
+ */
+
+/*!************************************************
+ * Blogger Template Style
+ * Name: Contempo
+ **************************************************/
+body{
+overflow-wrap:break-word;
+word-break:break-word;
+word-wrap:break-word
+}
+.hidden{
+display:none
+}
+.invisible{
+visibility:hidden
+}
+.container::after,.float-container::after{
+clear:both;
+content:"";
+display:table
+}
+.clearboth{
+clear:both
+}
+#comments .comment .comment-actions,.subscribe-popup .FollowByEmail .follow-by-email-submit,.widget.Profile .profile-link,.widget.Profile .profile-link.visit-profile{
+background:0 0;
+border:0;
+box-shadow:none;
+color:#3c79a7;
+cursor:pointer;
+font-size:14px;
+font-weight:700;
+outline:0;
+text-decoration:none;
+text-transform:uppercase;
+width:auto
+}
+.dim-overlay{
+background-color:rgba(0,0,0,.54);
+height:100vh;
+left:0;
+position:fixed;
+top:0;
+width:100%
+}
+#sharing-dim-overlay{
+background-color:transparent
+}
+input::-ms-clear{
+display:none
+}
+.blogger-logo,.svg-icon-24.blogger-logo{
+fill:#ff9800;
+opacity:1
+}
+.loading-spinner-large{
+-webkit-animation:mspin-rotate 1.568s infinite linear;
+animation:mspin-rotate 1.568s infinite linear;
+height:48px;
+overflow:hidden;
+position:absolute;
+width:48px;
+z-index:200
+}
+.loading-spinner-large>div{
+-webkit-animation:mspin-revrot 5332ms infinite steps(4);
+animation:mspin-revrot 5332ms infinite steps(4)
+}
+.loading-spinner-large>div>div{
+-webkit-animation:mspin-singlecolor-large-film 1333ms infinite steps(81);
+animation:mspin-singlecolor-large-film 1333ms infinite steps(81);
+background-size:100%;
+height:48px;
+width:3888px
+}
+.mspin-black-large>div>div,.mspin-grey_54-large>div>div{
+background-image:url(https://www.blogblog.com/indie/mspin_black_large.svg)
+}
+.mspin-white-large>div>div{
+background-image:url(https://www.blogblog.com/indie/mspin_white_large.svg)
+}
+.mspin-grey_54-large{
+opacity:.54
+}
+@-webkit-keyframes mspin-singlecolor-large-film{
+from{
+-webkit-transform:translateX(0);
+transform:translateX(0)
+}
+to{
+-webkit-transform:translateX(-3888px);
+transform:translateX(-3888px)
+}
+}
+@keyframes mspin-singlecolor-large-film{
+from{
+-webkit-transform:translateX(0);
+transform:translateX(0)
+}
+to{
+-webkit-transform:translateX(-3888px);
+transform:translateX(-3888px)
+}
+}
+@-webkit-keyframes mspin-rotate{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(360deg);
+transform:rotate(360deg)
+}
+}
+@keyframes mspin-rotate{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(360deg);
+transform:rotate(360deg)
+}
+}
+@-webkit-keyframes mspin-revrot{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(-360deg);
+transform:rotate(-360deg)
+}
+}
+@keyframes mspin-revrot{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(-360deg);
+transform:rotate(-360deg)
+}
+}
+.skip-navigation{
+background-color:#fff;
+box-sizing:border-box;
+color:#000;
+display:block;
+height:0;
+left:0;
+line-height:50px;
+overflow:hidden;
+padding-top:0;
+position:fixed;
+text-align:center;
+top:0;
+-webkit-transition:box-shadow .3s,height .3s,padding-top .3s;
+transition:box-shadow .3s,height .3s,padding-top .3s;
+width:100%;
+z-index:900
+}
+.skip-navigation:focus{
+box-shadow:0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+height:50px
+}
+#main{
+outline:0
+}
+.main-heading{
+position:absolute;
+clip:rect(1px,1px,1px,1px);
+padding:0;
+border:0;
+height:1px;
+width:1px;
+overflow:hidden
+}
+.Attribution{
+margin-top:1em;
+text-align:center
+}
+.Attribution .blogger img,.Attribution .blogger svg{
+vertical-align:bottom
+}
+.Attribution .blogger img{
+margin-right:.5em
+}
+.Attribution div{
+line-height:24px;
+margin-top:.5em
+}
+.Attribution .copyright,.Attribution .image-attribution{
+font-size:.7em;
+margin-top:1.5em
+}
+.BLOG_mobile_video_class{
+display:none
+}
+.bg-photo{
+background-attachment:scroll!important
+}
+body .CSS_LIGHTBOX{
+z-index:900
+}
+.extendable .show-less,.extendable .show-more{
+border-color:#3c79a7;
+color:#3c79a7;
+margin-top:8px
+}
+.extendable .show-less.hidden,.extendable .show-more.hidden{
+display:none
+}
+.inline-ad{
+display:none;
+max-width:100%;
+overflow:hidden
+}
+.adsbygoogle{
+display:block
+}
+#cookieChoiceInfo{
+bottom:0;
+top:auto
+}
+iframe.b-hbp-video{
+border:0
+}
+.post-body img{
+max-width:100%
+}
+.post-body iframe{
+max-width:100%
+}
+.post-body a[imageanchor="1"]{
+display:inline-block
+}
+.byline{
+margin-right:1em
+}
+.byline:last-child{
+margin-right:0
+}
+.link-copied-dialog{
+max-width:520px;
+outline:0
+}
+.link-copied-dialog .modal-dialog-buttons{
+margin-top:8px
+}
+.link-copied-dialog .goog-buttonset-default{
+background:0 0;
+border:0
+}
+.link-copied-dialog .goog-buttonset-default:focus{
+outline:0
+}
+.paging-control-container{
+margin-bottom:16px
+}
+.paging-control-container .paging-control{
+display:inline-block
+}
+.paging-control-container .comment-range-text::after,.paging-control-container .paging-control{
+color:#3c79a7
+}
+.paging-control-container .comment-range-text,.paging-control-container .paging-control{
+margin-right:8px
+}
+.paging-control-container .comment-range-text::after,.paging-control-container .paging-control::after{
+content:"\b7";
+cursor:default;
+padding-left:8px;
+pointer-events:none
+}
+.paging-control-container .comment-range-text:last-child::after,.paging-control-container .paging-control:last-child::after{
+content:none
+}
+.byline.reactions iframe{
+height:20px
+}
+.b-notification{
+color:#000;
+background-color:#fff;
+border-bottom:solid 1px #000;
+box-sizing:border-box;
+padding:16px 32px;
+text-align:center
+}
+.b-notification.visible{
+-webkit-transition:margin-top .3s cubic-bezier(.4,0,.2,1);
+transition:margin-top .3s cubic-bezier(.4,0,.2,1)
+}
+.b-notification.invisible{
+position:absolute
+}
+.b-notification-close{
+position:absolute;
+right:8px;
+top:8px
+}
+.no-posts-message{
+line-height:40px;
+text-align:center
+}
+@media screen and (max-width:800px){
+body.item-view .post-body a[imageanchor="1"][style*="float: left;"],body.item-view .post-body a[imageanchor="1"][style*="float: right;"]{
+float:none!important;
+clear:none!important
+}
+body.item-view .post-body a[imageanchor="1"] img{
+display:block;
+height:auto;
+margin:0 auto
+}
+body.item-view .post-body>.separator:first-child>a[imageanchor="1"]:first-child{
+margin-top:20px
+}
+.post-body a[imageanchor]{
+display:block
+}
+body.item-view .post-body a[imageanchor="1"]{
+margin-left:0!important;
+margin-right:0!important
+}
+body.item-view .post-body a[imageanchor="1"]+a[imageanchor="1"]{
+margin-top:16px
+}
+}
+.item-control{
+display:none
+}
+#comments{
+border-top:1px dashed rgba(0,0,0,.54);
+margin-top:20px;
+padding:20px
+}
+#comments .comment-thread ol{
+margin:0;
+padding-left:0;
+padding-left:0
+}
+#comments .comment .comment-replybox-single,#comments .comment-thread .comment-replies{
+margin-left:60px
+}
+#comments .comment-thread .thread-count{
+display:none
+}
+#comments .comment{
+list-style-type:none;
+padding:0 0 30px;
+position:relative
+}
+#comments .comment .comment{
+padding-bottom:8px
+}
+.comment .avatar-image-container{
+position:absolute
+}
+.comment .avatar-image-container img{
+border-radius:50%
+}
+.avatar-image-container svg,.comment .avatar-image-container .avatar-icon{
+border-radius:50%;
+border:solid 1px #5b5b5b;
+box-sizing:border-box;
+fill:#5b5b5b;
+height:35px;
+margin:0;
+padding:7px;
+width:35px
+}
+.comment .comment-block{
+margin-top:10px;
+margin-left:60px;
+padding-bottom:0
+}
+#comments .comment-author-header-wrapper{
+margin-left:40px
+}
+#comments .comment .thread-expanded .comment-block{
+padding-bottom:20px
+}
+#comments .comment .comment-header .user,#comments .comment .comment-header .user a{
+color:#3b3b3b;
+font-style:normal;
+font-weight:700
+}
+#comments .comment .comment-actions{
+bottom:0;
+margin-bottom:15px;
+position:absolute
+}
+#comments .comment .comment-actions>*{
+margin-right:8px
+}
+#comments .comment .comment-header .datetime{
+bottom:0;
+color:rgba(59,59,59,.54);
+display:inline-block;
+font-size:13px;
+font-style:italic;
+margin-left:8px
+}
+#comments .comment .comment-footer .comment-timestamp a,#comments .comment .comment-header .datetime a{
+color:rgba(59,59,59,.54)
+}
+#comments .comment .comment-content,.comment .comment-body{
+margin-top:12px;
+word-break:break-word
+}
+.comment-body{
+margin-bottom:12px
+}
+#comments.embed[data-num-comments="0"]{
+border:0;
+margin-top:0;
+padding-top:0
+}
+#comments.embed[data-num-comments="0"] #comment-post-message,#comments.embed[data-num-comments="0"] div.comment-form>p,#comments.embed[data-num-comments="0"] p.comment-footer{
+display:none
+}
+#comment-editor-src{
+display:none
+}
+.comments .comments-content .loadmore.loaded{
+max-height:0;
+opacity:0;
+overflow:hidden
+}
+.extendable .remaining-items{
+height:0;
+overflow:hidden;
+-webkit-transition:height .3s cubic-bezier(.4,0,.2,1);
+transition:height .3s cubic-bezier(.4,0,.2,1)
+}
+.extendable .remaining-items.expanded{
+height:auto
+}
+.svg-icon-24,.svg-icon-24-button{
+cursor:pointer;
+height:24px;
+width:24px;
+min-width:24px
+}
+.touch-icon{
+margin:-12px;
+padding:12px
+}
+.touch-icon:active,.touch-icon:focus{
+background-color:rgba(153,153,153,.4);
+border-radius:50%
+}
+svg:not(:root).touch-icon{
+overflow:visible
+}
+html[dir=rtl] .rtl-reversible-icon{
+-webkit-transform:scaleX(-1);
+-ms-transform:scaleX(-1);
+transform:scaleX(-1)
+}
+.svg-icon-24-button,.touch-icon-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0
+}
+.touch-icon-button .touch-icon:active,.touch-icon-button .touch-icon:focus{
+background-color:transparent
+}
+.touch-icon-button:active .touch-icon,.touch-icon-button:focus .touch-icon{
+background-color:rgba(153,153,153,.4);
+border-radius:50%
+}
+.Profile .default-avatar-wrapper .avatar-icon{
+border-radius:50%;
+border:solid 1px #5b5b5b;
+box-sizing:border-box;
+fill:#5b5b5b;
+margin:0
+}
+.Profile .individual .default-avatar-wrapper .avatar-icon{
+padding:25px
+}
+.Profile .individual .avatar-icon,.Profile .individual .profile-img{
+height:120px;
+width:120px
+}
+.Profile .team .default-avatar-wrapper .avatar-icon{
+padding:8px
+}
+.Profile .team .avatar-icon,.Profile .team .default-avatar-wrapper,.Profile .team .profile-img{
+height:40px;
+width:40px
+}
+.snippet-container{
+margin:0;
+position:relative;
+overflow:hidden
+}
+.snippet-fade{
+bottom:0;
+box-sizing:border-box;
+position:absolute;
+width:96px
+}
+.snippet-fade{
+right:0
+}
+.snippet-fade:after{
+content:"\2026"
+}
+.snippet-fade:after{
+float:right
+}
+.post-bottom{
+-webkit-box-align:center;
+-webkit-align-items:center;
+-ms-flex-align:center;
+align-items:center;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap
+}
+.post-footer{
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap;
+-webkit-box-ordinal-group:2;
+-webkit-order:1;
+-ms-flex-order:1;
+order:1
+}
+.post-footer>*{
+-webkit-box-flex:0;
+-webkit-flex:0 1 auto;
+-ms-flex:0 1 auto;
+flex:0 1 auto
+}
+.post-footer .byline:last-child{
+margin-right:1em
+}
+.jump-link{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-box-ordinal-group:3;
+-webkit-order:2;
+-ms-flex-order:2;
+order:2
+}
+.centered-top-container.sticky{
+left:0;
+position:fixed;
+right:0;
+top:0;
+width:auto;
+z-index:50;
+-webkit-transition-property:opacity,-webkit-transform;
+transition-property:opacity,-webkit-transform;
+transition-property:transform,opacity;
+transition-property:transform,opacity,-webkit-transform;
+-webkit-transition-duration:.2s;
+transition-duration:.2s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1)
+}
+.centered-top-placeholder{
+display:none
+}
+.collapsed-header .centered-top-placeholder{
+display:block
+}
+.centered-top-container .Header .replaced h1,.centered-top-placeholder .Header .replaced h1{
+display:none
+}
+.centered-top-container.sticky .Header .replaced h1{
+display:block
+}
+.centered-top-container.sticky .Header .header-widget{
+background:0 0
+}
+.centered-top-container.sticky .Header .header-image-wrapper{
+display:none
+}
+.centered-top-container img,.centered-top-placeholder img{
+max-width:100%
+}
+.collapsible{
+-webkit-transition:height .3s cubic-bezier(.4,0,.2,1);
+transition:height .3s cubic-bezier(.4,0,.2,1)
+}
+.collapsible,.collapsible>summary{
+display:block;
+overflow:hidden
+}
+.collapsible>:not(summary){
+display:none
+}
+.collapsible[open]>:not(summary){
+display:block
+}
+.collapsible:focus,.collapsible>summary:focus{
+outline:0
+}
+.collapsible>summary{
+cursor:pointer;
+display:block;
+padding:0
+}
+.collapsible:focus>summary,.collapsible>summary:focus{
+background-color:transparent
+}
+.collapsible>summary::-webkit-details-marker{
+display:none
+}
+.collapsible-title{
+-webkit-box-align:center;
+-webkit-align-items:center;
+-ms-flex-align:center;
+align-items:center;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex
+}
+.collapsible-title .title{
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto;
+-webkit-box-ordinal-group:1;
+-webkit-order:0;
+-ms-flex-order:0;
+order:0;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap
+}
+.collapsible-title .chevron-down,.collapsible[open] .collapsible-title .chevron-up{
+display:block
+}
+.collapsible-title .chevron-up,.collapsible[open] .collapsible-title .chevron-down{
+display:none
+}
+.flat-button{
+cursor:pointer;
+display:inline-block;
+font-weight:700;
+text-transform:uppercase;
+border-radius:2px;
+padding:8px;
+margin:-8px
+}
+.flat-icon-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0;
+margin:-12px;
+padding:12px;
+cursor:pointer;
+box-sizing:content-box;
+display:inline-block;
+line-height:0
+}
+.flat-icon-button,.flat-icon-button .splash-wrapper{
+border-radius:50%
+}
+.flat-icon-button .splash.animate{
+-webkit-animation-duration:.3s;
+animation-duration:.3s
+}
+.overflowable-container{
+max-height:46px;
+overflow:hidden;
+position:relative
+}
+.overflow-button{
+cursor:pointer
+}
+#overflowable-dim-overlay{
+background:0 0
+}
+.overflow-popup{
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+background-color:#ffffff;
+left:0;
+max-width:calc(100% - 32px);
+position:absolute;
+top:0;
+visibility:hidden;
+z-index:101
+}
+.overflow-popup ul{
+list-style:none
+}
+.overflow-popup .tabs li,.overflow-popup li{
+display:block;
+height:auto
+}
+.overflow-popup .tabs li{
+padding-left:0;
+padding-right:0
+}
+.overflow-button.hidden,.overflow-popup .tabs li.hidden,.overflow-popup li.hidden{
+display:none
+}
+.pill-button{
+background:0 0;
+border:1px solid;
+border-radius:12px;
+cursor:pointer;
+display:inline-block;
+padding:4px 16px;
+text-transform:uppercase
+}
+.ripple{
+position:relative
+}
+.ripple>*{
+z-index:1
+}
+.splash-wrapper{
+bottom:0;
+left:0;
+overflow:hidden;
+pointer-events:none;
+position:absolute;
+right:0;
+top:0;
+z-index:0
+}
+.splash{
+background:#ccc;
+border-radius:100%;
+display:block;
+opacity:.6;
+position:absolute;
+-webkit-transform:scale(0);
+-ms-transform:scale(0);
+transform:scale(0)
+}
+.splash.animate{
+-webkit-animation:ripple-effect .4s linear;
+animation:ripple-effect .4s linear
+}
+@-webkit-keyframes ripple-effect{
+100%{
+opacity:0;
+-webkit-transform:scale(2.5);
+transform:scale(2.5)
+}
+}
+@keyframes ripple-effect{
+100%{
+opacity:0;
+-webkit-transform:scale(2.5);
+transform:scale(2.5)
+}
+}
+.search{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+line-height:24px;
+width:24px
+}
+.search.focused{
+width:100%
+}
+.search.focused .section{
+width:100%
+}
+.search form{
+z-index:101
+}
+.search h3{
+display:none
+}
+.search form{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-flex:1;
+-webkit-flex:1 0 0;
+-ms-flex:1 0 0px;
+flex:1 0 0;
+border-bottom:solid 1px transparent;
+padding-bottom:8px
+}
+.search form>*{
+display:none
+}
+.search.focused form>*{
+display:block
+}
+.search .search-input label{
+display:none
+}
+.centered-top-placeholder.cloned .search form{
+z-index:30
+}
+.search.focused form{
+border-color:#ffffff;
+position:relative;
+width:auto
+}
+.collapsed-header .centered-top-container .search.focused form{
+border-bottom-color:transparent
+}
+.search-expand{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.search-expand-text{
+display:none
+}
+.search-close{
+display:inline;
+vertical-align:middle
+}
+.search-input{
+-webkit-box-flex:1;
+-webkit-flex:1 0 1px;
+-ms-flex:1 0 1px;
+flex:1 0 1px
+}
+.search-input input{
+background:0 0;
+border:0;
+box-sizing:border-box;
+color:#ffffff;
+display:inline-block;
+outline:0;
+width:calc(100% - 48px)
+}
+.search-input input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #ffffff
+}
+.collapsed-header .centered-top-container .search-action,.collapsed-header .centered-top-container .search-input input{
+color:#3b3b3b
+}
+.collapsed-header .centered-top-container .search-input input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #3b3b3b
+}
+.collapsed-header .centered-top-container .search-input input.no-cursor:focus,.search-input input.no-cursor:focus{
+outline:0
+}
+.search-focused>*{
+visibility:hidden
+}
+.search-focused .search,.search-focused .search-icon{
+visibility:visible
+}
+.search.focused .search-action{
+display:block
+}
+.search.focused .search-action:disabled{
+opacity:.3
+}
+.widget.Sharing .sharing-button{
+display:none
+}
+.widget.Sharing .sharing-buttons li{
+padding:0
+}
+.widget.Sharing .sharing-buttons li span{
+display:none
+}
+.post-share-buttons{
+position:relative
+}
+.centered-bottom .share-buttons .svg-icon-24,.share-buttons .svg-icon-24{
+fill:#212121
+}
+.sharing-open.touch-icon-button:active .touch-icon,.sharing-open.touch-icon-button:focus .touch-icon{
+background-color:transparent
+}
+.share-buttons{
+background-color:#ffffff;
+border-radius:2px;
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+color:#212121;
+list-style:none;
+margin:0;
+padding:8px 0;
+position:absolute;
+top:-11px;
+min-width:200px;
+z-index:101
+}
+.share-buttons.hidden{
+display:none
+}
+.sharing-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0;
+cursor:pointer
+}
+.share-buttons li{
+margin:0;
+height:48px
+}
+.share-buttons li:last-child{
+margin-bottom:0
+}
+.share-buttons li .sharing-platform-button{
+box-sizing:border-box;
+cursor:pointer;
+display:block;
+height:100%;
+margin-bottom:0;
+padding:0 16px;
+position:relative;
+width:100%
+}
+.share-buttons li .sharing-platform-button:focus,.share-buttons li .sharing-platform-button:hover{
+background-color:rgba(128,128,128,.1);
+outline:0
+}
+.share-buttons li svg[class*=" sharing-"],.share-buttons li svg[class^=sharing-]{
+position:absolute;
+top:10px
+}
+.share-buttons li span.sharing-platform-button{
+position:relative;
+top:0
+}
+.share-buttons li .platform-sharing-text{
+display:block;
+font-size:16px;
+line-height:48px;
+white-space:nowrap
+}
+.share-buttons li .platform-sharing-text{
+margin-left:56px
+}
+.sidebar-container{
+background-color:#ffffff;
+max-width:284px;
+overflow-y:auto;
+-webkit-transition-property:-webkit-transform;
+transition-property:-webkit-transform;
+transition-property:transform;
+transition-property:transform,-webkit-transform;
+-webkit-transition-duration:.3s;
+transition-duration:.3s;
+-webkit-transition-timing-function:cubic-bezier(0,0,.2,1);
+transition-timing-function:cubic-bezier(0,0,.2,1);
+width:284px;
+z-index:101;
+-webkit-overflow-scrolling:touch
+}
+.sidebar-container .navigation{
+line-height:0;
+padding:16px
+}
+.sidebar-container .sidebar-back{
+cursor:pointer
+}
+.sidebar-container .widget{
+background:0 0;
+margin:0 16px;
+padding:16px 0
+}
+.sidebar-container .widget .title{
+color:#000000;
+margin:0
+}
+.sidebar-container .widget ul{
+list-style:none;
+margin:0;
+padding:0
+}
+.sidebar-container .widget ul ul{
+margin-left:1em
+}
+.sidebar-container .widget li{
+font-size:16px;
+line-height:normal
+}
+.sidebar-container .widget+.widget{
+border-top:1px dashed #c6c6c6
+}
+.BlogArchive li{
+margin:16px 0
+}
+.BlogArchive li:last-child{
+margin-bottom:0
+}
+.Label li a{
+display:inline-block
+}
+.BlogArchive .post-count,.Label .label-count{
+float:right;
+margin-left:.25em
+}
+.BlogArchive .post-count::before,.Label .label-count::before{
+content:"("
+}
+.BlogArchive .post-count::after,.Label .label-count::after{
+content:")"
+}
+.widget.Translate .skiptranslate>div{
+display:block!important
+}
+.widget.Profile .profile-link{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex
+}
+.widget.Profile .team-member .default-avatar-wrapper,.widget.Profile .team-member .profile-img{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+margin-right:1em
+}
+.widget.Profile .individual .profile-link{
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column
+}
+.widget.Profile .team .profile-link .profile-name{
+-webkit-align-self:center;
+-ms-flex-item-align:center;
+align-self:center;
+display:block;
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto
+}
+.dim-overlay{
+background-color:rgba(0,0,0,.54);
+z-index:100
+}
+body.sidebar-visible{
+overflow-y:hidden
+}
+@media screen and (max-width:1439px){
+.sidebar-container{
+bottom:0;
+position:fixed;
+top:0;
+left:0;
+right:auto
+}
+.sidebar-container.sidebar-invisible{
+-webkit-transition-timing-function:cubic-bezier(.4,0,.6,1);
+transition-timing-function:cubic-bezier(.4,0,.6,1);
+-webkit-transform:translateX(-284px);
+-ms-transform:translateX(-284px);
+transform:translateX(-284px)
+}
+}
+@media screen and (min-width:1440px){
+.sidebar-container{
+position:absolute;
+top:0;
+left:0;
+right:auto
+}
+.sidebar-container .navigation{
+display:none
+}
+}
+.dialog{
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+background:#ffffff;
+box-sizing:border-box;
+color:#666666;
+padding:30px;
+position:fixed;
+text-align:center;
+width:calc(100% - 24px);
+z-index:101
+}
+.dialog input[type=email],.dialog input[type=text]{
+background-color:transparent;
+border:0;
+border-bottom:solid 1px rgba(102,102,102,.12);
+color:#666666;
+display:block;
+font-family:Roboto, sans-serif;
+font-size:16px;
+line-height:24px;
+margin:auto;
+padding-bottom:7px;
+outline:0;
+text-align:center;
+width:100%
+}
+.dialog input[type=email]::-webkit-input-placeholder,.dialog input[type=text]::-webkit-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::-moz-placeholder,.dialog input[type=text]::-moz-placeholder{
+color:#666666
+}
+.dialog input[type=email]:-ms-input-placeholder,.dialog input[type=text]:-ms-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::-ms-input-placeholder,.dialog input[type=text]::-ms-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::placeholder,.dialog input[type=text]::placeholder{
+color:#666666
+}
+.dialog input[type=email]:focus,.dialog input[type=text]:focus{
+border-bottom:solid 2px #3c79a7;
+padding-bottom:6px
+}
+.dialog input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #666666
+}
+.dialog input.no-cursor:focus{
+outline:0
+}
+.dialog input.no-cursor:focus{
+outline:0
+}
+.dialog input[type=submit]{
+font-family:Roboto, sans-serif
+}
+.dialog .goog-buttonset-default{
+color:#3c79a7
+}
+.subscribe-popup{
+max-width:364px
+}
+.subscribe-popup h3{
+color:#3b3b3b;
+font-size:1.8em;
+margin-top:0
+}
+.subscribe-popup .FollowByEmail h3{
+display:none
+}
+.subscribe-popup .FollowByEmail .follow-by-email-submit{
+color:#3c79a7;
+display:inline-block;
+margin:0 auto;
+margin-top:24px;
+width:auto;
+white-space:normal
+}
+.subscribe-popup .FollowByEmail .follow-by-email-submit:disabled{
+cursor:default;
+opacity:.3
+}
+@media (max-width:800px){
+.blog-name div.widget.Subscribe{
+margin-bottom:16px
+}
+body.item-view .blog-name div.widget.Subscribe{
+margin:8px auto 16px auto;
+width:100%
+}
+}
+.tabs{
+list-style:none
+}
+.tabs li{
+display:inline-block
+}
+.tabs li a{
+cursor:pointer;
+display:inline-block;
+font-weight:700;
+text-transform:uppercase;
+padding:12px 8px
+}
+.tabs .selected{
+border-bottom:4px solid #ffffff
+}
+.tabs .selected a{
+color:#ffffff
+}
+body#layout .bg-photo,body#layout .bg-photo-overlay{
+display:none
+}
+body#layout .page_body{
+padding:0;
+position:relative;
+top:0
+}
+body#layout .page{
+display:inline-block;
+left:inherit;
+position:relative;
+vertical-align:top;
+width:540px
+}
+body#layout .centered{
+max-width:954px
+}
+body#layout .navigation{
+display:none
+}
+body#layout .sidebar-container{
+display:inline-block;
+width:40%
+}
+body#layout .hamburger-menu,body#layout .search{
+display:none
+}
+.centered-top-container .svg-icon-24,body.collapsed-header .centered-top-placeholder .svg-icon-24{
+fill:#ffffff
+}
+.sidebar-container .svg-icon-24{
+fill:#5b5b5b
+}
+.centered-bottom .svg-icon-24,body.collapsed-header .centered-top-container .svg-icon-24{
+fill:#5b5b5b
+}
+.centered-bottom .share-buttons .svg-icon-24,.share-buttons .svg-icon-24{
+fill:#212121
+}
+body{
+background-color:#eaeaea;
+color:#666666;
+font:15px Roboto, sans-serif;
+margin:0;
+min-height:100vh
+}
+img{
+max-width:100%
+}
+h3{
+color:#666666;
+font-size:16px
+}
+a{
+text-decoration:none;
+color:#3c79a7
+}
+a:visited{
+color:#3c79a7
+}
+a:hover{
+color:#2196f3
+}
+blockquote{
+color:#000000;
+font:italic 300 15px Roboto, sans-serif;
+font-size:x-large;
+text-align:center
+}
+.pill-button{
+font-size:12px
+}
+.bg-photo-container{
+height:470px;
+overflow:hidden;
+position:absolute;
+width:100%;
+z-index:1
+}
+.bg-photo{
+background:#eaeaea url(http://2.bp.blogspot.com/-x4SlpiHfSJ8/Vyjtmvpt5kI/AAAAAAAADn4/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B/s1600/newton_cropped.jpg) repeat fixed top left;
+background-attachment:scroll;
+background-size:cover;
+-webkit-filter:blur(3px);
+filter:blur(3px);
+height:calc(100% + 2 * 3px);
+left:-3px;
+position:absolute;
+top:-3px;
+width:calc(100% + 2 * 3px)
+}
+.bg-photo-overlay{
+background:rgba(0,0,0,.26);
+background-size:cover;
+height:470px;
+position:absolute;
+width:100%;
+z-index:2
+}
+.hamburger-menu{
+float:left;
+margin-top:0
+}
+.sticky .hamburger-menu{
+float:none;
+position:absolute
+}
+.search{
+border-bottom:solid 1px rgba(255, 255, 255, 0);
+float:right;
+position:relative;
+-webkit-transition-property:width;
+transition-property:width;
+-webkit-transition-duration:.5s;
+transition-duration:.5s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1);
+z-index:101
+}
+.search .dim-overlay{
+background-color:transparent
+}
+.search form{
+height:36px;
+-webkit-transition-property:border-color;
+transition-property:border-color;
+-webkit-transition-delay:.5s;
+transition-delay:.5s;
+-webkit-transition-duration:.2s;
+transition-duration:.2s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1)
+}
+.search.focused{
+width:calc(100% - 48px)
+}
+.search.focused form{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-flex:1;
+-webkit-flex:1 0 1px;
+-ms-flex:1 0 1px;
+flex:1 0 1px;
+border-color:#ffffff;
+margin-left:-24px;
+padding-left:36px;
+position:relative;
+width:auto
+}
+.item-view .search,.sticky .search{
+right:0;
+float:none;
+margin-left:0;
+position:absolute
+}
+.item-view .search.focused,.sticky .search.focused{
+width:calc(100% - 50px)
+}
+.item-view .search.focused form,.sticky .search.focused form{
+border-bottom-color:#4e4e4e
+}
+.centered-top-placeholder.cloned .search form{
+z-index:30
+}
+.search_button{
+-webkit-box-flex:0;
+-webkit-flex:0 0 24px;
+-ms-flex:0 0 24px;
+flex:0 0 24px;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column
+}
+.search_button svg{
+margin-top:0
+}
+.search-input{
+height:48px
+}
+.search-input input{
+display:block;
+color:#ffffff;
+font:16px Roboto, sans-serif;
+height:48px;
+line-height:48px;
+padding:0;
+width:100%
+}
+.search-input input::-webkit-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::-moz-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input:-ms-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::-ms-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-action{
+background:0 0;
+border:0;
+color:#ffffff;
+cursor:pointer;
+display:none;
+height:48px;
+margin-top:0
+}
+.sticky .search-action{
+color:#4e4e4e
+}
+.search.focused .search-action{
+display:block
+}
+.search.focused .search-action:disabled{
+opacity:.3
+}
+.page_body{
+position:relative;
+z-index:20
+}
+.page_body .widget{
+margin-bottom:16px
+}
+.page_body .centered{
+box-sizing:border-box;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column;
+margin:0 auto;
+max-width:922px;
+min-height:100vh;
+padding:24px 0
+}
+.page_body .centered>*{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.page_body .centered>#footer{
+margin-top:auto
+}
+.blog-name{
+margin:24px 0 16px 0
+}
+.item-view .blog-name,.sticky .blog-name{
+box-sizing:border-box;
+margin-left:36px;
+min-height:48px;
+opacity:1;
+padding-top:12px
+}
+.blog-name .subscribe-section-container{
+margin-bottom:32px;
+text-align:center;
+-webkit-transition-property:opacity;
+transition-property:opacity;
+-webkit-transition-duration:.5s;
+transition-duration:.5s
+}
+.item-view .blog-name .subscribe-section-container,.sticky .blog-name .subscribe-section-container{
+margin:0 0 8px 0
+}
+.blog-name .PageList{
+margin-top:16px;
+padding-top:8px;
+text-align:center
+}
+.blog-name .PageList .overflowable-contents{
+width:100%
+}
+.blog-name .PageList h3.title{
+color:#ffffff;
+margin:8px auto;
+text-align:center;
+width:100%
+}
+.centered-top-container .blog-name{
+-webkit-transition-property:opacity;
+transition-property:opacity;
+-webkit-transition-duration:.5s;
+transition-duration:.5s
+}
+.item-view .return_link{
+margin-bottom:12px;
+margin-top:12px;
+position:absolute
+}
+.item-view .blog-name{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap;
+margin:0 48px 27px 48px
+}
+.item-view .subscribe-section-container{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.item-view #header,.item-view .Header{
+margin-bottom:5px;
+margin-right:15px
+}
+.item-view .sticky .Header{
+margin-bottom:0
+}
+.item-view .Header p{
+margin:10px 0 0 0;
+text-align:left
+}
+.item-view .post-share-buttons-bottom{
+margin-right:16px
+}
+.sticky{
+background:#ffffff;
+box-shadow:0 0 20px 0 rgba(0,0,0,.7);
+box-sizing:border-box;
+margin-left:0
+}
+.sticky #header{
+margin-bottom:8px;
+margin-right:8px
+}
+.sticky .centered-top{
+margin:4px auto;
+max-width:890px;
+min-height:48px
+}
+.sticky .blog-name{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+margin:0 48px
+}
+.sticky .blog-name #header{
+-webkit-box-flex:0;
+-webkit-flex:0 1 auto;
+-ms-flex:0 1 auto;
+flex:0 1 auto;
+-webkit-box-ordinal-group:2;
+-webkit-order:1;
+-ms-flex-order:1;
+order:1;
+overflow:hidden
+}
+.sticky .blog-name .subscribe-section-container{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-box-ordinal-group:3;
+-webkit-order:2;
+-ms-flex-order:2;
+order:2
+}
+.sticky .Header h1{
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+margin-right:-10px;
+margin-bottom:-10px;
+padding-right:10px;
+padding-bottom:10px
+}
+.sticky .Header p{
+display:none
+}
+.sticky .PageList{
+display:none
+}
+.search-focused>*{
+visibility:visible
+}
+.search-focused .hamburger-menu{
+visibility:visible
+}
+.item-view .search-focused .blog-name,.sticky .search-focused .blog-name{
+opacity:0
+}
+.centered-bottom,.centered-top-container,.centered-top-placeholder{
+padding:0 16px
+}
+.centered-top{
+position:relative
+}
+.item-view .centered-top.search-focused .subscribe-section-container,.sticky .centered-top.search-focused .subscribe-section-container{
+opacity:0
+}
+.page_body.has-vertical-ads .centered .centered-bottom{
+display:inline-block;
+width:calc(100% - 176px)
+}
+.Header h1{
+color:#ffffff;
+font:bold 45px Roboto, sans-serif;
+line-height:normal;
+margin:0 0 13px 0;
+text-align:center;
+width:100%
+}
+.Header h1 a,.Header h1 a:hover,.Header h1 a:visited{
+color:#ffffff
+}
+.item-view .Header h1,.sticky .Header h1{
+font-size:24px;
+line-height:24px;
+margin:0;
+text-align:left
+}
+.sticky .Header h1{
+color:#4e4e4e
+}
+.sticky .Header h1 a,.sticky .Header h1 a:hover,.sticky .Header h1 a:visited{
+color:#4e4e4e
+}
+.Header p{
+color:#ffffff;
+margin:0 0 13px 0;
+opacity:.8;
+text-align:center
+}
+.widget .title{
+line-height:28px
+}
+.BlogArchive li{
+font-size:16px
+}
+.BlogArchive .post-count{
+color:#4e4e4e
+}
+#page_body .FeaturedPost,.Blog .blog-posts .post-outer-container{
+background:#ffffff;
+min-height:40px;
+padding:30px 40px;
+width:auto
+}
+.Blog .blog-posts .post-outer-container:last-child{
+margin-bottom:0
+}
+.Blog .blog-posts .post-outer-container .post-outer{
+border:0;
+position:relative;
+padding-bottom:.25em
+}
+.post-outer-container{
+margin-bottom:16px
+}
+.post:first-child{
+margin-top:0
+}
+.post .thumb{
+float:left;
+height:20%;
+width:20%
+}
+.post-share-buttons-bottom,.post-share-buttons-top{
+float:right
+}
+.post-share-buttons-bottom{
+margin-right:24px
+}
+.post-footer,.post-header{
+clear:left;
+color:rgba(0, 0, 0, 0.54);
+margin:0;
+width:inherit
+}
+.blog-pager{
+text-align:center
+}
+.blog-pager a{
+color:#2196f3
+}
+.blog-pager a:visited{
+color:#2196f3
+}
+.blog-pager a:hover{
+color:#2196f3
+}
+.post-title{
+font:bold 22px Roboto, sans-serif;
+float:left;
+margin:0 0 8px 0;
+max-width:calc(100% - 48px)
+}
+.post-title a{
+font:bold 30px Roboto, sans-serif
+}
+.post-title,.post-title a,.post-title a:hover,.post-title a:visited{
+color:#3b3b3b
+}
+.post-body{
+color:#4e4e4e;
+font:15px Roboto, sans-serif;
+line-height:1.6em;
+margin:1.5em 0 2em 0;
+display:block
+}
+.post-body img{
+height:inherit
+}
+.post-body .snippet-thumbnail{
+float:left;
+margin:0;
+margin-right:2em;
+max-height:128px;
+max-width:128px
+}
+.post-body .snippet-thumbnail img{
+max-width:100%
+}
+.main .FeaturedPost .widget-content{
+border:0;
+position:relative;
+padding-bottom:.25em
+}
+.FeaturedPost img{
+margin-top:2em
+}
+.FeaturedPost .snippet-container{
+margin:2em 0
+}
+.FeaturedPost .snippet-container p{
+margin:0
+}
+.FeaturedPost .snippet-thumbnail{
+float:none;
+height:auto;
+margin-bottom:2em;
+margin-right:0;
+overflow:hidden;
+max-height:calc(600px + 2em);
+max-width:100%;
+text-align:center;
+width:100%
+}
+.FeaturedPost .snippet-thumbnail img{
+max-width:100%;
+width:100%
+}
+.byline{
+color:rgba(0, 0, 0, 0.54);
+display:inline-block;
+line-height:24px;
+margin-top:8px;
+vertical-align:top
+}
+.byline.post-author:first-child{
+margin-right:0
+}
+.byline.reactions .reactions-label{
+line-height:22px;
+vertical-align:top
+}
+.byline.post-share-buttons{
+position:relative;
+display:inline-block;
+margin-top:0;
+width:100%
+}
+.byline.post-share-buttons .sharing{
+float:right
+}
+.flat-button.ripple:hover{
+background-color:rgba(60,121,167,.12)
+}
+.flat-button.ripple .splash{
+background-color:rgba(60,121,167,.4)
+}
+a.timestamp-link,a:active.timestamp-link,a:visited.timestamp-link{
+color:inherit;
+font:inherit;
+text-decoration:inherit
+}
+.post-share-buttons{
+margin-left:0
+}
+.clear-sharing{
+min-height:24px
+}
+.comment-link{
+color:#3c79a7;
+position:relative
+}
+.comment-link .num_comments{
+margin-left:8px;
+vertical-align:top
+}
+#comment-holder .continue{
+display:none
+}
+#comment-editor{
+margin-bottom:20px;
+margin-top:20px
+}
+#comments .comment-form h4,#comments h3.title{
+position:absolute;
+clip:rect(1px,1px,1px,1px);
+padding:0;
+border:0;
+height:1px;
+width:1px;
+overflow:hidden
+}
+.post-filter-message{
+background-color:rgba(0,0,0,.7);
+color:#fff;
+display:table;
+margin-bottom:16px;
+width:100%
+}
+.post-filter-message div{
+display:table-cell;
+padding:15px 28px
+}
+.post-filter-message div:last-child{
+padding-left:0;
+text-align:right
+}
+.post-filter-message a{
+white-space:nowrap
+}
+.post-filter-message .search-label,.post-filter-message .search-query{
+font-weight:700;
+color:#3c79a7
+}
+#blog-pager{
+margin:2em 0
+}
+#blog-pager a{
+color:#2196f3;
+font-size:14px
+}
+.subscribe-button{
+border-color:#ffffff;
+color:#ffffff
+}
+.sticky .subscribe-button{
+border-color:#4e4e4e;
+color:#4e4e4e
+}
+.tabs{
+margin:0 auto;
+padding:0
+}
+.tabs li{
+margin:0 8px;
+vertical-align:top
+}
+.tabs .overflow-button a,.tabs li a{
+color:#c6c6c6;
+font:700 normal 15px Roboto, sans-serif;
+line-height:18px
+}
+.tabs .overflow-button a{
+padding:12px 8px
+}
+.overflow-popup .tabs li{
+text-align:left
+}
+.overflow-popup li a{
+color:#757575;
+display:block;
+padding:8px 20px
+}
+.overflow-popup li.selected a{
+color:#212121
+}
+a.report_abuse{
+font-weight:400
+}
+.Label li,.Label span.label-size,.byline.post-labels a{
+background-color:#f7f7f7;
+border:1px solid #f7f7f7;
+border-radius:15px;
+display:inline-block;
+margin:4px 4px 4px 0;
+padding:3px 8px
+}
+.Label a,.byline.post-labels a{
+color:rgba(0, 0, 0, 0.54)
+}
+.Label ul{
+list-style:none;
+padding:0
+}
+.PopularPosts{
+background-color:#eeeeee;
+padding:30px 40px
+}
+.PopularPosts .item-content{
+color:#757575;
+margin-top:24px
+}
+.PopularPosts a,.PopularPosts a:hover,.PopularPosts a:visited{
+color:#2196f3
+}
+.PopularPosts .post-title,.PopularPosts .post-title a,.PopularPosts .post-title a:hover,.PopularPosts .post-title a:visited{
+color:#212121;
+font-size:18px;
+font-weight:700;
+line-height:24px
+}
+.PopularPosts,.PopularPosts h3.title a{
+color:#4e4e4e;
+font:15px Roboto, sans-serif
+}
+.main .PopularPosts{
+padding:16px 40px
+}
+.PopularPosts h3.title{
+font-size:14px;
+margin:0
+}
+.PopularPosts h3.post-title{
+margin-bottom:0
+}
+.PopularPosts .byline{
+color:rgba(0, 0, 0, 0.54)
+}
+.PopularPosts .jump-link{
+float:right;
+margin-top:16px
+}
+.PopularPosts .post-header .byline{
+font-size:.9em;
+font-style:italic;
+margin-top:6px
+}
+.PopularPosts ul{
+list-style:none;
+padding:0;
+margin:0
+}
+.PopularPosts .post{
+padding:20px 0
+}
+.PopularPosts .post+.post{
+border-top:1px dashed #c6c6c6
+}
+.PopularPosts .item-thumbnail{
+float:left;
+margin-right:32px
+}
+.PopularPosts .item-thumbnail img{
+height:88px;
+padding:0;
+width:88px
+}
+.inline-ad{
+margin-bottom:16px
+}
+.desktop-ad .inline-ad{
+display:block
+}
+.adsbygoogle{
+overflow:hidden
+}
+.vertical-ad-container{
+float:right;
+margin-right:16px;
+width:128px
+}
+.vertical-ad-container .AdSense+.AdSense{
+margin-top:16px
+}
+.inline-ad-placeholder,.vertical-ad-placeholder{
+background:#ffffff;
+border:1px solid #000;
+opacity:.9;
+vertical-align:middle;
+text-align:center
+}
+.inline-ad-placeholder span,.vertical-ad-placeholder span{
+margin-top:290px;
+display:block;
+text-transform:uppercase;
+font-weight:700;
+color:#3b3b3b
+}
+.vertical-ad-placeholder{
+height:600px
+}
+.vertical-ad-placeholder span{
+margin-top:290px;
+padding:0 40px
+}
+.inline-ad-placeholder{
+height:90px
+}
+.inline-ad-placeholder span{
+margin-top:36px
+}
+.Attribution{
+color:#757575
+}
+.Attribution a,.Attribution a:hover,.Attribution a:visited{
+color:#2196f3
+}
+.Attribution svg{
+fill:#5b5b5b
+}
+.sidebar-container{
+box-shadow:1px 1px 3px rgba(0,0,0,.1)
+}
+.sidebar-container,.sidebar-container .sidebar_bottom{
+background-color:#ffffff
+}
+.sidebar-container .navigation,.sidebar-container .sidebar_top_wrapper{
+background-color:#ffffff
+}
+.sidebar-container .sidebar_top{
+overflow:auto
+}
+.sidebar-container .sidebar_bottom{
+width:100%;
+padding-top:16px
+}
+.sidebar-container .widget:first-child{
+padding-top:0
+}
+.sidebar_top .widget.Profile{
+padding-bottom:16px
+}
+.widget.Profile{
+margin:0;
+width:100%
+}
+.widget.Profile h2{
+display:none
+}
+.widget.Profile h3.title{
+color:rgba(0, 0, 0, 0.52);
+margin:16px 32px
+}
+.widget.Profile .individual{
+text-align:center
+}
+.widget.Profile .individual .profile-link{
+padding:1em
+}
+.widget.Profile .individual .default-avatar-wrapper .avatar-icon{
+margin:auto
+}
+.widget.Profile .team{
+margin-bottom:32px;
+margin-left:32px;
+margin-right:32px
+}
+.widget.Profile ul{
+list-style:none;
+padding:0
+}
+.widget.Profile li{
+margin:10px 0
+}
+.widget.Profile .profile-img{
+border-radius:50%;
+float:none
+}
+.widget.Profile .profile-link{
+color:#212121;
+font-size:.9em;
+margin-bottom:1em;
+opacity:.87;
+overflow:hidden
+}
+.widget.Profile .profile-link.visit-profile{
+border-style:solid;
+border-width:1px;
+border-radius:12px;
+cursor:pointer;
+font-size:12px;
+font-weight:400;
+padding:5px 20px;
+display:inline-block;
+line-height:normal
+}
+.widget.Profile dd{
+color:#757575;
+margin:0 16px
+}
+.widget.Profile location{
+margin-bottom:1em
+}
+.widget.Profile .profile-textblock{
+font-size:14px;
+line-height:24px;
+position:relative
+}
+body.sidebar-visible .page_body{
+overflow-y:scroll
+}
+body.sidebar-visible .bg-photo-container{
+overflow-y:scroll
+}
+@media screen and (min-width:1440px){
+.sidebar-container{
+margin-top:470px;
+min-height:calc(100% - 470px);
+overflow:visible;
+z-index:32
+}
+.sidebar-container .sidebar_top_wrapper{
+background-color:#f3f3f3;
+height:470px;
+margin-top:-470px
+}
+.sidebar-container .sidebar_top{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+height:470px;
+-webkit-box-orient:horizontal;
+-webkit-box-direction:normal;
+-webkit-flex-direction:row;
+-ms-flex-direction:row;
+flex-direction:row;
+max-height:470px
+}
+.sidebar-container .sidebar_bottom{
+max-width:284px;
+width:284px
+}
+body.collapsed-header .sidebar-container{
+z-index:15
+}
+.sidebar-container .sidebar_top:empty{
+display:none
+}
+.sidebar-container .sidebar_top>:only-child{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-align-self:center;
+-ms-flex-item-align:center;
+align-self:center;
+width:100%
+}
+.sidebar_top_wrapper.no-items{
+display:none
+}
+}
+.post-snippet.snippet-container{
+max-height:120px
+}
+.post-snippet .snippet-item{
+line-height:24px
+}
+.post-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+color:#666666;
+height:24px
+}
+.popular-posts-snippet.snippet-container{
+max-height:72px
+}
+.popular-posts-snippet .snippet-item{
+line-height:24px
+}
+.PopularPosts .popular-posts-snippet .snippet-fade{
+color:#666666;
+height:24px
+}
+.main .popular-posts-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#eeeeee 0,#eeeeee 20%,rgba(238, 238, 238, 0) 100%);
+background:linear-gradient(to left,#eeeeee 0,#eeeeee 20%,rgba(238, 238, 238, 0) 100%)
+}
+.sidebar_bottom .popular-posts-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%)
+}
+.profile-snippet.snippet-container{
+max-height:192px
+}
+.has-location .profile-snippet.snippet-container{
+max-height:144px
+}
+.profile-snippet .snippet-item{
+line-height:24px
+}
+.profile-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+color:#757575;
+height:24px
+}
+@media screen and (min-width:1440px){
+.profile-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#f3f3f3 0,#f3f3f3 20%,rgba(243, 243, 243, 0) 100%);
+background:linear-gradient(to left,#f3f3f3 0,#f3f3f3 20%,rgba(243, 243, 243, 0) 100%)
+}
+}
+@media screen and (max-width:800px){
+.blog-name{
+margin-top:0
+}
+body.item-view .blog-name{
+margin:0 48px
+}
+.centered-bottom{
+padding:8px
+}
+body.item-view .centered-bottom{
+padding:0
+}
+.page_body .centered{
+padding:10px 0
+}
+body.item-view #header,body.item-view .widget.Header{
+margin-right:0
+}
+body.collapsed-header .centered-top-container .blog-name{
+display:block
+}
+body.collapsed-header .centered-top-container .widget.Header h1{
+text-align:center
+}
+.widget.Header header{
+padding:0
+}
+.widget.Header h1{
+font-size:24px;
+line-height:24px;
+margin-bottom:13px
+}
+body.item-view .widget.Header h1{
+text-align:center
+}
+body.item-view .widget.Header p{
+text-align:center
+}
+.blog-name .widget.PageList{
+padding:0
+}
+body.item-view .centered-top{
+margin-bottom:5px
+}
+.search-action,.search-input{
+margin-bottom:-8px
+}
+.search form{
+margin-bottom:8px
+}
+body.item-view .subscribe-section-container{
+margin:5px 0 0 0;
+width:100%
+}
+#page_body.section div.widget.FeaturedPost,div.widget.PopularPosts{
+padding:16px
+}
+div.widget.Blog .blog-posts .post-outer-container{
+padding:16px
+}
+div.widget.Blog .blog-posts .post-outer-container .post-outer{
+padding:0
+}
+.post:first-child{
+margin:0
+}
+.post-body .snippet-thumbnail{
+margin:0 3vw 3vw 0
+}
+.post-body .snippet-thumbnail img{
+height:20vw;
+width:20vw;
+max-height:128px;
+max-width:128px
+}
+div.widget.PopularPosts div.item-thumbnail{
+margin:0 3vw 3vw 0
+}
+div.widget.PopularPosts div.item-thumbnail img{
+height:20vw;
+width:20vw;
+max-height:88px;
+max-width:88px
+}
+.post-title{
+line-height:1
+}
+.post-title,.post-title a{
+font-size:20px
+}
+#page_body.section div.widget.FeaturedPost h3 a{
+font-size:22px
+}
+.mobile-ad .inline-ad{
+display:block
+}
+.page_body.has-vertical-ads .vertical-ad-container,.page_body.has-vertical-ads .vertical-ad-container ins{
+display:none
+}
+.page_body.has-vertical-ads .centered .centered-bottom,.page_body.has-vertical-ads .centered .centered-top{
+display:block;
+width:auto
+}
+div.post-filter-message div{
+padding:8px 16px
+}
+}
+@media screen and (min-width:1440px){
+body{
+position:relative
+}
+body.item-view .blog-name{
+margin-left:48px
+}
+.page_body{
+margin-left:284px
+}
+.search{
+margin-left:0
+}
+.search.focused{
+width:100%
+}
+.sticky{
+padding-left:284px
+}
+.hamburger-menu{
+display:none
+}
+body.collapsed-header .page_body .centered-top-container{
+padding-left:284px;
+padding-right:0;
+width:100%
+}
+body.collapsed-header .centered-top-container .search.focused{
+width:100%
+}
+body.collapsed-header .centered-top-container .blog-name{
+margin-left:0
+}
+body.collapsed-header.item-view .centered-top-container .search.focused{
+width:calc(100% - 50px)
+}
+body.collapsed-header.item-view .centered-top-container .blog-name{
+margin-left:40px
+}
+}
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+body#layout .hidden,
+body#layout .invisible {
+display: inherit;
+}
+body#layout .navigation {
+display: none;
+}
+body#layout .page,
+body#layout .sidebar_top,
+body#layout .sidebar_bottom {
+display: inline-block;
+left: inherit;
+position: relative;
+vertical-align: top;
+}
+body#layout .page {
+float: right;
+margin-left: 20px;
+width: 55%;
+}
+body#layout .sidebar-container {
+float: right;
+width: 40%;
+}
+body#layout .hamburger-menu {
+display: none;
+}
+--></style>
+<style>
+    .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/s1600\/newton_cropped.jpg);}
+    
+@media (max-width: 480px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w480\/newton_cropped.jpg);}}
+@media (max-width: 640px) and (min-width: 481px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w640\/newton_cropped.jpg);}}
+@media (max-width: 800px) and (min-width: 641px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w800\/newton_cropped.jpg);}}
+@media (max-width: 1200px) and (min-width: 801px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w1200\/newton_cropped.jpg);}}
+/* Last tag covers anything over one higher than the previous max-size cap. */
+@media (min-width: 1201px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w1600\/newton_cropped.jpg);}}
+  </style>
+<script async='async' src='//www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js'></script>
+<!-- START: ADDED BY AMIR -->
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS"],
+     tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+  },
+  "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+    </script>
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'>
+    </script>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
+<!-- END: ADDED BY AMIR -->
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=5825758052688213474&amp;zx=5e2ad629-d23a-49a7-a013-9294d5a6515f' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=5825758052688213474&amp;zx=5e2ad629-d23a-49a7-a013-9294d5a6515f' rel='stylesheet'/></noscript>
+
+</head>
+<body class='item-view variant-indie_light'>
+<a class='skip-navigation' href='#main' tabindex='0'>
+Skip to main content
+</a>
+<div class='page'>
+<div class='bg-photo-overlay'></div>
+<div class='bg-photo-container'>
+<div class='bg-photo'></div>
+</div>
+<div class='page_body'>
+<div class='centered'>
+<div class='centered-top-placeholder'></div>
+<header class='centered-top-container' role='banner'>
+<div class='centered-top'>
+<a class='return_link' href='http://www.unofficialgoogledatascience.com/'>
+<button class='svg-icon-24-button back-button rtl-reversible-icon flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_arrow_back_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</button>
+</a>
+<div class='search'>
+<button aria-label='Search' class='search-expand touch-icon-button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24 search-expand-icon'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_search_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='section' id='search_top' name='Search (Top)'><div class='widget BlogSearch' data-version='2' id='BlogSearch1'>
+<h3 class='title'>
+Search This Blog
+</h3>
+<div class='widget-content' role='search'>
+<form action='http://www.unofficialgoogledatascience.com/search' target='_top'>
+<div class='search-input'>
+<input aria-label='Search this blog' autocomplete='off' name='q' placeholder='Search this blog' value=''/>
+</div>
+<input class='search-action' type='submit' value='Search'/>
+</form>
+</div>
+</div></div>
+</div>
+<div class='clearboth'></div>
+<div class='blog-name container'>
+<div class='container section' id='header' name='Header'><div class='widget Header' data-version='2' id='Header1'>
+<div class='header-widget'>
+<div>
+<h1>
+<a href='http://www.unofficialgoogledatascience.com/'>
+The Unofficial Google Data Science Blog
+</a>
+</h1>
+</div>
+<p>
+</p>
+</div>
+</div></div>
+<nav role='navigation'>
+<div class='clearboth section' id='page_list_top' name='Page List (Top)'><div class='widget PageList' data-version='2' id='PageList1'>
+<div class='widget-content'>
+<div class='overflowable-container'>
+<div class='overflowable-contents'>
+<div class='container'>
+<ul class='tabs'>
+<li class='overflowable-item'>
+<a href='http://www.unofficialgoogledatascience.com/'>Home</a>
+</li>
+<li class='overflowable-item'>
+<a href='http://www.unofficialgoogledatascience.com/p/about.html'>About this blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='overflow-button hidden'>
+<a class='flat-button'>More&hellip;</a>
+</div>
+</div>
+</div>
+</div></div>
+</nav>
+</div>
+</div>
+</header>
+<div>
+<div class='vertical-ad-container no-items section' id='ads' name='Ads'>
+</div>
+<main class='centered-bottom' id='main' role='main' tabindex='-1'>
+<div class='main section' id='page_body' name='Page Body'>
+<div class='widget Blog' data-version='2' id='Blog1'>
+<div class='blog-posts hfeed container'>
+<article class='post-outer-container'>
+<div class='post-outer'>
+<div class='post'>
+<script type='application/ld+json'>{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html"
+  },
+  "headline": "Our quest for robust time series forecasting at scale","description": "by ERIC TASSONE, FARZAN ROHANI\u003ci\u003e We were part of a team of data scientists in Search Infrastructure at Google that took on the task of developing robust&#8230;","datePublished": "2017-04-17T17:02:00-07:00",
+  "dateModified": "2017-04-19T13:39:40-07:00","image": {
+    "@type": "ImageObject","url": "https://lh6.googleusercontent.com/Vrd24K6K6UMR_QZuk1SV-PKSLG6PPLL3bbXaTsEDlmRSGFUrm2h9B5UlDsNbDT7z81hCr4kSmVoaq9W2PoNM2iyuHljlyQdkvqsN4BIEFVyJX3kJwQwJ1wa4MzuArXTFTEGqSC-n=w1200-h630-p-k-no-nu",
+    "height": 630,
+    "width": 1200},"publisher": {
+    "@type": "Organization",
+    "name": "Blogger",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=h60",
+      "width": 206,
+      "height": 60
+    }
+  },"author": {
+    "@type": "Person",
+    "name": "Amir Najmi"
+  }
+}</script>
+<a name='4732004365167765860'></a>
+<h3 class='post-title entry-title'>
+Our quest for robust time series forecasting at scale
+</h3>
+<div class='post-share-buttons post-share-buttons-top'>
+<div class='byline post-share-buttons goog-inline-block'>
+<div aria-owns='sharing-popup-Blog1-byline-4732004365167765860' class='sharing' data-title='Our quest for robust time series forecasting at scale'>
+<button aria-controls='sharing-popup-Blog1-byline-4732004365167765860' aria-label='Share' class='sharing-button touch-icon-button' id='sharing-button-Blog1-byline-4732004365167765860' role='button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_share_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='share-buttons-container'>
+<ul aria-hidden='true' aria-label='Share' class='share-buttons hidden' id='sharing-popup-Blog1-byline-4732004365167765860' role='menu'>
+<li>
+<span aria-label='Get link' class='sharing-platform-button sharing-element-link' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Get link'>
+<svg class='svg-icon-24 touch-icon sharing-link'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_link_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Get link</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Facebook' class='sharing-platform-button sharing-element-facebook' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=facebook' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Share to Facebook'>
+<svg class='svg-icon-24 touch-icon sharing-facebook'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_facebook_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Facebook</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Twitter' class='sharing-platform-button sharing-element-twitter' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=twitter' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Share to Twitter'>
+<svg class='svg-icon-24 touch-icon sharing-twitter'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_twitter_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Twitter</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Pinterest' class='sharing-platform-button sharing-element-pinterest' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=pinterest' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Share to Pinterest'>
+<svg class='svg-icon-24 touch-icon sharing-pinterest'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_pinterest_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Pinterest</span>
+</span>
+</li>
+<li>
+<span aria-label='Email' class='sharing-platform-button sharing-element-email' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=email' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Email'>
+<svg class='svg-icon-24 touch-icon sharing-email'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_email_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Email</span>
+</span>
+</li>
+<li aria-hidden='true' class='hidden'>
+<span aria-label='Share to other apps' class='sharing-platform-button sharing-element-other' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Share to other apps'>
+<svg class='svg-icon-24 touch-icon sharing-sharingOther'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_more_horiz_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Other Apps</span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class='post-header'>
+<div class='post-header-line-1'>
+<span class='byline post-timestamp'>
+<meta content='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html'/>
+<a class='timestamp-link' href='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' rel='bookmark' title='permanent link'>
+<time class='published' datetime='2017-04-17T17:02:00-07:00' title='2017-04-17T17:02:00-07:00'>
+April 17, 2017
+</time>
+</a>
+</span>
+</div>
+</div>
+<div class='post-body entry-content float-container' id='post-body-4732004365167765860'>
+by ERIC TASSONE, FARZAN ROHANI<br />
+<br />
+<i>We were part of a team of data scientists in Search Infrastructure at Google that took on the task of developing robust and automatic large-scale time series forecasting for our organization. In this post, we recount how we approached the task, describing initial stakeholder needs, the business and engineering contexts in which the challenge arose, and theoretical and pragmatic choices we made to implement our solution.</i><br />
+<h2>
+Introduction</h2>
+Time series forecasting enjoys a rich and luminous history, and today is an essential element of most any business operation. So it should come as no surprise that Google has compiled and forecast time series for a long time. For instance, the image below from the Google Visitors Center in Mountain View, California, shows hand-drawn time series of &#8220;Results Pages&#8221; (essentially search query volume) dating back nearly to the founding of the company on 04 September 1998.<br />
+<div>
+<br /></div>
+<div>
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><img height="291" src="https://lh6.googleusercontent.com/Vrd24K6K6UMR_QZuk1SV-PKSLG6PPLL3bbXaTsEDlmRSGFUrm2h9B5UlDsNbDT7z81hCr4kSmVoaq9W2PoNM2iyuHljlyQdkvqsN4BIEFVyJX3kJwQwJ1wa4MzuArXTFTEGqSC-n" style="margin-left: auto; margin-right: auto;" width="640" /></td></tr>
+<tr><td class="tr-caption"><br /></td></tr>
+</tbody></table>
+</div>
+<div>
+<span style="font-size: 12.8px; text-align: center;">Hand-Drawn Time Series of Google &#8220;Results Pages&#8221;, November 1998 through July 2004. Due to multiple changes to the scale of the values depicted on the vertical axis, &#8220;Results Pages&#8221; values, which reflect search query volume, at the rightward end of the plot (corresponding to July 2004) are 2000 times larger than the values depicted at the leftward end (corresponding to November 1998).</span><br />
+<span style="font-size: 12.8px; text-align: center;"><br /></span>
+<br />
+The demand for time series forecasting at Google grew rapidly along with the company over its first decade. Various business and engineering needs led to a multitude of forecasting approaches, most reliant on direct analyst support. The volume and variety of the approaches, and in some cases their inconsistency, called out for an attempt to unify, automate, and extend forecasting methods, and to distribute the results via tools that could be deployed reliably across the company. That is, for an attempt to develop methods and tools that would facilitate accurate large-scale time series forecasting at Google. <br />
+<br />
+Our team of data scientists and software engineers in Search Infrastructure was already engaged in a particular type of forecasting. For us, demand for forecasts emerged from a determination to better understand business growth and health, more efficiently conduct day-to-day operations, and optimize longer-term resource planning and allocation decisions. Because our team was already forecasting a large number of time series for which direct analyst implementation and supervision were impractical, it was well positioned to attempt such a unification, automation, and distribution of forecasting methods.<br />
+<br />
+In the balance of this post, we will discuss and demonstrate aspects of our forecasting approach.<br />
+<ul>
+<li>We begin by describing our general framework for thinking about our task, which entails carefully defining the overall forecasting problem -- what it is and what it is not -- and decomposing the problem into tractable subproblems whenever possible.&nbsp;</li>
+<li>We then detail subproblems resulting from the decomposition, and our approaches to solving them.</li>
+<ul>
+<li>Adjustments to clean the data: missing values, anomalies, level changes, and transformations.</li>
+<li>Adjustments for effects: holiday, seasonality, and day-of-week effects.</li>
+<li>Disaggregation of the time series into subseries and reconciliation of the subseries forecasts.</li>
+<li>Selection and aggregation of forecasts from an ensemble of models to produce a final forecast.</li>
+<li>Quantification of forecast uncertainty via simulation-based prediction intervals.</li>
+</ul>
+</ul>
+We conclude with an example of our forecasting routine applied to publicly available Turkish Electricity data.</div>
+<br />
+<h2>
+GENERAL FRAMEWORK</h2>
+A critical learning from our forecasting endeavor was the value of careful thought about the environment in which both the problem and potential solutions arise. The challenge, of course, is in the details: What problem are we trying to solve and -- just as importantly -- what problems are we not trying to solve? How do we carefully delineate and separate where possible the various subproblems that make up the problem we are trying to solve? Which subproblems should be decoupled and treated independently to better attack them or for ease of implementation?<br />
+<div>
+<br />
+<h3>
+Our Forecasting Problem</h3>
+Our typical use case was to produce a time series forecast at the daily level for a 12-24 month forecast horizon based on a daily history two or more years long. On occasion, we might be interested in forecasting based on weekly totals or a move to a more refined temporal resolution, such as hours or minutes, but the norm was daily totals. Other times we might be asked to make a forecast based on a shorter history.<br />
+<br />
+In terms of scope, we sought to forecast a large number of time series, and to do so frequently. We wanted to forecast a variety of quantities: overall search query volume and particular types of queries; revenue; views and minutes of video watched on Google-owned YouTube (which recently <a href="https://youtube.googleblog.com/2017/02/you-know-whats-cool-billion-hours.html">reached a billion hours daily</a>); usage of sundry internal resources; and more. Additionally, we often had an independent interest in subseries of those quantities, such as disaggregated by locale (e.g., into &gt;100 countries or regions), device type (e.g., by desktop, mobile, and tablet), and operating system, as well as combinations of all these (e.g., locale-by-device type.) Given the assortment of quantities and their combinatorial explosion into subseries, our forecasting task was easily on the order of tens of thousands of forecasts. And then we wanted to forecast these quantities every week, or in some cases more often.</div>
+<div>
+<br />
+The variety and frequency of forecasts demanded robust, automatic methods --- robust in the sense of dramatically reducing the chance of a poor forecast regardless of the particular characteristics of the time series being forecast (e.g., its growth profile) and automatic in the sense of not requiring human intervention before or after running the forecast.<br />
+<br />
+Another important domain constraint was that our time series were the result of some aggregate human phenomenon --- search queries, YouTube videos viewed, or (as in our example) electricity consumed in Turkey. Unlike physical phenomena such as earthquakes or the tides, the time series we forecast are shaped by the rhythms of human civilization and its weekly, annual, and at-times irregular and evolving cycles. Calendaring was therefore an explicit feature of models within our framework, and we made considerable investment in maintaining detailed regional calendars.<br />
+<br />
+<h3>
+Non-Problems</h3>
+"Forecasting" is in many ways an overloaded word, with many potential meanings. We certainly were not trying to handle all forecasting possibilities, which sometimes vexed our colleagues who had turned to us for assistance. So what did "forecasting" not mean to us?<br />
+<br />
+Our initial use case did not involve explanatory variables, instead relying only the time series histories of the variables being forecast. Our rationale was in accord with the views expressed in the online forecasting book by Hyndman and Athana&#173;sopou&#173;los [1], who after mentioning the potential utility of an "explanatory model" write:<br />
+<br />
+<i>However, there are several reasons a forecaster might select a time series model rather than an explanatory model. First, the system may not be understood, and even if it was understood it may be extremely difficult to measure the relationships that are assumed to govern its behavior. Second, it is necessary to know or forecast the various predictors in order to be able to forecast the variable of interest, and this may be too difficult. Third, the main concern may be only to predict what will happen, not to know why it happens. Finally, the time series model may give more accurate forecasts than an explanatory or mixed model.</i></div>
+<div>
+<br />
+"Forecasting" for us also did not mean using time series in a causal inference setting. There are tools for this use case, such as Google-supported <a href="http://www.unofficialgoogledatascience.com/2015/09/causal-attribution-in-era-of-big-time.html">CausalImpact</a>.<br />
+<br />
+CausalImpact is powered by <a href="https://cran.r-project.org/web/packages/bsts/index.html">bsts</a> (&#8220;Bayesian Structural Time Series&#8221;), also from Google, which is a time series regression framework using dynamic linear models fit using Markov chain Monte Carlo techniques. The regression-based bsts framework can handle predictor variables, in contrast to our approach. Facebook in a recent blog post unveiled <a href="https://research.fb.com/prophet-forecasting-at-scale/">Prophet</a>, which is also a regression-based forecasting tool. But like our approach, Prophet aims to be an automatic, robust forecasting tool.<br />
+<br />
+At lastly, "forecasting" for us did not mean anomaly detection. Tools such as Twitter&#8217;s <a href="https://blog.twitter.com/2015/introducing-practical-and-robust-anomaly-detection-in-a-time-series">AnomalyDetection</a> or <a href="https://github.com/Netflix/Surus">RAD</a> ("Robust Anomaly Detection") from Netflix, as their names suggest, target this type of problem.</div>
+<br />
+<h2>
+Decomposing our problem</h2>
+Our ultimate objective is to accurately forecast the expected growth trends of our time series. To do so, we have found it useful to make a variety of cleaning adjustments and effects adjustments to better isolate the underlying growth trend. Both cleaning and effects adjustments allow for better estimation of underlying trend. The difference is that cleaning is to remove unpredictable nuisance artifacts whereas the effects are regular patterns we wish to capture explicitly. Thus our forecasting routine decomposes our overall problem into subproblems along these very lines. <br />
+<br />
+<h3>
+Cleaning Adjustments</h3>
+At the start of our process, we make several cleaning adjustments to the observed time series. Four major cleaning adjustments that we treat as separate problems are (a) missing values, (b) presumed anomalies, (c) accounting for abrupt level changes in the time series history, and (d) any transformations likely to result in improved forecast performance. Pre-processing our time series with these cleaning adjustments helps them to better conform to the assumptions of forecasting models to be fit later, such as stationarity. <br />
+<br />
+Missing values and putative anomalous values may present as a dramatic spike or drop not explained by a launch, seasonality effect, or holiday impact. They can arise from data collection errors or other unlikely-to-repeat causes such as an outage somewhere on the Internet. If unaccounted for, these data points can have an adverse impact on forecast accuracy by disrupting seasonality, holiday, or trend estimation. <br />
+<br />
+Level changes are different in that they represent a more permanent change in the level of the time series, in contrast to anomalies, where the time series returns to its previous level at trend after a brief period. They may result from launches, logging changes, or external events. At a minimum, adjusting for level changes results in a longer effective time series, and often makes trend estimation easier when the models are finally fit.<br />
+<br />
+We also permit transformations, such as a Box-Cox transformation. These can be automatic (the default setting for some models) or user-specified. These too can help with meeting model assumptions and with eventual forecast accuracy (final forecasts must be re-transformed to the original scale, of course).<br />
+<br />
+<h3>
+Effect Adjustments</h3>
+Typically we also adjust for several effects before fitting our models (an exception being seasonality in STL models which the models directly handled [2]). There are three major effects that we decouple and treat as subproblems: holiday effects, seasonality effects, and day-of-week effects. Whereas cleaning adjustments pre-process the data and are mostly targeted at one-off incidents, the other effects we attempt to adjust for are typically repeated patterns. <br />
+<br />
+For the effect adjustments we seek to: quantify the effect; remove the effect from the time series; forecast the time series without the effect; and re-apply the effect to that forecast post hoc. By contrast, for cleaning adjustments, we seek only to quantify, so as to remove. In addition, for the effect adjustments, we typically have business-knowledge or day-to-day-operations motivations for wanting to know the magnitude of the effect; this is not always the case for cleaning adjustments.<br />
+<br />
+Though not cleanly separated conceptually, holiday effects and seasonality effects are partially distinguished in that seasonality effects are defined as occurring during the same numerical week of the year, whereas holiday effects are specific to the day of the occurrence and adjacent "shoulder" days. That said, some holidays fall on the same calendar day but on a different day of the week each year, such as Independence Day falling on the 4th of July in the United States; some fall on the same day of the week and week of the year, but on a different calendar day, such as Thanksgiving Day falling on the fourth Thursday of November in the United States; and some vary with solar or lunar phenomena, such as <a href="https://www.timeanddate.com/calendar/determining-easter-date.html">the Easter Sunday holiday</a> celebrated in many countries around the world, which can fall anywhere from late March to late April. Due to these differences, some holiday effects and seasonality effects may not be identifiable. But note the use of "week" as the germane unit of time for seasonality and "day" for holidays: We estimate holiday effects from the adjusted daily data, but then roll up daily values to weekly totals before estimating seasonality effects. <br />
+<br />
+Estimating holiday and seasonality effects is more art than science due to the paucity of relevant historical data. For instance, to estimate the effect of Independence Day when it falls on a weekday versus a weekend, you can accrue observations only so fast! And the effect may evolve as, say, smart phones proliferate and people begin doing more Google Maps searches the evening of Independence Day. Our experience with holiday adjustments is that ad hoc methods which work well and are easily interpretable (if only for debugging) are preferred to elegant, comprehensive mathematical models which may not deliver nor are amenable to a postmortem when something (inevitably) goes wrong.<br />
+<br />
+The plots below illustrate a toy example of cleaning and effects adjustments in action. In the first plot, the raw weekly actuals (in red) are adjusted for a level change in September 2011 and an anomalous spike near October 2012. The cleaned weekly actuals (in green) are much smoother, but still show strong seasonal and holiday effects. As noted above, these are estimated, removed, the long-term trend is forecast, and then the seasonal and holiday effects are added back, producing the weekly forecast (in blue), as shown in the second plot.<br />
+<div>
+<br /></div>
+<div>
+<span id="docs-internal-guid-24f75ce0-7a8b-e38d-ca12-daa781a893b3"><span style="font-family: &quot;roboto&quot;; font-size: 11pt; vertical-align: baseline; white-space: pre-wrap;"><img alt="clean2.png" height="316" src="https://lh3.googleusercontent.com/3LtD75mI6oUE0DF45dpiHKXuC0EBfZ-seX6WyuZmp5NuNgvoyO5APIakOpN7JeG04k9TmHUcwC2sL7eDDwpPtZFHoo0H1kMIP7jlM1y2Bzw_9n5Gsp-n_JqWqXwMGJJKucYo1133" style="border: none; transform: rotate(0rad);" width="640" /></span></span></div>
+<div>
+<span id="docs-internal-guid-24f75ce0-7a8c-0d09-a254-b686abb5a363"><span style="font-family: &quot;roboto&quot;; font-size: 11pt; vertical-align: baseline; white-space: pre-wrap;"><img alt="forecast_2.png" height="320" src="https://lh6.googleusercontent.com/dvH-hGQf9feP95xgJV2DMM7svI-dWG5dhDN00oLnFnMSzGMkrIRoYytPFzBTxpZcNZpu41mevlEcBb-zZAYsdkbgRbW0MRg9Yg87zR72bvSXSF6ExUfpqlJ9_z_4qEoBPLDt6Bbj" style="border: none; transform: rotate(0rad);" width="640" /></span></span></div>
+<div>
+<br /></div>
+<div>
+The block diagram below shows where these cleaning and effects adjustments occur in the overall sequence of our forecast procedure:</div>
+<div>
+<br /></div>
+<div>
+<span id="docs-internal-guid-24f75ce0-7a8d-4867-28d1-1ba41a8c45e5"><span style="font-family: &quot;roboto&quot;; font-size: 11pt; vertical-align: baseline; white-space: pre-wrap;"><img alt="workflow.png" height="298" src="https://lh6.googleusercontent.com/Pgb1HVq9tvdKBsvNbfGGXnloDVy21YxGqhhcA00Rrl0ht4kMX0avZa0dBBqvn0iwuKvCr5rpjaCykCA_QIFxD5nZ5jYCLK19RVXYJkKnOxxNbxpM5ZnBAnyYE_5z43KZ-74ih9xM" style="border: none; transform: rotate(0rad);" width="640" /></span></span></div>
+<div>
+<br /></div>
+<br />
+<h3>
+Day-of-Week Effects</h3>
+By "day-of-week effects" we mean a contributor to the multiple seasonalities of daily data typically observed --- there is often one pattern with period seven and then one or more patterns with much larger periods corresponding to an annual cycle. There are often multiple calendars operating within any geography (to name just two possible calendars, Islamic and Gregorian calendars have different periods and often produce more than one annual cycle in certain locales). Again, we decompose our overall problem and treat this day-of-week effect as its own problem, on its own terms. That is, after the cleaning adjustments and after de-holidaying and de-seasoning the data, our initial output is a weekly forecast from rolled-up weekly totals. Thus for daily forecasts we are left with distributing weekly totals to daily values.<br />
+<div>
+<br />
+In our experience there are great dividends in treating the forecasting task, with its priority on growth trend estimation, separately from the day-of-week effect. By decomposing the overall problem, we can focus on methods that best solve the specific subproblem. For us, forecasting the trend from less noisy weekly data (again, and importantly, after cleaning and effect adjustments) results in better growth trend estimation compared to all-in-one methods. Methods that attempt to simultaneously estimate all relevant parameters in a unified framework may be vulnerable to omission, overfitting, confounding of effects, or something else going awry which subsequently impairs the method's ability to accurately estimate the growth trend.<br />
+<br />
+Likewise, by treating the day-of-week effect on its own we can deploy methods targeted to capturing its important aspects. For instance, in our data we often see secular trends as well as annual seasonality in the amplitude of the weekly cycle i.e., long-term changes to the proportions of the weekly total going to each day of the week and intra-year cycles in these proportions. A model general enough to accommodate such phenomena, and everything else, along with the data to identify all relevant parameters is for us too much to ask. Such a model risks conflating important aspects, notably the growth trend, with other less critical aspects. <br />
+<br />
+<h2>
+Disaggregation And Reconciliation</h2>
+Apart from the cleaning and effect adjustments, we may decompose our overall problem for other reasons.  Earlier we mentioned that we often had an independent interest in subseries of a parent time series, such as disaggregated by locale, device type, operating system, and combinations of these. Yet even when we do not have an independent interest in the subseries, forecasting the constituent parts (and indeed the entire <a href="https://www.otexts.org/fpp/9/4">hierarchy</a> that results from this type of disaggregation) and then reconciling all those forecasts in some manner to produce a final forecast of the parent time series is typically more accurate and robust than only forecasting the parent time series itself directly. This type of decomposition is quite literal --- we turn the task of forecasting one time series into that of forecasting many subseries and then reconciling them.<br />
+<br />
+Consider, for example, Global search queries. The first step, disaggregation, is quite natural. Search queries are logged with many attributes, and we typically use at least geography and device type. This aspect is easy. Next, forecasting the many subseries: Again, this is easy --- our forecast methodology is designed to be robust and automatic, so dramatically increasing the number of forecasts is not overly risky, either. Lastly, however, we need a method to take this collection of forecasts and reconcile them. This is more challenging.<br />
+<br />
+A simple solution is to forecast only at the bottom of the hierarchy and simply sum the forecasts to produce an overall parent forecast (and indeed forecasts all throughout the hierarchy.) This can be quite effective, as the important differences in growth profiles tend to arise across the geography-by-device-type boundaries, and forecasting them independently as a first step frees them.<br />
+<br />
+An obvious requisite property of reconciliation is arithmetic coherence across the hierarchy (which is implicit in the sum-up-from-the-bottom possibility in the previous paragraph), but more sophisticated reconciliation may induce statistical stability of the constituent forecasts and improve forecast accuracy across the hierarchy. While we use reconciliation methods tailored to our specific context, similar techniques have been implemented in the R package <a href="https://cran.r-project.org/web/packages/hts/index.html">hts</a>&nbsp;and written about in the literature.<br />
+<br />
+<h2>
+Ensemble Methods</h2>
+In keeping with our goals of robustness and automation, we turned to <a href="https://en.wikipedia.org/wiki/Ensemble_learning">ensemble methods</a> to forecast growth trends. In a time series context, ensemble methods generally fit multiple forecast models and derive a final forecast from the ensemble, perhaps via a weighted average, in an attempt to produce better forecast accuracy than might result from any individual model.<br />
+<br />
+Though more sophisticated, more mathematically alluring options are available for producing a final forecast from an ensemble, such as Bayesian Model Averaging, we opt for simple approaches. The confluence of our beliefs about the world, underlying theoretical results, and empirical performance compel us toward deriving a final forecast from the ensemble via a simple measure of central tendency (i.e., a mean or median) after some effort to remove outliers (which could be as simple as trimming or winsorizing.) Crucially, our approach does not rely on model performance on holdout samples. Details follow, but first an exploration of why such an embarrassingly simple and seemingly ad hoc approach might do so well in this setting.<br />
+<br /></div>
+<div>
+<h3>
+<span style="text-align: justify; vertical-align: baseline;">Why do simple methods perform well? </span></h3>
+When it comes to obtaining a final forecast from an ensemble, the following quote from Clemen [3] gives us the lay of a land not entirely welcoming to the mathematical statistician (emphasis added):<br />
+<br />
+<i>In many studies, the average of the individual forecasts has performed best or almost best. Statisticians interested in modeling forecasting systems may find this state of affairs <b><u>frustrating</u></b>. The questions that need to be answered are (1) why does the simple average work so well, and (2) under what conditions do other specific methods work better?</i><br />
+<br />
+Clemen then homes in on a contradiction inherent in the pursuit of sophisticated combination strategies (emphasis added):<br />
+<br />
+<i>From a conventional forecasting point of view, using a combination of forecasts amounts to an admission that the forecaster is unable to build a properly specified model. Trying ever more elaborate combining models <b><u>seems only to add insult of injury</u></b>, as the more complicated combinations do not generally perform all that well.</i><br />
+<br />
+With that context, consider an example inspired by Bates and Granger [4] and by [3]. Define two independent random variables  $X_1 \sim N(0, 1)$ and $X_2 \sim N(0, 2)$. For this simple vignette, we might regard $X_1$ and $X_2$ as errors from a measuring scale and note that $X_2$ is not as precise an instrument as $X_1$. Define</div>
+<div>
+$$<br />
+X_A = \frac{1}{2} X_1 + \frac{1}{2} X_2<br />
+$$From basic theory, $X_A \sim ~ N(0, \frac{3}{4})$. In other words, the simple, unweighted average of these particular $X_1$ and $X_2$ has smaller variance than $X_1$ even though we combined $X_1$ in equal measure with a less precise instrument, $X_2$. Now, if the variances of $X_1$ and&nbsp;$X_2$ were truly known to be $1$ and $2$, respectively, [4] would suggest we form $$<br />
+X_C = k X_1 + (1 - k) X_2<br />
+$$with $k = 2/3$ to minimize the variance of $X_C$. Thus $X_C \sim N(0, \frac{2}{3})$, which would be a superior instrument compared to $X_A$ with its variance of $\frac{3}{4}$.</div>
+<div>
+<br />
+However, consider another scenario. Suppose $X_1$ and $X_2$ are independent as before, but now suppose we only know that one of $X_1$ and $X_2$ is distributed as $N(0, 1)$ and the other as $N(0, 2)$, and we do not know which is which. Thus with equal chance we might have $X_1 \sim N(0, 1)$ and $X_2 \sim N(0, 2)$ or &nbsp;$X_1 \sim N(0, 2)$ and $X_2 \sim N(0, 1)$. Let&#8217;s again form $X_A$ and $X_C$ as before. $X_A$ is unchanged, regardless of how $X_1$ and $X_2$ are actually distributed, with $X_A \sim N(0, \frac{3}{4})$. If $X_1$ has the lower variance we once again have $X_C \sim N(0, \frac{2}{3})$. But if it is the case that $X_1 \sim N(0, 2)$ and $X_2 \sim N(0, 1)$, then the variance of $X_C$ would be $1$. This would be an inferior instrument compared to $X_A$ with its variance of $\frac{3}{4}$.<br />
+<br />
+Overall, when the weights are placed correctly $X_C$ is a slightly better instrument compared to $X_A$, but when the weights are placed incorrectly, $X_C$ is substantially inferior to $X_A$. In other words, there is an asymmetry of risk-reward when there exists the possibility of misspecifying the weights in $X_C$. Consequently, our confidence in departing from a simple, unweighted average of models in favor of preferential weighting should be shaped by how much we believe (or can demonstrate) that we can know the <b>future</b> precision of the instruments we deploy, as well as our risk tolerance.<br />
+<br />
+In our forecasting routine, we face a similar conundrum: Do we believe (or can we demonstrate) that the performance of the models in the ensemble on what is often a short holdout period is sufficiently predictive of relative future forecast accuracy of the ensemble&#8217;s models to warrant a departure from a simple average based on equal weights? Relatedly, what do we believe about the process that generates the data we see? <br />
+<br />
+In our view, the data we observe are not from a deterministic casino game with known probabilities or from physical laws embedded in the fabric of the Universe. Our data arise from a complex, human process; our data depend on "fads and fashions"; our data are infused with all the psychology and contradiction that is human existence; our data will eventually reflect -- and more likely, soon reflect! -- unknowable unknowns, future ideas and inventions yet to be developed, novel passions and preferences; in short, our data are far from stationary. It is worth quoting Makridakis and Hibon [5] extensively here, for we share their view:<br />
+<br />
+<i>The reason for the anomalies between the theory and practice of forecasting is that real-life time series are not stationary while many of them also contain structural changes as fads, and fashions can change established patterns and affect existing relationships. Moreover, the randomness in such series is high as competitive actions and reactions cannot be accurately predicted and as unforeseen events (e.g., extreme weather conditions) affecting the series involved can and do occur. Finally, many time series are influenced by strong cycles of varying duration and lengths whose turning points cannot be predicted, making them behave like a random walk.</i><br />
+<br />
+When the context in which the data arises changes, even a well-executed cross validation provides inadequate protection against overfitting. Instead of overfitting to the observed data in the usual sense, the risk is in overfitting to a context that has changed. In our view, this is fundamentally what makes our forecasting problem different from other prediction problems.<br />
+<br />
+For such reasons, we place strong prior belief on simple methods to convert the ensemble into a final forecast. The decision not to rely on performance in a holdout sample was no mere implementation convenience. Rather, it best reflects our beliefs about the state of the world -- &#8220;that real-life time series are not stationary&#8221; -- while also best conforming to our overarching goal of an automatic, robust forecasting routine that minimizes the chance of any catastrophically bad forecast.<br />
+<br />
+<h3>
+What&#8217;s in our ensemble?</h3>
+So, what models do we include in our ensemble? Pretty much any reasonable model we can get our hands on! Specific models include variants on many well-known approaches, such as the <a href="https://en.wikipedia.org/wiki/Bass_diffusion_model">Bass Diffusion Model</a>, the <a href="http://www.sciencedirect.com/science/article/pii/S0169207000000662">Theta Model</a>, <a href="https://en.wikipedia.org/wiki/Logistic_function">Logistic models</a>, <a href="https://cran.r-project.org/web/packages/bsts/index.html">bsts</a>, <a href="http://search.proquest.com/openview/cc5001e8a0978a6c029ae9a41af00f21/1">STL</a>, <a href="https://en.wikipedia.org/wiki/Exponential_smoothing#Triple_exponential_smoothing">Holt-Winters</a> and other <a href="https://en.wikipedia.org/wiki/Exponential_smoothing">Exponential Smoothing</a> models, Seasonal and other other <a href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average">ARIMA</a>-based models, Year-over-Year growth models, custom models, and more. Indeed, model diversity is a specific objective in creating our ensemble as it is essential to the success of model averaging. Our aspiration is that the models will produce something akin to a representative and not overly repetitive covering of the space of reasonable models. Further, by using well-known, well-vetted models, we attempt to create not merely a "<a href="https://en.wikipedia.org/wiki/The_Wisdom_of_Crowds">wisdom of crowds</a>" but a "wisdom of crowds of experts" scenario, in the spirit of Mannes [6]. <br />
+<br />
+As an implementation detail, though, we provide flags in our code so that an analyst could abandon the default settings and force any particular model to be in or out of the ensemble. This imbues the forecasting routine with two attractive properties. First, an analyst who wishes to add a new model to the ensemble can do so with little risk of degrading the performance of the ensemble as a whole. In fact, the expectation is that a good-faith addition of a new model will do no harm and may improve the overall performance of a final forecast from the ensemble. Such future-proofing is a virtue. Second, if an analyst is insistent on running only their own new model it will now sit in the middle of the entire production pipeline that will handle all the adjustments previously discussed. In other words, their new model will not be at a disadvantage in terms of the adjustments.</div>
+<div>
+<br />
+<h3>
+Selection and aggregation: from ensemble to final forecast</h3>
+For each week of the forecast horizon, we convert the models into a final forecast for that week. Though more sophisticated possibilities exist, in our initial approach we treat the collection of forecasts in the ensemble for a given week independently of other weeks. We then compute a simple trimmed mean of all the models passing some basic sanity checks. Since there is always the risk of an absurd forecast (e.g., going to zero or zooming off toward infinity) from any member of the ensemble, due to numerical problems or something else, we recommend an approach with some form of outlier removal. With such an approach, it is not uncommon for the final forecast to achieve predictive accuracy superior to any individual model. Over the many time series we forecast it is typically at or near the top -- delivering the type of robustness we desire.<br />
+<br />
+<h2>
+Prediction Intervals</h2>
+A statistical forecasting system should not lack uncertainty quantification. In addition, there is often interest in probabilistic estimates of tail events, i.e., how high could the forecast reasonably go? In our setup some of our previous choices, notably ensembling, break any notion of a closed-form prediction interval. Instead, we use simulation-based methods to produce prediction intervals. <br />
+<br />
+Our approach (illustrated below) uses historical k-week-out errors to drive the simulations. In a simple case the one-week-out errors suffice, and the simulation proceeds iteratively: forecast one week forward, perturb this forecast with a draw from the error distribution, and repeat 52 times for a one-year realization; then do this, say, $1000$ or $10,000$ times and take quantiles of the realizations as uncertainty estimates. The process is inherently parallel: Each realization can be produced independently by a different worker machine. Empirical coverage checks are recommended, of course, as is assessment of any autocorrelation in the k-week-out errors.<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><img height="230" src="https://lh3.googleusercontent.com/YqsFWE_Lgy750INBFz7hMRPCdyu2WraVWsYHb3F4ajadhkfo-AerrYg09SEDKyMs13XUAnPqlrAhd6FxdOKyHi0G49MVoX8TwBQMC7FNrv7uTHw-j593LBRheVbD7j9TB708vptb" style="margin-left: auto; margin-right: auto;" width="640" /></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Simulating prediction errors</td></tr>
+</tbody></table>
+<br />
+While producing prediction intervals is computationally intensive, the Google environment features abundant, fast parallel computing. This shaped the evolution of our approach, making possible and selecting out as advantageous such a computationally intensive technique. Please see [7]&nbsp;for additional details.</div>
+<div>
+<br />
+<h2>
+Example: Turkish Electricity data</h2>
+To better illuminate our forecasting routine, we provide an example based on Turkish electricity data presented in De Livera [8] and available as a .csv file <a href="http://robjhyndman.com/data/turkey_elec.csv">here</a>. Below are daily and weekly totals of electricity demand (in MV) in Turkey from the start of 2000 through the end of 2008. As noted by [8], these data exhibit complex, multiple, and non-nested seasonal patterns owing to two annual seasonalities induced by the Islamic and Gregorian calendars as well as a weekly cycle that differs during the year. There is also apparent long-term trend and holiday impacts, and in principle these and the aforementioned seasonal patterns could be changing over time.<br />
+<br />
+<img height="426" src="https://lh6.googleusercontent.com/Gr4xBQ6AgTOReou_izfUl1zeNuhcyl90KbCXUQcztSA7lKavk5Ucz9DnDuQ6o56xpQBHqFVlQlgqMDcKzfJQAZUciyDjn-ww_zV8kGVkDsc4TDo2m7X5DRSpDakmsKBqixeiTN2C" width="640" /><br />
+<br />
+<img height="426" src="https://lh6.googleusercontent.com/OSwjPVzOpl3Q6eKQLkLYFca1kaYe90CfdB0E8WLtDANpXTQUH3oq3hP6jYcC6YsRlK8LyhbZHNIexwZfsI61v5FQfy9GP4-JYN8wNaV3ikcB0OaJ-B9SPgZHSBDx4Chyv6X5FCA1" width="640" /><br />
+<br />
+We forecast this time series from the middle of 2006 through the end of the data, for a 30-month forecast horizon. Our procedure first cleans the daily actuals as described above and then estimates holiday effects (based on a human-curated list). The two plots below show daily and weekly cleaned and de-holidayed values. After that, we conclude our forecast preparation by switching to weekly totals and accounting for seasonality effects (quantified at the bottom of this post). <br />
+<br />
+<img height="424" src="https://lh3.googleusercontent.com/kp0i9z7R9PazY2KUFC8Ar_4iE4SFoFEiyv2l80Yp2q6QpkspYjOPusLWYqyALq_X7GUlyuJqsw-V6H3Dohay6leecm96W_HiHWj1gXA2iNRXhIS35lxqxBYeTZqxk1gglGq-thQg" width="640" /></div>
+<div>
+<br />
+<img height="418" src="https://lh3.googleusercontent.com/kq1k95XyrdMu5f1RfbYTaKGgmkX4SPJqdyXWrbIKWGjr_BfqP7MCDmucUuE9UnkplBs-o5PZIZD8U73E2S_Z2xlrWjz3JX5CaGleYV9GO9fC_aKXnmAr9P3lqw_uPCNYBA8sZDKf" width="640" /><br />
+<br />
+We then fit the models in our ensemble to the cleaned, de-holidayed, de-seasoned weekly time series. Once the individual models in our ensemble are fit to the time series, we can display the resulting forecasts from every model in the ensemble in the spaghetti-like plot below. The thicker, red line is the final forecast based on our selection and aggregation method while the other lines are the forecasts from individual models in the ensemble. The hope is that the diverse array of models will 'bracket the truth', in the sense described by Larrick and Soll (2006), leading to a better and more robust final forecast.<br />
+<br />
+<br />
+<img height="426" src="https://lh6.googleusercontent.com/st2LEgT_jVD8y1Fw16OOWSCVnhSftVqNM5kSOLPjwOlX2J4CKcn_I2hFTN6PsfkfS4UBllJClsxZ47rXkCaOItmAh8-g2j0kCpBxzcPB55gOKIvCsadQK3vxMpn8GlM3bXHDvtRp" width="640" /><br />
+<br />
+After converting our ensemble to a final forecast for each week of the forecast horizon, we re-season the data, distribute the weekly totals to the constituent days of the week for every week, and re-holiday the resulting daily values. From these we output final daily and weekly forecasts, as depicted below. <br />
+<br />
+The plot below shows the entire time series and weekly forecasts for a 30-month forecast horizon starting in mid-2006.<br />
+<br />
+<img height="426" src="https://lh6.googleusercontent.com/a4ntrWNn74MOuh_KIVAx5tIXGSZTlIbxLi1QrcXdq2OUtSBcQP-SdVuAmrxbu9W5jkWm6FTyI4T7cEQwO_ykLQFuIXhq-dv88N5z0JNb7pwoqPRh0HMYPOy7IXKNOp2A0LrNg2ov" width="640" /></div>
+<div>
+<br />
+This next plot, also weekly, zooms in to focus on only the forecast period. This plot reveals reasonable forecast performance until about September 2008, ostensibly due to&nbsp;<a href="https://fred.stlouisfed.org/series/NAEXKP01TRQ652S">the impact in Turkey</a>&nbsp;of the global&nbsp;<a href="https://en.wikipedia.org/wiki/Great_Recession">Great Recession of 2008</a>.<br />
+<br />
+<img height="426" src="https://lh5.googleusercontent.com/7XWe3ZV-K1g4_zESZKKLQi23hi2cPj7s1HgGy_rg7Cn4p6LHcRQjAHhM8bJPDwrIoqJV5tlVdbNFjfZaw4LBC_jzbHuxTlIvaDYnKSOUE9vES3kWjWFKUReZlFOQfqFgFDlFLUXz" width="640" /></div>
+<div>
+<br />
+Now we show the daily forecast and observed data for a three-month period in mid-2008, covering a period 21 to 24 months into the forecast horizon.<br />
+<br />
+<img height="426" src="https://lh3.googleusercontent.com/0dOPM4wOD1ZOo0GYBihr2nWBTBwEKf_LVfd0t2THzeMZXlKygRQWb3tvtH5jV-LCtwxcACFObH2BHtBpmcLOsc3q8UnakZX2UzsyQMxKXScLez_Er68rnbBP31CbWUPkXhkgJYxC" width="640" /><br />
+<br />
+Before the onset of the Great Recession&#8217;s impacts, the interquartile range of the percentage errors for the weekly forecast was 2.7%, from -1.2% to 1.5%. Corresponding numbers for the daily forecast were 3.2%, from -1.6% to 1.6%. The 10th and 90th percentiles were -3.5% and 2.8% for the weekly forecast, and -3.9% and 3.3% for the daily forecast. The median of the weekly percentage errors was 0.1% and was the same (0.1%) for the daily percentage errors. Absolute Percentage Errors told a similar story. Overall, the&nbsp;<a href="https://en.wikipedia.org/wiki/Mean_absolute_percentage_error">Mean Absolute Percentage Errors</a>&nbsp;were 1.9% for the weekly forecast and 2.3% for the daily forecast.<br />
+<br />
+Beyond the forecasts, our routine produces ancillary information with business relevance. For instance, immediately below we show the estimated holiday impacts for Eid al-Adha and Eid al-Fitr over a span of about 14 days surrounding the particular holiday (anchored about a 'zero' day on the horizontal axis.) Farther below, we show annual estimated seasonality (weekly resolution), past and forecast. Both estimated holiday impacts and seasonal adjustment factors are expressed on relative scales. While important to business understanding in their own right, it is worth saying one last time that doing a good job estimating seasonal and holiday effects reduces the burden on the models in the ensemble, helping them to better identify long-term growth trends. <br />
+<br />
+<br />
+<img height="158" src="https://lh5.googleusercontent.com/5Mes4_hqbvXHAmfxQdNHY3SoV4cUUqKolqlOUF5SJJQb4He1W8WrK87q61ANNhIhorffQCHdrMPJ2nldTJ_Jmb0kqdSIBtJspQu4HSnV-uO-1l9OaIB6YWplnAQo6v4gGCosXeuN" width="640" /><br />
+<br />
+<br />
+<br />
+<br />
+<img height="384" src="https://lh5.googleusercontent.com/G8GKQbauH1XAee374ogqQf8sXnpT1Fr-L9I1I9AWoCwX1zP52g5lfws4hRzk37wfk0zX1-pOBxjZIiQToHfOqngJ--Q-v7VBycbTy0DqDQYcNEeCJQle736PA5a5qS42EbZOrTJu" width="640" /><br />
+<br />
+<br />
+<h2>
+Conclusion</h2>
+</div>
+<div>
+To summarize, key to our own attempt at a robust, automatic forecasting methodology was to divide and (hopefully) conquer where possible as well as to implement ensemble methods in accord with our risk tolerance and our beliefs about the data generating mechanism. But as anyone involved real-world forecasting knows, this is a complex space. We are eager to hear from practicing data scientists about their forecasting challenges --- how they might be similar to or differ from our problem. We hope this blog post is the start of such a dialogue.</div>
+<div>
+<span id="docs-internal-guid-24f75ce0-7abf-827b-0ce4-0df55867e529"></span><br />
+<span id="docs-internal-guid-24f75ce0-7abf-827b-0ce4-0df55867e529">
+</span></div>
+<div>
+<h3>
+References</h3>
+[1] Hyndman, Rob J., and George Athanasopoulos. Forecasting: principles and practice. OTexts, 2014. <a href="http://otexts.org/fpp/">http://otexts.org/fpp/</a>. Accessed on 20 March 2017. Specifically, see "1.4 Forecasting data and methods".<br />
+<br />
+[2] Cleveland, Robert B., William S. Cleveland, and Irma Terpenning. "STL: A seasonal-trend decomposition procedure based on loess." Journal of Official Statistics 6.1 (1990): 3.<br />
+<br />
+[3] Clemen, Robert T. "Combining forecasts: A review and annotated bibliography." International journal of forecasting 5.4 (1989): 559-583<br />
+<br />
+[4] Bates, John M., and Clive WJ Granger. "The combination of forecasts." Journal of the Operational Research Society 20.4 (1969): 451-468.<br />
+<br />
+[5] Makridakis, Spyros, and Michele Hibon. "The M3-Competition: results, conclusions and implications." International journal of forecasting 16.4 (2000): 451-476.<br />
+<br />
+[6] Mannes, Albert E., Jack B. Soll, and Richard P. Larrick. "The wisdom of select crowds." Journal of personality and social psychology 107.2 (2014): 276.<br />
+<br />
+[7] Murray Stokely, Farzan Rohani, and Eric Tassone. &#8220;<a href="https://research.google.com/pubs/pub37483.html">Large-Scale Parallel Statistical Forecasting Computations in R</a>&#8221;, Google Research report.</div>
+<div>
+<br />
+[8] De Livera, Alysha M., Rob J. Hyndman, and Ralph D. Snyder. "Forecasting time series with complex seasonal patterns using exponential smoothing." Journal of the American Statistical Association 106.496 (2011): 1513-1527.<br /><br />[9] Larrick, Richard P., and Jack B. Soll. "Intuitions about combining opinions: Misappreciation of the averaging principle." Management science 52.1 (2006): 111-127. APA<br />
+<div>
+<span id="docs-internal-guid-24f75ce0-7a80-671c-7149-d5778c8fc95f"></span><br />
+<div>
+<span id="docs-internal-guid-24f75ce0-7a80-671c-7149-d5778c8fc95f"><span style="font-family: &quot;roboto&quot;; font-size: 10pt; vertical-align: baseline; white-space: pre-wrap;"><br /></span></span></div>
+<span id="docs-internal-guid-24f75ce0-7a80-671c-7149-d5778c8fc95f">
+</span></div>
+</div>
+</div>
+<div class='post-bottom'>
+<div class='post-footer float-container'>
+<div class='post-footer-line post-footer-line-1'>
+</div>
+</div>
+<div class='post-share-buttons post-share-buttons-bottom invisible'>
+<div class='byline post-share-buttons goog-inline-block'>
+<div aria-owns='sharing-popup-Blog1-byline-4732004365167765860' class='sharing' data-title='Our quest for robust time series forecasting at scale'>
+<button aria-controls='sharing-popup-Blog1-byline-4732004365167765860' aria-label='Share' class='sharing-button touch-icon-button' id='sharing-button-Blog1-byline-4732004365167765860' role='button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_share_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='share-buttons-container'>
+<ul aria-hidden='true' aria-label='Share' class='share-buttons hidden' id='sharing-popup-Blog1-byline-4732004365167765860' role='menu'>
+<li>
+<span aria-label='Get link' class='sharing-platform-button sharing-element-link' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Get link'>
+<svg class='svg-icon-24 touch-icon sharing-link'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_link_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Get link</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Facebook' class='sharing-platform-button sharing-element-facebook' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=facebook' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Share to Facebook'>
+<svg class='svg-icon-24 touch-icon sharing-facebook'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_facebook_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Facebook</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Twitter' class='sharing-platform-button sharing-element-twitter' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=twitter' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Share to Twitter'>
+<svg class='svg-icon-24 touch-icon sharing-twitter'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_twitter_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Twitter</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Pinterest' class='sharing-platform-button sharing-element-pinterest' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=pinterest' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Share to Pinterest'>
+<svg class='svg-icon-24 touch-icon sharing-pinterest'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_pinterest_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Pinterest</span>
+</span>
+</li>
+<li>
+<span aria-label='Email' class='sharing-platform-button sharing-element-email' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=4732004365167765860&target=email' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Email'>
+<svg class='svg-icon-24 touch-icon sharing-email'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_email_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Email</span>
+</span>
+</li>
+<li aria-hidden='true' class='hidden'>
+<span aria-label='Share to other apps' class='sharing-platform-button sharing-element-other' data-url='http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html' role='menuitem' tabindex='-1' title='Share to other apps'>
+<svg class='svg-icon-24 touch-icon sharing-sharingOther'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_more_horiz_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Other Apps</span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class='comments threaded' data-embed='true' data-num-comments='18' id='comments'>
+<a name='comments'></a>
+<h3 class='title'>Comments</h3>
+<div class='comments-content'>
+<script async='async' src='' type='text/javascript'></script>
+<script type='text/javascript'>(function(){var g=function(h,E,k){var l=null;h&&0<h.length&&(l=parseInt(h[h.length-1].timestamp,10)+1);var c=null,t=null,x=void 0,y=null,u=(window.location.hash||"#").substring(1),z,A;/^comment-form_/.test(u)?z=u.substring(13):/^c[0-9]+$/.test(u)&&(A=u.substring(1));var F={id:k.postId,data:h,loadNext:function(e){if(l){var f=k.feed+"?alt=json&v=2&orderby=published&reverse=false&max-results=50";l&&(f+="&published-min="+(new Date(l)).toISOString());window.bloggercomments=function(v){l=null;var p=[];if(v&&v.feed&&
+v.feed.entry)for(var B=0,a;a=v.feed.entry[B];B++){var d={},b=/blog-(\d+).post-(\d+)/.exec(a.id.$t);d.id=b?b[2]:null;b=d;a:{var q=void 0;var C=a&&(a.content&&a.content.$t||a.summary&&a.summary.$t)||"";if(a&&a.gd$extendedProperty)for(q in a.gd$extendedProperty)if("blogger.contentRemoved"==a.gd$extendedProperty[q].name){q='<span class="deleted-comment">'+C+"</span>";break a}q=C}b.body=q;d.timestamp=Date.parse(a.published.$t)+"";a.author&&a.author.constructor===Array&&(b=a.author[0])&&(d.author={name:b.name?
+b.name.$t:void 0,profileUrl:b.uri?b.uri.$t:void 0,avatarUrl:b.gd$image?b.gd$image.src:void 0});a.link&&(a.link[2]&&(d.link=d.permalink=a.link[2].href),a.link[3]&&(b=/.*comments\/default\/(\d+)\?.*/.exec(a.link[3].href))&&b[1]&&(d.parentId=b[1]));d.deleteclass="item-control blog-admin";if(a.gd$extendedProperty)for(var w in a.gd$extendedProperty)"blogger.itemClass"==a.gd$extendedProperty[w].name?d.deleteclass+=" "+a.gd$extendedProperty[w].value:"blogger.displayTime"==a.gd$extendedProperty[w].name&&
+(d.displayTime=a.gd$extendedProperty[w].value);p.push(d)}l=50>p.length?null:parseInt(p[p.length-1].timestamp,10)+1;e(p);window.bloggercomments=null};var m=document.createElement("script");m.type="text/javascript";m.src=f+"&callback=bloggercomments";document.getElementsByTagName("head")[0].appendChild(m)}},hasMore:function(){return!!l},getMeta:function(e,f){return"iswriter"==e?f.author&&f.author.name==k.authorName&&f.author.profileUrl==k.authorUrl?"true":"":"deletelink"==e?k.baseUri+"/delete-comment.g?blogID="+
+k.blogId+"&postID="+f.id:"deleteclass"==e?f.deleteclass:""},onReply:function(e,f){null==c&&(c=document.getElementById("comment-editor"),null!=c&&(y=c.style.height,c.style.display="block",t=c.src.split("#")));if(c&&e&&e!==x){document.getElementById(f).insertBefore(c,null);var m=t[0]+(e?"&parentID="+e:"");t[1]&&(m=m+"#"+t[1]);c.src=m;c.style.height=y||c.style.height;x=e;c.removeAttribute("data-resized");c.dispatchEvent(new Event("iframeMoved"))}},rendered:!0,initComment:A,initReplyThread:z,config:{maxDepth:k.maxThreadDepth},
+messages:E};h=function(){window.goog&&window.goog.comments&&window.goog.comments.render(document.getElementById("comment-holder"),F)};window.goog&&window.goog.comments?h():(window.goog=window.goog||{},window.goog.comments=window.goog.comments||{},window.goog.comments.loadQueue=window.goog.comments.loadQueue||[],window.goog.comments.loadQueue.push(h))},n=["blogger","widgets","blog","initThreadedComments"],r=this||self;n[0]in r||"undefined"==typeof r.execScript||r.execScript("var "+n[0]);
+for(var D;n.length&&(D=n.shift());)n.length||void 0===g?r=r[D]&&r[D]!==Object.prototype[D]?r[D]:r[D]={}:r[D]=g;}).call(this);
+</script>
+<script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        null,
+        null,
+        {});
+  </script>
+<div id='comment-holder'>
+<div class="comment-thread toplevel-thread"><ol id="top-ra"><li class="comment" id="c8699692728125141319"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13792798811260586947" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1492619345843#c8699692728125141319">April 19, 2017 at 9:29 AM</a></span></div><p class="comment-content">Hi, great post. <br><br>As a note would be interesting to see some results metrics from individual forecasting methods vs the ensamble one. <br><br>Cheers, </p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8699692728125141319">Reply</a><span class="item-control blog-admin blog-admin pid-939940170"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=8699692728125141319">Delete</a></span></span></div><div class="comment-replies"><div id="c8699692728125141319-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8699692728125141319-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c4968027814523084844"><div class="avatar-image-container"><img src="//lh6.googleusercontent.com/-qEYl3sFHbqo/AAAAAAAAAAI/AAAAAAAAOrk/RXKalbA8zkM/s35-c/photo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02810099365853510619" rel="nofollow">Eric Tassone</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1494010336534#c4968027814523084844">May 5, 2017 at 11:52 AM</a></span></div><p class="comment-content">Hi!<br> <br>Thank you for your comment. While we could show such results for this one example time series (in which the final model derived from the ensemble performed consistently among the top handful of models over the forecast horizon, if memory serves), we believe the issue you raise is even more interesting and more in accord with the forecasting challenge we faced if considered over a large number of time series (100s or 1000s). We hope to post an update or perhaps a new blog post showing this type of performance, i.e., over a large number of time series, some time soon.<br> <br>Cheers,<br>Eric</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-402671930"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=4968027814523084844">Delete</a></span></span></div><div class="comment-replies"><div id="c4968027814523084844-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4968027814523084844-ra" class="thread-chrome thread-expanded"><div></div><div id="c4968027814523084844-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4968027814523084844">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4968027814523084844-ce"></div></li></div><div id="c8699692728125141319-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8699692728125141319">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8699692728125141319-ce"></div></li><li class="comment" id="c1791402319218255901"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/12035363300119548009" rel="nofollow">Alek</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1492639459813#c1791402319218255901">April 19, 2017 at 3:04 PM</a></span></div><p class="comment-content">Hello, Thanks for the great write-up. It would be great if at least part of this work made it to the open-source community!</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="1791402319218255901">Reply</a><span class="item-control blog-admin blog-admin pid-1539905028"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=1791402319218255901">Delete</a></span></span></div><div class="comment-replies"><div id="c1791402319218255901-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c1791402319218255901-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c6917197427383091435"><div class="avatar-image-container"><img src="//lh6.googleusercontent.com/-qEYl3sFHbqo/AAAAAAAAAAI/AAAAAAAAOrk/RXKalbA8zkM/s35-c/photo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02810099365853510619" rel="nofollow">Eric Tassone</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1494010371929#c6917197427383091435">May 5, 2017 at 11:52 AM</a></span></div><p class="comment-content">Hi Alek,<br> <br>Thank you for your comment and suggestion. If there is any update on this, we will reply again to this comment.<br> <br>Cheers,<br>Eric</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-402671930"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=6917197427383091435">Delete</a></span></span></div><div class="comment-replies"><div id="c6917197427383091435-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6917197427383091435-ra" class="thread-chrome thread-expanded"><div></div><div id="c6917197427383091435-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6917197427383091435">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6917197427383091435-ce"></div></li></div><div id="c1791402319218255901-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="1791402319218255901">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c1791402319218255901-ce"></div></li><li class="comment" id="c3951783349233735654"><div class="avatar-image-container"><img src="//2.bp.blogspot.com/-CCT4RXP_ccc/UtSH3yQYwII/AAAAAAAAAqo/tjWRb9X59ZI/s35/Scan-130911-0003.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/15043006432922695837" rel="nofollow">Matt Sandy</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1492655972625#c3951783349233735654">April 19, 2017 at 7:39 PM</a></span></div><p class="comment-content">That is a heck of a lot of time to hand draw time series. I always love to see ggplot graphs in articles. </p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="3951783349233735654">Reply</a><span class="item-control blog-admin blog-admin pid-1658912787"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=3951783349233735654">Delete</a></span></span></div><div class="comment-replies"><div id="c3951783349233735654-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c3951783349233735654-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c5791585587791900120"><div class="avatar-image-container"><img src="//lh6.googleusercontent.com/-qEYl3sFHbqo/AAAAAAAAAAI/AAAAAAAAOrk/RXKalbA8zkM/s35-c/photo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02810099365853510619" rel="nofollow">Eric Tassone</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1494010392382#c5791585587791900120">May 5, 2017 at 11:53 AM</a></span></div><p class="comment-content">Hi Matt,<br> <br>Yes, aren&#39;t the hand-drawn time series impressive? Thank you for your comments!<br> <br>Cheers,<br>Eric</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-402671930"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=5791585587791900120">Delete</a></span></span></div><div class="comment-replies"><div id="c5791585587791900120-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c5791585587791900120-ra" class="thread-chrome thread-expanded"><div></div><div id="c5791585587791900120-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5791585587791900120">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5791585587791900120-ce"></div></li></div><div id="c3951783349233735654-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3951783349233735654">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c3951783349233735654-ce"></div></li><li class="comment" id="c4296504276615808831"><div class="avatar-image-container"><img src="//2.bp.blogspot.com/-jkuUOPm_G1U/Tz6tt7eSNrI/AAAAAAAAAIM/EZhYZtroNQk/s35/IMG_2957-1.JPG" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/17213916262825859428" rel="nofollow">Ojaswini</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1492770608293#c4296504276615808831">April 21, 2017 at 3:30 AM</a></span></div><p class="comment-content">Hi, <br><br>Can you please provide some insight into how to get the fitted values in the bsts method? Thanks.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4296504276615808831">Reply</a><span class="item-control blog-admin blog-admin pid-2045564275"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=4296504276615808831">Delete</a></span></span></div><div class="comment-replies"><div id="c4296504276615808831-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4296504276615808831-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c5594986120368327187"><div class="avatar-image-container"><img src="//lh6.googleusercontent.com/-qEYl3sFHbqo/AAAAAAAAAAI/AAAAAAAAOrk/RXKalbA8zkM/s35-c/photo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02810099365853510619" rel="nofollow">Eric Tassone</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1494276453817#c5594986120368327187">May 8, 2017 at 1:47 PM</a></span></div><p class="comment-content">Hi Ojaswini,<br> <br>Thank you for your comment. Please check out the links below, which may shed light on your question. For link [3], please note that bsts offers a predict method (predict.bsts). Also, please stay tuned to this space, as bsts may be the subject of a future blog post.<br> <br>Cheers,<br>Eric<br> <br>[1] https://sites.google.com/site/stevethebayesian/googlepageforstevenlscott/course-and-seminar-materials/bsts-bayesian-structural-time-series<br> <br>[2] http://people.ischool.berkeley.edu/~hal/Papers/2013/pred-present-with-bsts.pdf <br> <br>[3]  https://cran.r-project.org/web/packages/bsts/index.html </p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-402671930"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=5594986120368327187">Delete</a></span></span></div><div class="comment-replies"><div id="c5594986120368327187-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c5594986120368327187-ra" class="thread-chrome thread-expanded"><div></div><div id="c5594986120368327187-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5594986120368327187">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5594986120368327187-ce"></div></li></div><div id="c4296504276615808831-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4296504276615808831">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4296504276615808831-ce"></div></li><li class="comment" id="c3512690776070007662"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/15027628302594535614" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1492791745455#c3512690776070007662">April 21, 2017 at 9:22 AM</a></span></div><p class="comment-content">I believe the approach is outstanding, especially the way the team rationalized using an ensemble of methods, dis-aggregating, and re-conciliating to obtain forecasts. The application of seasonal effects to characterize trends in weeks, years, and holidays was eye-opening. One thing I would like to see in the model is the inclusion of an explanatory model with explanatory variables (perhaps as part of the ensemble). The Turkish Electricity data seems reasonably unaffected by any global or local events until the recession in 2008, but I would not believe that the impacts of global and local events will not be outliers in the near future or present, given how interdependent the world is becoming.  with forecasts. The average was taken from the ensemble, but do you think it would improve results to take a weighted average of the ensemble based on the accuracy of the technique? These weights could also be seasonal.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="3512690776070007662">Reply</a><span class="item-control blog-admin blog-admin pid-856471444"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=3512690776070007662">Delete</a></span></span></div><div class="comment-replies"><div id="c3512690776070007662-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c3512690776070007662-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c4245228382245802506"><div class="avatar-image-container"><img src="//lh6.googleusercontent.com/-qEYl3sFHbqo/AAAAAAAAAAI/AAAAAAAAOrk/RXKalbA8zkM/s35-c/photo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02810099365853510619" rel="nofollow">Eric Tassone</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1494010439320#c4245228382245802506">May 5, 2017 at 11:53 AM</a></span></div><p class="comment-content">Hi,<br> <br>Thank you for your comment. <br> <br>In principle there is nothing forbidding the use of models with explanatory variable in the ensemble. The passage where we quoted Rob Hyndman describes some practical challenges to doing so, but there may be cases where this will be beneficial and not unduly burdensome.<br> <br>As for your other point, and to misquote Tom Petty and the Heartbreakers, the weighting is the hardest part [ https://youtu.be/uMyCa35_mOg ] -- at least for us in the context in which our forecasting challenge arises. There may be contexts where weighting results in improved forecast performance, to be sure. This could happen the way you suggest (seasonal), or it could be that time series with certain characteristics are better forecast by certain types of models, or it could be that different models do a better job at different points in the forecast horizon, or something else. However, for our forecasting challenge, given the number and diversity of time series we faced, our risk-reward preferences, and our beliefs about the way our data arose, we preferred the approach described in the blog post.<br> <br>Cheers,<br>Eric</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-402671930"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=4245228382245802506">Delete</a></span></span></div><div class="comment-replies"><div id="c4245228382245802506-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4245228382245802506-ra" class="thread-chrome thread-expanded"><div></div><div id="c4245228382245802506-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4245228382245802506">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4245228382245802506-ce"></div></li></div><div id="c3512690776070007662-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3512690776070007662">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c3512690776070007662-ce"></div></li><li class="comment" id="c6968193884966731713"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13792798811260586947" rel="nofollow">Jose Arrieta</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1492803831500#c6968193884966731713">April 21, 2017 at 12:43 PM</a></span></div><p class="comment-content">Hi, <br><br>Could you elaborate a little more in the code or methods used for cleaning?. <br><br>Thank you!<br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6968193884966731713">Reply</a><span class="item-control blog-admin blog-admin pid-939940170"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=6968193884966731713">Delete</a></span></span></div><div class="comment-replies"><div id="c6968193884966731713-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6968193884966731713-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c4103903065046874928"><div class="avatar-image-container"><img src="//lh6.googleusercontent.com/-qEYl3sFHbqo/AAAAAAAAAAI/AAAAAAAAOrk/RXKalbA8zkM/s35-c/photo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/02810099365853510619" rel="nofollow">Eric Tassone</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1494010483023#c4103903065046874928">May 5, 2017 at 11:54 AM</a></span></div><p class="comment-content">Hi Jose,<br> <br>Thank you for your comment. As with a previous comment, this too could form the basis of a substantial update to this post or provide the basis of a new blog post. We will update here if and when either of those are in the works.<br> <br>Cheers,<br>Eric</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-402671930"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=4103903065046874928">Delete</a></span></span></div><div class="comment-replies"><div id="c4103903065046874928-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4103903065046874928-ra" class="thread-chrome thread-expanded"><div></div><div id="c4103903065046874928-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4103903065046874928">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4103903065046874928-ce"></div></li></div><div id="c6968193884966731713-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6968193884966731713">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6968193884966731713-ce"></div></li><li class="comment" id="c8433833863321759886"><div class="avatar-image-container"><img src="//img1.blogblog.com/img/blank.gif" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user">Anonymous</cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1495760370060#c8433833863321759886">May 25, 2017 at 5:59 PM</a></span></div><p class="comment-content">Was reading through this recent google data science blog on forecasting time series, and they have a pretty extended discussion as to why they favor aggregating forecasts via the median or average as opposed to more sophisticated techniques (using cross validation to pick the weights, bayesian model averaging etc). They make some good points about non-stationarity / non-realizability as to why cross validation doesn&#39;t work, and they present a toy example where an ensemble predictor can do much worse <br>than a single predictor if the aggregation weights are slightly  off. What I don&#39;t get about this article is why wouldn&#39;t you use exponential weights to aggregate forecasts? Then the toy example falls apart because at least asymptotically you have vanishing regret O(log(k)/n^1.2) I believe to the optimal forecaster. Maybe I&#39;m missing something obvious?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="8433833863321759886">Reply</a><span class="item-control blog-admin blog-admin pid-1827193114"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=8433833863321759886">Delete</a></span></span></div><div class="comment-replies"><div id="c8433833863321759886-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8433833863321759886-ra" class="thread-chrome thread-expanded"><div></div><div id="c8433833863321759886-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8433833863321759886">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8433833863321759886-ce"></div></li><li class="comment" id="c6679443753673176970"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/16371629875401972519" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1495888527739#c6679443753673176970">May 27, 2017 at 5:35 AM</a></span></div><p class="comment-content">Lovely post, I especially liked how you&#39;ve introduced the framework and I agree explanatory variables very seldom help. I&#39;ve personally used ensemble models with decent success on similar short-term and long-term horizons.<br><br>However, I&#39;d love to know your thoughts about using RNNs/LSTMs for time series forecasting since they&#39;re good at capturing long-term dependencies. Given the popularity of TensorFlow at Google, did your team try to use LSTMs for building models? What has been your experience? Do you think its possible to include them in such ensembles?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6679443753673176970">Reply</a><span class="item-control blog-admin blog-admin pid-1349947828"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=6679443753673176970">Delete</a></span></span></div><div class="comment-replies"><div id="c6679443753673176970-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6679443753673176970-ra" class="thread-chrome thread-expanded"><div></div><div id="c6679443753673176970-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6679443753673176970">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6679443753673176970-ce"></div></li><li class="comment" id="c3667768069386726966"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/15961686686040083150" rel="nofollow">Ganesh Krishnan</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1496685000134#c3667768069386726966">June 5, 2017 at 10:50 AM</a></span></div><p class="comment-content">Great post! Thanks!<br><br>What approach do you use to distribute the weekly forecasts to the constituent daily forecasts? Do you use fixed proportions or forecast those proportions seperately?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="3667768069386726966">Reply</a><span class="item-control blog-admin blog-admin pid-431935895"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=3667768069386726966">Delete</a></span></span></div><div class="comment-replies"><div id="c3667768069386726966-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c3667768069386726966-ra" class="thread-chrome thread-expanded"><div></div><div id="c3667768069386726966-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3667768069386726966">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c3667768069386726966-ce"></div></li><li class="comment" id="c7718551302860479471"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/06050813470547139393" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1498236513743#c7718551302860479471">June 23, 2017 at 9:48 AM</a></span></div><p class="comment-content">Awesome post. I&#39;ve dealt with a lot of these issues in my line of work as well. For setting out-of-sample forecast accuracy expectations, have you tried using a form of k-fold cross validation where h is your forecast horizon, you take h-size test sets starting with your most recent data working backwards until you reach a minimum training set for model estimation? <br><br>In regards to combining the ensemble members, you could also take the approach of the opera package and update the weighting of each ensemble member over time instead of using a robust central tendency measure. <br><br>If this is robust and automatic, how is it determined if a model is reasonable enough to be included in the ensemble without human intervention? I&#39;ve found this to be vitally important, though obviously less important the higher the ensemble population gets. <br><br>Lastly, do you ever do any residual diagnostics of the ensemble? Could be interesting to ensure there aren&#39;t autocorrelations you&#39;re not taking into account. </p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="7718551302860479471">Reply</a><span class="item-control blog-admin blog-admin pid-1905867975"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=7718551302860479471">Delete</a></span></span></div><div class="comment-replies"><div id="c7718551302860479471-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c7718551302860479471-ra" class="thread-chrome thread-expanded"><div></div><div id="c7718551302860479471-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="7718551302860479471">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c7718551302860479471-ce"></div></li><li class="comment" id="c999655909739203997"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/14522344992908406919" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1515897386213#c999655909739203997">January 13, 2018 at 6:36 PM</a></span></div><p class="comment-content">Thanks for sharing this approach to forecasting.   I frequently work with daily time series and after reading this post tried removing day of week effects, aggregating to weekly data and forecasting weekly using the bsts package.   All that worked well but I can&#39;t figure out how to dis-aggregate the weekly daily and re-seasonalize it.   Any help appreciated.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="999655909739203997">Reply</a><span class="item-control blog-admin blog-admin pid-2061207220"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=999655909739203997">Delete</a></span></span></div><div class="comment-replies"><div id="c999655909739203997-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c999655909739203997-ra" class="thread-chrome thread-expanded"><div></div><div id="c999655909739203997-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="999655909739203997">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c999655909739203997-ce"></div></li><li class="comment" id="c4243207870148319320"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/14522344992908406919" rel="nofollow">JZ</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html?showComment=1516055169928#c4243207870148319320">January 15, 2018 at 2:26 PM</a></span></div><p class="comment-content">Has anyone used BSTS package, setting the parameters to mimic Prophet method?   I think BSTS supports everything with the possible exception of change points in the trend estimation.</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4243207870148319320">Reply</a><span class="item-control blog-admin blog-admin pid-2061207220"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=4243207870148319320">Delete</a></span></span></div><div class="comment-replies"><div id="c4243207870148319320-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4243207870148319320-ra" class="thread-chrome thread-expanded"><div></div><div id="c4243207870148319320-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4243207870148319320">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4243207870148319320-ce"></div></li></ol><div id="top-continue" class="continue"><a class="comment-reply" target="_self">Add comment</a></div><div class="comment-replybox-thread" id="top-ce"></div><div class="loadmore hidden" data-post-id="4732004365167765860"><a target="_self">Load more...</a></div></div>
+</div>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>Post a Comment</h4>
+<a href='https://www.blogger.com/comment-iframe.g?blogID=5825758052688213474&postID=4732004365167765860&skin=contempo&skin=contempo' id='comment-editor-src'></a>
+<iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='90px' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<script src='https://www.blogger.com/static/v1/jsbin/3820394884-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+</p>
+</section>
+</article>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer class='footer section' id='footer' name='Footer'><div class='widget Attribution' data-version='2' id='Attribution1'>
+<div class='widget-content'>
+<div class='blogger'>
+<a href='https://www.blogger.com' rel='nofollow'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_post_blogger_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+Powered by Blogger
+</a>
+</div>
+</div>
+</div></footer>
+</div>
+</div>
+</div>
+<aside class='sidebar-container container sidebar-invisible' role='complementary'>
+<div class='navigation'>
+<button class='svg-icon-24-button flat-icon-button ripple sidebar-back'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_arrow_back_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</button>
+</div>
+<div class='sidebar_top_wrapper no-items'>
+<div class='sidebar_top no-items section' id='sidebar_top' name='Sidebar (Top)'>
+</div>
+</div>
+<div class='sidebar_bottom section' id='sidebar_bottom' name='Sidebar (Bottom)'><div class='widget BlogArchive' data-version='2' id='BlogArchive1'>
+<details class='collapsible extendable'>
+<summary>
+<div class='collapsible-title'>
+<h3 class='title'>
+Archive
+</h3>
+<svg class='svg-icon-24 chevron-down'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_expand_more_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<svg class='svg-icon-24 chevron-up'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_expand_less_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</summary>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<div class='first-items'>
+<ul class='flat'>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2019/04/'>April 2019<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/07/'>July 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/03/'>March 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/01/'>January 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/10/'>October 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/07/'>July 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/04/'>April 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/03/'>March 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/01/'>January 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/10/'>October 2016<span class='post-count'>1</span></a>
+</li>
+</ul>
+</div>
+<div class='remaining-items'>
+<ul class='flat'>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/09/'>September 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/08/'>August 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/07/'>July 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/06/'>June 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/05/'>May 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/03/'>March 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/02/'>February 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/01/'>January 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/12/'>December 2015<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/11/'>November 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/10/'>October 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/09/'>September 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/08/'>August 2015<span class='post-count'>2</span></a>
+</li>
+</ul>
+</div>
+<span class='show-more pill-button'>Show more</span>
+<span class='show-less hidden pill-button'>Show less</span>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</aside>
+<script type="text/javascript" src="https://resources.blogblog.com/blogblog/data/res/1608028642-indie_compiled.js" async="true"></script>
+<script type='text/javascript'>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-66929694-1', 'auto', 'blogger');
+        ga('blogger.send', 'pageview');
+      </script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/640298382-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY4Bt-CZFua7Ovph3J5HTqcbIRcJNg:1556298726761';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d5825758052688213474','//www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html','5825758052688213474');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '5825758052688213474', 'title': 'The Unofficial Google Data Science Blog', 'url': 'http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html', 'canonicalUrl': 'http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html', 'homepageUrl': 'http://www.unofficialgoogledatascience.com/', 'searchUrl': 'http://www.unofficialgoogledatascience.com/search', 'canonicalHomepageUrl': 'http://www.unofficialgoogledatascience.com/', 'blogspotFaviconUrl': 'http://www.unofficialgoogledatascience.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': false, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-66929694-1', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - RSS\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/5825758052688213474/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/4732004365167765860/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/b1e9f650b2e5f9f3', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '4732004365167765860', 'postImageThumbnailUrl': 'https://lh6.googleusercontent.com/Vrd24K6K6UMR_QZuk1SV-PKSLG6PPLL3bbXaTsEDlmRSGFUrm2h9B5UlDsNbDT7z81hCr4kSmVoaq9W2PoNM2iyuHljlyQdkvqsN4BIEFVyJX3kJwQwJ1wa4MzuArXTFTEGqSC-n\x3ds72-c', 'postImageUrl': 'https://lh6.googleusercontent.com/Vrd24K6K6UMR_QZuk1SV-PKSLG6PPLL3bbXaTsEDlmRSGFUrm2h9B5UlDsNbDT7z81hCr4kSmVoaq9W2PoNM2iyuHljlyQdkvqsN4BIEFVyJX3kJwQwJ1wa4MzuArXTFTEGqSC-n', 'pageName': 'Our quest for robust time series forecasting at scale', 'pageTitle': 'The Unofficial Google Data Science Blog: Our quest for robust time series forecasting at scale'}}, {'name': 'features', 'data': {'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': true, 'isAlternateRendering': false, 'isCustom': true, 'variant': 'indie_light', 'variantId': 'indie_light'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Our quest for robust time series forecasting at scale', 'description': 'by ERIC TASSONE, FARZAN ROHANI   We were part of a team of data scientists in Search Infrastructure at Google that took on the task of devel...', 'featuredImage': 'https://lh6.googleusercontent.com/Vrd24K6K6UMR_QZuk1SV-PKSLG6PPLL3bbXaTsEDlmRSGFUrm2h9B5UlDsNbDT7z81hCr4kSmVoaq9W2PoNM2iyuHljlyQdkvqsN4BIEFVyJX3kJwQwJ1wa4MzuArXTFTEGqSC-n', 'url': 'http://www.unofficialgoogledatascience.com/2017/04/our-quest-for-robust-time-series.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 4732004365167765860}}, {'name': 'widgets', 'data': [{'title': 'Search This Blog', 'type': 'BlogSearch', 'sectionId': 'search_top', 'id': 'BlogSearch1'}, {'title': 'The Unofficial Google Data Science Blog (Header)', 'type': 'Header', 'sectionId': 'header', 'id': 'Header1'}, {'title': '', 'type': 'PageList', 'sectionId': 'page_list_top', 'id': 'PageList1'}, {'title': 'Blog Posts', 'type': 'Blog', 'sectionId': 'page_body', 'id': 'Blog1', 'posts': [{'id': '4732004365167765860', 'title': 'Our quest for robust time series forecasting at scale', 'featuredImage': 'https://lh6.googleusercontent.com/Vrd24K6K6UMR_QZuk1SV-PKSLG6PPLL3bbXaTsEDlmRSGFUrm2h9B5UlDsNbDT7z81hCr4kSmVoaq9W2PoNM2iyuHljlyQdkvqsN4BIEFVyJX3kJwQwJ1wa4MzuArXTFTEGqSC-n', 'showInlineAds': false}], 'headerByline': {'regionName': 'header1', 'items': [{'name': 'share', 'label': ''}, {'name': 'timestamp', 'label': ''}]}, 'footerBylines': [{'regionName': 'footer1', 'items': [{'name': 'comments', 'label': 'comments'}]}], 'allBylineItems': [{'name': 'share', 'label': ''}, {'name': 'timestamp', 'label': ''}, {'name': 'comments', 'label': 'comments'}]}, {'type': 'Attribution', 'sectionId': 'footer', 'id': 'Attribution1'}, {'title': '', 'type': 'BlogArchive', 'sectionId': 'sidebar_bottom', 'id': 'BlogArchive1'}]}]);
+_WidgetManager._RegisterWidget('_BlogSearchView', new _WidgetInfo('BlogSearch1', 'search_top', document.getElementById('BlogSearch1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'page_list_top', document.getElementById('PageList1'), {'title': '', 'links': [{'isCurrentPage': false, 'href': 'http://www.unofficialgoogledatascience.com/', 'title': 'Home'}, {'isCurrentPage': false, 'href': 'http://www.unofficialgoogledatascience.com/p/about.html', 'id': '8495885157735034905', 'title': 'About this blog'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'page_body', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1977841774-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar_bottom', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+</script>
+</body>
+</html>

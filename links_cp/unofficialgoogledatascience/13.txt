@@ -1,0 +1,5 @@
+Posts 
+ Randomized experiments are invaluable in making product decisions, including on mobile apps. But what if users don't immediately uptake the new experimental version? What if their uptake rate is not uniform? We'd like to be able to make decisions without having to wait for the long tail of users to experience the treatment to which they have been assigned. This blog post provides details for how we can make inferences without waiting for complete uptake. 
+ Background
+At Google, experimentation is an invaluable tool for making decisions and inference about new products and features. An experimenter, once their candidate product change is ready for testing, often needs only to write a few lines of configuration code to begin an experiment. Ready-made systems then perform standardized analyses on their work, giving a common and repeatable method of decision making. This process operates well under ideal conditions; in those applications where this process makes op… 
+ 

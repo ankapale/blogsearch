@@ -1,0 +1,5 @@
+Posts 
+ We were part of a team of data scientists in Search Infrastructure at Google that took on the task of developing robust and automatic large-scale time series forecasting for our organization. In this post, we recount how we approached the task, describing initial stakeholder needs, the business and engineering contexts in which the challenge arose, and theoretical and pragmatic choices we made to implement our solution.
+Introduction
+Time series forecasting enjoys a rich and luminous history, and today is an essential element of most any business operation. So it should come as no surprise that Google has compiled and forecast time series for a long time. For instance, the image below from the Google Visitors Center in Mountain View, California, shows hand-drawn time series of “Results Pages” (essentially search query volume) dating back nearly to the founding of the company on 04 September 1998. 
+ 

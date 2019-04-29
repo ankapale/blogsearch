@@ -1,0 +1,61 @@
+Kaggle Competitions: How and where to begin? 
+ Introduction 
+ Do I have the necessary skills to take part in Kaggle Competitions? 
+ Did you ever face this question? At least I did, as a sophomore, when I used to fear Kaggle just by envisaging the level of difficulty it offers. This fear was similar to my fear of water. My fear of water wouldn’t allow me to take up swimming classes. Though, later I learnt, “Till the moment you don’t step into water, you can’t make out how deep it is”. Similar philosophy applies to Kaggle. Don’t conclude until you try! 
+ Kaggle, the home of data science, provides a global platform for competitions, customer solutions and job board. Here’s the Kaggle catch, these competitions not only make you think out of the box, but also offers a handsome prize money. 
+ Yet, people hesitate to participate in these competitions. Here are some major reasons: 
+ They belittle their level of skills, knowledge and techniques acquired. 
+ Irrespective of their level of skill sets, they choose the problem offering highest prize money. 
+ They fail to equivocate their level of skill set with the difficulty level of problem. 
+ I reckon, this issue emanates for Kaggle itself. Kaggle.com doesn’t provide any information which can help people to choose the most appropriate problem matching with their skill set. As a result, it has become an arduous task for beginners/intermediates to decide for suitable problem to begin. 
+ What you will learn in this article? 
+ In this article, we have opened the deadlock of choosing the appropriate kaggle problem according to your set of skills, tools & techniques. Here, we have illustrated each kaggle problem with level of difficulty and the level of skills required to solve it. 
+ In the latter part, we have defined the correct approach to take up a kaggle problem for the following cases: 
+ List of Kaggle Problems 
+ Objective: A classic popular problem to start your journey with machine learning. You are given a set of attributes of passengers onboard and you need to predict who would have survived after the ship sanked. 
+ Objective: You are given a set of movie reviews, and you need to find the sentiment hidden in these statement. The objective of this problem statement is to introduce you to Google Package – Word2Vec. 
+ It is a fantastic package which helps you convert words into a finite dimension space. This way we can build analogies only looking at the vector. One very simple example is that your algorithm can bring out analogies like : King – Male + Female will give you Queen. 
+ Objective: You might know about a technology known as OCR. It simply converts handwritten documents to digital documents. However, it is not perfect. Your job here is to use machine learning to make it perfect. 
+ Objective: There are two problem based on the same datasets. You are given the controller of a taxi, and you are supposed to predict where is the taxi going to or the time it will take to complete the journey. 
+ Objective: If you have a nag to understand a new domain, you have got to solve this one. You are given the bidding data and are expected to classify the bidder to bot or human. This has the richest data source available out of all problems on Kaggle. 
+ Difficulty level on each of the attributes : 
+ a) Machine Learning Skills – Medium 
+ b) Coding skills – Medium 
+ c) Acquiring Domain Skills -Medium 
+ d) Tutorial available – No support available as it is a recruiting contest 
+ Note: I have not covered the Kaggle contests offering prize money in this article as they are all related to a specific domain. Let me know your take on them in the comment section below. 
+ We will now look the correct approach for people having different set of skill at different stages of life to start their Kaggle journey! 
+ Case 1 : I have a background of Coding but new to machine learning. 
+ Step 1: The first kaggle problem you should take up is: Taxi Trajectory Prediction. Reason being, the problem has a complex dataset which includes a JSON format in one of the columns which tells the set of coordinates the taxi has visited. If you are able to break this down, getting some initial estimate on target destination or time does not need a machine learning. Hence, you can use your coding strength to find your value in this industry. 
+ Step 2: Your next step should be to take up: Titanic. Reason being, you would now already understand how to handle complex datasets. Hence, now is the perfect time to take a shot on pure machine learning problems. With abundance of solutions/scripts available, you will be able to build a good solution. 
+ Step 3: You are now ready for something big. Try Facebook Recruiting. This will help you appreciate how understanding domain can help you get the best out of machine learning. 
+ Once you have all these pieces in place, you are good to try any problem on Kaggle. 
+ Case 2 : I have been in analytics Industry for more than 2 years, but not comfortable on R / Python 
+ Step 1: You should begin with taking a shot on Titanic. Reason being, you already understand how to build predictive algorithm. You should now strive to learn languages like R and Python. With abundance of solutions/scripts available, you will be able to build different kind of models on both R and Python. This problem will also help you understand a few advanced machine learning algorithms. 
+ Step 2: Next step should be Facebook Recruiting. Reason being, given the simplicity of the data structure and the richness of the content, you will be able to join right tables and make a predictive algorithm on this one. This will also help you appreciate how understanding domain can help you get the best out of machine learning. 
+ Suggestions: You are now ready for something very different from your comfort zone. Read problems like Diabetic Retinopathy Detection, Avinto Context Ad Clicks, Crime Classification and find the domain of your interest. Now try applying whatever you have learned so far. 
+ Now is the time to try something more complex to code. Try Taxi Trajectory prediction or Denoising Dirty Documents. Once you have all these pieces in place, you can now try any problem on Kaggle. 
+ Case 3 : I am good with coding and machine learning, need something challenging to work on 
+ Step 1: You have many options on Kaggle. First option is master a new language like Julia. You can start with First step with Julia. Reason being, this will give you an additional exposure to what can Julia do in addition to Python or R. 
+ Step 2: Second option is to develop skills with an additional domain. You can try Avito Context , Search Relevance or Facebook – Human vs. Bot. 
+ Case 4 : I am a newbie to both machine learning or coding language, but I want to learn 
+ Step 1: You should begin your kaggle journey with Titanic. Reason being, the first step for you is to learn languages like R and Python. With abundance of solutions/scripts available, you will be able to build different kind of models on both R and Python. This problem will also help you understand a few machine learning algorithms. 
+ Step 2: You should then take up: Facebook Recruiting. Reason being, given the simplicity of the data structure and the richness of the content, you will be able to join right tables and make a predictive algorithm on this one. This will also help you appreciate how understanding domain can help you get the best out of machine learning. 
+ Once you are done with these, you can then take up problems as per your interest. 
+ Few hacks to be a fair competition on Kaggle 
+ This is not a comprehensive list of hacks, but meant to provide you a good start. Comprehensive list deserves a new post by itself: 
+ Make sure you submit a solution (even the sample submission will do this job) before the last entry date, if you wish to participate in the competition in future. 
+ Understand the domain before you get on to the data. For instance in the bot vs. human, you need to understand how online bidding platform works before you start the journey with data. 
+ Make your own evaluation algorithm which can mimic the Kaggle test score. A simple cross validation 10-fold generally works fine. 
+ Try to carve out as many features as possible from the train data – feature engineering is usually the part which pushes you from top 40 percentile to top 10 percentile. 
+ A single model generally does not get you in top 10. You need to make many many models and ensemble them together. This can be multiple models with different algorithms or different set of variables. 
+ End Notes 
+ There are multiple benefits I have realized after working on Kaggle problems. I have learnt R / Python on the fly. I believe that is the best way to learn the same. Also interacting with people of discussion forum on various problems will help you get a deeper scoop into machine learning and domain. 
+ In this article, we illustrated various Kaggle problems and categorized their essential attributes into the level of difficulty. We also took up various real life cases and elicited the right approach to participate in Kaggle. 
+ Have you participated in any Kaggle problem? Did you see any significant benefits by doing the same? Do let us know your thoughts about this guide in the comments section below. 
+ Tavish is an IIT post graduate, a results-driven analytics professional and a motivated leader with 7+ years of experience in data science industry. He has led various high performing data scientists teams in financial domain. His work range from creating high level business strategy for customer engagement and acquisition to developing Next-Gen cognitive Deep/Machine Learning capabilities aligned to these high level strategies for multiple domains including Retail Banking, Credit Cards and Insurance. Tavish is fascinated by the idea of artificial intelligence inspired by human intelligence and enjoys every discussion, theory or even movie related to this idea. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 9 Comments 
+ As you rightly said, “Till the moment you don’t step into water, you can’t make out how deep it is” it fits perfectly for Kaggle problems. We can learn a lot by hands on experimentation is what I have experienced as well. 
+ Inspiring article. Thanks for the post. Could you please suggest any other competition in lieu of Facebook. I see this is getting over in couple of days from now and I wont be able to do any submission. 
+ 

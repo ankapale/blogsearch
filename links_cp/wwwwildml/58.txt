@@ -1,0 +1,192 @@
+Speeding up your Neural Network with Theano and the GPU 
+ In a previous blog post we build a simple Neural Network from scratch. Let’s build on top of this and speed up our code using the Theano library. With Theano we can make our code not only faster, but also more concise! 
+ What is Theano? 
+ Theano describes itself as a Python library that lets you to define, optimize, and evaluate mathematical expressions, especially ones with multi-dimensional arrays. The way I understand Theano is that it allows me to define graphs of computations. Under the hood Theano optimizes these computations in a variety of ways, including avoiding redundant calculations, generating optimized C code, and (optionally) using the GPU. Theano also has the capability to automatically differentiate mathematical expressions. By modeling computations as graphs it can calculate complex gradients using the chain rule. This means we no longer need to compute the gradients ourselves! 
+ The Setup 
+ The setup is identical to that in Implementing a Neural Network from Scratch, which I recommend you read (or at least skim) first. I’ll just quickly recap: We have two classes (red and blue) and want to train a Neural Network classifier that separates the two. We will train a 3-layer Neural Network, with input layer size 2, output layer size 2, and hidden layer size 3. We will use batch gradient descent with a fixed learning rate to train our network. 
+ Defining the Computation Graph in Theano 
+ The first thing we need to is define our computations using Theano. We start by defining our input data matrix X and our training labels y: 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ importtheano 
+ importtheano.tensor asT 
+ # Our data vectors 
+ X=T.matrix('X')# matrix of doubles 
+ y=T.lvector('y')# vector of int64 
+ Here’s crucial thing to understand: We have not assigned any values to X or y. All we have done is defined mathematical expressions for them. We can use these expressions in subsequent calculations. If we want to evaluate an expression we can call its eval method. For example, to evaluate the expression X * 2 for a given value of X we could do the following: 
+ 1 
+ (X*2).eval({X:[[1,1],[2,2]]}) 
+ Theano handles the type checking for us, which is very useful when defining more complex expressions. Trying to assign a value of the wrong data type to X would result in an error. Here is the full list of Theano types. 
+ X and y above are stateless. Whenever we want to evaluate an expression that depends on them we need to provide their values. Theano also has something called shared variables, which have internal state associated with them. Their value that is kept in memory and can be shared by all functions that use them. Shared variables can also be updated, and Theano includes low-level optimizations that makes updating them very efficient, especially on GPUs. Our network parameters are constantly updated using gradient descent, so they are perfect candidates for shared variables: 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ # Shared variables with initial values. We need to learn these. 
+ W1=theano.shared(np.random.randn(nn_input_dim,nn_hdim),name='W1') 
+ b1=theano.shared(np.zeros(nn_hdim),name='b1') 
+ W2=theano.shared(np.random.randn(nn_hdim,nn_output_dim),name='W2') 
+ b2=theano.shared(np.zeros(nn_output_dim),name='b2') 
+ Next, let’s define expressions for our forward propagation. The calculations are identical to what we did in our previous implementation, just that we are defining Theano expressions. Again, remember that these expressions are not evaluated, we are just defining them. You can think of them as lambda expressions that require input values when called. We also use some of Theano’s convenience functions like nnet.softmax and nnet.categorical_crossentropy to replace our manual implementations: 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ # Forward propagation 
+ # Note: We are just defining the expressions, nothing is evaluated here! 
+ We saw how we can evaluate a Theano expression by calling its eval method. A much more convenient way is to create a Theano function for expressions we want to evaluate. To create a function we need to define its inputs and outputs. For example, to calculate the loss, we need to know the values for and . Once created, we can call it function just like any other Python function. 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ # Theano functions that can be called from our Python code 
+ forward_prop=theano.function([X],y_hat) 
+ calculate_loss=theano.function([X,y],loss) 
+ predict=theano.function([X],prediction) 
+ # Example call: Forward Propagation 
+ forward_prop([[1,2]]) 
+ Now is a good time to get a sense of how Theano constructs a computational graph. Looking at the expressions for , we can see that it depends on , which in turn depends on , and , and so on. Theano lets us visualize this: 
+ This is the optimized computational graph that Theano has constructed for our forward_prop function. We can also get a textual description: 
+ What’s left is defining the updates to the network parameters we use with gradient descent. We previously calculated the gradients using backpropagation. We could express the same calculations using Theano (see code that’s commented out below), but it’s much easier if we let Theano calculate the derivatives for us! We need the derivates of our loss function with respect to our parameters: , , , : 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ # Easy: Let Theano calculate the derivatives for us! 
+ dW2=T.grad(loss,W2) 
+ db2=T.grad(loss,b2) 
+ dW1=T.grad(loss,W1) 
+ db1=T.grad(loss,b1) 
+ # Backpropagation (Manual) 
+ # Note: We are just defining the expressions, nothing is evaluated here! 
+ # y_onehot = T.eye(2)[y] 
+ # delta3 = y_hat - y_onehot 
+ # dW2 = (a1.T).dot(delta3) * (1. + reg_lambda) 
+ # db2 = T.sum(delta3, axis=0) 
+ # delta2 = delta3.dot(W2.T) * (1. - T.sqr(a1)) 
+ # dW1 = T.dot(X.T, delta2) * (1 + reg_lambda) 
+ # db1 = T.sum(delta2, axis=0) 
+ Because we defined as shared variables we can use Theano’s update mechanism to update their values. The following function (without return value) does a single gradient descent update given and as inputs: 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ gradient_step=theano.function( 
+ [X,y], 
+ updates=((W2,W2-epsilon*dW2), 
+ (W1,W1-epsilon*dW1), 
+ (b2,b2-epsilon*db2), 
+ (b1,b1-epsilon*db1))) 
+ Note that we don’t need to explicitly do a forward propagation here. Theano knows that our gradients depend on our predictions from the forward propagation and it will handle all the necessary calculations for us. It does everything it needs to update the values. 
+ Let’s now define a function to train a Neural Network using gradient descent. Again, it’s equivalent to what we had in our original code, only that we are now calling the gradient_step function defined above instead of doing the calculations ourselves. 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10 
+ 11 
+ 12 
+ 13 
+ 14 
+ 15 
+ 16 
+ 17 
+ 18 
+ 19 
+ 20 
+ 21 
+ 22 
+ # This function learns parameters for the neural network and returns the model. 
+ # - num_passes: Number of passes through the training data for gradient descent 
+ # - print_loss: If True, print the loss every 1000 iterations 
+ defbuild_model(num_passes=20000,print_loss=False): 
+ # Re-Initialize the parameters to random values. We need to learn these. 
+ # This is expensive because it uses the whole dataset, so we don't want to do it too often. 
+ ifprint_loss andi%1000==0: 
+ print&quot;Loss after iteration%i:%f&quot;%(i,calculate_loss(train_X,train_y)) 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ # Build a model with a 3-dimensional hidden layer 
+ build_model(print_loss=True) 
+ # Plot the decision boundary 
+ plot_decision_boundary(lambdax:predict(x)) 
+ plt.title(&quot;Decision Boundary forhidden layer size3&quot;) 
+ That’s it! We’ve just ported our code over to Theano. I got a 2-3x speedup on my Macbook (it would likely be more if we had larger matrix multiplications). Note that we’re not using a GPU yet. Let’s do that next! 
+ While any Theano code will run just fine with the GPU enabled you probably want to spend time optimizing your code get optimal performance. Running code that isn’t optimized for a GPU may actually be slower on a GPU than a CPU due to excessive data transfers. 
+ Here are some things you must consider when writing Theano code for a GPU: 
+ The default floating point data type is float64, but in order to use the GPU you must use float32. There are several ways to do this in Theano. You can either use the fulled typed tensor constructors like T.fvector or set theano.config.floatX to float32 and use the simple tensor constructors like T.vector. 
+ Shared variables must be initialized with values of type float32 in order to be stored on the GPU. In other words, when creating a shared variable from a numpy array you must initialize the array with the dtype=float32 argument, or cast it using the astype function. See the numpy data type documentation for more details. 
+ Be very careful with data transfers to and from the GPU. Ideally you want all your data on the GPU. Ways to achieve this include initializing commonly used data as shared variables with a float32 data type, and to avoid copying return values back to the host using the gpu_from_host function. Theano includes profiling capabilities that allow you to debug how much time you are spending on data transfers. 
+ With all that in mind, let’s modify our code to run well on a GPU. I’ll highlight the most important changes we here, but the full code is available here or at the bottom of the post. 
+ First, to see a significant speedup we should increase the size of our data so that the computation time will be dominated by matrix multiplication and other mathematical operations (as opposed to looping in Python code and assigning values). 
+ 1 
+ 2 
+ train_X,train_y=sklearn.datasets.make_moons(5000,noise=0.20) 
+ nn_hdim=1000 
+ Next, we change our scalar values to float32 to ensure that our calculations stay within that type. If we multiplied a float32 value by a float64 value the return value would be a float64. 
+ 1 
+ 2 
+ epsilon=np.float32(0.01) 
+ reg_lambda=np.float32(0.01) 
+ To force the storage of our data on the GPU we use shared variables of type float32. Because we are constantly using the input data X and y to perform gradient updates we store those on the GPU as well: 
+ We remove the inputs from our functions since the X and y values are stored as shared variables (on the GPU) now. We no longer need to pass them to the function calls. 
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ gradient_step=theano.function( 
+ inputs=[], 
+ updates=((W2,W2-epsilon*dW2), 
+ (W1,W1-epsilon*dW1), 
+ (b2,b2-epsilon*db2), 
+ (b1,b1-epsilon*db1))) 
+ # Does a gradient step and updates the values of our paremeters 
+ gradient_step() 
+ Running and Evaluation 
+ To use a GPU you must run the code with the THEANO_FLAGS=device=gpu,floatX=float32 environment variable set. I tested the GPU-optimized code on a g2.2xlarge AWS EC2 instance. Running one gradient_step() on the CPU took around 250ms. With the GPU enabled it merely took 7.5ms. That’s a 40x speedup, and if our dataset or parameter space were larger we would probably see an even more significant speedup. 
+ 

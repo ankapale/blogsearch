@@ -1,0 +1,5 @@
+27 July 2014 
+ Okay, usually Hello World is the first program you learn to write in a new programming language. For fun, I've been collecting how to say hello world in different human languages, something remarkably difficult to search for (because of the overloading of the word "language"). I have 28. I'd like to make it to 280 :). If you have one (or more) to contribute, email me, post a comment, or tweet to me @haldaume3. And of course if you think any of these is wrong, please let me know that too. 
+ Several of the versions you list (e.g., ca, es and sv) use capitals for the noun meaning ‘world’, when they wouldn't be expected in that construction. And, at least for Spanish and Catalan, a comma between the vocative particle and the noun would be mandatory. 
+ Anyway, gripes aside, Guarani (gn) would be maĩteipa yvy, though I can't find any sites actually containing the string in question. 
+ 

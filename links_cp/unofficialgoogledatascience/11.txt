@@ -1,0 +1,5 @@
+Posts 
+ For a number of years, I led the data science team for Google Search logs. We were often asked to make sense of confusing results, measure new phenomena from logged behavior, validate analyses done by others, and interpret metrics of user behavior. Some people seemed to be naturally good at doing this kind of high quality data analysis. These engineers and analysts were often described as “careful” and “methodical”. But what do those adjectives actually mean? What actions earn you these labels? 
+ To answer those questions, I put together a document shared Google-wide which I optimistically and simply titled “Good Data Analysis.” To my surprise, this document has been read more than anything else I’ve done at Google over the last eleven years. Even four years after the last major update, I find that there are multiple Googlers with the document open any time I check. 
+ Why has this document resonated with so many people over time? I think the main reason is that it’s full … 
+ 

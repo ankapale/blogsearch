@@ -1,0 +1,10 @@
+Posts 
+ If you are a regular at this blog, thanks for reading. We will continue to bring you posts from the range of data science activities at Google. This post is different. It is for those who are interested enough in our activities to consider joining us. We briefly highlight some of the things we look for in data scientists we hire at Google and give tips on ways to prepare. 
+ At Google we’re always looking for talented people, and we’re interested in hiring great data scientists. It’s not easy to find people with enough passion and talent. In this short post, I’ll talk about how to get a job at Google as a data scientist. 
+ As you may have heard, the interviews at Google can be pretty tough. We do set our hiring bar high, but this post will give you guidance on what you can do to prepare.
+Know your stats.
+Math like linear algebra and calculus are more or less expected of anyone we’d hire as a data scientist, and we look for people who live and breathe probability and statist… 
+ Many machine learning applications have some kind of regression at their core, so understanding large-scale regression systems is important. But doing this can be hard, for reasons not typically encountered in problems with smaller or less critical regression systems. In this post, we describe the challenges posed by one problem — how to get approximate posteriors — and an approach that we have found useful. 
+ Suppose we want to estimate the number of times an ad will be clicked, or whether a user is looking for images, or the time a user will spend watching a video. All these problems can be phrased as large-scale regressions. We have a collection of items with covariates (i.e. predictive features) and responses (i.e. observed labels), and for each item, we want to estimate a parameter that governs the response. This problem is usually solved by training a big regression system, like a penalized GLM, neural net, or random forest.
+We often use large regressions to… 
+ 

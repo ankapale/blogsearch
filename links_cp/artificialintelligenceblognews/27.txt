@@ -1,0 +1,9 @@
+Feb 24 Diagnosing Heart Disease with A.I. 
+ Google and Verily Life Sciences shared the latest advance in computer vision to identify signs of heart disease. With an accuracy of 70 percent, early results from the AI trained on retinal scan images from more than 200,000 patients is as precise as methods that require blood tests for cholesterol, said Google Brain product manager Lily Peng. 
+ It’s the latest example of AI being used to tackle the biggest killer in the world: heart disease. It takes more lives than any other cause of death — 800,000 in the United States alone, according to the American Heart Association. To save lives, an AI army is joining the fight. 
+ Google A.I. can detect risk of heart disease through an eye scan. Together with Verily, Google's health-tech branch, they have developed an A.I. that can determine if a person has high blood pressure or is at risk of a stroke or heart attack, just by scanning their eye. 
+ Corti uses pattern recognition in language to identify heart attack calls to emergency services. In trials being run in Copenhagen now, the AI is able to identify a call in which the victim is having a heart attack 95 percent of the time, or more than 20 percent more often than trained human emergency operators. 
+ So next time you hear someone reference our inevitable slip into a dystopia where we will bow to our robot overlords, talk to them about the heart. 
+ Comments on: Diagnosing Heart Disease with A.I. 
+ Google and Verily Life Sciences shared the latest advance in computer vision to identify signs of heart disease. With an accuracy of 70%, early results from the AI trained on retinal scan images is as precise as methods that require blood tests for cholesterol. 
+ 

@@ -1,0 +1,36 @@
+Search This Blog 
+ How to get a job at Google — as a data scientist 
+ If you are a regular at this blog, thanks for reading. We will continue to bring you posts from the range of data science activities at Google. This post is different. It is for those who are interested enough in our activities to consider joining us. We briefly highlight some of the things we look for in data scientists we hire at Google and give tips on ways to prepare. 
+ At Google we’re always looking for talented people, and we’re interested in hiring great data scientists. It’s not easy to find people with enough passion and talent. In this short post, I’ll talk about how to get a job at Google as a data scientist. 
+ As you may have heard, the interviews at Google can be pretty tough. We do set our hiring bar high, but this post will give you guidance on what you can do to prepare. 
+ Know your stats. 
+ Math like linear algebra and calculus are more or less expected of anyone we’d hire as a data scientist, and we look for people who live and breathe probability and statistics. Promising candidates will have the equivalent of at least 3 or 4 courses in probability, statistics, or machine learning — anything beyond that is icing on the cake. You should be able to ace the homework and exams in your probability and stats courses — many of our data scientists have actually taught these courses before coming to Google. There are a few sites out there, such as stats.stackexchange.com, on which you can find some great questions and discussions to develop your statistical skills. 
+ Anything less than that could be supplemented with courses in technical fields such as computer science, economics, or engineering. Original research can also help. 
+ Get real-world experience. 
+ Demonstrate that you’ve had experience working on real-world data. Coming up with a new regression estimator for a few UCI datasets is nice, but those datasets are often used for comparing methods, not for getting real-world experience. We really want to see something that demonstrates that you’ve had a chance to get your hands dirty on real data, and lots of it. This means you’ve spent time collecting your own data, cleaning it, sanity-checking it, and making use of it. 
+ Write a script to pull data from one of Google’s public APIs and write a blog post about what you’ve found. Use a web scraper to scrape a few hundred thousand web pages and fit some topic models to create a news recommendation engine. Write an app for your phone that tracks your usage and analyze that. Be creative! 
+ Spend time coding. 
+ We don’t expect all our data scientists to be hardcore engineers, but we make sure everyone we hire is capable of coding. The best way to demonstrate this is to know how to code ahead of time. Increasingly, our applicants point us to GitHub for examples of their coding skills. We’ll typically expect that you’ve already become familiar with scripting languages like Python and SQL and one or more numerical languages like R, Julia, Matlab, or Mathematica. Bonus points for knowing a compiled language like C++ or Java. If you’d like to learn more coding, check out Khan Academy or other coding resources. 
+ Be passionate. 
+ The easiest way to achieve the above criteria is to be passionate about some data science problem! Perhaps you’ve spent a few years studying some problem for which data provides a natural solution. Perhaps you’ve written code to interface with public APIs, from Google or otherwise. Ideally you’re passionate not just about the methodology used to frame the problem, but also the problem itself. 
+ Note that you have multiple options. 
+ At Google, data scientists may be hired on one of several job ladders. If your talent skews toward the engineering side, you may want to pursue the standard software engineer track and ask for a more analytical role — if it skews towards numbers, you may want to pursue the quantitative analyst track. In a post later on, we might outline some of the differences between the two tracks within Google Engineering. Besides these, there are other jobs calling for data scientists in Sales Ops, Marketing and People Ops. Feel free to check out job postings at http://www.google.com/about/careers/. 
+ Best of luck with the process! 
+ Get link 
+ Facebook 
+ Twitter 
+ Pinterest 
+ Email 
+ Other Apps 
+ Comments 
+ Hah, you make it sound like it is within a reach of a mortal person ("go and see KhanAcademy") while I guess 100% of your data scientists are some crazy-smart ppl from MIT / Stanford and alike, who aced their university stat courses in high school. 
+ I'd like to ask for advice, however: I'm trying to study ML:PP book by K.Murphy. There are tons of excercies, but without solutions. Same thing holds for most other texts. How can I still learn efficiently? 
+ Also, would it be a plus at Google if I implemented some stuff from such a book (Machine Learning: A probabilistic perspective") or implementing algos learned in classes is a rather stupid idea? 
+ There are some crazy-smart people from MIT, Stanford, and the like, but there are also some crazy-smart people from a variety of other schools too :) 
+ Some texts (e.g. Sheldon Ross's "A First Course in Probability") have answers for some of the questions in the back of the book. Another option is to focus mainly on the examples given in the text itself, or to focus on the examples given in scribe notes from college courses, e.g. https://www.cs.princeton.edu/courses/archive/spring07/cos424/syllabus.html. 
+ Implementing algorithms you learned in a class or a book is perfectly reasonable. Typically they'll teach you the most common methods, so implementing it on your own will help you learn about it, and it would be a line on your resume. 
+ Is there much opportunity for Data Scientists outside the US?I'm based in London, with a machine learning background. I can't find an equivalent of the linked application for the UK. With DeepMind based in London, I would have expected that there would be *some* type of data scientist role available (I'm assuming DeepMind's recruitment criteria make the above list look trivial). 
+ Being in California, I am not as aware of roles available in the UK. While there doesn't appear to be an opening for the Quantitative Analyst in London (there is in Zürich) we certainly have position under the Software Engineer title (see link below, but best to contact them). DeepMind is cool but is a highly specialized aspect of machine learning (Reinforcement Learning as I understand it) and not the work of most data scientists. 
+ Hi Sean,I have a QUESTION. How much does previous job experience play a role in deciding the potential candidate? Will having no previous job experience take all my chances away for getting such a good role at Google? 
+ Hi Sean, Thank you for the article. It helps.I am working as a full-time quantitative analyst currently who would like to progress into a Data Scientist. I am pursuing a lot of MOOC's at the time. I would like to know if Google considers MOOC's to be valid education background or a regular degree from a reputed college is a necessary criteria for consideration for the Data Scientist Role.Thanks for your help. 
+ 

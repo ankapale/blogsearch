@@ -1,0 +1,4 @@
+IIT Bombay Graduate with a Masters and Bachelors in Electrical Engineering.
+I have previously worked as a lead decision scientist for Indian National Congress deploying statistical models (Segmentation, K-Nearest Neighbours) to help party leadership/Team make data-driven decisions.
+My interest lies in putting data in heart of business for data-driven decision making. 
+ 

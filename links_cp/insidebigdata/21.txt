@@ -1,0 +1,3 @@
+A Non-Geeks A-to-Z Guide to the Internet of Things 
+ This A-to-Z guide includes 101 common terms related to the Internet of Things. Its not an exhaustive list, given that the IoT and big data are evolving so quickly, but rather a quick go-to resource for the technically savvy data professional who wants to get a handle on this vast IoT and big data ecosystem. This guide for the non-geek does include some technical terms, but they are explained sans technical geek speak. We also provide context to how a term may be connected to a larger discussion by grouping terms by category. 
+ 

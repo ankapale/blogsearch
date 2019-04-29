@@ -1,0 +1,65 @@
+12 December 2016 
+ At ACL this past summer, Dirk Hovy and Shannon Spruit presented a very nice opinion paper on Ethics in NLP. There's also been a great surge of interest in FAT-everything (FAT = Fairness, Accountability and Transparency), typified by FATML, but there are others. And yet, despite this recent interest in ethics-related topics, none of the major organizations that I'm involved in have a Code of Ethics, namely: the ACL, the NIPS foundation nor the IMLS. After Dirk's presentation, he, I, Meg Mitchell and Michael Strube and some others spent a while discussing ethics in NLP (a different subset, including Dirk, Shannon, Meg, Hanna Wallach, Michael and Emily Bender) went on to form a workshop that'll take place at EACL) and the possibility of a code of ethics (Meg also brought this up at the ACL business meeting) which eventually gave rise to this post. 
+ (Note: the NIPS foundation has a "Code of Conduct" that I hadn't seen before that covers similar ground to the (NA)ACL Anti-Harassment Policy; what I'm talking about here is different.) 
+ There is a nice set of UMD EE slides on Ethics in Engineering that describes why one might want a code of Ethics: 
+ Provides a framework for ethical judgments within a profession 
+ Expresses the commitment to shared minimum standards for acceptable behavior 
+ Provides support and guidance for those seeking to act ethically 
+ Formal basis for investigating unethical conduct, as such, may serve both as a deterrence to and discipline for unethical behavior 
+ Personally, I've never been a member of any of these societies that have codes of ethics. Each organization has a different set of codes, largely because they need to address issues specific to their field of expertise. For instance, linguists often do field work, and in doing so often interact with indigenous populations. 
+ Below, I have reproduced the IEEE code as a representative sample (emphasis mine) because it is relatively brief. The ACM code and BCS code are slightly different, and go into more details. The LSA code and CIL code are related but cover slightly different topics. By being a member of the IEEE, one agrees: 
+ to accept responsibility in making decisions consistent with the
+safety, health, and welfare of the public, and to disclose promptly
+factors that might endanger the public or the environment; 
+ to avoid real or perceived conflicts of interest whenever possible, and to disclose them to affected parties when they do exist; 
+ to be honest and realistic in stating claims or estimates based on available data; 
+ to reject bribery in all its forms; 
+ to improve the understanding of technology; its appropriate application, and potential consequences; 
+ to
+maintain and improve our technical competence and to undertake
+technological tasks for others only if qualified by training or
+experience, or after full disclosure of pertinent limitations; 
+ to
+seek, accept, and offer honest criticism of technical work, to
+acknowledge and correct errors, and to credit properly the contributions
+of others; 
+ to treat fairly all persons and to not engage in
+acts of discrimination based on race, religion, gender, disability, age,
+national origin, sexual orientation, gender identity, or gender
+expression; 
+ to avoid injuring others, their property, reputation, or employment by false or malicious action; 
+ to assist colleagues and co-workers in their professional development and to support them in following this code of ethics. 
+ The pieces I've highlighted are things that I think are especially important to think about, and places where I think we, as a community, might need to work harder. 
+ After this past ACL, I spent some time combing through the Codes of Ethics mentioned before and tried to synthesize a list that would make sense for the ACL, IMLS or NIPS. This is in very "drafty" form, but hopefully the content makes sense. Also to be 100% clear, all of this is basically copy and paste with minor edits from one or more of the Codes linked above; nothing here is original. 
+ Responsibility to the Public 
+ Make research available to general public 
+ Be honest and realistic in stating claims; ensure empirical bases and limitations are communicated appropriately 
+ Only accept work and make statements on topics which you believe have competence to do 
+ Contribute to society and human well-being, and minimize negative consequences of computing systems 
+ Make reasonable effort to prevent misinterpretation of results 
+ Make decisions consistent with safety, health & welfare of public 
+ Improve understanding of technology, its application and its potential consequences (positive and negative) 
+ Responsibility in Research 
+ Protect the personal identification of research subjects, and abide by informed consent 
+ Conduct research honestly, avoiding plagiarism and fabrication of results 
+ Cite prior work as appropriate 
+ Preserve original data and documentation, and make available 
+ Follow through on promises made in grant proposals and acknowledge support of sponsors 
+ Avoid injuring others, their property, reputation or employment by false or malicious action 
+ Respect the privacy of others and honor confidentiality 
+ Honor contracts, agreements and assigned responsibilities 
+ Compliance with the code 
+ Uphold and promote the principles of this code 
+ Treat violations of this code as inconsistent with membership in this organization 
+ I'd love to see (and help, if wanted) ACL, IMLS and NIPS foundation work on constructing a code of ethics. Our fields are more and more dealing with problems that have real impact on society, and I would like to see us, as a community, come together and express our shared standards. 
+ Reinforcement learning has undergone a bit of a renaissance recently, largely due to the efficacy of its combination with good function approximation via deep neural networks. Even more arguably this advance has been due to the increased availability and interest in "interesting" simulated environments, mostly video games and typified by the Atari game collection. In a very similar way that ImageNet made neural networks really work for computer vision (by being large, and capitalizing on the existence of GPUs), I think it's fair to say that these simulated environments have provided the same large data setting for RL that can also be combined with GPU power to build impressive solutions to many games. 
+ In a real sense, many parts of the RL community are going all-in on the notion that learning to play games is a path toward broader AI. The usual refrain that I hear arguing against that approach is based on the quantity of data. The argument is roughly: if you actually want to build a robot that acts in the real world, you're not going to be able to simulate 10 million frames (from the Deepmind paper, which is just under 8 days of real time experience). 
+ I think this is an issue, but I actually don't think it's the most substantial issue. I think the most substantial issue is the fact that game playing is a simulated environment and the reward function is generally crafted to make humans find the games fun, which usually means frequent small rewards that point you in the right direction. This is exactly where RL works well, and something that I'm not sure is a reasonable assumption in the real world. 
+ Delayed reward is one of the hardest issues in RL, because (a) it means you have to do a lot of exploration and (b) you have a significant credit assignment problem. For instance, if you imagine a variant of (pick your favorite video game) where you only get a +1/-1 reward at the end of the game that says whether you won or lost, it becomes much much harder to learn, even if you play 10 million frames or 10 billion frames. 
+ That's all to say: games are really nice settings for RL because there's a very well defined reward function and you typically get that reward very frequently. Neither of these things is going to be true in the real world, regardless of how much data you have. 
+ At the end of the day, playing video games, while impressive, is really not that different from doing classification on synthetic data. Somehow it's better because the people doing the research were not those who invented the synthetic data, but games---even recent games that you might play on your (insert whatever the current popular gaming system is) are still heavily designed---are built in such a way that they are fun for their human players, which typically means increasing difficulty/complexity and relatively regularly reward function. 
+ As we move toward systems that we expect to work in the real world (even if that is not embodied---I don't necessarily mean the difficulty of physical robots), it's less and less clear where the reward function comes from. 
+ One option is to design a reward function. For complex behavior, I don't think we have any idea how to do this. There is the joke example in the R+N AI textbook where you give a vacuum cleaner a reward function for number of pieces of gunk picked up; the vacuum learns to pick up gunk, then drop it, then pick it up again, ad infinitum. It's a silly example, but I don't think we have much of an understanding of how to design reward functions for truly complex behaviors without significant risk of "unintended consequences." (To point a finger toward myself, we invented a reward function for simultaneous interpretation called Latency-Bleu a while ago, and six months later we realized there's a very simple way to game this metric. I was then disappointed that the models never learned that exploit.) 
+ This is one reason I've spent most of my RL effort on imitation learning (IL) like things, typically where you can simulate an oracle. I've rarely seen an NLP problem that's been solved with RL where I haven't thought that it would have been much better and easier to just do IL. Of course IL has it's own issues: it's not a panacea. 
+ One thing I've been thinking about a lot recently is forms of implicit feedback. One cool paper in this area I learned about when I visited GATech a few weeks ago is Learning from Explanations using Sentiment and Advice in RL by Samantha Krening and colleagues. In this work they basically have a coach sitting on the side of an RL algorithm giving it advice, and used that to tailor things that I think of as more immediate reward. I generally think of this kind of like a baby. There's some built in reward signal (it can't be turtles all the way down), but what we think of as a reward signal (like a friend saying "I really don't like that you did that") only turn into this true reward through a learned model that tells me that that's negative feedback. I'd love to see more work in the area of trying to figure out how to transform sparse and imperfect "true" reward signals into something that we can actually learn to optimize. 
+ 

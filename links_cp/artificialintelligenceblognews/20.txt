@@ -1,0 +1,9 @@
+Dec 15 The Great A.I. Awakening 
+ Late one Friday night in early November, Jun Rekimoto, a distinguished professor of human-computer interaction at the University of Tokyo, was online preparing for a lecture when he began to notice some peculiar posts rolling in on social media. Apparently Google Translate, the company’s popular machine-translation service, had suddenly and almost immeasurably improved. Rekimoto visited Translate himself and began to experiment with it. He was astonished. He had to go to sleep, but Google Translate refused to relax its grip on his imagination - the great AI awakening. 
+ Screenshot of the Google Translate Web interface. (early 2017). 
+ Rekimoto wrote up his initial findings in a blog post (it's in Japanese language, so I can't find it to link to it). First, he compared a few sentences from two published versions of "The Great Gatsby", Takashi Nozaki’s 1957 translation and Haruki Murakami’s more recent iteration, with what this new Google Translate was able to produce. Murakami’s translation is written "in very polished Japanese", Rekimoto explained to me later via email, but the prose is distinctively "Murakami-style." By contrast, Google’s translation — despite some "small unnaturalness" — reads to him as "more transparent". 
+ The second half of Rekimoto’s post examined the service in the other direction, from Japanese to English. He dashed off his own Japanese interpretation of the opening to Hemingway’s "The Snows of Kilimanjaro", then ran that passage back through Google into English. He published this version alongside Hemingway’s original, and proceeded to invite his readers to guess which was the work of a machine. 
+ Everybody wondered: How had Google Translate become so uncannily artful? 
+ The Great AI Awakening 
+ Read more about the great awakening of artificial intelligence in this great article by the New York Times. 
+ 

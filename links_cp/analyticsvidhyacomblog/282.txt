@@ -1,0 +1,29 @@
+Customized Reporting in Qlikview 
+ As a BI professional, I am used to receiving ad-hoc reporting requirements from business users which need a fast turn-around (sometimes under the name of ‘Analysis’). What is interesting is that 95% of these requirements can be delivered by re-arranging, cross-joining, summarizing or expanding some or the other existing reports. 
+ So, if we merge all ad-hoc and regular reports, it will become a master report with multiple metrics and multiple dimensions, which can be summarized using following expression: 
+ Multiple Metrics (KPI) X Multiple Dimensions = Multiple Reports 
+ This is how I deal with the ad-hoc requirements. Excel provides ‘Pivot tables’ to enable creation of this kind of a master repository, where people can select dimension and metric from the available set of fields. 
+ So, when I started using Qlikview two years back, I was looking for a similar solution i.e. multiple reports where the user has a feature to select or deselect dimension and metrics as per their requirements i.e. customized reporting. Thankfully, Qlikview 11 has a feature called “Conditional enabling of Expression and Dimension”. 
+ Depending on the user, you can show or hide certain dimensions or metrics. If you would like end users to create their own tables / reports, you may use this feature to dynamically add/remove dimensions or metrics. 
+ How to create Customized reports in Qlikview ? 
+ Step 1: 
+ Identify the entire set of dimension and metric that you want or can think of being used by end users. It is very critical that you bring in all dimensions and metrics, otherwise the purpose of this report gets lost. 
+ Create separate INLINE table for dimensions and metric. I would recommend two columns in each table, one for the descriptor and one to uniquely identify it by a single letter (A-Z)/ Number. 
+ Move to layout TAB, create a list box and select field “dimension_1” that was declared in INLINE table. Preferably select list box with LED check Box style so that selection / deselection of multiple dimensions can happen easily. 
+ Select all dimensions available in table “AdhocDimensions” (dimension inline table) and write a conditional expression for each dimension which results in the reporting. In the dimension properties, check the option for “Enable Conditional” and enter the following code for dimension “Month”: Dimension Month has defined value 7 in inline table under “dimension_flag” field. 
+ =SubStringCount(Concat(dimension_flag, '|'), 7) 
+ Add similar code to each dimension, changing the corresponding numbers you used in your inline table. 
+ Step 4: 
+ Write expression for all metrics and enable conditional expressions by checking the option for “Enable” and writing conditional code for each expression 
+ =SubStringCount(Concat(Parameter_flag, '|'), 'A') 
+ Step 5: 
+ Add a condition in general tab of the straight table so that the object only displays when at least one dimension and expression is selected: 
+ =GetSelectedCount(dimension_1) > 0AND GetSelectedCount(Parameter_1)>0 
+ Finally, we have customized reporting for end-user: 
+ This is an example where we have brought out methods to create Customize reporting in Qlikview. What do you think about this methodology? Have you used to similar kind of practice? If yes, how did you create them? Do you think this tip was useful? 
+ 10 Comments 
+ Can we use Qlikview as a replacement for MS-EXCEL, as everything is custom made in it like dashboards, pivot tables etc, Does the files saved in it, in the form of Qlikview format or any other format.? 
+ This is great! I had it up and running within minutes with no trouble. One quick question – my database has “non-friendly” names which I need to leave as-is in the script Is there a way to give the dimensions more readable names once I’ve set this up? I.e., I might have XYS_Sales_USD listed in the script but I would want it to show as just “Sales” in the list box. 
+ Thanks – I am able to get the field names changed in the table itself; it’s in the “menu” of items – i.e., those that show up under dimension_1 in this example that I can’t get to change. 
+ The field I pick up as a dimension is named “dimension_1” and doesn’t individually list each item (customer name, country, etc.) I would like to have the menu of item names match what I have listed in the table. 
+ 

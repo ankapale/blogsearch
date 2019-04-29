@@ -1,0 +1,16 @@
+The top 10 AI features in Microsoft 365 
+ Article by 
+ By 
+ The buzz around artificial intelligence is at an all-time peak, and some may say it’s even verging on hysteria. At the recent Gartner Workplace symposium in London, it was no different. 
+ I attended a session called "Understanding & Exploiting Everyday AI” by Adam Preset. In the packed auditorium, it was clear that technology and business leaders alike were bedazzled. And with good reason. AI has manifested itself in exciting innovations such as drones, driverless vehicles and smart assistants. For organisations, the possibilities it can bring are endless. 
+ Tech leaders are bursting to “do” and recent research from Gartner indicates that around 59% of organizations are currently developing their AI strategy, 25% piloting, 6% implementing, 6% have deployed and a further 4% have plans to deploy by the end of the year. 
+ As with all innovation cycles, implementing an AI strategy will take time. It’s a journey of discovery and experimentation, which will require “out of the box” thinking. 
+ The good news is that the greatest source of AI that organisations can start reaping the benefits of is already at their fingertips….…in Microsoft 365. 
+ At Microsoft Ignite, Orlando September 2018, a number of impressive AI features for Microsoft 365 were announced. Here’s a roundup of the Top 10 AI features, new and old, that can help you to work smarter. 
+ MyAnalytics – Your own personal dashboard which summarizes how you work and suggests ways to work smarter 
+ Intelligent search - Indexes images so you can search for text within the image from OneDrive and SharePoint 
+ Microsoft PowerPoint Quickstarter – Pick a topic, then have Power Point auto populate an outline and select starter images 
+ Tags 
+ Avanade is committed to protecting your information security. Your information will be used in accordance with any applicable data privacy law, our internal policies and our Privacy Policy, and will be held securely. Avanade will not share your personal information with any third party, except as needed to manage the events or features for which you register. By using this site you agree that we can place cookies on your device. Please review our complete Privacy Policy for additional information. 
+ Some of the required fields (*) are missing, please review your information. 
+ 

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/assets/favicon-32x32.png" sizes="32x32" />
+    <title>Adit Deshpande – CS Undergrad at UCLA ('19)</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <link rel="image_src" type="image/png" href="img_path" />
+
+    
+    <meta name="description" content="CS Undergrad at UCLA ('19)">
+    <meta property="og:description" content="CS Undergrad at UCLA ('19)" />
+    
+    <meta name="author" content="Adit Deshpande" />
+
+    
+
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/adeshpande3.github.io/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Adit Deshpande - CS Undergrad at UCLA ('19)" href="/adeshpande3.github.io/feed.xml" />
+
+
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-80811190-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/adeshpande3.github.io/projects/',
+		  'title': ''
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+
+
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/adeshpande3.github.io/" class="site-avatar"><img src="/images/pic.jpg" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/adeshpande3.github.io/">Adit Deshpande</a></h1>
+            <p class="site-description">CS Undergrad at UCLA ('19)</p>
+          </div>
+
+          <nav>
+            <a href="/adeshpande3.github.io/">Blog</a>
+            <a href="/adeshpande3.github.io/about">About</a>
+            <a href="https://github.com/adeshpande3">GitHub</a>
+            <a href="/adeshpande3.github.io/projects">Projects</a>
+            <a href="/adeshpande3.github.io/resume.pdf" target="_blank">Resume</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1></h1>
+
+  <div class="entry">
+    <p>-<strong>I don’t update this page as much, so head to my GitHub for the most recent projects</strong></p>
+
+<h1 id="ipython-tensorflow-notebook-tutorials">iPython Tensorflow Notebook Tutorials</h1>
+<p><img src="/adeshpande3.github.io/assets/tf.jpg" alt="" /></p>
+
+<p><a href="https://github.com/adeshpande3/Tensorflow-Programs-and-Tutorials" target="_blank"><strong>Tensorflow Programs and Tutorials</strong></a> - This Github repo contains multiple iPython notebooks which serve as tutorials for learning about deploying deep learning and machine learning models. The following topics are covered.</p>
+<ul>
+  <li><strong>Convolutional Neural Networks</strong>: This notebook shows you how to define a simple convolutional network using Tensorflow. We’ll discuss how to load in datasets, how to create our network architecture using Tensorflow variables, as well as how to define loss functions and optimizers.</li>
+  <li><strong>Generative Adversarial Networks</strong>: This notebook shows you how to create a simple GAN. The basic idea is that you have 2 different networks, a generator network and a discriminator network. The discriminative model has the task of determining whether a given image looks natural (an image from the dataset) or looks like it has been artificially created. The task of the generator is to create natural looking images that are similar to the original data distribution. In this tutorial, we’ll look at how to create both models, and the unique process of training them to reach a Nash equilibrium.</li>
+  <li><strong>CNN’s with Noisy Labels</strong>: This notebook looks at a recent <a href="https://arxiv.org/pdf/1703.08774.pdf">paper</a> that discusses how convolutional neural networks that are trained on random labels (with some probability) are still able to acheive good accuracy on MNIST. I thought that the paper showed some eye-brow raising results, so I went ahead and tried it out for myself. It was pretty amazing to see that even when training a CNN with random labels 50% of the time, and the correct labels the other 50% of the time, the network was still able to get a 90+% accuracy.</li>
+  <li><strong>And more!</strong></li>
+</ul>
+
+<h1 id="hackathons">Hackathons</h1>
+<p><img src="/adeshpande3.github.io/assets/chiro.png" alt="" /></p>
+
+<p><a href="https://github.com/NWChen/Chiro" target="_blank"><strong>Chiro</strong></a> <em>Qualcomm HackMobile 2017</em> - Created a tool that detects and corrects your posture while sitting at a desk. We used convolutional neural networks for the binary classification problem of whether or not a person currently has good or bad posture. We gathered a large dataset of images, and used transfer learning to fine tune a pretrained Inception network. We created a camera streaming web app that sent raw RGB photos to a webserver which passed the image through a saved Keras CNN model, and rendered the results to a single page web app that alerts you when bad posture is detected.</p>
+
+<h1 id="sports-data-analysis">Sports Data Analysis</h1>
+<p><img src="/adeshpande3.github.io/assets/sports.jpg" alt="" /></p>
+
+<p><a href="https://github.com/adeshpande3/March-Madness-2017/blob/master/March%20Madness%202017.ipynb" target="_blank"><strong>March Madness 2017 Bracket Predictor Model</strong></a> - This iPython notebook looks at how we can use historical data on NCAA regular season games to develop a model that outputs win probability for 2 given teams facing each other. We can frame this as a supervised learning problem where we can use past game by game results as our labels. Each team is represented by a d-dimensional vector containing information for that team (PPG, Number of Wins, etc) during the given season. The element wise difference between the two teams is inputted into a neural network, where the output is the softmax-bounded probability of the likelihood that Team 1 will come out victorious in the matchup. I also wrote a <a href="https://adeshpande3.github.io/adeshpande3.github.io/Applying-Machine-Learning-to-March-Madness" target="_blank">blog post</a> about predicting the 2017 March Madness tournament. 
+<br /><br /><a href="https://github.com/adeshpande3/MLB_Win_Predictor/blob/master/BaseballWinPredictor.lua" target="_blank"><strong>MLB Win Predictor Linear Regression Model</strong></a> - This project looks at how a team’s baseball statistics (ERA, Batting Average, RBI, etc), over the course of a season, contribute to their total number of wins. This uses the Torch7 computing framework to develop a linear regression model that takes in a set of 16 features representing traditional baseball statistics and outputs the predicted number of wins for the given season. Given the season statistics for a team, this model can predict a team’s win total within 3 games (1.85% error).</p>
+
+<h1 id="react-web-apps">React Web Apps</h1>
+<p><img src="/adeshpande3.github.io/assets/react.png" alt="" /></p>
+
+<p><a href="https://mlb-stats-app.herokuapp.com/" target="_blank"><strong>MLB Stats App</strong></a> - First web application using the React JS framework. Have been hearing a lot of good things about it, so I wanted to give it a shot. This app is pretty simple. It just displays the 2016 regular season stats for each MLB team. Looking to add more functionality and iron out a few of the bugs a little later.</p>
+
+<h1 id="kaggle-competitions">Kaggle Competitions</h1>
+<p><img src="/adeshpande3.github.io/assets/kaggle.jpg" alt="" /></p>
+
+<p><a href="https://github.com/adeshpande3/KaggleTitanic" target="_blank"><strong>Kaggle Titanic</strong></a> - The Kaggle Titanic competition revolved around taking in a dataset of all the passengers in the Titanic, and then predicting whether or not they survived. The features in the dataset included room location, age, gender, etc. For this competition, I used a variety of different supervised learning approaches (SVMs, KNNs, Decision Trees, Neural Networks), but ultimately found that a KNN model (where K = 17) got the best accuracy of 78.95%. I used Numpy and Sklearn to help preprocess the data and create the models. 
+<br /><br /><a href="https://github.com/adeshpande3/Kaggle-MNIST" target="_blank"><strong>Kaggle MNIST</strong></a> - The Kaggle MNIST competiiton is a quite standard benchmark for all computer vision models. MNIST is a dataset of handwritten digits, and the overall goal is to have the model classify each image as a digit from 0-9. For this competition, I used a convolutional neural network written in Keras. The model gets an accuracy of 98.63%.
+<br /><br /><a href="https://github.com/adeshpande3/KaggleGhosts" target="_blank"><strong>Kaggle Ghosts</strong></a> - This playground competition was a little different in that it involved a “fake” dataset and task. The goal was to take in features of different fantasy monsters (Ghoust, Ghool, or Goblin), and output the most likely classification. Some of the features included hair length, bone length and color. An SVM proved to work the best as I was able to achieve a 73.54% accuracy. I used Numpy, Pandas, and Matplotlib to help visualize the data and features.</p>
+
+<h1 id="other-tutorials">Other Tutorials</h1>
+
+<p><a href="https://github.com/adeshpande3/Pandas-Tutorial/blob/master/Pandas%20Tutorial.ipynb" target="_blank"><strong>Pandas Tutorial</strong></a> - Pandas is the one of the most popular Python libraries as it can be lots for a variety of different data sience tasks. From describing data structures to introducing the most important functions, this tutorial is a great starting point for anyone looking to start using Pandas.</p>
+
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:adeshpande3@g.ucla.edu"><i class="svg-icon email"></i></a>
+<a href="https://www.facebook.com/aditdeshpande3"><i class="svg-icon facebook"></i></a>
+
+<a href="https://github.com/adeshpande3"><i class="svg-icon github"></i></a>
+<a href="https://instagram.com/aditdeshpande3"><i class="svg-icon instagram"></i></a>
+<a href="https://www.linkedin.com/in/aditdeshpande3"><i class="svg-icon linkedin"></i></a>
+
+<a href="/adeshpande3.github.io/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="https://www.twitter.com/aditdeshpande3"><i class="svg-icon twitter"></i></a>
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-80811190-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/adeshpande3.github.io/projects/',
+		  'title': ''
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

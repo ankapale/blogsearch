@@ -1,0 +1,109 @@
+12 June 2018 
+ A while ago I created this image for thinking about how
+machine learning systems tend to get deployed. In this figure, for Chapter 2 of CIML, the left column shows a generic decision being
+made, and the right column shows an example of this decision in the case of
+advertising placement on a search engine we’ve built. 
+ The purpose of the image at the time was basically thinking
+of different types of “approximation” error, where we have some real world goal
+(e.g., increase revenue) and design a machine learning system to achieve that.
+The point here, which echoes a lot of the Rules of Machine
+Learning by Martin Zinkevich (who
+knows much more about this than I do) writes about, is that it’s important to
+recognize that there’s a whole lot of stuff that goes around any machine
+learning system, and each piece puts an upper bound on what you can achieve. 
+ A year or two ago, in talking to Suresh Venkatasubramanian, we
+realized that it’s also perhaps an interesting way to think about different
+places that “discrimination” might come into a system (I’ll avoid the term “bias”
+because it’s overloaded here with the “bias/variance tradeoff”). By “discrimination”
+I simply mean a situation in which some subpopulation is disadvantaged. Below
+are some thoughts on how this might happen. 
+ To make things more interesting (and navel-gaze-y), I’m
+going to switch from the example of ad display to paper recommendations in a
+hypothetical arxiv rss-feed-based paper recommendation system. To be absolutely
+clear, this is very much a contrived, simplified thought example, and not meant
+to be reflective of any decisions anyone or any company has made. (For the
+purposes of this example, I will assume all papers on arxiv are in English.) 
+ In stating this goal, we are explicitly making a value judgment of what
+matters. In this case, one part of this value judgment is that it’s only new papers that are interesting,
+potentially disadvantaging authors who have high quality older work. It also advantages
+people who put their papers on arxiv, which is not a uniform slice of the
+research population. 
+ 2.We now need a real-world mechanism to achieve our goal: an iPhone app that shows
+extracted information from a paper that users can thumbs-up or thumbs-down (or
+swipe left/right as you prefer). 
+ By deciding to build an iPhone app, we have privileged iPhone users over users
+of other phones, which likely correlates both with country of residence and
+economic status of the user. By designing the mechanism such that extracted
+paper information is shown and a judgment is collected immediately, we are possibly
+advantaging papers (and thereby the authors of those papers) whose
+contributions can be judged quickly, or which seem flashy (click-bait-y). Similarly,
+since human flash judgments may focus on less relevant features, we may be
+biasing toward authors who are native English speakers, because things like
+second language errors may disproportionately affect quick judgments. 
+ 3.Next, set up a learning problem: online prediction of thumbs-up/down for papers
+displayed to the user (essentially a contextual bandit learning problem). 
+ I actually don’t have anything to say on this one. Open to ideas 😊. 
+ 4.Next, we define a mechanism for collecting data:
+we will deploy a system and use epsilon-greedy exploration to collect data. 
+ There are obviously repercussions to this decision, but I’m not sure any are discriminatory.
+Had we chosen a more sophisticated exploration policy, this could possibly run
+into discrimination issues because small populations might get “explored on”
+more, potentially disadvantaging them. 
+ By choosing to record author and institution
+(for instance), we are both opening up the possibility of discrimination against
+certain authors or institutions, but, because many techniques for addressing discrimination
+in machine learning assume that you
+have access to some notion of protected category, we are also opening up the
+possibility of remedying that. Similarly, by recording the abstract, we are (similar
+but different to before) opening the possibility for discrimination by degree
+of English proficiency. 
+ 6.Given this logged data, we have to choose a data
+representation: for this we’ll take text from title, authors, institution and
+abstract, and then have features for the current user of the system (e.g., the
+same features from their own papers), and a binary signal for thumbs up/down. 
+ A major source of potential discrimination here comes from the features we use
+of the current user. If the current user, for instance, only has a small number
+of papers from which we can learn about the topics they care about, then the
+system will plausibly work worse for them than for someone with lots of papers
+(and therefore a more robust user profile). 
+ 7.Next we choose a model family: for simplicity
+and because we have a “cold start” problem, instead of going the full neural
+network route, we’ll just use a bag-of-embeddings representation for the paper
+being considered, and a bag-of-embeddings representation for the user, and
+combine them with cross-product features into a linear model. 
+ This is a fairly easy representation to understand. Because we’ve chosen a bag
+of embeddings, this could plausibly underperform on topics/areas where the
+keywords are separated by spaces (e.g., I heard a story once that someone who
+works mostly on dependency parsing tends to get lots of papers suggested to them
+to review by TPMS on decision tree models because of the overlap of the word “tree”).
+It’s not clear to me that there are obvious discrimination issues here, but it
+could be. 
+ 8.Selecting the training data: in this case, the
+training data is simply coming online, so the discussion in (3) applies. 
+ 9.We now train the model and select
+hyperparameters: again, this is an online setting, so there’s really no
+train/test split, so this question doesn’t really apply (though see the comment
+about exploration in #4). 
+ 10.The model is then used to make predictions:
+again, online, doesn’t really apply. 
+ 11.Lastly, we evaluate error: here, the natural is
+0/1 loss on whether thumbs up/down was predicted correctly or not. 
+ In choosing to evaluate our system based only on average 0/1 loss over the run,
+we are potentially missing the opportunity to even observe systematic bias. An alternative would be to do things like
+evaluating 0/1 error as a function of various confounding variables, like
+institution prestige, author prolificity, some measure of nativism of the
+language, etc. Similarly breaking the error down into features of the user for
+similar reasons. Finally, considering not just error but separating out false
+positive and false negatives can often reveal discriminatory structures not
+otherwise obvious. 
+ ---------------------------- 
+ I don’t think this analysis is perfect, and some things don’t
+really apply, but I found it to be a useful thought exercise. 
+ One thing very interesting about thinking about
+discrimination in this setting is that there are two opportunities to mess up:
+on the content provider (author) side and on the content consumer (reader) side.
+This comes up in other places too: should your music/movie/etc. recommender
+just recommend popular things to you or should it be fair to content providers
+who are less well known? (Thanks to Fernando
+Diaz for this example.) 
+ 

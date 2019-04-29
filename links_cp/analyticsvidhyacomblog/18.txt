@@ -1,0 +1,105 @@
+Understanding basics of Recommendation Engines (with case study) 
+ Introduction 
+ Ever wondered, “what algorithm google uses to maximize its target ads revenue?”. What about the e-commerce websites which advocates you through options such as ‘people who bought this also bought this’. Or “How does Facebook automatically suggest us to tag friends in pictures”? 
+ The answer is Recommendation Engines. With the growing amount of information on world wide web and with significant rise number of users, it becomes increasingly important for companies to search, map and provide them with the relevant chunk of information according to their preferences and tastes. 
+ Companies nowadays are building smart and intelligent recommendation engines by studying the past behavior of their users. Hence providing them recommendations and choices of their interest in terms of “Relevant Job postings”, “Movies of Interest”, “Suggested Videos”, “Facebook friends that you may know” and “People who bought this also bought this” etc. 
+ What are Recommendation Engines ? 
+ Often termed as Recommender Systems, they are simple algorithms which aim to provide the most relevant and accurate items to the user by filtering useful stuff from of a huge pool of information base. Recommendation engines discovers data patterns in the data set by learning consumers choices and produces the outcomes that co-relates to their needs and interests. 
+ Types of Recommendation Engine: 
+ In this article, we will explain two types of recommendation algorithms that are also used by most of the tech giants like Google and Facebook in their advanced recommender system modules. 
+ As a typical business problem, 
+ Consider a scenario of an e-commerce website which sells thousands of smartphones. With growing number of customers every day, the task in hand is to showcase the best choices of smartphones to the users according to their tastes and preferences. 
+ To understand how recommendation engine works, let’s slice the data into a sample set of five smartphones with two major features “Battery and Display”. The five smartphones have following properties: 
+ S1 has good battery life but poor display 
+ S2 has an amazing battery performance but very rough display 
+ S3’s battery is one of the best but display lacks quality 
+ S4 & S5 are good in terms of display but poor in terms of battery performance. 
+ Using these characteristics, we can create an Item – Feature Matrix. Value in the cell represents the rating of the smartphone feature out of 1. 
+ Item – Feature Matrix 
+ Our sample set also consist of four active users with their preferences. 
+ Aman: He prefers battery over display as an ideal smartphone feature. 
+ Bob: He likes a long lasting battery. 
+ Chandan: For Chandan, display should be decent, battery should be normal. 
+ David: For David, Display is extremely important but not the battery. 
+ Using their interests, we can create a User – Feature Matrix as follows: 
+ We have two matrices: Item – Feature and User – Feature. We can create the recommendation of smartphones for our users using following algorithms: 
+ Content Based Recommendations 
+ Content based systems, recommends item based on a similarity comparison between the content of the items and a user’s profile. The feature of items are mapped with feature of users in order to obtain user – item similarity. The top matched pairs are given as recommendations, as demonstrated below: Representing every user by a feature vector: 
+ Also, every item representation as a feature vector: 
+ and so on… 
+ Content Based Item – User Mapping Recommendations are given by the equation: 
+ Smartphones S2, S3 and S1 has the highest recommendation scores, Hence S2, S3 and S1 are recommended to Aman. 
+ Collaborative Filtering 
+ Content-based recommendation lacks in detecting inter dependencies or complex behaviors. For example: People might like smartphones with Good Display, only if it has retina display and wouldn’t otherwise. 
+ Collaborative Filtering algorithm considers “User Behaviour” for recommending items. They exploit behaviour of other users and items in terms of transaction history, ratings, selection and purchase information. Other users behaviour and preferences over the items are used to recommend items to the new users. In this case, features of the items are not known. 
+ We have a similar User – Feature Matrix as content based: 
+ User – Feature Matrix 
+ This time we don’t know features of the items but we have user behaviour. i.e. How the Users brought/rated the existing items. 
+ User- Behaviour Matrix 
+ where values of the behaviour matrix can be described as: 
+ Bi,j = {r , if Uj has given “r” rating to a Si
+?, if no rating is given 
+ This user behavior matrix can be used to derive unknown features of the most liked items. Lets try to derive features of S1 using this behavior matrix. 
+ S1 is rated 5 by U1 
+ S1 is rated 4.5 by U2 
+ S1 rating by U3 & U4 are not known 
+ Using this information Feature Vector of S1 can be assumed as: 
+ S1 : [x1 x2] 
+ and the equations are: 
+ U1TS1 = 5 
+ U2TS1 = 4.5 
+ [0.9 0.1]T [x1 x2] = 5 
+ [0.8 0.2]T [x1 x2] = 4.5 
+ 0.9 * x1 + 0.1 * x2 = 5 
+ 0.8 * x1 + 0.1 * x2 = 4.5 
+ solving these equations, gives x1 = 5.5 and x2 = 0.5 
+ S1 = [5.5 0.5] 
+ Similarly, 
+ S2 = [5.5 0] 
+ S3 = [5 0] 
+ S4 = [0.5 5.5] 
+ S5 = [2.7 5.25] 
+ Now all the feature vectors are known. Hence the recommendations will be mappings of User Feature Vectors and Item Feature Vectors. Thus for Aman, based on his preferences and behaviours, recommendation will be: 
+ which comes out the be S1, S2 and S3 again. Since S1 and S2 are already rated by Aman, So we will recommend him a new smartphone S3. 
+ In the above example where we assumed that there are two primary features of S1 as governed by the users who rated it. In real case, we end up with more number of features than this. For example, if we had data for all the N number of users who rated S1, then feature vector look like: 
+ S1: [ x1 x2 x3 x4 x5 … ] 
+ End notes 
+ In this article, we learnt about two types of Recommendation Engines: Content based recommendations and Collaborative Recommendations. There exists more advanced techniques like ALS : Alternating Least Square Recommendations and Hybrid Recommendation Engines. The Recommendation Engines have become an important need with the growing information space. Did you find this article useful ? Have you also worked on recommender systems? Share your opinions / views in the comments section below. 
+ Shivam Bansal is a data scientist with exhaustive experience in Natural Language Processing and Machine Learning in several domains. He is passionate about learning and always looks forward to solving challenging analytical problems. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ You can see that every row in this matrix has atleast two cells filled. Hence, you can always create two equations which can be solved simultaneously to find S2 – S5. I hope this makes it clear.
+Tavish 
+ a) How to calculate the user-feature matrix . i.e how do we come up with numbers like 0.9 and 0.1 for Aman . I assume that these values have been chosen at random in this article . However i would like to know how do e-commerce websites calculate these values 
+ b) How do we calculate item-feature values in content based recommendations . Again , i assume the numbers like 0.9 are randomly chosen for the purpose of this article . Could you let me know how do e-commerce websites calculate these values . What are the different factors considered by e-commerce website in order to compute these values 
+ Both your questions are very insightful and thought through.. I will take a shot at them :
+1. For millions of customers we generally move on to something called as cosine similarity between customers. In case you still want to implement the exact methodology on languages like SAS, you will need IML which has this capacity.
+2. For new users where you have no history available, one method I can think of is to create a regression to estimate his preference through his demographic. If such relationship can be established, then you will know the preference of any new customer as well.
+Hope this helps.
+Tavish 
+ Hi Tavish,
+In case of new users for whom we do not know the ratings, we can go for a content-based recommendation easily, right? That’s why they ask a lot of preferences while logging into netflix or imdb. Just a thought.
+Regression from a person’s demographics looks like an innovative idea, can u throw some more light on that? Is it like estimating preference from the info: where he lives, what he eats etc.? 
+ Hello Krishna
+A matrix of order 1 by 2 can only be multiplied by a matrix of order 2 by 1 in order to get a matrix of order 1 by 1. From several such products, maximum or top 3 values can be easily evaluated. 
+ Collaborative filtering, what I know so far, is about creating user-item rating-matrix and then calculating the cosine similarity (or Pearson) between users or b/w items. Next we can rate a item by the weighted average of all ratings and if the rating is more than the mean-rating of the user – we basically recommend it.
+Here it is done in a different way. Why features are derived from the Rating Matrix? How can we say how many features would be important? Rating Matrices are normally very sparse. Here we decided on 2 features as every row has at least 2 values, but is that a great way to deal with?
+I am new to recommendation systems, please let me know what am I missing. 
+ Deriving features from Rating Matrix is just another representation of User – Item Matrix. To decide an optimal value of K (number of features) is generally improved with the number of trials and it is based on problem statement itself. 
+ For example, Let say a particular mobile company gives importance to certain features such as Battery and Music (based on their user feedbacks and experience) in order to create user recommendations. There can be another company which gives preferences to let’s say three features (Battery, Music, Screen size) based on their experience. 
+ Hi Shivam,
+Thanks for replying. I got it. In fact, this is very interesting. Whereas, I have a few queries:
+As u explained, some smartphone, say S1 may have 3 important features, and some, say S2 may have 4 imp features. So, we have to have at least N ratings by different users for a particular item in order to derive N features, right? which is definitely feasible in real world scenario, as features maybe in tens, whereas ratings in hundreds isn’t uncommon.
+Am I getting it correct, or missing something? Actually I am working on a recommendation system and I found this method really interesting. 
+ I understand the idea of collaborative filtering, but I feel the execution is centralized as you used the transpose method. I have a question, for instance U1 rated for s1,s2,s3,s4 and U2 rated only for S2 and so on… (my point is that you took an assumption where every user rated only 2 smartphones and every smart phone has only 2 features which makes the transpose multiplication possible([1*2] * [ 2*1]) in other cases it will be [1*4]*[2*1] which is impossible. 
+ I believe there is other method to do this and I also didn’t understand the significance of using the transpose? 
+ Hi Binit,
+In the collaborative filtering , It is already given that features of the item are not known right? That means we do’nt have user feature matrix .We are only having user behavior matrix .Now we want to calculate feature vectors corresponding to each item.consider for first smartphone (1st item) we need to calculate feature vector we will do the following
+let S1 : [x1 x2]
+only aman (U1)and bob(U2) have rated this item :
+the U1 and U2 is equal to [0.9 0.1] and [0.8 0.2] from where do I get this?while we are not having User – Feature Matrix.
+Thanks in advance. 
+ I think to compute the similarity score, it is better to normalize the feature vector. 
+ For example, in the computation for content based recommendation, U1 feature vector is [0,9, 0.1], S1 feature is [0.9, 0.1] and S2 feature is [1, 0]. Intuitively, U1 and S1 has perfect feature/interest match so we should recommend S1 to U1. 
+ However, based on the computation formula in this post, U1 X S1 similarity score is 0.82 while U1 X S2 similarity score is 0.9, thus S2 is recommended. 
+ However, if we normalize each feature vector by its length, similarity between U1 and S1 is (0.9X 0.9+0.1X0.1)/(sqrt(0.9X 0.9+0.1X0.1) X sqrt(0.9X 0.9+0.1X0.1)) = 1 and similarity between U1 and S2 is (0.9X 1)/(sqrt(0.9X 0.9+0.1X 0.1))= 0.994, so S1 should be recommend. 
+ 

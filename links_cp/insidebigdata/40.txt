@@ -1,0 +1,3 @@
+Lessons from B2B Leaders in Managing Data 
+ As the volume of data coming into organizations  from both internal and external sources  continues to grow and makes its way across departmental systems in many different formats, there is a critical need to create a single, holistic view of the key data entities in common use across the enterprise. Master Data Management (MDM) aims to accomplish this goal. Not surprisingly, MDM has become a significant priority for global enterprises, with the market expected to triple from $9.4B to $26.8B by 2020 according to analysts. 
+ 

@@ -1,0 +1,5 @@
+Jan 21 Microsoft Researchers Build a Bot that Draws 
+ If you’re handed a note that asks you to draw a picture of a bird with a yellow body, black wings and a short beak, chances are you’ll start with a rough outline of a bird, then glance back at the note, see the yellow part and reach for a yellow pen to fill in the body, read the note again and reach for a black pen to draw the wings and, after a final check, shorten the beak and define it with a reflective glint. Then, for good measure, you might sketch a tree branch where the bird rests. 
+ Now, there’s a bot that can do that, too. 
+ The new artificial intelligence technology under development in Microsoft’s research labs is programmed to pay close attention to individual words when generating images from caption-like text descriptions. This deliberate focus produced a nearly three-fold boost in image quality compared to the previous state-of-the-art technique for text-to-image generation, according to results on an industry standard test reported in a research paper posted on arXiv.org. 
+ 

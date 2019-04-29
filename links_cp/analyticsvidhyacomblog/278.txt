@@ -1,0 +1,40 @@
+Questions to ask while designing A/B (or multi-variate) tests 
+ Testing / experimentation can help Organization find hidden information or insights about their own customers and business. 
+ Sadly, not many Organizations realize the amount and value of learning which can happen through testing. On one hand, there are Organizations like Google, Amazon, Capital One where testing is an integral part of the culture. On the other hand, there are Organizations which are unaware of testing and how to use it for generating key insights about your business. 
+ For the starters, what is testing / experimentation? 
+ Simply put, testing is learning through experimentation. Let us take a simple example. Imagine that you are responsible for Sales conversion of new customers for an e-commerce retailer. Your website currently has a 4 step check-out process. Your hypothesis is that by condensing this form to 3 steps (there by increasing length of some steps), you will be able to increase the conversion. 
+ While you can try and answer this basis data (by looking at competitors, past experience (if any)), you can not find out the answer until you test it out. So, the easiest solution is to take half of your customers through proposed 3 step process (commonly called Champion) and the other half through existing 4 step process (Challenger or Control group). Run the test long enough to have statistically significant reads on conversion and check out what works for your customers and your website. 
+ While the process of testing is simple, it requires high level of diligence and attention to details. To some extent, the skill of testing and analyzing tests effectively is like a vintage wine. The more time you spend practicing, the better you become at it. 
+ Following is a schematic of how life cycle of a typical test looks. Overall process can be divided in 4 parts: 
+ Define 
+ Design 
+ Implement 
+ Analyze 
+ In order to make sure that you get the maximum value out of any testing, it is very critical that you get the design right. 
+ Process of testing 
+ While each of these step is critical, the focus of this post is to provide a list of questions to be asked at design stage in order to gain the most out of these tests. These questions can suffice as a checklist to make sure you have considered all critical aspects of test design. 
+ Questions to ask when designing test: 
+ What is (are) the key hypothesis you want to test? Which metric would you measure to test this hypothesis? 
+ How many test cells do you need to test out your hypothesis? Each version of treatment should be considered as a test cell. 
+ What is the sample size requirement for each test cell? How many data points do you need to make the reads statistically significant? 
+ How long do you need to run the test? Ideally this should be the period in which you can read the difference + some buffer. 
+ What controls do you have in place to make sure that testing happens as intended? 
+ What is the monitoring plan for the test? How frequently would the test be monitored? Who will perform the monitoring? What would be the escalation matrix if monitoring does not happen as planned? 
+ What are the key risks to the success of this test? How can you mitigate these risks? 
+ Was there any test performed in past to test the same / similar hypothesis? What was the outcome of that test? 
+ How would the assignment of customers / events to a test cell happen? Would it be random? 
+ If the assignment to test cell is not random, how will you make sure that there is no bias due to method of assigning test cell? 
+ If it is random, how is the random number generated? Does it require a seed? How can you make sure that you do not provide same seed every time? 
+ Is there a need to provide consistent treatment every time the event happens? How are you ensuring that? If there a CRM solution which you are using for this? 
+ Are there any co-variates you need to measure during the testing? What is the impact of measuring the co-variates on sample size requirement? 
+ Are your stakeholders aware of the testing procedure and requirement? How do you plan to make sure there are no strategic changes which happen while the test is running (which can impact the reads)? 
+ Are there any confounding errors which could result in mis-interpretation of results? 
+ How long will it take for results of test to come out? Is there any gestation period required? 
+ What will you do if something goes wrong during testing? Will you stop the test and re-run? or you would continue with the test? 
+ What is the maximum duration for which you can run the test? What level of lift and confidence interval with which you can read these results? 
+ Last, but not the least, what is the expected benefit from the test? 
+ Answering these 19 questions in a disciplined manner will help you identify any gaps in your test design. More often than not, that would mean significant savings in terms of resource and opportunity costs. 
+ What do you think about these questions? Do you think they can help you create a better test design? Are there any other question you think should be part of this list? Please share your thoughts on these questions in the comments below. 
+ Kunal is a post graduate from IIT Bombay in Aerospace Engineering. He has spent more than 10 years in field of Data Science. His work experience ranges from mature markets like UK to a developing market like India. During this period he has lead teams of various sizes and has worked on various tools like SAS, SPSS, Qlikview, R, Python and Matlab. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 

@@ -1,0 +1,2424 @@
+<!doctype html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:article="http://ogp.me/ns/article" lang="en-US" itemscope itemtype="http://schema.org/Article"  class="touch-styles">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- This is Squarespace. --><!-- artificial-intelligence-blog -->
+<base href="">
+<meta charset="utf-8" />
+<title>DeepMind Makes AI Walk &amp; Run (Serious &amp; Funny) &mdash; 2019 Artificial Intelligence News - AI News</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/589cd24aff7c507ac47f8597/favicon.ico"/>
+<link rel="canonical" href="https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny"/>
+<link rel="amphtml" href="https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny?format=amp">
+<meta property="og:site_name" content="Artificial Intelligence Blog + AI News"/>
+<meta property="og:title" content="DeepMind Makes AI Walk &amp; Run (Serious &amp; Funny)"/>
+<meta property="og:latitude" content="40.7207559"/>
+<meta property="og:longitude" content="-74.00076130000002"/>
+<meta property="og:url" content="https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content="The agility and flexibility of a monkey swinging through the trees or a football player dodging opponents and scoring a goal can be breathtaking. Mastering this kind of sophisticated motor control is a hallmark of physical intelligence, and is a crucial part of AI research."/>
+<meta property="og:image" content="http://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597ce40a3a041181d9cfdb60/1517233530271/deepmind-makes-ai-walk-and-run-serious-and-funny.001.jpg?format=1500w"/>
+<meta property="og:image:width" content="1500"/>
+<meta property="og:image:height" content="750"/>
+<meta itemprop="name" content="DeepMind Makes AI Walk &amp; Run (Serious &amp; Funny)"/>
+<meta itemprop="url" content="https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny"/>
+<meta itemprop="description" content="The agility and flexibility of a monkey swinging through the trees or a football player dodging opponents and scoring a goal can be breathtaking. Mastering this kind of sophisticated motor control is a hallmark of physical intelligence, and is a crucial part of AI research."/>
+<meta itemprop="thumbnailUrl" content="http://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597ce40a3a041181d9cfdb60/1517233530271/deepmind-makes-ai-walk-and-run-serious-and-funny.001.jpg?format=1500w"/>
+<link rel="image_src" href="http://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597ce40a3a041181d9cfdb60/1517233530271/deepmind-makes-ai-walk-and-run-serious-and-funny.001.jpg?format=1500w" />
+<meta itemprop="image" content="http://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597ce40a3a041181d9cfdb60/1517233530271/deepmind-makes-ai-walk-and-run-serious-and-funny.001.jpg?format=1500w"/>
+<link rel="author" href="https://plus.google.com/100198812377544641843" />
+<meta itemprop="author" content="Steve Digital"/>
+<meta itemprop="datePublished" content="2017-07-29T20:49:19+0100"/>
+<meta itemprop="headline" content="DeepMind Makes AI Walk & Run (Serious & Funny)"/>
+<meta itemprop="publisher" content="Artificial Intelligence Blog + AI News"/>
+<meta name="twitter:title" content="DeepMind Makes AI Walk &amp; Run (Serious &amp; Funny)"/>
+<meta name="twitter:image" content="http://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597ce40a3a041181d9cfdb60/1517233530271/deepmind-makes-ai-walk-and-run-serious-and-funny.001.jpg?format=1500w"/>
+<meta name="twitter:url" content="https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:description" content="The agility and flexibility of a monkey swinging through the trees or a football player dodging opponents and scoring a goal can be breathtaking. Mastering this kind of sophisticated motor control is a hallmark of physical intelligence, and is a crucial part of AI research."/>
+<meta name="description" content="The agility and flexibility of a monkey swinging through the trees or a 
+football player dodging opponents and scoring a goal can be breathtaking. 
+Mastering this kind of sophisticated motor control is a hallmark of 
+physical intelligence, and is a crucial part of AI research." />
+<script type="text/javascript" src="//use.typekit.net/ik/VcFfX-zDKDf_tqsEUHt4HlBSiDrIMLmwPAFAhxMotLCfeCbffFHN4UJLFRbh52jhWD9tFA9tZRS3jcmKjAZKFR9DwDqowDgK5gn9MPG0jW4X-AZTjh8ydfuTd1s8deUTZhm0jh9ljcUzZkoDSWmyScmDSeBRZPoRdhXCjW4X-AZTjh8ydfuTd1s8deUTZhm0jh9ljcUzZkoDSWmyScmDSeBRZPoRdhXCjW4X-AZTjh8ydfuTd1s8deUTZhm0jh90jcUzZkUCdhFydeyzSabCiaiaOcBkie8c-AFTjA3l-AoXZAUC-Ai8dcF8OA4CdhS0SaBujW48Sagyjh90jhNlOYiaikoyS1sTZc8R-ABCOA80iemCde81ZAoRZPoKdeN1J6Z8iW4zSeI7fbKTpsMMeMw6MKG4fHToIMMjgfMfH6qJ7YqbMg6YJMJ7f6Rqy6IbMg65JMJ7f6R8y6IbMg6sJMHbMLcacNMB.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:700,400,900"/>
+<script type="text/javascript" src="//use.typekit.net/ik/tZg1cQd3xyTS-CN-9Wkzturd3l9ICoVllk_JWjIW1eqfenGff4e6pUJ6wRMU5QwXFmvu52m85ejawe48jcBcjRjuwDwo5Qw3jR6-uMI7OcBkie8c-AFTjA3l-AoXZAUC-Ai8dcF8OA4CdhS0SaBujW48Sagyjh90jhNlOeBkie8c-AFTjA3l-AoXZAUC-Ai8dcF8OA4CdhS0SaBujW48Sagyjh90jhNlOeBkie8c-AFTjA3l-AoXZAUC-Ai8dcF8Oc4CdhSCdeNRjAUGdaFXOYiaikoyS1sTZc8R-ABCOA80iemCde81ZAoRZPuKdeN1O1FUiABkZWF3jAF8OcFzdPUaiaS0jW4X-AZTjh8ydfuTd1s8deUTZhm0jh90jcUzZkJeZWmkdagyH6qJ71qbMg6IJMJ7fbKGpsMMeMS6MKGHf5PeMsMMeMt6MKGHf5AeMsMMegI6MTMg0VWUD39.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<script type="text/javascript">SQUARESPACE_ROLLUPS = {};</script>
+<script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//static.squarespace.com/universal/scripts-compressed/common-781e2277b73720b79ac9-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common');</script>
+<script crossorigin="anonymous" src="//static.squarespace.com/universal/scripts-compressed/common-781e2277b73720b79ac9-min.en-US.js" ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//static.squarespace.com/universal/scripts-compressed/commerce-719be1fdeb44368a7d06-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-commerce');</script>
+<script crossorigin="anonymous" src="//static.squarespace.com/universal/scripts-compressed/commerce-719be1fdeb44368a7d06-min.en-US.js" ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].css = ["//static.squarespace.com/universal/styles-compressed/commerce-3cf2dee12bb4759d736dea53e6c346aa-min.css"]; })(SQUARESPACE_ROLLUPS, 'squarespace-commerce');</script>
+<link rel="stylesheet" type="text/css" href="//static.squarespace.com/universal/styles-compressed/commerce-3cf2dee12bb4759d736dea53e6c346aa-min.css"/><script crossorigin="anonymous" src="//static.squarespace.com/universal/scripts-compressed/performance-5462e59f9a94f7bf1cba-min.en-US.js" defer ></script><script data-name="static-context">Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {"facebookAppId":"314192535267336","rollups":{"squarespace-announcement-bar":{"css":"//static.squarespace.com/universal/styles-compressed/announcement-bar-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/announcement-bar-7da375313c0891d6f9d8-min.en-US.js"},"squarespace-audio-player":{"css":"//static.squarespace.com/universal/styles-compressed/audio-player-a57b8f3aa31918104f57a068648fbc63-min.css","js":"//static.squarespace.com/universal/scripts-compressed/audio-player-e56df71aace716b147cd-min.en-US.js"},"squarespace-blog-collection-list":{"css":"//static.squarespace.com/universal/styles-compressed/blog-collection-list-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/blog-collection-list-dae61b6efffd234d480e-min.en-US.js"},"squarespace-calendar-block-renderer":{"css":"//static.squarespace.com/universal/styles-compressed/calendar-block-renderer-9acef2d24c6a994fca1a8a82e99e19c3-min.css","js":"//static.squarespace.com/universal/scripts-compressed/calendar-block-renderer-1915da548a1633cbc5ed-min.en-US.js"},"squarespace-chartjs-helpers":{"css":"//static.squarespace.com/universal/styles-compressed/chartjs-helpers-9935a41d63cf08ca108505d288c1712e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/chartjs-helpers-724f7e246cb1d66bc99a-min.en-US.js"},"squarespace-comments":{"css":"//static.squarespace.com/universal/styles-compressed/comments-a7b26c9ae88684f76d210b61d0b0d848-min.css","js":"//static.squarespace.com/universal/scripts-compressed/comments-d6d1d0722d53e9efd2a1-min.en-US.js"},"squarespace-commerce-cart":{"js":"//static.squarespace.com/universal/scripts-compressed/commerce-cart-45896ddf5ba72ace2bc5-min.en-US.js"},"squarespace-commerce-checkout-v2_5":{"js":"//static.squarespace.com/universal/scripts-compressed/commerce-checkout-v2_5-d59ef45d19291bb3219e-min.en-US.js"},"squarespace-dialog":{"css":"//static.squarespace.com/universal/styles-compressed/dialog-7d0827ef14cce0b773fcd1eee28fbdee-min.css","js":"//static.squarespace.com/universal/scripts-compressed/dialog-879ba78eefa126a4affe-min.en-US.js"},"squarespace-events-collection":{"css":"//static.squarespace.com/universal/styles-compressed/events-collection-9acef2d24c6a994fca1a8a82e99e19c3-min.css","js":"//static.squarespace.com/universal/scripts-compressed/events-collection-88e213b212671419a1be-min.en-US.js"},"squarespace-form-rendering-utils":{"js":"//static.squarespace.com/universal/scripts-compressed/form-rendering-utils-1f78b6a2cd1872a174be-min.en-US.js"},"squarespace-forms":{"css":"//static.squarespace.com/universal/styles-compressed/forms-ac7917c174031c937e3df4b3a2005b34-min.css","js":"//static.squarespace.com/universal/scripts-compressed/forms-968b0c59530934d61595-min.en-US.js"},"squarespace-gallery-collection-list":{"css":"//static.squarespace.com/universal/styles-compressed/gallery-collection-list-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/gallery-collection-list-7648566bab72920ef13d-min.en-US.js"},"squarespace-image-zoom":{"css":"//static.squarespace.com/universal/styles-compressed/image-zoom-72b0ab7796582588032aa6472e2e2f14-min.css","js":"//static.squarespace.com/universal/scripts-compressed/image-zoom-cb5275e89163cb85e96e-min.en-US.js"},"squarespace-pinterest":{"css":"//static.squarespace.com/universal/styles-compressed/pinterest-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/pinterest-0f96759741e00f75abdf-min.en-US.js"},"squarespace-popup-overlay":{"css":"//static.squarespace.com/universal/styles-compressed/popup-overlay-7b48efeab9b323dfdb524a256cf61595-min.css","js":"//static.squarespace.com/universal/scripts-compressed/popup-overlay-efbb4ef342794ce05a72-min.en-US.js"},"squarespace-product-quick-view":{"css":"//static.squarespace.com/universal/styles-compressed/product-quick-view-bc8694b75a40e4bd969b662b80ebafb5-min.css","js":"//static.squarespace.com/universal/scripts-compressed/product-quick-view-9f23510deb8c245d6a93-min.en-US.js"},"squarespace-products-collection-item-v2":{"css":"//static.squarespace.com/universal/styles-compressed/products-collection-item-v2-72b0ab7796582588032aa6472e2e2f14-min.css","js":"//static.squarespace.com/universal/scripts-compressed/products-collection-item-v2-117f3ba293cc438755ea-min.en-US.js"},"squarespace-products-collection-list-v2":{"css":"//static.squarespace.com/universal/styles-compressed/products-collection-list-v2-72b0ab7796582588032aa6472e2e2f14-min.css","js":"//static.squarespace.com/universal/scripts-compressed/products-collection-list-v2-6910ba7d3e8558e4872c-min.en-US.js"},"squarespace-search-page":{"css":"//static.squarespace.com/universal/styles-compressed/search-page-ea3e98edb84abbc5e758884f69149027-min.css","js":"//static.squarespace.com/universal/scripts-compressed/search-page-d9c162a8632d20b078e6-min.en-US.js"},"squarespace-search-preview":{"js":"//static.squarespace.com/universal/scripts-compressed/search-preview-d99439d9e41d46bbdeb5-min.en-US.js"},"squarespace-share-buttons":{"js":"//static.squarespace.com/universal/scripts-compressed/share-buttons-9c21b54c7a3bc7fad8b3-min.en-US.js"},"squarespace-simple-liking":{"css":"//static.squarespace.com/universal/styles-compressed/simple-liking-310d0b18e112f708f91339b11fd55714-min.css","js":"//static.squarespace.com/universal/scripts-compressed/simple-liking-f0c0d8fca30cdbd6d6dc-min.en-US.js"},"squarespace-social-buttons":{"css":"//static.squarespace.com/universal/styles-compressed/social-buttons-26106f808f7e9c739a7f862a408ed039-min.css","js":"//static.squarespace.com/universal/scripts-compressed/social-buttons-a7d1d2a96297b788ce2f-min.en-US.js"},"squarespace-tourdates":{"css":"//static.squarespace.com/universal/styles-compressed/tourdates-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/tourdates-854ad009c54d888a51f3-min.en-US.js"},"squarespace-website-overlays-manager":{"css":"//static.squarespace.com/universal/styles-compressed/website-overlays-manager-df9cddfe3eca22764d10fd6fc4f4ad73-min.css","js":"//static.squarespace.com/universal/scripts-compressed/website-overlays-manager-438c3f8248645aaa89d4-min.en-US.js"}},"pageType":50,"website":{"id":"585e8f70bebafb65339930b8","identifier":"artificial-intelligence-blog","websiteType":4,"contentModifiedOn":1549925798034,"cloneable":false,"developerMode":true,"siteStatus":{},"language":"en-US","timeZone":"Europe/London","machineTimeZoneOffset":3600000,"timeZoneOffset":3600000,"timeZoneAbbr":"BST","siteTitle":"Artificial Intelligence Blog + AI News","fullSiteTitle":"DeepMind Makes AI Walk & Run (Serious & Funny) \u2014 2019 Artificial Intelligence News - AI News","siteTagLine":"Artificial - Intelligence . Blog","siteDescription":"<p>Artificial Intelligence News, Books, Educational Resources, Research and more. Stay up-to-date with the happenings in the field of AI. Now with a daily podcast as well.</p>","logoImageId":"589cd23e46c3c44e76b0bcdb","socialLogoImageId":"5c531d2e758d466a263d9ac6","shareButtonOptions":{"1":true,"3":true,"6":true,"7":true,"4":true,"8":true,"5":true,"2":true},"logoImageUrl":"//static1.squarespace.com/static/585e8f70bebafb65339930b8/t/589cd23e46c3c44e76b0bcdb/1549925798034/","socialLogoImageUrl":"//static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c531d2e758d466a263d9ac6/1549925798034/","authenticUrl":"https://www.artificial-intelligence.blog","internalUrl":"https://artificial-intelligence-blog.squarespace.com","baseUrl":"https://www.artificial-intelligence.blog","primaryDomain":"www.artificial-intelligence.blog","sslSetting":3,"isHstsEnabled":false,"socialAccounts":[{"serviceId":4,"userId":"813137037612220417","userName":"wwwAIblog","screenname":"AI Blog","addedOn":1483218065583,"profileUrl":"https://twitter.com/wwwAIblog","iconUrl":"http://pbs.twimg.com/profile_images/813137704624025600/F8wib2NO_normal.jpg","collectionId":"58681c91d2b857fd0d1b4fcc","iconEnabled":true,"serviceName":"twitter"},{"serviceId":2,"userId":"100002927092410","screenname":"Artificial Intelligence Blog","addedOn":1482790209913,"profileUrl":"http://www.facebook.com/wwwAIblog","iconUrl":"http://graph.facebook.com/100002927092410/picture?type=square","metaData":{"service":"facebook"},"iconEnabled":true,"serviceName":"facebook"},{"serviceId":10,"userId":"4489709121","userName":"wwwaiblog","screenname":"Artificial Intelligence Blog","addedOn":1485122394603,"profileUrl":"http://instagram.com/wwwaiblog","iconUrl":"https://scontent.cdninstagram.com/t51.2885-19/s150x150/15803707_1241326169249030_8912373132828868608_n.jpg","collectionId":"58852b5acd0f6828c5c25b1d","iconEnabled":true,"serviceName":"instagram"}],"typekitId":"","statsMigrated":false,"imageMetadataProcessingEnabled":false,"screenshotId":"3b74fc03","showOwnerLogin":false},"websiteSettings":{"id":"585e8f70bebafb65339930bb","websiteId":"585e8f70bebafb65339930b8","type":"Business","subjects":[],"country":"GB","state":"ENG","simpleLikingEnabled":true,"mobileInfoBarSettings":{"isContactEmailEnabled":false,"isContactPhoneNumberEnabled":false,"isLocationEnabled":false,"isBusinessHoursEnabled":false},"announcementBarSettings":{"style":1,"text":"<p>Welcome to my new AI blog, email <a target=\"_blank\" href=\"mailto:me@steve.digital\">me@steve.digital</a> for suggestions, Steve</p>"},"popupOverlaySettings":{"style":2,"showOnScroll":false,"scrollPercentage":75,"showOnTimer":true,"timerDelay":10000,"showUntilSignup":true,"displayFrequency":7,"enableMobile":true,"enabledPages":[],"showOnAllPages":true,"version":1},"commentLikesAllowed":true,"commentAnonAllowed":true,"commentThreaded":true,"commentApprovalRequired":false,"commentAvatarsOn":true,"commentSortType":2,"commentFlagThreshold":0,"commentFlagsAllowed":true,"commentEnableByDefault":true,"commentDisableAfterDaysDefault":0,"disqusShortname":"","commentsEnabled":false,"contactPhoneNumber":"","storeSettings":{"returnPolicy":null,"termsOfService":null,"privacyPolicy":null,"paymentSettings":{"stripeLivePublicApiKey":"pk_live_G1EYIbho24yUz0VanwHJiSX4","stripeTestPublicApiKey":"pk_test_gAQEIIzM9i55N2NPOnLau9Bm","stripeUserId":"acct_1BMxGpIbInaz8VOT","stripeAccountCountry":"GB"},"expressCheckout":false,"continueShoppingLinkUrl":"/","useLightCart":false,"showNoteField":false,"shippingCountryDefaultValue":"US","billToShippingDefaultValue":false,"showShippingPhoneNumber":true,"isShippingPhoneRequired":false,"showBillingPhoneNumber":true,"isBillingPhoneRequired":false,"currenciesSupported":["USD","AUD","CAD","CHF","CZK","DKK","EUR","GBP","HKD","ILS","MXN","MYR","NOK","NZD","PHP","PLN","RUB","SEK","SGD","THB"],"defaultCurrency":"GBP","selectedCurrency":"GBP","measurementStandard":1,"orderConfirmationInjectCode":"","showCustomCheckoutForm":false,"enableMailingListOptInByDefault":false,"sameAsRetailLocation":false,"merchandisingSettings":{"scarcityEnabledOnProductItems":false,"scarcityEnabledOnProductBlocks":false,"scarcityMessageType":"DEFAULT_SCARCITY_MESSAGE","scarcityThreshold":10,"multipleQuantityAllowedForServices":true},"isLive":true,"multipleQuantityAllowedForServices":true},"useEscapeKeyToLogin":true,"ssBadgeType":1,"ssBadgePosition":4,"ssBadgeVisibility":1,"ssBadgeDevices":1,"pinterestOverlayOptions":{"mode":"enabled_for_blogs_and_pages","size":"small","shape":"rect","color":"red"},"ampEnabled":true},"cookieSettings":{"isCookieBannerEnabled":false,"isRestrictiveCookiePolicyEnabled":false,"isRestrictiveCookiePolicyAbsolute":false,"cookieBannerText":"","cookieBannerTheme":"","cookieBannerVariant":"","cookieBannerPosition":"","cookieBannerCtaVariant":"","cookieBannerCtaText":""},"websiteCloneable":false,"collection":{"title":"2019 Artificial Intelligence News - AI News","id":"585f0ff7d482e9c87e7164c8","fullUrl":"/news","type":1},"item":{"title":"DeepMind Makes AI Walk & Run (Serious & Funny)","id":"597ce40a3a041181d9cfdb60","fullUrl":"/news/deepmind-makes-ai-walk-and-run-serious-and-funny","publicCommentCount":0,"commentState":2,"recordType":1},"subscribed":false,"appDomain":"squarespace.com","templateTweakable":true,"tweakJSON":{"aspect-ratio":"Auto","gallery-arrow-style":"No Background","gallery-aspect-ratio":"3:2 Standard","gallery-auto-crop":"true","gallery-autoplay":"false","gallery-design":"Grid","gallery-info-overlay":"Show on Hover","gallery-loop":"false","gallery-navigation":"Bullets","gallery-show-arrows":"true","gallery-transitions":"Fade","galleryArrowBackground":"rgba(34,34,34,1)","galleryArrowColor":"rgba(255,255,255,1)","galleryAutoplaySpeed":"3","galleryCircleColor":"rgba(255,255,255,1)","galleryInfoBackground":"rgba(0, 0, 0, .7)","galleryThumbnailSize":"100px","gridSize":"350px","gridSpacing":"20px","maxNumberColumns":"5","minColumnWidth":"300","tweak-blog-list-grid-alignment":"Masonry","tweak-blog-list-grid-narrow-columns":"false","tweak-blog-list-max-width":"Full","tweak-crop-images":"None","tweak-product-item-image-zoom-factor":"2.5","tweak-product-list-item-hover-behavior":"Show Alternate Image","tweak-product-list-items-per-row":"4"},"templateId":"5868e8fc37c581270a207bc6","pageFeatures":[1,2,4],"googleMapsStaticApiKey":"AIzaSyBQdch5IcgcQaKNG76sbMQv1MEBEKLeQ-8","impersonatedSession":false,"tzData":{"zones":[[0,"EU","GMT/BST",null]],"rules":{"EU":[[1981,"max",null,"Mar","lastSun","1:00u","1:00","S"],[1996,"max",null,"Oct","lastSun","1:00u","0",null]]}}};</script><script type="text/javascript"> SquarespaceFonts.loadViaContext(); Squarespace.load(window);</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="http://feeds.feedburner.com/Artificial-Intelligence-News-AI-News" />
+<script type="application/ld+json">{"url":"https://www.artificial-intelligence.blog","name":"Artificial Intelligence Blog + AI News","description":"<p>Artificial Intelligence News, Books, Educational Resources, Research and more. Stay up-to-date with the happenings in the field of AI. Now with a daily podcast as well.</p>","image":"//static1.squarespace.com/static/585e8f70bebafb65339930b8/t/589cd23e46c3c44e76b0bcdb/1549925798034/","@context":"http://schema.org","@type":"WebSite"}</script><!--[if gte IE 9]> <link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false&part=1"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false&part=2"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false&part=3"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false&part=4"/><![endif]-->
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false&noMedia=true&part=1"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false&noMedia=true&part=2"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false&noMedia=true&part=3"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false&noMedia=true&part=4"/><![endif]-->
+<!--[if !IE]> --><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/585e8f70bebafb65339930b8/184/5868e8fc37c581270a207bc6/5868e8fc37c581270a207bc8/408-05142015/1549925447943/site.css?&filterFeatures=false"/><!-- <![endif]-->
+<meta property="fb:admins" content="100002927092410" />
+<meta property="fb:app_id" content="1814639545480591" />
+
+<meta name="verification" content="dbd0652a94f7d1b30ab6eb1372e80442" />
+
+<meta name="p:domain_verify" content="b144a39cd674a6d80e7808fff9228d05"/>
+
+<meta name="google-site-verification" content="aipiqboAtHMAcg9yd5A8rZo_Qt3-y_5ZRaAO_U_cwBk" />
+
+<!-- Hotjar Tracking Code for https://www.artificial-intelligence.blog -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:578459,hjsv:5};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<base href="https://www.artificial-intelligence.blog"><script>Static.COOKIE_BANNER_CAPABLE = true;</script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-71049994-4', 'auto');ga('send', 'pageview');</script><!-- End of Squarespace Headers -->
+  <script>
+    (function(){
+      var touchTest = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+      if (!touchTest) {
+        document.documentElement.className = document.documentElement.className.replace(/touch\-styles/g, '');
+      }
+    })();
+
+    function say(strText) {
+      var utterance = new SpeechSynthesisUtterance(strText);
+
+      var voices = window.speechSynthesis.getVoices();
+      //alert(voices[0]);
+      utterance.voiceURI = 'en-GB Daniel';
+      utterance.lang = "en-GB";
+      utterance.localService = true;
+      utterance.voice = window.speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Daniel'; })[0];
+      utterance.onend = function(event) {sayStop()};
+      window.speechSynthesis.speak(utterance);
+
+      ga('send', 'event', 'Audio', 'Play', window.location.pathname);
+    }
+
+    function sayThis(strLink, strText) {
+      if (strLink != '' && strText != '') {
+        strText = strText.replace(/AI /g, 'A.I. ');
+        strText = strText.replace(/artificial intelligence /g, 'A.I. ');
+        document.write('<p><a href="javascript:sayPlay();say(\'' + strText + '\')"><span id="sd-speaker">🔊</span> ' + strLink + '</a></p>');
+      }
+    }
+    function sayPlay() {
+      document.getElementById('sd-speaker').innerHTML = '<a style="margin:0px;padding:0px;border-bottom:0px none" href="javascript:sayStop()">🔇</a>';
+    }
+    function sayStop() {
+      window.speechSynthesis.cancel();
+      document.getElementById('sd-speaker').innerHTML = '🔊';
+    }
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body id="item-597ce40a3a041181d9cfdb60" class="tweak-header-background-color-on tweak-main-blocks-full-bleed tweak-underline-body-links tweak-ui-icon-weight-medium tweak-navigation-link-spacing-small  tweak-site-branding-borders-none tweak-show-site-tagline tweak-site-branding-layout-inline tweak-show-search-in-header tweak-show-social-in-header tweak-quote-block-alignment-left tweak-blog-list-grid-alignment-masonry tweak-blog-list-max-width-full  tweak-crop-images-none tweak-reverse-overlay tweak-cards tweak-show-excerpt-on-blog-list tweak-infinite-scroll  tweak-blog-text-alignment-left tweak-blog-promoted-meta-categories tweak-blog-date-style-callout-circle  tweak-show-blog-item-banner-image tweak-blog-item-banner-image-width-normal tweak-show-blog-item-sidebar tweak-show-blog-item-author-profile-hide tweak-show-progress-indicator tweak-template-social-icon-style-regular tweak-template-social-icon-standard-color    event-thumbnails event-thumbnail-size-32-standard event-date-label  event-list-show-cats event-list-date  event-list-address   event-icalgcal-links event-like-and-share-buttons event-excerpts  event-item-back-link event-time-format   gallery-design-grid aspect-ratio-auto lightbox-style-light gallery-navigation-bullets gallery-info-overlay-show-on-hover gallery-aspect-ratio-32-standard gallery-arrow-style-no-background gallery-transitions-fade gallery-show-arrows gallery-auto-crop   tweak-product-list-image-aspect-ratio-11-square tweak-product-list-item-hover-behavior-show-alternate-image tweak-product-list-meta-position-under tweak-product-list-mobile-meta-position-under tweak-product-list-meta-alignment-under-left tweak-product-list-meta-alignment-overlay-center-center tweak-product-list-show-title tweak-product-list-show-price tweak-product-list-filter-display-hide tweak-product-list-filter-alignment-left tweak-product-item-nav-show-breadcrumb-and-pagination tweak-product-item-nav-pagination-style-previousnext tweak-product-item-nav-breadcrumb-alignment-left tweak-product-item-nav-pagination-alignment-split tweak-product-item-gallery-position-left tweak-product-item-gallery-design-stacked tweak-product-item-gallery-aspect-ratio-169-widescreen tweak-product-item-gallery-thumbnail-alignment-left tweak-product-item-details-alignment-left tweak-product-item-details-show-title tweak-product-item-details-show-price  tweak-product-item-details-excerpt-position-below-price tweak-product-item-details-show-share-buttons tweak-product-item-details-show-variants tweak-product-item-details-show-quantity tweak-product-item-details-options-style-square tweak-product-item-details-show-add-to-cart-button tweak-product-item-details-add-to-cart-button-style-solid tweak-product-item-details-add-to-cart-button-shape-pill tweak-product-item-details-add-to-cart-button-padding-small  tweak-product-item-image-zoom-behavior-click tweak-product-item-lightbox-enabled tweak-product-badge-style-circle tweak-product-badge-position-top-right tweak-product-badge-inset-floating newsletter-style-dark hide-opentable-icons opentable-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-center image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-center image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left  image-block-stack-text-alignment-center button-style-solid button-corner-style-rounded tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light tweak-share-buttons-style-solid tweak-share-buttons-icons-show  tweak-share-buttons-counts-show  tweak-share-buttons-standard-background-color native-currency-code-gbp view-item collection-type-blog collection-layout-default collection-585f0ff7d482e9c87e7164c8 mobile-style-available" sqs-controller="SyncHeader, AddScrollingClass, HeaderScroll, SearchToggle, BodyMinHeight">
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '1678638095724206', /* chatfuel app id */
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.12'
+        });
+      };
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+      $( document ).ready(function() {
+        try {
+          $("h2 a, h2, .summary-title-link").each(function(){
+            $(this).html($(this).html().replace('✝', '✝&#xFE0E'));
+          })
+        } catch(err) {
+        }
+      });
+
+    </script>
+    <div class="fb-customerchat"
+      page_id="1654482538177681"
+      theme_color="#344459"
+      logged_in_greeting="Chat with an AI bot (or Steve) ..."
+      logged_out_greeting="Chat with an AI bot (or Steve) ..."
+    >
+    </div>
+
+    <div class="nav-close-overlay">
+
+    </div>
+    <div class="nav-close-toggle-wrapper" id="navCloseToggleWrapper">
+      <a class="nav-toggle-close-label responsive-position--left" id="navCloseToggle" sqs-controller="NavToggle">
+        <svg class="Icon Icon--close close-icon" viewBox="0 0 18 18">
+          <use xlink:href="/assets/ui-icons.svg#close-icon-line"></use>
+        </svg>
+      </a>
+    </div>
+    <div id="sideTrayWrapper" class="sidetray-wrapper">
+      <div class="main-nav-wrapper responsive-padding--top responsive-padding--bottom" sqs-controller="NavOverflow">
+        <div class="nav-blocks-wrapper">
+          
+<nav id="mainNavigation" class="main-navigation" role="navigation" data-content-field="navigation">
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection nav-link--homepage" id="id-585e92336b8f5b1c08d034d4">
+          <a href="/">
+            <span>Home</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection nav-link--active" id="id-585f0ff7d482e9c87e7164c8">
+          <a href="/news">
+            <span>AI News</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-59a2e18de6f2e1185b95aedf">
+          <a href="/artificial-intelligence-news">
+            <span>AI News Stream</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-586084725016e161401a77f0">
+          <a href="/education">
+            <span>AI Education</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-597c74dfb3db2bde61d17be6">
+          <a href="/technologies">
+            <span>AI Technologies</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-597ca3e6f9a61e963d992b73">
+          <a href="/analysis-and-resources">
+            <span>AI Analysis & Resources</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-588a468a9f7456b6495d090c">
+          <a href="/people-in-ai">
+            <span>People in AI</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-588a4093e3df28e5aca6a7b5">
+          <a href="/companies-in-ai">
+            <span>Companies in AI</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-587ec4edff7c5019ea41d031">
+          <a href="/research">
+            <span>AI Research</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-586815c5579fb373526e6431">
+          <a href="/books">
+            <span>AI Books</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-58a1d2a36b8f5b048e0d751a">
+          <a href="/conferences">
+            <span>AI Conferences</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-5875420729687f83cf2ea7b8">
+          <a href="/entertainment">
+            <span>AI Entertainment</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-58f0da4f1b10e32ee601c16c">
+          <a href="/podcast">
+            <span>AI Podcast</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-5878decabe65949c241360c5">
+          <a href="/terminology">
+            <span>AI Terminology/Glossary</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+
+    
+      
+
+        
+        <div class="nav-link--collection" id="id-5a06d1eb41920291504200f8">
+          <a href="/services">
+            <span>Services</span>
+          </a>
+        </div>
+        
+
+      
+
+    
+
+  
+</nav>
+
+
+
+          <div class="sqs-layout sqs-grid-1 columns-1 empty" data-layout-label="Nav Blocks" data-type="block-field" data-updated-on="1482711885308" id="navBlocks"><div class="row sqs-row"><div class="col sqs-col-1 span-1"></div></div></div>
+        </div>
+      </div>
+      
+    </div>
+
+    <form class="header-search-form" id="headerSearch" action="/search" method="get">
+      <input class="header-search-form-input" name="q" placeholder="Search" type="text" spellcheck="false" value="" autocomplete="off">
+    </form>
+
+    
+    <div class="mobile-social">
+      <nav class="sqs-template-social-icons sqs-svg-icon--list" data-content-field="connected-accounts">
+        
+  <a href="https://twitter.com/wwwAIblog" target="_blank" class="sqs-svg-icon--wrapper twitter">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#twitter-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#twitter-mask"></use>
+        </svg>
+      </div>
+    </a><a href="http://www.facebook.com/wwwAIblog" target="_blank" class="sqs-svg-icon--wrapper facebook">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#facebook-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#facebook-mask"></use>
+        </svg>
+      </div>
+    </a><a href="http://instagram.com/wwwaiblog" target="_blank" class="sqs-svg-icon--wrapper instagram">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#instagram-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#instagram-mask"></use>
+        </svg>
+      </div>
+    </a>
+
+
+      </nav>
+    </div>
+    
+
+    <div id="site" class="site-container clearfix">
+
+      <div class="sqs-announcement-bar-dropzone header-announcement-wrapper responsive-padding--left responsive-padding--right" id="headerAnnouncementWrapper">
+        <header id="header" class="site-header loading" role="banner">
+          <a class="nav-toggle-label flex-item" id="navToggle" sqs-controller="NavToggle">
+            <svg class="Icon Icon--hamburger nav-toggle-label-icon" viewBox="0 0 26 18">
+              <use xlink:href="/assets/ui-icons.svg#hamburger-icon--even"></use>
+            </svg>
+          </a>
+
+          <div class="logo-wrapper flex-item">
+          
+            <!-- if logo or site title with site tagline -->
+            
+              <div class="logo-image branding" data-content-field="site-title">
+                <a href="/"><img src="//static1.squarespace.com/static/585e8f70bebafb65339930b8/t/589cd23e46c3c44e76b0bcdb/1549925798034/?format=1500w" alt="Artificial Intelligence Blog + AI News" /></a>
+                <div class="site-tagline-logo">Artificial - Intelligence . Blog</div>
+              </div>
+            
+          
+          </div>
+
+          
+           <nav class="header-special-social--shown-on-collapse sqs-template-social-icons sqs-svg-icon--list">
+             
+  <a href="https://twitter.com/wwwAIblog" target="_blank" class="sqs-svg-icon--wrapper twitter">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#twitter-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#twitter-mask"></use>
+        </svg>
+      </div>
+    </a><a href="http://www.facebook.com/wwwAIblog" target="_blank" class="sqs-svg-icon--wrapper facebook">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#facebook-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#facebook-mask"></use>
+        </svg>
+      </div>
+    </a><a href="http://instagram.com/wwwaiblog" target="_blank" class="sqs-svg-icon--wrapper instagram">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#instagram-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#instagram-mask"></use>
+        </svg>
+      </div>
+    </a>
+
+
+           </nav>
+          
+
+          <div class="header-special flex-item">
+            <div class="social-search-wrapper cart-visible">
+              <div class="social-ellipsis" id="socialEllipsis" sqs-controller="SocialToggle">
+                <svg class="ellipsis-icon" viewBox="0 0 100 24">
+                  <use xlink:href="/assets/ui-icons.svg#ellipsis-icon"></use>
+                </svg>
+                <svg class="social-close-icon Icon Icon--close" viewBox="0 0 18 18">
+                  <use xlink:href="/assets/ui-icons.svg#close-icon-line"></use>
+                </svg>
+              </div><!--
+               
+                --><nav class="header-special-social sqs-template-social-icons sqs-svg-icon--list" data-content-field="connected-accounts">
+                  
+  <a href="https://twitter.com/wwwAIblog" target="_blank" class="sqs-svg-icon--wrapper twitter">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#twitter-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#twitter-mask"></use>
+        </svg>
+      </div>
+    </a><a href="http://www.facebook.com/wwwAIblog" target="_blank" class="sqs-svg-icon--wrapper facebook">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#facebook-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#facebook-mask"></use>
+        </svg>
+      </div>
+    </a><a href="http://instagram.com/wwwaiblog" target="_blank" class="sqs-svg-icon--wrapper instagram">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="/universal/svg/social-accounts.svg#instagram-icon"></use>
+          <use class="sqs-use--mask" xlink:href="/universal/svg/social-accounts.svg#instagram-mask"></use>
+        </svg>
+      </div>
+    </a>
+
+
+                </nav><!--
+               
+               --><a href="/search" rel="search" class="header-search">
+                <svg class="Icon Icon--search search-icon" viewBox="0 0 20 20" shape-rendering="geometricPrecision">
+                  <use xlink:href="/assets/ui-icons.svg#search-icon"></use>
+                </svg>
+                <svg class="Icon Icon--close search-close-icon" viewBox="0 0 18 18">
+                  <use xlink:href="/assets/ui-icons.svg#close-icon-line"></use>
+                </svg>
+               </a>
+              </div><!--
+             --><a href="/cart" class="sqs-custom-cart custom-cart">
+              <div class="custom-cart-bag">
+                <svg class="Icon Icon--bag custom-cart-bag-icon" viewBox="0 0 34 38">
+                  <use class="use--odd" xlink:href="/assets/ui-icons.svg#bag-icon--odd"></use>
+                  <use class="use--even" xlink:href="/assets/ui-icons.svg#bag-icon--even"></use>
+                </svg>
+                <span class="sqs-cart-quantity">0</span>
+              </div>
+            </a>
+          </div>
+        </header>
+      </div>
+
+      <main id="page" class="site-page loading responsive-padding--left responsive-padding--right site-page--blog-item" role="main" data-content-field="main-content" sqs-controller="FadeInContent">
+        <div class="sd-top-nav">
+          <a href="/" style="padding: 3px 10px 0px 10px !important;"><i class="material-icons">home</i></a>
+          <a href="/news/">News</a>
+          <a href="/education/">Edu</a>
+          <a href="/technologies/">Tech</a>
+          <a href="/analysis-and-resources/">Analysis</a>
+          <a href="/research/">Research</a>
+          <a href="/people-in-ai/">People</a>
+          <a href="/companies-in-ai/">Companies</a>
+            <a href="/books/">Books</a>
+          <a href="/conferences/">Conferences</a>
+            <a href="/entertainment/">Fun</a>
+            <a href="http://artificial-intelligence.community">Forum</a>
+        </div>
+
+        <div class="sqs-layout sqs-grid-12 columns-12 empty" data-type="block-field" data-updated-on="1513363352234" id="blockFieldAboveMainContent"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div><!-- all pages -->
+        <div class="sqs-layout sqs-grid-12 columns-12 empty" data-type="block-field" id="blockFieldAboveMainContent-585f0ff7d482e9c87e7164c8"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+        <!-- render page main content -->
+        <div class="blog-wrapper" data-content-field="main-content" data-item-id="597ce40a3a041181d9cfdb60">
+  
+  <section class="blog-item-banner has-main-image">
+    <div class="blog-item-banner-image" sqs-controller="SetUpBannerImage"><img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597ce40a3a041181d9cfdb60/1517233530271/deepmind-makes-ai-walk-and-run-serious-and-funny.001.jpg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597ce40a3a041181d9cfdb60/1517233530271/deepmind-makes-ai-walk-and-run-serious-and-funny.001.jpg" data-image-dimensions="1600x800" data-image-focal-point="0.448,0.0" alt="DeepMind Makes AI Walk &amp; Run (Serious &amp; Funny)"  data-load="false" /></div>
+  </section>
+  
+
+  <div class="main-content blog-view-item clearfix">
+    <input id="show-comments" type="checkbox" />
+    <article id="article-597ce40a3a041181d9cfdb60" class="entry--item h-entry clearfix hentry category-artificial-intelligence tag-deepmind tag-google tag-research tag-motor-intelligence author-steve-digital post-type-text">
+      
+      <div class="blog-item-title" style="margin-bottom:20px">
+        <time class="dt-published date-callout" datetime="2017-07-29" pubdate>
+          <div class="date-wrapper">
+            <span class="month">Jul </span><span class="day">29</span>
+          </div>
+        </time>
+        <h1 class="entry-title entry-title--large p-name" itemprop="headline" data-content-field="title"><time class="dt-published date-highlight" itemprop="datePublished" datetime="2017-07-29" pubdate>Jul 29 </time>DeepMind Makes AI Walk & Run (Serious & Funny)</h1>
+
+        <div class="meta-wrapper">
+          <div class="blog-meta-item blog-meta-author p-author author"><a href="/news?author=5659c740e4b0f0c1a01f0853" class="blog-author-name">Steve Digital</a> </div>
+
+          <div class="blog-meta-item blog-categories"><a href="/news?category=Artificial+Intelligence" class="blog-category blog-category--Artificial Intelligence">Artificial Intelligence</a></div>
+
+          	<div style="margin-top:10px">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- AI Blog Top of Post -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-6519338693755664"
+			     data-ad-slot="9680902068"
+			     data-ad-format="auto"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			</div>
+        </div>
+      </div>
+      
+      <div class="blog-item-content-wrapper" sqs-controller="BlogProgressBar">
+        <div class="pie-wrapper" id="pieWrapper">
+          <div class="pie" id="pieLeft"></div>
+          <div class="pie hide" id="pieRight"></div>
+          <div class="pie pie--right hide" id="pieMask"></div>
+          <div class="mask mask--left" id="maskLeft"></div>
+        </div>
+
+        
+
+
+        <div class="blog-item-actions-wrapper sd-mobile-space">
+          
+          <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true" data-width="400" style="display:inline-block"></div>
+        </div>
+
+        <div id="sd-speech-suggestion" class="sd-mobile-space" style="margin:0px;padding:0px"></div>
+        <script type="text/javascript">
+          $(function() {
+            var strTextToSpeak = '';
+            $('.blog-item-content .sqs-block-html p,  .blog-item-content .sqs-block-html h2,  .blog-item-content .sqs-block-html h3').each(function(element) {
+              if (typeof ($(this).text().replace(/'/g, "\\\'")) !== 'undefined') {
+                strTextToSpeak += $(this).text().replace(/'/g, "\\\'").replace(/"/g, "").replace(/-/g, " ") + ' . ';
+              }
+            });
+            strTextToSpeak = strTextToSpeak.replace(/AI /g, 'A.I. ');
+            strTextToSpeak = strTextToSpeak.replace(/artificial intelligence /g, 'A.I. ');
+            strTextToSpeak += 'If you liked this article, please drop a Facebook like, thanks.';
+            $('#sd-speech-suggestion').html('<p><a href="javascript:sayPlay();say(\'' + strTextToSpeak + '\')"><span id="sd-speaker">🔊</span> Read this post aloud.</a></p>');
+          });
+          
+        </script>
+
+        <div class="blog-item-content e-content"><div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Post Body" data-type="item" data-updated-on="1501357759682" id="item-597ce40a3a041181d9cfdb60"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-59e1169efc1db6bfcb19"><div class="sqs-block-content"><p>I recently saw a video that made me go "wow" ... and a day later I saw the same video with sound effects applied and it made me laugh really hard.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_12_1501344778936_5004"><div class="sqs-block-content"><div class="fb-video" data-href="https://www.facebook.com/wwwAIblog/videos/1754760408149893/" data-show-text="true"><blockquote cite="https://www.facebook.com/wwwAIblog/videos/1754760408149893/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/wwwAIblog/videos/1754760408149893/">Google&#039;s DeepMind AI Just Taught Itself how to Walk</a><p>Google&#039;s artificial intelligence company, DeepMind, has developed an AI that has managed to learn how to walk, run, jump, and climb without any prior guidance. The result is as impressive as it is goofy.</p>Posted by <a href="https://www.facebook.com/wwwAIblog/">Artificial Intelligence Blog</a> on Saturday, July 29, 2017</blockquote></div></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_12_1501344778936_5072"><div class="sqs-block-content"><p>And here is the original video by Tech Insider.</p></div></div><div class="sqs-block video-block sqs-block-video" data-block-json="&#123;&quot;layout&quot;:&quot;caption-below&quot;,&quot;overlay&quot;:false,&quot;description&quot;:&#123;&quot;html&quot;:&quot;&lt;p&gt;Google's artificial intelligence company, DeepMind, has developed an AI that has managed to learn how to walk, run, jump, and climb without any prior guidance. The result is as impressive as it is goofy.&lt;/p&gt;&quot;,&quot;source&quot;:&quot;&lt;p&gt;Google's artificial intelligence company, DeepMind, has developed an AI that has managed to learn how to walk, run, jump, and climb without any prior guidance. The result is as impressive as it is goofy.&lt;/p&gt;&quot;&#125;,&quot;hSize&quot;:null,&quot;floatDir&quot;:null,&quot;html&quot;:&quot;&lt;iframe src=\&quot;//www.youtube.com/embed/gn4nRCC9TwQ?wmode=opaque&amp;amp;enablejsapi=1\&quot; height=\&quot;480\&quot; width=\&quot;854\&quot; scrolling=\&quot;no\&quot; frameborder=\&quot;0\&quot; allowfullscreen=\&quot;\&quot;&gt;\n&lt;/iframe&gt;&quot;,&quot;url&quot;:&quot;https://www.youtube.com/watch?v=gn4nRCC9TwQ&quot;,&quot;width&quot;:854,&quot;height&quot;:480,&quot;providerName&quot;:&quot;YouTube&quot;,&quot;thumbnailUrl&quot;:&quot;https://i.ytimg.com/vi/gn4nRCC9TwQ/hqdefault.jpg&quot;,&quot;resolvedBy&quot;:&quot;youtube&quot;&#125;" data-block-type="32" id="block-yui_3_17_2_12_1501344778936_6226"><div class="sqs-block-content"><div class="intrinsic" style="max-width:100%"><div class="embed-block-wrapper" style="padding-bottom:56.20609%;"><div class="sqs-video-wrapper" data-html="&lt;iframe src=&quot;//www.youtube.com/embed/gn4nRCC9TwQ?wmode=opaque&amp;enablejsapi=1&quot; height=&quot;480&quot; width=&quot;854&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;<br/>&lt;/iframe&gt;" data-provider-name="YouTube"></div></div><div  class="video-caption-wrapper"><div class="video-caption"><p>Google's artificial intelligence company, DeepMind, has developed an AI that has managed to learn how to walk, run, jump, and climb without any prior guidance. The result is as impressive as it is goofy.</p></div></div></div></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_12_1501344778936_6983"><div class="sqs-block-content"><p>But what is really going on here is highly impressive!</p><p>DeepMind writes: "True motor intelligence requires learning how to control and coordinate a flexible body to solve tasks in a range of complex environments. Existing attempts to control physically simulated humanoid bodies come from diverse fields, including computer animation and biomechanics. &nbsp;A trend has been to use hand-crafted objectives, sometimes with motion capture data, to produce specific behaviors. However, this may require considerable engineering effort, and can result in restricted behaviours or behaviours that may be difficult to repurpose for new tasks."</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1509583797994_64974"><div class="sqs-block-content"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-6519338693755664"
+     data-ad-slot="5939622089"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><div class="sqs-block quote-block sqs-block-quote null" data-block-type="31" id="block-yui_3_17_2_12_1501344778936_7941"><div class="sqs-block-content"><figure >
+  <blockquote>
+    <span>&#147;</span>Achieving flexible and adaptive control of simulated bodies is a key element of AI research. Our work aims to develop flexible systems which learn and adapt skills to solve motor control tasks while reducing the manual engineering required to achieve this goal. Future work could extend these approaches to enable coordination of a greater range of behaviours in more complex situations. <span>&#148;</span>
+  </blockquote>
+  <figcaption class="source">&mdash; DeepMind</figcaption>
+</figure>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_12_1501344778936_8004"><div class="sqs-block-content"><p>If you want to know more, click the button for the full post.</p></div></div><div class="sqs-block button-block sqs-block-button" data-block-type="53" id="block-yui_3_17_2_12_1501344778936_9234"><div class="sqs-block-content">
+<div class="sqs-block-button-container--center" data-alignment="center" data-button-size="small">
+	<a href="https://deepmind.com/blog/producing-flexible-behaviours-simulated-environments/" class="sqs-block-button-element--small sqs-block-button-element" target="_blank">Learn More</a>
+</div></div></div><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21" id="block-yui_3_17_2_12_1501344778936_9713"><div class="sqs-block-content">&nbsp;</div></div></div></div></div></div>
+
+
+
+			
+			
+			
+			
+
+			
+			
+			
+			
+
+			
+			
+			
+			
+
+          <div class="blog-item-actions blog-item-actions--footer" style="margin-top:20px">
+            <div class="blog-item-actions-wrapper">
+              <div class="Share sqs-share-buttons" data-item-identifier="597ce40a3a041181d9cfdb60" data-item-path="news/deepmind-makes-ai-walk-and-run-serious-and-funny">
+
+  <div class="Share-buttons">
+
+    <!--
+
+      Facebook
+
+    --><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.artificial-intelligence.blog%2Fnews%2Fdeepmind-makes-ai-walk-and-run-serious-and-funny" class="Share-buttons-item Share-buttons-item--social" target="_blank" data-service="facebook">
+        <svg class="Share-buttons-item-icon" viewBox="0 0 64 64">
+          <use xlink:href="/universal/svg/social-accounts.svg#facebook-icon"></use>
+        </svg><span class="Share-buttons-item-label">Facebook</span><span class="Share-buttons-item-count">0</span>
+      </a><!--
+
+      Twitter
+
+    --><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.artificial-intelligence.blog%2Fnews%2Fdeepmind-makes-ai-walk-and-run-serious-and-funny&text=The+agility+and+flexibility+of+a+monkey+swinging+through+the+trees+or+a+football+player+dodging+opponents+..." class="Share-buttons-item Share-buttons-item--social" target="_blank" data-service="twitter">
+        <svg class="Share-buttons-item-icon" viewBox="0 0 64 64">
+          <use xlink:href="/universal/svg/social-accounts.svg#twitter-icon"></use>
+        </svg><span class="Share-buttons-item-label">Twitter</span>
+      </a><!--
+
+      LinkedIn
+
+    --><a href="https://www.linkedin.com/shareArticle?mini=true&source=Artificial+Intelligence+Blog+%2B+AI+News&summary=The+agility+and+flexibility+of+a+monkey+swinging+through+the+trees+or+a+football+player+dodging+opponents+...&url=https%3A%2F%2Fwww.artificial-intelligence.blog%2Fnews%2Fdeepmind-makes-ai-walk-and-run-serious-and-funny" class="Share-buttons-item Share-buttons-item--social" target="_blank" data-service="linkedin">
+        <svg class="Share-buttons-item-icon" viewBox="0 0 64 64">
+          <use xlink:href="/universal/svg/social-accounts.svg#linkedin-icon"></use>
+        </svg><span class="Share-buttons-item-label">LinkedIn</span><span class="Share-buttons-item-count">0</span>
+      </a><!--
+
+      StumbleUpon
+
+    --><a href="https://www.stumbleupon.com/badge/?url=https%3A%2F%2Fwww.artificial-intelligence.blog%2Fnews%2Fdeepmind-makes-ai-walk-and-run-serious-and-funny" class="Share-buttons-item Share-buttons-item--social" target="_blank" data-service="stumbleupon">
+        <svg class="Share-buttons-item-icon" viewBox="0 0 64 64">
+          <use xlink:href="/universal/svg/social-accounts.svg#stumbleupon-icon"></use>
+        </svg><span class="Share-buttons-item-label">StumbleUpon</span>
+      </a><!--
+
+      Reddit
+
+    --><a href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.artificial-intelligence.blog%2Fnews%2Fdeepmind-makes-ai-walk-and-run-serious-and-funny" class="Share-buttons-item Share-buttons-item--social" target="_blank" data-service="reddit">
+        <svg class="Share-buttons-item-icon" viewBox="0 0 64 64">
+          <use xlink:href="/universal/svg/social-accounts.svg#reddit-icon"></use>
+        </svg><span class="Share-buttons-item-label">Reddit</span>
+      </a><!--
+
+      Tumblr
+
+    --><a href="https://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.artificial-intelligence.blog%2Fnews%2Fdeepmind-makes-ai-walk-and-run-serious-and-funny" class="Share-buttons-item Share-buttons-item--social" target="_blank" data-service="tumblr">
+        <svg class="Share-buttons-item-icon" viewBox="0 0 64 64">
+          <use xlink:href="/universal/svg/social-accounts.svg#tumblr-icon"></use>
+        </svg><span class="Share-buttons-item-label">Tumblr</span>
+      </a><!--
+
+      Pinterest
+
+    --><a href="https://www.pinterest.com/pin/create/link/?description=The+agility+and+flexibility+of+a+monkey+swinging+through+the+trees+or+a+football+player+dodging+opponents+...&media=https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597ce40a3a041181d9cfdb60/1517233530271/deepmind-makes-ai-walk-and-run-serious-and-funny.001.jpg&url=https%3A%2F%2Fwww.artificial-intelligence.blog%2Fnews%2Fdeepmind-makes-ai-walk-and-run-serious-and-funny" class="Share-buttons-item Share-buttons-item--social" target="_blank" data-service="pinterest">
+        <svg class="Share-buttons-item-icon" viewBox="0 0 64 64">
+          <use xlink:href="/universal/svg/social-accounts.svg#pinterest-icon"></use>
+        </svg><span class="Share-buttons-item-label">Pinterest</span><span class="Share-buttons-item-count">0</span>
+      </a><!--
+
+      Simple Like
+
+    --><a href="#" class="Share-buttons-item Share-buttons-item--like" data-item-identifier="597ce40a3a041181d9cfdb60" data-like-count="0" data-service="squarespace-like">
+        <svg class="Share-buttons-item-icon" viewBox="0 0 64 64">
+          <g class="svg-icon">
+            <path d="M39.9,37.8c-7.3,4.8-7.7,6.9-7.9,7.8c-0.2-0.9-0.6-3-7.9-7.8c-16-10.6,1.4-25.4,7.9-11.7C38.5,12.4,55.9,27.3,39.9,37.8z"/>
+          </g>
+        </svg><span class="Share-buttons-item-label"><span class="Share-buttons-item-label-count">0</span> Likes</span>
+      </a>
+    
+
+  </div>
+
+</div>
+            </div>
+          </div>
+
+		
+		
+		
+        <div class="sd-blog-item-footer">
+          <h3>Comments on: DeepMind Makes AI Walk & Run (Serious & Funny)</h3>
+        	<div class="fb-comments" data-numposts="20" data-width="100%" data-href="https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny"></div>
+
+			<div style="margin-top:20px">Permalink: <a style="color:#4a86e8;text-decoration:underline" href="https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny">DeepMind Makes AI Walk & Run (Serious & Funny)</a></div>
+        </div>
+        <div class="sd-social-snippet">*<b>DeepMind Makes AI Walk & Run (Serious & Funny)</b>*<br/><a style="color:#4a86e8;text-decoration:none" href="https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny">https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny</a><br /><br /><p>The agility and flexibility of a monkey swinging through the trees or a football player dodging opponents and scoring a goal can be breathtaking. Mastering this kind of sophisticated motor control is a hallmark of physical intelligence, and is a crucial part of AI research.</p><br />#ai #ArtificialIntelligence</div>
+
+        <div class="sd-facebook-graph-result"></div>
+        <script type="text/javascript">
+          var strToken = "";
+          $( document ).ready(function() {
+            $.get( "https://graph.facebook.com/oauth/access_token?client_id=1814639545480591&client_secret=a601353043f4173c1f4ec1174af88c0f&grant_type=client_credentials", function( data ) {
+                //console.log(data.access_token);
+                strToken = data.access_token;
+
+                $.post( "https://graph.facebook.com/?id=" + encodeURI("https://www.artificial-intelligence.blog/news/deepmind-makes-ai-walk-and-run-serious-and-funny") + "&scrape=true&access_token=" + strToken, function(data) {
+                  //console.log(data);
+                  //$( ".sd-facebook-graph-result" ).html(data);
+                });
+              });
+
+            try {
+              $("h1").html($("h1").html().replace("(", "<span style='font-weight:normal;font-size:90%'>(").replace(')',')</span>').replace('✝', '✝&#xFE0E'));
+            } catch(err) {
+            }
+
+            try { // avoid title anomalies
+              var strTitle = 'DeepMind Makes AI Walk & Run (Serious & Funny)';
+              if (strTitle.indexOf('✝') > 0) {
+                $('.blog-item-banner-image').css('border-top', '20px solid black')
+              }
+            } catch(err) {
+            }
+          });
+        </script>
+        
+
+        <footer class="blog-item-footer">
+
+          <div class="footer-meta">
+
+          
+
+          
+            <div class="blog-meta-item blog-categories"><a href="/news?category=Artificial+Intelligence" class="blog-category blog-category--Artificial Intelligence">Artificial Intelligence</a></div>
+          
+
+          
+            <div class="blog-item-tags">
+              <a href="/news?tag=deepmind" class="blog-item-tag blog-item-tag--deepmind" rel="tag">deepmind</a><span class="blog-meta-delimiter">, </span><a href="/news?tag=google" class="blog-item-tag blog-item-tag--google" rel="tag">google</a><span class="blog-meta-delimiter">, </span><a href="/news?tag=research" class="blog-item-tag blog-item-tag--research" rel="tag">research</a><span class="blog-meta-delimiter">, </span><a href="/news?tag=motor+intelligence" class="blog-item-tag blog-item-tag--motor-intelligence" rel="tag">motor intelligence</a>
+            </div>
+          
+          </div>
+
+          
+
+        </footer>
+
+        
+
+        <section class="blog-item-comments">
+          <div class="blog-item-comments-toggle-wrapper">
+            <label for="show-comments" title="Show/Hide Comments" class="blog-item-comments-toggle">
+              </label>
+            <div id="blogItemCommentsContent" class="blog-item-comments-content">
+              
+            </div>
+          </div>
+        </section>
+      </div>
+      <aside id="blogItemSidebar" class="blog-item-sidebar">
+        
+          <div class="blog-item-author-profile blog-item-author-profile--sidebar">
+            
+  <a href="/news?author=5659c740e4b0f0c1a01f0853" class="author-avatar content-fill" sqs-controller="SimpleImageLoad" data-tweaks="tweak-show-blog-item-author-profile">
+    <img class="author-avatar-image" data-src="https://static1.squarespace.com/static/images/5757cd1bba67a84e4897b540/100w" data-image="https://static1.squarespace.com/static/images/5757cd1bba67a84e4897b540/100w" data-image-focal-point="0.5,0.5" data-load="false">
+  </a>
+
+<div class="author-name"><a href="/news?author=5659c740e4b0f0c1a01f0853">Steve Digital</a></div>
+
+
+
+          </div>
+        
+        <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Blog Item Sidebar" data-type="block-field" data-updated-on="1549143819057" id="blogItemSidebarContent"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block search-block sqs-block-search" data-block-type="33" id="block-yui_3_17_2_14_1501344778936_9044"><div class="sqs-block-content"><div class="sqs-search-ui-text-input sqs-search-ui-button-wrapper color-dark" data-source="block" data-preview="false" data-collection="">
+  <div class="spinner-wrapper"></div>
+  <input type="search" class="search-input" value="" placeholder="Search"/>
+</div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1549140761193_34104"><div class="sqs-block-content"><h3 style="white-space:pre-wrap;">Sponsors</h3></div></div><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1549045081575_10043"><div class="sqs-block-content">
+
+  
+
+    
+      <div class="image-block-outer-wrapper layout-caption-below design-layout-inline combination-animation-reveal individual-animation-none individual-text-animation-none">
+      
+        <div class="intrinsic" style="max-width:1024.0px;">
+          
+            <a href="https://www.artificial-intelligence.blog/ai-spaces/sidebar-of-all-posts-rent-this-space-for-5-per-day"  target="_blank">
+          
+            <div style="padding-bottom:100.0%;" class="image-block-wrapper   has-aspect-ratio" data-description="&lt;p&gt;&lt;a href=&quot;https://www.artificial-intelligence.blog/ai-spaces/sidebar-of-all-posts-rent-this-space-for-5-per-day&quot;&gt;Sponsor this blog by renting this space …&lt;/a&gt;&lt;/p&gt;" >
+              <noscript><img src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c548d8a0d929740f7276ad7/1549141935234/product-ai-space-sidebar-of-all-posts.001.jpeg" alt="Sponsor this blog by renting this space …" /></noscript><img class="thumb-image" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c548d8a0d929740f7276ad7/1549141935234/product-ai-space-sidebar-of-all-posts.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c548d8a0d929740f7276ad7/1549141935234/product-ai-space-sidebar-of-all-posts.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Sponsor this blog by renting this space …" data-load="false" data-image-id="5c548d8a0d929740f7276ad7" data-type="image" />
+            </div>
+          
+            </a>
+          
+
+          
+          <div class="image-caption-wrapper">
+            <div class="image-caption"><p><a href="https://www.artificial-intelligence.blog/ai-spaces/sidebar-of-all-posts-rent-this-space-for-5-per-day">Sponsor this blog by renting this space …</a></p></div>
+          </div>
+          
+
+        </div>
+      
+      </div>
+    
+
+  
+
+
+</div></div><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1549140761193_10648"><div class="sqs-block-content">
+
+  
+
+    
+      <div class="image-block-outer-wrapper layout-caption-below design-layout-inline combination-animation-reveal individual-animation-none individual-text-animation-none">
+      
+        <div class="intrinsic" style="max-width:1024.0px;">
+          
+            <a href="https://www.shopify.com/?ref=stevedigital&utm_campaign=AI%20Blog&utm_content=Sidebar"  target="_blank">
+          
+            <div style="padding-bottom:50.0%;" class="image-block-wrapper   has-aspect-ratio" data-description="&lt;p&gt;&lt;a href=&quot;https://www.shopify.com/?ref=stevedigital&amp;amp;utm_campaign=AI%20Blog&amp;amp;utm_content=Sidebar&quot; target=&quot;_blank&quot;&gt;Start making money online, 14 free trial …&lt;/a&gt;&lt;/p&gt;" >
+              <noscript><img src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c5604a07817f790cc0124a8/1549141158643/shopify-2.001.jpeg" alt="Start making money online, 14 free trial …" /></noscript><img class="thumb-image" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c5604a07817f790cc0124a8/1549141158643/shopify-2.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c5604a07817f790cc0124a8/1549141158643/shopify-2.001.jpeg" data-image-dimensions="1024x512" data-image-focal-point="0.5,0.5" alt="Start making money online, 14 free trial …" data-load="false" data-image-id="5c5604a07817f790cc0124a8" data-type="image" />
+            </div>
+          
+            </a>
+          
+
+          
+          <div class="image-caption-wrapper">
+            <div class="image-caption"><p><a href="https://www.shopify.com/?ref=stevedigital&amp;utm_campaign=AI%20Blog&amp;utm_content=Sidebar" target="_blank">Start making money online, 14 free trial …</a></p></div>
+          </div>
+          
+
+        </div>
+      
+      </div>
+    
+
+  
+
+
+</div></div><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1549140761193_58633"><div class="sqs-block-content">
+
+  
+
+    
+      <div class="image-block-outer-wrapper layout-caption-below design-layout-inline combination-animation-reveal individual-animation-none individual-text-animation-none">
+      
+        <div class="intrinsic" style="max-width:1024.0px;">
+          
+            <a href="https://www.linkedin.com/groups/8738506/"  target="_blank">
+          
+            <div style="padding-bottom:50.0%;" class="image-block-wrapper   has-aspect-ratio" data-description="&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/groups/8738506/&quot; target=&quot;_blank&quot;&gt;Welcome to our AI Group on LinkedIn …&lt;/a&gt;&lt;/p&gt;" >
+              <noscript><img src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c560eade79c702440a0d96e/1549143786177/linkedin-ai-group.001.jpeg" alt="Welcome to our AI Group on LinkedIn …" /></noscript><img class="thumb-image" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c560eade79c702440a0d96e/1549143786177/linkedin-ai-group.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c560eade79c702440a0d96e/1549143786177/linkedin-ai-group.001.jpeg" data-image-dimensions="1024x512" data-image-focal-point="0.5,0.5" alt="Welcome to our AI Group on LinkedIn …" data-load="false" data-image-id="5c560eade79c702440a0d96e" data-type="image" />
+            </div>
+          
+            </a>
+          
+
+          
+          <div class="image-caption-wrapper">
+            <div class="image-caption"><p><a href="https://www.linkedin.com/groups/8738506/" target="_blank">Welcome to our AI Group on LinkedIn …</a></p></div>
+          </div>
+          
+
+        </div>
+      
+      </div>
+    
+
+  
+
+
+</div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_9_1482670401653_4979"><div class="sqs-block-content"><!-- <div class="sd-mobile-space">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+<!-- AI Blog Sidebar -->
+<!-- <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6519338693755664"
+     data-ad-slot="2227863633"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div> --></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_4_1516841332236_24253"><div class="sqs-block-content"><h3 style="white-space:pre-wrap;"><a href="/news">AI News</a></h3></div></div><div class="sqs-block summary-v2-block sqs-block-summary-v2" data-block-json="&#123;&quot;hSize&quot;:null,&quot;floatDir&quot;:null,&quot;collectionId&quot;:&quot;585f0ff7d482e9c87e7164c8&quot;,&quot;design&quot;:&quot;autogrid&quot;,&quot;headerText&quot;:&quot;Featured&quot;,&quot;textSize&quot;:&quot;small&quot;,&quot;pageSize&quot;:1,&quot;imageAspectRatio&quot;:&quot;1.5&quot;,&quot;columnWidth&quot;:270,&quot;gutter&quot;:20,&quot;listImageSize&quot;:80,&quot;listImageAlignment&quot;:&quot;left&quot;,&quot;slidesPerRow&quot;:3,&quot;textAlignment&quot;:&quot;left&quot;,&quot;showTitle&quot;:true,&quot;showThumbnail&quot;:true,&quot;showExcerpt&quot;:false,&quot;showReadMoreLink&quot;:false,&quot;showPrice&quot;:true,&quot;productQuickViewEnabled&quot;:false,&quot;showPastOrUpcomingEvents&quot;:&quot;Upcoming&quot;,&quot;metadataPosition&quot;:&quot;below-content&quot;,&quot;primaryMetadata&quot;:&quot;none&quot;,&quot;secondaryMetadata&quot;:&quot;none&quot;,&quot;filter&quot;:&#123;&quot;featured&quot;:true&#125;,&quot;autoCrop&quot;:true,&quot;lightbox&quot;:false,&quot;mixedContent&quot;:true,&quot;blockId&quot;:&quot;efba1301569aa5134444&quot;&#125;" data-block-type="55" id="block-yui_3_17_2_23_1482670401653_5061"><div class="sqs-block-content">
+
+<div class="
+  summary-block-wrapper
+
+  summary-block-collection-type-blog
+
+  summary-block-setting-text-size-small
+  summary-block-setting-text-align-left
+
+  summary-block-setting-design-autogrid
+  summary-block-setting-design-list-thumbnail-left
+
+  summary-block-setting-metadata-position-below-content
+  summary-block-setting-primary-metadata-none
+  summary-block-setting-secondary-metadata-none
+
+  summary-block-setting-show-thumbnail
+  summary-block-setting-show-title
+  summary-block-setting-show-price
+  summary-block-setting-hide-excerpt
+  
+
+  
+
+  sqs-gallery-design-autogrid
+
+  
+  "
+
+  
+>
+
+  <div class="summary-item-list-container sqs-gallery-container">
+
+    <header class="summary-block-header">
+
+      <!-- Collection Title -->
+      <div class="summary-heading">
+        
+          <span class="summary-header-text">Featured</span>
+        
+      </div>
+
+      <!-- Carousel Nav -->
+      <div class="summary-carousel-pager sqs-gallery-controls">
+        <span class="summary-carousel-pager-next next"></span>
+        <span class="summary-carousel-pager-prev previous"></span>
+      </div>
+
+    </header>
+
+    <div class="summary-item-list sqs-gallery">
+
+      
+
+        <div class="
+          summary-item
+          summary-item-record-type-text
+          sqs-gallery-design-autogrid-slide
+          
+           summary-item-has-thumbnail
+           summary-item-has-excerpt
+          summary-item-has-cats
+          summary-item-has-tags
+          summary-item-has-author
+          
+          "
+          >
+
+          
+            <!-- Thumbnail -->
+            
+
+  
+  <div class="summary-thumbnail-outer-container">
+    <a href="/news/donald-trump-to-launch-artificial-intelligence-initiative" class="summary-thumbnail-container sqs-gallery-image-container" data-title="Donald Trump launches Artificial Intelligence Initiative" data-description="">
+      <div class="summary-thumbnail img-wrapper">
+  
+
+    
+
+        <!-- Main Image -->
+        <img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/5c6167f8652deabd42ed1dcd/1550002918284/donald-trump-ai-initiative.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/5c6167f8652deabd42ed1dcd/1550002918284/donald-trump-ai-initiative.001.jpeg" data-image-dimensions="1600x800" data-image-focal-point="0.5,0.5" alt="Donald Trump launches Artificial Intelligence Initiative"  data-load="false" class="summary-thumbnail-image"/>
+
+    
+
+    
+
+        
+
+        
+
+      </div>
+    </a>
+
+    <!-- Products: Quick View -->
+    
+
+  </div>
+  
+
+
+
+          
+
+          <div class="summary-content sqs-gallery-meta-container">
+
+            <!-- Metadata (Above Title) -->
+            <div class="summary-metadata-container summary-metadata-container--above-title">
+              
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+            
+              <!-- Title -->
+              <div class="summary-title">
+                <a
+                
+                  
+                    href="/news/donald-trump-to-launch-artificial-intelligence-initiative"
+                  
+                
+                class="summary-title-link">Donald Trump launches Artificial Intelligence Initiative</a></div>
+            
+
+            <!-- Metadata (Below Title) -->
+            <div class="summary-metadata-container summary-metadata-container--below-title">
+            
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+            
+              
+            
+
+            
+
+            <!-- Metadata (Below Content) -->
+            <div class="summary-metadata-container summary-metadata-container--below-content">
+              
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+          </div> <!-- End .summary-content -->
+
+        </div> <!-- End .summary-item -->
+
+      
+
+    </div> <!-- End .summary-item-list -->
+
+  </div> <!-- End .summary-item-list-container -->
+
+</div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_4_1516841332236_26956"><div class="sqs-block-content"><h3 style="white-space:pre-wrap;"><a href="/education">AI Education</a></h3></div></div><div class="sqs-block summary-v2-block sqs-block-summary-v2" data-block-json="&#123;&quot;hSize&quot;:null,&quot;floatDir&quot;:null,&quot;collectionId&quot;:&quot;586084725016e161401a77f0&quot;,&quot;design&quot;:&quot;autogrid&quot;,&quot;headerText&quot;:&quot;Featured&quot;,&quot;textSize&quot;:&quot;small&quot;,&quot;pageSize&quot;:1,&quot;imageAspectRatio&quot;:&quot;1.5&quot;,&quot;columnWidth&quot;:270,&quot;gutter&quot;:20,&quot;listImageSize&quot;:30,&quot;listImageAlignment&quot;:&quot;left&quot;,&quot;slidesPerRow&quot;:3,&quot;textAlignment&quot;:&quot;left&quot;,&quot;showTitle&quot;:true,&quot;showThumbnail&quot;:true,&quot;showExcerpt&quot;:false,&quot;showReadMoreLink&quot;:false,&quot;showPrice&quot;:true,&quot;productQuickViewEnabled&quot;:false,&quot;showPastOrUpcomingEvents&quot;:&quot;Upcoming&quot;,&quot;metadataPosition&quot;:&quot;below-content&quot;,&quot;primaryMetadata&quot;:&quot;none&quot;,&quot;secondaryMetadata&quot;:&quot;none&quot;,&quot;filter&quot;:&#123;&quot;featured&quot;:true&#125;,&quot;autoCrop&quot;:true,&quot;lightbox&quot;:false,&quot;mixedContent&quot;:true,&quot;blockId&quot;:&quot;7f24503a619bd0ef9a47&quot;&#125;" data-block-type="55" id="block-yui_3_17_2_6_1489699159614_26035"><div class="sqs-block-content">
+
+<div class="
+  summary-block-wrapper
+
+  summary-block-collection-type-blog
+
+  summary-block-setting-text-size-small
+  summary-block-setting-text-align-left
+
+  summary-block-setting-design-autogrid
+  summary-block-setting-design-list-thumbnail-left
+
+  summary-block-setting-metadata-position-below-content
+  summary-block-setting-primary-metadata-none
+  summary-block-setting-secondary-metadata-none
+
+  summary-block-setting-show-thumbnail
+  summary-block-setting-show-title
+  summary-block-setting-show-price
+  summary-block-setting-hide-excerpt
+  
+
+  
+
+  sqs-gallery-design-autogrid
+
+  
+  "
+
+  
+>
+
+  <div class="summary-item-list-container sqs-gallery-container">
+
+    <header class="summary-block-header">
+
+      <!-- Collection Title -->
+      <div class="summary-heading">
+        
+          <span class="summary-header-text">Featured</span>
+        
+      </div>
+
+      <!-- Carousel Nav -->
+      <div class="summary-carousel-pager sqs-gallery-controls">
+        <span class="summary-carousel-pager-next next"></span>
+        <span class="summary-carousel-pager-prev previous"></span>
+      </div>
+
+    </header>
+
+    <div class="summary-item-list sqs-gallery">
+
+      
+
+        <div class="
+          summary-item
+          summary-item-record-type-text
+          sqs-gallery-design-autogrid-slide
+          
+           summary-item-has-thumbnail
+           summary-item-has-excerpt
+          summary-item-has-cats
+          summary-item-has-tags
+          summary-item-has-author
+          
+          "
+          >
+
+          
+            <!-- Thumbnail -->
+            
+
+  
+  <div class="summary-thumbnail-outer-container">
+    <a href="/education/dl-algorithms-generative-adversarial-networks-gan" class="summary-thumbnail-container sqs-gallery-image-container" data-title="DL Algorithms: Generative Adversarial Networks (GAN)" data-description="">
+      <div class="summary-thumbnail img-wrapper">
+  
+
+    
+
+        <!-- Main Image -->
+        <img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/586084725016e161401a77f0/5c5495df53450aa59df34ed8/1549885271128/education-generative-adversarial-networks.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/586084725016e161401a77f0/5c5495df53450aa59df34ed8/1549885271128/education-generative-adversarial-networks.001.jpeg" data-image-dimensions="1600x800" data-image-focal-point="0.5,0.5" alt="DL Algorithms: Generative Adversarial Networks (GAN)"  data-load="false" class="summary-thumbnail-image"/>
+
+    
+
+    
+
+        
+
+        
+
+      </div>
+    </a>
+
+    <!-- Products: Quick View -->
+    
+
+  </div>
+  
+
+
+
+          
+
+          <div class="summary-content sqs-gallery-meta-container">
+
+            <!-- Metadata (Above Title) -->
+            <div class="summary-metadata-container summary-metadata-container--above-title">
+              
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+            
+              <!-- Title -->
+              <div class="summary-title">
+                <a
+                
+                  
+                    href="/education/dl-algorithms-generative-adversarial-networks-gan"
+                  
+                
+                class="summary-title-link">DL Algorithms: Generative Adversarial Networks (GAN)</a></div>
+            
+
+            <!-- Metadata (Below Title) -->
+            <div class="summary-metadata-container summary-metadata-container--below-title">
+            
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+            
+              
+            
+
+            
+
+            <!-- Metadata (Below Content) -->
+            <div class="summary-metadata-container summary-metadata-container--below-content">
+              
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+          </div> <!-- End .summary-content -->
+
+        </div> <!-- End .summary-item -->
+
+      
+
+    </div> <!-- End .summary-item-list -->
+
+  </div> <!-- End .summary-item-list-container -->
+
+</div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_4_1516841332236_29030"><div class="sqs-block-content"><h3 style="white-space:pre-wrap;"><a href="/entertainment">AI Entertainment</a></h3></div></div><div class="sqs-block summary-v2-block sqs-block-summary-v2" data-block-json="&#123;&quot;hSize&quot;:null,&quot;floatDir&quot;:null,&quot;collectionId&quot;:&quot;5875420729687f83cf2ea7b8&quot;,&quot;design&quot;:&quot;autogrid&quot;,&quot;headerText&quot;:&quot;Featured&quot;,&quot;textSize&quot;:&quot;small&quot;,&quot;pageSize&quot;:1,&quot;imageAspectRatio&quot;:&quot;1.5&quot;,&quot;columnWidth&quot;:270,&quot;gutter&quot;:20,&quot;listImageSize&quot;:30,&quot;listImageAlignment&quot;:&quot;left&quot;,&quot;slidesPerRow&quot;:3,&quot;textAlignment&quot;:&quot;left&quot;,&quot;showTitle&quot;:true,&quot;showThumbnail&quot;:true,&quot;showExcerpt&quot;:false,&quot;showReadMoreLink&quot;:false,&quot;showPrice&quot;:true,&quot;productQuickViewEnabled&quot;:false,&quot;showPastOrUpcomingEvents&quot;:&quot;Upcoming&quot;,&quot;metadataPosition&quot;:&quot;below-content&quot;,&quot;primaryMetadata&quot;:&quot;none&quot;,&quot;secondaryMetadata&quot;:&quot;none&quot;,&quot;filter&quot;:&#123;&quot;featured&quot;:true&#125;,&quot;autoCrop&quot;:true,&quot;lightbox&quot;:false,&quot;mixedContent&quot;:true,&quot;blockId&quot;:&quot;bc9954f7f84ac28ac324&quot;&#125;" data-block-type="55" id="block-yui_3_17_2_16_1484001967984_6183"><div class="sqs-block-content">
+
+<div class="
+  summary-block-wrapper
+
+  summary-block-collection-type-blog
+
+  summary-block-setting-text-size-small
+  summary-block-setting-text-align-left
+
+  summary-block-setting-design-autogrid
+  summary-block-setting-design-list-thumbnail-left
+
+  summary-block-setting-metadata-position-below-content
+  summary-block-setting-primary-metadata-none
+  summary-block-setting-secondary-metadata-none
+
+  summary-block-setting-show-thumbnail
+  summary-block-setting-show-title
+  summary-block-setting-show-price
+  summary-block-setting-hide-excerpt
+  
+
+  
+
+  sqs-gallery-design-autogrid
+
+  
+  "
+
+  
+>
+
+  <div class="summary-item-list-container sqs-gallery-container">
+
+    <header class="summary-block-header">
+
+      <!-- Collection Title -->
+      <div class="summary-heading">
+        
+          <span class="summary-header-text">Featured</span>
+        
+      </div>
+
+      <!-- Carousel Nav -->
+      <div class="summary-carousel-pager sqs-gallery-controls">
+        <span class="summary-carousel-pager-next next"></span>
+        <span class="summary-carousel-pager-prev previous"></span>
+      </div>
+
+    </header>
+
+    <div class="summary-item-list sqs-gallery">
+
+      
+
+        <div class="
+          summary-item
+          summary-item-record-type-text
+          sqs-gallery-design-autogrid-slide
+          
+           summary-item-has-thumbnail
+           summary-item-has-excerpt
+          summary-item-has-cats
+          summary-item-has-tags
+          summary-item-has-author
+          
+          "
+          >
+
+          
+            <!-- Thumbnail -->
+            
+
+  
+  <div class="summary-thumbnail-outer-container">
+    <a href="/entertainment/transcendence" class="summary-thumbnail-container sqs-gallery-image-container" data-title="Transcendence (2014 AI Movie)" data-description="">
+      <div class="summary-thumbnail img-wrapper">
+  
+
+    
+
+        <!-- Main Image -->
+        <img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5875420729687f83cf2ea7b8/5a9c055aec212db87d400c78/1520461237753/transcendence.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5875420729687f83cf2ea7b8/5a9c055aec212db87d400c78/1520461237753/transcendence.001.jpeg" data-image-dimensions="1600x800" data-image-focal-point="0.5,0.5" alt="Transcendence (2014 AI Movie)"  data-load="false" class="summary-thumbnail-image"/>
+
+    
+
+    
+
+        
+
+        
+
+      </div>
+    </a>
+
+    <!-- Products: Quick View -->
+    
+
+  </div>
+  
+
+
+
+          
+
+          <div class="summary-content sqs-gallery-meta-container">
+
+            <!-- Metadata (Above Title) -->
+            <div class="summary-metadata-container summary-metadata-container--above-title">
+              
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+            
+              <!-- Title -->
+              <div class="summary-title">
+                <a
+                
+                  
+                    href="/entertainment/transcendence"
+                  
+                
+                class="summary-title-link">Transcendence (2014 AI Movie)</a></div>
+            
+
+            <!-- Metadata (Below Title) -->
+            <div class="summary-metadata-container summary-metadata-container--below-title">
+            
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+            
+              
+            
+
+            
+
+            <!-- Metadata (Below Content) -->
+            <div class="summary-metadata-container summary-metadata-container--below-content">
+              
+              <div class="summary-metadata summary-metadata--primary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+              
+              <div class="summary-metadata summary-metadata--secondary">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+          </div> <!-- End .summary-content -->
+
+        </div> <!-- End .summary-item -->
+
+      
+
+    </div> <!-- End .summary-item-list -->
+
+  </div> <!-- End .summary-item-list-container -->
+
+</div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1549043749507_10519"><div class="sqs-block-content"><h3 style="white-space:pre-wrap;">Our Services</h3></div></div><div class="row sqs-row"><div class="col sqs-col-6 span-6"><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1548955038561_7987"><div class="sqs-block-content">
+
+  
+
+    
+      <div class="image-block-outer-wrapper layout-caption-hidden design-layout-inline combination-animation-reveal individual-animation-none individual-text-animation-none">
+      
+        <div class="intrinsic" style="max-width:1024.0px;">
+          
+            <a href="https://www.artificial-intelligence.blog/services" >
+          
+            <div style="padding-bottom:100.0%;" class="image-block-wrapper   has-aspect-ratio" data-description="" >
+              <noscript><img src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c532dda758d466a263ebe9a/1548955143610/publish-your-ai-post.001.jpeg" alt="publish-your-ai-post.001.jpeg" /></noscript><img class="thumb-image" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c532dda758d466a263ebe9a/1548955143610/publish-your-ai-post.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c532dda758d466a263ebe9a/1548955143610/publish-your-ai-post.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="publish-your-ai-post.001.jpeg" data-load="false" data-image-id="5c532dda758d466a263ebe9a" data-type="image" />
+            </div>
+          
+            </a>
+          
+
+          
+
+        </div>
+      
+      </div>
+    
+
+  
+
+
+</div></div></div><div class="col sqs-col-6 span-6"><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1548955038561_9867"><div class="sqs-block-content">
+
+  
+
+    
+      <div class="image-block-outer-wrapper layout-caption-hidden design-layout-inline combination-animation-reveal individual-animation-none individual-text-animation-none">
+      
+        <div class="intrinsic" style="max-width:1024.0px;">
+          
+            <a href="https://www.artificial-intelligence.blog/services" >
+          
+            <div style="padding-bottom:100.0%;" class="image-block-wrapper   has-aspect-ratio" data-description="" >
+              <noscript><img src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c532e240e2e72d75314c79b/1548955208355/add-your-ai-company.001.jpeg" alt="add-your-ai-company.001.jpeg" /></noscript><img class="thumb-image" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c532e240e2e72d75314c79b/1548955208355/add-your-ai-company.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/t/5c532e240e2e72d75314c79b/1548955208355/add-your-ai-company.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="add-your-ai-company.001.jpeg" data-load="false" data-image-id="5c532e240e2e72d75314c79b" data-type="image" />
+            </div>
+          
+            </a>
+          
+
+          
+
+        </div>
+      
+      </div>
+    
+
+  
+
+
+</div></div></div></div></div></div></div>
+      </aside>
+
+    </article>
+  </div>
+
+
+
+<section class="blog-item-pagination">
+  <a href="/news/musk-vs-zuck-vs-trump" class="blog-item-pagination-link blog-item-pagination-link--prev">
+    <div class="blog-item-label">
+      <svg class="prev-icon" viewBox="0 0 50 100">
+        <use xlink:href="/assets/ui-icons.svg#thick-arrow-left-icon"></use>
+      </svg>
+    </div>
+    <span class="pagination-title-wrapper">
+      <img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597cfcb8c534a5837f7127df/1517232834290/musk-vs-zuck-vs-trump.001.jpg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/597cfcb8c534a5837f7127df/1517232834290/musk-vs-zuck-vs-trump.001.jpg" data-image-dimensions="1600x800" data-image-focal-point="0.5,0.5" alt="Musk vs Zuck vs Trump"  />
+      <h2 class="blog-item-pagination-title">Musk vs Zuck vs Trump</h2>
+    </span>
+  </a><!--
+  --><a href="/news/artificial-intelligence-in-agriculture-the-challenges" class="blog-item-pagination-link blog-item-pagination-link--next">
+    <div class="blog-item-label">
+      <svg class="next-icon" viewBox="0 0 50 100">
+        <use xlink:href="/assets/ui-icons.svg#thick-arrow-right-icon"></use>
+      </svg>
+    </div>
+    <span class="pagination-title-wrapper">
+      <img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/59064ba229687f041cb21222/1517234722441/artificial-intelligence-in-agriculture-the-challenges.001.jpg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/59064ba229687f041cb21222/1517234722441/artificial-intelligence-in-agriculture-the-challenges.001.jpg" data-image-dimensions="1600x800" data-image-focal-point="0.5,0.5" alt="Artificial Intelligence in Agriculture - The Challenges"  />
+      <h2 class="blog-item-pagination-title">Artificial Intelligence in Agriculture - The Challenges</h2>
+    </span>
+  </a>
+</section>
+
+
+
+  
+    
+        <h2 class="related-title responsive-padding--top">Related Posts</h2>
+        <section id="related" class="blog-item-related clear" sqs-controller="RelatedPostImages">
+          <article id="article-58a1d85e1e5b6c46349dedbd" class="blog-list-item entry entry--list entry--related h-entry hentry category-artificial-intelligence tag-asilomar tag-principles tag-conference author-steve-digital post-type-text article-index-1 has-main-image" data-item-id="58a1d85e1e5b6c46349dedbd" data-item-title="Asilomar AI Principles">
+                <div class="thumbnail-title-wrapper">
+                  
+                  <div class="excerpt-thumb">
+                    <a href="/news/asilomar-ai-principles" class="excerpt-image content-fill"><img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/58a1d85e1e5b6c46349dedbd/1517180065437/asilomar-ai-principles.001.jpg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/58a1d85e1e5b6c46349dedbd/1517180065437/asilomar-ai-principles.001.jpg" data-image-dimensions="1600x800" data-image-focal-point="0.5,0.5" alt="Asilomar AI Principles"  /></a>
+                  </div>
+                  
+                </div>
+
+                <div class="entry-text">
+                  
+                  <header class="entry-header">
+                    
+                    <a href="/news/asilomar-ai-principles" class="u-url" rel="bookmark">
+                    
+                    <time class="dt-published date-callout" datetime="2017-08-10" pubdate>
+                      <div class="date-wrapper">
+                        <span class="month">Aug </span><span class="day">10</span>
+                      </div>
+                    </time>
+                    <h2 class="entry-title entry-title--list p-name">
+                      <time class="dt-published date-highlight" datetime="2017-08-10" pubdate>Aug 10 </time>
+                      Asilomar AI Principles
+                    </h2>
+                    </a>
+                  </header>
+                  
+                </div>
+
+              </article><article id="article-58a2fdf8ebbd1a3e2022adc3" class="blog-list-item entry entry--list entry--related h-entry hentry category-artificial-intelligence tag-aggressive tag-google tag-deepmind author-steve-digital post-type-text article-index-2 has-main-image" data-item-id="58a2fdf8ebbd1a3e2022adc3" data-item-title="DeepMind's AI has Learnt how to Become Highly Aggressive">
+                <div class="thumbnail-title-wrapper">
+                  
+                  <div class="excerpt-thumb">
+                    <a href="/news/deepminds-ai-has-learnt-how-to-become-highly-aggressive" class="excerpt-image content-fill"><img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/58a2fdf8ebbd1a3e2022adc3/1517752157112/deepminds-ai-has-learnt-how-to-become-highly-aggressive.001.jpg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/58a2fdf8ebbd1a3e2022adc3/1517752157112/deepminds-ai-has-learnt-how-to-become-highly-aggressive.001.jpg" data-image-dimensions="1600x800" data-image-focal-point="0.5,0.5" alt="DeepMind's AI has Learnt how to Become Highly Aggressive"  /></a>
+                  </div>
+                  
+                </div>
+
+                <div class="entry-text">
+                  
+                  <header class="entry-header">
+                    
+                    <a href="/news/deepminds-ai-has-learnt-how-to-become-highly-aggressive" class="u-url" rel="bookmark">
+                    
+                    <time class="dt-published date-callout" datetime="2017-02-14" pubdate>
+                      <div class="date-wrapper">
+                        <span class="month">Feb </span><span class="day">14</span>
+                      </div>
+                    </time>
+                    <h2 class="entry-title entry-title--list p-name">
+                      <time class="dt-published date-highlight" datetime="2017-02-14" pubdate>Feb 14 </time>
+                      DeepMind's AI has Learnt how to Become Highly Aggressive
+                    </h2>
+                    </a>
+                  </header>
+                  
+                </div>
+
+              </article><article id="article-58c99a95f7e0ab19ba67e0e9" class="blog-list-item entry entry--list entry--related h-entry hentry category-artificial-intelligence tag-google tag-deepmind tag-machine-learning tag-deep-learning tag-memory tag-atari author-steve-digital post-type-text article-index-3 has-main-image" data-item-id="58c99a95f7e0ab19ba67e0e9" data-item-title="Google DeepMind's New Algorithm adds "Memory" to A.I.">
+                <div class="thumbnail-title-wrapper">
+                  
+                  <div class="excerpt-thumb">
+                    <a href="/news/google-deepminds-new-algorithm-adds-memory-to-ai" class="excerpt-image content-fill"><img data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/58c99a95f7e0ab19ba67e0e9/1517262776466/google-deepminds-new-algorithm-adds-memory-to-ai.001.jpg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/585f0ff7d482e9c87e7164c8/58c99a95f7e0ab19ba67e0e9/1517262776466/google-deepminds-new-algorithm-adds-memory-to-ai.001.jpg" data-image-dimensions="1600x800" data-image-focal-point="0.428,0.0" alt="Google DeepMind's New Algorithm adds &quot;Memory&quot; to A.I."  /></a>
+                  </div>
+                  
+                </div>
+
+                <div class="entry-text">
+                  
+                  <header class="entry-header">
+                    
+                    <a href="/news/google-deepminds-new-algorithm-adds-memory-to-ai" class="u-url" rel="bookmark">
+                    
+                    <time class="dt-published date-callout" datetime="2017-03-15" pubdate>
+                      <div class="date-wrapper">
+                        <span class="month">Mar </span><span class="day">15</span>
+                      </div>
+                    </time>
+                    <h2 class="entry-title entry-title--list p-name">
+                      <time class="dt-published date-highlight" datetime="2017-03-15" pubdate>Mar 15 </time>
+                      Google DeepMind's New Algorithm adds "Memory" to A.I.
+                    </h2>
+                    </a>
+                  </header>
+                  
+                </div>
+
+              </article>
+        </section>
+      
+  
+</div>
+
+
+
+        <div style="margin-top:50px">
+          <div class="sqs-layout sqs-grid-12 columns-12 empty" data-type="block-field" id="blockFieldBelowMainContent-item-597ce40a3a041181d9cfdb60"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+        </div>
+        <div style="margin-top:50px">
+          <div class="sqs-layout sqs-grid-12 columns-12" data-type="block-field" data-updated-on="1523200344055" id="blockFieldBelowMainContent-585f0ff7d482e9c87e7164c8"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block button-block sqs-block-button" data-block-type="53" id="block-yui_3_17_2_1_1523199778104_22283"><div class="sqs-block-content">
+<div class="sqs-block-button-container--center" data-alignment="center" data-button-size="small">
+	<a href="/news" class="sqs-block-button-element--small sqs-block-button-element" >More AI News ...</a>
+</div></div></div></div></div></div>
+        </div>
+        <div class="sqs-layout sqs-grid-12 columns-12" data-type="block-field" data-updated-on="1523215672320" id="blockFieldBelowMainContent"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_36_1509557546923_5947"><div class="sqs-block-content"><!-- AI Blog Bottom of Page -->
+<!--
+<div style="margin-top:20px;margin-bottom:20px">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6519338693755664"
+     data-ad-slot="3875020939"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+<div style="clear:both"></div>--></div></div></div></div></div><!-- all pages -->
+
+        <div class="sd-above-footer">
+          <div class="sqs-layout sqs-grid-12 columns-12" data-type="block-field" data-updated-on="1548973330650" id="blockFieldAboveFooter"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1548972780500_18834"><div class="sqs-block-content"><hr /></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_1_1540166116535_13174"><div class="sqs-block-content"><h3 style="white-space:pre-wrap;">Artificial Intelligence Clothing (Hoodies + T-Shirts) + Gifts</h3><p style="white-space:pre-wrap;">Looking for an awesome t-shirt, hoodie, mug, etc. for yourself or as a gift … we have some super-cool designs available for you at <a href="https://tshirt.gift" target="_blank">https://tshirt.gift</a></p></div></div><div class="sqs-block gallery-block sqs-block-gallery" data-aspect-ratio="22.25" data-block-json="&#123;&quot;hSize&quot;:null,&quot;floatDir&quot;:null,&quot;newWindow&quot;:true,&quot;methodOption&quot;:&quot;transient&quot;,&quot;existingGallery&quot;:null,&quot;active-alignment&quot;:&quot;center&quot;,&quot;aspectRatio&quot;:22.25,&quot;auto-crop&quot;:true,&quot;autoplay&quot;:true,&quot;autoplay-duration&quot;:3,&quot;collectionId&quot;:&quot;5c02a0b470a6ad79cd1723b4&quot;,&quot;controls&quot;:true,&quot;design&quot;:&quot;slider&quot;,&quot;show-meta&quot;:true,&quot;show-meta-basic&quot;:true,&quot;show-meta-only-title&quot;:false,&quot;show-meta-only-description&quot;:false,&quot;square-thumbs&quot;:true,&quot;vSize&quot;:null,&quot;transientGalleryId&quot;:&quot;5c02a0b470a6ad79cd1723b4&quot;&#125;" data-block-type="8" id="block-yui_3_17_2_1_1543671310373_8153"><div class="sqs-block-content">
+
+
+
+<div class="
+  sqs-gallery-container
+  sqs-gallery-block-slider
+  
+  
+  sqs-gallery-has-controls
+  
+
+  
+    
+    
+  
+  sqs-gallery-block-show-meta
+  
+  
+
+  
+  
+
+  
+  
+  clear"
+  
+  
+>
+  <div class="sqs-gallery">
+    
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a0b40e2e7219026775d7/1543676376172/love-ai.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a0b40e2e7219026775d7/1543676376172/love-ai.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Love AI T-Shirts and Hoodies"  data-click-through-url="https://tshirt.gift/collections/love-ai" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a171cd836693d913d567/1543676444829/tensorflow-pro.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a171cd836693d913d567/1543676444829/tensorflow-pro.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="TensorFlow Pro Hoodies &amp;amp; T-Shirts"  data-click-through-url="https://tshirt.gift/collections/tensorflow-pro" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a3e270a6ad79cd174354/1543677407783/machine-learning.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a3e270a6ad79cd174354/1543677407783/machine-learning.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Machine Learning Hoodies &amp;amp; Tshirts"  data-click-through-url="https://tshirt.gift/collections/machine-learning" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a29eb8a045e8f43e1be9/1543676695677/nerd.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a29eb8a045e8f43e1be9/1543676695677/nerd.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Nerd Hoodies &amp;amp; T-Shirts"  data-click-through-url="https://tshirt.gift/collections/nerd" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a4786d2a738dea63166c/1543677074942/hacker-periodic-table.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a4786d2a738dea63166c/1543677074942/hacker-periodic-table.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Hacker Periodic Table Hoodies + Tshirts"  data-click-through-url="https://tshirt.gift/collections/hacker-periodic-table" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a392575d1f6d6b38e94b/1543676844332/tensorflow-t-shirt.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a392575d1f6d6b38e94b/1543676844332/tensorflow-t-shirt.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="TensorFlow Hoodies and T-Shirts"  data-click-through-url="https://tshirt.gift/collections/tensorflow" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a438c2241b1a453c1d8b/1543677023763/i-failed-the-turing-test.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a438c2241b1a453c1d8b/1543677023763/i-failed-the-turing-test.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="I Failed the Turing Test T-Shirts and Hoodies"  data-click-through-url="https://tshirt.gift/collections/i-failed-the-turing-test" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a5790e2e72190267a664/1543677345235/brainfuck-hello-world.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a5790e2e72190267a664/1543677345235/brainfuck-hello-world.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Brainfuck Hello World T-Shirt &amp;amp; Hoodie"  data-click-through-url="https://tshirt.gift/collections/brainfuck-hello-world" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a4afcd836693d913f587/1543677140793/hacker.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a4afcd836693d913f587/1543677140793/hacker.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Hacker Hoodies &amp;amp; T-Shirts"  data-click-through-url="https://tshirt.gift/collections/hacker" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a349aa4a997cdcf1d829/1543677389902/tensorflow-hacker-hoodies.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a349aa4a997cdcf1d829/1543677389902/tensorflow-hacker-hoodies.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="TensorFlow Hacker Hoodies and T-Shirts"  data-click-through-url="https://tshirt.gift/collections/tensorflow-hacker-dark-background" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a26e8a922dd6f318c318/1543676695675/sexy-nerd.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a26e8a922dd6f318c318/1543676695675/sexy-nerd.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Sexy Nerd T-Shirts &amp;amp; Hoodies"  data-click-through-url="https://tshirt.gift/collections/sexy-nerd" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a4f0b8a045e8f43e3318/1543677190983/geek.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a4f0b8a045e8f43e3318/1543677190983/geek.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Geek T-Shirts and Hoodies"  data-click-through-url="https://tshirt.gift/collections/geek" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a1f24ae237fc55dc6123/1543676695660/tensorflow-guru.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a1f24ae237fc55dc6123/1543676695660/tensorflow-guru.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="TensorFlow Guru Hoodies and T-Shirts"  data-click-through-url="https://tshirt.gift/collections/tensorflow-guru" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a525758d46c25c356373/1543677269205/falcon-rockets.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a525758d46c25c356373/1543677269205/falcon-rockets.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="Falcon Rockets Hoodies and Tshirts"  data-click-through-url="https://tshirt.gift/collections/falcon-rockets" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+
+        
+
+        
+          
+          <img data-load="false" data-src="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a23670a6ad79cd1732ed/1543676695670/tensorflow-god.001.jpeg" data-image="https://static1.squarespace.com/static/585e8f70bebafb65339930b8/5c02a0b470a6ad79cd1723b4/5c02a23670a6ad79cd1732ed/1543676695670/tensorflow-god.001.jpeg" data-image-dimensions="1024x1024" data-image-focal-point="0.5,0.5" alt="TensorFlow God T-Shirts + Hoodies"  data-click-through-url="https://tshirt.gift/collections/tensorflow-god" data-type="image" />
+          
+
+          
+        
+
+        
+
+      
+    
+  </div>
+
+  
+    <div class="sqs-gallery-meta-container">
+    
+      
+        <div class="sqs-gallery-controls">
+          <a href="#" class="previous"></a>
+          <a href="#" class="next"></a>
+        </div>
+      
+    
+    </div> <!-- END .sqs-gallery-meta-container -->
+  
+
+</div>
+
+
+
+
+
+
+  
+  
+  
+
+</div></div><div class="sqs-block button-block sqs-block-button" data-block-type="53" id="block-yui_3_17_2_1_1543677570361_19862"><div class="sqs-block-content">
+<div class="sqs-block-button-container--center" data-alignment="center" data-button-size="small">
+	<a href="https://tshirt.gift" class="sqs-block-button-element--small sqs-block-button-element" target="_blank">Visit Shop ...</a>
+</div></div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_1_1543703918846_18906"><div class="sqs-block-content"><hr /></div></div><div class="sqs-block newsletter-block sqs-block-newsletter" data-block-type="51" id="block-yui_3_17_2_1_1543692280843_28690"><div class="sqs-block-content">
+
+<div class="newsletter-form-wrapper newsletter-form-wrapper--layoutFloat newsletter-form-wrapper--alignCenter"
+  
+>
+  <form
+     class="newsletter-form"
+     data-form-id="5c030d1f8a922dd6f31dc929"
+     autocomplete="on"
+     method="POST"
+     onsubmit="return (function (form) {
+  Y.use('squarespace-form-submit', 'node', function usingFormSubmit(Y) {
+    (new Y.Squarespace.FormSubmit(form)).submit({
+      formId: '5c030d1f8a922dd6f31dc929',
+      collectionId: '',
+      objectName: 'blockFieldAboveFooter'
+    });
+  });
+  return false;
+})(this);"
+  >
+    <header class="newsletter-form-header">
+      <h2 class="newsletter-form-header-title">Subscribe to our Artificial Intelligence Newsletter</h2>
+      <div class="newsletter-form-header-description"><p>Sign up with your email address to receive news and updates.</p></div>
+    </header>
+
+    <div class="newsletter-form-body">
+
+      <div class="newsletter-form-fields-wrapper form-fields">
+
+        
+
+        
+
+          
+            <div id="email-yui_3_17_2_1_1543692280843_28695" class="newsletter-form-field-wrapper form-item field email required">
+              <label class="newsletter-form-field-label title" for="email-yui_3_17_2_1_1543692280843_28695-field">Email Address</label>
+              <input id="email-yui_3_17_2_1_1543692280843_28695-field" class="newsletter-form-field-element field-element" name="email" x-autocompletetype="email" type="text" spellcheck="false" placeholder="Email Address" />
+            </div>
+          
+
+        
+
+          
+
+        
+
+      </div>
+
+      <div class="newsletter-form-button-wrapper submit-wrapper">
+        <button class="newsletter-form-button sqs-system-button sqs-editable-button-layout sqs-editable-button-style sqs-editable-button-shape" type="submit" value="Sign Up"><span class="newsletter-form-spinner sqs-spin light large"></span><span class="newsletter-form-button-label">Sign Up</span><span class="newsletter-form-button-icon"></span></button>
+      </div>
+
+    </div>
+
+    
+      <div class="newsletter-form-footnote"><p>We respect your privacy as much as we respect our own privacy. You will never get any unsolicited third party or non-AI emails from us.</p></div>
+    
+
+    <div class="hidden form-submission-text">Thank you!</div>
+    <div class="hidden form-submission-html" data-submission-html=""></div>
+
+  </form>
+
+</div>
+</div></div><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21" id="block-yui_3_17_2_1_1540166116535_24741"><div class="sqs-block-content">&nbsp;</div></div></div></div></div>
+        </div>
+      </main>
+
+
+      <footer id="footer" class="site-footer responsive-margin--top responsive-padding--left responsive-padding--right responsive-padding--top responsive-padding--bottom" role="contentinfo" style="margin-top:-2px" >
+        <!-- site wide footer via open block field -->
+        <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Footer Content" data-type="block-field" data-updated-on="1548971993991" id="footerBlocks"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="row sqs-row"><div class="col sqs-col-4 span-4"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_14_1482592403747_14096"><div class="sqs-block-content"><p style="white-space:pre-wrap;"><strong>AI Blog Sections</strong><br><a href="/">Home</a><br><a href="/news"><em>Artificial Intelligence News</em></a><br><a href="/artificial-intelligence-news">AI News Stream</a><br><a href="/technologies">AI Technologies</a><br><a href="/education">AI Education</a><br><a href="/analysis-and-resources">AI Analysis &amp; Resources</a><br><a href="/books">AI Books</a><br><a href="/research">AI Research</a></p></div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_15_1502308572568_12759"><div class="sqs-block-content"><p style="white-space:pre-wrap;"><br><a href="/people-in-ai">People in AI</a><br><a href="/companies-in-ai">Companies in AI</a><br><a href="/conferences">AI Conferences &amp; Events</a><br><a href="/entertainment">AI Entertainment</a><br><br><a href="/terminology">AI Terminology</a><br><br><a href="/artificial-intelligence-rss-feeds">RSS Feeds</a></p></div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_63_1485399744699_27735"><div class="sqs-block-content"><p style="white-space:pre-wrap;"><strong>General</strong><br><a href="/about">About</a><br><a href="/frequently-asked-questions">FAQs</a><br><a href="/contact">Contact</a><br><a href="/ai-newsletter">Newsletter</a> <strong>NEW</strong></p><p style="white-space:pre-wrap;"><strong>Sponsors</strong><br><a href="/services">Sponsored Content</a><br><a href="/ai-spaces">Become a Sponsor</a> <strong>NEW</strong><br><a href="/artificial-intelligence-content-submission-forms">Suggest Content</a></p></div></div></div><div class="col sqs-col-2 span-2"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_5_1482872696217_16118"><div class="sqs-block-content"><p style="white-space:pre-wrap;"><strong>Social</strong><br><a href="http://artificial-intelligence.community" target="_blank">AI Forum</a><br><a href="/ai-on-facebook">Facebook</a><br><a href="/ai-on-twitter">Twitter</a><br><a href="/ai-on-instagram">Instagram</a><br><a href="https://www.linkedin.com/in/stevedigital" target="_blank">LinkedIn</a><br><a href="https://www.amazon.co.uk//ref=as_li_ss_tl?ie=UTF8&amp;linkCode=ll2&amp;tag=busiintebloga-21&amp;linkId=946f43fffa15cfb1c76c41851e8cc963" target="_blank">Amazon</a>&nbsp;</p></div></div></div></div><div class="sqs-block spacer-block sqs-block-spacer" data-aspect-ratio="1.76" data-block-type="21" id="block-yui_3_17_2_1_1523203286439_18244"><div class="sqs-block-content">&nbsp;</div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_1_1534927971183_7452"><div class="sqs-block-content"><div style="text-align:center;width:100px;height:100px;margin:0px auto 0px auto">
+  <div id="xaiButton"></div>
+</div>
+<script type="text/javascript" src="https://app.yayring.com/b/"></script>
+<div style="clear:both"></div></div></div><div class="sqs-block spacer-block sqs-block-spacer sized vsize-1" data-block-type="21" id="block-yui_3_17_2_1_1543692280843_10692"><div class="sqs-block-content">&nbsp;</div></div><div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2" data-block-type="54" id="block-yui_3_17_2_1_1543692280843_8970"><div class="sqs-block-content">
+
+<div class="sqs-svg-icon--outer social-icon-alignment-center social-icons-color-standard social-icons-size-large social-icons-shape-circle social-icons-style-border" >
+  <nav class="sqs-svg-icon--list">
+    <a href="https://twitter.com/wwwAIblog" target="_blank" class="sqs-svg-icon--wrapper twitter">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="#twitter-icon"></use>
+          <use class="sqs-use--mask" xlink:href="#twitter-mask"></use>
+        </svg>
+      </div>
+    </a><a href="http://www.facebook.com/wwwAIblog" target="_blank" class="sqs-svg-icon--wrapper facebook">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="#facebook-icon"></use>
+          <use class="sqs-use--mask" xlink:href="#facebook-mask"></use>
+        </svg>
+      </div>
+    </a><a href="http://instagram.com/wwwaiblog" target="_blank" class="sqs-svg-icon--wrapper instagram">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="#instagram-icon"></use>
+          <use class="sqs-use--mask" xlink:href="#instagram-mask"></use>
+        </svg>
+      </div>
+    </a>
+  </nav>
+</div></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_2_1482872696217_16242"><div class="sqs-block-content"><p style="text-align:center;white-space:pre-wrap;">© 2016-2018 <a href="https://www.artificial-intelligence.blog">Artificial-Intelligence.Blog</a>and Artificial Intelligence Consulting Ltd. - All Rights Reserved - <a href="/privacy-policy">Privacy Policy</a> - <a href="/terms-of-service">Terms of Service</a><br>This site is operated by Steve (<a href="mailto:ai@steve.digital" target="_blank">ai@steve.digital</a>)</p></div></div></div></div></div>
+        <div id="footerNavWrapper" class="nav-wrapper footer-nav">
+          
+
+
+        </div>
+      </footer>
+
+    </div>
+
+    <div id="mobileBar" class="mobile-bar mobile-bar--has-cart" sqs-controller="MobileOffset">
+      <a class="nav-toggle-label nav-toggle-label--mobile flex-item" id="navToggleMobile" sqs-controller="NavToggle">
+        <svg class="Icon Icon--hamburger nav-toggle-label-icon" viewBox="0 0 26 18">
+          <use class="use--odd" xlink:href="/assets/ui-icons.svg#hamburger-icon--odd"></use>
+          <use class="use--even" xlink:href="/assets/ui-icons.svg#hamburger-icon--even"></use>
+        </svg>
+      </a><!--
+      --><div class="social-ellipsis social-ellipsis--mobile flex-item" id="socialEllipsisMobile" sqs-controller="SocialToggle">
+        <svg class="ellipsis-icon" viewBox="0 0 25 6">
+          <use xlink:href="/assets/ui-icons.svg#ellipsis-icon"></use>
+        </svg>
+        <svg class="Icon Icon--close social-close-icon" viewBox="0 0 18 18">
+          <use xlink:href="/assets/ui-icons.svg#close-icon-line"></use>
+        </svg>
+      </div><!--
+      --><div class="search-cart--mobile flex-item">
+        <a href="/search" rel="search" class="header-search header-search--mobile" sqs-controller="SearchToggle">
+          <svg class="Icon Icon--search search-icon" viewBox="0 0 20 20">
+            <use xlink:href="/assets/ui-icons.svg#search-icon"></use>
+          </svg>
+          <svg class="Icon Icon--close search-close-icon" viewBox="0 0 18 18">
+            <use xlink:href="/assets/ui-icons.svg#close-icon-line"></use>
+          </svg>
+        </a>
+        <a href="/cart" class="sqs-custom-cart custom-cart mobile-cart">
+          <div class="custom-cart-bag">
+            <svg class="Icon Icon--bag custom-cart-bag-icon" viewBox="0 0 34 38">
+              <use class="use--odd" xlink:href="/assets/ui-icons.svg#bag-icon--odd"></use>
+              <use class="use--even" xlink:href="/assets/ui-icons.svg#bag-icon--even"></use>
+            </svg>
+            <span class="sqs-cart-quantity">0</span>
+          </div>
+        </a>
+      </div><!--
+      -->
+    </div>
+
+    <script src="https://static1.squarespace.com/static/ta/585e8f70bebafb65339930b8/408/scripts/site-bundle.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-light.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script src="https://wcoder.github.io/highlightjs-line-numbers.js/highlightjs-line-numbers.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.initLineNumbersOnLoad();
+</script>
+
+<style type="text/css">
+/* for block of numbers */
+td.hljs-ln-numbers {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	text-align: center;
+	color: #ccc;
+	border-right: 1px solid #CCC;
+	vertical-align: top;
+	padding-right: 5px;
+
+	/* your custom style here */
+}
+
+/* for block of code */
+td.hljs-ln-code {
+	padding-left: 10px;
+}</style>
+
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1814639545480591',
+    xfbml      : true,
+    version    : 'v2.7'
+  });
+  FB.AppEvents.logPageView();
+};  
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1814639545480591";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><script type="text/javascript" data-sqs-type="imageloader-bootstrapper">(function() {if(window.ImageLoader) { window.ImageLoader.bootstrap({}, document); }})();</script><script>Squarespace.afterBodyLoad(Y);</script><svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none"><symbol id="twitter-icon" viewBox="0 0 64 64"><path d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"/></symbol><symbol id="twitter-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M44.7,25.5c0,0.3,0,0.6,0,0.8C44.7,35,38.1,45,26.1,45c-3.7,0-7.2-1.1-10.1-2.9 c0.5,0.1,1,0.1,1.6,0.1c3.1,0,5.9-1,8.2-2.8c-2.9-0.1-5.3-2-6.1-4.6c0.4,0.1,0.8,0.1,1.2,0.1c0.6,0,1.2-0.1,1.7-0.2 c-3-0.6-5.3-3.3-5.3-6.4c0,0,0-0.1,0-0.1c0.9,0.5,1.9,0.8,3,0.8c-1.8-1.2-2.9-3.2-2.9-5.5c0-1.2,0.3-2.3,0.9-3.3 c3.2,4,8.1,6.6,13.5,6.9c-0.1-0.5-0.2-1-0.2-1.5c0-3.6,2.9-6.6,6.6-6.6c1.9,0,3.6,0.8,4.8,2.1c1.5-0.3,2.9-0.8,4.2-1.6 c-0.5,1.5-1.5,2.8-2.9,3.6c1.3-0.2,2.6-0.5,3.8-1C47.1,23.4,46,24.5,44.7,25.5z"/></symbol><symbol id="facebook-icon" viewBox="0 0 64 64"><path d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"/></symbol><symbol id="facebook-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z"/></symbol><symbol id="instagram-icon" viewBox="0 0 64 64"><path d="M46.91,25.816c-0.073-1.597-0.326-2.687-0.697-3.641c-0.383-0.986-0.896-1.823-1.73-2.657c-0.834-0.834-1.67-1.347-2.657-1.73c-0.954-0.371-2.045-0.624-3.641-0.697C36.585,17.017,36.074,17,32,17s-4.585,0.017-6.184,0.09c-1.597,0.073-2.687,0.326-3.641,0.697c-0.986,0.383-1.823,0.896-2.657,1.73c-0.834,0.834-1.347,1.67-1.73,2.657c-0.371,0.954-0.624,2.045-0.697,3.641C17.017,27.415,17,27.926,17,32c0,4.074,0.017,4.585,0.09,6.184c0.073,1.597,0.326,2.687,0.697,3.641c0.383,0.986,0.896,1.823,1.73,2.657c0.834,0.834,1.67,1.347,2.657,1.73c0.954,0.371,2.045,0.624,3.641,0.697C27.415,46.983,27.926,47,32,47s4.585-0.017,6.184-0.09c1.597-0.073,2.687-0.326,3.641-0.697c0.986-0.383,1.823-0.896,2.657-1.73c0.834-0.834,1.347-1.67,1.73-2.657c0.371-0.954,0.624-2.045,0.697-3.641C46.983,36.585,47,36.074,47,32S46.983,27.415,46.91,25.816z M44.21,38.061c-0.067,1.462-0.311,2.257-0.516,2.785c-0.272,0.7-0.597,1.2-1.122,1.725c-0.525,0.525-1.025,0.85-1.725,1.122c-0.529,0.205-1.323,0.45-2.785,0.516c-1.581,0.072-2.056,0.087-6.061,0.087s-4.48-0.015-6.061-0.087c-1.462-0.067-2.257-0.311-2.785-0.516c-0.7-0.272-1.2-0.597-1.725-1.122c-0.525-0.525-0.85-1.025-1.122-1.725c-0.205-0.529-0.45-1.323-0.516-2.785c-0.072-1.582-0.087-2.056-0.087-6.061s0.015-4.48,0.087-6.061c0.067-1.462,0.311-2.257,0.516-2.785c0.272-0.7,0.597-1.2,1.122-1.725c0.525-0.525,1.025-0.85,1.725-1.122c0.529-0.205,1.323-0.45,2.785-0.516c1.582-0.072,2.056-0.087,6.061-0.087s4.48,0.015,6.061,0.087c1.462,0.067,2.257,0.311,2.785,0.516c0.7,0.272,1.2,0.597,1.725,1.122c0.525,0.525,0.85,1.025,1.122,1.725c0.205,0.529,0.45,1.323,0.516,2.785c0.072,1.582,0.087,2.056,0.087,6.061S44.282,36.48,44.21,38.061z M32,24.297c-4.254,0-7.703,3.449-7.703,7.703c0,4.254,3.449,7.703,7.703,7.703c4.254,0,7.703-3.449,7.703-7.703C39.703,27.746,36.254,24.297,32,24.297z M32,37c-2.761,0-5-2.239-5-5c0-2.761,2.239-5,5-5s5,2.239,5,5C37,34.761,34.761,37,32,37z M40.007,22.193c-0.994,0-1.8,0.806-1.8,1.8c0,0.994,0.806,1.8,1.8,1.8c0.994,0,1.8-0.806,1.8-1.8C41.807,22.999,41.001,22.193,40.007,22.193z"/></symbol><symbol id="instagram-mask" viewBox="0 0 64 64"><path d="M43.693,23.153c-0.272-0.7-0.597-1.2-1.122-1.725c-0.525-0.525-1.025-0.85-1.725-1.122c-0.529-0.205-1.323-0.45-2.785-0.517c-1.582-0.072-2.056-0.087-6.061-0.087s-4.48,0.015-6.061,0.087c-1.462,0.067-2.257,0.311-2.785,0.517c-0.7,0.272-1.2,0.597-1.725,1.122c-0.525,0.525-0.85,1.025-1.122,1.725c-0.205,0.529-0.45,1.323-0.516,2.785c-0.072,1.582-0.087,2.056-0.087,6.061s0.015,4.48,0.087,6.061c0.067,1.462,0.311,2.257,0.516,2.785c0.272,0.7,0.597,1.2,1.122,1.725s1.025,0.85,1.725,1.122c0.529,0.205,1.323,0.45,2.785,0.516c1.581,0.072,2.056,0.087,6.061,0.087s4.48-0.015,6.061-0.087c1.462-0.067,2.257-0.311,2.785-0.516c0.7-0.272,1.2-0.597,1.725-1.122s0.85-1.025,1.122-1.725c0.205-0.529,0.45-1.323,0.516-2.785c0.072-1.582,0.087-2.056,0.087-6.061s-0.015-4.48-0.087-6.061C44.143,24.476,43.899,23.682,43.693,23.153z M32,39.703c-4.254,0-7.703-3.449-7.703-7.703s3.449-7.703,7.703-7.703s7.703,3.449,7.703,7.703S36.254,39.703,32,39.703z M40.007,25.793c-0.994,0-1.8-0.806-1.8-1.8c0-0.994,0.806-1.8,1.8-1.8c0.994,0,1.8,0.806,1.8,1.8C41.807,24.987,41.001,25.793,40.007,25.793z M0,0v64h64V0H0z M46.91,38.184c-0.073,1.597-0.326,2.687-0.697,3.641c-0.383,0.986-0.896,1.823-1.73,2.657c-0.834,0.834-1.67,1.347-2.657,1.73c-0.954,0.371-2.044,0.624-3.641,0.697C36.585,46.983,36.074,47,32,47s-4.585-0.017-6.184-0.09c-1.597-0.073-2.687-0.326-3.641-0.697c-0.986-0.383-1.823-0.896-2.657-1.73c-0.834-0.834-1.347-1.67-1.73-2.657c-0.371-0.954-0.624-2.044-0.697-3.641C17.017,36.585,17,36.074,17,32c0-4.074,0.017-4.585,0.09-6.185c0.073-1.597,0.326-2.687,0.697-3.641c0.383-0.986,0.896-1.823,1.73-2.657c0.834-0.834,1.67-1.347,2.657-1.73c0.954-0.371,2.045-0.624,3.641-0.697C27.415,17.017,27.926,17,32,17s4.585,0.017,6.184,0.09c1.597,0.073,2.687,0.326,3.641,0.697c0.986,0.383,1.823,0.896,2.657,1.73c0.834,0.834,1.347,1.67,1.73,2.657c0.371,0.954,0.624,2.044,0.697,3.641C46.983,27.415,47,27.926,47,32C47,36.074,46.983,36.585,46.91,38.184z M32,27c-2.761,0-5,2.239-5,5s2.239,5,5,5s5-2.239,5-5S34.761,27,32,27z"/></symbol></svg>
+
+
+  </body>
+</html>

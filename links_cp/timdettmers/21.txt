@@ -1,0 +1,5 @@
+Blog Posts Topics 
+ Main navigation 
+ GPUs 
+ With the release of the Titan V, we now entered deep learning hardware limbo. It is unclear if NVIDIA will be able to keep its spot as the main deep learning hardware vendor in 2018 and both AMD and Intel Nervana will have a shot at overtaking NVIDIA. So for consumers, I cannot recommend buying any hardware right now. The most prudent choice is to wait until the hardware limbo passes. This might take as little as 3 months or as long as 9 months. So why did we enter deep learning hardware limbo just now? 
+ 

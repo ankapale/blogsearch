@@ -1,0 +1,145 @@
+16 September 2013 
+ I have a colleague who wants to look through large amounts of (text) data for examples of a pretty rare phenomenon (maybe 1% positive class, at most). We have about 20 labeled positive examples and 20 labeled negative examples. The natural thing to do at this point is some sort of active learning. 
+ But here's the thing. We have no need for a classifier. And we don't even care about being good at finding negative examples. All we care about is finding as many positive examples from a fixed corpus as possible. 
+ That is to say: this is really a find-a-needle-in-a-haystack problem.
+The best discussion I've found of this is Section 4 of Inactive Learning, by Attenberg and Provost. I came across a couple other papers that basically do some sort of balancing to deal with the imbalanced data problem in active learning, but the Attenberg and Provost results suggest that even this is tricky to get right. 
+ But I think this only partially addresses the problem. Here's why. 
+ Let's say that my colleague (call her Alice) is willing to spend one hour of her life looking at examples. Alice estimates that she can look at about 500 examples in that time period (small caveat: some examples are larger than other and therefore slower, but let's ignore this for now). Alice's goal is to find as many positive examples in that one hour as possible. Here are some possible strategies Alice could deploy 
+ Look at 500 randomly selected examples, getting 5 (more) positive examples in expectation (likely somewhere between 2 and 12, with 95% confidence). This gives her a total of 25 positive examples 
+ Train a classifier on her 40 labeled examples, have it rank the entire set (minus those 40). Then look at the top 500 examples. If the learned model has a recall of r% in the top 500, then she should expect to get 5*r more examples, giving her a total of 20+5r examples. (Caveat: this is a bit dangerous, because with very few training examples, results can often be anti-correlated with the desired output and you get better performance by flipping the predicted label. There was a paper on this maybe 5-10 years ago but I can't find it... Maybe somewhat knows what I'm referring to.) 
+ Train a classifier, spend 30 minutes looking at 250 random examples, getting 2.5r more positive examples, then train another classifier, then spend 30 minutes looking at it's top ranked 250 examples. If the second classifier has a recall of r'% in the top 250, then she should expect to get another 2.5*r', and she'll have a total of 20+2.5r+2.5r' = 20 + 2.5(r+r') so long as r>r' this should be better. 
+ Taking this to the extreme, Alice could annotate one example at a time (subject to constraints on either the learning being very fast or Alice not actually being a human). As long as the recall-at-one of the classifiers learned is non-decreasing, this should (I think) be the optimal strategy. 
+ So it seems that in a setting like this, what the classifier should optimize for is simply recall-at-one. In other words, it doesn't care about anything except that it's top ranked output is correct. 
+ Okay, so why is this difficult? Basically because we don't have that much data. If the corpus that represents the haystack is huge, then we want to ensure that the top-one example from that haystack is a positive example. So in principle even if all we're trying to do is select between two different hypotheses (say our hypothesis class at each time step has cardinality two) then in principle we should use as much data as possible to evaluate these two hypotheses. In particular, looking at the recall-at-one on the subset of 40 labeled examples that we have is probably not representative, essentially because this loss function doesn't decompose nicely. 
+ So what could we do instead? Well, we could pool the labeled and unlabeled examples and predict on those instead. Certainly if one of the positive labeled examples outranked everything else, that would be a good thing. But if truly 1% of the unlabeled dataset is positive, then this is not a necessary condition. In particular, the top-ranked positive labeled example could be as far as 1% down the list and we could still (in principle) be doing a good job. 
+ Ok I'll admit: I really don't know how to do this. Maybe it's enough in most cases to optimize for zero-one loss (or a weighted version thereof) and just cross your fingers that the recall-at-one is good. But it does feel like there should be a more direct way to go about this problem. 
+ 08 July 2013 
+ One of the highlights for me at NAACL was the *SEM panel on "Toward Deep NLU", which had the following speakers: Kevin Knight (USC/ISI), Chris Manning (Stanford), Martha Palmer (UC Boulder), Owen Rambow (Columbia) and Dan Roth (UIUC). I want to give a bit of an overview the panel, interspersed with some opinion. I gratefully acknowledge my wonderful colleague Bonnie Dorr for taking great notes (basically a transcript) and sharing them with me to help my failing memory. For what it's worth, this basically seemed like the "here's what I'm doing for DEFT panel" :). 
+ Here's the basic gist that I got from each of the panel members, who gave roughly 10 minute talks: 
+ Dan Roth: doing role labeling restricted to verbs is not enough. As an easy example, "John, a fast-rising politician, slept on the train to Chicago"... by normal SRL we get that John is sleeping, but not the possibly more important fact that John is a politician. Another example is prepositions: "University of Illinois" versus "State of Illinois" -- "of" is ambiguous. They came up with a taxonomy of 32 relations and labeled data and then did some learning -- see the TACL paper that was presented at NAACL, Srikumar & Roth. 
+ Commentary: the ambiguity of prepositions issue is cool and I really liked the TACL paper. It reminds me of learning Latin in high school and being confused that ablative case markers were abiguous across from/by/with. It astounded me that that was an acceptable ambiguity, but of course English has equally crazy ones that I've just gotten used to. But it does make me think that some cross-linguistic study/model might be cool here. Even more broadly, it made me think about noun-noun compound semantics: "farmers market" (market put on by farmers) versus "fruit market" (market where you buy fruit) versus "fruit pie" (pie made out of fruit). I went back and read Lucy Vanderwende's dissertation, which dealt exactly with these issues. She had far fewer relations than Srikumar and Roth, though perhaps once you allow explicit prepositions the range of things you can express grows (though somehow my gut feeling is that it doesn't, at least in English). 
+ Kevin Knight: Basically talked about their deep semantic approach to MT: see the abstract meaning representation web page for more. The idea is that people who work on syntax don't Balkanize into those who do PPs, those who do VPs, etc., so why should semantics break apart like it does. AMR is very GOFAI-style representation for language, and they've annotated a Chinese-English bilingual copy of Le Petite Prince with this representation. Now they need analyzers (hard), generators (hard) and transformation formalisms (hard). The nice thing is that this one representation captures almost all relevant semantic issues: scoping, argument structure, coreference, etc. For instance, co-ref is not explicitly annotated: it's just that a single agent can participate in multiple predicates. (Note: not yet across sentences.) 
+ Commentary: It's hard not to get excited about this stuff, especially when Kevin talks about it. His enthusiasm is infectious. I left the talk thinking "wow I want to work on that!" There's of course the worry that we've tried this before and failed and that's why things in semantics Balkanized, but maybe the time is right to revisit it. For instance, Bonnie herself (note: she didn't tell me this; it had come up in recent discussions with Philip Resnik and our postdoc Junhui Li) had a meaning representation very similar to AMR called Lexical Conceptual Structures (LCS), and Nizar Habash had a hybrid rule-based/statistical approach to translating there. The idea was that if you want to handle divergent translations (classic example: "the bottle floated across the river" (English) versus "the bottle crossed the river floatingly" (Spanish, I think)), you need a representation that abstracts means from predicate. But it's still very cool. (Actually in digging up refs, I just found this paper on mapping from LCS to AMR... from AMTA 1998!) 
+ Martha Palmer: focused mostly on event relations that go across sentences, which includes things like even coreference, bridging relations (enablement, result) and so on. They're also looking seriously at type (evidential, aspectual, etc.), modality (actual, hypothetical, generic, hedged, etc.), polarity and aspect. They are currently doing a lot of work in the clinical domain, in which these distinctions are really important if you want to understand, say, patient medical histories. 
+ Commentary: this is a bit outside things I usually think about, so I have less to say. I really like the hyper-sentence view, of course. 
+ Owen Rambow: talked about some of my favorite work that I've seen recently: basically work on propositional attitudes. The view Owen put forth is that most of NLP is focused on a world of facts, and the goal of NLU is to figure out what these facts are. They are taking a much more social model of text meaning, in which you really care about inferring partipants' cognitive states (standard triumvirate: belief, desire and intention). This actually shows up in at least one English-German translation example, essentially in which Google translate misses a very important subjunctive. 
+ Commentary: I really liked the original work Owen did on BDI inference and I'm thrilled it's going further. I think one of the historical reasons why I find this so interesting is that propositional attitudes is basically what I started doing when I started grad school, when looking at discourse analysis through RST. I think many people forget this, but the discourse relationships in RST (and other discourse theories) are really based on attitude. For instance, X is in a background relation to Y if (roughly) the listener already believes X and the listener also believes that X increases the chance of Y. (Or something like that: I just made that up :P.) But it's all about belief of listeners and utterers. 
+ Chris Manning: focused on deep learning, basically asserting (in a manner designed to be a bit controversial) that Stanford dependencies are their meaning representation and that the big problems aren't in representations. Sure, Stanford dependencies miss out on a lot (quanitification, tense, semantic roles, modality, etc.) but he felt that there are more important problems to address. And then what we need instead is "soft" meaning representations, like vector space models and distributed representations give us. Giving rise to something akin to Natural Logic. 
+ Commentary: to a large degree I agree with the notion that the "big problems" in language are probably not those that (eg) semanticists like to look at, at least from the typical view of NLE in which we want systems that do well on average across a distribution of examples that we've cultivated. But I also worry that there's a bit of magical thinking here, in the sense that it kind of feels like a cop-out: it's too hard to define categories by hand so let's let the machine figure it out. Now, don't get me wrong, I'm all for machines figuring out stuff (I gave a not-very-well-received talk to that degree at a workshop a couple years ago on linguistics in NLP), but I'm also a bit reticent to believe that this is really going to bring us any closer to really solving the NLU problem (whatever that is), though of course it will get us another 5-10% in standard benchmarks. (Ok this sounds way too negative: I actually really liked Chris' talk, and one of the things I liked about it was that it challenged my thinking. And I agree that there is a lot that we shouldn't be designing by hand -- some people, like Yoshua Bengio, would probably argue that we shouldn't be designing anything by hand, or at least that we shouldn't have to -- but I guess I still belong to the camp of "linguists give the structure, statistics gives the parameters.") 
+ There was also a lot of really interesting discussion after the presentations, some of which I'll highlight below: 
+ Lucy Vanderwende, I think mostly directed at Kevin, fell into the "we tried this X years ago" camp, basically said that whenever they tried to abstract more and more from the input representation, you ended up getting very boring sentences generated because you'd thrown out all the "nuance" (my word, not hers). The discussion afterward basically revolved about whether you annotate input sentences with meaning (which is currently the standard) or throw them out with the bathwater. Owen points out that the meaning of a passive sentence is not +passive but something much more nuanced, and if you could capture that correctly, then (in principle) generators could reflect it properly in the target language. (Me: For instance, maybe in some wacky language a passive sentence actually means that you're trying to emphasize the subject.) 
+ There was also a lot of discussion around Chris, I think partially because he went last and partially because he was trying to be controversial. Mausam made an argument (akin to what I wrote above) that logicians have made a billion logics of language and nothing really has worked (in a sense it's been a series of negative results). What about inference rules or consistency? 
+ Okay, that's all I want to write for now. Congrats if you made it this far. And thanks to the *SEM organizers for putting together this great panel! 
+ 17 June 2013 
+ I feel a bit odd doing my "what I liked at NAACL 2013" as one of the program chairs, but not odd enough to skip what seems to be the most popular type of post :). First, though, since Katrin Kirchhoff (my co-chair) and I never got a chance to formally thank Lucy Vanderwende (the general chair) and give her flowers (or wine or...) let me take this opportunity to say that Lucy was an amazing general chair and that working with her made even the least pleasant parts of PCing fun. So: thanks Lucy -- I can't imagine having someone better to have worked with! And all of the rest of you: if you see Lucy and if you enjoyed NAACL, please thank her! 
+ I also wanted to really thank Matt Post for doing the NAACL app -- lots of people really liked it and I hope we do it in the future. I'm at ICML now and constantly wishing there were an ICML app :). 
+ Okay, with that preface, let's get down to what you came for. Below is the list of my (complete) list of favorite papers from NAACL 2013 (also indexed on Braque) in no particular order: 
+ Relation Extraction with Matrix Factorization and Universal Schemas (N13-1008 by Sebastian Riedel; Limin Yao; Andrew McCallum; Benjamin M. Marlin)Very cool paper. The idea is to try to jointly infer relations (think OpenIE-style) across text and databases, by writing everything down in a matrix and doing matrix completion. In particular, make the rows of this matrix equal to pairs of entities (Hal,UMD and UMD,DC-area) and the columns relations like "is-professor-at" and "is-located-in." These entity pairs and relations come both from free text and databases like FreeBase. Fill in the known entities and then think of it as a recommender system. They get great results with a remarkably straightforward approach. Reminds me a lot of my colleague Lise Getoor's work on multi-relational learning using tensor decompositions. 
+ Combining multiple information types in Bayesian word segmentation (N13-1012 by Gabriel Doyle; Roger Levy)I guess this qualifies as an "obvious in retrospect" idea -- and please recognize that I see that as a very positive quality! The basic idea is that stress patterns (eg trochees versus iambs) are very useful for kids (who apparently can recognize such things at 4 days old!) and are also very useful for word segmentation algorithms. 
+ Learning a Part-of-Speech Tagger from Two Hours of Annotation (N13-1014 by Dan Garrette; Jason Baldridge)Probably my overall favorite paper of the conference, and the title says everything. Also probably one of the best presentations I saw at the conference -- I can't even begin to guess how long Dan spent on his slides! I loved the question from Salim in the Q/A session, too: "Why did you stop at two hours?" (They have an ACL paper coming up, apparently, that answers this.) You should just read this paper. 
+ Automatic Generation of English Respellings (N13-1072 by Bradley Hauer; Grzegorz Kondrak)This paper was the recipient of the best student paper award and, I thought, really great. It's basically about how English (in particular) has funny orthography and some times it's useful to map spellings to their pro-nun-see-ey-shuns, which most people find more useful than
+. It's a bit more of a bunch of stuff glued together than I usually go for in papers, but the ideas are solid and it seems to work pretty well -- and I'd never even thought this would be something interesting to look at, but it makes complete sense. Best part of presentation was when Greg tripped up pronouncing some example words :). 
+ Linguistic Regularities in Continuous Space Word Representations (N13-1090 by Tomas Mikolov; Wen-tau Yih; Geoffrey Zweig)
+This is a paper that makes my list because it made me think. The basic idea is that if you do some representation learning thingamajig and then do vector space algebra like repr("King") - repr("man") + repr("woman") you end up with something that's similar to repr("Queen"). It's a really interesting observation, but I'm at a loss for why we would actually expect something like this to happen! 
+ PPDB: The Paraphrase Database (N13-1092 by Juri Ganitkevitch; Benjamin Van Durme; Chris Callison-Burch)This is a paper about a dataset release that I think I'll find useful and I bet other people will too. Go download it and play with it. I'd encourage the authors (are you listening, Juri!) to make a web demo (or web service) so that I don't need to go through the pain of getting it all set up to see if it might be useful for me. 
+ Supervised Learning of Complete Morphological Paradigms (N13-1138 by Greg Durrett; John DeNero)
+Basic idea: college morphological paradigms from Wiktionary and then train a supervised system to generalize from those to novel words. Works remarkably well and the model is well thought out. Plus I like papers that take morphology seriously: I wish we saw more stuff like this in NAACL. 
+ And though I don't often do this, I have to mention the following paper because although I didn't see the talk or read the paper, enough independent people pointed it out to be as great that I figured I'd mention it: 
+ Improved Reordering for Phrase-Based Translation using Sparse Features (N13-1003 by Colin Cherry) 
+ 30 April 2013 
+ Sparsity has been all the rage for a couple of years now. The standard
+notion of "sparse" vector u is that the number of non-zeros in u is
+small. This is simply the l_0 norm of u, ||u||_0. This norm is well
+studied, known to be non-convex, and often relaxed to the l_1 norm of
+u, ||u||_1: the sum of absolute values. (Which has the nice property
+of being the "tightest" convex approximation to l_0.) 
+ In some circumstances, it might not be that most of u is zero, but
+simply that most of u is some fixed scalar constant a. The
+"non-constant" norm of u would be something like "the number of
+components that are not equal to some a" or, in more mathy terms,
+"min_a ||u-a||_0". I first came across it this in the Differentiable
+sparse coding paper by Bradley and Bagnell (NIPS 2008), where they
+claim physicists call it "Maximum entropy on the mean" if you're using
+a KL distance, but I don't know if there's a name for it in the l_0
+sense, so I'l call it "l_0 from the mode" which seems to capture the
+right notion. 
+ In many cases, we want to use a sparse norm to define a notion of a
+sparse distance function between two vectors u and v. For instance
+d_0(u,v) = ||u-v||_0 would be a reasonable notion of a sparse
+difference between two vectors. 
+ Now, let's suppose that u and v are probability distributions over a
+finite event space, so that u_i is the probability of event i. In this
+case, both u and v belong to the simplex: u_i >= 0 for all i, and
+sum_i u_i = 1 (which is equivalent to saying ||u||_1 = 1, given the
+first condition). 
+ It seems natural to ask ourselves whether there is a reasonable notion
+of sparse difference between two probability distributions. This is
+something I've thought about, but not come up with a satistfactory
+answer. The "natural" thing would be to define d_0(p,q) = ||p-q||_0,
+where I've switched from u/v to p/q to emphasize that these are
+distributions. This is certainly reasonable in some sense, but does
+not correspond to how I usually think of probability distributions,
+essentially because it ignores the "normalization" effect. 
+ As a simple example, let's suppose that I generate a data set by
+rolling a dice with sides A-F. Suppose it comes up A five times, B
+twice, C once and F twice. Then my maximum likelihood estimate for p
+would be [.5, .2, .1, 0, 0, .2]. If I had a different dataset, in
+which exactly the same thing happened except I got one roll of D in
+addition to all the other rolls, I would estimate the distribution
+here as q = [.45, .18, .09, .09, 0, .18], which differs everywhere
+except the "E" position. The d_0 distance between these two
+distributions would be 4, which intuitively seems "wrong. 
+ One possible way around this would be to allow us to rescale the
+distributions before computing the l_0 distance, something like d(p,q)
+= min_(a,b > 1) || ap - bq ||_0. When talking about l_0 as the
+underlying norm, this can be simplified to min_(0 < a < 1) || ap -
+(1-a)q ||_0. Note that the inequalities on "a" are necessary. With
+equalities, you could "erase" all of p (or q) by setting a to zero (or
+1), which is definitely not desirable. Fortunately, the optimal "a"
+can be computed in linear time in the dimensionality: it's just the
+value that maximizes the number of i for which ap_i = (1-a)q_i. This
+definitlon captures the example above and gives a distance of "1"
+(corresponding to a = mode(q / (p+q)) = 10/21 = 0.4797). 
+ We can attempt to make this definition more formal by invoking the
+notion of exponential families. Recall that an expfam distribution has
+the form log p(x;t) = t*f(x) - A(t) + B(x), where t are the natural
+parameters, f is the vector of sufficient statistics, * denotes dot
+product, and A() is the log partition function. A quick observation is
+that depending on how f looks, there might be lots of t that give rise
+to the same probability distribution. If we guarantee that the fs are
+always linearly independent, then this representation is called
+"minimal"; otherwise it is "overcomplete." (Formally, it is
+overcomplete if there exists a non-zero vector a for which a*f(x) is
+constant for all x.) 
+ For a categorical distribution, an overcomplete representation would
+be a six dimensional indicator of which side of the die came up, and
+the natural parameters would be the (log of the) ps and qs shown above
+(it's overcomplete because one component is completely determined by
+the other 5). For example, the example p above would have exponential
+form with t=log[.5/.8, .2/.8, .1/.8, 0, 0] and log partition function
+A(t) = log 1.8. (See wikipedia's
+variant 3 for categorical distributions.) and q would have
+t=log[.45/.82, .18/.82, .09/.82, .09/.82, 0] with A(t) = log 1.82. 
+ Supposing that we're working with a minimal representation, what I
+think this amounts to is that we want the difference in natural
+parameters to be sparse in the "l_0 from the mode" sense -- the
+difference is equal to a constant. In the above example, the
+difference in sufficient statistics is equal to 0.1301 in the first
+three components, -Infinity in the fourth, and something like zero in
+the last (who knows -- NaN?) which gives a distance of one (if you
+discard the last one). 
+ The problem here is that there is not a unique minimal representation;
+I could also have chosen t=log[.2/.5, .1/.5, 0, 0, .2/.5] and A=log
+1.5 for p and t=log[.18/.55 .09/.55 .09/.55 0/.55 .18/.55] and A=log
+1.55 for q. In this case, the mode of the difference is 0.2007 (in the
+first, second and last components) there's one -Infinity and one
+NaN. So the answer works out the same, at least if you know how to
+deal with the NaNs. 
+ There's an obviously needed lemma here: that any minimal
+representation will give you the same distance. I haven't thought
+nearly long enough about why this should be true (i.e., I've thought
+about if for about 30 seconds :P). There's also a lot of other
+questions: what if you relax this notion of sparsity to something more
+l_1-like? What other properties does it have? And of course is there a
+better notion of sparse difference of probability distributions for this or other circumstances? 
+ 

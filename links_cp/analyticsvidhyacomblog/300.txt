@@ -1,0 +1,108 @@
+8 Useful R Packages for Data Science You Aren’t Using (But Should!) 
+ Introduction 
+ I’m a big fan of R – it’s no secret. I have relied on it since my days of learning statistics back in university. In fact, R is still my go-to language for machine learning projects. 
+ Three things primarily attracted me to R: 
+ The easy-to-understand and use syntax 
+ The incredible RStudio tool 
+ R packages! 
+ R offers a plethora of packages for performing machine learning tasks, including ‘dplyr’ for data manipulation, ‘ggplot2’ for data visualization, ‘caret’ for building ML models, etc. 
+ There are even R packages for specific functions, including credit risk scoring, scraping data from websites, econometrics, etc. There’s a reason why R is beloved among statisticians worldwide – the sheer amount of R packages available makes life so much easier. 
+ In this article, I will showcase eight R packages that have gone under the radar among data scientists but are incredibly useful for performing specific machine learning tasks. To get you started, I have included an example along with the code for each package. 
+ Trust me, your love for R is about to undergo another revolution! 
+ The R Packages We’ll Cover in this Article 
+ I have broadly divided these R packages into three categories: 
+ Data Visualization 
+ DataExplorer 
+ esquisse 
+ Machine Learning 
+ MLR 
+ parsnip 
+ Ranger 
+ purrr 
+ Other Miscellaneous R Packages 
+ rtweet 
+ Reticulate 
+ Bonus: More R Packages! 
+ InstallR 
+ GitHubInstall 
+ Data Visualization 
+ R is an amazing tool for visualizing data. The ease with which we can generate all kinds of plots with just one or two lines of code? Truly a time saver. 
+ R provides seemingly countless ways to visualize your data. Even when I’m using Python for a certain task, I come back to R for exploring and visualizing my data. I’m sure most R users feel the same way! 
+ Let’s look at a few awesome but lesser-known R packages for performing exploratory data analysis. 
+ This is my go-to package for performing exploratory data analysis. From plotting the structure of the data to Q-Q plots and even creating reports for your dataset, this package does it all. 
+ Let’s see what DataExplorer can do using an example. Consider that we have stored our data in the data variable. Now, we want to figure out the percentage of missing values in every feature present. This is extremely useful when we’re working with massive datasets and computing the sum of missing values might be time-consuming. 
+ You can install DataExplorer using the below code: 
+ install.packages("DataExplorer") 
+ Now let’s see what DataExplorer can do for us: 
+ library(DataExplorer)
+data(iris)
+plot_missing(iris) 
+ We get a really intuitive plot for missing values: 
+ One of my favorite aspects of DataExplorer is the comprehensive report we can generate using just one line of code: 
+ create_report(iris) 
+ Below are the different kinds of factors we get in this report: 
+ You can access the full report through this link. A VERY useful package. 
+ How about a ‘drag-and-drop’ add-in for generating plots in R? That’s right – esquisse is a package that lets you get on with creating plots without having to code them. 
+ Esquisse is built on top of the ggplot2 package. That means you can interactively explore your data in the esquisse environment by generating ggplot2 graphs. 
+ Use the below code to install and load up esquisse on your machine: 
+ # From CRANinstall.packages("esquisse")
+#Load the package in R
+library(esquisse)
+esquisse::esquisser() #helps in launching the add-in 
+ You can also launch the esquisse add-in via the RStudio menu. The user interface of esquisse looks like this: 
+ Pretty cool, right? Go ahead and play around with different types of plots – it’s an eye-opening experience. 
+ Machine Learning 
+ Ah, building machine learning models in R. The holy grail we data scientists strive for when we take up new machine learning projects. You might have used the ‘caret’ package for building models before. 
+ Now, let me introduce you to a few under-the-radar R packages that might change the way you approach the model building process. 
+ One of the biggest reasons Python surged ahead of R was thanks to its machine learning focused libraries (like scikit-learn). For a long time, R lacked this ability. Sure you could use different packages for performing different ML tasks but there was no one package that could do it all. We had to call three different libraries for building three different models. 
+ Not ideal. 
+ And then the MLR package came along. It is an incredible package which allows us to perform all sorts of machine learning tasks. MLR includes all the popular machine learning algorithms we use in our projects. 
+ I strongly recommend going through the below article to deep dive into MLR: 
+ A common issue with different functions available in R (that do the same thing) is that they can have different interfaces and arguments. Take the random forest algorithm for example. The code you would use in the randomforest package and the caret package are different, right? 
+ Like MLR, parsnip removes the problem of referring to multiple packages for a certain machine learning algorithm. It successfully imitates Python’s scikit-learn package in R. 
+ Let’s look at the below simple example to give you an insight into how parsnip works for a linear regression problem: 
+ Ranger is one of my favorite R packages. I regularly use random forests to build baseline models – especially when I’m participating in data science hackathons. 
+ Here’s a question – how many times have you encountered slow random forest computation for huge datasets in R? It happens way too often on my old machine. 
+ Packages like caret, random forests and rf take a lot of time to compute the results. The ‘Ranger’ package accelerates our model building process for the random forest algorithm. It helps you swiftly create a large number of trees in less amount of time. 
+ Utilities: Other Awesome R Packages 
+ Sentiment analysis is one of the most popular applications of machine learning. It’s an inescapable reality in today’s digital world. And Twitter is a prime target for extracting Tweets and building models to understand and predict sentiment. 
+ Now, there are a few R packages for extracting/scraping Tweets and performing sentiment analysis. The ‘rtweet’ package does the same. So how is it different from the other packages out there? 
+ ‘rtweet’ also helps you check for tweet trends from R itself. Awesome! 
+ All users must be authorized to interact with Twitter’s API. To become authorized, follow the instructions below: 
+ 1. Make a Twitter app 
+ 2. Create and save your access token 
+ For a detailed step by step procedure to get authentication from Twitter please follow this link here. 
+ You can search for tweets with certain hashtags simply by the line of code mentioned below. Let’s try and search for all the tweets with the hashtag #avengers since Infinity War is all set for release. 
+ Love coding in R and Python both but want to stick to RStudio? Reticulate is the answer! The package solves this prominent problem by providing a Python interface in R. You can easily use major python libraries like numpy, pandas and matplotlib inside R itself! 
+ You can also transfer your progress with data easily from Python to R and R to Python with just one line of code. Isn’t that amazing? Check out the below code block to see how easy it is to run python in R. 
+ Before you move on to directly installing reticulate in R, you will have to install TensorFlow and Keras first. 
+ BONUS 
+ Do you update your R packages individually? It can be a tedious task, especially when there are multiple packages at play. 
+ The ‘InstallR’ package allows you to update R and all its packages using just one command! Instead of checking the latest version of every package, we can use InstallR to update all the packages in one go. 
+ # installing/loading the package:
+if(!require(installr)) {
+install.packages("installr"); require(installr)} #load / install+load installr
+# using the package:
+updateR() # this will start the updating process of your R installation.
+# It will check for newer versions, and if one is available, will guide you through the decisions you'd need to make 
+ Which package do you use for installing libraries from GitHub? Most of us relied on the ‘devtools’ package for a long time. It seemed to be the only way. But there was a caveat – we needed to remember the developer’s name to install a package: 
+ install_github("DeveloperName/PackageName") 
+ With the ‘githubinstall’ package, the developer name is no longer required. 
+ install.packages("githubinstall")
+#Install any GitHub package by supplying the name
+githubinstall("PackageName")
+#githubinstall("AnomalyDetection") 
+ The package also provides a few helpful functions for R packages hosted on GitHub. I suggested checking out the package documentation (linked above) for more details. 
+ End Notes 
+ This is by no means an exhaustive list. There are plenty of other R packages which serve useful functions but have been overlooked by the majority. 
+ Do you know of any packages that I have missed in this article? Or have you used any of the above-mentioned ones for your project? I would love to hear from you! Connect with me in the comments section below and let’s talk R! 
+ A post-graduate in statistics and a data science practitioner with experience in using statistical and machine learning techniques for analyzing data. He is an avid reader and a quick learner who loves to experiment with data. He is passionate about exploring and solving various analytical problems. 
+ Nice article. Thanks for sharing. Just a couple of comments. You don’t need to install Keras and TensorFlow to install the reticulate package. Also caret does the same as mlr and parsnip. Actually caret is the oldest of all those packages (2007 vs 2013 and 2018). caret uses the randomforest package for random forests, providing an interface to RF (and to other 200+ packages as well) so it may be inaccurate to state that the code one would use in randomforest and caret are different. Also please keep in mind that R is case sensitive, thus MLR is different than mlr. 
+ Thank you for the feedback Ali! It always better to install Keras and Tensorflow to avoid any error, in case anyone wishes to use Tensorflow in R. Plus, they make it easier to build certain models.
+Caret no doubt is a powerful package. The idea here is not to pin down any package but to acquaint you with these advancements. mlr does supersede caret in a few instances and that is why it was included in the blog. Hope this clears out everything! 
+ Great post Akshat. Thanks for combining the packages in one post. I would like to add below comments for the R code used :
+1. plot_missing(iris) should be PlotMissing(iris)
+2. create_report(iris) should be GenerateReport(iris)
+3. esquisse – works with R version 3.5 or above and would need ggplot2 latest version. 
+ Thanks for the feedback Rajesh! Although, I don’t think the functions mentioned by you belong to the DataExplorer package. The syntax is wrong. If you use them R will give you errors. The functions mentioned in the blog are correct and are also duly checked even when the packages are updated. 
+ 

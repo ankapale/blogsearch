@@ -1,0 +1,7 @@
+Feb 24 A.I. Powered Customer Engagement is a Must Now 
+ AI has become a must-have, offering companies the power to seamlessly anticipate customer needs and serve up hyper-personalized, emotionally resonant campaigns where and when they’re most welcome. Join Wayfair’s Director of Data Science and others to learn more about the business advantage it brings and how to get in the game. 
+ Wayfair, the consumer décor and furniture giant, has been on the AI tech train for awhile now — and they’ve seen tremendous business value from applying machine learning and AI for the right use cases, says Dan Wulin, the company’s Director of Data Science. 
+ We’ve had great returns on everything from marketing to on-site personalization to pricing, and we’ve been putting a lot more energy into how we grow this function and invest more in it because it’s been super successful for us. 
+ — Dan Wulin, Wayfair Director of Data Science 
+ Their mission, Wulin says, boils down to one thing: How do we use all the data we have to give our customers have better experiences, both on the website and through our marketing? And a little more tactically, how do we use these algorithms to help the different teams at Wayfair make better decisions? 
+ 

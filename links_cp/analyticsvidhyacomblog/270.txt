@@ -1,0 +1,49 @@
+Application of PageRank algorithm to analyze packages in R 
+ Introduction 
+ In the previous article, we talked about a crucial algorithm named PageRank, used by most of the search engines to figure out the popular/helpful pages on web. We learnt that however, counting the number of occurrences of any keyword can help us get the most relevant page for a query, it still remains a weak recommender system. 
+ In this article, we will take up some practice problems which will help you understand this algorithm better. We will build a dependency structure between R packages and then try to solve a few interesting puzzles using PageRank algorithm. But before we do that, we should brush up our knowledge on packages in R for better understanding. 
+ Packages in R 
+ R is language built on top of many different packages. These packages contain user-ready functions which make our job easier to do any kind of statistical analysis. These packages are dependent on each other. 
+ For instance, a statistical package like Random Forest is dependent on many packages to seek help in evaluating multiple statistical parameters. Before going into dependency structures, let’s learn a few commands on R : 
+ miniCran : Many private firms like to create a mirror image of all the packages R has to offer on their own server. This package “miniCran” helps these firms to create a subset of packages required. But why do we even need a package to create a mirror image? 
+ The reason is that there is a complex structure between these packages of dependencies. These dependencies tell R which package should get installed before installing a new package. “miniCran” is like a blueprint of all these packages. 
+ Function “pkgDep” : This is a magic function which will bring out all the dependencies for a package. There are three different types of dependencies between packages. Let’s understand these three: 
+ Imports : This is the most important dependency. It is a complete package with its recursive dependencies required to be installed first. 
+ Suggests : This means that the dependency is restricted to a few functions and hence do not need recursive rights. 
+ Enhances : This means that the current package adds something to another package and no recursive dependency is required. 
+ As you can clearly see from the above example, the package “ggplot2” has a import dependency on 22 packages and another 35 suggest packages. Let’s try to visualize how this dependency structure looks like. Here is a code which will help you with that : 
+ As we can clearly see, packages like “lattice” or “stringr” are not directly linked to ggplot2, but should be installed prior to installing ggplot2. 
+ Hopefully, now we have gained decent knowledge on these packages, let’s do some practice problems on them for deeper understanding. 
+ Practice Problems 
+ Here are a few questions using which we will understand more about R packages : 
+ 1. Which packages forms the foundation of R? In other words, which packages are the most used or referred package in R? 
+ 2. How many package were added in the window Oct’14 to April ’15? 
+ 3. How has the importance of most critical package changed over the window Oct’14 to April ’15? Has it increased, decreased or remained same? 
+ 4. What are the dependencies of the most critical package? 
+ Solutions 
+ 1. Packages which form foundation of R : 
+ We will use PageView algorithm to find the most important packages. The simple philosophy being, the packages which are referred by many different packages on R are the ones forming the foundation of R. Our analysis will be based on the latest CRAN image available. Here is the code which can help you to find the same: 
+ # Major part of this code has been written by Andrie de Vries
+library(miniCRAN)
+library(igraph)
+library(magrittr) 
+ 498 packages were added in this duration. Wow, its like 70 packages every month! 
+ 3. How has this impacted the importance of the most critical package? 
+ In section 1, we saw MASS as the most critical package with an importance of 0.020425142 in Apr’15. In case, if it proportionally goes up with lesser number of package in Oct’14, its importance can be calculated as: 
+ ~ 0.020425142 * nrow(pr)/nrow(pr1) = 0.02212809 
+ Now, let’s find its actual importance in Oct’14: 
+ head(pr1, 1) 
+ page.rank
+MASS 0.020854737 
+ Hence, the importance of MASS has not dropped to the extent it should have because of the increase in the number of packages in the window. 
+ This can be just because the new packages would have been using this package “MASS” equally and hence increasing the importance. 
+ 4 . What are the dependencies of the most critical packages? 
+ This one is the simplest to crack. We already know the function which can bring out all the dependencies of a package. Following code will help you with this one : 
+ End Notes 
+ PageRank comes very handy in any importance determining exercise which has a linkage structure to it. Similar analysis can be done on Python to understand the structure beneath the top level packages which we use so conveniently. This analysis can also be done in social networks to understand the magnitude of influence a user has on social network. 
+ To end the discussion, let’s view the network structure of the top 10 packages on R : 
+ Thinkpot: Can you think of more usage of Page Rank algorithm? Share with us useful links to practice Page Rank algorithm in various fields. 
+ Did you find this article useful? Do let us know your thoughts about this article in the box below. 
+ Tavish is an IIT post graduate, a results-driven analytics professional and a motivated leader with 7+ years of experience in data science industry. He has led various high performing data scientists teams in financial domain. His work range from creating high level business strategy for customer engagement and acquisition to developing Next-Gen cognitive Deep/Machine Learning capabilities aligned to these high level strategies for multiple domains including Retail Banking, Credit Cards and Insurance. Tavish is fascinated by the idea of artificial intelligence inspired by human intelligence and enjoys every discussion, theory or even movie related to this idea. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 

@@ -1,0 +1,3 @@
+International Institute for Analytics: Text Analytics: Unlocking the Value of Unstructured Data 
+ Find out what text analytics can do for an organization and the top three things people need to know when adopting text analytics. This research brief from the International Institute for Analytics and SAS outlines the challenges of implementing text analytics solutions and explores what makes this technology unique and exciting. 
+ 

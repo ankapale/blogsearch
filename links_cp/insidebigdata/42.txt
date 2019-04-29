@@ -1,0 +1,3 @@
+8 Reasons Citrix NetScaler Beats F5 
+ Application delivery controllers (ADCs) are one of the most critical elements of cloud infrastructures and enterprise data center architectures. ADCs strongly impact performance, scale and security of the entire application environment, so it is extremely important for IT leaders to choose the right one. This white paper discusses eight important areas where Citrix NetScaler beats F5 in making enterprise networks cloud ready. 
+ 

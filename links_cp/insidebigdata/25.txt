@@ -1,0 +1,6 @@
+Value Chain Disruption in Insurance 
+ 83% of insurance CEOs say they are "concerned" about the speed of technological change in the marketplace. This need for speed within the insurance market is creating a need for an "insurance as a platform" model in order to integrate systems and partners. An integration platform will be the key to delighting customers, launching new and richer products, partnering with third parties such as InsurTech, and ultimately growing revenue. 
+ Read this whitepaper to understand: 
+ How packaging your insurance organization as a series of discrete capabilities will achieve revenue growth 
+ Why adopting an API-led approach to connectivity will quickly achieve this insurance as a platform model 
+ 

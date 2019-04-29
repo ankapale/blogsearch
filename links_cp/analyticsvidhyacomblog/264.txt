@@ -1,0 +1,51 @@
+13 Amazing Applications / Uses of Data Science Today 
+ Introduction 
+ One of the questions people ask me commonly is: 
+ Is Big Data / Data Science really a buzz or a once in a life time opportunity? 
+ Different people have different answers and view points to the question above. I don’t want to get into this debate here. I am rather taking a safer approach here. I would tell you a few applications which are already impacting a lay man’s life. You can read them for yourself and decide whether this is a buzz or an opportunity. 
+ What to learn from this article? 
+ In this article, I’ve listed down some of the most common applications of data science that we use in our daily lives. Along side, you’ll also find some advanced applications which are yet to come in near future. The idea behind sharing them is not to tell you the tools and techniques used in these cases – it is even more fundamental in nature. I want to showcase the impact data science in making and excite you about what is in store for future. 
+ If you know of any other application, which I have missed, please feel free to add them through comments below. 
+ Applications / Uses of Data Science 
+ Using data science, companies have become intelligent enough to push & sell products as per customers purchasing power & interest. Here’s how they are ruling our hearts and minds: 
+ Internet Search 
+ When we speak of search, we think ‘Google’. Right? But there are many other search engines like Yahoo, Bing, Ask, AOL, Duckduckgo etc. All these search engines (including Google) make use of data science algorithms to deliver the best result for our searched query in fraction of seconds. Considering the fact that, Google processes more than 20 petabytes of data everyday. Had there been no data science, Google wouldn’t have been the ‘Google’ we know today. 
+ Digital Advertisements (Targeted Advertising and re-targeting) 
+ If you thought Search would have been the biggest application of data science and machine learning, here is a challenger – the entire digital marketing spectrum. Starting from the display banners on various websites to the digital bill boards at the airports – almost all of them are decided by using data science algorithms. 
+ This is the reason why digital ads have been able to get a lot higher CTR than traditional advertisements. They can be targeted based on user’s past behaviour. This is the reason why I see ads of analytics trainings while my friend sees ad of apparels in the same place at the same time. 
+ Recommender Systems 
+ Who can forget the suggestions about similar products on Amazon? They not only help you find relevant products from billions of products available with them, but also adds a lot to the user experience. 
+ A lot of companies have fervidly used this engine / system to promote their products / suggestions in accordance with user’s interest and relevance of information. Internet giants like Amazon, Twitter, Google Play, Netflix, Linkedin, imdb and many more uses this system to improve user experience. The recommendations are made based on previous search results for a user. 
+ Image Recognition 
+ You upload your image with friends on Facebook and you start getting suggestions to tag your friends. This automatic tag suggestion feature uses face recognition algorithm. Similarly, while using whatsapp web, you scan a barcode in your web browser using your mobile phone. In addition, Google provides you the option to search for images by uploading them. It uses image recognition and provides related search results. To know more about image recognition, check out this amazing (1:31) mins video: 
+ Speech Recognition 
+ Some of the best example of speech recognition products are Google Voice, Siri, Cortana etc. Using speech recognition feature, even if you aren’t in a position to type a message, your life wouldn’t stop. Simply speak out the message and it will be converted to text. However, at times, you would realize, speech recognition doesn’t perform accurately. Just for laugh, check out this hilarious video(1:30 mins) and the conversation between Cortana & Satya Nadela (CEO, Microsoft) 
+ Gaming 
+ EA Sports, Zynga, Sony, Nintendo, Activision-Blizzard have led gaming experience to the next level using data science. Games are now designed using machine learning algorithms which improve / upgrade themselves as the player moves up to a higher level. In motion gaming also, your opponent (computer) analyzes your previous moves and accordingly shapes up its game. 
+ Price Comparison Websites 
+ At a basic level, these websites are being driven by lots and lots of data which is fetched using APIs and RSS Feeds. If you have ever used these websites, you would know, the convenience of comparing the price of a product from multiple vendors at one place. PriceGrabber, PriceRunner, Junglee, Shopzilla, DealTime are some examples of price comparison websites. Now a days, price comparison website can be found in almost every domain such as technology, hospitality, automobiles, durables, apparels etc. 
+ Airline Route Planning 
+ Airline Industry across the world is known to bear heavy losses. Except a few airline service providers, companies are struggling to maintain their occupancy ratio and operating profits. With high rise in air fuel prices and need to offer heavy discounts to customers has further made the situation worse. It wasn’t for long when airlines companies started using data science to identify the strategic areas of improvements. Now using data science, the airline companies can: 
+ Predict flight delay 
+ Decide which class of airplanes to buy 
+ Whether to directly land at the destination, or take a halt in between (For example: A flight can have a direct route from New Delhi to New York. Alternatively, it can also choose to halt in any country.) 
+ Effectively drive customer loyalty programs 
+ Southwest Airlines, Alaska Airlines are among the top companies who’ve embraced data science to bring changes in their way of working. 
+ Fraud and Risk Detection 
+ One of the first applications of data science originated from Finance discipline. Companies were fed up of bad debts and losses every year. However, they had a lot of data which use to get collected during the initial paper work while sanctioning loans. They decided to bring in data science practices in order to rescue them out of losses. Over the years, banking companies learned to divide and conquer data via customer profiling, past expenditures and other essential variables to analyze the probabilities of risk and default. Moreover, it also helped them to push their banking products based on customer’s purchasing power. 
+ Delivery logistics 
+ Who says data science has limited applications? Logistic companies like DHL, FedEx, UPS, Kuhne+Nagel have used data science to improve their operational efficiency. Using data science, these companies have discovered the best routes to ship, the best suited time to deliver, the best mode of transport to choose thus leading to cost efficiency, and many more to mention. Further more, the data that these companies generate using the GPS installed, provides them a lots of possibilities to explore using data science. 
+ Miscellaneous 
+ Apart from the applications mentioned above, data science is also used in Marketing, Finance, Human Resources, Health Care, Government Policies and every possible industry where data gets generated. Using data science, the marketing departments of companies decide which products are best for Up selling and cross selling, based on the behavioral data from customers. In addition, predicting the wallet share of a customer, which customer is likely to churn, which customer should be pitched for high value product and many other questions can be easily answered by data science. Finance (Credit Risk, Fraud), Human Resources (which employees are most likely to leave, employees performance, decide employees bonus) and many other tasks are easily accomplished using data science in these disciplines. 
+ Coming Up In Future 
+ Though, not much has been reveled about them except the prototypes, and neither I know when they would be available for a common man’s disposal. Hence, I’ve kept these amazing application of data science in ‘Coming Up’ section. We need to wait and watch how far Google can become successful in their self driving cars project. Robots, as we know, have lived for a while but aren’t being used as a commodity yet due to associated security issues. Let’s see, what our future holds for us! 
+ Self Driving Cars 
+ Check out this ~3 min video to know more: 
+ Robots 
+ Check out this ~3 min video of robots which resembles Humans 
+ Imagine a world, where we are surrounded by robots like these. Will they do any good for us? Or these would lead to repercussions that mankind will have to endure. Let’s have a discussion on this ! 
+ End Notes 
+ I am sure, you had fun watching the videos. The intent wasn’t just fun, but learning simultaneously. By now, you would developed an understanding of the boundless potential that data science has in this world. Almost everything on this planet, which generates data, falls under the radar of data science which can improve and optimize its existing process. 
+ Though, I wasn’t sure where to add ‘Coming up in future’ section, since much hasn’t been revealed about their future advancement. Yet, I thought of leaving you with something controversial (robots) just to ignite a discussion on the future of robotics. 
+ If you liked this article, please share your comments / suggestions in the comments section below. 
+ 

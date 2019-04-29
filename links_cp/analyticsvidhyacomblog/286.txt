@@ -1,0 +1,36 @@
+Bring it on! Analytics Vidhya Author identification challenge 
+ What is the best form of analytics learning? Applying it to practical problems! This is exactly what led us to create this interesting problem, solving which would be a lot of fun! The challenge should be a good combo of basic text mining and predictive modeling. If you haven’t got your hands dirty learning these techniques, now is the time to do it! 
+ Background 
+ It’s family time for Kunal and Tavish! Both of them are on a break and have decided to stay away from any email / phone communications. Other Analytics Vidhya team members are not only filling in their shoes, but also have their own tasks to be completed! 
+ Meet Navnit, our Tech Lead and web developer – who has decided that this is probably the best time to change the CMS (content management system) for our site. He creates a backup of data in our database, moves it over to a DVD and starts the migration. 
+ Due to a mismatch in data models – a few fields got lost in the transition. Navnit, realized this only after he has deleted the entire data on previous CMS. When he realized this, he thought – nothing to worry, he has the backup, he can put up the lost fields through the DVD back. He checks that the DVD is on his desk and plans to restore the data first thing tomorrow morning. 
+ Enter Jenika, Kunal’s lovely year old daughter – who feels that entire Analytics Vidhya office, is her playground. During her visit, she comes across this shiny blue disc, which she has not seen before! Nice toy, dad has in his office – she might have thought! In the hour, she had before Navnit is back in office, she tried eating her new toy, sliding it on the the ground and what not! 
+ Poor Navnit, his only source of missing fields can not be used now! He checked and the last backup was taken on 6th July 2014,11:59 p.m. On comparing, one of the most critical fields lost is the author name. So, he can not identify the author for articles posted after 6th July 2014. He decides to finally learn and apply some predictive analytics for his work! 
+ It’s your turn to help Navnit get back the data, before Kunal or Tavish are back in office (1st September 2014)! 
+ Problem statement: 
+ Classify all the articles written by Tavish or Kunal on analyticvidhya.com by the author’s name. 
+ What Data you need to use for training your model? 
+ All the articles written by Tavish and Kunal before 7th July 2014 can be used to train the model. You can use the date of article publish, day of article publish, tags of article publish and the content of the article. The data needs to be scrapped out of the website and used on local server. 
+ What Data you need to score your model? 
+ All the articles (excluding this article) written by Tavish and Kunal after 6th July 2014 need to be scored using your model. 
+ What is the evaluation metric? 
+ Average mis-classification rate of both training and scoring will be taken as the evaluation metric. For example 5 out of 10 in scoring and 50 out of 50 in training were found to be correct classes in training and scoring respectively. The average mis-classification rate will be 0.5 * (5/10 + 0/50) = 0.25. Hence, your score is 75%. You need to build model which has high predictive power and also stable over populations. 
+ End Notes: 
+ The aim of this challenge is to foster analytical thinking in our reader’s mind and have some fun with practical machine learning / analytics challenges! 
+ We will give the winner of this challenge a chance to blog about his solution on Analytics Vidhya. Of course, he takes away all the visibility, which comes on the platform! 
+ Last but not the least, the entire story presented before is hypothetical. It was created with the sole aim to create this challenge. All our data is secure and darling Jenika understands that she can’t play around with Dad’s stuff in office! 
+ Happy learning! 
+ Bonus: 
+ If you want to foster discussion on any aspect of this problem, please feel free to do this through comments below. This is your chance to engage in community learning! 
+ Kunal is a post graduate from IIT Bombay in Aerospace Engineering. He has spent more than 10 years in field of Data Science. His work experience ranges from mature markets like UK to a developing market like India. During this period he has lead teams of various sizes and has worked on various tools like SAS, SPSS, Qlikview, R, Python and Matlab. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 13 Comments 
+ I am a final year B.com(H) student at SRCC and I want to build my career in analytic. I really like your website a lot. Its a great platform for a fresher like me to get a kick start to my career! 🙂 
+ For solving this problem, you said that we need to prepare a model on a programming tool “R”. I have never worked on this tool before. in fact never even heard of it. can you please provide me with any information about the basics to use the tool. I am a beginner in analytic so please bear with me! 
+ You can download the tool from cran.r-project.org or you can also download and install R Studio for free. There are a lot of tutorials available on the internet to get you started on R. 
+ You can look at a few videos available from Google on R or take up an introductory course from Coursera to get started on R. If you know other tools like SAS or Python and have access to it, you can try to solve the problem using those tools. 
+ Let’s be fair, I’m not that happy with the way I found the model. I think I could have exploited much more the other information available (hour and day of week of posting, tags, etc.), but holidays with the family limited significantly the time I had to refine and document the analysis. 
+ it was nonetheless a very interesting exercise that allowed me to discover a new technique, so no matter how precarious my analysis is, I’m quite happy with the exercise. 
+ Please, don’t get me wrong, the 2 1/2 weeks were very generous and I was not complaining about them. I work in consulting so I am used to tight deadlines and late-at-night projects. Hopefully I will be able to work a bit more on my program, even if the competition ended. 
+ I am completed my B.E in computer engg.in 2013 but now I want to move in analytics so I joined Base SAS but confused about what was the my next step because I don’t have any idea about this industry.so after base SAS certification Advance SAS or BI certification which one help me to enter in industry. please help me . 
+ 

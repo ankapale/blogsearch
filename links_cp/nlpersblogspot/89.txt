@@ -1,0 +1,27 @@
+Braque is a news service for research papers (currently focusing primarily on NLP and ML, though it needn't be that way). You can create channels that provide email or RSS feeds for topics you care about. You can add your own publications page as a resource to Braque so it knows to crawl your papers and send them out to interested parties. 
+ Braque is something I built ages ago with Percy Liang, but it's finally more or less set up after my move. Feel free to email me questions and comments or (preferably) use the online comment system. 
+ As a bit of warning: Braque is neither a paper search engine nor a paper archive. And please be a bit forgiving if you go there immediately after this post shows up and it's a bit slow.... we only have one server :). 
+ 06 July 2011 
+ I'm using ACL/ICML as an excuse to jumpstart my resumed, hopefully regular, posting. The usual "I didn't see/read everything" applies to all of this. My general feeling about ACL (which was echoed by several other participants) was that the program was quite strong, but there weren't many papers that really stood out as especially great. Here are some papers I liked and some attached thoughts, from ACL: 
+ P11-1002 [bib]: Sujith Ravi; Kevin KnightDeciphering Foreign LanguageThis paper is about building MT systems without parallel data. There's been a bunch of work in this area. The idea here is that if I have English text, I can build an English LM. If you give me some French text and I hallucinate a F2E MT system, then it's output had better score high on the English LM. 
+ P11-1020 [bib] [dataset]: David Chen; William DolanCollecting Highly Parallel Data for Paraphrase Evaluation
+Although this paper is about paraphrasing, the fun part is the YouTube stuff they did. Read it and see :). 
+ P11-1060 [bib]: Percy Liang; Michael Jordan; Dan KleinLearning Dependency-Based Compositional Semantics
+This paper is along the lines of semantic parsing stuff that various people (Ray Mooney, Luke Zettlemoyer/Mike Collins, etc.) have been doing. It's a nice compositional model that is learned online. 
+ P11-1099 [bib]: Vanessa Wei Feng; Graeme HirstClassifying arguments by scheme
+This paper is about argumentation (in the "debate" sense) and identifying different argumentation types. There are some nice correlations with discourse theory, but in a different context. 
+ P11-2037 [bib]: Shu Cai; David Chiang; Yoav GoldbergLanguage-Independent Parsing with Empty Elements
+I'm really glad to see that people are starting to take this problem seriously again. This falls under the category of "if you've ever actually tried to use a parser to do something then you need this." 
+ Okay so that's not that many papers, but I did "accidentally" skip some sections. So you're on your own for the rest. 
+ For ICML, I actually felt it was more of a mixed bag. Here are some things that stood out as cool: 
+ Minimum Probability Flow LearningJascha Sohl-Dickstein; Peter Battaglino; Michael DeWeese
+This is one that I need to actually go read, because it seems too good to be true. If computing a partition function ever made you squirm, read this paper. 
+ Tree-Structured Infinite Sparse Factor ModelXianXing Zhang; David Dunson; Lawrence Carin
+This is trying to do factor analysis with tree factors; they use a "multiplicative gamma process" to accomplish it. This is something we tried to do a while ago, but could never really figure out how to do it. 
+ Sparse Additive Generative Models of TextJacob Eisenstein; Amr Ahmed; Eric Xing
+The idea here is that if you're learning a model of text, don't re-learn the same "general background" distribution over and over again. Then learn class- or topic-specific stuff as a sparse amendment to that background. 
+ Learning from Multiple OutlooksMaayan Harel; Shie Mannor
+This is a nice approach based on distribution mapping to the problem of multiview learning when you don't have data with parallel views. (I'm not sure that we need a new name for this task, but I still like the paper.) 
+ Parsing Natural Scenes and Natural Language with Recursive Neural NetworksRichard Socher; Cliff Chiung-Yu Lin; Andrew Ng; Chris Manning
+This is basically about learning compositional semantics for vector space models of text, something that I think is really interesting and understudied (Mirella Lapata has done some stuff). The basic idea is that if "red" is embedded at position x, and "sparrow" is embedded at y, then the embedding of the phrase "red sparrow" should be at f([x y]) where f is some neural network. Trained to get good representations for parsing.Please reply in comments if you had other papers you liked!!! 
+ 

@@ -1,0 +1,803 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<link rel="stylesheet" href="/dir.css.php" type="text/css"/>
+	<title>FIBRWRAP: White Papers &amp; Case Studies by FIBRWRAP - Brand Republic</title>
+<meta name="description" content="Download the latest FIBRWRAP white papers and case studies.  Browse through the directory of free FIBRWRAP publications." />
+<meta name="keywords" content="FIBRWRAP, White Papers" />
+<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="http://whitepapers.insidebigdata.com/favicon.ico" />
+
+	
+
+<link rel='stylesheet' id='batch_css-css'  href='http://insidebigdata.com/wp-content/plugins/batchmove/css/batch.css?ver=3.6' type='text/css' media='all' />
+<link rel='stylesheet' id='flick-css'  href='http://insidebigdata.com/wp-content/plugins/mailchimp//css/flick/flick.css?ver=3.6' type='text/css' media='all' />
+<link rel='stylesheet' id='mailchimpSF_main_css-css'  href='http://insidebigdata.com/?mcsf_action=main_css&#038;ver=3.6' type='text/css' media='all' />
+<!--[if IE]>
+<link rel='stylesheet' id='mailchimpSF_ie_css-css'  href='http://insidebigdata.com/wp-content/plugins/mailchimp/css/ie.css?ver=3.6' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='news-theme-for-inside-big-data-css'  href='http://insidebigdata.com/wp-content/themes/news-bigdata/style.css?ver=2.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack-widgets-css'  href='http://insidebigdata.com/wp-content/plugins/jetpack/modules/widgets/widgets.css?ver=20121003' type='text/css' media='all' />
+<link rel='stylesheet' id='sharedaddy-css'  href='http://insidebigdata.com/wp-content/plugins/jetpack/modules/sharedaddy/sharing.css?ver=2.3.5' type='text/css' media='all' />
+<link rel='stylesheet' id='featured-grid-css'  href='http://insidebigdata.com/wp-content/plugins/genesis-featured-grid//style.css?ver=2.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/plugins/batchmove/js/batch.js?ver=3.6'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/plugins/mailchimp/js/scrollTo.js?ver=1.2.14'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-includes/js/jquery/jquery.form.min.js?ver=2.73'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mailchimpSF = {"ajax_url":"http:\/\/insidebigdata.com\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/plugins/mailchimp/js/mailchimp.js?ver=1.2.14'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-includes/js/jquery/ui/jquery.ui.core.min.js?ver=1.10.3'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/plugins/mailchimp//js/datepicker.js?ver=3.6'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-includes/js/comment-reply.min.js?ver=3.6'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://insidebigdata.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://insidebigdata.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.6" />
+<link rel='shortlink' href='http://wp.me/p3OI8I-RP' />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+	<script src="http://insidebigdata.com/wp-content/plugins/google-mp3-audio-player/jquery.ui.touch-punch.js"></script>
+	<script src="http://insidebigdata.com/wp-content/plugins/google-mp3-audio-player/swfobject.js"></script>
+	<link rel="stylesheet" href="http://insidebigdata.com/wp-content/plugins/google-mp3-audio-player/style.css" />
+	<script type="text/javascript">
+		
+		//An array containing the id's of all mp3 players
+		var ca_myPlayers = new Array();
+		//An array containing the Volume State of each mp3 player
+		var ca_volumeStates = new Array();
+		var ca_position = 0;
+		
+		var $codeart = jQuery.noConflict();
+		$codeart(document).ready(function() {
+		});
+		
+		//Function that checks whether or not an audio format is supported
+		function supports_media(mimetype, container) {
+			var elem = document.createElement(container);
+			if(typeof elem.canPlayType == 'function'){
+				var playable = elem.canPlayType(mimetype);
+				if((playable.toLowerCase() == 'maybe')||(playable.toLowerCase() == 'probably')){
+					return true;
+				}
+			}	
+			return false;
+		};
+		
+		function ca_stopAllAudio(except){
+			$codeart('audio').each(function(){
+				if(this.id!=except){
+					this.pause(); // Stop playing
+				}
+			});
+			$codeart('.playpause').removeClass('play');
+			$codeart('.playpause').addClass('pause');
+		}
+		
+		//Function that toogles play/pause functions of the audio element
+		function ca_tooglePlayPause(el,sender){
+			var btn = document.getElementById(sender.id);
+			if(document.getElementById(el).paused){
+				ca_stopAllAudio(el);
+				document.getElementById(el).play();	
+				btn.className = "playpause play";
+			}
+			else{
+				document.getElementById(el).pause();
+				btn.className = "playpause pause";
+			}
+		}
+		
+		//Funtion to stop the audio playing
+		function ca_stop(el,id){
+			document.getElementById(el).pause();
+			document.getElementById(el).currentTime = 0;
+			document.getElementById("playpause"+id).className = "playpause pause";
+		}
+		
+		//timeupdate media event handler
+		function ca_timeUpdate(el, sender, id){
+			//update span id current_time
+			var sec = sender.currentTime;
+			sec = sec % 3600;
+			var min = Math.floor(sec / 60);
+			sec = Math.floor(sec % 60);
+			if (sec.toString().length < 2) sec = "0" + sec;
+			if (min.toString().length < 2) min = "0" + min;
+			document.getElementById('currentTime'+id).innerHTML = min + ":" + sec + " / ";
+			
+			//update span id duration
+			var sec2 = sender.duration;
+			sec2 = sec2 % 3600;
+			var min2 = Math.floor(sec2 / 60);
+			sec2 = Math.floor(sec2 % 60);
+			if (sec2.toString().length < 2) sec2 = "0" + sec2;
+			if (min2.toString().length < 2) min2 = "0" + min2;
+			document.getElementById('duration'+id).innerHTML = min2 + ":" + sec2;
+			
+			//update seekbar attributes: start time, end time, and current time
+			var seekbar = document.getElementById(el);
+			seekbar.min = sender.startTime;
+			seekbar.max = sender.duration;
+			seekbar.value = sender.currentTime;
+			
+			$codeart( "#"+el ).slider( "value", sender.currentTime);
+			$codeart( "#"+el ).slider( "option", "max", sender.duration );
+			
+			//update buffered percent of the audio file
+			var width = $codeart('#seek'+id).width();
+			var parentWidth = $codeart('#seek'+id).offsetParent().width();
+			var percent = 100*width/parentWidth;
+			var res = (sender.buffered.end(0)/sender.duration)*percent+"%";
+			$codeart("#gutter"+id).css("width", res);
+		}
+		
+		//Toogle muted property of the audio
+		function ca_toogleMuted(el,sender){
+			var btn = document.getElementById(sender.id);
+			if(document.getElementById(el).muted==true){
+				document.getElementById(el).muted=false;
+				var i=ca_myPlayers.indexOf(el);
+				var classVolume = ca_volumeStates[i];
+				btn.className = "muteButton "+classVolume;
+			}
+			else{
+				document.getElementById(el).muted=true;
+				btn.className = "muteButton noVolume";
+			}
+		}
+		
+		//When the audio ends make the pause button look like a play button
+		function ca_audioEnded(el){
+			btn = document.getElementById(el);
+			btn.className = "playpause pause";
+		}
+		
+		//loadedmetadata Media event handler to update span id=duration of the audio player
+		function ca_metaLoaded(id){
+			var sender = document.getElementById("audio_with_controls"+id);
+			var sec = sender.duration;
+			sec = sec % 3600;
+			var min = Math.floor(sec / 60);
+			sec = Math.floor(sec % 60);
+			if (sec.toString().length < 2) sec = "0" + sec;
+			if (min.toString().length < 2) min = "0" + min;
+			document.getElementById('duration'+id).innerHTML = min + ":" + sec;
+		}
+		
+		//function to create the volume bar of the audio player
+		function ca_createVolumeBar(id){
+			$codeart("#volume"+id).slider({
+				value  : 75,
+				step   : 1,
+				range  : "min",
+				min    : 0,
+				max    : 100,
+				change : function(){
+					var value = $codeart("#volume"+id).slider("value");
+					var player = document.getElementById("audio_with_controls"+id);
+					player.volume = (value / 100);
+					
+					var classVolume = "";
+					if(value>55){
+						classVolume = "fullVolume";
+					} else if(value>10 && value<=55){
+						classVolume = "middleVolume";
+					} else{
+						classVolume = "noVolume";
+					}
+					var i=ca_myPlayers.indexOf("audio_with_controls"+id);
+					ca_volumeStates[i] = classVolume;
+					if(player.muted==true){
+						player.muted=false;
+					}
+					document.getElementById("muteButton"+id).className = "muteButton "+classVolume;
+				}
+			});
+		}
+		
+		//function to create the seek bar of the audio player
+		function ca_createSeekBar(id){
+			var seek = $codeart("#seek"+id).slider({
+				value  : 0,
+				step   : 0.00000001,
+				range  : "min",
+				min    : 0,
+				max    : document.getElementById("audio_with_controls"+id).duration,
+				slide  : function( event, ui ) {
+					var player = document.getElementById("audio_with_controls"+id);
+					player.currentTime = ui.value;
+				}
+			});
+		}
+		
+		//Initialize the volume state of the audio player when page is loaded
+		function ca_initMuteButtonClass(id){
+			ca_myPlayers[ca_position] = "audio_with_controls"+id;
+			if($codeart("#muteButton"+id).hasClass("fullVolume")) 
+			{
+				ca_volumeStates[ca_position] = "fullVolume";
+			} else if($codeart("#muteButton"+id).hasClass("middleVolume")){
+				ca_volumeStates[ca_position] = "middleVolume";
+			} else{
+				ca_volumeStates[ca_position] = "noVolume";
+			}
+			ca_position++;
+		}
+		
+		//Make the audio player responsive
+		function ca_responsiveAudioPlayer(id,skin,download){
+			var playerH = $codeart("#controls"+id).height();
+			var playerW = $codeart("#controls"+id).width();
+			
+			//Verticaly center playpause button
+			var playpauseH = $codeart("#playpause"+id).height();
+			var fplaypauseH = (playerH-playpauseH)/2;
+			$codeart("#playpause"+id).css("top",fplaypauseH);
+			
+			//Verticaly center seekbar
+			var seekH = $codeart("#seek"+id).height();
+			var fseekH = (playerH-seekH)/2;
+			$codeart("#seek"+id).css("top",fseekH);
+			
+			//Verticaly center gutter
+			var gutterH = $codeart("#gutter"+id).height();
+			var fgutterH = (playerH-gutterH)/2;
+			$codeart("#gutter"+id).css("top",fgutterH);
+			
+			//Verticaly adjust timer span to be above the seekbar
+			var timerH = 27;
+			var ftimerH = ((playerH-timerH)/2)-(gutterH);
+			$codeart("#timer"+id).css("top",ftimerH);
+			//Verticaly center volumebar
+			var volumeH = $codeart("#volume"+id).height();
+			var fvolumeH = (playerH-volumeH)/2;
+			$codeart("#volume"+id).css("top",fvolumeH);
+			//Verticaly center mute button
+			var muteH = $codeart("#muteButton"+id).height()+2;
+			var fmuteH = (playerH-muteH)/2;
+			$codeart("#muteButton"+id).css("top",fmuteH);
+			var stopminiH = $codeart("#stop"+id).height();
+			if(skin==="small"){
+				//Available space for the seekbar & volumebar within audio player
+				//The seekbar's volumebar's width attribute changes, other elements remain the same
+				var available = playerW-95;
+				if(download==="true"){
+					available = playerW-110;
+				}
+				//Verticaly center stop button
+				var fstopminiH = (playerH-stopminiH)/2;
+				var pomMuteR = 7;
+				var pomTimerR = 27;
+				if(download==="true"){
+					pomMuteR = 35;
+					pomTimerR = 50;
+				}
+			} else{
+				//Available space for the seekbar & volumebar within audio player
+				//The seekbar's volumebar's width attribute changes, other elements remain the same
+				var available = playerW-100;
+				//Align stop button with playpause button
+				var fstopminiH = (playpauseH+fplaypauseH-stopminiH);
+				var pomMuteR = 12;
+				var pomTimerR = 35;
+			}
+			//The seekbar and the gutter are 3/4 of the available space
+			var seekW = (available*75)/100;
+			$codeart("#seek"+id).css("width",seekW);
+			$codeart("#gutter"+id).css("width",seekW);
+			
+			//The volumebar is 1/4 of the available space
+			var volumeW = (available*25)/100;
+			if(download==="true" && skin==="small"){
+				volumeW = (available*20)/100;
+				$codeart("#volume"+id).css("right","34px");	
+				
+			}
+			$codeart("#volume"+id).css("width",volumeW);
+			
+			var muteR = volumeW+pomMuteR;
+			$codeart("#muteButton"+id).css("right",muteR);
+			var timerR = volumeW+pomTimerR;
+			$codeart("#timer"+id).css("right",timerR);
+			$codeart("#stop"+id).css("top",fstopminiH);
+			
+			if(download==="true")
+				$codeart("#downloadButton"+id).css("top",fstopminiH);
+		}
+		
+		function ca_appendDownloadButton(id,mp3){
+			$codeart('#default_player_fallback'+id).after('<a id="downloadButton'+id+'" class="download-flash" href="'+mp3+'"></a>');
+		}
+	</script>
+	
+	<style type="text/css">
+	.codeart-google-mp3-player .download-link{
+		display:block;
+		padding: 0 5px 0 5px;
+		float: left;
+	}
+	.codeart-google-mp3-player embed{
+		float: left;
+	}
+	.codeart-google-mp3-player{
+		overflow: hidden;
+	}
+	.codeart-google-mp3-player object{
+		float: left;
+	}
+	</style>
+	<!--[if gte IE 9]>
+		<style type="text/css">
+			.gradient {
+				filter: none;
+			}
+		</style>
+	<![endif]-->
+	<script type="text/javascript">
+		jQuery(function($) {
+			$('.date-pick').datepicker({
+				autoFocusNextInput: true,
+				constrainInput: false,
+				changeMonth: true,
+				changeYear: true,
+				beforeShow: function(input, inst) { $('#ui-datepicker-div').addClass('show'); },
+				dateFormat: 'yy/mm/dd',
+			});
+
+			d = new Date();
+			$('.birthdate-pick').datepicker({
+				autoFocusNextInput: true,
+				constrainInput: false,
+				changeMonth: true,
+				changeYear: false,
+				minDate: new Date(d.getFullYear(), 1-1, 1),
+				maxDate: new Date(d.getFullYear(), 12-1, 31),
+				beforeShow: function(input, inst) { $('#ui-datepicker-div').removeClass('show'); },
+				dateFormat: 'mm/dd',
+			});
+
+
+		});
+	</script>
+	<link rel="Shortcut Icon" href="http://insidebigdata.com/wp-content/themes/news-bigdata/images/favicon.ico" type="image/x-icon" />
+
+
+<script type='text/javascript'> 
+var googletag = googletag || {}; 
+googletag.cmd = googletag.cmd || []; 
+(function() { 
+var gads = document.createElement('script'); 
+gads.async = true; 
+gads.type = 'text/javascript'; 
+var useSSL = 'https:' == document.location.protocol; 
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js&#39;; 
+var node = document.getElementsByTagName('script')[0]; 
+node.parentNode.insertBefore(gads, node); 
+})(); 
+</script> 
+
+<script type='text/javascript'> 
+googletag.cmd.push(function() { 
+googletag.defineSlot('/1061671/IBD_ROS_728x90', [728, 90], 'div-gpt-ad-1407521339330-0').addService(googletag.pubads()); 
+googletag.pubads().enableSingleRequest(); 
+googletag.enableServices(); 
+}); 
+</script>
+
+<script type='text/javascript'> 
+var googletag = googletag || {}; 
+googletag.cmd = googletag.cmd || []; 
+(function() { 
+var gads = document.createElement('script'); 
+gads.async = true; 
+gads.type = 'text/javascript'; 
+var useSSL = 'https:' == document.location.protocol; 
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js&#39;; 
+var node = document.getElementsByTagName('script')[0]; 
+node.parentNode.insertBefore(gads, node); 
+})(); 
+</script> 
+  
+<script type='text/javascript'> 
+googletag.cmd.push(function() { 
+googletag.defineSlot('/1061671/300x250_IBD_ROS', [300, 250], 'div-gpt-ad-1407521382189-0').addService(googletag.pubads()); 
+googletag.pubads().enableSingleRequest(); 
+googletag.enableServices(); 
+}); 
+</script>
+
+<script type='text/javascript'> 
+var googletag = googletag || {}; 
+googletag.cmd = googletag.cmd || []; 
+(function() { 
+var gads = document.createElement('script'); gads.async = true; gads.type = 'text/javascript'; var useSSL = 'https:' == document.location.protocol; gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js&#39;; 
+var node = document.getElementsByTagName('script')[0]; 
+node.parentNode.insertBefore(gads, node); })(); </script> 
+
+<script type='text/javascript'> 
+googletag.cmd.push(function() { 
+googletag.defineSlot('/1061671/IBD_ROS_728x90', [728, 90], 'div-gpt-ad-1407521339330-0').addService(googletag.pubads()); 
+googletag.pubads().enableSingleRequest(); 
+googletag.enableServices(); 
+}); 
+</script> 
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f9f9f9; }
+</style>
+</head>
+<body class="single single-post postid-3337 single-format-standard custom-background custom-header sidebar-content-sidebar news-ibd"><div id="wrap"><div id="imUtil">
+<ul>
+<li class="first"><a href="/about/" >About</a></li>
+<li><a href="/advertise/" >Advertise</a></li>
+<li><a href="/contact/" >Contact</a></li>
+</ul>
+
+<form method="get" class="searchform search-form" action="/" role="search"><label for="search-text" class="visuallyhidden">Search: </label><input type="text" id="search-text" value="Search this website." name="s" class="s search-input" onfocus="if (this.value == 'Search this website.') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search this website.';}"><input type="submit" class="searchsubmit search-submit" value="Search"></form>
+
+
+</div><div id="header"><div class="wrap"><div id="title-area">
+<h1><a href="http://insidebigdata.com"><img src="http://insidebigdata.com/wp-content/themes/news-bigdata/images/ibd-logo-stacked.png" alt="Inside Big Data" /></a></h1>
+</div>
+<div class="widget-area">
+<div id="text-2" class="widget widget_text">
+<div class="widget-wrap">			
+<!-- 728x90_IBD_ROS --> 
+<div id='div-gpt-ad-1407521339330-0' style='width:728px; height:90px;'> 
+<script type='text/javascript'> 
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1407521339330-0'); }); 
+</script> 
+</div>
+</div>
+</div>
+</div></div></div>
+<div id="nav"><div class="wrap"><ul id="menu-main-navigation" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-3343" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3343"><a href="http://inside-bigdata.com/category/news-analysis/">News / Analysis</a></li>
+<li id="menu-item-3344" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3344"><a href="http://inside-bigdata.com/category/topics/">Topics</a>
+<ul class="sub-menu">
+	<li id="menu-item-3345" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3345"><a href="http://inside-bigdata.com/category/topics/big-data-hardware/">Big Data Hardware</a></li>
+	<li id="menu-item-3346" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3346"><a href="http://inside-bigdata.com/category/topics/big-data-services/">Big Data Services</a></li>
+	<li id="menu-item-3347" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3347"><a href="http://inside-bigdata.com/category/topics/big-data-software/">Big Data Software</a></li>
+	<li id="menu-item-3348" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3348"><a href="http://inside-bigdata.com/category/topics/analytics/">Analytics</a></li>
+	<li id="menu-item-3349" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3349"><a href="http://inside-bigdata.com/category/topics/cloud-topics/">Cloud</a></li>
+	<li id="menu-item-3350" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3350"><a href="http://inside-bigdata.com/category/topics/machine-learning/">Machine Learning</a></li>
+	<li id="menu-item-3351" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3351"><a href="http://inside-bigdata.com/category/topics/data-storage/">Data Storage</a></li>
+	<li id="menu-item-3352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3352"><a href="http://inside-bigdata.com/category/topics/hpc/">High Performance Computing</a></li>
+	<li id="menu-item-3353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3353"><a href="http://inside-bigdata.com/category/topics/visualization/">Visualization</a></li>
+</ul>
+</li>
+<li id="menu-item-3355" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3355"><a href="http://inside-bigdata.com/category/industry-segments/">Industry Segments</a>
+<ul class="sub-menu">
+	<li id="menu-item-3356" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3356"><a href="http://inside-bigdata.com/category/industry-segments/enterprise/">Enterprise</a></li>
+	<li id="menu-item-3357" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3357"><a href="http://inside-bigdata.com/category/industry-segments/financial/">Financial</a></li>
+	<li id="menu-item-3358" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3358"><a href="http://inside-bigdata.com/category/industry-segments/government/">Government</a></li>
+	<li id="menu-item-3359" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3359"><a href="http://inside-bigdata.com/category/industry-segments/healthcare/">Healthcare</a></li>
+	<li id="menu-item-3360" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3360"><a href="http://inside-bigdata.com/category/industry-segments/manufacturing/">Manufacturing</a></li>
+	<li id="menu-item-3361" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3361"><a href="http://inside-bigdata.com/category/industry-segments/pharmaceuticals/">Pharmaceuticals</a></li>
+	<li id="menu-item-3362" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3362"><a href="http://inside-bigdata.com/category/industry-segments/research-education/">Research / Education</a></li>
+	<li id="menu-item-3363" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3363"><a href="http://inside-bigdata.com/category/industry-segments/retail/">Retail</a></li>
+	<li id="menu-item-3364" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3364"><a href="http://inside-bigdata.com/category/industry-segments/utilities/">Utilities</a></li>
+</ul>
+</li>
+<li id="menu-item-3960" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3960"><a href="http://whitepapers.inside-bigdata.com/">White Papers</a></li>
+<li id="menu-item-3365" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3365"><a href="http://inside-bigdata.com/category/resources/">Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-3366" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3366"><a href="http://inside-bigdata.com/category/resources/companies/">Companies</a></li>
+	<li id="menu-item-3418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3418"><a href="http://inside-bigdata.com/category/resources/education-training/">Education / Training</a></li>
+	<li id="menu-item-3367" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3367"><a href="http://inside-bigdata.com/category/resources/events/">Events</a></li>
+	<li id="menu-item-3368" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3368"><a href="http://inside-bigdata.com/category/resources/jobs/">Job Postings</a></li>
+	<li id="menu-item-4002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4002"><a href="http://inside-bigdata.jobamatic.com/a/jobs/find-jobs/q-big+data">Jobs Board</a></li>
+	<li id="menu-item-3369" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3369"><a href="http://inside-bigdata.com/category/resources/podcast/">Podcast</a></li>
+	<li id="menu-item-3370" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3370"><a href="http://inside-bigdata.com/category/resources/research-reports/">Research / Reports</a></li>
+	<li id="menu-item-3371" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3371"><a href="http://inside-bigdata.com/category/resources/video/">Video</a></li>
+</ul>
+</li>
+<li id="menu-item-3372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3372"><a href="http://inside-bigdata.com/category/industry-perspectives/">Industry Perspectives</a></li>
+</ul></div>
+</div><div id="mc-news" class="wrap"><div id="mailchimpsf_widget-2" class="widget widget_mailchimpsf_widget"><div class="widget-wrap">	
+<div id="mc_signup" style="display:none;">
+	<form method="post" action="#mc_signup" id="mc_signup_form">
+		<input type="hidden" id="mc_submit_type" name="mc_submit_type" value="html" />
+		<input type="hidden" name="mcsf_action" value="mc_submit_signup_form" />
+		<input type="hidden" id="_mc_submit_signup_form_nonce" name="_mc_submit_signup_form_nonce" value="8f9b55d273" />		
+			<div id="mc_subheader">
+			Sign up for our newsletter and get the latest big data news and analysis.		</div><!-- /mc_subheader -->
+			
+	<div class="mc_form_inside">
+		
+		<div class="updated" id="mc_message">
+					</div><!-- /mc_message -->
+
+		
+<div class="mc_merge_var">
+		<label for="mc_mv_EMAIL" class="mc_var_label">Email Address</label>
+	<input type="text" size="18" value="" name="mc_mv_EMAIL" id="mc_mv_EMAIL" class="mc_input"/>
+</div><!-- /mc_merge_var -->
+		<div class="mc_signup_submit">
+			<input type="submit" name="mc_signup_submit" id="mc_signup_submit" value="Subscribe" class="button" />
+		</div><!-- /mc_signup_submit -->
+	
+	
+				
+	</div><!-- /mc_form_inside -->
+	</form><!-- /mc_signup_form -->
+</div><!-- /mc_signup_container -->
+	</div></div>
+</div><div id="inner" style="background:#FFF;">
+
+<table width="950px">      
+	<tr>
+		<td colspan="2">
+        
+			<div id="ml-breadcrumb" style="padding-left:10px;">
+						<!--<a href="http://www.insidebigdata.com/">Home</a></li>-->
+						 > <a href='http://whitepapers.insidebigdata.com'>White Papers</a> > <a href='http://whitepapers.insidebigdata.com/vendor-directory'>Vendors</a> > <span>FIBRWRAP</span>			</div>
+         
+			&nbsp; <!-- somehow this fixes an ie9 gap -->
+		</td>
+	</tr>
+	<tr>
+		<td valign="top"  style="vertical-align: top !important; padding-left:10px; padding-right:50px;" width="70%">	   
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				  
+				 
+				<tr>
+					<td colspan="3" width="100%">
+
+							 	 <script language="javascript" type="text/javascript">
+     
+	  function sendmail(){
+	  	 myUrl = escape(location.href);
+		window.open('http://whitepapers.insidebigdata.com/email_this_page.php?url='+myUrl, 'win2', 'status=no,toolbar=no,scrollbars=no,titlebar=no,menubar=no,resizable=no,width=375,height=248,directories=no,location=no')
+	}
+   </script>
+
+<tr><td width="100%">
+	<h1 class="titleHead">FIBRWRAP</h1>
+	
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tr>
+      <td align="left" valign="top" class="ml-valign-top">
+			  <div style="margin-top: 10px; margin-bottom: 20px; padding-left: 10px; padding-right: 10px;">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			Composite fiberwrap technology used for structural strengthening, corrosion repair, comprehensive flood proofing, historical preservation, and blast protection of new and existing structures.								  
+					  <tr>
+							<td class="boxSubHead" style="padding-left: 5px; padding-top: 10px; ">Research from this company : </td>
+					  </tr>
+					  <tr>
+						<td>
+							<ul class="bwlists">
+							   				<li class="bwlists"> <a href="http://whitepapers.insidebigdata.com/content55142/" class="Link5">FRP Solutions for Seismic Rehabilitation of Unreinforced Masonry Walls in Nuclear Power Stations</a>
+							   				<li class="bwlists"> <a href="http://whitepapers.insidebigdata.com/content55143" class="Link5">Pressure Barrier Replacement of Circulating Water Piping Discharge Headers in Nuclear Power Plants</a>
+										</ul>
+						</td>
+					  </tr>	
+							</table>
+				</div>					
+			</td>
+			<td valign="top" class="ml-valign-top">
+					<img src="http://st.madisonlogic.com/images/userlogo/1/logo11092.jpg" alt="FIBRWRAP" border="0" width="115" style="padding: 10px;">
+					<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				                <tr>
+                  <td class="boxSubHead" align="left" valign="top">Phone :</td>
+                  </tr>				 
+                <tr>
+                  <td class="contentNormalSmall">636.530.8000<br /><br /></td>
+                </tr>
+			   			                  <tr>
+                  <td class="boxSubHead" align="left">Address :</td>
+                </tr>
+                <tr>
+                  <td class="contentNormalSmall">
+					1400 E. Orangethorpe Ave. <br />
+Fullerton, CA 92831								  </td>
+                </tr> 
+				              
+                <tr>
+                  <td class="contentNormalSmall"><br><a href="mailto:marketdevelopment@aegion.com" ><img src="http://whitepapers.insidebigdata.com/images/bw_email_icon.gif"> Email Vendor</a></td>
+                </tr>
+				          </table>
+			</td>
+		</tr>
+	</table>
+</td>
+</tr>
+
+ <!-- Displays body -->
+
+					</td>
+				</tr>
+						  			 
+				 <tr>
+					<td colspan="3"><img src="/images_common/spacer.gif" height="1" width="1" alt="" /></td>
+				</tr>
+							<tr>
+					<td colspan="3" align="left">
+						<div class="bwTopBottomLine">
+							<form action="index.php" method="get" name="loginform" >
+	<table width="100%">
+		<tr valign="middle">
+			<td align="left" valign="middle">
+				<span class="normalBig"><nobr>Search White Papers</nobr></h2>
+			</td>
+			<td>
+				&nbsp;&nbsp;
+			</td>
+			<td  valign="middle" width="10%" align="center">
+				<input alt="search" type="text" name="searchword" size="38" value="" />
+			</td>
+			<td>
+				&nbsp;&nbsp;
+			</td>
+			<td  valign="middle" width="100%">
+				<input type="submit" name="sa" value="Search" class="searchBtn" onmouseover="this.style.cursor='pointer';"/>
+
+			</td>
+		</tr>
+	</table>
+	<input type="hidden" name="option" value="com_advsearch" />
+	<input type="hidden" name="task" value="search" />
+</form>						</div>
+					</td>
+				</tr>
+										
+
+				<tr>
+					<td align="center" valign="middle" colspan="3">
+						<div style="padding-top: 15px; padding-bottom: 15px;">
+													</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td valign="top">
+	      <!-- start ml sidebar -->
+          				
+	            		
+<!-- 300x250_IBD_ROS --> 
+<div id='div-gpt-ad-1407521382189-0' style='width:300px; height:250px;'> 
+<script type='text/javascript'> 
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1407521382189-0'); }); 
+</script> 
+</div>	
+			<div id="jobs-ars" class="no-bg-box bwTopThinLine">
+		<h2 id="jobs-ars-title" class="cufon">Add White Papers</h2>
+		<div id="jobs-ars-content" style="">
+			<div style="">
+				<div style="padding-bottom: 8px">Get your white papers featured in the insideBIGDATA White Paper Library contact: <a href="mailto:kevin@insideHPC.com">Kevin@insideHPC.com</a></div>
+				<a href="http://inside-bigdata.com/inside-bigdata-featured-white-paper-program/"><input type="submit" name="sa" value="Get Started Today" class="searchBtn" onmouseover="this.style.cursor='pointer';" onclick="location.href='http://inside-bigdata.com/inside-bigdata-featured-white-paper-program/';"/></a>
+			</div>
+		</div>
+	</div>
+				
+	                          
+          <!-- end ml sidebar -->
+		</td>
+	</tr>
+</table>
+   </div>
+<div id="footer-widgets" class="footer-widgets"><div class="wrap"><div class="footer-widgets-1 widget-area"><div id="text-7" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><p class="footer-content"><a href="http://insidebigdata.com/#top" title="back to top of page"><img src="http://insidebigdata.com/wp-content/themes/news-bigdata/images/ibd-logo-stacked.png" alt="Inside Big Data"></a></p>
+<p>Copyright &copy; 2019</p></div>
+		</div></div>
+</div><div class="footer-widgets-2 widget-area"><div id="nav_menu-0" class="widget widget_nav_menu"><div class="widget-wrap"><div class="menu-footer-nav-middle-container"><ul id="menu-footer-nav-middle" class="menu"><li id="menu-item-3404" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3404"><a href="http://insidebigdata.com/about/">About</a></li>
+<li id="menu-item-3402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3402"><a href="http://insidebigdata.com/contact/">Contact</a></li>
+<li id="menu-item-3403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3403"><a href="http://insidebigdata.com/advertise/">Advertise with insideBIGDATA</a></li>
+</ul></div></div></div>
+</div><div class="footer-widgets-3 widget-area"><div id="nav_menu-1" class="widget widget_nav_menu"><div class="widget-wrap"><div class="menu-footer-nav-right-container"><ul id="menu-footer-nav-right" class="menu"><li id="menu-item-3406" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3406"><a href="http://insidebigdata.com/terms-of-service-copyright/">Terms of Service &#038; Copyright</a></li>
+<li id="menu-item-3405" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3405"><a href="http://insidebigdata.com/privacy-policy/">Privacy Policy</a></li>
+</ul></div></div></div>
+</div></div></div><div id="footer" class="footer"><div class="wrap"><div class="gototop"><p><a href="#wrap" rel="nofollow">Return to top of page</a></p></div><div class="creds"><p>Copyright &#x000A9; 2013 &#x000B7; <a href="http://www.studiopress.com/themes/news" title="News Theme for Inside Big Data">News Theme for Inside Big Data</a> on <a href="http://www.studiopress.com/" title="Genesis Framework">Genesis Framework</a> &#x000B7; <a href="http://wordpress.org/" title="WordPress">WordPress</a> &#x000B7; <a rel="nofollow" href="http://insidebigdata.com/wp-login.php">Log in</a></p></div></div></div></div>	<div style="display:none">
+	</div>
+<script>
+(function() {
+var d=document,h=d.getElementsByTagName('head')[0],s=d.createElement('script'); 
+s.type='text/javascript'; 
+s.async=true; 
+s.src='http://s.dpmsrv.com/dpm_d321d6f7ccf98b51540ec9d933f20898af3bd71e.min.js';  
+h.appendChild(s); 
+})();
+</script>
+	<script type="text/javascript">
+		WPCOM_sharing_counts = {"http:\/\/insidebigdata.com\/2013\/07\/22\/measuring-the-risks-of-big-data\/":3337}	</script>
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=600,height=600' );
+				return false;
+			});
+		});
+		</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="/2013/07/22/measuring-the-risks-of-big-data/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="text" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="text" name="source_email" id="source_email" value="" />
+
+			
+			
+			<img style="float: right; display: none" class="loading" src="http://insidebigdata.com/wp-content/plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-tumblr' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+		<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201333'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2013Augaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=3.6'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.4'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=2.0.0'></script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/themes/genesis/lib/js/menu/superfish.compat.min.js?ver=2.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var recaptcha_options = {"lang":"en"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://insidebigdata.com/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=20121205'></script>
+
+	<script src="http://stats.wordpress.com/e-201333.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.3.5',blog:'56415084',post:'3337',tz:'-4'});
+	var load_cmc = function(){linktracker_init(56415084,3337,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+
+</body></html>

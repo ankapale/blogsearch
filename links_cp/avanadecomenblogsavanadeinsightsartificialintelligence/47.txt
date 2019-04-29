@@ -1,0 +1,12 @@
+This leading insurance company, headquartered in Europe, began searching for a partner to achieve its vision of creating a more intelligent, automated global business. 
+ Proving the case for intelligent automation 
+ Avanade delivered a proof-of-concept to explore the art of the possible with emerging automation technologies. We proposed combining Blue Prism's Robotic Process Automation (RPA) with Microsoft Azure’s Cognitive Services to transform one aspect of its day-to-day customer support email. 
+ With thousands of emails pouring in non-stop to its customer support staff, we outlined how RPA and cognitive services could make life easier for employees, by intelligently sorting and processing messages and triggering an automatic, instant response. The goal was to greatly reduce the manual work needed by employees, while giving customers speedy and personalized support. 
+ Realizing results with RPA 
+ Avanade built an intelligent IT solution. RPA monitors for new emails, and when an email is received, RPA hands it over to Microsoft Azure Cognitive Services for natural language processing. Once the analysis is complete, Blue Prism automatically creates a new case in the existing support management tool. The end customer then receives a response to their original email, with the case ID. 
+ Looking ahead, even more is planned, including chatbots to augment customer support and online engagement. We are also "automating the desktop,” reducing repetitive tasks for employees on the device and application level. 
+ Final thoughts: Get ready for Intelligent IT 
+ Insurance is the perfect industry for radical, transformational technology change, thanks to its data-driven nature and deep concern for customer loyalty. 
+ Avanade is committed to protecting your information security. Your information will be used in accordance with any applicable data privacy law, our internal policies and our Privacy Policy, and will be held securely. Avanade will not share your personal information with any third party, except as needed to manage the events or features for which you register. By using this site you agree that we can place cookies on your device. Please review our complete Privacy Policy for additional information. 
+ Some of the required fields (*) are missing, please review your information. 
+ 

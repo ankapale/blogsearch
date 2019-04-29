@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="no-js mh-one-sb" lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<title>UK’s largest AI event specifically for professional services &#8211; Artificial Lawyer</title>
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Feed" href="https://www.artificiallawyer.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Comments Feed" href="https://www.artificiallawyer.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.artificiallawyer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.10"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='chosen-css'  href='https://www.artificiallawyer.com/wp-content/plugins/wp-job-manager/assets/css/chosen.css?ver=1.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-job-manager-frontend-css'  href='https://www.artificiallawyer.com/wp-content/plugins/wp-job-manager/assets/css/frontend.css?ver=1.30.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-magazine-css'  href='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/style.css?ver=3.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-font-awesome-css'  href='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/includes/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,400italic,600,700' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://www.artificiallawyer.com/wp-content/plugins/jetpack/css/jetpack.css?ver=7.1.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/js/scripts.js?ver=3.6.1'></script>
+<link rel='https://api.w.org/' href='https://www.artificiallawyer.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.artificiallawyer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.artificiallawyer.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.10" />
+<link rel='shortlink' href='https://wp.me/a8cny6-2vq' />
+<link rel="alternate" type="application/json+oembed" href="https://www.artificiallawyer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.artificiallawyer.com%2Fai-ps%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.artificiallawyer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.artificiallawyer.com%2Fai-ps%2F&#038;format=xml" />
+
+<!-- This site is using AdRotate v4.10 to display their advertisements - https://ajdg.solutions/products/adrotate-for-wordpress/ -->
+<!-- AdRotate CSS -->
+<style type="text/css" media="screen">
+	.g { margin:0px; padding:0px; overflow:hidden; line-height:1; zoom:1; }
+	.g img { height:auto; }
+	.g-col { position:relative; float:left; }
+	.g-col:first-child { margin-left: 0; }
+	.g-col:last-child { margin-right: 0; }
+	.g-1 { min-width:10px; max-width:340px; margin: 0 auto; }
+	.b-1 { margin:10px; }
+	@media only screen and (max-width: 480px) {
+		.g-col, .g-dyn, .g-single { width:100%; margin-left:0; margin-right:0; }
+	}
+</style>
+<!-- /AdRotate CSS -->
+
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><!--[if lt IE 9]>
+<script src="https://www.artificiallawyer.com/wp-content/themes/mh-magazine/js/css3-mediaqueries.js"></script>
+<![endif]-->
+<style type="text/css">
+h1, h2, h3, h4, h5, h6, .mh-custom-posts-small-title { font-family: "Ubuntu", sans-serif; }
+body { font-family: "Ubuntu", sans-serif; }
+</style>
+			<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="UK’s largest AI event specifically for professional services" />
+<meta property="og:url" content="https://www.artificiallawyer.com/ai-ps/" />
+<meta property="og:description" content="Visit the post for more." />
+<meta property="article:published_time" content="2017-09-27T11:49:57+00:00" />
+<meta property="article:modified_time" content="2017-09-27T11:50:11+00:00" />
+<meta property="og:site_name" content="Artificial Lawyer" />
+<meta property="og:image" content="https://www.artificiallawyer.com/wp-content/uploads/2017/09/AI-ps.gif" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:text:title" content="UK’s largest AI event specifically for professional services" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Visit the post for more." />
+
+<!-- End Jetpack Open Graph Tags -->
+
+<!-- BEGIN GADWP v5.3.1.1 Universal Analytics - https://deconf.com/google-analytics-dashboard-wordpress/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-93892041-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END GADWP Universal Analytics -->
+			<style type="text/css" id="wp-custom-css">
+				/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+.mh-header-1 {
+    display: none;
+}
+
+#subscribe-submit {
+	margin-top: 10px;
+}
+
+.mh-custom-posts-xl-title {
+	display: none;
+}
+
+.heateor_sss_sharing_container {
+	margin: 0 0 20px 0;
+}			</style>
+		</head>
+<body id="mh-mobile" class="attachment attachment-template-default single single-attachment postid-9636 attachmentid-9636 attachment-gif mh-wide-layout mh-right-sb mh-loop-layout5 mh-widget-layout8 mh-magazine" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div class="mh-header-nav-mobile clearfix"></div>
+<header class="mh-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<div class="mh-container mh-container-inner clearfix">
+		<div class="mh-custom-header clearfix">
+<div class="mh-header-columns mh-row clearfix">
+<div class="mh-col-1-3 mh-site-identity">
+<div class="mh-site-logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+<style type="text/css" id="mh-header-css">.mh-header-title, .mh-header-tagline { color: #606060; }</style>
+<div class="mh-header-text">
+<a class="mh-header-text-link" href="https://www.artificiallawyer.com/" title="Artificial Lawyer" rel="home">
+<h2 class="mh-header-title">Artificial Lawyer</h2>
+<h3 class="mh-header-tagline">Changing The Business Of Law</h3>
+</a>
+</div>
+</div>
+</div>
+<aside class="mh-col-2-3 mh-header-widget-2">
+<div id="adrotate_widgets-5" class="mh-widget mh-header-2 adrotate_widgets"><!-- Either there are no banners, they are disabled or none qualified for this location! --></div></aside>
+</div>
+</div>
+	</div>
+	<div class="mh-main-nav-wrap">
+		<nav class="mh-navigation mh-main-nav mh-container mh-container-inner clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<div class="menu-home-container"><ul id="menu-home" class="menu"><li id="menu-item-15787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15787"><a href="https://www.artificiallawyer.com/legal-innovators-conference/">Legal Innovators Conference</a></li>
+<li id="menu-item-13495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13495"><a href="https://www.artificiallawyer.com/jobs/">AL JOBS</a></li>
+<li id="menu-item-13105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13105"><a href="https://www.artificiallawyer.com/al-100-directory/">AL 100 Directory</a>
+<ul class="sub-menu">
+	<li id="menu-item-13106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13106"><a href="https://www.artificiallawyer.com/al-100-directory/billing-time-analysis/">Billing + Time Analysis</a></li>
+	<li id="menu-item-13158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13158"><a href="https://www.artificiallawyer.com/al-100-directory/collaboration-legal-data-platforms/">Collaboration + Legal Data Platforms</a></li>
+	<li id="menu-item-13108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13108"><a href="https://www.artificiallawyer.com/al-100-directory/contracting-platforms/">Contracting Platforms (Document Automation)</a></li>
+	<li id="menu-item-13115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13115"><a href="https://www.artificiallawyer.com/al-100-directory/data-security-legal-risk/">Data Security + Legal Risk</a></li>
+	<li id="menu-item-13114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13114"><a href="https://www.artificiallawyer.com/al-100-directory/document-review-a-to-k/">Doc Review (A to K)</a></li>
+	<li id="menu-item-13113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13113"><a href="https://www.artificiallawyer.com/al-100-directory/document-review-l-to-z/">Doc Review (L to Z)</a></li>
+	<li id="menu-item-13112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13112"><a href="https://www.artificiallawyer.com/al-100-directory/expert-systems-legal-bots/">Expert Systems + Legal Bots</a></li>
+	<li id="menu-item-13111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13111"><a href="https://www.artificiallawyer.com/al-100-directory/legal-research-analytics/">Legal Research + Analytics</a></li>
+	<li id="menu-item-13216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13216"><a href="https://www.artificiallawyer.com/al-100-directory/smart-contracts/">Smart Contracts + Blockchain</a></li>
+	<li id="menu-item-13110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13110"><a href="https://www.artificiallawyer.com/al-100-directory/workflow-automation/">Workflow Automation</a></li>
+</ul>
+</li>
+<li id="menu-item-7384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7384"><a href="http://www.artificiallawyer.com">Home</a></li>
+<li id="menu-item-7382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7382"><a href="https://www.artificiallawyer.com/about/">ABOUT</a>
+<ul class="sub-menu">
+	<li id="menu-item-7383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7383"><a href="https://www.artificiallawyer.com/contact/">CONTACT</a></li>
+</ul>
+</li>
+<li id="menu-item-12501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12501"><a href="https://www.artificiallawyer.com/legal-tech-courses/">LEGAL TECH COURSES</a></li>
+</ul></div>		</nav>
+	</div>
+	</header>
+	<div class="mh-subheader">
+		<div class="mh-container mh-container-inner mh-row clearfix">
+										<div class="mh-header-bar-content mh-header-bar-bottom-right mh-col-1-3 clearfix">
+											<aside class="mh-header-search mh-header-search-bottom">
+							<form role="search" method="get" class="search-form" action="https://www.artificiallawyer.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>						</aside>
+									</div>
+					</div>
+	</div>
+<div class="mh-container mh-container-outer">
+<div class="mh-wrapper clearfix">
+	<div class="mh-main clearfix">
+		<div id="main-content" class="mh-content" role="main">				<article id="post-9636" class="post-9636 attachment type-attachment status-inherit hentry">
+					<header class="entry-header">
+						<h1 class="entry-title">UK’s largest AI event specifically for professional services</h1>					</header>
+					<figure class="entry-thumbnail">
+												<a href="https://www.artificiallawyer.com/wp-content/uploads/2017/09/AI-ps.gif" title="UK’s largest AI event specifically for professional services" rel="attachment" target="_blank">
+							<img src="https://www.artificiallawyer.com/wp-content/uploads/2017/09/AI-ps.gif" width="328" height="225" class="attachment-medium" alt="UK’s largest AI event specifically for professional services" />
+						</a>
+											</figure>
+									</article><nav class="mh-post-nav mh-row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+<div class="mh-col-1-2 mh-post-nav-item mh-post-nav-prev">
+<a href='https://www.artificiallawyer.com/screen-shot-2017-09-20-at-09-42-53-1/'><span>Previous</span></a></div>
+<div class="mh-col-1-2 mh-post-nav-item mh-post-nav-next">
+<a href='https://www.artificiallawyer.com/wavelength/'><span>Next</span></a></div>
+</nav>
+		</div>
+			<aside class="mh-widget-col-1 mh-sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar"><div id="blog_subscription-7" class="mh-widget widget_blog_subscription jetpack_subscription_widget"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">News Alerts</span></h4>
+            <form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-7">
+				                    <div id="subscribe-text"><p>Enter your email to receive news alerts, plus info on Artificial Lawyer and 3rd party events.</p>
+</div>                    <p id="subscribe-email">
+                        <label id="jetpack-subscribe-label"
+                               class="screen-reader-text"
+                               for="subscribe-field-blog_subscription-7">
+							Email Address                        </label>
+                        <input type="email" name="email" required="required" class="required"
+                               value=""
+                               id="subscribe-field-blog_subscription-7"
+                               placeholder="Email Address"/>
+                    </p>
+
+                    <p id="subscribe-submit">
+                        <input type="hidden" name="action" value="subscribe"/>
+                        <input type="hidden" name="source" value="https://www.artificiallawyer.com/ai-ps/"/>
+                        <input type="hidden" name="sub-type" value="widget"/>
+                        <input type="hidden" name="redirect_fragment" value="blog_subscription-7"/>
+						                        <button type="submit"
+	                        		                    	                        name="jetpack_subscriptions_widget"
+	                    >
+	                        Subscribe                        </button>
+                    </p>
+				            </form>
+		
+</div><div id="adrotate_widgets-2" class="mh-widget adrotate_widgets"><div class="g g-1"><div class="g-col b-1 a-40"><a class="gofollow" data-track="NDAsMSwxLDYw" href="http://info.juro.com/tools"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/03/AL-list-of-tools-Ad.png" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-32"><a class="gofollow" data-track="MzIsMSwxLDYw" href="https://content.thoughtriver.com/book-a-demo"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/04/new-TR-gif-.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-6"><a class="gofollow" data-track="NiwxLDEsNjA=" href="https://www.lawgeex.com/?utm_source=artificiallawyer&utm_medium=display&utm_campaign=artificiallawyer_display"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/02/n50-frames-side-bar-LG.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-43"><a class="gofollow" data-track="NDMsMSwxLDYw" href="https://www.legalsifter.com/legalsifter-product"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/04/LegalSifter-Ad.png" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-38"><a class="gofollow" data-track="MzgsMSwxLDYw" href="https://www.legalinnovators.co.uk"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/03/Legal-Innovators.gif" /></a></div></div></div><div id="twitter_timeline-5" class="mh-widget widget_twitter_timeline"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Follow me on Twitter</span></h4><a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-tweet-limit="1" data-lang="EN" data-partner="jetpack" data-chrome="transparent" href="https://twitter.com/artificiallawya" href="https://twitter.com/artificiallawya">My Tweets</a></div>	</aside>	</div>
+    </div>
+</div><!-- .mh-container-outer -->
+<footer class="mh-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+<div class="mh-container mh-container-inner mh-footer-widgets mh-row clearfix">
+<div class="mh-col-1-1 mh-home-wide  mh-footer-area mh-footer-3">
+<div id="text-3" class="mh-footer-widget widget_text"><h6 class="mh-widget-title mh-footer-widget-title"><span class="mh-widget-title-inner mh-footer-widget-title-inner">Artificial Lawyer</span></h6>			<div class="textwidget"></div>
+		</div></div>
+</div>
+</footer>
+<div class="mh-copyright-wrap">
+	<div class="mh-container mh-container-inner clearfix">
+		<p class="mh-copyright">
+			Copyright &copy; 2019 | MH Magazine WordPress Theme by <a href="https://www.mhthemes.com/" title="Premium WordPress Themes" rel="nofollow">MH Themes</a>		</p>
+	</div>
+</div>
+	<div style="display:none">
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93892041-1', 'auto');
+  ga('send', 'pageview');
+
+</script><script type='text/javascript'>
+/* <![CDATA[ */
+var click_object = {"ajax_url":"https:\/\/www.artificiallawyer.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/adrotate/library/jquery.adrotate.clicktracker.js'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201917'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/twitter-timeline.min.js?ver=4.0.0'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/lazy-images/js/lazy-images.min.js?ver=7.1.1'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/wp-embed.min.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201917.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.1.1',blog:'121161150',post:'9636',tz:'1',srv:'www.artificiallawyer.com'} ]);
+	_stq.push([ 'clickTrackerInit', '121161150', '9636' ]);
+</script>
+</body>
+</html>

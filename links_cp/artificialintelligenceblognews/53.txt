@@ -1,0 +1,8 @@
+Nov 11 Microsoft is Expanding into Cancer Research and Treatment 
+ Earlier this year, Microsoft launched Healthcare NExT, a new initiative that aims to bring together artificial intelligence, health research, and the expertise of its industry partners in order to provide people with the means to live healthier lives and cure the deadly disease. In a blog post detailing the initiative, Microsoft noted how few other industries have the problems as complex as that of health care, though the company believes it can make headway by incorporating new innovative technology. 
+ It’s a big challenge, but we believe technology – specifically the cloud, AI and collaboration and business optimization tools – will be central to healthcare transformation. 
+ — Peter Lee, Corporate Vice President at Microsoft Research NExT 
+ Microsoft Technical Fellow and Laboratory Director of Microsoft Research Cambridge speaks at a event in London focused on Microsoft's continued investment in Artificial Intelligence. 
+ Discovering a cure for cancer is an ambitious goal to take on, and it remains to be seen how cancer research will be improved with Microsoft’s involvement. That said, Microsoft has expressed a desire to “empower every person and organization to achieve more.” If it can maintain that drive and focus, who knows what the company will develop. 
+ Microsoft wishes to improve health care using machine learning and AI. As part of this initiative, Microsoft is expanding into cancer research and treatment, and it's approaching cancer cells as if they were a glitch in a computer system. 
+ 

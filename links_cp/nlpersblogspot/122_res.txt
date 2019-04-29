@@ -1,0 +1,4073 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/2549344219-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
+<link href='https://www.brid.gy/webmention/blogger' rel='webmention'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='https://nlpers.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='https://nlpers.blogspot.com/2007/05/whence-jclr.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="natural language processing blog - Atom" href="https://nlpers.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="natural language processing blog - RSS" href="https://nlpers.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="natural language processing blog - Atom" href="https://www.blogger.com/feeds/19803222/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="natural language processing blog - Atom" href="https://nlpers.blogspot.com/feeds/1804965598634084511/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<meta content='https://nlpers.blogspot.com/2007/05/whence-jclr.html' property='og:url'/>
+<meta content='Whence JCLR?' property='og:title'/>
+<meta content='Journal publication is not too popular for NLPers -- we tend to be a conference driven bunch.  While I could care less about some arguments ...' property='og:description'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>natural language processing blog: Whence JCLR?</title>
+<style id='page-skin-1' type='text/css'><!--
+/*
+* -----------------------------------------------------
+* Blogger Template Style
+* Name:     Snapshot: Madder
+* Designer: Dave Shea
+* URL:      mezzoblue.com / brightcreative.com
+* Date:     27 Feb 2004
+* Updated by: Blogger Team
+* ------------------------------------------------------ */
+/* Variable definitions
+====================
+<Variable name="textcolor" description="Text Color"
+type="color" default="#474B4E">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#7B8186">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#C4663B">
+<Variable name="footercolor" description="Post Footer Color"
+type="color" default="#B4BABE">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#7B8186">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#DD6599">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#D6A0B6">
+<Variable name="bodyfont" description="Text Font"
+type="font"
+default="normal normal 100% Helvetica, Arial, sans-serif">
+*/
+/* -- basic html elements -- */
+body {
+padding: 0;
+margin: 0;
+font-size: small;
+color: #474B4E;
+background: #fff;
+text-align: center;
+}
+a {
+color: #DD6599;
+text-decoration: none;
+}
+a:visited {
+color: #D6A0B6;
+}
+a:hover {
+text-decoration: underline;
+color: #FD0570;
+}
+h1 {
+margin: 0;
+color: #7B8186;
+font-size: 1.5em;
+text-transform: lowercase;
+}
+h1 a, h1 a:link, h1 a:visited {
+color: #7B8186;
+}
+h2, #comments h4 {
+font-size: 1em;
+margin: 2em 0 0 0;
+color: #7B8186;
+background: transparent url(//www.blogblog.com/snapshot/bg-header1.gif) bottom right no-repeat;
+padding-bottom: 2px;
+}
+h3 {
+font-size: 1em;
+margin: 2em 0 0 0;
+background: transparent url(//www.blogblog.com/snapshot/bg-header1.gif) bottom right no-repeat;
+padding-bottom: 2px;
+}
+h4, h5 {
+font-size: 0.9em;
+text-transform: lowercase;
+letter-spacing: 2px;
+}
+h5 {
+color: #7B8186;
+}
+h6 {
+font-size: 0.8em;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+p {
+margin: 0 0 1em 0;
+}
+img, form {
+border: 0; margin: 0;
+}
+/* -- layout -- */
+#outer-wrapper {
+width: 800px;
+margin: 0 auto;
+text-align: left;
+font: normal normal 100% Helvetica, Arial, sans-serif;
+background: #fff url(//www.blogblog.com/snapshot/bg-body.gif) 0 0 repeat-y;
+}
+#header-wrapper {
+background: #D8DADC url(//www.blogblog.com/snapshot/bg-headerdiv.gif) 0 0 repeat-y;
+}
+.descriptionwrapper {
+background: #fff url(//www.blogblog.com/snapshot/bg-sidebar.gif) 1px 0 no-repeat;
+float: right;
+width: 214px;
+padding: 0 0 0 8px;
+margin: 1px 0 2px 0;
+}
+.description {
+border: 1px solid #F3B89D;
+background: #FFD1BC url(//www.blogblog.com/snapshot/bg-profile.gif);
+padding: 10px 0 10px 7px;
+margin: 4px 0 0 -6px;
+color: #C4663B;
+}
+#header {
+background: transparent url(//www.blogblog.com/snapshot/header-01.gif) bottom left no-repeat;
+}
+#main-wrapper {
+line-height: 1.4;
+float: left;
+padding: 10px 12px;
+border-top: solid 1px #fff;
+width: 578px;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+/* Tantek hack - http://www.tantek.com/CSS/Examples/boxmodelhack.html */
+voice-family: "\"}\"";
+voice-family: inherit;
+width: 554px;
+}
+/* IE5 hack */
+#main {}
+#sidebar {
+float:right;
+border-top: solid 1px #fff;
+padding: 4px 0 0 7px;
+background: #fff;
+width: 214px;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+#footer {
+clear: both;
+background: #E9EAEB url(//www.blogblog.com/snapshot/bg-footer.gif) bottom left no-repeat;
+border-top: solid 1px #fff;
+min-height: 15px;
+}
+/* -- header style -- */
+#header h1 {
+padding: 12px 0 92px 4px;
+width: 707px;
+line-height: 1;
+}
+/* -- content area style -- */
+#main {
+line-height: 1.4;
+}
+.post h3 {
+font-size: 1.2em;
+margin-bottom: 0;
+color: #C4663B;
+}
+.post h3 a,
+.post h3 a:visited {
+color: #C4663B;
+}
+.post {
+clear: both;
+margin-bottom: 4em;
+}
+.post-footer .post-author,
+.post-footer .post-timestamp {
+color: #B4BABE;
+}
+.uncustomized-post-template .post-author,
+.uncustomized-post-template .post-timestamp {
+float: left;
+margin-right: 4px;
+}
+.uncustomized-post-template .post-footer .comment-link {
+float: right;
+margin-left: 4px;
+}
+.post img {
+border: 1px solid #E3E4E4;
+padding: 2px;
+background: #fff;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+.comment-footer {
+margin-bottom: 10px;
+}
+/* -- sidebar style -- */
+.sidebar .widget {
+margin: 1.3em 0 0.5em 0;
+}
+.sidebar h2 {
+font-size: 1.3em;
+}
+.sidebar dl {
+margin: 0 0 10px 0;
+}
+.sidebar ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.sidebar li {
+padding-bottom: 5px;
+line-height: 1
+}
+.main .widget .clear {
+clear: both;
+}
+/* -- sidebar style -- */
+#footer p {
+margin: 0;
+padding: 12px 8px;
+font-size: 0.9em;
+}
+.profile-textblock {
+margin-left: 0;
+clear: both;
+}
+.profile-img {
+float: left;
+margin: 0 10px 5px 0;
+border: 1px solid #7C78B5;
+padding: 4px;
+}
+/** Page structure tweaks for layout editor wireframe */
+body#layout #header-wrapper {
+margin-top: 0;
+}
+body#layout #main-wrapper {
+padding:0;
+}
+img.latex_eq {
+padding: 0;
+margin: 0;
+border: 0;
+}
+
+--></style>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=19803222&amp;zx=ff9afc1a-535d-4665-a907-b0b1f5ca0ff8' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=19803222&amp;zx=ff9afc1a-535d-4665-a907-b0b1f5ca0ff8' rel='stylesheet'/></noscript>
+
+</head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d19803222\x26blogName\x3dnatural+language+processing+blog\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://nlpers.blogspot.com/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttps://nlpers.blogspot.com/\x26targetPostID\x3d1804965598634084511\x26blogPostOrPageUrl\x3dhttps://nlpers.blogspot.com/2007/05/whence-jclr.html\x26vt\x3d-3261824874237000190',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id='outer-wrapper'><div id='wrap2'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+</span>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='https://nlpers.blogspot.com/'>
+natural language processing blog
+</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>my biased thoughts on the fields of natural language processing (NLP), computational linguistics (CL) and related topics (machine learning, math, funding, etc.)</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id='content-wrapper'>
+<div id='main-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>15 May 2007</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post uncustomized-post-template'>
+<a name='1804965598634084511'></a>
+<h3 class='post-title'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html'>Whence JCLR?</a>
+</h3>
+<div class='post-header-line-1'></div>
+<div class='post-body'>
+<p>Journal publication is not too popular for NLPers -- we tend to be a conference driven bunch.  While I could care less about some arguments for journals (eg., the folks on tenure committees like them), I do feel that they serve a purpose <i>beyond</i> simply acting as an archive (which things like arxiv.org, the ACL anthology, citeseer, rexa, etc. do anyway).  In particular, a journal paper is often a place where you get to really set the stage for your problem, describe your algorithms so that they're actually reimplementable, and go in to serious error analysis.  Certainly not every paper that appears in a *ACL should continue on to the journal path, but many times a handful of papers could be merged.<br /><br />One significant problem is that we're currently really limited in our choice of publication venues.  Computational Linguistics (MIT Press) is definitely the place to publish a journal paper if you can.  Unfortunately, CL only puts out four issues per year, each with about 4-5 papers.  Sure there aren't hundreds of good papers per year, but I have to believe there are more than 16-20.  Moreover, I don't feel that CL actually mirrors the *ACL proceedings -- there are <i>many</i> papers published in CL that I don't think match with the general sensitivities of *ACL.  In addition to the small number of CL papers, the turn around time is quite slow.  I was personally very impressed with my turnaround time two years ago (date of submission -> date of publication was about a year) and I know that Robert Dale (who's editing now) has done a lot to try to improve this.  But still, a year is a long time.  And I've heard of papers that take several years to get through.  Finally, it's not open.  I <i>hate</i> pay-for-access journals almost as much as I had pay-for-access conference proceedings.  Sure, if you attend an *ACL you get it for "free" and most universities have agreements, but this is more a principle thing than a practical thing.<br /><br />Things were similar in machine learning land about six years ago (though in fact I think they were worse).  The big journal there was Machine Learning (published by Springer).  They had roughly the same problems, to the extent that a large fraction of the editorial board <a href="http://jmlr.csail.mit.edu/statement.html">resigned to found the Journal of Machine Learning Research (JMLR)</a>.  JMLR has since become very successful, publishes dozens of papers per year, and has incredibly quick turnaround (I have seen a journal version of a NIPS paper appear in JMLR <i>before</i> NIPS even happens).  The creation of JMLR was greatly assisted by the <a href="http://www.arl.org/sparc">SPARC group</a>, which helps fledgling journal get off the ground.<br /><br />I would love to see a similar thing happen in the NLP community.  I, personally, cannot make this happen (I don't have enough weight to throw around), but in talking to colleagues (the majority of whom also don't have enough weight) this seems to be something that many people would be in favor of.  I don't think it has to be a "JCLR is better than CL" sort of thing; I think it's very possible for both to co-exist, essentially serving slightly different purposes for slightly different communities.  In particular, aside from fast turnaround and online pubs, some things that I would love to see happen with such a journal are: Strongly encouraged sharing of code/data (if one could build in some sort of copyright protection for private data, this would be even better since it would let more people share); and a built-in board for paper discussion (probably with membership); ability for authors to easily submit addenda.<br /><br />A while back I went through the SPARC suggestions of how to begin such a thing and it's very non-trivial.  But it's doable.  And I'd be willing to help.  The biggest thing that would be required would be a bunch of people with white hair who are willing to commit body-and-soul to such a move.</p>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<p class='post-footer-line post-footer-line-1'>
+<span class='post-author'>
+Posted by
+hal
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='https://nlpers.blogspot.com/2007/05/whence-jclr.html' title='permanent link'>5/15/2007 09:47:00 AM</a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-backlinks post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-action'>
+<a href='https://www.blogger.com/email-post.g?blogID=19803222&postID=1804965598634084511' title='Email Post'>
+<span class='email-post-icon'>&#160;</span>
+</a>
+</span>
+<span class='item-control blog-admin pid-815832165'>
+<a href='https://www.blogger.com/post-edit.g?blogID=19803222&postID=1804965598634084511&from=pencil' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='https://resources.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+</p>
+<p class='post-footer-line post-footer-line-2'>
+<span class='post-labels'>
+Labels:
+<a href='https://nlpers.blogspot.com/search/label/journals' rel='tag'>journals</a>,
+<a href='https://nlpers.blogspot.com/search/label/papers' rel='tag'>papers</a>,
+<a href='https://nlpers.blogspot.com/search/label/research' rel='tag'>research</a>
+</span>
+</p>
+<p class='post-footer-line post-footer-line-3'></p>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>26 comments:</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+<dt class='comment-author ' id='c4996778269205865923'>
+<a name='c4996778269205865923'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://ryanmcd.googlepages.com/index.html" target="" rel="nofollow" onclick=""><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Ryan McDonald">
+
+</a></span></div>
+<a href='http://ryanmcd.googlepages.com/index.html' rel='nofollow'>Ryan McDonald</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-4996778269205865923'>
+<p>
+Hal wrote:<BR/><BR/>"Strongly encouraged sharing of code/data (if one could build in some sort of copyright protection for private data, this would be even better since it would let more people share); and a built-in board for paper discussion (probably with membership); ability for authors to easily submit addenda."<BR/><BR/>The sharing code/data is interesting. I know journals like Bioinformatics get authors to publish the public location of any systems they are describing. However, since grad students are often responsible for maintaining the code, the associated web addresses often disappear as the students move on. Any online journal that encourages this should also provide the space to store it or force authors to use sourceforge or other permanent locations.<BR/><BR/>I really believe in an online discussion forum per paper. Anyone who has read an Annals of Statistics paper has surely enjoyed the solicited expert opinions and author responses -- they are often better than the original paper!
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179257520000#c4996778269205865923' title='comment permalink'>
+15 May, 2007 13:32
+</a>
+<span class='item-control blog-admin pid-1520099956'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=4996778269205865923' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c130420990680359150'>
+<a name='c130420990680359150'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://ryanmcd.googlepages.com/index.html" target="" rel="nofollow" onclick=""><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Ryan McDonald">
+
+</a></span></div>
+<a href='http://ryanmcd.googlepages.com/index.html' rel='nofollow'>Ryan McDonald</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-130420990680359150'>
+<p>
+This just came through the mail from Priscilla. Maybe you should write something? :-)<BR/><BR/>"The ACL executive committee realizes that a number of initiatives of ACL members have led to the creation of very successful resources for our community.  Such examples include the ACL Anthology, the Software Registry, NLTK, the ACL Wiki, etc.<BR/><BR/>We would like to encourage our members to consider other projects of similarly high value. To this end, we are soliciting short (1-2 pages, in plain text) proposals from ACL members. These should be submitted to radev@umich.edu by June 4, 2007.<BR/><BR/>Proposals will be judged by a subcommittee of the ACL exec based on the following criteria:<BR/><BR/>- novelty<BR/>- potential impact on the ACL community: e.g., who will be using the resource<BR/>- collaboration opportunitities: e.g., building a resource by joint<BR/>work from the community (a good example being the Wiki)<BR/>- sustainability: e.g., keeping the resource up to date with no<BR/>involvement from the exec<BR/><BR/>A small number of proposals (2-3) will be selected and their authors<BR/>will be given an opportunity to present them briefly (5 minutes) at<BR/>the business meeting in Prague. The purpose of these presentations will be to gauge community interest and recruit volunteers for the actual implementation.<BR/><BR/>The ACL exec will work with the proposers on the logistics of the<BR/>selected proposals. This may involve some small amounts of seed money to launch the projects.<BR/><BR/>Dragomir Radev, ACL secretary"
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179257700000#c130420990680359150' title='comment permalink'>
+15 May, 2007 13:35
+</a>
+<span class='item-control blog-admin pid-467474291'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=130420990680359150' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c1156330006109566892'>
+<a name='c1156330006109566892'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/03294614528648962173" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-1156330006109566892-03294614528648962173"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="Mark Dredze">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/03294614528648962173' rel='nofollow'>Mark Dredze</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-1156330006109566892'>
+<p>
+When you have a successful ACL paper and want to publish further results, where do you go? ACL/EMNLP/NAACL/CONLL/ETC. are nice because the papers are relatively short and to the point, but this means there aren't enough details for the really good papers. Sometimes you can turn to JMLR, but not for a lot of the ACL work. The CL journal has a different focus. Something is really needed in this area similar to JMLR.<BR/><BR/>http://earningmyturns.blogspot.com/2007/05/whence-jclr.html<BR/>I agree with Fernando and you about this. Why do you need someone "with gray hair"? I would say that as long as these people are supportive, then they don't need to be the leads on the project. I think the reaction to such an effort would be very positive from the type of people whom you need support. Beyond that, the work can be done by whomever has time and is willing. Senior people can advise if needed. Ryan's suggestion of responding to Priscilla's message is a good idea. I think you'd find other people willing to help with such an effort at ACL through this process. Once you find a group of interested people, hopefully someone with time can emerge to lead the effort.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179285540000#c1156330006109566892' title='comment permalink'>
+15 May, 2007 21:19
+</a>
+<span class='item-control blog-admin pid-941439055'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=1156330006109566892' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c344410781392515529'>
+<a name='c344410781392515529'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/07407894290644783502" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-344410781392515529-07407894290644783502"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="Kevin">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/07407894290644783502' rel='nofollow'>Kevin</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-344410781392515529'>
+<p>
+I agree. You don't need gray hairs to do this. In fact, initiatives in all walks of life are often carried out by young folks who think non-traditionally; we just need endorsement/support from the more senior people. My sense is that ACL is a very open-minded community and this issue will definitely be put on the discussion table if someone brings it up. I'd be happy to help in any capacity (e.g. grunt work) if you decide to pursue this, Hal!
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179290760000#c344410781392515529' title='comment permalink'>
+15 May, 2007 22:46
+</a>
+<span class='item-control blog-admin pid-812924260'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=344410781392515529' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c985334555172019321'>
+<a name='c985334555172019321'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.notes.co.il/oren/32036.asp" target="" rel="nofollow" onclick=""><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="oren">
+
+</a></span></div>
+<a href='http://www.notes.co.il/oren/32036.asp' rel='nofollow'>oren</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-985334555172019321'>
+<p>
+Journal versions of nlp papers would be great and there'll be no need to try and publish in linguistic/psychology/cognitive journals which are clearly not the most suitable place for computational discussion.<BR/>  <BR/>I'm with Hal about the gray hair. I hate to admit that gray hair is needed for the "political" reasons, moreover, not only gray hair has the weight they also have more time.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179300240000#c985334555172019321' title='comment permalink'>
+16 May, 2007 01:24
+</a>
+<span class='item-control blog-admin pid-841660248'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=985334555172019321' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c2155767680213502266'>
+<a name='c2155767680213502266'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="https://www.blogger.com/profile/02162908373916390369" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-2155767680213502266-02162908373916390369"><img src="https://img1.blogblog.com/img/blank.gif" width="35" height="35" class="delayLoad" style="display: none;" longdesc="//www.cs.utah.edu/~hal/portrait.jpg" alt="" title="hal">
+
+<noscript><img src="//www.cs.utah.edu/~hal/portrait.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='https://www.blogger.com/profile/02162908373916390369' rel='nofollow'>hal</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2155767680213502266'>
+<p>
+wow, lots of support :).  i think ryan's absolutely right that there would need to be a repository somewhere for code/etc.  the only problem is that sometimes code gets licensed and then you don't want it up in some place you don't have control over.  it seems like this is a solvable problem, though.  would just need some more thought.<BR/><BR/>it looks like people are in favor of submitting this as an idea to the ACL.  i would be happy to do this.  if you're interested in supporting (putting your name on the proposal i send in) or helping edit the proposal, i will construct a wiki page for some discussion.  check back here later for a url.  (should be up tonight.)<BR/><BR/>regarding hair: i feel that what such people lack in melanin (or follicles, as fernando points out) they (more than) make up for in experience and reputation.  i feel that having senior people is important for two orthogonal reasons.  one is to grant stature.  something like JCLR will be successful only if people submit good papers to it.  people are more likely to do this if they believe that important people are behind it.  second, as a editorial board.  youngsters like us are great at getting things done, but senior people tend to have a much better grasp of the big picture (compare paper reviews written by students to those written by full profs and you'll get a shocking wake-up call).  i'm fully content to admit that i don't have nearly enough experience to see the full picture.<BR/><BR/>now, that's not to say that senior people need to <I>run</I> such a beast, but they at least need to be on board.  and they need to be on board more than just nominally.  they need to be willing to serve to help set direction, and willing to review.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179333660000#c2155767680213502266' title='comment permalink'>
+16 May, 2007 10:41
+</a>
+<span class='item-control blog-admin pid-815832165'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=2155767680213502266' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c7920006845826230284'>
+<a name='c7920006845826230284'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Mark Johnson">
+
+</span></div>
+Mark Johnson
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-7920006845826230284'>
+<p>
+I'm all in favor of trying new things every so often just to see how they turn out, but I suspect the main question is whether there are papers that aren't getting published right now that really ought to be.  I'm not convinced that there are, but I'd be pleased to be shown to be wrong. There are already a number of CL-ish journals besides Computational Linguistics, such as Computer Speech and Language, and Grammars, and a couple of others I can't remember right now.  Generally these all seemed like good ideas when they were proposed and they have published really important papers, but they haven't become "must reads" in the computational linguistics community.  I suspect that the problem isn't the hair color of the editoral board.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179383160000#c7920006845826230284' title='comment permalink'>
+17 May, 2007 00:26
+</a>
+<span class='item-control blog-admin pid-2087752830'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=7920006845826230284' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2323250231724925557'>
+<a name='c2323250231724925557'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://ryanmcd.googlepages.com/index.html" target="" rel="nofollow" onclick=""><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Ryan McDonald">
+
+</a></span></div>
+<a href='http://ryanmcd.googlepages.com/index.html' rel='nofollow'>Ryan McDonald</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2323250231724925557'>
+<p>
+Mark writes:<BR/><BR/>"are papers that aren't getting published right now that really ought to be. I'm not convinced that there are"<BR/><BR/>You might be right. Given the number of conferences we have, I believe most good work gets a venue. However, I also believe much of the best work at our conferences never makes it past the 8 page version simply because there is no incentive: nobody reads many of our current journals, or there is a year long publishing cycle for those journals that people do read. An online journal such as this should give researchers the opportunity to quickly publish extended versions w/ more analysis, experiments and implementation details, all of which are usually condensed or eliminated because of the conference page limit. (I guess this is just re-stating what Mark already said above).<BR/><BR/>Also, Computer Speech and Language, Grammars, Research on Language and Computation, Journal of Natural Language Engineering, etc. are all not open access journals. (I think, but I may be wrong about one or two). Biology has many open access journals that in a few short years had impact factors near or above their traditional subscription based counterparts. JMLR has the highest impact factor for any AI journal. So I think there is a lot of evidence that quick publication open access venues get good submissions that are read and cited frequently.<BR/><BR/>I think the primary advantage of what Hal is proposing is that it is open access and will provide modern means of evaluating the work like discussion forums and code repositories. None of which are part of any of our current means of publication.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179409980000#c2323250231724925557' title='comment permalink'>
+17 May, 2007 07:53
+</a>
+<span class='item-control blog-admin pid-836017727'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=2323250231724925557' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c5496372151478140898'>
+<a name='c5496372151478140898'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="https://www.blogger.com/profile/02162908373916390369" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-5496372151478140898-02162908373916390369"><img src="https://img1.blogblog.com/img/blank.gif" width="35" height="35" class="delayLoad" style="display: none;" longdesc="//www.cs.utah.edu/~hal/portrait.jpg" alt="" title="hal">
+
+<noscript><img src="//www.cs.utah.edu/~hal/portrait.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='https://www.blogger.com/profile/02162908373916390369' rel='nofollow'>hal</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5496372151478140898'>
+<p>
+I have set up a <A HREF="http://apollonius.cs.utah.edu/jclr" REL="nofollow">wiki page to discuss this</A>.  To stop spam you need an account to edit (email me for one).  I'd love to get as much feedback as possible.  If you add a comment, it would be useful (but not necessary) for you to add your name next to it.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179497160000#c5496372151478140898' title='comment permalink'>
+18 May, 2007 08:06
+</a>
+<span class='item-control blog-admin pid-815832165'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=5496372151478140898' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c6949763915822585955'>
+<a name='c6949763915822585955'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.seas.harvard.edu/~shieber/" target="" rel="nofollow" onclick=""><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Stuart Shieber">
+
+</a></span></div>
+<a href='http://www.seas.harvard.edu/%7Eshieber/' rel='nofollow'>Stuart Shieber</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-6949763915822585955'>
+<p>
+I agree with many of the sentiments that have been expressed here.  Certainly, an open access CL journal would be a good thing.  However, there is a much simpler, and likely superior, method to generating such a thing: convert CL to an open access format.  Coincidentally, I had been thinking of proposing just such a move to the ACL board as part of their "solicited projects" effort.<BR/><BR/>Converting CL to open access has many positive aspects. First, it doesn't proliferate journals, which Mark Johnson has noted is not clearly desirable.  Second, it already has an established "brand" as the leading CL journal.  Third, if it does turn out that there are more papers of CL quality than the current CL can publish with its traditional (page-limited issues, with a backlog for buffering) publishing mechanism, moving to open access (papers issued as accepted with no backlog) will allow more papers to be published in the journal.  (JMLR, for instance, has increased its page count by a factor of about two over the last few volumes.)<BR/><BR/>CL is especially well-suited for being run as an open access journal.  Editorial functions are already handled by a volunteer group of academics.  Authors are already used to doing their own copy-editing and typesetting.  Everyone involved is computer-savvy.  And we are all aware of the ancillary benefits of having text openly available for all uses, not just the reading of articles but, for instance, using them as raw material for experimental language processing.  It would be interesting to get Robert Dale's view on what MIT Press is contributing in terms of the running of the journal that would still be needed if the journal were to convert.<BR/><BR/>You may wonder why the editorial board of Machine Learning didn't take the same route.  The answer is that it wasn't open to them.  This was a Springer journal, owned and run by a commercial publisher, who owned in particular the most valuable asset of the journal, its brand name.  For that reason, the editorial board had to set up a competing journal under a different name.  But as far as I know, ACL owns the CL journal name and brand, and could decide to take it open access unilaterally.  <BR/><BR/>Hal worries that running an open access journal is "very nontrivial".  In fact, it should be no more difficult  than running a closed access journal, which the CL editorial board already does.  JMLR and JAIR provide the models.  (Contra Hal's assumption, I don't think that SPARC helped JMLR that much in the initial setup.  They are an excellent group though.)<BR/><BR/>One terminogical quibble:  The term "online journal" is a misnomer.  All journals these days, including CL, are available online (though sometimes only to subscribers), and open access journals are often available in print form.   The issue is not the mode of distribution of the bits (over a network or in trucks) but the nature of access limitations (open or closed).  JMLR, for instance, is available in a print edition from Microtome Publishing (which I run).  I'd be happy to offer Microtome's services to run the print edition of an open access CL if MIT Press no longer desires to.  (They did JMLR's first four print volumes but decided to break their ties to JMLR at that point.)  For more information on print and open access, see <A HREF="http://mtome.com/Services/printarchiving-whatis.html" REL="nofollow">here</A>.<BR/><BR/>I'd love to help out with a proposal to convert CL to open access.  Am I gray-haired enough?
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179518760000#c6949763915822585955' title='comment permalink'>
+18 May, 2007 14:06
+</a>
+<span class='item-control blog-admin pid-1809888856'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=6949763915822585955' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author blog-author' id='c2298158139802110886'>
+<a name='c2298158139802110886'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="https://www.blogger.com/profile/02162908373916390369" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-2298158139802110886-02162908373916390369"><img src="https://img1.blogblog.com/img/blank.gif" width="35" height="35" class="delayLoad" style="display: none;" longdesc="//www.cs.utah.edu/~hal/portrait.jpg" alt="" title="hal">
+
+<noscript><img src="//www.cs.utah.edu/~hal/portrait.jpg" width="35" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='https://www.blogger.com/profile/02162908373916390369' rel='nofollow'>hal</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2298158139802110886'>
+<p>
+i think what stuart says makes a ton of sense.  i think it's better for the community if the possibility of opening up CL and simultaneously modernizing it is possible.  my opinion is that we should push for this.  if it meets with strong resistance, we can revisit the idea of creating something new.<BR/><BR/>that said, i still encourage people to visit the <A HREF="http://apollonius.cs.utah.edu/jclr" REL="nofollow">wiki</A> page and add comments.  i think that many of the things under "differentiation" are things that would be great to incorporate into a repolished CL.  IMO these should be part of a proposal.<BR/><BR/>i'm tempted to suggest that we (we=those that have interested in this) band together and put in a proposal at ACL to turn CL into an OA journal <I>with</I> all of the advancements such as reccomendations, discussion boards, etc.<BR/><BR/>does anyone think this is a bad proposal?  the only disadvantage i see is that <I>if</I> it gets smacked down then we probably won't have an open (in person) forum like that offered at ACL this year again for a while.  (wow, i'd love to see a parser deal with that sentence!)
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179520080000#c2298158139802110886' title='comment permalink'>
+18 May, 2007 14:28
+</a>
+<span class='item-control blog-admin pid-815832165'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=2298158139802110886' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8709919519627919939'>
+<a name='c8709919519627919939'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/10133326106767197707" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-8709919519627919939-10133326106767197707"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="Robert">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/10133326106767197707' rel='nofollow'>Robert</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8709919519627919939'>
+<p>
+There are a number of considerations around at the moment that might cause us to review the kind of existence that the Computational Linguistics journal has.  This is likely to be a major discussion item at the editorial board meeting at this year's ACL, so all the comments raised here are very useful input to that discussion.  I do think there is likely to be some value in keeping separate (a) the perceived problems that need addressing (not enough publication fora?  too slow reviewing times? etc) and (b) the models being proposed as solutions (open access? online?).<BR/><BR/>I'll follow-up on Stuart's request for info on what contribution MIT Press makes when I have enough spare minutes to provide a reflective response.<BR/><BR/>R
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179628560000#c8709919519627919939' title='comment permalink'>
+19 May, 2007 20:36
+</a>
+<span class='item-control blog-admin pid-472243827'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=8709919519627919939' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c7294694116016227827'>
+<a name='c7294694116016227827'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/16759207992087720809" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-7294694116016227827-16759207992087720809"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="Dragomir">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/16759207992087720809' rel='nofollow'>Dragomir</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-7294694116016227827'>
+<p>
+When I joined the exec last year as secretary, I made it clear that I will be actively seeking new initiatives for improving the organization, in particular with respect to publications. As Ryan points out, we now have an (ACL-exec approved) call for cool ideas and initiatives that the exec will consider at our next meeting. If you guys (Ryan, Fernando, Hal, ...) would put up a short proposal (1 page of plain text is enough) detailing your concerns and suggestions, we will make sure to consider them seriously. Not that the acl exec hasn't been already discussing this issue for months :))
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179761580000#c7294694116016227827' title='comment permalink'>
+21 May, 2007 09:33
+</a>
+<span class='item-control blog-admin pid-1773332208'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=7294694116016227827' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c1981088884821443355'>
+<a name='c1981088884821443355'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/15180984480085538844" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-1981088884821443355-15180984480085538844"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="Min">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/15180984480085538844' rel='nofollow'>Min</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-1981088884821443355'>
+<p>
+I tend to agree with Stuart also on the importance of keeping the CL brand name while ensuring that CL papers don't end up auto-archived as Julia mentioned in her email on the wiki.<BR/><BR/>While it may be that most good quality NLP articles are finding a suitable venue (CL or not), opening CL to encompass a faster review time would allow graduate students about to graduate to have more of a chance of having their results published in a journal within a reasonable lifespan.  Currently, most NLP journals don't really support the type of fast review times that would enable this to happen (unlike J(AI|ML)R).  If students are graduating and not continuing on their thesis topic, I think the ACL/EMNLP papers  end up being the finish rather CL as their student lifetime expires.<BR/><BR/>I think this is a too bad really, as quite a lot of high quality student work could go into CL if not for this problem.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1179817920000#c1981088884821443355' title='comment permalink'>
+22 May, 2007 01:12
+</a>
+<span class='item-control blog-admin pid-434888325'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=1981088884821443355' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c5956550759701142106'>
+<a name='c5956550759701142106'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.cog.brown.edu/~mj" target="" rel="nofollow" onclick=""><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Mark Johnson">
+
+</a></span></div>
+<a href='http://www.cog.brown.edu/%7Emj' rel='nofollow'>Mark Johnson</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5956550759701142106'>
+<p>
+Slow turn-around is perhaps the most important reason for why journals don&#8217;t play a bigger role in our field, and a big part of this is the reviewing process.  Computational Linguistics has been trying to do something about this for years, but journals have little leverage over reviewers.  The problem is that it&#8217;s hard work to review a journal article properly (that&#8217;s why I&#8217;m procrastinating by writing this blog entry instead of doing my CL review due on Monday).  I think a journal article review should take a lot of work: a journal article is supposed to cover all the details, and if the reviewers are doing their job they should check all these details.  But that hard reviewing work is essentially uncompensated.  (For example, I could be spending this weekend working on a NIPS submission which could actually have an impact professionally).<BR/><BR/>So maybe we should think about ways of compensating reviewers.  Reviewing is service to the field and so does count for tenure and the like, but is weighted far below research and teaching.  Perhaps CL could try to more prominently thank reviewers who have done a good job?  Right now we publish a list of all reviewers; maybe we could also say how many articles each reviewer reviewed?  Maybe also whether they did it on time?  Even more controversially, I think Geoff Pullum once suggested that reviewers names appear along with authors names on published articles; that way they get some of the reflected glory from important articles they reviewed (and take some of the blame for errors that get through to publication).  And most controversially of all, maybe we should pay reviewers?  After all, publishers typically offer an honorarium for book proposal reviews, and these go/no-go reviews are usually much less effort than a detailed journal review.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1180292580000#c5956550759701142106' title='comment permalink'>
+27 May, 2007 13:03
+</a>
+<span class='item-control blog-admin pid-1095600601'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=5956550759701142106' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c9166388804405757006'>
+<a name='c9166388804405757006'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="https://www.blogger.com/profile/05849361902113771573" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-9166388804405757006-05849361902113771573"><img src="https://img1.blogblog.com/img/blank.gif" width="23" height="35" class="delayLoad" style="display: none;" longdesc="//www.cis.upenn.edu/~pereira/inChillan.jpg" alt="" title="Fernando Pereira">
+
+<noscript><img src="//www.cis.upenn.edu/~pereira/inChillan.jpg" width="23" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='https://www.blogger.com/profile/05849361902113771573' rel='nofollow'>Fernando Pereira</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-9166388804405757006'>
+<p>
+@Mark Johnson: How would you explain the turn-around of top bio journals? Are biomedical researchers less busy than we are? Think about your annual reviewing "budget". How many hours do you spend reviewing for ACL, EMNLP, NIPS, ICML? Add them up. How many journal reviews in there?
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1180309380000#c9166388804405757006' title='comment permalink'>
+27 May, 2007 17:43
+</a>
+<span class='item-control blog-admin pid-229142074'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=9166388804405757006' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2880857861759021730'>
+<a name='c2880857861759021730'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2880857861759021730'>
+<p>
+<A HREF="http://www.groad.tw/" REL="nofollow">網頁設計</A>,<A HREF="http://www.sexy288.com/" REL="nofollow">情趣用品</A>,<A HREF="http://www.egg168.com/" REL="nofollow">情趣用品</A>,<A HREF="http://www.sexy5899.com/" REL="nofollow">情趣用品</A>,<A HREF="http://www.sexy5988.com/" REL="nofollow">情趣用品</A><BR><A HREF="http://www.egg168.com/020/" REL="nofollow">色情遊戲</A>,<A HREF="http://www.egg168.com/019/" REL="nofollow">寄情築園小遊戲</A>,<A HREF="http://www.egg168.com/013/" REL="nofollow">情色文學</A>,<A HREF="http://www.egg168.com/017/" REL="nofollow">一葉情貼圖片區</A>,<A HREF="http://www.egg168.com/002/" REL="nofollow">情惑用品性易購</A>,<A HREF="http://www.egg168.com/003/" REL="nofollow">情人視訊網</A>,<A HREF="http://www.egg168.com/005/" REL="nofollow">辣妹視訊</A>,<A HREF="http://www.egg168.com/006/" REL="nofollow">情色交友</A>,<A HREF="http://www.egg168.com/007/" REL="nofollow">成人論壇</A>,<A HREF="http://www.egg168.com/008/" REL="nofollow">情色論壇</A>,<A HREF="http://www.egg168.com/009/" REL="nofollow">愛情公寓</A>,<A HREF="http://www.egg168.com/010/" REL="nofollow">情色</A>,<A HREF="http://www.egg168.com/011/" REL="nofollow">舊情人</A>,<A HREF="http://www.egg168.com/012/" REL="nofollow">情色貼圖</A>,<A HREF="http://www.egg168.com/015/" REL="nofollow">色情聊天室</A>,<A HREF="http://www.egg168.com/016/" REL="nofollow">色情小說</A>,<A HREF="http://www.egg168.com/a01/" REL="nofollow">做愛</A>,<A HREF="http://www.egg168.com/a02/" REL="nofollow">做愛影片</A>,<A HREF="http://www.egg168.com/a03/" REL="nofollow">性愛</A> <br /><BR><A HREF="http://www.sexy288.com/a01/" REL="nofollow">免費視訊聊天室</A>,<A HREF="http://www.sexy288.com/b01/" REL="nofollow">aio交友愛情館</A>,<A HREF="http://www.sexy288.com/a02" REL="nofollow">愛情公寓</A>,<A HREF="http://www.sexy288.com/a03" REL="nofollow">一葉情貼圖片區</A>,<A HREF="http://www.sexy288.com/a04" REL="nofollow">情色貼圖</A>,<A HREF="http://www.sexy288.com/a05" REL="nofollow">情色文學</A>,<A HREF="http://www.sexy288.com/a06" REL="nofollow">色情聊天室</A>,<A HREF="http://www.sexy288.com/a08/" REL="nofollow">情色小說</A>,<A HREF="http://www.sexy288.com/a09" REL="nofollow">情色電影</A>,<A HREF="http://www.sexy288.com/a10" REL="nofollow">情色論壇</A>,<A HREF="http://www.sexy288.com/a11" REL="nofollow">成人論壇</A>,<A HREF="http://www.sexy288.com/a12" REL="nofollow">辣妹視訊</A>,<A HREF="http://www.sexy288.com/a13" REL="nofollow">視訊聊天室</A>,<A HREF="http://www.sexy288.com/a14" REL="nofollow">情色視訊</A>,<A HREF="http://www.sexy288.com/a07" REL="nofollow">免費視訊</A>,<A HREF="http://www.sexy288.com/a15" REL="nofollow">免費視訊聊天</A>,<A HREF="http://www.sexy288.com/a16" REL="nofollow">視訊交友網</A>,<A HREF="http://www.sexy288.com/a17" REL="nofollow">視訊聊天室</A>,<A HREF="http://www.sexy288.com/a18" REL="nofollow">視訊美女</A>,<A HREF="http://www.sexy288.com/a19" REL="nofollow">視訊交友</A>,<A HREF="http://www.sexy288.com/a20" REL="nofollow">視訊交友90739</A>,<A HREF="http://www.sexy288.com/a21/" REL="nofollow">UT聊天室</A>,<A HREF="http://www.sexy288.com/a22/" REL="nofollow">聊天室</A>,<A HREF="http://www.sexy288.com/a23/" REL="nofollow">豆豆聊天室</A>,<A HREF="http://www.sexy288.com/a24/" REL="nofollow">尋夢園聊天室</A>,<A HREF="http://www.sexy288.com/a25/" REL="nofollow">聊天室尋夢園</A>,<A HREF="http://www.sexy288.com/a26/" REL="nofollow">080聊天室</A>,<A HREF="http://www.sexy288.com/a27/" REL="nofollow">080苗栗人聊天室</A>,<A HREF="http://www.sexy288.com/a28/" REL="nofollow">女同志聊天室</A>,<A HREF="http://www.sexy288.com/a29/" REL="nofollow">上班族聊天室</A>,<A HREF="http://www.sexy288.com/a30/" REL="nofollow">小高聊天室</A>&#160;<br /><BR><A HREF="http://www.sexy288.com/b02/" REL="nofollow">AV</A>,<A HREF="http://www.sexy288.com/b03/" REL="nofollow">AV女優</A><BR><A HREF="http://www.rich178.net/" REL="nofollow">視訊</A>,<A HREF="http://www.rich178.net/" REL="nofollow">影音視訊聊天室</A>,<A HREF="http://www.rich178.net/aa.htm" REL="nofollow">視訊交友</A><BR><A HREF="http://www.sexy176.com/" REL="nofollow">視訊</A>,<A HREF="http://www.sexy176.com/" REL="nofollow">影音視訊聊天室</A>,<A HREF="http://www.sexy176.com/s01.htm" REL="nofollow">視訊聊天室</A>,<A HREF="http://www.sexy176.com/s02.htm" REL="nofollow">視訊交友</A>,<A HREF="http://www.sexy176.com/s03.htm" REL="nofollow">視訊聊天</A>,<A HREF="http://www.sexy176.com/s04.htm" REL="nofollow">視訊美女</A>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1241543040000#c2880857861759021730' title='comment permalink'>
+05 May, 2009 11:04
+</a>
+<span class='item-control blog-admin pid-434476650'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=2880857861759021730' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c6883497713440573303'>
+<a name='c6883497713440573303'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-6883497713440573303'>
+<p>
+酒店經紀PRETTY GIRL <A HREF="http://www.taipeilady.com/" REL="nofollow" TITLE="台北酒店經紀人">台北酒店經紀人</A> ,<A HREF="http://tw.myblog.yahoo.com/jw!qZ9n..6QEhhc0LkItOBm/" REL="nofollow" TITLE="禮服店">禮服店</A> 酒店兼差PRETTY GIRL<A HREF="http://www.mashow.org/" REL="nofollow" TITLE="酒店公關">酒店公關</A> 酒店小姐 彩色爆米花<A HREF="http://blog.xuite.net/jkl338801/blog/" REL="nofollow" TITLE="酒店兼職">酒店兼職</A>,酒店工作 彩色爆米花<A HREF="http://tw.myblog.yahoo.com/jw!BIBoU5SeBRs21nb_ajFpncbTqXds" REL="nofollow" TITLE="酒店經紀">酒店經紀</A>, <A HREF="http://mypaper.pchome.com.tw/news/thomsan/3/1310065116/20080905040949/" REL="nofollow" TITLE="酒店上班">酒店上班</A>,酒店工作 PRETTY GIRL<A HREF="http://tw.myblog.yahoo.com/jw!rybqykeeER6TH3AKz1HQ5grm/" REL="nofollow" TITLE="酒店喝酒">酒店喝酒</A>酒店上班 彩色爆米花<A HREF="http://mypaper.pchome.com.tw/news/jkl338801/" REL="nofollow" TITLE="台北酒店">台北酒店</A>酒店小姐 PRETTY GIRL<A HREF="http://www.mashow.org/" REL="nofollow" TITLE="酒店上班">酒店上班</A>酒店打工PRETTY GIRL<A HREF="http://www.tpangel.com/" REL="nofollow" TITLE="酒店打工">酒店打工</A>酒店經紀 彩色爆米花
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1242147060000#c6883497713440573303' title='comment permalink'>
+12 May, 2009 10:51
+</a>
+<span class='item-control blog-admin pid-235922488'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=6883497713440573303' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2297475469712319188'>
+<a name='c2297475469712319188'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2297475469712319188'>
+<p>
+艾葳<a href="http://www.aed8.com" rel="nofollow">酒店經紀</a>公司提供專業的<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=330637" rel="nofollow">酒店經紀</a>, <a href="http://tw.myblog.yahoo.com/jw!ycVTCIqTFRMGkedtdX2NjK6QDLD6DG9E" rel="nofollow">酒店上班</a>小姐,<a href="http://www.wretch.cc/blog/aed8888" rel="nofollow">八大行業</a>,<a href="http://blog.xuite.net/aed8888/8888" rel="nofollow">酒店兼職</a>,<a href="http://r2av.com" rel="nofollow">傳播妹</a>,或者想要<a href="http://blog.sina.com.tw/loveed8/" rel="nofollow">打工兼差</a>&#12289;<a href="http://blog.yam.com/haloveha" rel="nofollow">打工</a>,<a href="http://blog.roodo.com/kiss88" rel="nofollow">兼差</a>,<a href="http://avs6.com" rel="nofollow">八大行業</a>,<a href="http://m5av.com" rel="nofollow">酒店兼職</a>,想去<a href="http://avx0.com/05" rel="nofollow">酒店上班</a>, <a href="http://%20http://m5av.com%20/03" rel="nofollow">日式酒店</a>,<a href="http://%20http://avx6.com/03" rel="nofollow">制服酒店</a>,<a href="http://%20http://r2av.com/01" rel="nofollow">ktv酒店</a>,<a href="http://m5av.com/02" rel="nofollow">禮服店</a>,整天穿得水水漂漂的,還是想去<a href="http://avz4.com/02" rel="nofollow">制服店</a>當<a href="http://www.wretch.cc/blog/aed8ed8" rel="nofollow">日領</a>上班小姐,水水們如果想要擁有<a href="http://0av0.com" rel="nofollow">打工</a>工作&#12289;<a href="http://s6av.com/05" rel="nofollow">晚上兼差工作</a>&#12289;<a href="http://avs6.com/05" rel="nofollow">兼差打工</a>&#12289;<a href="http://avz4.com/05" rel="nofollow">假日兼職</a>&#12289;<a href="http://l7av.com/05" rel="nofollow">兼職工作</a>&#12289;<a href="http://mypaper.pchome.com.tw/news/aed8888/" rel="nofollow">酒店兼差</a>&#12289;<a href="http://avl7.com/05" rel="nofollow">兼差</a>&#12289;<a href="http://av0x.com" rel="nofollow">打工兼差</a>&#12289;<a href="http://av0x.com/01" rel="nofollow">日領工作</a>&#12289;<a href="http://av6p.com%20/01" rel="nofollow">晚上兼差工作</a>&#12289;<a href="http://av8x.com/03" rel="nofollow">酒店工作</a>&#12289;<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=330643" rel="nofollow">酒店上班</a>&#12289;<a href="http://av8x.com/05" rel="nofollow">酒店打工</a>&#12289;<a href="http://av8x.com" rel="nofollow">兼職</a>&#12289;<a href="http://av6p.com" rel="nofollow">兼差</a>&#12289;<a href="http://avz4.com" rel="nofollow">兼差工作</a>&#12289;<a href="http://avl7.com" rel="nofollow">酒店上班</a>等,想了解<a href="http://avl7.com/04" rel="nofollow">酒店相關工作</a>和<a href="http://avz4.com/04" rel="nofollow">特種行業</a>內容,想<a href="http://avu4.com" rel="nofollow">兼職工作日領</a>&#12289;<a href="http://l7av.com/" rel="nofollow">假日兼職</a>&#12289;<a href="http://s4av.com/" rel="nofollow">兼差打工</a>&#12289;或<a href="http://x6av.com" rel="nofollow">晚班兼職</a>想擁有<a href="http://blog.udn.com/aed8888" rel="nofollow">鋼琴酒吧</a>又有保障的工作嗎???又可以<a href="http://0av0.com/05" rel="nofollow">現領</a>請找專業又有保障的艾葳<a href="http://www.aed8.com/front/bin/home.phtml" rel="nofollow">酒店經紀</a>公司!<br /><br />艾葳<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=330639" rel="nofollow">酒店經紀</a>是合法的公司工作環境高雅時尚&#65292;無業績壓力&#65292;無脫秀無喝酒壓力&#65292;高層次會員制客源&#65292;工作輕鬆&#65292;可<a href="http://a3av.com" rel="nofollow">日領</a>&#12289;<a href="http://avx6.com" rel="nofollow">現領</a>&#12290;<br />一般的<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=330641" rel="nofollow">酒店經紀</a>只會在水水們第一次上班和領薪水時出現而已&#65292;對水水們的上班安全一點保障都沒有&#65281;艾葳酒店經紀公司的水水們上班時全程媽咪作陪&#65292;不需擔心&#65281;只提供最優質的<a href="http://www.aed8.com" rel="nofollow">酒店上班</a>,<a href="http://www.aed8.com/front/bin/ptlist.phtml?Category=331073" rel="nofollow">酒店上班</a>,<a href="http://avx0.com" rel="nofollow">酒店打工</a>環境&#12289;上班條件給水水們&#12290;心動嗎!? 趕快來填寫你的<a href="http://www.aed8.com/front/bin/home.phtml" rel="nofollow">酒店上班</a>履歷表<br /><br />水水們妳有缺<a href="http://aed8888.pixnet.net/blog" rel="nofollow">現領</a>&#12289;有<a href="http://pink168.blogspot.com/" rel="nofollow">兼職</a>&#12289;<a href="http://m5av.com/05" rel="nofollow">缺錢</a><a href="http://aed8ed8.spaces.live.com/default.aspx" rel="nofollow">便服店</a>的煩腦嗎?想到日本留學<a href="http://www.im.tv/blog/3177093" rel="nofollow">缺錢</a>嗎?妳是<a href="http://hk.myblog.yahoo.com/aed8888@kimo.com" rel="nofollow">傳播妹</a>??想要擁有高時薪又輕鬆的<a href="http://hahapinka.spaces.live.com/default.aspx" rel="nofollow">賺錢</a>,<a href="http://aed8ed8.pixnet.net/blog" rel="nofollow">酒店</a>和,<a href="http://s4av.com/05" rel="nofollow">假日打工</a>,<a href="http://aed8888.mysinablog.com/index.php" rel="nofollow">假日兼職</a><a href="http://hahapinka.spaces.live.com/blog/" rel="nofollow">賺錢</a>的機會嗎??想實現夢想卻又<a href="http://s6av.com" rel="nofollow">缺錢</a>沒錢嗎!?? <br />艾葳酒店<a href="http://blog.xuite.net/aed8ed8/blog" rel="nofollow">台北酒店經紀</a>招兵買馬!!徵專業的<a href="http://tw.myblog.yahoo.com/jw!BKdiTxSTFRMUjbctTwdik8rQeZdDrm8T" rel="nofollow">酒店打工</a>,想要去<a href="http://aed8ed8.pixnet.net/blog" rel="nofollow">酒店</a>的水水,想要短期<a href="http://www.wretch.cc/blog/aed8ed8" rel="nofollow">日領</a>,<a href="http://%20http://blog.roodo.com/aed8ed8" rel="nofollow">酒店日領</a>,<a href="http://%20http://aed8ed8.blogspot.com/" rel="nofollow">禮服酒店</a>,<a href="http://www.im.tv/blog/3174889" rel="nofollow">制服店</a>,<a href="http://hk.myblog.yahoo.com/aed8ed8@kimo.com" rel="nofollow">酒店經紀</a>,<a href="http://aed8ed8.mysinablog.com/index.php" rel="nofollow">ktv酒店</a>,<a href="http://%20http://aed8ed8.spaces.live.com/blog/" rel="nofollow">便服店</a>,<a href="http://mypaper.pchome.com.tw/news/aed8ed8" rel="nofollow">酒店工作</a>,<a href="http://blog.udn.com/aed8ed8" rel="nofollow">禮服店</a>,<a href="http://blog.yam.com/aed8ed8" rel="nofollow">酒店小姐</a>,<a href="http://blog.sina.com.tw/aed8ed8/" rel="nofollow">酒店經紀人</a>,  <br />等相關服務 幫您快速的實現您的夢想~!!
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1253496952400#c2297475469712319188' title='comment permalink'>
+20 September, 2009 19:35
+</a>
+<span class='item-control blog-admin pid-109149642'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=2297475469712319188' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2159290426343161498'>
+<a name='c2159290426343161498'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/17700305176595632282" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-2159290426343161498-17700305176595632282"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="gamefan12">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/17700305176595632282' rel='nofollow'>gamefan12</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2159290426343161498'>
+<p>
+I think this is so good to use. I think there is a future for this. I want to see this more.<br /><a href="http://www.orlando-duilaw.net" rel="nofollow">orlando dui law</a>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1271346358500#c2159290426343161498' title='comment permalink'>
+15 April, 2010 09:45
+</a>
+<span class='item-control blog-admin pid-364911815'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=2159290426343161498' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c4567454146029679954'>
+<a name='c4567454146029679954'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/06144072179998706875" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-4567454146029679954-06144072179998706875"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="qishaya">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/06144072179998706875' rel='nofollow'>qishaya</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-4567454146029679954'>
+<p>
+one day i went shopping outside,and in an ed hardy store,I found some kinds of ed hardy i love most they are Your website is really good Thank you for the information <a href="http://www.ed-hardy-free.com" rel="nofollow"><strong>ed&#160;hardy</strong></a> ed&#160;hardy <a href="http://www.ed-hardy-free.com" rel="nofollow"><strong>ed&#160;hardy&#160;clothing</strong></a> ed&#160;hardy&#160;clothing <a href="http://www.ed-hardy-free.com/ed-hardy-shoes" rel="nofollow"><strong>ed&#160;hardy&#160;shoes</strong></a> ed&#160;hardy&#160;shoes <a href="http://www.ed-hardy-free.com" rel="nofollow"><strong>don&#160;ed&#160;hardy</strong></a> don&#160;ed&#160;hardy <a href="http://www.ed-hardy-free.com" rel="nofollow"><strong>ed&#160;hardy&#160;clothes</strong></a> ed&#160;hardy&#160;clothes <a href="http://www.ed-hardy-free.com/ed-hardy-accessories/bags" rel="nofollow"><strong>ed&#160;hardy&#160;bags</strong></a> ed&#160;hardy&#160;bags <a href="http://www.ed-hardy-free.com/ed-hardy-swimwear" rel="nofollow"><strong>ed&#160;hardy&#160;swimwear</strong></a> ed&#160;hardy&#160;swimwear <a href="http://www.ed-hardy-free.com/ed-hardy-jeans" rel="nofollow"><strong>ed&#160;hardy&#160;jeans</strong></a> ed&#160;hardy&#160;jeans <a href="http://www.ed-hardy-free.com/ed-hardy-mens" rel="nofollow"><strong>ed&#160;hardy&#160;mens</strong></a> ed&#160;hardy&#160;mens Thank you for the information
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1271827742880#c4567454146029679954' title='comment permalink'>
+20 April, 2010 23:29
+</a>
+<span class='item-control blog-admin pid-931607101'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=4567454146029679954' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8286920728347952322'>
+<a name='c8286920728347952322'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/02426237509987504754" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-8286920728347952322-02426237509987504754"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="seldamuratim">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/02426237509987504754' rel='nofollow'>seldamuratim</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8286920728347952322'>
+<p>
+Really trustworthy blog. Please keep updating with great posts like this one. I have booked marked your site and am about to email it to a few friends of mine that I know would enjoy reading..<br /><a href="http://www.seslidesohbet.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslidesohbet.com" title="sesli chat" rel="nofollow">sesli chat</a><a href="http://www.seslidesohbet.com" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a><a href="http://www.seslidesohbet.com" title="seslisohbet" rel="nofollow">seslisohbet</a><a href="http://www.seslidesohbet.com" title="sesli sohbet siteleri" rel="nofollow">sesli sohbet siteleri</a><a href="http://www.seslidesohbet.com" title="sesli chat siteleri" rel="nofollow">sesli chat siteleri</a><a href="http://www.seslidesohbet.com" title="seslichat" rel="nofollow">seslichat</a><a href="http://www.seslidesohbet.com" title="sesli sohpet" rel="nofollow">sesli sohpet</a><a href="http://www.seslidesohbet.com" title="seslisohbet.com" rel="nofollow">seslisohbet.com</a><a href="http://www.seslialo.com" title="sesli chat" rel="nofollow">sesli chat</a><a href="http://www.seslialo.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslialo.com" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a><a href="http://www.seslisohbetr.com" title="sesli chat" rel="nofollow">sesli chat</a><a href="http://www.seslisohbetr.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslisohbetr.com" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a><br /><a href="http://www.gvzsohbet.net" title="seslisohbet" rel="nofollow">seslisohbet</a><a href="http://www.gvzsohbet.net" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.gvzsohbet.net" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a><a href="http://www.seslisohbetr.net" title="sesli chat" rel="nofollow">sesli chat</a><a href="http://www.seslisohbetr.net" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslisohbetr.net" title="kamerali sohbet" rel="nofollow">kamerali sohbet</a>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1274240114867#c8286920728347952322' title='comment permalink'>
+18 May, 2010 21:35
+</a>
+<span class='item-control blog-admin pid-1447367578'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=8286920728347952322' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c27686306225257150'>
+<a name='c27686306225257150'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/14832823343464433448" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-27686306225257150-14832823343464433448"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="cilemsin42">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/14832823343464433448' rel='nofollow'>cilemsin42</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-27686306225257150'>
+<p>
+Really trustworthy blog. Please keep updating with great posts like this one. I have booked marked your site and am about to email it to a few friends of mine that I know would enjoy reading..<br /><a href="http://www.seslidetek.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><a href="http://www.seslidetek.com" title="sesli chat" rel="nofollow">sesli chat</a><br /><a href="http://www.seslidetek.com" title="sesli sohbet siteleri" rel="nofollow">sesli sohbet siteleri</a><br /><br /><a href="http://www.seslidetek.com" title="sesli chat siteleri" rel="nofollow">sesli chat siteleri sesli sohbetsesli chat<br />sesli sohbet siteleri<br />sesli chat siteleri<br />SesliChat<br />cılgın sohbet<br />güzel kızlar<br />bekar kızlar<br />dul bayanlar<br />seviyeli insanlar<br />yarışma<br />canlı müzik<br />izdivac<br />en güzel evlilik<br />hersey burada<br />sesliparti<br />seslisohbet odalari<br />Sesli adresi<br />Sesli Chat<br />SesliChat Siteleri<br />Sesli Chat sitesi<br />SesliChat sitesi<br />SesliSohbet<br />Sesli Sohbet<br />Sesli Sohbet Sitesi<br />SesliSohbet Sitesi<br />SesliSohbet Siteleri<br />Muhabbet Sitesi<br />kamerali chat<br />Görüntülü Sohbet<br />Hasret gülleri<br />Çet sitesi<br />SesliSohbet<br />Sesli Sohbet<br />Canli sohbet<br />Turkce sohbet<br />Kurtce Sohbet<br />Kurtce Chat<br />Kurtce Muhabbet<br />Kurtce Sohbet<br />Kurdish Chat<br />SesliChat<br />Sesli Chat<br />SesliSanal<br />Guncel Haber<br />sohbet Sitesi<br />Chat sitesi..</a>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1275307665053#c27686306225257150' title='comment permalink'>
+31 May, 2010 06:07
+</a>
+<span class='item-control blog-admin pid-18817380'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=27686306225257150' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c1450337525407887987'>
+<a name='c1450337525407887987'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="Anonymous">
+
+</span></div>
+Anonymous
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-1450337525407887987'>
+<p>
+Really trustworthy blog. Please keep updating with great posts like this one. I have booked marked your site and am about to email it<br /><br />to a few friends of mine that I know would enjoy reading..<br /><a href="http://www.yumuyum.com" title="seslisohbet" rel="nofollow">seslisohbet</a> <br /><a href="http://www.yumuyum.com" title="Seslichat" rel="nofollow">seslichat</a> <br /><a href="http://www.yumuyum.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a> <br /><a href="http://www.yumuyum.com" title="sesli chat" rel="nofollow">sesli chat</a><br /><a href="http://www.yumuyum.com" title="sesli" rel="nofollow">sesli</a><br /><a href="http://www.yumuyum.com" title="sesli site" rel="nofollow">sesli site</a><br /><a href="http://www.yumuyum.com" title="görüntülü sohbet" rel="nofollow">görünlütü sohbet</a><br /><a href="http://www.yumuyum.com" title="görüntülü chat" rel="nofollow">görüntülü chat</a><br /><a href="http://www.yumuyum.com" title="kameralı sohbet" rel="nofollow">kameralı sohbet</a><br /><a href="http://www.yumuyum.com" title="kameralı chat" rel="nofollow">kameralı chat</a><br /><a href="http://www.yumuyum.com" title="sesli sohbet siteleri" rel="nofollow">sesli sohbet siteleri</a><br /><a href="http://www.yumuyum.com" title="sesli chat siteleri" rel="nofollow">sesli chat siteleri</a><br /><a href="http://www.yumuyum.com" title="görüntülü sohbet siteleri" rel="nofollow">görüntülü sohbet siteleri</a><br /><a href="http://www.yumuyum.com" title="görüntülü chat siteleri" rel="nofollow">görüntülü chat siteleri</a><br /><a href="http://www.yumuyum.com" title="kameralı sohbet siteleri" rel="nofollow">kameralı sohbet siteleri</a><br /><a href="http://www.yumuyum.com" title="canlı sohbet" rel="nofollow">canlı sohbet</a><br /><a href="http://www.yumuyum.com" title="sesli muhabbet" rel="nofollow">sesli muhabbet</a><br /><a href="http://www.yumuyum.com" title="görüntülü muhabbet" rel="nofollow">görüntülü muhabbet</a><br /><a href="http://www.yumuyum.com" title="kameralı muhabbet" rel="nofollow">kameralı muhabbet</a><br /><a href="http://www.yumuyum.com/seslidunya-seslidunyalar-net-com.html" title="seslidunya" rel="nofollow">seslidunya</a><br /><a href="http://www.yumuyum.com/seslisehir-com-net.html" title="seslisehir" rel="nofollow">seslisehir</a><br /><a href="http://www.yumuyum.com/sesli-sex-seslisex.html" title="sesli sex" rel="nofollow">sesli sex</a>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1279500463971#c1450337525407887987' title='comment permalink'>
+18 July, 2010 18:47
+</a>
+<span class='item-control blog-admin pid-1058344537'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=1450337525407887987' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2160099152216729055'>
+<a name='c2160099152216729055'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/01208937718387743310" target="" rel="nofollow" onclick="" class="avatar-hovercard" id="av-2160099152216729055-01208937718387743310"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" width="35" height="35" alt="" title="Sesli Chat">
+
+</a></span></div>
+<a href='https://www.blogger.com/profile/01208937718387743310' rel='nofollow'>Sesli Chat</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2160099152216729055'>
+<p>
+Really trustworthy blog. Please keep updating with great posts like this one. I have booked marked your site and am about to email it<br /><br />to a few friends of mine that I know would enjoy reading..<br /><a href="http://www.birsesverin.com" title="seslisohbet" rel="nofollow">seslisohbet</a><br /><a href="http://www.birsesverin.com" title="Seslichat" rel="nofollow">seslichat</a><br /><a href="http://www.birsesverin.com" title="sesli sohbet" rel="nofollow">sesli sohbet</a><br /><a href="http://www.birsesverin.com" title="sesli chat" rel="nofollow">sesli chat</a><br /><a href="http://www.birsesverin.com" title="sesli" rel="nofollow">sesli</a><br /><a href="http://www.birsesverin.com" title="sesli site" rel="nofollow">sesli site</a><br /><a href="http://www.birsesverin.com" title="görüntülü sohbet" rel="nofollow">görünlütü sohbet</a><br /><a href="http://www.birsesverin.com" title="görüntülü chat" rel="nofollow">görüntülü chat</a><br /><a href="http://www.birsesverin.com" title="kameralı sohbet" rel="nofollow">kameralı sohbet</a><br /><a href="http://www.birsesverin.com" title="kameralı chat" rel="nofollow">kameralı chat</a><br /><a href="http://www.birsesverin.com" title="sesli sohbet siteleri" rel="nofollow">sesli sohbet siteleri</a><br /><a href="http://www.birsesverin.com" title="sesli chat siteleri" rel="nofollow">sesli chat siteleri</a><br /><a href="http://www.birsesverin.com" title="sesli chat siteleri" rel="nofollow">sesli muhabbet siteleri</a><br /><a href="http://www.birsesverin.com" title="görüntülü sohbet siteleri" rel="nofollow">görüntülü sohbet siteleri</a><br /><a href="http://www.birsesverin.com" title="görüntülü chat siteleri" rel="nofollow">görüntülü chat siteleri</a><br /><a href="http://www.birsesverin.com" title="görüntülü muhabbet siteleri" rel="nofollow">görüntülü muhabbet siteleri</a><br /><a href="http://www.birsesverin.com" title="kameralı sohbet siteleri" rel="nofollow">kameralı sohbet siteleri</a><br /><a href="http://www.birsesverin.com" title="kameralı chat siteleri" rel="nofollow">kameralı chat siteleri</a><br /><a href="http://www.birsesverin.com" title="kameralı muhabbet siteleri" rel="nofollow">kameralı muhabbet siteleri</a><br /><a href="http://www.birsesverin.com" title="canlı sohbet" rel="nofollow">canlı sohbet</a><br /><a href="http://www.birsesverin.com" title="sesli muhabbet" rel="nofollow">sesli muhabbet</a><br /><a href="http://www.birsesverin.com" title="görüntülü muhabbet" rel="nofollow">görüntülü muhabbet</a><br /><a href="http://www.birsesverin.com" title="kameralı muhabbet" rel="nofollow">kameralı muhabbet</a><br /><a href="http://www.birsesverin.com" title="birsesver" rel="nofollow">birsesver</a><br /><a href="http://www.birsesverin.com" title="birses" rel="nofollow">birses</a><br /><a href="http://www.birsesverin.com/seslidunya-com-net.html" title="seslidunya" rel="nofollow">seslidunya</a><br /><a href="http://www.birsesverin.com/seslisehir-com-net.html" title="seslisehir" rel="nofollow">seslisehir</a><br /><a href="http://www.birsesverin.com/seslisex-sesli-sex.html" title="sesli sex" rel="nofollow">sesli sex</a>
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1279973513608#c2160099152216729055' title='comment permalink'>
+24 July, 2010 06:11
+</a>
+<span class='item-control blog-admin pid-457214177'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=2160099152216729055' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2884525020314159586'>
+<a name='c2884525020314159586'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.abercrombiefitch.uk.com" target="" rel="nofollow" onclick=""><img src="//img1.blogblog.com/img/blank.gif" width="35" height="35" alt="" title="d">
+
+</a></span></div>
+<a href='http://www.abercrombiefitch.uk.com' rel='nofollow'>d</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-2884525020314159586'>
+<p>
+Currently <b><a href="http://www.abercrombiefitch.uk.com/abercrombie-jeans" rel="nofollow">abercrombie jeans</a></b> in Hollywood and the <b><a href="http://www.abercrombiefitch.uk.com/abercrombie-pants/" rel="nofollow">abercrombie pants</a></b>  Abercrombie&amp; Fitch <b><a href="http://www.abercrombiefitch.uk.com/abercrombie-tees/" rel="nofollow">abercrombie tees</a></b> in youth market <b><a href="http://www.abercrombiefitch.uk.com/abercrombie-shorts/" rel="nofollow">abercrombie shorts</a></b> red head half <b><a href="http://www.abercrombiefitch.uk.com/abercrombie-sweaters/" rel="nofollow">abercrombie sweaters</a></b> side sky, can <b><a href="http://www.abercrombiefitch.uk.com/abercrombie-outerwears/" rel="nofollow">abercrombie outerwears</a></b> be treated <b><a href="http://www.abercrombiefitch.uk.com/abercrombie-hoodies/" rel="nofollow">abercrombie hoodies</a></b> as new century, the representative of youth vogue, the A&amp; F <b><a href="http://www.abercrombiefitch.uk.com/abercrombie-polos/" rel="nofollow">abercrombie polos</a></b> is the brand that American university student loves most currently, the elk of a head of amiability prints in place ahead, youth but vogue.What the brand walks is the American style of South California.Soft cotton quality&#39;s wearing on the body is very comfortable, this quarter autumn winter, the A&amp; F will continue to walk vogue sport style.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html?showComment=1280128855325#c2884525020314159586' title='comment permalink'>
+26 July, 2010 01:20
+</a>
+<span class='item-control blog-admin pid-1750554619'>
+<a class='comment-delete' href='https://www.blogger.com/delete-comment.g?blogID=19803222&postID=2884525020314159586' title='Delete Comment'>
+<img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+</dl>
+</div>
+<p class='comment-footer'>
+<a href='https://www.blogger.com/comment.g?blogID=19803222&postID=1804965598634084511' onclick=''>Post a Comment</a>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+<a name='links'></a><h4><!--Can't find substitution for tag [post.backlinksLabel]--></h4>
+<p class='comment-footer'>
+<a class='comment-link' href='' id='Blog1_backlinks-create-link' target='_blank'><!--Can't find substitution for tag [post.createLinkLabel]--></a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='https://nlpers.blogspot.com/2007/05/icml-2007-papers-up.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='https://nlpers.blogspot.com/2007/05/whattosee.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='https://nlpers.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='https://nlpers.blogspot.com/feeds/1804965598634084511/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+<div id='sidebar-wrapper'>
+<div class='sidebar section' id='sidebar'><div class='widget Profile' data-version='1' id='Profile1'>
+<h2>About Me</h2>
+<div class='widget-content'>
+<a href='https://www.blogger.com/profile/02162908373916390369'><img alt='My photo' class='profile-img' height='80' src='//4.bp.blogspot.com/-S8xlo8qPXpU/WL7hxHzH1uI/AAAAAAAAAe8/4fKySmJ6GjgrPj3tFRsoZGtO5ddT4dAigCK4B/s80/menyc-250x300.png' width='65'/></a>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link g-profile' href='https://www.blogger.com/profile/02162908373916390369' rel='author' style='background-image: url(//www.blogger.com/img/logo-16.png);'>
+hal
+</a>
+</dt>
+</dl>
+<a class='profile-link' href='https://www.blogger.com/profile/02162908373916390369' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=19803222&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' rel='nofollow' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Label' data-version='1' id='Label1'>
+<h2>Labels</h2>
+<div class='widget-content list-label-widget-content'>
+<ul>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/acl'>acl</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/ACS'>ACS</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/advising'>advising</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/algorithms'>algorithms</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/bayesian'>bayesian</a>
+<span dir='ltr'>(10)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/chunking'>chunking</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/classification'>classification</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/clustering'>clustering</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/community'>community</a>
+<span dir='ltr'>(26)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/conferences'>conferences</a>
+<span dir='ltr'>(45)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/coreference'>coreference</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/data'>data</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/discourse'>discourse</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/domain%20adaptation'>domain adaptation</a>
+<span dir='ltr'>(5)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/evaluation'>evaluation</a>
+<span dir='ltr'>(9)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/finite%20state%20methods'>finite state methods</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/graphical%20models'>graphical models</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/hiring'>hiring</a>
+<span dir='ltr'>(7)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/information%20retrieval'>information retrieval</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/journals'>journals</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/language%20modeling'>language modeling</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/linguistics'>linguistics</a>
+<span dir='ltr'>(7)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/loss%20functions'>loss functions</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/machine%20learning'>machine learning</a>
+<span dir='ltr'>(45)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/machine%20translation'>machine translation</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/mcmc'>mcmc</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/news'>news</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/online%20learning'>online learning</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/papers'>papers</a>
+<span dir='ltr'>(17)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/parsing'>parsing</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/PL'>PL</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/poll'>poll</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/problems'>problems</a>
+<span dir='ltr'>(12)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/questions'>questions</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/random'>random</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/research'>research</a>
+<span dir='ltr'>(12)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/reviewing'>reviewing</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/sentiment'>sentiment</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/software'>software</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/speech'>speech</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/statistics'>statistics</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/structured%20prediction'>structured prediction</a>
+<span dir='ltr'>(5)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/summarization'>summarization</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/survey'>survey</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/teaching'>teaching</a>
+<span dir='ltr'>(3)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/theory'>theory</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='https://nlpers.blogspot.com/search/label/topic%20models'>topic models</a>
+<span dir='ltr'>(1)</span>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=19803222&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' rel='nofollow' target='configLabel1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogList' data-version='1' id='BlogList1'>
+<h2 class='title'>My Blog List</h2>
+<div class='widget-content'>
+<div class='blog-list-container' id='BlogList1_container'>
+<ul id='BlogList1_blogs'>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/AXKkogToc1zzaQzQ7gQUlMlDOT6yNpXYfoH-u-EN96orKMNShipc4B2-3w16-oxNSA=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://lemire.me/blog' target='_blank'>
+Daniel Lemire's blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/daniel-lemire/atom/~3/8-wXxob8B4I/' target='_blank'>
+Speeding up a random-access function?
+</a>
+</span>
+<div class='item-time'>
+23 minutes ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/gRmMbXYxsKaakAnDOlu22pn73PfLHqJy0TyxmGvXE-ML8dhnWFBNJqSvxj-F3dL2PwdVpIFMEuhSg9TVTHET5mLLbaXNHw=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://statmodeling.stat.columbia.edu' target='_blank'>
+Statistical Modeling, Causal Inference, and Social Science</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/StatisticalModelingCausalInferenceAndSocialScience/~3/FfbqmTx5vIo/' target='_blank'>
+What&#8217;s the upshot?
+</a>
+</span>
+<div class='item-time'>
+10 hours ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/KFVTjwSPBHxu5yTo_QpLSb-6NWXuxf2iDLG36Od0kKaCT5noGO4IyTITQC-PI7Ndf_ixNQFYuDRikb_FAI1KdA=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://nuit-blanche.blogspot.com/' target='_blank'>
+Nuit Blanche</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/blogspot/wCeDd/~3/ii2Vklni8BM/neumann-networks-for-inverse-problems.html' target='_blank'>
+Neumann Networks for Inverse Problems in Imaging
+</a>
+</span>
+<div class='item-time'>
+22 hours ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/BnQftQM3jOX5aZOFpbgfSbqiTDnjOdA3RAaJu6RpPDh5yYUC1nVfGB4wgFODh2WwDNjgUrOJSaS0e2Rc1yttzDRC=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://lucatrevisan.wordpress.com' target='_blank'>
+in   theory</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://lucatrevisan.wordpress.com/2019/04/25/online-optimization-post-2-constructing-pseudorandom-sets/' target='_blank'>
+Online Optimization Post 2: Constructing Pseudorandom Sets
+</a>
+</span>
+<div class='item-time'>
+1 day ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/0p3jSguSoH_b3zcUal959JlweUeJsUYgG7_ZDjsq9rPDH7hWb2xQIslqAloeEhhnSWRi-3tNicza8RuACF2qNFJNWjjbXZjZ=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://blog.computationalcomplexity.org/' target='_blank'>
+Computational Complexity</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://blog.computationalcomplexity.org/2019/04/geo-centric-complexity.html' target='_blank'>
+Geo-Centric Complexity
+</a>
+</span>
+<div class='item-time'>
+1 day ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/TArGCb8h_qeNfbn8xnZy2RHwgKsytt8SWh5ZNtfgwhAZt4bkHuFLHrIAGwOtIsSzmmXmCNQ0AShaBFwuggP4GZTC=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://mysliceofpizza.blogspot.com/' target='_blank'>
+my slice of pizza</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://mysliceofpizza.blogspot.com/2019/04/conference-acm-siam-algorithmic.html' target='_blank'>
+Conference: ACM-SIAM Algorithmic Principles of Computer Systems (APoCS20)
+</a>
+</span>
+<div class='item-time'>
+1 week ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/ZKegNZzwsozNHjZpHzqSB0RB3LH1XsP1IQCNkIRdzmSfXTs02gCPddS2GpBW-5uN9-xevClYJ7t5i_aie0o=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://terrytao.wordpress.com' target='_blank'>
+What's new</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://terrytao.wordpress.com/2019/04/12/nominations-for-2020-doob-prize-now-open/' target='_blank'>
+Nominations for 2020 Doob Prize now open
+</a>
+</span>
+<div class='item-time'>
+2 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/i986p1ASLFBHizPu7L-Izuc0qmUrwf8P1BUod8VTD041x9HGwTveSdoIAuT4Qayitd-54yMh8ag=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://blog.geomblog.org/' target='_blank'>
+The Geomblog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/TheGeomblog/~3/f-Go67FP6JE/new-conference-announcement.html' target='_blank'>
+New conference announcement
+</a>
+</span>
+<div class='item-time'>
+2 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh3.googleusercontent.com/proxy/sby2Wfl6cEqBMMS7feUM8QArNbm7_7tFmV5YGMt_MTCTQFGBFCuWGxbjuGlaTRrPRgqZ5y8oetOMrw=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://wadler.blogspot.com/' target='_blank'>
+Wadler's Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://wadler.blogspot.com/2019/03/pinkers-thirteen-rules-for-better.html' target='_blank'>
+Pinker's Thirteen Rules for Better Writing
+</a>
+</span>
+<div class='item-time'>
+4 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/yxui1sZaOfhURaKfvaicNoXIzX5vD4DblwTuFJuQkMNTTYUt70-jS6QCK4L14MlSplmF6WSYDW6Lpk_L=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.talkingbrains.org/' target='_blank'>
+Talking Brains</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/TalkingBrains/~3/spYQGDVYZ_k/postdoc-positions-in-cognitive.html' target='_blank'>
+Postdoc Positions in Cognitive Neuroscience of Communication at the University of Connecticut
+</a>
+</span>
+<div class='item-time'>
+4 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh3.googleusercontent.com/proxy/3mp7ahsogluZg1OlYi96t2lnp14FEJ4ZzPCbXZj-R7eVlc31hW1QQH6aeaJGEDIERIvcAoIXxOLd=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://www.jstatsoft.org/index.php/jss' target='_blank'>
+Journal of Statistical Software</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://www.jstatsoft.org/index.php/jss/article/view/v088i07' target='_blank'>
+CoClust: A Python Package for Co-Clustering
+</a>
+</span>
+<div class='item-time'>
+4 weeks ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh3.googleusercontent.com/proxy/FjV3tq-0b3CpIwoo6e7Q0SOyQzgPvWNlD6xsQ0JVOK0FRoaifpI9GxPRZR2FA66r=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://hunch.net' target='_blank'>
+Machine Learning (Theory)</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://hunch.net/?p=11377237' target='_blank'>
+Code submission should be encouraged but not compulsory
+</a>
+</span>
+<div class='item-time'>
+2 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/KfOhaf0BkgQuxaz6OmtKkdMPZRS5wqyGaEaqCg0bmjAt7O2rCfYaYEcCp-BLMQ9wJlXznI9vUNoLY4FElPaEEQ=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://mybiasedcoin.blogspot.com/' target='_blank'>
+My Biased Coin</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://mybiasedcoin.blogspot.com/2019/01/analco-sosa-soda-post.html' target='_blank'>
+ANALCO, SOSA, SODA post
+</a>
+</span>
+<div class='item-time'>
+3 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/QGeVyt5AkoZIpxWjBk_NL4HujYlryY5uNlkOWV3esZCj_zhLTAnX5EPH7F6g2omSs2kvidfzA25gO366=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://gowers.wordpress.com' target='_blank'>
+Gowers's Weblog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://gowers.wordpress.com/2018/12/22/how-craig-barton-wishes-hed-taught-maths/' target='_blank'>
+How Craig Barton wishes he&#8217;d taught maths
+</a>
+</span>
+<div class='item-time'>
+4 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/vB_dUUOTiWKpwmQA3wQs0CbQvYmScWDWUELl0QmKNEBHiHgfmKIPefMnSE1S9DImirNZWWXy9VnQ=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.scala-lang.org/news/' target='_blank'>
+The Scala Programming Language</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.scala-lang.org/news/2018/12/20/programming-reactive-systems-course.html' target='_blank'>
+New Course: &#8220;Programming Reactive Systems&#8221;
+</a>
+</span>
+<div class='item-time'>
+4 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh3.googleusercontent.com/proxy/etR8ZpeKnVIJT2AedMQO5lqZAahaieyYw_JtjgTr--mRepSFK4iTaWba9AGRoqiNqdx7jW2-E2jCZ3ULwKw=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://www.earningmyturns.org/' target='_blank'>
+Earning My Turns</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://www.earningmyturns.org/2018/09/august-september-music.html' target='_blank'>
+August-September music
+</a>
+</span>
+<div class='item-time'>
+7 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/FbIQW-FqR87X7HuQMennc2Ij_4FGVD44paEILlJTi6fQrteu6yFSXQ41CCjGHREZAMLQLzqE=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://math.andrej.com/' target='_blank'>
+Mathematics and Computation</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://math.andrej.com/2018/08/25/how-to-implement-type-theory-in-an-hour/' target='_blank'>
+How to implement type theory in an hour
+</a>
+</span>
+<div class='item-time'>
+8 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/SoLaIWMkhytJYtynE-8jWUTJKicd7Hih3dq7bSgDvrRsZmfOfTzqSVtUwICMMcpjmqpI-Y4N4uQNmU748YQLZ0Q=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.computervisionblog.com/' target='_blank'>
+tombone's blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.computervisionblog.com/2018/05/deepfakes-ai-powered-deception-machines.html' target='_blank'>
+DeepFakes: AI-powered deception machines
+</a>
+</span>
+<div class='item-time'>
+11 months ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/yt8h1ZYHFMDQW_9PR6rNo1Dw2K3FUSn3fbGA6Fy5WOCLPRuxX055MHLXHwxADHzWnig0XH9lDwPdKaKkrA=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://tcsmath.wordpress.com' target='_blank'>
+tcs math - some mathematics of theoretical computer science</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://tcsmath.wordpress.com/2018/04/12/two-pages-of-the-book-stuck-together/' target='_blank'>
+Two pages of the book, stuck together
+</a>
+</span>
+<div class='item-time'>
+1 year ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/noV6FJXy-GpUHYDaX4Jz08874ToASMix2ktY42-gnXHyTk7MAdICtwgaDvt-Z7zwTPOfnFwHaasPZGY=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://glinden.blogspot.com/' target='_blank'>
+Geeking with Greg</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/GeekingWithGreg/~3/8hdwr6FYRNs/two-decades-of-amazoncom-recommendations.html' target='_blank'>
+Two decades of Amazon.com recommendations
+</a>
+</span>
+<div class='item-time'>
+1 year ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/GpKKryW83zrC7eMxsACQryipwCxw37p_XUy-gHToXE8vtDcIeAYgSYOW6J6cF62aXSJsWursKdGRgjWZ=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://logicomp.blogspot.com/' target='_blank'>
+Logicomp</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://logicomp.blogspot.com/2017/06/correctness-by-design-vs-formal.html' target='_blank'>
+Correctness by design vs. formal verification
+</a>
+</span>
+<div class='item-time'>
+1 year ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh3.googleusercontent.com/proxy/-SCE5lhNjiVahN050Lb1_OtBsRZNaZAPXOXMvHwhVUauJzbLVJ_TwcE4lhH_aO0djhZDj6-f=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://xorshammer.com' target='_blank'>
+XOR's Hammer</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='https://xorshammer.com/2017/05/29/how-is-it-even-possible-for-a-sailboat-to-sail-into-the-wind/' target='_blank'>
+How is it even possible for a sailboat to sail into the wind?
+</a>
+</span>
+<div class='item-time'>
+1 year ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/GDBy96Tf59cU2vfXiwchvcA9KjhB6tN0w3DqzTp7ddHhBLCXWRwAEj0sW565UPv800n-pAF7TWti=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://michaelnielsen.org/blog' target='_blank'>
+Michael Nielsen</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://feedproxy.google.com/~r/michaelnielsen/wmna/~3/lKQMYJNDCbs/' target='_blank'>
+Is there a tension between creativity and accuracy?
+</a>
+</span>
+<div class='item-time'>
+2 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/78EWePFP1AJYPtSm9a_hjfzYgAE8s2PjjF6scLE0c_AEI0epeXqlAWuI1HHxko8OG7E7YNfeqA=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://blog.oddhead.com/' target='_blank'>
+Oddhead Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://blog.oddhead.com/2015/10/25/algorithmic-economics-postdoc-msr-nyc/' target='_blank'>
+Algorithmic economics postdoc position at Microsoft Research, NYC
+</a>
+</span>
+<div class='item-time'>
+3 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/Bldaa0ZH6pLuY6nJFpI0g2JBZuuqvE4iPnXgesmCMKKZH43KMjWJIuk6WsEruDwYjSHl8o8quz9A4Xnar6cLwLg=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://andysresearch.blogspot.com/' target='_blank'>
+Andy's Math/CS page</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://andysresearch.blogspot.com/2014/10/making-academic-contacts-some-thoughts.html' target='_blank'>
+Making academic contacts (some thoughts for new researchers)
+</a>
+</span>
+<div class='item-time'>
+4 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/LZsZyd-3XVF0IO2rrd5Jpd_n1Z2W6neGxuoRv5w35le1VaGs9Lz_qyhVH4VTayrtpJsY3FAy3FGDmw=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://statmt.blogspot.com/' target='_blank'>
+The StatMT Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://statmt.blogspot.com/2014/09/easy-parallel-corpora-from-wikipedia.html' target='_blank'>
+Easy parallel corpora from Wikipedia
+</a>
+</span>
+<div class='item-time'>
+4 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/qhUJAYiAXvnFUlSdEzeOuYoBnsake1NYn9ZwXSxs_7YdZw8JKc_9T1D6IsHMvnlVrR5Qj8RZmVteWxg=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://vimsu99.blogspot.com/' target='_blank'>
+Learning in Vision</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://vimsu99.blogspot.com/2014/03/dual-submissions-busted.html' target='_blank'>
+Dual submissions -- busted!
+</a>
+</span>
+<div class='item-time'>
+5 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/GGKgv2BmcHGmvUAIfX7sUhK57Dc9d6KSQ8DVJMI71doXga1P7UuFrsFBK8DFUGaw4Uc8qWDIV3rRCvUhz_I=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://infoweekly.blogspot.com/' target='_blank'>
+WebDiarios de Motocicleta</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://infoweekly.blogspot.com/2012/05/presburger-award.html' target='_blank'>
+Presburger Award
+</a>
+</span>
+<div class='item-time'>
+6 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/NbftHuWwXwRm0DaBzWWdl-v1Mc9g0HRSI_iWCKDuPINT9Kk659MvF15X3YIXAuvyCqA7FbY3pFXT=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://lingpipe-blog.com' target='_blank'>
+LingPipe Blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://lingpipe-blog.com/2010/05/04/upgrading-java-classes-backward-compatible-serialization/' target='_blank'>
+Upgrading Java Classes with Backward-Compatible Serialization
+</a>
+</span>
+<div class='item-time'>
+8 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/f6P41xXANB9H0q36WCoBVSpW9pOS_vy-kZuJBs9330tEelQCHLfWLAN9opWP6cnffVGwsf_Vacckj_rCbH0iTg=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://qualgorithms.blogspot.com/' target='_blank'>
+Quantum Algorithms</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://qualgorithms.blogspot.com/2008/12/polynomial-time-quantum-algorithm-for.html' target='_blank'>
+Polynomial-time quantum algorithm for the simulation of chemical dynamics
+</a>
+</span>
+<div class='item-time'>
+10 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/JizXqqROCXx8pzJDKXwmbRKZYGxbxWSENCQR8s8xlGXYHeNXOBV6qBTtTRMQmwtpGf4wfrHfT67b=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.sixthform.info/maths' target='_blank'>
+Mathematics Weblog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://www.sixthform.info/maths/?p=166' target='_blank'>
+A Levels
+</a>
+</span>
+<div class='item-time'>
+11 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh3.googleusercontent.com/proxy/pOtzqKmyiuTgPPj0x7w-GnTQwM6XUNQ6ETzm22wWCKOJw2qJiO9GT_bhN2-WEgGr0CSovWmQZbzZu4Dou14s=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://structlearn.blogspot.com/' target='_blank'>
+Structured Learning</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<a href='http://structlearn.blogspot.com/2007/07/corrections-to-acl-anthology-urls.html' target='_blank'>
+Corrections to ACL Anthology URLs
+</a>
+</span>
+<div class='item-time'>
+11 years ago
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/HrcFRkeXWL8DHGyWNKVC4n3rrz7VkVt2_fOnOcd6z7mNlFKx1kdF19QChXdXiOLDHFQ6uib2K8FUqp7rg0VFP1A=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://apperceptual.wordpress.com/feed/' target='_blank'>
+Apperceptual</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/2XvQqtbpDV0xsPTDKoGYXAMTMSEsE97PvyMzhsNBBL47_FcjCOx0NBAve0qjidMoCmfhJAg=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://sixthform.info/maths/b2rss2.php' target='_blank'>
+Mathematics Weblog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/ZPe0wqG0xJWmj6H4oD1pOfw7IPjgERounhx4FY8Wdn_QgFGkkAUwOWujgdqug_lS=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://mehve.org/ywml/atom.xml' target='_blank'>
+yw's machine learning blog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/cWKQwFJ3NTJZtcZQin2RkroItRhwJX0wR2-uEshtM7URWaTrgTwxk6bLQYp3YFoSqV4xmg0NoleX5lB2iBwEk2Tl=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://undirectedgrad.blogspot.com/feeds/posts/default' target='_blank'>
+Undirected Grad</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/vJRjUacZ51faqmiZWjpVOmGzEJkwnGm0RzdSQvPRd3ZOWkraGAzzGClKvQ7htgW9PoQ0G6yPdY_5zXz6=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://www.datawrangling.com/feed/' target='_blank'>
+Data Wrangling</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh3.googleusercontent.com/proxy/c2zXSkDdDJAXffRUYfEemwqH78a-oGktig4Kiz_mxkTXvApTM_ZABOe-y9LjggcQlOgx2ZNhTq-Z6Od9-QQP=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://ergodicity.iamganesh.com/feed/atom/' target='_blank'>
+Ganesh Swami</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/w4aA3hr7EXbhjjUyVhJtI2EIVGifPwOB9_fTxO8SsAR_z8raYW9iq4V_Uco_bmBhtqcRJGVPXz2QCfQroP8uKZO4K1PPnMkjqy0=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='https://www.lists.utah.edu/wws/rss/latest_d_read/mstatbiostat?count=20&for=10' target='_blank'>
+mstatbiostat :</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/qXnoxci4mhuckJyGBIyTYsRQDNoiuL2KdUaWYog8x0kKXNl9wjzFgl9AArHka6tgC7-qOuBvkw=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://groundtruth.info/AstroStat/slog/feed/' target='_blank'>
+The AstroStat Slog</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/UY6Ny1sQrfL6ayfx-wsyDsh4sekpUEWG8gO158YZrXDDlZ-hTux5J1byz3Plv_yQAGJwWZd97FrhnHQ=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://feeds.feedburner.com/MainlyData' target='_blank'>
+Mainly Data</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/m_j2k_iy9FaVdLNKRfRNdBs8OrO-qn6gqG571o0DnIoJyjG6egaEuApJ_3yhpPu2UWNe=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://conflate.net/inductio/feed/' target='_blank'>
+Inductio Ex Machina</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh5.googleusercontent.com/proxy/fifP-pSmqTcZADNbIY9nO3WHTJEyBTE6t9AsMgnbh5ZWHukAJzpJ7xLQtjLfljH-wh_ldKiFb28AzbBjwvNv=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://magic.aladdin.cs.cmu.edu/feed/atom/' target='_blank'>
+[Lowerbounds, Upperbounds]</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/RML3Rwk2SwWmmZjNQVAk8eA5DWqj0rIh44aXVluOXhziCiULvrgajKJjTVbOWNXoNoGKv_S97chvpKttSqgaL5Z8ZIIlNAk_=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://clair.si.umich.edu:8080/wordpress/?feed=atom' target='_blank'>
+Information Engineering</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/qXnoxci4mhuckJyGBIyTYsRQDNoiuL2KdUaWYog8x0kKXNl9wjzFgl9AArHka6tgC7-qOuBvkw=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://groundtruth.info/AstroStat/slog/' target='_blank'>
+http://groundtruth.info/AstroStat/slog/</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh6.googleusercontent.com/proxy/7qHgz80_XsH_8TUY9dNHcdWkry8tQ26AsKIrGtDxAYNcS6Uxd8VEvKxh80KRhPIfryVq-qnvnFs0ZqAIUq9FgOCO=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://ciir.cs.umass.edu/~fdiaz/irblog/?feed=atom' target='_blank'>
+Information Retrieval</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li style='display: block;'>
+<div class='blog-icon'>
+<img data-lateloadsrc='https://lh4.googleusercontent.com/proxy/voorwkyCRbH1oCYI0tgn66M0QcGgc1XopARmKFsoCAynNrJmoBEdBTQ-EWNnrgOr1P7vsESI=s0-d' height='16' width='16'/>
+</div>
+<div class='blog-content'>
+<div class='blog-title'>
+<a href='http://ba.stat.cmu.edu/forthcoming.xml' target='_blank'>
+Bayesian Analysis Journal :: Forthcoming Articles</a>
+</div>
+<div class='item-content'>
+<span class='item-title'>
+<!--Can't find substitution for tag [item.itemTitle]-->
+</span>
+<div class='item-time'>
+<!--Can't find substitution for tag [item.timePeriodSinceLastUpdate]-->
+</div>
+</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=19803222&widgetType=BlogList&widgetId=BlogList1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogList1"));' rel='nofollow' target='configBlogList1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2018/'>
+2018
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2018/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2018/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2017/'>
+2017
+</a>
+<span class='post-count' dir='ltr'>(10)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2017/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2017/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2017/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2016/'>
+2016
+</a>
+<span class='post-count' dir='ltr'>(17)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2016/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2016/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2016/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2016/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2016/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2016/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2016/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2015/'>
+2015
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2015/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2015/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2015/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2015/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2014/'>
+2014
+</a>
+<span class='post-count' dir='ltr'>(14)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2014/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2014/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2014/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2014/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2014/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2014/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2014/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2013/'>
+2013
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2013/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2013/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2013/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2013/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2012/'>
+2012
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2012/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2012/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2012/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2012/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/'>
+2011
+</a>
+<span class='post-count' dir='ltr'>(16)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2011/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/'>
+2010
+</a>
+<span class='post-count' dir='ltr'>(29)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2010/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/'>
+2009
+</a>
+<span class='post-count' dir='ltr'>(34)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2009/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/'>
+2008
+</a>
+<span class='post-count' dir='ltr'>(37)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2008/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/'>
+2007
+</a>
+<span class='post-count' dir='ltr'>(58)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+<ul class='posts'>
+<li><a href='https://nlpers.blogspot.com/2007/05/quality-vs-quantity-in-data-annotation.html'>Quality vs. quantity in data annotation</a></li>
+<li><a href='https://nlpers.blogspot.com/2007/05/math-as-natural-language.html'>Math as a Natural Language</a></li>
+<li><a href='https://nlpers.blogspot.com/2007/05/icml-2007-papers-up.html'>ICML 2007 papers up</a></li>
+<li><a href='https://nlpers.blogspot.com/2007/05/whence-jclr.html'>Whence JCLR?</a></li>
+<li><a href='https://nlpers.blogspot.com/2007/05/whattosee.html'>WhatToSee</a></li>
+<li><a href='https://nlpers.blogspot.com/2007/05/non-linear-models-in-nlp.html'>Non-linear models in NLP</a></li>
+<li><a href='https://nlpers.blogspot.com/2007/05/future-duc-plans.html'>Future DUC Plans</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2007/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/'>
+2006
+</a>
+<span class='post-count' dir='ltr'>(78)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(10)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/07/'>
+July
+</a>
+<span class='post-count' dir='ltr'>(8)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(5)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(11)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(7)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/03/'>
+March
+</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2006/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(9)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2005/'>
+2005
+</a>
+<span class='post-count' dir='ltr'>(6)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://nlpers.blogspot.com/2005/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(6)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=19803222&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' rel='nofollow' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class='clear'>&#160;</div>
+</div>
+<!-- end content-wrapper -->
+<div id='footer-wrapper'>
+<div class='footer section' id='footer'><div class='widget HTML' data-version='1' id='HTML1'>
+<div class='widget-content'>
+<script src="//s17.sitemeter.com/js/counter.js?site=s17nlers" type="text/javascript">
+</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='//www.blogger.com/rearrange?blogID=19803222&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' rel='nofollow' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script src='https://apis.google.com/js/plusone.js' type='text/javascript'></script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/640298382-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY4Vwux5WZuLyqRzs9PFxqPoXPouyA:1556335095769';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d19803222','//nlpers.blogspot.com/2007/05/whence-jclr.html','19803222');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '19803222', 'title': 'natural language processing blog', 'url': 'https://nlpers.blogspot.com/2007/05/whence-jclr.html', 'canonicalUrl': 'https://nlpers.blogspot.com/2007/05/whence-jclr.html', 'homepageUrl': 'https://nlpers.blogspot.com/', 'searchUrl': 'https://nlpers.blogspot.com/search', 'canonicalHomepageUrl': 'https://nlpers.blogspot.com/', 'blogspotFaviconUrl': 'https://nlpers.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22natural language processing blog - Atom\x22 href\x3d\x22https://nlpers.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22natural language processing blog - RSS\x22 href\x3d\x22https://nlpers.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22natural language processing blog - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/19803222/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22natural language processing blog - Atom\x22 href\x3d\x22https://nlpers.blogspot.com/feeds/1804965598634084511/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/b1e9f650b2e5f9f3', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '1804965598634084511', 'pageName': 'Whence JCLR?', 'pageTitle': 'natural language processing blog: Whence JCLR?'}}, {'name': 'features', 'data': {'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Whence JCLR?', 'description': 'Journal publication is not too popular for NLPers -- we tend to be a conference driven bunch.  While I could care less about some arguments ...', 'url': 'https://nlpers.blogspot.com/2007/05/whence-jclr.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 1804965598634084511}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '1804965598634084511', 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1977841774-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar', document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogListView', new _WidgetInfo('BlogList1', 'sidebar', document.getElementById('BlogList1'), {'numItemsToShow': 0, 'totalItems': 47}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'footer', document.getElementById('HTML1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+Introducing Entellio 
+ (How we are harnessing the power of natural language ?) 
+ 1. INTRODUCTION 
+ An era of rapidly changing technology, virtualisation, SDN/NFV, advent of 4G LTE technology is redefining businesses across the globe. The digitalisation wave has brought artificial intelligence, natural language processing, analytics, and big data into the foray making it more possible for the machines to emulate humans. 
+ This is making most of the ways of doing things exceptionally well in the past invalid in this new environment. At its peak we expect the traditional operations replaced with operations driven by speech recognition, natural language processing, artificial intelligence, analytics and machine learning. 
+ There will be new key roles emerging in facilitating machine learning (helping machines become intelligent) and analytics. Sometimes, I like to all the next bandwagon as “Neuro-Linguistic” programmers, programmers whose role would be to train machines that process natural languages and function as a connected synergised near human neural unit. 
+ It is today that is sowing the seeds of that future, or should I say they are now tiny little saplings. The era of the customer reaching out to the product is gone. Now it is the service that must seek out the customer and that too through peer influence and not the conventional media. 
+ The word ‘convenience’ has assumed an all important role in not just discovering a service but also in delivering and managing. Product life-cycles have become short placing a very high demand on the traditional ways of creating and delivering products. More often than not, the very nature of time required to release a product makes it obsolete or it is unable to deliver the ROI 
+ 2. OUR INSPIRATION 
+ ‘Convenience’ is closely associated with the word ‘Conversation’ which we human beings are so good at. Conversation and ability to have a diverse language set to communicate is one of those traits that distinguished the humans from the rest of the animal world. This was the inspiration which also drove Maker’s lab at Tech Mahindra towards building our own conversational framework. 
+ The idea of chat bots has been around since long time. Taking a leap from the first dial tone landlines which allowed us to ring dial a number to get our account information was the earliest most primitive format of a chatbot. Being primitive, it was also not cognitive and worked on simple command sets (or number dialling sets) to provide information. As software took shape, IVR and other techniques allowed enterprises to serve customers across the world. Slightly better than a ring dial(some might say complicated as well) were IVR decision trees which were the first stage intelligent chatbots with an ability to define a decision tree based on what the user dialled at the other end of the line. 
+ As mobility progressed and mobile phones became omni-present, the IVRs were replaced by Visual IVRs and myriads of applications on phones took away the need for humans to call up call centres and engage with primitive chatbots. We are at the dusk of this age where enterprises reached a stage where apps galore and an enterprise finds it difficult to manage the myriads of them for customers and employees alike. This brings us to current state when we are seeing a shift towards natural language UI and the need for conversation to replace these many apps using chatbots. Before we go ahead and explain as to how we built our own proprietary framework, Entellio , it is worthwhile to get some of the basics out of the way. 
+ 3. WHAT ARE CHATBOTS ? 
+ Chatbots are also called Conversational Agents or Dialog Systems. Microsoft is making big bets on chatbots, and so are companies like Facebook (M), Apple (Siri), Google, WeChat, and Slack. There is a new wave of startups trying to change how consumers interact with services by building consumer apps like Operator or x.ai, bot platforms like Chatfuel, and bot libraries like Howdy’s Botkit. Microsoft recently released their own bot developer framework. 
+ Many companies are hoping to develop bots to have natural conversations indistinguishable from human ones, and many are claiming to be using NLP and Deep Learning techniques to make this possible. But with all the hype around AI it’s sometimes difficult to tell fact from fiction. 
+ 4. TAXONOMY OF CHATBOT MODELS 
+ Taxonomy of chatbot models have been well explained in the past. I am picking up an article e published by WildML to explain the same and what taxonomic models did we use to build our own internal framework 
+ Retrieval-based models (easier) use a repository of predefined responses and some kind of heuristic to pick an appropriate response based on the input and context. The heuristic could be as simple as a rule-based expression match, or as complex as an ensemble of Machine Learning classifiers. These systems don’t generate any new text; they just pick a response from a fixed set. 
+ Generative models (harder) don’t rely on pre-defined responses. They generate new responses from scratch. Generative models are typically based on Machine Translation techniques, but instead of translating from one language to another, we “translate” from an input to an output (response). 
+ B.Long vs. Short Conversations 
+ The longer the conversation are, the more difficult it is to automate them. On one side of the spectrum are Short-Text Conversations (easier) where the goal is to create a single response to a single input. For example, you may receive a specific question from a user and reply with an appropriate answer. Then there are long conversations (harder) where you go through multiple turns and need to keep track of what has been said. Customer support conversations are typically long conversational threads with multiple questions. 
+ C.Open Domain vs. Closed Domain 
+ In an open domain (harder) setting the user can take the conversation anywhere. There isn’t necessarily have a well-defined goal or intention. Conversations on social media sites like Twitter and Reddit are typically open domain — they can go into all kinds of directions. The infinite number of topics and the fact that a certain amount of world knowledge is required to create reasonable responses makes this a hard problem. 
+ In a closed domain (easier) setting the space of possible inputs and outputs is somewhat limited because the system is trying to achieve a very specific goal. Technical Customer Support or Shopping Assistants are examples of closed domain problems. These systems don’t need to be able to talk about politics; they just need to fulfill their specific task as efficiently as possible. Sure, users can still take the conversation anywhere they want, but the system isn’t required to handle all these cases — and the users don’t expect it to. 
+ So while constructing “Entellio , we chose the combination of the following 
+ c) Closed domain : Our major focus is to ensure conversations were centred around the enterprise context , so for e.g. let’s take an example of a telecom like a Vodafone serving it’s customers in India. Vodafone provides a plan called “red” which is available in Rs. 699. Now “red” is a colour but is a plan as well, so when a customer is talking to the Vodafone chatbot , the premise of red should not be an erstwhile colour but a plan, an example of semantic context mapping within a specific enterprise 
+ 5. DEEP DIVE INTO ENTELLIO 
+ As mentioned above, Entellio was constructed with the following three taxonomic designs in mind 
+ a) Retrieval based 
+ b) Long Short Hybrid conversations 
+ c) Closed Domain 
+ Entellio also uses the following architectural design techniques 
+ a) Extreme Simplicity to kick start conversations: Conversations should start instantaneously within the framework. It should be as simple as dropping a CSV /EXCEL file of a given FAQ (which enterprises have as standard operating procedures) to enable users to have semantically meaningful conversations. 
+ b) YAGNI (You ain’t gonna need it principle) : If a certain component has no value , it’s not needed and need not be forced into design of the framework. 
+ c) Separation of concerns: A very well demarcated separation of concerns between the front end, middle ware (machine learning server) and database is maintained to ensure none of the components get intertwined in glue like pattern. Coupling is avoided and cohesion is maintained between various modules. This cohesion is maintained by a REST based services model. 
+ A deep dive into Entellio would not be complete unless we can visually explain what we mean by the same, so I would try and explain the entire framework with visual sections explaining technology wherever needed for better understanding 
+ 6. USER ON-BOARDING 
+ Entellio on-boarding starts with the landing page highlighting what Entellio represents and some of the features that it offers. 
+ Entellio Main site 
+ Since Entellio is a cognitive bot framework and not just a single bot, it allows easy onboarding by clicking the “Create a Bot” button. On clicking this, Entellio opens up a new page to enable a user to create a bot of his/her own as shown below 
+ A user has the ability to register as a new user by clicking on “Register here” button or sign in with an already available username and password 
+ 7. BOT ONBOARDING 
+ Once a user signs in with a given username and password, a bot registration dashboard is shown. This bot registration dashboard provides ability for a bot admin to register three different bots on a cloud based environment. In an enterprise version, this is unlimited. 
+ The bot registration is as simple as clicking the register bot button, providing information like the bot name, domain and a description as shown below 
+ A cool thing to notice is the APPID which is a system generated GUID, and is the token to allow different clients to connect to this particular bot. This GUID is unique for each bot within the framework. By default, the bot within the framework is accessible via the url <http/https:>//<YOUR_DOMAIN>/bot/APPID/chat 
+ 8. CREATING THE BOT BRAIN 
+ Until now, the options explained have been basic CRUD (create, read, update and delete) operations for the framework to enable user to register himself/herself and also register bots. The real manifestation of cognition or machine learning happens from here on. On the bot registration screen, when a user clicks on “create a bot brain map”, the next screen is shown as below 
+ The bot brain map as shown above has “root” which is the root of the brain of the bot. All entities and intents would be placed in the hierarchy of the root for this bot.Some other elements like learning, report etc. and a test chat system to ensure that the bot is running. Even without any corpus of information put inside the bot, the bot by default gets its greetings underway and a user can chat with the bot using usual “Hi”, “Ola”, “Hello” or a “Namaste” 
+ This is the point where we differentiate with the rest of the world. Now, typically bot frameworks and APIs assume that users of the system who are normally technical would be able to create a bot for their customers. We make no such assumption; the entellio framework allows a non-technical person the same adeptness as a technical user. 
+ Another assumption we make is that bots in a corporate environment could be just a single bot or a multitudes of bots for various departments. All these departments should have some format of general FAQs (frequently asked questions . This is where the framework beings its simplicity magic 
+ All the user has to do is click on upload an FAQ file (the file has four columns viz. “Question” “Answer”, ”Topic” and a “Domain”) to kick start the conversation as shown below 
+ As soon as the user does this, behind the scenes the machine learning and NLP kicks into action. In order to explain what happens behind the screens. I would take a slight diversion from the screen shots and get into some technical/mathematical details here. 
+ Creating the word vector model — A technical explanation 
+ While the FAQ gets implanted the bot does the following behind the scenes 
+ a) It detects the language of the corpus(excel sheet) . By language we understand the natural language used like “English”, “Spanish” etc. 
+ b) We convert each question and answer into a sentence vector space 
+ c) We then make a model and store it for creating entities for our bot 
+ A Wikipedia definition of a Word2vec is a group of related models that are used to produce word Embeddings. These models are shallow, two-layered neural networks that are trained to reconstruct linguistic contexts of words. Word2vec takes as its input a large corpus of text and produces a vector space, typically of several hundred dimensions, with each unique word in the corpus being assigned a corresponding vector in the space. Word vectors are positioned in the vector space such that words that share common contexts in the corpus are located in close proximity to one another in the space. 
+ The conceptualization that happens within the code happens as following. From a given sentence, we apply simple text processing like tokenizing sentences to words, removing common stop words from the language and lemmatizing it. 
+ tokenized_words = nltk.word_tokenize(sentence.lower()) 
+ if(not no_stop_word_check): 
+ #Remove special characters 
+ tokens = remove_SpecialCharacters(tokenized_words) 
+ #From the tokenized list, take the stopwords out 
+ tokens = remove_stopwords(tokens,language) 
+ #Lemmatize tokens 
+ tokens = lemmatize_words(tokens) 
+ else: 
+ We then create a word vector model out of these sentences to find 64 bit vectors of each word as found in the corpus. The vectors also help us play with language words because only a numerical value can help us perform mathematical functions on it. 
+ A typical word vector of a corpuslooks like the following 
+ [ 
+ [0.01, -.02, 0.4, 0l67……………………………………….0.45], 
+ [0.11, -.03, 0.4, 0l67……………………………………….0.45], 
+ [0.01, -.02, 0.4, 0l67……………………………………….0.45], 
+ . 
+ . 
+ . 
+ [0.01, -.02, 0.4, 0l67……………………………………….0.45], 
+ ] 
+ What the above table shows is a matrix ( or an array of arrays) , which gets formatted for all the questions in the system. Now, what this vector space indicates is how each word in a sentence given in the FAQ is positioned w.r.t the entire corpus . 
+ A 64 bit vector is made for each sentence. It looks like an array of points distributed in a space of dimensions which are measured as the number of unique tokens of words we have. 
+ The technique for Word2Vec we use is the skip gram modeling technique which states that given a window size “m” and a word in a sentence, we would try and predict words in the window on left and right sides 
+ The model used in Noise contrastive scaling using Maximum likelihood model as shown below 
+ Where score (wt,h) computes the compatibility of word wt with the context h (a dot product is commonly used). We train this model by maximizing its log-likelihood on the training set, i.e. by maximizing 
+ Once these word vectors and sentence vectors are made, it is very easy for the system to do an analogical reasoning of a question like “King is to queen as father is to ?” and the answer is a “mother” because the vectors closely match the space of mother 
+ An example picked up to demonstrate this from tensor flow tutorials is shown above. The vectors once formatted enable us to do a lot of mathematical analysis on them. For our scenario, we use these vectors to determine semantic closeness of a question asked by a user and provide answers to the user. 
+ Coming back on the Entellio UI, the resultant of all of this is the formation of entities on the Entellio screen as shown below. The entity creation itself was something we refer to in the team as the “entity crisis” and it applies a hitherto unknown technique 
+ The above figure is a fantastic representation of a machine understanding entities and applying them to the questions put in. 
+ This is the beauty of the system. While the user sees it as porting of an excel file of a give Q&A, the system translates it into word vectors which can be analyzed using mathematical formulae. So now asking a question enables us to get the requisite response 
+ An example is shown in the figure above, where a question asked for not clearly intended but the systems still manages to reply back and gives the user options of other thing that he may wish to ask. This is possible by taking a spatial cosine distance of the question asked as a vector and comparing it to the already present within a model. The feedback buttons enable us to get enforcement from the user 
+ The above figure indicates a question answered where the bot was very sure of the answer , not showing any options to be asked beyond this. 
+ This is called as understanding the intentions of the user. More and more people talking to the bot system, allows this bot to retrain and learn better and get more conversant. 
+ 9. REPORTING 
+ How does one determine whether answers posted by the bot are the correct answers or not? The machine in this scenario is left to act on its own and it is an arduous job for a human being to determine how it performed. While creating Entellio , we were acutely aware of this issue, so we also made the framework to produce meaningful reports to indicate the performance metric of the bot that someone makes. 
+ The two figures above indicate the reports as seen by the administrator from within the bot framework. It shows a line graph and a bar graph to determine and classify the ranks of answers the bot provides. While rank 1 indicates that the bot completely understood the intention of the user, rank 5 indicates that the bot had no knowledge of this question and this needs to be entered for retraining of the bot. 
+ 10. MOVING ON TO LONG-SHORT CONVERSATIONS 
+ While the system shown above indicates how the bot performs and the algorithm it utilize behind the scene, the bot is still very “short conversational” based. In order to turn itself into a “long conversation” based system, the Entellio framework provides the ability to extend any Q&A into a conversation as shown below 
+ The above figure shows the intention expanded which allows a user to add more intentions and also modify the answer, which can be a simple statement, a connect call to an API , a CMD connect (command connect) to send responses to an IOT system or a web redirect to enable the Entellio system to allow conversational browsing on a website (more on this later) . The figure slaos shows the conversation as a button enabling users to extend this simple Q&A into a long drawn conversation as well 
+ The figure above shows the conversation being edited to enable an administrator to add a long drawn conversation behind Entellio as a framework 
+ 11. MANIFESTATIONS OF ENTELLIO 
+ It is important to understand what the framework enables . As a natural UI, this is how the framework can be utilised 
+ Natural UI with mobile phones 
+ 2.Conversational Browsing Agent 
+ The idea of a conversational browsing agent is to enable the same Entellio natural language UI to be a conversational browsing agent on a website. We believe that a lot of people still use corporate websites. 
+ These websites have entropy associated with links in them, not allowing new or old customers to reach specific information seamlessly. Entellio can become a natural language agent on the website where it can understand queries but the web redirect mechanism described earlier can enable movement of pages on the website, a technique called conversational browsing and it is unique to Entellio as it gets packaged as part of the entire suite 
+ 12. Our Belief 
+ Why do we at Maker’s lab believe in this despite the deluge of so many framework available, one might ask , and the reasons are primarily the following: 
+ a) Connects with customers seamlessly faster: Within a couple of minutes, the system trains the word vector model and is ready to be utilised within an enterprise. All it needs is an FAQ or an excel sheet to get started 
+ b) Learns its way through as more and more intents gets added and more chatting happens. 
+ c) Does not do an NLG(natural language generation): Shouldn’t that be a con ??!!! well we do not think so. Natural language generation has found bots to become narcissistic and attain a scary personality, and since our domain was solely enterprise, we did not want this to happen. We wanted humans to contribute and tell as to what their customers would see. 
+ d) Departments within an enterprise can onboard new bots quicker and faster , solving myriads of L1, L2 and even L3 support issues thereby saving on OPEX(operational expenditure). 
+ e) Works seamlessly in-premise and in the cloud. 
+ f) Is probably one of the few frameworks, that come with the ability of supporting transactions on the mobile, as a conversational browsing agent (with ability to turn pages) and an ability to send a command to any connected/IoT device. 
+ h) Seamlessly connects with other systems if a well define restful or a JSON based API is available. 
+ i) Easily customisable and configurable 
+ 13. Conclusion 
+ A change is on the horizon, and that change looks ominous. We are looking at working together with machines in solving out a lot of our tasks, but we need to imbibe that change in our psyche and work towards a more AI+iA future where iA is us doing the intelligent augmentation of machines . 
+ Entellio is a Maker’s Lab, Tech Mahindra attempt towards the same. 
+ I’m the head of Maker’s Lab , Tech Mahindra. If you think this article is interesting, please don’t hesitate to recommend it by clicking the heart button below. Please share so that more folks can see it as well :-) 
+ 

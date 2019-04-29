@@ -1,0 +1,9 @@
+Feb 24 Using Machine Learning to Solving the Universe’s Mysteries 
+ Computers can beat chess champions, simulate star explosions, and forecast global climate. We are even teaching them to be infallible problem-solvers and fast learners. 
+ And now, physicists at the Department of Energy’s Lawrence Berkeley National Laboratory (Berkeley Lab) and their collaborators have demonstrated that computers are ready to tackle the universe’s greatest mysteries. The team fed thousands of images from simulated high-energy particle collisions to train computer networks to identify important features. 
+ The researchers programmed powerful arrays known as neural networks to serve as a sort of hivelike digital brain in analyzing and interpreting the images of the simulated particle debris left over from the collisions. During this test run the researchers found that the neural networks had up to a 95 percent success rate in recognizing important features in a sampling of about 18,000 images. 
+ The study was published Jan. 15 in the journal Nature Communications. 
+ The next step will be to apply the same machine learning process to actual experimental data. 
+ “There will be many applications for this in high-energy particle physics,” Wang said, beyond particle-collider experiments. 
+ Physicists at the Department of Energy’s Lawrence Berkeley National Laboratory (Berkeley Lab) and their collaborators have demonstrated that computers are ready to tackle the universe’s greatest mysteries. 
+ 

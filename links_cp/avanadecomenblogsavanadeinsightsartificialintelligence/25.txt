@@ -1,0 +1,23 @@
+Realizing the true magic of AI by delivering transformative experiences 
+ Article by 
+ By 
+ It’s all about data, analytics and human-centric design
+Transformative user experience and intelligent action – these are the magical things that AI provides. Now that we can integrate mountains of data and process it with machine learning models, we’re starting to realize the true magic of AI. It’s most valuable when we deliver intelligence at the end point of interaction– with employees and customers – on a day-to-day basis. 
+ And it doesn’t take in-your-face robots to make that happen. Effective AI is subtler; it’s a transparent extension of human intuition that serves to simplify interactions without being intrusive or annoying, which is accomplished with human-centric design. 
+ AI is all around us
+Let’s examine some of the ways AI is transforming the way we go about our daily lives – at work and at home. 
+ 1. Computer vision experiences are some of the most dramatic being delivered by AI. Deep neural networks enable computers to understand images and video, and the content within them. These models are used on the edge to deliver experiences such as augmented reality. 
+ Factory of the future. Microsoft HoloLens – a holographic computer – provides information, instructions and alerts based on the objects it recognizes so you don’t have to fumble around with a laptop or a mobile device and are free to use your hands to get your job done. 
+ File insurance claims quickly and efficiently. Being in a car accident is stressful enough; filing an insurance claim doesn’t have to be. By reading data from photos taken with your mobile device (driver’s license, license plates and damaged cars), computer vision can recognize makes and models of vehicles and assess damage. Through intelligent automation, your claim gets filed, and tow trucks and rental cars get ordered – all automatically. 
+ 2. Natural language processing is transforming the graphical user interface into the natural language interface through the use of chatbots, virtual agents, and intelligent search applications. 
+ A hassle-free way to resolve computer problems. You no longer have to pick up the phone or write and respond to emails in order to open a ticket for helpdesk service. An enterprise virtual agent can understand issues, such as a broken printer, and then automatically generates a ticket. Need an update? Simply ask the virtual agent a question. 
+ Easily find the information you’re looking for. Now you can search the contents of unstructured documents just by asking a question. Natural language understanding enables the enterprise virtual agent to understand the contents of unstructured documents, and provide you with the relevant passage of text. 
+ 3. Speech recognition has changed the way we interact, and with whom we interact. Cortana, Siri, and Alexa have infiltrated and enhanced almost every aspect of our lives. 
+ Cortana helps you be more efficient at work, understands your schedule and plays music for you. 
+ Siri finds a restaurant for you, guides you there and helps you find a parking spot. 
+ AI comes in many forms
+Avanade understands how to utilize them all to deliver the transformation you expect. We start with a deep understanding of the data, apply machine learning, and surface it to the user in new and unexpected ways. 
+ Tags 
+ Avanade is committed to protecting your information security. Your information will be used in accordance with any applicable data privacy law, our internal policies and our Privacy Policy, and will be held securely. Avanade will not share your personal information with any third party, except as needed to manage the events or features for which you register. By using this site you agree that we can place cookies on your device. Please review our complete Privacy Policy for additional information. 
+ Some of the required fields (*) are missing, please review your information. 
+ 

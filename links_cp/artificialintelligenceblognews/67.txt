@@ -1,0 +1,7 @@
+Mar 14 Google Releases Pixel 2 Portrait Mode Deep Learning Model 
+ Many of Google’s machine learning efforts are open-sourced so that developers can take advantage of the latest advancements. The latest release is for semantic image segmentation or the technology behind the Pixel 2’s single lens portrait mode. 
+ This deep learning model assigns semantic labels to every pixel in an image. In turn, categorization allows classifications like road, sky, person, or dog, and which part of a picture is the background and what is the foreground. 
+ Applied to photography, the latter is leveraged on the Pixel 2’s Portrait Mode for shallow depth-of-field effects with only one physical lens. This use requires optimization especially in “pinpointing the outline of objects,” or being able to distinguish where a person ends and the background begins. 
+ Assigning these semantic labels requires pinpointing the outline of objects, and thus imposes much stricter localization accuracy requirements than other visual entity recognition tasks such as image-level classification or bounding box-level detection. 
+ Many of Google’s machine learning efforts are open sourced so that developers can take advantage of the latest advancements. The latest release is for semantic image segmentation, or the technology behind the Pixel 2’s single lens portrait mode. 
+ 

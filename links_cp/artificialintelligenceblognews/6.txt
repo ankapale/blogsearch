@@ -1,0 +1,8 @@
+Nov 13 Women in AI 
+ Way back in 1992, NASA administrator Daniel Goldin described the organization as "pale, male and stale", a derisive commentary on the lack of race, gender and age/tenure diversity within the United States' premier science agency. Fast forward to 2018 and most tech industries still suffer from at least two of these symptoms. 
+ In fact, the problem may even be worsening over time. The number of women going into computer science—an obvious key ingredient in AI and ML—has decreased by half since 1985 reported Jaxenter earlier this year, and this survey found that the presence of females in top AI/ML positions is a mere 18%. 
+ Here is the ever-growing selection of featured women in artificial intelligence: 
+ Fei-Fei Li is one busy lady. She joined Google Cloud in January 2017 as Chief Scientist of AI/ML, and she also continues to serve as a Stanford professor and head of both the Artificial Intelligence Lab and the Stanford Vision Lab at the prestigious U.S. university. 
+ Latanya Sweeney boasts an impressive résumé. She is currently Harvard University's Professor of Government and Technology in Residence, where she looks at ways to tackle socio-political and governance issues with technology. 
+ Carol Reiley is a roboticist with more than a decade of experience under her belt. In 2015, she founded drive.ai, a Silicon Valley start-up with a connection to Stanford's Artificial Intelligence Lab, which is working on developing software for self-driving cars. 
+ 

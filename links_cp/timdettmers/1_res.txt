@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- This site is optimized with the Yoast SEO plugin v9.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>About Me &mdash; Tim Dettmers</title>
+<link rel="canonical" href="https://timdettmers.com/about/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="About Me &mdash; Tim Dettmers" />
+<meta property="og:description" content="Research Interests Publications Awards &amp; Honors Research Internships Service I am a PhD student at the University of Washington advised by Yejin Choi working on knowledge representations, question answering, and common sense reasoning. Previously I interned at the UCL Machine Reading Group where I was advised by Sebastian Riedel working on information retrieval and link prediction in knowledge graphs. &hellip;" />
+<meta property="og:url" content="https://timdettmers.com/about/" />
+<meta property="og:site_name" content="Tim Dettmers" />
+<meta property="article:publisher" content="https://www.facebook.com/people/Tim-Dettmers/100004739865154" />
+<meta property="og:image" content="http://timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Research Interests Publications Awards &amp; Honors Research Internships Service I am a PhD student at the University of Washington advised by Yejin Choi working on knowledge representations, question answering, and common sense reasoning. Previously I interned at the UCL Machine Reading Group where I was advised by Sebastian Riedel working on information retrieval and link prediction in knowledge graphs. [&hellip;]" />
+<meta name="twitter:title" content="About Me &mdash; Tim Dettmers" />
+<meta name="twitter:site" content="@Tim_Dettmers" />
+<meta name="twitter:image" content="http://timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png" />
+<meta name="twitter:creator" content="@Tim_dettmers" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Person","url":"https:\/\/timdettmers.com\/","sameAs":["https:\/\/www.facebook.com\/people\/Tim-Dettmers\/100004739865154","https:\/\/twitter.com\/Tim_Dettmers"],"@id":"#person","name":"Tim Dettmers"}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//timdettmers.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; Feed" href="https://timdettmers.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; Comments Feed" href="https://timdettmers.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; About Me Comments Feed" href="https://timdettmers.com/about/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/timdettmers.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.10"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='child-theme-css'  href='https://timdettmers.com/wp-content/themes/genesis/style.css?ver=2.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://timdettmers.com/wp-content/tablepress-combined.min.css?ver=3' type='text/css' media='all' />
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://timdettmers.com/wp-content/plugins/jetpack/modules/carousel/jetpack-carousel-ie8fix.css?ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='jetpack_css-css'  href='https://timdettmers.com/wp-content/plugins/jetpack/css/jetpack.css?ver=6.8' type='text/css' media='all' />
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/skip-links.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/spin.min.js?ver=1.3'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/jquery.spin.min.js?ver=1.3'></script>
+<link rel='https://api.w.org/' href='https://timdettmers.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://timdettmers.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://timdettmers.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.10" />
+<link rel='shortlink' href='https://wp.me/P7dUt6-5' />
+<link rel="alternate" type="application/json+oembed" href="https://timdettmers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftimdettmers.com%2Fabout%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://timdettmers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftimdettmers.com%2Fabout%2F&#038;format=xml" />
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-68592625-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//i0.wp.com'/>
+<link rel='dns-prefetch' href='//i1.wp.com'/>
+<link rel='dns-prefetch' href='//i2.wp.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><link rel="pingback" href="https://timdettmers.com/xmlrpc.php" />
+<!--[if lt IE 9]><script src="https://timdettmers.com/wp-content/themes/genesis/lib/js/html5shiv.min.js"></script><![endif]-->
+<style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; }
+/* ]]> */
+</style>
+<link rel="icon" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+<link rel="icon" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=192%2C192&#038;ssl=1" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=180%2C180&#038;ssl=1" />
+<meta name="msapplication-TileImage" content="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=270%2C270&#038;ssl=1" />
+</head>
+<body class="page-template-default page page-id-5 nolayout" itemscope itemtype="http://schema.org/WebPage"><div class="site-container"><section><h2 class="screen-reader-text">Skip links</h2><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li><li><a href="#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li></ul></section>
+<header class="site-header" itemscope itemtype="http://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="https://timdettmers.com/">Tim Dettmers</a></p><p class="site-description" itemprop="description">Making deep learning accessible.</p></div><div class="widget-area header-widget-area"><h2 class="genesis-sidebar-title screen-reader-text">Header Right</h2><section id="categories-4" class="widget widget_categories"><div class="widget-wrap"><h3 class="widgettitle widget-title">Blog Posts Topics</h3>
+		<ul>
+	<li class="cat-item cat-item-2"><a href="https://timdettmers.com/category/deep-learning/" >Deep Learning</a> (7)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://timdettmers.com/category/featured/" >Featured</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://timdettmers.com/category/hardware/" >Hardware</a> (7)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://timdettmers.com/category/neuroscience/" >Neuroscience</a> (1)
+</li>
+		</ul>
+</div></section>
+</div></div></header><h2 class="screen-reader-text">Main navigation</h2><nav class="nav-primary" itemscope itemtype="http://schema.org/SiteNavigationElement" id="genesis-nav-primary" aria-label="Main navigation"><div class="wrap"><ul id="menu-menu" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-431" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-431"><a href="http://timdettmers.com" data-ps2id-api="true" itemprop="url"><span itemprop="name">Blog</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-434" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-434"><a href="https://timdettmers.com/category/deep-learning/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Deep Learning</span></a></li>
+	<li id="menu-item-436" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-436"><a href="https://timdettmers.com/category/hardware/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Hardware</span></a></li>
+	<li id="menu-item-435" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-435"><a href="https://timdettmers.com/category/neuroscience/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Neuroscience</span></a></li>
+</ul>
+</li>
+<li id="menu-item-668" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-668"><a href="http://timdettmers.com/about/#Publications" data-ps2id-api="true" itemprop="url"><span itemprop="name">Publications</span></a></li>
+<li id="menu-item-433" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5 current_page_item menu-item-433"><a href="https://timdettmers.com/about/" data-ps2id-api="true" itemprop="url"><span itemprop="name">About Me</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-5 page type-page status-publish entry" itemscope itemtype="http://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">About Me</h1> 
+</header><div class="entry-content" itemprop="text"><p><a class="_ps2id" href="#interests" data-ps2id-offset="">Research Interests</a><br />
+<a class="_ps2id" href="#Publications" data-ps2id-offset="">Publications</a><br />
+<a class="_ps2id" href="#Awards" data-ps2id-offset="200">Awards &amp; Honors</a><br />
+<a class="_ps2id" href="#internships" data-ps2id-offset="200">Research Internships</a><br />
+<a class="_ps2id" href="#Service" data-ps2id-offset="">Service</a></p>
+<p><img data-attachment-id="648" data-permalink="https://timdettmers.com/about/cropped-profile_300kb-png/" data-orig-file="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=512%2C512&amp;ssl=1" data-orig-size="512,512" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="cropped-profile_300kb.png" data-image-description="&lt;p&gt;https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?resize=180%2C180&lt;/p&gt;
+" data-medium-file="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=300%2C300&amp;ssl=1" data-large-file="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=512%2C512&amp;ssl=1" class="wp-image-648 alignright" src="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?resize=180%2C180" alt="" width="180" height="180" srcset="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?w=512&amp;ssl=1 512w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?resize=270%2C270&amp;ssl=1 270w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?resize=192%2C192&amp;ssl=1 192w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?resize=180%2C180&amp;ssl=1 180w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?resize=32%2C32&amp;ssl=1 32w" sizes="(max-width: 180px) 100vw, 180px" data-recalc-dims="1" /></p>
+<p>I am a PhD student at the University of Washington advised by <a href="https://homes.cs.washington.edu/~yejin/">Yejin Choi</a> working on knowledge representations, question answering, and common sense reasoning. Previously I interned at the <a href="http://mr.cs.ucl.ac.uk/">UC</a><a href="http://mr.cs.ucl.ac.uk/">L Machine Reading Group</a> where I was advised by <a href="http://www.riedelcastro.org/">Sebastian Riedel</a> working on information retrieval and link prediction in knowledge graphs. I did my master in computer science at the University of Lugano, where I was advised by <a href="https://search.usi.ch/en/people/4f0dd874bbd63c00938825fae1843200/crestani-fabio">Fabio Crestani</a>. During my master, I did two research internship at Microsoft under <a href="https://www.linkedin.com/in/chris-basoglu-779b761">Chris Basoglu</a>, where I worked speech recognition and memory efficient deep learning algorithms. I did a bachelor in applied mathematics with The Open University while working as a software engineer in the automation industry.</p>
+<p style="text-align: left;">In 2013, I also took part in Kaggle competitions where I peaked at world rank 63 (top 0.22%).</p>
+<p style="text-align: left;">Feel free to contact me at firstname.lastname@gmail.com; if you have questions regarding deep learning, I prefer that you post your questions as comments on one of my blog posts (or on this page if it does not fit to any blog post); this way all people can profit from your questions and my answers.</p>
+<h2>Research Interests <a id="interests" data-ps2id-target=""></a></h2>
+<p>My broad interest deals with the question of how one can build and use knowledge representations to solve tasks that require background knowledge or common sense. In particular, I am interested in:</p>
+<ul>
+<li>Question answering</li>
+<li>Information retrieval</li>
+<li>Knowledge extraction</li>
+<li>External memory</li>
+<li>Knowledge representation and their usage</li>
+<li>Common sense reasoning</li>
+</ul>
+<h2 style="text-align: left;">Publications <a id="Publications" data-ps2id-target=""></a></h2>
+<h4>2018</h4>
+<p class="title mathjax"><a href="https://arxiv.org/abs/1806.08727">Jack the Reader &#8211; A Machine Reading Framework</a>, Dirk Weissenborn, Pasquale Minervini,<strong> Tim Dettmers</strong>, Isabelle Augenstein, Johannes Welbl, Tim Rocktäschel, Matko Bošnjak, Jeff Mitchell, Thomas Demeester, Pontus Stenetorp, Sebastian Riedel. ACL, 2018. [<a href="https://arxiv.org/abs/1806.08727">arXiv</a>] [<a href="https://raw.githubusercontent.com/TimDettmers/bibtex/master/jack.txt">bib</a>] [<a href="https://github.com/uclmr/jack">code</a>]</p>
+<p class="title mathjax"><a href="https://arxiv.org/abs/1707.01476">Convolutional 2D Knowledge Graph Embeddings</a>, <strong>Tim Dettmers</strong>, Pasquale Minervini, Pontus Stenetorp, Sebastian Riedel. <em>AAAI</em>, 2018 (<strong>acceptance rate 25%</strong>). [<a href="https://arxiv.org/abs/1707.01476">arXiv</a>] [<a href="https://raw.githubusercontent.com/TimDettmers/bibtex/master/ConvE.txt">bib</a>] [<a href="https://github.com/TimDettmers/ConvE">code</a>] [<a href="https://github.com/TimDettmers/ConvE/blob/master/logs.tar.gz">data</a>] [<a href="https://github.com/TimDettmers/ConvE/issues?utf8=%E2%9C%93&amp;q=">Q&amp;A</a>]</p>
+<h4>2016</h4>
+<p><a href="http://arxiv.org/abs/1511.04561">8-Bit Approximations for Parallelism in Deep Learning</a>, <strong>Tim Dettmers</strong>, <em>4th International Conference on Learning Representations (ICLR)</em>, 2016 (conference track, <strong>acceptance rate 25%</strong>). [<a href="https://arxiv.org/abs/1511.04561">arXiv</a>] [<a href="https://raw.githubusercontent.com/TimDettmers/bibtex/master/8-bit.txt">bib</a>] [<a href="https://github.com/TimDettmers/clusterNet">code</a>] [<a href="https://github.com/TimDettmers/public-data/tree/master/8-bit%20compression">data</a>]</p>
+<p><a href="http://www.inf.usi.ch/research_publication.htm?id=95">Computational and Parallel Deep Learning Performance Benchmarks for the Xeon Phi</a>,   <strong>Tim Dettmers</strong>, Hanieh Soleimani, technical report, 2016.</p>
+<h2>Awards &amp; Honors<a id="Awards" data-ps2id-target=""></a></h2>
+<p>2018/2019      J<span class="il">eff</span> <span class="il">Dean</span> &#8211; Heidi Hopper Endowed Regental Fellowship</p>
+<p>2016/2017      Google Scholarship for Students with Disabilities</p>
+<p>2016                 ICRL 2016 Travel Award</p>
+<p>2011/2012      Best regional graduate: Mathematical-technical Software Developer</p>
+<h2>Research internships <a id="internships" data-ps2id-target=""></a></h2>
+<p>2017-09 – Now            UCL Machine Reading Group, London</p>
+<p>2017-06 – 2017-09      Microsoft Research, Redmond</p>
+<p>2017-01 – 2017-06      UCL Machine Reading Group, London</p>
+<p>2016-06 – 2016-09      Microsoft Research, Redmond</p>
+<h2>Service<a id="Service" data-ps2id-target=""></a></h2>
+<p>I am reviewing for <span class="gD" data-hovercard-id="em@editorialmanager.com" data-hovercard-owner-id="23">Knowledge and Information Systems. </span></p>
+</div></article><h2 class="screen-reader-text">Reader Interactions</h2><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-2">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c643521d2d6018b6a107baf26d065caa?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c643521d2d6018b6a107baf26d065caa?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Mark</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-21T00:32:08+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-2" class="comment-time-link" itemprop="url">2015-01-21 at 00:32</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Are you building your own ml machines or buying gaming machines with Nvidia 980 gpu&#8217;s? What is a good desktop to buy for ml? I do not really want to put together my own computer.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2' onclick='return addComment.moveForm( "comment-2", "2", "respond", "5" )' aria-label='Reply to Mark'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-3">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">timdettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-22T08:08:37+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-3" class="comment-time-link" itemprop="url">2015-01-22 at 08:08</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It is always significantly cheaper to build one&#8217;s own machine and you can customize the parts better. Gaming machine often have some parts that are better than needed and some important parts which worse than needed. However, for single GPU systems overall performance is determined by the GPU (about 90%) and not by the surrounding hardware (about 10%); so any gaming rig with a GTX 980 or any other good deep learning card will be all that you need – all choices are good.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3' onclick='return addComment.moveForm( "comment-3", "3", "respond", "5" )' aria-label='Reply to timdettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-14994">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cb7f382efc7550355acfa0ade67ecccd?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/cb7f382efc7550355acfa0ade67ecccd?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://mohinipreetamsingh.info" class="comment-author-link" rel="external nofollow" itemprop="url">Mohini Singh</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-14T11:27:16+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-14994" class="comment-time-link" itemprop="url">2017-05-14 at 11:27</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Can i use Matlab for deep learning to make a project on speech recognition? I need to add this program in a system in a bank for voice recognition.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14994' onclick='return addComment.moveForm( "comment-14994", "14994", "respond", "5" )' aria-label='Reply to Mohini Singh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-4" id="comment-15029">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-15T17:57:20+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-15029" class="comment-time-link" itemprop="url">2017-05-15 at 17:57</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>A quick google search yielded these matlab deep learning libraries:<br />
+<a href="https://github.com/huashiyiqike/LSTM-MATLAB" rel="nofollow">https://github.com/huashiyiqike/LSTM-MATLAB</a><br />
+<a href="http://www.vlfeat.org/matconvnet/" rel="nofollow">http://www.vlfeat.org/matconvnet/</a></p>
+<p>Hope that helps.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15029' onclick='return addComment.moveForm( "comment-15029", "15029", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-4">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9ed2fe4c4c7a83ee05e43391328289fd?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9ed2fe4c4c7a83ee05e43391328289fd?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://twitter.com/gilaniali" class="comment-author-link" rel="external nofollow" itemprop="url">Ali Gilani (@gilaniali)</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-09T21:38:26+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-4" class="comment-time-link" itemprop="url">2015-03-09 at 21:38</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>What reading list (blogs/online courses/books) would you suggest for someone with an economics background and wished to become competitive at Kaggle? </p>
+<p>Keep up the good work!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-4' onclick='return addComment.moveForm( "comment-4", "4", "respond", "5" )' aria-label='Reply to Ali Gilani (@gilaniali)'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-5">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">Tim Dettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-10T09:49:51+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-5" class="comment-time-link" itemprop="url">2015-03-10 at 09:49</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The Cousera ML course by Andrew Ng is excellent and will get you acquainted with all different basic machine learning algorithms. With an economics background you may already know some of these algorithms, but a refresher might be nice. </p>
+<p>Once you done that the main goal would be to become good at feature engineering. This is a very difficult task, and there is little information available – you will mainly learn through experience. The most important resource will be Kaggle forum threads of past competitions where the winners explain their methods; try to go through all the old competitions and understand the methodology of the winners – you will learn a lot from this! Also look at &#8220;Beating the benchmark threads&#8221; for each competition. There you will usually be able to learn easy basics to get started on problem.</p>
+<p>After this you will mainly learn through experience: I would use python and the scikit-learn (sklearn) module and start to do as many competitions as you can. Try to apply what the winners mentioned in their forum posts. From here it is practice, practice, practice: Initially you will have little success, but do not be discouraged by this, this is normal; it will take a few months until you will score well, and about 1-2 years until you will perform at masters level; 3-7 years and you will perform at world class level.</p>
+<p>Hope this helps – good luck!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-5' onclick='return addComment.moveForm( "comment-5", "5", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-6">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/9ed2fe4c4c7a83ee05e43391328289fd?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/9ed2fe4c4c7a83ee05e43391328289fd?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://twitter.com/gilaniali" class="comment-author-link" rel="external nofollow" itemprop="url">Ali Gilani (@gilaniali)</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-03-10T14:12:09+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-6" class="comment-time-link" itemprop="url">2015-03-10 at 14:12</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Very much appreciated Tim. its going to be a long journey but I look forward to completing it. See you at Kaggle!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6' onclick='return addComment.moveForm( "comment-6", "6", "respond", "5" )' aria-label='Reply to Ali Gilani (@gilaniali)'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-7">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/7606b6b162dfd02745c4ebebbb3dcd9f?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/7606b6b162dfd02745c4ebebbb3dcd9f?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Seung</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-08T00:54:57+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-7" class="comment-time-link" itemprop="url">2015-04-08 at 00:54</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi. Thank you very much for awesome posts about hardwares. It helped me a lot. By the way, I am just curious &#8211; what library do you use for your deep learning networks?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7' onclick='return addComment.moveForm( "comment-7", "7", "respond", "5" )' aria-label='Reply to Seung'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-8">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">Tim Dettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-08T06:34:47+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-8" class="comment-time-link" itemprop="url">2015-04-08 at 06:34</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for your feedback. Currently, I am developing my own deep learning library from scratch, which will feature automatic GPU computation for any algorithm and numpy interface. Besides that I found Torch7 to be best (among theano/pylearn2 and caffe): It is easy to use, features many highly optimized routines that other libraries do not offer and it is easy to extend.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-8' onclick='return addComment.moveForm( "comment-8", "8", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-3732">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/74c0c60ee45528647034b82f5303da0c?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/74c0c60ee45528647034b82f5303da0c?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Nur Farahana</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-03T02:21:16+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-3732" class="comment-time-link" itemprop="url">2016-05-03 at 02:21</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi, looking at this, is torch7 still relevant for DL with around 10gb to 30gb data? It is easier to install torch7 compared to Theano, but, my question is, how about the Gpu utilization?</p>
+<p>P/s thanks for that extensive guide on choosing the right gpu.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3732' onclick='return addComment.moveForm( "comment-3732", "3732", "respond", "5" )' aria-label='Reply to Nur Farahana'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-4" id="comment-3966">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-05-08T14:53:15+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-3966" class="comment-time-link" itemprop="url">2016-05-08 at 14:53</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Torch7 and theano are good and should offer about the same GPU utilization.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3966' onclick='return addComment.moveForm( "comment-3966", "3966", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-9">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/137550a14f2419e3ae3fd4e08ec83975?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/137550a14f2419e3ae3fd4e08ec83975?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://gravatar.com/akpraharaj" class="comment-author-link" rel="external nofollow" itemprop="url">Aditya Kumar Praharaj</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-04-29T00:01:35+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-9" class="comment-time-link" itemprop="url">2015-04-29 at 00:01</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey! Just saw your blog. Nice endeavor. I&#8217;m an undergrad myself as well. I saw your article on Hardware for Deep Learning. I had been thinking of building a machine for my research. Can you shell out some details about your system?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-9' onclick='return addComment.moveForm( "comment-9", "9", "respond", "5" )' aria-label='Reply to Aditya Kumar Praharaj'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-10">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">Tim Dettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-05-01T04:40:45+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-10" class="comment-time-link" itemprop="url">2015-05-01 at 04:40</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I currently have 4x GTX Titan, i7 4820K (4core, 8 threads), PCIe 3.0 CPU, 32GB RAM and a SSD + 1TB HD.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-10' onclick='return addComment.moveForm( "comment-10", "10", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-14">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/36fc993b44f9518897c08f591ef93358?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/36fc993b44f9518897c08f591ef93358?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://www.facebook.com/568566154" class="comment-author-link" rel="external nofollow" itemprop="url">Deepak Nath</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-02T05:55:45+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-14" class="comment-time-link" itemprop="url">2015-06-02 at 05:55</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Your website is amazing. Thank you so much for putting these together.</p>
+<p>What is the motherboard you are using?</p>
+<p>I am putting together the following &#8211; what do you feel? If I use AMD CPU with PCIe 2.0 then the cost could come down by 400 $. Would I be sacrificing lot by using a PCIe 2.0 ?</p>
+<p>Thank you,<br />
+Deepak</p>
+<p>Component		Selection	Price<br />
+CPU	</p>
+<p>Intel Core i7-4820K 3.7GHz Quad-Core Processor<br />
+$319.99	Buy<br />
+CPU Cooler	</p>
+<p>RAIJINTEK AIDOS BLACK 48.6 CFM Sleeve Bearing CPU Cooler<br />
+$24.21	Buy<br />
+Motherboard	</p>
+<p>Asus Rampage IV Gene Micro ATX LGA2011 Motherboard<br />
+From parametric selection (show)<br />
+$229.99	Buy<br />
+Memory	</p>
+<p>G.Skill Ripjaws X Series 8GB (2 x 4GB) DDR3-1600 Memory<br />
+$59.98	Buy<br />
+Storage	</p>
+<p>Western Digital Caviar Blue 1TB 3.5&#8243; 7200RPM Internal Hard Drive<br />
+$51.49	Buy<br />
+Video Card	</p>
+<p>EVGA GeForce GTX 960 4GB SuperSC ACX 2.0+ Video Card<br />
+$238.98	Buy<br />
+Case	</p>
+<p>Corsair 100R ATX Mid Tower Case<br />
+$47.99	Buy<br />
+Power Supply	</p>
+<p>Corsair CX 500W 80+ Bronze Certified Semi-Modular ATX Power Supply<br />
+$66.98	Buy<br />
+Total:	$1039.61</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14' onclick='return addComment.moveForm( "comment-14", "14", "respond", "5" )' aria-label='Reply to Deepak Nath'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-4" id="comment-16">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">Tim Dettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-04T05:50:52+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-16" class="comment-time-link" itemprop="url">2015-06-04 at 05:50</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I have an Asus Rampage and a <a href="http://www.gigabyte.com/products/product-page.aspx?pid=4050#ov" rel="nofollow">Gigabyte motherboard</a>; for most people the Asus Rampage did work fine, but for me it would not work with 4 GPUs. So I switched to my Gigabyte motherboard which just works fine with 4 GPUs. Generally there is not much wrong you can do with a motherboard — in my case it was just bad luck with the Asus Rampage.</p>
+<p>I have no data from AMD CPUs, but because CPUs are not that important, I do not think you can go wrong with that. If you roll with PCIe 2.0, then you really should only work with one GPU (0-10 % performance decrease); otherwise, if you plan to have multiple GPUs in the future try to get a PCIe 3.0 CPU and motherboard (4 GPUs about 40% performance decrease for PCIe 2.0). AMD vs. Intel should be at most 2-5 % performance decrease.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-16' onclick='return addComment.moveForm( "comment-16", "16", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-11">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/cb5b327a1c01183e8240db88646c2db2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/cb5b327a1c01183e8240db88646c2db2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://www.jokeren.cn" class="comment-author-link" rel="external nofollow" itemprop="url">Jokeren</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-05-03T11:40:48+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-11" class="comment-time-link" itemprop="url">2015-05-03 at 11:40</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>An undergrad?<br />
+Really surprised me, your articles are well organized that I think you might be an young professor or engineer!<br />
+I am new to deep learning, and I find many preliminary concept from your blogs. That helps me a lot, since my mentor just sends me a series of papers, I am confused by the jargon.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11' onclick='return addComment.moveForm( "comment-11", "11", "respond", "5" )' aria-label='Reply to Jokeren'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-12">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">Tim Dettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-05-06T06:25:44+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-12" class="comment-time-link" itemprop="url">2015-05-06 at 06:25</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you! It is quite ironical, because I flunked out of high school due to my writing. I am a dyslexic and while I have a terrible time to write with pen-and-paper I am much better at this when I can use a computer. This might seem quite paradoxical, but this is actually quite common for dyslexics: Dyslexics can often write well, but they will need help with the writing to just do that — I am so grateful that I live in a time where computers exist that can help me with that.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-12' onclick='return addComment.moveForm( "comment-12", "12", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-13">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/032e6712e47978a34c5584d1af6bfce9?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/032e6712e47978a34c5584d1af6bfce9?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Azim</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-02T04:41:16+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-13" class="comment-time-link" itemprop="url">2015-06-02 at 04:41</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I have to agree with jokeren! Very impressive blog and great subject area expertise from an undergrad. Look forward to following your blog as I begin to learn about this field! Do you have a space where I can ask you or other experts questions?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-13' onclick='return addComment.moveForm( "comment-13", "13", "respond", "5" )' aria-label='Reply to Azim'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-4" id="comment-15">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">Tim Dettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-04T05:45:49+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-15" class="comment-time-link" itemprop="url">2015-06-04 at 05:45</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you! It is best to ask questions in the form of a comment under the most appropriate blog post or here for anything else, that way the answers and questions will be visible to anyone else.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15' onclick='return addComment.moveForm( "comment-15", "15", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt depth-3" id="comment-54797">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/10aea7804c2994db3b107ccf3f1ec220?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/10aea7804c2994db3b107ccf3f1ec220?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Charles Taylor II</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-03-27T07:54:27+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-54797" class="comment-time-link" itemprop="url">2019-03-27 at 07:54</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am extremely impressed with your blog posts. I am also amazed to find that you are dyslexic like myself. Do you also find it much easier to read from a computer screen than paper text? I have noticed from mid-high school that it was much easier for me to comprehend digitized text over traditional ink and paper. Please keep up the amazing work, and I hope one day to be reading about advancements that you have provided to the AI world.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-54797' onclick='return addComment.moveForm( "comment-54797", "54797", "respond", "5" )' aria-label='Reply to Charles Taylor II'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-4" id="comment-54844">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-03-27T20:41:51+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-54844" class="comment-time-link" itemprop="url">2019-03-27 at 20:41</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you for the comment! Indeed it is much easier to read from a monitor. Computers are also such a blessing to work with! I am so glad that the computer can check my grammar/spelling and it is so easy to move and structure text and sentences. We dyslexics are lucky to live in such a great time — cheers!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-54844' onclick='return addComment.moveForm( "comment-54844", "54844", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6c1a054d05a044fbda18c13eb2e56a9e?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/6c1a054d05a044fbda18c13eb2e56a9e?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Grav Klot</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-13T09:35:04+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-17" class="comment-time-link" itemprop="url">2015-06-13 at 09:35</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you for an interesting blog. Would be great to meet, I am a few hundred Km North of you!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-17' onclick='return addComment.moveForm( "comment-17", "17", "respond", "5" )' aria-label='Reply to Grav Klot'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-18">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">Tim Dettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-06-15T11:57:57+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-18" class="comment-time-link" itemprop="url">2015-06-15 at 11:57</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Unfortunately, I will move to Switzerland soon where I will study at the University of Lugano. Currently, I am quite busy with organizing my move. So if you want to discuss/talk about things the best way to reach me is via email. If you have some questions you are always free to ask them here, so that other people will be able to see the Q&amp;A here.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-18' onclick='return addComment.moveForm( "comment-18", "18", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-19">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/17e3157e22f96d13abb0b2fb63c47cbc?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/17e3157e22f96d13abb0b2fb63c47cbc?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://bingbingbb.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">bingbingbb</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-24T14:57:07+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-19" class="comment-time-link" itemprop="url">2015-08-24 at 14:57</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for your excellent blogs. What&#8217;s your email? I want to discuss more about deep learning with you.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-19' onclick='return addComment.moveForm( "comment-19", "19", "respond", "5" )' aria-label='Reply to bingbingbb'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-2" id="comment-20">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">Tim Dettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-09-02T08:33:15+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-20" class="comment-time-link" itemprop="url">2015-09-02 at 08:33</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>My email is <a href="mailto:firstname.lastname@gmail.com">firstname.lastname@gmail.com</a>. If you have specific questions I prefer if you ask those questions as a comment on a specific blog post. That way the question/answer will be accessible for everyone.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20' onclick='return addComment.moveForm( "comment-20", "20", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3541">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/33021818f31ca381227ff17315e4f446?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/33021818f31ca381227ff17315e4f446?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ranju Mandal</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-04-28T03:42:40+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-3541" class="comment-time-link" itemprop="url">2016-04-28 at 03:42</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,</p>
+<p> Often I read your very useful articles.  I just want to know about  how can I connect an  external GPU (telsa K40) with my laptop ( Intel core i5 2.5 GHz with 8GB RAM).  I want to run some deep learning experiments using GPU ( caffe library).</p>
+<p>Is there any dock type system to correct external GPU with laptop? If you provide me some useful link to study, would be great. </p>
+<p>Many thanks.<br />
+Ranju Mandal</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-3541' onclick='return addComment.moveForm( "comment-3541", "3541", "respond", "5" )' aria-label='Reply to Ranju Mandal'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-6226">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4257780b958f7779a06dad4267a6e71f?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/4257780b958f7779a06dad4267a6e71f?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Canaan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-30T13:09:15+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-6226" class="comment-time-link" itemprop="url">2016-06-30 at 13:09</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>My name is Canaan Tinotenda Madongo and am a 2nd year masters student at Beihang University in Beijing, China. Am doing my research on Person Re-identification, were am also supposed to have an understanding of Deep learning and its application to Person Re-identification.  Am asking for your help on the above mentioned, regarding how best i can understand Deep learning and its applicablility to my research topic. Your assistance will be greatly appreciated as am new to this interesting topic of Deep Learning.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6226' onclick='return addComment.moveForm( "comment-6226", "6226", "respond", "5" )' aria-label='Reply to Canaan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-6242">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-06-30T21:03:01+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-6242" class="comment-time-link" itemprop="url">2016-06-30 at 21:03</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I am planning to write two blog posts on the topic of how to learn deep learning, but currently I have no timeline for that. I do not have the resources to help you personally, and it is difficult to give you guidance from the info that you provided. You can read my <a href="https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-core-concepts/" rel="nofollow">Deep Learning in a Nutshell series</a> to get started, and after that you might read some papers, take some courses, or even jump right into software frameworks and learn how to train networks on small dataset.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6242' onclick='return addComment.moveForm( "comment-6242", "6242", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-6563">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/4257780b958f7779a06dad4267a6e71f?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/4257780b958f7779a06dad4267a6e71f?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Canaan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-07-10T16:29:20+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-6563" class="comment-time-link" itemprop="url">2016-07-10 at 16:29</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you so much Tim, I really appreciate it&#8230;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-6563' onclick='return addComment.moveForm( "comment-6563", "6563", "respond", "5" )' aria-label='Reply to Canaan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-7465">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/eba072c66745c1a0337fae28cac0d9ed?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/eba072c66745c1a0337fae28cac0d9ed?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tony</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-16T19:26:40+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-7465" class="comment-time-link" itemprop="url">2016-08-16 at 19:26</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,</p>
+<p>I am using GTX 1070 and have met some trouble installing Ubuntu on my Windows 10 machine, the problem is described here.</p>
+<p><a href="http://askubuntu.com/questions/812985/how-do-i-deal-with-the-input-signal-out-of-range-problem-while-installing-ubun" rel="nofollow">http://askubuntu.com/questions/812985/how-do-i-deal-with-the-input-signal-out-of-range-problem-while-installing-ubun</a></p>
+<p>I would be more than appreciated if can look in to the problem and love to help! I have been haunted by this for days.</p>
+<p>Best,</p>
+<p>Tony</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7465' onclick='return addComment.moveForm( "comment-7465", "7465", "respond", "5" )' aria-label='Reply to Tony'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-7476">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-17T06:24:02+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-7476" class="comment-time-link" itemprop="url">2016-08-17 at 06:24</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I never had such an error. Do you install ubuntu via the Windows installer? Also this <a href="http://askubuntu.com/questions/189566/input-signal-out-of-range-change-settings-to-1600-x-900" rel="nofollow">link</a> might be relevant.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7476' onclick='return addComment.moveForm( "comment-7476", "7476", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-7477">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b38b84716617f41a0620e6e56f329342?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b38b84716617f41a0620e6e56f329342?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://sites.google.com/site/harshadeepg27" class="comment-author-link" rel="external nofollow" itemprop="url">Harsha deeo</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-17T06:51:41+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-7477" class="comment-time-link" itemprop="url">2016-08-17 at 06:51</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey, </p>
+<p>I would like to buy Nvidia GTX 1060 GPU but I am stuck on choosing one from these brands. Could you help me with the best one from below: </p>
+<p>1. Zotac Amp Edition<br />
+2. Zotac Mini GTX 1060<br />
+3. MSI Armor<br />
+4. MSI Gaming X</p>
+<p>Thanks and Regards<br />
+Harsha</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7477' onclick='return addComment.moveForm( "comment-7477", "7477", "respond", "5" )' aria-label='Reply to Harsha deeo'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-7517">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-18T03:29:39+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-7517" class="comment-time-link" itemprop="url">2016-08-18 at 03:29</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The brands all have the same chip so it is all about the cooling that they provide. I do not know much about fan design, but you might find some benchmarks for different temperatures for each brand in reviews for games.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7517' onclick='return addComment.moveForm( "comment-7517", "7517", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-7525">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b38b84716617f41a0620e6e56f329342?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b38b84716617f41a0620e6e56f329342?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://sites.google.com/site/harshadeepg27" class="comment-author-link" rel="external nofollow" itemprop="url">Harsha deep</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-18T07:02:19+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-7525" class="comment-time-link" itemprop="url">2016-08-18 at 07:02</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hey Tim, </p>
+<p>Thanks for coming back.  From here , <a href="http://gadgets.ndtv.com/laptops/reviews/msi-geforce-gtx-1060-gaming-x-and-zotac-geforce-gtx-1060-amp-edition-review-862713" rel="nofollow">http://gadgets.ndtv.com/laptops/reviews/msi-geforce-gtx-1060-gaming-x-and-zotac-geforce-gtx-1060-amp-edition-review-862713</a>.<br />
+Msi is having good performance . However, it says the size could be a problem. Could you help me with any good CPU where I could install this MSi GPU or the Zotac&#8217;s GPU? </p>
+<p>I am really a tyro with GPU&#8217;s, I need some guidance before I procure them.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7525' onclick='return addComment.moveForm( "comment-7525", "7525", "respond", "5" )' aria-label='Reply to Harsha deep'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-4" id="comment-7564">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-19T05:00:29+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-7564" class="comment-time-link" itemprop="url">2016-08-19 at 05:00</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The size should be fine. The GTX 1060 is a relatively short GPU even the &#8220;longer&#8221; version by Zotac should be no problem. For the CPU any CPU will do if you are planning on using just one GPU. For multiple GPUs it is important that your CPU supports at least 32 PCIe lanes. You can find this number in the specifications or in the case of intel on ark.intel.com next to the label &#8220;Max # of PCI Express Lanes&#8221; field.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7564' onclick='return addComment.moveForm( "comment-7564", "7564", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-8207">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b7ef46eaf630fccf793206ef30ceea0c?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b7ef46eaf630fccf793206ef30ceea0c?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Prashant Desai</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-09T10:37:16+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-8207" class="comment-time-link" itemprop="url">2016-09-09 at 10:37</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi,<br />
+I am currently using DL CNN to develop image based search solution for an ecommerce company. They have about 500 categories, main problem is there are many categories where the variance within categories is very high i.e.  a single sports category will have hockey stick and then box of hockey sticks where whole hockey stick is not visible, there are many categories like these. Any suggestions you have for me.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-8207' onclick='return addComment.moveForm( "comment-8207", "8207", "respond", "5" )' aria-label='Reply to Prashant Desai'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-8224">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-09-10T03:48:22+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-8224" class="comment-time-link" itemprop="url">2016-09-10 at 03:48</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Not much that you can do there. This is often so with real world data. You can either get more data or try to get cleaner data (preferably both). Academic data sets are usually also cleaned up in this more manual and tedious way (or rather with Amazon mechanical turk and the like).</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-8224' onclick='return addComment.moveForm( "comment-8224", "8224", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-9555">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a229541bf41af353d0c26bcc7e834005?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a229541bf41af353d0c26bcc7e834005?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Felicity Wang</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-09T11:44:17+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-9555" class="comment-time-link" itemprop="url">2016-11-09 at 11:44</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi<br />
+Really appreciate your sharing. I&#8217;ve also just started to learn DL. This is really helps.</p>
+<p>I&#8217;ve done a simple test of object detection on Linux. Now I&#8217;d like to try to port it to mobile devices, like a Andriod phone or Raspberry Pi.  I mean, I&#8217;d deploy a CNN network on mobile devices to implement object detection application.  I was wondering could you kindly provide some tips to choose  hardwares on mobile devices? </p>
+<p>About the CNN model, memory consumption during deployment is about 500MB per image, and computation complexity of one forward pass is about 8.35E+10 FLOPs.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-9555' onclick='return addComment.moveForm( "comment-9555", "9555", "respond", "5" )' aria-label='Reply to Felicity Wang'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-9586">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-10T23:16:53+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-9586" class="comment-time-link" itemprop="url">2016-11-10 at 23:16</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It is difficult to make explicit choices for the mobile phone hardware, because often you want all mobile phone users to use your software. So the most general option would be to run it on the mobile phone CPU. This of course requires some pretty sophisticated shrinking and optimization of the model. This is not yet in reach for most users of deep learning, but for small applications there is TensorFlow and now <a href="https://github.com/sh1r0/caffe-android-demo" rel="nofollow">Caffe2</a>, but both options still seem quite experimental.</p>
+<p>If you want to aim at specific phones, then the best ones should be ones that have the Tegra K1 chip. NVIDIA&#8217;s cuDNN works on these ships and provides quite some computing power. Memory might still be in issue here though, but you could work on your own framework to use it on such devices. However, keep in mind that your software might become obsolete quickly as software firms working internally on android frameworks might open source them at any time.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-9586' onclick='return addComment.moveForm( "comment-9586", "9586", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-11841">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/aeb27ce1a7ce296084d1f9584d5c3191?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/aeb27ce1a7ce296084d1f9584d5c3191?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Denis</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-25T18:05:58+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-11841" class="comment-time-link" itemprop="url">2017-01-25 at 18:05</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim, </p>
+<p>Cool looking graphs of the gridworld in your post on NVidia: <a href="https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-reinforcement-learning/" rel="nofollow">https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-reinforcement-learning/</a></p>
+<p>I want to use similar ones in my talks&#8230; Did you use some existing visualizer/framework or wrote the code yourself? Could you refer/share? </p>
+<p>Thanks very much in advance!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11841' onclick='return addComment.moveForm( "comment-11841", "11841", "respond", "5" )' aria-label='Reply to Denis'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-11922">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-29T22:43:46+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-11922" class="comment-time-link" itemprop="url">2017-01-29 at 22:43</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Denis,</p>
+<p>I used Inkscape for this. I only had worked once before with Inkscape, so it still took some time to produce these figures, but I found the entire experience of designing figures quite good. I think with more experience it will be quite painless and fast to design nice figures. I would recommend Inkscape.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11922' onclick='return addComment.moveForm( "comment-11922", "11922", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-11930">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/aeb27ce1a7ce296084d1f9584d5c3191?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/aeb27ce1a7ce296084d1f9584d5c3191?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Denis</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-01-30T11:02:02+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-11930" class="comment-time-link" itemprop="url">2017-01-30 at 11:02</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Ah, I see, so you didn&#8217;t run some RL learning algo to generate the plots. I also resort to Inkscape for my lectures when have no time to write code for experiments 🙂 But for RL slides &#8211; want to generate plots from real experiments to show various aspects of learning. Tried to find a simple-to-use gridworld visualizer and didn&#8217;t find one&#8230; Ended up writing one myself.<br />
+Anyway, thanks for the recommendation!</p>
+<p>Denis.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-11930' onclick='return addComment.moveForm( "comment-11930", "11930", "respond", "5" )' aria-label='Reply to Denis'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-12814">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/52051130fba05616faf1be3264a1605d?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/52051130fba05616faf1be3264a1605d?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Venkata Ramesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-04T10:06:11+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-12814" class="comment-time-link" itemprop="url">2017-03-04 at 10:06</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,</p>
+<p>I&#8217;m building my own Deep learning Rig!</p>
+<p>From your experience which of the graphics cards do you recommend.</p>
+<p>Pascal Titan X or Pascal GTX 1080 Ti?</p>
+<p>From the Ti announcement, it seem 1080 Ti is even faster than Titan X. Does that performance edge carries over to deep learning?</p>
+<p>Thanks in Advance,<br />
+Venkat</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-12814' onclick='return addComment.moveForm( "comment-12814", "12814", "respond", "5" )' aria-label='Reply to Venkata Ramesh'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-12912">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-06T11:14:45+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-12912" class="comment-time-link" itemprop="url">2017-03-06 at 11:14</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>If you can wait for the GTX 1080 Ti, definitely go for the GTX 1080 Ti. It just gives you much more bang for the buck and the 1GB difference is negligible.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-12912' onclick='return addComment.moveForm( "comment-12912", "12912", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-12927">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/52051130fba05616faf1be3264a1605d?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/52051130fba05616faf1be3264a1605d?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Venkata Ramesh</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-06T20:36:20+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-12927" class="comment-time-link" itemprop="url">2017-03-06 at 20:36</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,</p>
+<p>Thanks for the clarification. I already have a couple of them on pre-order. I hope it would&#8217;t be too late.</p>
+<p>Best,<br />
+Venkat</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-12927' onclick='return addComment.moveForm( "comment-12927", "12927", "respond", "5" )' aria-label='Reply to Venkata Ramesh'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-12963">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e494b95850545527bae010e20b7a2a58?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e494b95850545527bae010e20b7a2a58?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Gaylou Marville</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-07T17:38:53+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-12963" class="comment-time-link" itemprop="url">2017-03-07 at 17:38</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Tim,</p>
+<p>When you&#8217;re running you&#8217;re neural network, in which proportion the DDR4 SDRAM is important with respect to the GDDR ? What should be the minimum amount of it ?</p>
+<p>Which models of CPU support at least 32 PCIe lanes (SLI ready) ? It seems to be really expensive one.</p>
+<p>Thanks in Advance,</p>
+<p>Gaylou</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-12963' onclick='return addComment.moveForm( "comment-12963", "12963", "respond", "5" )' aria-label='Reply to Gaylou Marville'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-13480">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-03-19T18:26:44+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-13480" class="comment-time-link" itemprop="url">2017-03-19 at 18:26</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Having 1:1 for CPU:GPU memory is often a good choice. Depending on your use-case and software framework that you use this will differ, but generally you will be okay with 1:1. If you have more than 1 GPU, you can often relax this to 1:2 in terms of CPU:GPU memory.</p>
+<p>The lanes are not that important, only if you plan to do a lot of parallelization across GPUs. Often you do not want to do that anyways, because it is messy and requires special code in most cases. So I would go with a cheaper setup with less lanes and just use no parallelism across GPUs.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-13480' onclick='return addComment.moveForm( "comment-13480", "13480", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14223">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b96d0520329b8a004684090866b500ce?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b96d0520329b8a004684090866b500ce?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bhushan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-14T16:01:21+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-14223" class="comment-time-link" itemprop="url">2017-04-14 at 16:01</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,</p>
+<p>I am new to deep learning but serious about it. Do you think, using Ubuntu on the following gaming machine would be a good starting point? I will be coding models using Python. </p>
+<p><a href="https://www.razerzone.com/gb-en/gaming-systems/razer-blade" rel="nofollow">https://www.razerzone.com/gb-en/gaming-systems/razer-blade</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14223' onclick='return addComment.moveForm( "comment-14223", "14223", "respond", "5" )' aria-label='Reply to Bhushan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-14286">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-17T14:01:54+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-14286" class="comment-time-link" itemprop="url">2017-04-17 at 14:01</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Theoretically it should work and the laptop seems like a good choice, practically probably not so much. The problem with laptops can be that their hardware is often not well supported by Ubuntu. So before buying a laptop you should make sure that you can actually run its hardware with Ubuntu. Usually, Lenovo laptops provide the best support for Linux systems, but even here very new Lenovo laptops do usually not have full Ubuntu (or Linux) support. Often you can get it working with some hacks here and there such as custom kernels, but this is difficult, especially if you do not have the experience. In some cases kernel updates will break NVIDIA drivers and thus render your laptop unusable for CUDA / deep learning.</p>
+<p>So again, make sure your hardware is supported. If it is supported the laptop that you are linking is a good choice.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14286' onclick='return addComment.moveForm( "comment-14286", "14286", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-14290">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/b96d0520329b8a004684090866b500ce?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b96d0520329b8a004684090866b500ce?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bhushan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-04-17T18:16:49+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-14290" class="comment-time-link" itemprop="url">2017-04-17 at 18:16</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you so much Tim.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-14290' onclick='return addComment.moveForm( "comment-14290", "14290", "respond", "5" )' aria-label='Reply to Bhushan'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-15218">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/419078bcea77f6e976d2eeb5c96491ff?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/419078bcea77f6e976d2eeb5c96491ff?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rushat</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-22T17:09:02+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-15218" class="comment-time-link" itemprop="url">2017-05-22 at 17:09</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I love your blog, it&#8217;s been extremely useful for building my own DL<br />
+setup. Right now I&#8217;m undertaking a large scale project, and as helpful<br />
+and informative as your blog posts are, I cannot piece together all the<br />
+necessary information from them and hence I&#8217;m asking you for help.</p>
+<p>The aim is to have multiple nets running in one server. I think this is<br />
+possible by allocating different GPUs inside the server to separate<br />
+tasks, for example GPU0 for NetA and GPU 12 for NetB. I&#8217;m planning to<br />
+build a server with multiple GPUs inside it for this task (quite<br />
+obviously). Currently what I want to do is have one huge server with<br />
+lots of compute capability, and have all the developers sitting on<br />
+separate laptops or something similar developing the code. Later when<br />
+the developer is done he will copy the python (or whatever) files onto<br />
+the server via just a plain old USB (still to be finalized) and then run<br />
+the python files using the terminal on the server itself. Will this<br />
+work? Will this cause too much of an inconvenience to the devs? Is this<br />
+a better alternative to Virtual Machines?</p>
+<p>I have a few more questions to bug you with :P. Could you please give me an email address? I wish to discuss this in more detail with you. I actually tried to mail <a href="mailto:firstname.lastname@gmail.com">firstname.lastname@gmail.com</a>&#8230;I&#8217;m not very sure what I was expecting (it told it was an invalid address).</p>
+<p>Thanks</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15218' onclick='return addComment.moveForm( "comment-15218", "15218", "respond", "5" )' aria-label='Reply to Rushat'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-15349">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-26T13:17:21+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-15349" class="comment-time-link" itemprop="url">2017-05-26 at 13:17</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>This will work very fine and this seems to be a standard workflow (expect developers will copy the files using the network and not a usb). I would not virtualize the nodes since that will often cause problems with the GPUs. In general, if you have machines with many GPUs and you give developer ssh access it will be more than fine and they will be able to do their job. You can restrict access so that developers can only change local files; for that to work of course, you will need to setup all the tools that the developers need beforehand, or force them to use virtual environments as offered by local Anaconda installations.</p>
+<p>The email should be correct; <a href="mailto:tim.dettmers@gmail.com">tim.dettmers@gmail.com</a>.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15349' onclick='return addComment.moveForm( "comment-15349", "15349", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-15358">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/419078bcea77f6e976d2eeb5c96491ff?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/419078bcea77f6e976d2eeb5c96491ff?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Rushat</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-05-26T14:21:08+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-15358" class="comment-time-link" itemprop="url">2017-05-26 at 14:21</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks a bunch! This makes my life so much easier. I&#8217;m planning to setup 6 machines with 20 GPUs each, linked together via InfiniBand so it becomes as good as one machine with 120 GPUs. Afterwards, is it as easy as installing Ubuntu 14.04 LTS on the head node and opening up different terminals and choosing different GPUs? I heard something about slurm and how it is needed in HPC clusters, what is the deal with that?<br />
+Thank you once again</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15358' onclick='return addComment.moveForm( "comment-15358", "15358", "respond", "5" )' aria-label='Reply to Rushat'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-15598">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/657a5d555bc9c7e5a2fdf00f32ff1e68?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/657a5d555bc9c7e5a2fdf00f32ff1e68?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Anna</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-02T22:41:02+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-15598" class="comment-time-link" itemprop="url">2017-06-02 at 22:41</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Is <a href="mailto:firstname.lastname@gmail.com">firstname.lastname@gmail.com</a> your current email address?<br />
+Love your blog posts!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15598' onclick='return addComment.moveForm( "comment-15598", "15598", "respond", "5" )' aria-label='Reply to Anna'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-15680">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-06-05T03:01:51+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-15680" class="comment-time-link" itemprop="url">2017-06-05 at 03:01</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yes, it is <a href="mailto:tim.dettmers@gmail.com">tim.dettmers@gmail.com</a>.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-15680' onclick='return addComment.moveForm( "comment-15680", "15680", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-17184">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3246a1e9e399fdae3914c61a0343f554?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3246a1e9e399fdae3914c61a0343f554?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Lamar</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-15T19:17:41+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-17184" class="comment-time-link" itemprop="url">2017-07-15 at 19:17</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Tim,</p>
+<p>I&#8217;m new to deep learning and I&#8217;m thinking about building a system. What do you think of the new x399 platform and thread ripper? I wanted to start off with two Titans and upgrade to four later down the line but I wasn&#8217;t sure if I could take full advantage of the Titans with the x399 platform. Also if you don&#8217;t think x399 or AMD is a good choice which boards would you recommend?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-17184' onclick='return addComment.moveForm( "comment-17184", "17184", "respond", "5" )' aria-label='Reply to Lamar'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-17217">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-17T05:09:38+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-17217" class="comment-time-link" itemprop="url">2017-07-17 at 05:09</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>It is a bit too early to tell how good the x399 boards / CPUs will be.  I think 64 lanes are overkill for any rig that has less than 4 GPUs. The extra cores are not really needed for deep learning as is the DDR4 RAM. Overall it looks really fancy and expensive with no real payoff. The x399 platform might be more suitable for other domains, but for deep learning, it does not give any big benefit. I personally would probably go with a used DDR3 system with 36+ lanes CPU / board and some GTX 1070.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-17217' onclick='return addComment.moveForm( "comment-17217", "17217", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-17794">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/28a8ba30201f98f0b974aec052f9ba54?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/28a8ba30201f98f0b974aec052f9ba54?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://www.n2value.com" class="comment-author-link" rel="external nofollow" itemprop="url">Stephen Borstelmann MD</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-27T16:28:10+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-17794" class="comment-time-link" itemprop="url">2017-07-27 at 16:28</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim.  Thanks for your blog.  Posting this as of July 2017.  I’m a doctor/researcher interested in training convolutional neural networks (densenets, resnets, inception nets) using tensorflow, keras, &amp; python.  My current system is old (2GB GPU, 8GB RAM) so, I need a new build.  </p>
+<p>I’ve settled on the ASUS X99 E 10G WS motherboard which has 40 PCIe lanes and multiple PCIe slots.  CPU a 6 core i7 6850K, 64GB of fast DDR4 ram, with a 1 TB SSD and larger 8-10TB Hard drives. Only ONE GPU card for now. </p>
+<p>Decision is between the 12GB Titan Xp (April 2017, $1500) and 11GB GTX 1080 Ti (2017 release, $750).  With the new Volta P100 16GB coming out soon (volta’s 5120 cores vs pascal’s 3584), I’m afraid of serious buyer’s remorse with the Titan Xp. (I really want that extra 4GB!)</p>
+<p> I think the answer is to get the 11GB GTX 1080Ti while I wait for the Volta P100 PCIe to be released, and then sell the 1080Ti’s &amp; upgrade when it is out.  I am concerned Titan Xp will take a huge hit in resale price when volta comes on market.</p>
+<p>Questions:<br />
+A)  Do you agree?<br />
+B)	 Can I mix/match the 1080Ti with 1-2 Volta 100 later, will it cause incompatibility problems or slow my training?<br />
+C)	Heard of any problems with the 1080Ti &amp; CUDA/Cudnn or other DL incompatibilities?  Or works like the Titan Xp?</p>
+<p>Thanks for your thoughts.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-17794' onclick='return addComment.moveForm( "comment-17794", "17794", "respond", "5" )' aria-label='Reply to Stephen Borstelmann MD'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-17864">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-07-29T01:52:22+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-17864" class="comment-time-link" itemprop="url">2017-07-29 at 01:52</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>A) I would not buy a Volta V100 in any case, it will be very cost inefficient at about $4k-$6k a piece. There will be a commercial variant however in 2018 Q1/Q2.<br />
+B) I would do exactly this. You will not be able to parallelize across all GPUs, but you can still train models on the GTX 1080 Ti and parallelize across the GTX 1180s.<br />
+C) The GTX 1080 Ti is good. No problems for any deep learning application / software</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-17864' onclick='return addComment.moveForm( "comment-17864", "17864", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="comment-20550">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/985ea37259eb6259178f0ffd65359a15?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/985ea37259eb6259178f0ffd65359a15?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">zuko</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-09-03T00:08:57+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-20550" class="comment-time-link" itemprop="url">2017-09-03 at 00:08</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Small typo in the year of your internship<br />
+&#8220;Research internships<br />
+2016-06 – Now           Microsoft Research, Redmond&#8221;</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20550' onclick='return addComment.moveForm( "comment-20550", "20550", "respond", "5" )' aria-label='Reply to zuko'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-20555">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-09-03T06:03:52+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-20555" class="comment-time-link" itemprop="url">2017-09-03 at 06:03</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for catching that!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20555' onclick='return addComment.moveForm( "comment-20555", "20555", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20646">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/3da944271ee26b78d02429299cfcb700?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3da944271ee26b78d02429299cfcb700?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ahmed Adly</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-09-05T13:49:31+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-20646" class="comment-time-link" itemprop="url">2017-09-05 at 13:49</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,<br />
+do you provide 1 to 1 lectures ? can i have your email for further discussion ?</p>
+<p>Thank you</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-20646' onclick='return addComment.moveForm( "comment-20646", "20646", "respond", "5" )' aria-label='Reply to Ahmed Adly'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-23759">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/aca65945426dadb7fb06804311aba6f8?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/aca65945426dadb7fb06804311aba6f8?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://dattatrayshinde.com" class="comment-author-link" rel="external nofollow" itemprop="url">dattatray</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-11-09T13:41:21+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-23759" class="comment-time-link" itemprop="url">2017-11-09 at 13:41</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,<br />
+Can we use TFLearn API for distributed  training of the DNN over cluster of GPU or over Spark?<br />
+Thanks!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-23759' onclick='return addComment.moveForm( "comment-23759", "23759", "respond", "5" )' aria-label='Reply to dattatray'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-24005">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2017-11-16T22:51:56+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-24005" class="comment-time-link" itemprop="url">2017-11-16 at 22:51</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>TensorFlow, in theory, supports distributed training. But I have not yet seen any successful implementation or usage of that outside of Google. So you can use it, but probably you do not want to use it. If you need parallel training over GPUs via Spark you can look at CNTK and their distributed computing framework. It is well designed for such as task, although I have not seen it being used outside of Microsoft either.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-24005' onclick='return addComment.moveForm( "comment-24005", "24005", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-26544">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/143152af7f1563dc931ef71ce6f62af8?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/143152af7f1563dc931ef71ce6f62af8?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bob 17 years old</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-01-03T23:43:28+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-26544" class="comment-time-link" itemprop="url">2018-01-03 at 23:43</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi, Tim!<br />
+I am new for machine learning. </p>
+<p>Which laptop you will suggest to buy for beginning for running MATLAB, python, R, excel, tensor flow and further machine learning? Am I right for looking for laptop of less than 900 USD cost with DELL Vostro 5468, DELL Vostro 5568, ASUS S406UA, ASUS S510UQ, HP 15-bs563ur,  Acer Swift 3 SF315-51? Which of them you would advice me to buy?</p>
+<p>Should I buy with intel graphics 620 + amd radeon 530 or intel graphics 620 +  nvidia ge force 940 mx? Is i5 enough and ssd of 256 gb for beginning my journey?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-26544' onclick='return addComment.moveForm( "comment-26544", "26544", "respond", "5" )' aria-label='Reply to Bob 17 years old'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-27006">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-01-15T23:00:19+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-27006" class="comment-time-link" itemprop="url">2018-01-15 at 23:00</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Try to buy a laptop with an NVIDIA GPU, that should get you started for TensorFlow and machine learning. To just try things out your GPU just needs about 1-2GB of RAM. If you want to be a bit more serious about it try to find an NVIDIA GPU with 4-6GB or more RAM. The rest does not matter that much.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-27006' onclick='return addComment.moveForm( "comment-27006", "27006", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-31848">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c0e3469c73bb03f03b60e43032a7db93?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c0e3469c73bb03f03b60e43032a7db93?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://signalogic.com" class="comment-author-link" rel="external nofollow" itemprop="url">Jeff Brower</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-04-14T06:59:54+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-31848" class="comment-time-link" itemprop="url">2018-04-14 at 06:59</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Tim-</p>
+<p>I&#8217;m an avid fan of your blogs, and the mix of practical advice and theory.  We&#8217;re working on pedestrian avoidance using in-car mini-ITX servers.  With Texas Inst c66x devices we can fit 64 c66x cores into a 4&#8243; x 9 &#8221; x 9&#8243; box using half-size PCIe cards, along with a quad-core Atom, all under 150 W.  c66x devices are extremely energy efficient at 8/16-bit convolutions with 32-bit acc, also they are C/C++ programmable so we have lots of options for running the most recent compressed models, and running different ones concurrently.</p>
+<p>The problem with using TI devices is  future roadmap; they have moved away from high performance multicore CPUs and towards multicore ARM SoCs  with limited number of c66x cores, which is not an efficient architecture for HPC servers.</p>
+<p>Can you recommend a half-size GPU PCIe card ?  We need to keep each server at 150 W or less.</p>
+<p>Thanks.</p>
+<p>-Jeff</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-31848' onclick='return addComment.moveForm( "comment-31848", "31848", "respond", "5" )' aria-label='Reply to Jeff Brower'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-31993">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-04-15T16:05:45+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-31993" class="comment-time-link" itemprop="url">2018-04-15 at 16:05</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Jeff,</p>
+<p>I recommend at single slot version of GTX 1050 Ti. They are very efficient in terms of FLOPS/Watts. With the right software, you could also look into the right CPU as GPUs are often not so efficient when it comes to inference, but I think the GTX 1050 Ti would give you enough power to do real-time inference at 75W.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-31993' onclick='return addComment.moveForm( "comment-31993", "31993", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-48658">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/98554ff967c2fb5194fa041b396c5de2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/98554ff967c2fb5194fa041b396c5de2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tony Qi</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-12-11T16:04:57+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-48658" class="comment-time-link" itemprop="url">2018-12-11 at 16:04</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,<br />
+Your article about choosing GPU is excellent.<br />
+However, I still have the problem. Since my supervisor advise that my future work could focus on deep learning models and I am totally a freshman for this area, I don&#8217;t know what problems I will meet and what hardware environment I need. And also, sadly, I didn&#8217;t get the budget so I want to know the basic configuration for doing research (dual RTX2070?).</p>
+<p>Thanks,<br />
+Tony</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-48658' onclick='return addComment.moveForm( "comment-48658", "48658", "respond", "5" )' aria-label='Reply to Tony Qi'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-49589">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-12-27T17:04:27+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-49589" class="comment-time-link" itemprop="url">2018-12-27 at 17:04</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Two RTX 2070 will probably work well in your case since it is unlikely that you need large amounts of memory if you are still experimenting with deep learning. However, if you want to make sure that you can run all different kind of models you might want to invest in a single RTX 2080 Ti.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49589' onclick='return addComment.moveForm( "comment-49589", "49589", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-48782">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/15fada4ade331d501ce4036de4117db1?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/15fada4ade331d501ce4036de4117db1?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Ravitha</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-12-13T03:26:35+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-48782" class="comment-time-link" itemprop="url">2018-12-13 at 03:26</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi ,</p>
+<p>I am building a custom deep learning workstation. Your blog suggests buying rtx2070. I would like to know the card that could suit my needs. I am a part-time researcher working on medical image processing. My workloads include dealing with high volume datasets and deriving insights from it through variants of convolutional neural networks.</p>
+<p>Both the cards RTX2070 and GTX1080 Ti seems to be better. Which one should i choose?</p>
+<p>Your response will be of great help to me</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-48782' onclick='return addComment.moveForm( "comment-48782", "48782", "respond", "5" )' aria-label='Reply to Ravitha'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-49591">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-12-27T17:06:51+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-49591" class="comment-time-link" itemprop="url">2018-12-27 at 17:06</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I would recommend either a GTX 1080 Ti or an RTX 2080 Ti since medical imaging dataset often have very large image sizes which consume a lot of memory. It is better to have at least 11 GB of memory. You could also go for a Titan RTX, but the card is not very cost-efficient and I would avoid it if possible.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49591' onclick='return addComment.moveForm( "comment-49591", "49591", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-49103">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/e0d0afdb8644b30c68c7895c5da87c5a?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/e0d0afdb8644b30c68c7895c5da87c5a?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Atheer</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-12-17T14:57:05+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-49103" class="comment-time-link" itemprop="url">2018-12-17 at 14:57</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello Tim<br />
+I really impressed for your blogs and I want to read more and more. I’m currently master student in data analytics and my final project is about image classification and I tend to use deep learning. I don’t have such fancy computer is laptop suitble to run deep learning? Do you have any suggestion to facilitate this issues ?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49103' onclick='return addComment.moveForm( "comment-49103", "49103", "respond", "5" )' aria-label='Reply to Atheer'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-49585">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-12-27T16:32:19+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-49585" class="comment-time-link" itemprop="url">2018-12-27 at 16:32</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>You can try the free GPUs from coderlab. This will get you started. Then you can figure out if you want to do more of this and if so, invest in a dedicated desktop with a GPU.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49585' onclick='return addComment.moveForm( "comment-49585", "49585", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-49135">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/40f524a20bb1f41349164d28836f568f?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/40f524a20bb1f41349164d28836f568f?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://rsangole.netlify.com" class="comment-author-link" rel="external nofollow" itemprop="url">Rahul Sangole</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-12-18T07:14:30+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-49135" class="comment-time-link" itemprop="url">2018-12-18 at 07:14</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Tim,<br />
+Thank you for all the effort in putting your blog together.<br />
+I&#8217;m building a ML+DL rig for myself to compete in Kaggle etc. I&#8217;m set on starting with one RTX2070, and expanding to two based on your posts. I&#8217;m debating between going with an Intel (i5) vs AMD (threadripper) architecture for the CPUs. Although CPUs won&#8217;t matter for DL, multi-core processing does speed up data prep, and even running cross-validation on xgboost models. I&#8217;m primarily an R user but going towards Python as well. What I can&#8217;t find is any performance comparison for R/Python libraries on Intel vs AMD.<br />
+Any thoughts on this topic?</p>
+<p>Cheers!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49135' onclick='return addComment.moveForm( "comment-49135", "49135", "respond", "5" )' aria-label='Reply to Rahul Sangole'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-49595">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-12-27T17:15:24+00:00" itemprop="datePublished"><a href="https://timdettmers.com/about/#comment-49595" class="comment-time-link" itemprop="url">2018-12-27 at 17:15</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>In general, the Intel software for linear algebra is much more sophisticated than the one from AMD. If you are looking for good XGBoost performance I would recommend an i5 over a Threadripper.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-49595' onclick='return addComment.moveForm( "comment-49595", "49595", "respond", "5" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/about/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://timdettmers.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='5' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="9805f98d7f" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="161"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="http://schema.org/WPSideBar" id="genesis-sidebar-primary"><h2 class="genesis-sidebar-title screen-reader-text">Primary Sidebar</h2><section id="blog_subscription-5" class="widget jetpack_subscription_widget"><div class="widget-wrap"><h3 class="widgettitle widget-title">Subscribe to Blog via Email</h3>
+
+			<form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-5">
+				<div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div><p>Join 1,406 other subscribers</p>
+					<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" for="subscribe-field-blog_subscription-5">
+							Email Address						</label>
+						<input type="email" name="email" required="required" class="required" value="" id="subscribe-field-blog_subscription-5" placeholder="Email Address" />
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe" />
+						<input type="hidden" name="source" value="https://timdettmers.com/about/" />
+						<input type="hidden" name="sub-type" value="widget" />
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-5" />
+												<input type="submit" value="Subscribe" name="jetpack_subscriptions_widget" />
+					</p>
+							</form>
+
+			<script>
+			/*
+			Custom functionality for safari and IE
+			 */
+			(function( d ) {
+				// In case the placeholder functionality is available we remove labels
+				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-5]' );
+						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+						label.style.position = 'absolute';
+						label.style.height   = '1px';
+						label.style.width    = '1px';
+						label.style.overflow = 'hidden';
+				}
+
+				// Make sure the email value is filled in before allowing submit
+				var form = d.getElementById('subscribe-blog-blog_subscription-5'),
+					input = d.getElementById('subscribe-field-blog_subscription-5'),
+					handler = function( event ) {
+						if ( '' === input.value ) {
+							input.focus();
+
+							if ( event.preventDefault ){
+								event.preventDefault();
+							}
+
+							return false;
+						}
+					};
+
+				if ( window.addEventListener ) {
+					form.addEventListener( 'submit', handler, false );
+				} else {
+					form.attachEvent( 'onsubmit', handler );
+				}
+			})( document );
+			</script>
+				
+</div></section>
+<section id="jetpack_display_posts_widget-3" class="widget widget_jetpack_display_posts_widget"><div class="widget-wrap"><h3 class="widgettitle widget-title">Recent Posts: Tim Dettmers</h3>
+<div class="jetpack-display-remote-posts"><h4><a href="https://timdettmers.com/2019/04/03/which-gpu-for-deep-learning/">Which GPU(s) to Get for Deep Learning: My Experience and Advice for Using GPUs in Deep Learning</a></h4>
+<h4><a href="https://timdettmers.com/2018/12/16/deep-learning-hardware-guide/">A Full Hardware Guide to Deep Learning</a></h4>
+<h4><a href="https://timdettmers.com/2018/11/26/phd-applications/">Machine Learning PhD Applications — Everything You Need to Know</a></h4>
+<h4><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/">TPUs vs GPUs for Transformers (BERT)</a></h4>
+<h4><a href="https://timdettmers.com/2017/12/21/deep-learning-hardware-limbo/">Deep Learning Hardware Limbo</a></h4>
+<h4><a href="https://timdettmers.com/2017/09/16/credit-assignment-deep-learning/">Credit Assignment in Deep Learning</a></h4>
+</div><!-- .jetpack-display-remote-posts --></div></section>
+<section id="twitter_timeline-3" class="widget widget_twitter_timeline"><div class="widget-wrap"><a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-lang="EN" data-partner="jetpack" data-chrome="noheader nofooter noborders noscrollbar" href="https://twitter.com/@tim_dettmers" href="https://twitter.com/@tim_dettmers">My Tweets</a></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="http://schema.org/WPSideBar" id="genesis-sidebar-secondary"><h2 class="genesis-sidebar-title screen-reader-text">Secondary Sidebar</h2><section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter"><div class="wrap"><p>Copyright &#x000A9;&nbsp;2019 &#x000B7;  <a href="http://www.studiopress.com/">Genesis Framework</a> &#x000B7; <a href="http://wordpress.org/">WordPress</a> &#x000B7; <a rel="nofollow" href="https://timdettmers.com/wp-login.php">Log in</a></p></div></footer></div>	<div style="display:none">
+	<div class="grofile-hash-map-c643521d2d6018b6a107baf26d065caa">
+	</div>
+	<div class="grofile-hash-map-1c7fd49c0548d7369d17e59f99b8d11c">
+	</div>
+	<div class="grofile-hash-map-cb7f382efc7550355acfa0ade67ecccd">
+	</div>
+	<div class="grofile-hash-map-a2403083d31517f7ad848c67a51cf2d2">
+	</div>
+	<div class="grofile-hash-map-9ed2fe4c4c7a83ee05e43391328289fd">
+	</div>
+	<div class="grofile-hash-map-7606b6b162dfd02745c4ebebbb3dcd9f">
+	</div>
+	<div class="grofile-hash-map-74c0c60ee45528647034b82f5303da0c">
+	</div>
+	<div class="grofile-hash-map-137550a14f2419e3ae3fd4e08ec83975">
+	</div>
+	<div class="grofile-hash-map-36fc993b44f9518897c08f591ef93358">
+	</div>
+	<div class="grofile-hash-map-cb5b327a1c01183e8240db88646c2db2">
+	</div>
+	<div class="grofile-hash-map-032e6712e47978a34c5584d1af6bfce9">
+	</div>
+	<div class="grofile-hash-map-10aea7804c2994db3b107ccf3f1ec220">
+	</div>
+	<div class="grofile-hash-map-6c1a054d05a044fbda18c13eb2e56a9e">
+	</div>
+	<div class="grofile-hash-map-17e3157e22f96d13abb0b2fb63c47cbc">
+	</div>
+	<div class="grofile-hash-map-33021818f31ca381227ff17315e4f446">
+	</div>
+	<div class="grofile-hash-map-4257780b958f7779a06dad4267a6e71f">
+	</div>
+	<div class="grofile-hash-map-eba072c66745c1a0337fae28cac0d9ed">
+	</div>
+	<div class="grofile-hash-map-b38b84716617f41a0620e6e56f329342">
+	</div>
+	<div class="grofile-hash-map-b7ef46eaf630fccf793206ef30ceea0c">
+	</div>
+	<div class="grofile-hash-map-a229541bf41af353d0c26bcc7e834005">
+	</div>
+	<div class="grofile-hash-map-aeb27ce1a7ce296084d1f9584d5c3191">
+	</div>
+	<div class="grofile-hash-map-52051130fba05616faf1be3264a1605d">
+	</div>
+	<div class="grofile-hash-map-e494b95850545527bae010e20b7a2a58">
+	</div>
+	<div class="grofile-hash-map-b96d0520329b8a004684090866b500ce">
+	</div>
+	<div class="grofile-hash-map-419078bcea77f6e976d2eeb5c96491ff">
+	</div>
+	<div class="grofile-hash-map-657a5d555bc9c7e5a2fdf00f32ff1e68">
+	</div>
+	<div class="grofile-hash-map-3246a1e9e399fdae3914c61a0343f554">
+	</div>
+	<div class="grofile-hash-map-28a8ba30201f98f0b974aec052f9ba54">
+	</div>
+	<div class="grofile-hash-map-985ea37259eb6259178f0ffd65359a15">
+	</div>
+	<div class="grofile-hash-map-3da944271ee26b78d02429299cfcb700">
+	</div>
+	<div class="grofile-hash-map-aca65945426dadb7fb06804311aba6f8">
+	</div>
+	<div class="grofile-hash-map-143152af7f1563dc931ef71ce6f62af8">
+	</div>
+	<div class="grofile-hash-map-c0e3469c73bb03f03b60e43032a7db93">
+	</div>
+	<div class="grofile-hash-map-98554ff967c2fb5194fa041b396c5de2">
+	</div>
+	<div class="grofile-hash-map-15fada4ade331d501ce4036de4117db1">
+	</div>
+	<div class="grofile-hash-map-e0d0afdb8644b30c68c7895c5da87c5a">
+	</div>
+	<div class="grofile-hash-map-40f524a20bb1f41349164d28836f568f">
+	</div>
+	</div>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/photon/photon.min.js?ver=20130122'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201917'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mPS2id_params = {"instances":{"mPS2id_instance_0":{"selector":"a[rel='m_PageScroll2id']","autoSelectorMenuLinks":"true","scrollSpeed":200,"autoScrollSpeed":"true","scrollEasing":"easeInOutQuint","scrollingEasing":"easeOutQuint","pageEndSmoothScroll":"true","stopScrollOnUserAction":"false","autoCorrectScroll":"false","layout":"vertical","offset":"200","highlightSelector":"","clickedClass":"mPS2id-clicked","targetClass":"mPS2id-target","highlightClass":"mPS2id-highlight","forceSingleHighlight":"false","keepHighlightUntilNext":"false","highlightByNextTarget":"false","appendHash":"false","scrollToHash":"true","scrollToHashForAll":"true","scrollToHashDelay":0,"scrollToHashUseElementData":"true","scrollToHashRemoveUrlHash":"false","disablePluginBelow":0,"adminDisplayWidgetsId":"true","adminTinyMCEbuttons":"true","unbindUnrelatedClickEvents":"false","normalizeAnchorPointTargets":"false"}},"total_instances":"1","shortcode_class":"_ps2id"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/page-scroll-to-id/js/page-scroll-to-id.min.js?ver=1.6.3'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2019Apraa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/comment-reply.min.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.5'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=2.2.6'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/twitter-timeline.min.js?ver=4.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/timdettmers.com\/wp-admin\/admin-ajax.php","nonce":"c942109c76","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/timdettmers.com\/wp-login.php?redirect_to=https%3A%2F%2Ftimdettmers.com%2Fabout%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/carousel/jetpack-carousel.min.js?ver=20170209'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/wp-embed.min.js?ver=4.9.10'></script>
+<script async="async" type='text/javascript' src='https://timdettmers.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201917.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.8',blog:'106749684',post:'5',tz:'-7',srv:'timdettmers.com'} ]);
+	_stq.push([ 'clickTrackerInit', '106749684', '5' ]);
+</script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.573 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-04-26 14:49:35 -->
+
+<!-- super cache -->

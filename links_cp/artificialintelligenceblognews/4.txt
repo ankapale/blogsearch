@@ -1,0 +1,9 @@
+Nov 29 Capsule Networks Explained 
+ A buzz is about in AI circles around “capsule networks”, a new variant on neural networks that backers say could simplify, cut the costs of, commoditize and, in the end, democratize how deep learning systems are taught to do what we want them to do. 
+ How can capsule networks do all this? They hold out the hope of tackling one of the biggest problems in AI: radically reducing the amount of data and compute resources needed to train deep learning systems. This, in turn, means AI could become available to the broader market, no longer consigned to a few companies with mammoth compute resources and infinite volumes of data – i.e., the FANG (Facebook, Amazon, Netflix, Google) companies. 
+ CapsNets are a hot new architecture for neural networks, invented by Geoffrey Hinton, one of the godfathers of deep learning. 
+ In fact, Google is the father of capsule networks. Google researchers Sara Sabour, Nicholas Frosst, Geoffrey Hinton published a paper on the topic last month. Having read, or tried to read, the abstract we decided it might be best to ask someone to explain what it all means. 
+ Capsule networks’ core idea is to break up the neural net into chunks, or capsules, that work in teams and are assigned a portion of a problem; each capsule is pre-loaded with basic training on its portion of the object or process it will examine. The individual capsules work cooperatively, sharing their findings and contributing to solving the problem as a whole. 
+ Comments on: Capsule Networks Explained 
+ A buzz is about in AI circles around “capsule networks”, a new variant on neural networks that backers say could simplify, cut the costs of, commoditize and, in the end, democratize how deep learning systems are taught to do what we want them to do. 
+ 

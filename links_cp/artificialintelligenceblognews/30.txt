@@ -1,0 +1,7 @@
+Apr 10 Is Machine Learning Right for You? 
+ Are you considering using machine learning? First, you have to think about the problem you are trying to solve. 
+ Speaking at the recent Code PaLOUsa conference in Louisville, Brian Korzynski, a senior application developer at United Shore, explained why it's essential that businesses understand the pros and cons of machine learning. 
+ At Code PaLOUsa 2018, Brian Korzynski of United Shore explained why companies need to understand what machine learning truly is and what kind of problems it can solve before diving in. 
+ There’s been a lot of buzz in the news about what machining learning is and what it’s not, and there’s a lot of misconceptions that people get about what it really is. What it really is is a very specific set of algorithms that solve very specific problems. Machine learning is only targeted towards certain types of problems such as classifications, or regressions, recommendations, those kinds of things. 
+ The subset is a lot smaller than what a lot of people think, but a lot of it gets misconstrued, based upon a lot of the things you see in the news, such as like self-driving cars, and how machines are generating scripts for movies and things like that. 
+ 

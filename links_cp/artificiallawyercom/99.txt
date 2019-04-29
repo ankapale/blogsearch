@@ -1,0 +1,3 @@
+BOTS 
+ The tax group within LexisNexis, known as Tolley, has created an NLP-driven, automated tax bot that can answer questions about accounting issues and learn from the feedback you give it. It may prove to be of use to both accountants and lawyers working in this field. … 
+ 

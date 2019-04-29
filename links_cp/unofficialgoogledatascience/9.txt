@@ -1,0 +1,4 @@
+Posts 
+ Determining the causal effects of an action—which we call treatment—on an outcome of interest is at the heart of many data analysis efforts. In an ideal world, experimentation through randomization of the treatment assignment allows the identification and consistent estimation of causal effects. In observational studies treatment is assigned by nature, therefore its mechanism is unknown and needs to be estimated. This can be done through estimation of a quantity known as the propensity score, defined as the probability of receiving treatment within strata of the observed covariates. 
+ There are two types of estimation method for propensity scores. The first tries to predict treatment as accurately as possible. The second tries to balance the distribution of predictors evenly between the treatment and control groups. The two approaches are related, because different predictor values among treated and control units could be used to better predict treatmen… 
+ 

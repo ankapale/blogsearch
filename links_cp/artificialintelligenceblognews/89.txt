@@ -1,0 +1,9 @@
+Jan 28 Why It Matters That Artificial Intelligence Is About to Beat the World's Best Poker Players 
+ If you've ever left a poker table penniless, you definitely don't want to go up against Libratus. 
+ Built by a computer science professor and a graduate student, the artificial intelligence system is handily beating pro poker players in a Texas hold'em tournament in Pittsburgh. Two weeks into the 20-day heads up (or one-on-one), no-limit tournament, Libratus is up by more than a million dollars on its human counterparts. 
+ The A.I. system was designed by Tuomas Sandholm, a professor at Carnegie Mellon, and his student, Noam Brown. It's playing thousands of games per day--and winning most of them. 
+ A.I. systems have already wiped the floor with humans at a number of games. Last year, a system from Google's DeepMind defeated world Go champion Lee Sedol in a five game series. IBM's Watson beat some of Jeopardy!'s most successful contestants. And computers have been thrashing humans at chess, checkers, and backgammon for years. 
+ All these competitions are what Sandholm refers to as complete information games. "You know exactly what the state of the world is when you make your move," Sandholm says. You know what the board looks like and your opponent's score. 
+ But in heads up hold'em, which pits two players against each other, the opposing player's cards are an unknown. The fact that the A.I. can overcome that obstacle and work around the information it doesn't have is why this represents such a breakthrough--beating the best of the best requires levels of reasoning and gamesmanship that computers haven't before achieved. 
+ "Heads up, no-limit Texas hold'em is the benchmark that the A.I. community has converged on," Sandholm says. Last year, it came close: A different A.I. system created by Sandholm beat some skilled players, but faltered when it played the top professionals. 
+ 

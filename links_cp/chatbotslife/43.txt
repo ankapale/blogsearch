@@ -1,0 +1,31 @@
+Discord Bot Maker 
+ Have you ever wanted to make your own Discord bot? Well now there’s an app for that! 
+ Once upon a time in an App far far away there was a group of people called Bot Makers. People came from all across the lands to see these wise men and learn their secrets, or employ them to work magic upon their Discord servers… this all changed when Discord Bot Maker attacked. 
+ This new app has been making a stir in the dev community. Since it released there has been ridicule, surprise, and even just ignoring its existence. It’s not hard to see why, what if an app can challenge everything these people work hard at every day?I’ll be the first to admit at first I was a skeptic, and saw all my dev friends glaring down at this… thing that was now on Steam. 
+ Where to start? 
+ There’s a lot to this app, let’s begin with what it does. (Check the bottom of the article for a TLDR) 
+ Discord Bot Maker is still somewhat limited, and in earlier development, but it can do a lot of basic text commands, and event commands; it’s just limited in scope of how much exactly it can do.Some of the features include: 
+ Running the bot project via App 
+ Auto-restart ability when you save 
+ Basic command creation 
+ Basic event creation 
+ Ability to be more advanced with Variables 
+ Steam achievements (We need our achievements) 
+ The biggest issue from it comes not from the functionality, which is growing every day, but in the usability. The app is catered to normal users but currently without documentation or better tutorials the app can be very confusing to a user using it. 
+ For all basic functionality it does well, and the templates you can pick from all work well; just needs refinement. 
+ What about developers? 
+ So… an app to build bots. How does this impact developers? 
+ Well, currently there’s not much of a threat to the bigger public bots. It’d take a decent bit of work to make most of their functionality with this, if you could even achieve that fully. Those bots have an edge over DBM, but it’s a great alternative for people trying to express their own creative freedom with their bots; Unique responses, Icons, and the bots name. That’s something no developer can overcome without running a bot on a million different tokens/accounts. 
+ Will DBM be something bot devs need to worry about in the future? Probably. It’s like having the bot Red, but with no need to learn how to set it up and ability to build it yourself as you go. Feel accomplished + Get customization + One time fee = ProfitIt’s hard to not want to go for a 10$ one time payment than pay for some premium bot to get your 100% uptime or whatever it is you want. 
+ Discord Bot Maker is not a tool to replace coding, it’s a tool to give people who can’t/won’t code a chance to do their own thing without being limited to the options given to them by public bot devs. Did I mention it’s built in Discord.js? 
+ Where’s the app going? 
+ Have you seen people pay for plans on Webs, Wordpress, Wix, etc? Well, this is the same concept except a one time fee. “Pay this and make a bot, no coding required!” that’s just asking for people to throw their money at it. 
+ I had a meeting with the dev and his intentions are good; it’s something he does for fun, not for the pricetag. 
+ If you had the chance to give people more creative freedom, would you? Not if you’re a big bot dev! And that’s ok, bots like Dyno for moderator , Tatsumaki for utility, KawaiiBot for misc, Guilded for team/event organizing, and others will always be bots I love to see on servers and many of them can’t be replaced with something like this; they’re too complex and unique for that. 
+ So what do I think? 
+ Guess I should probably explain what I think! 
+ The Discord Bot Maker app is not something I’d currently pour hundreds of dollars into but, as the next few weeks more should be added to it, it’ll be worth the 10$ in no time. 
+ It’s already very functional and can achieve more than a basic discord.js tutorial bot, this could speed up the bot making process for people who can’t (or don’t have the time to) code. 
+ So would I recommend it? Yes, I think developers could find a lot of use studying it. I don’t think every user should start clamoring to buy it until more features come out, docs become a thing, and the tutorials improve. 
+ Tldr; 7.3/10Decent app, but it needs a lot of work; Needs more features, needs docs. 
+ 

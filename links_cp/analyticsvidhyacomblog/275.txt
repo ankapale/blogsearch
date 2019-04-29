@@ -1,0 +1,70 @@
+Comparative Stock Market Analysis in R using Quandl & tidyverse – Part I 
+ Introduction 
+ What differentiates the best data scientists from others? It is their focus on application of data science. The best data scientists I know of, see data science and its application every where they look. They look at this world as an outcome of flow of data and information. 
+ On the other hand, most beginners often ask the question – how do we apply our learning on real life problems? 
+ In this post (and another one following this), I have picked up a real life dataset (Stock Markets in India) and showed how I would use this data to come out with useful insights. 
+ I hope that you will find this useful. The idea is show the vast opportunities present in data science in a simple yet powerful manner. If you can think of more examples like this – let me know in comments below! 
+ For the best results, I would strongly recommend to build the application yourself as you follow the tutorial. 
+ Objective of this Tutorial 
+ In this article, we will analyze stock market in banking segment based on the bank stocks which are listed in NSE India. Our objective is to find the trends (Seasonal or cyclic) in banking stocks. 
+ In our comparative analysis we will use several packages and the primary focus will be on tidy verse package. The emphasis will be given on grouping with the help of tibble dataframe from tidy verse package. This will help to perform similar operation on multiple groups at a time, hence reducing the code length and computational time. 
+ This article also focuses on API Key, database code search using quandl, and finally how to directly download the data from R Console. 
+ So lets get started! 
+ Note: The code that has been mentioned below is to be run on the R command line for best results. 
+ Table of Contents 
+ Setting up the system 
+ Getting Started with Comparative Analysis 
+ Creating the dataset 
+ Visualizing the monthly prices 
+ Discovering the Relation between Total Traded Quantity vs Close Price 
+ Finding the Density Distribution of Deviation of High Price from Open Price 
+ Observing the Autocorrelation lags 
+ Setting Up The System 
+ There are a few things you should take care of before you go on further. Below mentioned are the packages you need to install in the system 
+ Quandl for Data Download 
+ timetk to coerce the dataframe into xts 
+ tidyverse to Use tibble for grouping and perform single operation on multiple groups 
+ tidyquant for Time Series and Financial functions to perform the analysis 
+ gglot for Plotting and Visualization 
+ gganimate to plot the monthly prices. To get more information on gganimate, please read my previous post on Analytics Vidhya 
+ forcats for modification of factor levels 
+ stringr for string use 
+ If you don’t have any of the packages, then use the below code to install the packages. Modify the packages variable if any of the above packages are already installed. 
+ Getting Started with Comparative Analysis 
+ Creating the Dataset 
+ We will be using Quandl is online repository for the core financial, macroeconomic statistics and forex. Quandl has a vast collection of free and open data collected from a variety of organizations: central banks, governments, multinational organizations and more. You can use it without payment and with few restrictions. 
+ Both Free and Premium data are available. Authenticated Free users have a limit of 300 calls per 10 seconds, 2,000 calls per 10 minutes and a limit of 50,000 calls per day. Premium data subscribers have a limit of 5,000 calls per 10 minutes and a limit of 720,000 calls per day. 
+ We will use this online repository to get our data using “Quandl” package directly from the R Console. Quandl package directly interacts with the Quandl API to offer data in a number of formats usable in R, downloading a zip with all data from a Quandl database, and the ability to search. 
+ To get started with Quandl, create an account and get the quandl API key. Please click here to create an account. Then click on the Login button provided on the top right corner of the screen. Once the registration is complete, please click here to get the API Key. 
+ In our analysis, we have selected following banks 
+ ICICI 
+ BOB 
+ CANARA 
+ AXIS 
+ SBI 
+ PNB 
+ We have selected these banks as they are in the price band of Rs 200 to Rs 500. We will use the following codes to get the data into R console. 
+ Quandl(Code=“NSE/—”,collapse=“—”,start_date=“—-”,type=“…”) 
+ The parameters we use are as follows: 
+ Code Dataset code on Quandl specified as a string or an array of strings. 
+ type Type of data returned specified as string. Can be ‘raw’, ‘ts’, ‘zoo’, ‘xts’ or ‘timeSeries’ 
+ Now we will download the data, add a column “Stock” for the stock identifier, and then we paste the respective stock name in the downloaded dataset. We will then consolidate all stock data into one Master Data frame for analysis 
+ ## Setup the Quandl Free Account and API Key, Please copy and paste the API key in order to #authenticateQuandl.api_key("<Your-API-Key>")## Download the data SetICICI=Quandl("NSE/ICICIBANK",collapse="daily",start_date="2016-09-01",type="raw")PNB=Quandl("NSE/PNB",collapse="daily",start_date="2016-09-01",type="raw")Axis=Quandl("NSE/AXISBANK",collapse="daily",start_date="2016-09-01",type="raw")Canara=Quandl("NSE/CANBK",collapse="daily",start_date="2016-09-01",type="raw")BOB=Quandl("NSE/BANKBARODA",collapse="daily",start_date="2016-09-01",type="raw")SBI=Quandl("NSE/SBIN",collapse="daily",start_date="2016-09-01",type="raw")## Add another ("Stock") coloumn in Datasets using cbind commandICICI<-cbind(ICICI,Stock="")PNB<-cbind(PNB,Stock="")Axis<-cbind(Axis,Stock="")SBI<-cbind(SBI,Stock="")Canara<-cbind(Canara,Stock="")BOB<-cbind(BOB,Stock="")## Paste the stock name in stock columnICICI$Stock<-paste(ICICI$Stock,"ICICI",sep="")PNB$Stock<-paste(PNB$Stock,"PNB",sep="")Axis$Stock<-paste(Axis$Stock,"Axis",sep="")SBI$Stock<-paste(SBI$Stock,"SBI",sep="")Canara$Stock<-paste(Canara$Stock,"Canara",sep="")BOB$Stock<-paste(BOB$Stock,"BOB",sep="")## Consolidate under one datasetMaster_Data<-rbind(ICICI,PNB,Axis,SBI,Canara,BOB) 
+ Visualization of monthly prices 
+ Let us look at Monthly and Daily price pattern for Stocks using ggplot package. For this we will need to group the master dataframe according by Stock. 
+ We have heavily manipulated the theme section of ggplot to get the desired plot. More information on plot is provided here. 
+ Discovering the Relation between Total Traded Quantity vs Close Price 
+ Usually, traded quantity increases if the stock price increases or decreases too rapidly on a given day. This parameter is important for our model for prediction. So we should take some time out to identify the relation between them in our data. 
+ We have an idea of trend of the stock price, but not much is clear from the Monthly prices. Axis Bank share price improved in september and stayed at Rs750 for a month. whereas all other Banks were consistent and did not show much of volatility. 
+ Finding the Density Distribution of Deviation of High Price from Open Price 
+ Now we will see the density distribution of High Price from Open Price in order to get an understanding that how much price is deviating in either direction (North or South) on weekly basis. This gives us an idea of price range for any stock in intraday trading. 
+ We will use the transmute_tq() function from tidyquant package to compute the weekly prices. Please click here to get more information. 
+ For this add a new column with the difference of high and open price using mutate function. Add another new column with the difference of low and open price using mutate function. Calculate the weekly average of differences using “tq_transmute()” function from tidyverse package. Visualize both density plots with dot distribution on ggplot 
+ Observing the Autocorrelation lags 
+ The lag operator (also known as backshift operator) is a function that shifts (offsets) a time series such that the “lagged” values are aligned with the actual time series. The lags can be shifted any number of units, which simply controls the length of the backshift. 
+ Here, “k” is denoted as lag. We will see the lag of 180 days period and see how stocks behave. 
+ Its apparent from the ACF plot, that there is no weekly or monthly pattern. 
+ End Notes 
+ This article contains descriptive analysis of stocks in terms of Daily/Weekly Price fluctuations. It also includes analysis on deviation from High and Low Price. The focus is also given on the relationship between the daily traded quantity of shares & close price and to check for the relationship. In the later part, the main focus is on xts package for the computation of Auto-correaltion. In the article, the focus is provided on finding lag and acf plot using ggplot rather than using the conventional time series package. This includes the analysis on ACF using different lags and to check if there is any pattern in the series. 
+ Aritra Chatterjee is a professional in the field of Data Science and Operation Management having experience of more than 5 years. He aspires to develop skill in the field of Automation, Data Science and Machine Learning. 
+ 

@@ -1,0 +1,5 @@
+Posts 
+ Editor's note: The Google Sheets add-on described in this blog post is no longer supported externally by Google. 
+ By STEVEN L. SCOTT 
+ Big data is new and exciting, but there are still lots of small data problems in the world. Many people who are just becoming aware that they need to work with data are finding that they lack the tools to do so. The statistics app for Google Sheets hopes to change that.Editor's note: We've mostly portrayed data science as statistical methods and analysis approaches based on big data. But some of our readers have perfectly validly pointed out that this may be too narrow a view. While big data remains a focus of this blog, there are exciting innovations happening in other areas as well. Steve's post is an excellent example of this, and we are thrilled to see him contribute this month's article. 
+ 

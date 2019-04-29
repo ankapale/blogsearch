@@ -1,0 +1,37 @@
+Kickstart your AI success with quick wins 
+ Article by 
+ By 
+ The following blog post was written by Avanade alum Jukka Paajanen.
+It seems like every business is talking about AI, but how many can say they’re really seeing value from it? 
+ A recent Avanade survey of global C-level executives and IT decision-makers revealed that 88% believe AI is implemented because it’s a trendy technology, but they don’t actually know how to use it. 
+ But implementing AI – and getting value from it – doesn’t have to be a huge deal. You don’t need to spend millions on mega-projects; begin your AI journey with something small and simple. Identify a fast, low-risk project that will generate a clear, measurable outcome. As you get these small tangible projects underway and realize benefits, you can use that to build momentum for something larger. And at the very least you can get real-life experience with AI in your business. 
+ Here are five things you can do to set off on the right track, get some quick wins, and prove the value of AI in your enterprise: 
+ 1: Understand where other organizations are seeing value
+Drawing inspiration from other organizations can often be a good way to think about the possibilities for AI in your own business. 
+ Take one insurance company we worked with, for example. We trained an AI model to predict when claimants are about to get a lawyer involved so the company can take proactive action and dramatically reduce its legal expenses. 
+ Or what about applications for the manufacturing process? What if you could detect an anomaly on product quality, or maybe notice a spill in your warehouse and take relevant actions proactively? 
+ 2: Ensure your project is aligned with overall business objectives
+Proving the business value of AI projects for meeting strategic goals is vital to secure the leadership buy-in you’ll need to push your plans forward. 
+ That means identifying project outcomes that are measurable and meaningful. Each project should aim to generate a specific business outcome that will tangibly impact a strategic KPI. Just like other digital initiatives, it’s important not to take a tech-first approach. Every AI project should be outcome-driven. Once you’ve identified your desired business outcomes, you’ll be ready find the right tech to deliver them. 
+ There’s no need to boil the ocean with your first project – something that produces net positive value, even if small, will help you get underway and enable the larger projects later. 
+ 3: Pick the right tools
+For enterprises with large IT organizations, it can be tempting to build AI and analytics frameworks in house. But that’s often a mistake, and it can even be a deal-breaker. 
+ As an example, let’s say you come up with a solution that involves processing natural language. You might be tempted to start with basic neural networks (think of TensorFlow or similar), when picking a pre-trained cognitive solution, like Azure Cognitive Services, will take weeks or months off the project cost. 
+ And because the tech in this space is evolving so quickly, feeling out a few frameworks isn’t a bad idea. Don’t try to select “The One AI Tool for Everything” – at least not yet. 
+ 4: Remember the fear factor
+People are often scared about what AI will mean for them and their jobs. But if you can show people the value of AI for them as individuals (as well as for the business), you can alleviate this understandable fear of the unknown. 
+ Also, remember organizational change management as you go through the implementation and deployment of these tools. It’s not just the business leadership that you want to help motivate – everyone in the organization needs to understand what the future will look like and how they fit into it. 
+ It’s all about taking a human-centered approach to AI that finds ways to augment human capabilities. Automating routine tasks to help people become more productive can be a great way to begin the cultural change required for AI to be widely accepted throughout the organization. Picking an internal process for your first win also helps ensure that any issues don’t impact the customer experience. 
+ 5: Get your data house in order
+Any AI model will only ever be as good as the data you feed it, so good data management is essential. That’s easier said than done when the volume and complexity of data grows daily, and the skills to manage it effectively are in short supply. 
+ One of the first things you’ll need to do is get your data AI-ready. For AI to deliver the results you’re looking for, you need to assess, understand and organize your data before you can start experimenting and creating value. 
+ Need a little help?
+If you want to turn AI from an industry buzzword into a value-adding reality, you need to get beyond the jargon and hype to uncover what it could bring to your enterprise, and how to go about delivering it. 
+ One way to do this is to work with an external partner who’s been there, done that. They’ll be able to help you identify the right projects for your first quick wins, select the right tools for the outcomes you want, and plan and execute your projects based on real-world experience. 
+ For example, Avanade has an Innovation Day framework, which we use to help our customers discover, collaborate and act on the best ideas. We bring ideas, vet them with business, find the value, and prioritize the right ones to move forward – all in just a few hours. These workshops are a great way to get something tangible underway while preparing for the larger transformation at the same time. 
+ A journey of a thousand miles…
+Of course, it’s important to always keep in mind that this is just the beginning of a journey. While you might want to see an immediate return from AI investments, maybe the real return is that you start learning. That’s another reason why it pays to start small and grow your capabilities over time. 
+ Tags 
+ Avanade is committed to protecting your information security. Your information will be used in accordance with any applicable data privacy law, our internal policies and our Privacy Policy, and will be held securely. Avanade will not share your personal information with any third party, except as needed to manage the events or features for which you register. By using this site you agree that we can place cookies on your device. Please review our complete Privacy Policy for additional information. 
+ Some of the required fields (*) are missing, please review your information. 
+ 

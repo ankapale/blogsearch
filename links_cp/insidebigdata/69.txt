@@ -1,0 +1,2 @@
+SIEM technologies vary widely in capabilities because of the focus vendors have on their products. This research helps IT security organizations align their particular needs with one of the three most common use cases to pick the best solution. McAfeeEnterprise Security Manager is rated in Gartner Critical Capabilities for SIEM, read to learn more about how McAfee is rated. 
+ 

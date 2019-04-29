@@ -1,0 +1,2 @@
+True, measurable performance is a key factor when selecting an Application Delivery Controller (ADC) solution for modern data centers, but with so many different functions available in an ADC, it is important to understand the actual performance in real-world scenarios. 
+ 

@@ -1,0 +1,4 @@
+Jan 21 What Can Scientists Learn from AI? 
+ In this episode of The Guardian's new Science Weekly mini-series, Ian Sample explores how AI is providing insights into cancer diagnosis, intelligence, and physics. 
+ In October 2017, researchers at Google DeepMind published a paper on an artificial intelligence (AI) program called AlphaGo Zero. Unlike previous incarnations of AlphaGo, this updated version mastered the game of Go through self-play alone. Talking about the achievement, lead researcher David Silver explained that AlphaGo Zero had invented “its own variants which humans don’t even know about or play at the moment.” And it’s here that a new and exciting use for AI comes to light. Could it be that AI might teach humans about the world around us? And if so, will humans still be needed in science and other intellectual endeavours? 
+ 

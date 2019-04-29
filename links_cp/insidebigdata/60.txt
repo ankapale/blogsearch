@@ -1,0 +1,3 @@
+Enterprise NoSQL For Dummies, MarkLogic Special Edition 
+ NoSQL means a release from the constraints imposed on database management systems by the relational database model. This quick, concise eBook provides an overview of NoSQL technology, when you should consider using a NoSQL database over a relational one (and when to use both). In addition, this book introduces Enterprise NoSQL and shows how it differs from other NoSQL systems. Youll also learn the NoSQL lingo, which customers are already using it and why, and tips to find the right NoSQL database for you. 
+ 

@@ -1,0 +1,533 @@
+12 December 2016 
+ At ACL this past summer, Dirk Hovy and Shannon Spruit presented a very nice opinion paper on Ethics in NLP. There's also been a great surge of interest in FAT-everything (FAT = Fairness, Accountability and Transparency), typified by FATML, but there are others. And yet, despite this recent interest in ethics-related topics, none of the major organizations that I'm involved in have a Code of Ethics, namely: the ACL, the NIPS foundation nor the IMLS. After Dirk's presentation, he, I, Meg Mitchell and Michael Strube and some others spent a while discussing ethics in NLP (a different subset, including Dirk, Shannon, Meg, Hanna Wallach, Michael and Emily Bender) went on to form a workshop that'll take place at EACL) and the possibility of a code of ethics (Meg also brought this up at the ACL business meeting) which eventually gave rise to this post. 
+ (Note: the NIPS foundation has a "Code of Conduct" that I hadn't seen before that covers similar ground to the (NA)ACL Anti-Harassment Policy; what I'm talking about here is different.) 
+ There is a nice set of UMD EE slides on Ethics in Engineering that describes why one might want a code of Ethics: 
+ Provides a framework for ethical judgments within a profession 
+ Expresses the commitment to shared minimum standards for acceptable behavior 
+ Provides support and guidance for those seeking to act ethically 
+ Formal basis for investigating unethical conduct, as such, may serve both as a deterrence to and discipline for unethical behavior 
+ Personally, I've never been a member of any of these societies that have codes of ethics. Each organization has a different set of codes, largely because they need to address issues specific to their field of expertise. For instance, linguists often do field work, and in doing so often interact with indigenous populations. 
+ Below, I have reproduced the IEEE code as a representative sample (emphasis mine) because it is relatively brief. The ACM code and BCS code are slightly different, and go into more details. The LSA code and CIL code are related but cover slightly different topics. By being a member of the IEEE, one agrees: 
+ to accept responsibility in making decisions consistent with the
+safety, health, and welfare of the public, and to disclose promptly
+factors that might endanger the public or the environment; 
+ to avoid real or perceived conflicts of interest whenever possible, and to disclose them to affected parties when they do exist; 
+ to be honest and realistic in stating claims or estimates based on available data; 
+ to reject bribery in all its forms; 
+ to improve the understanding of technology; its appropriate application, and potential consequences; 
+ to
+maintain and improve our technical competence and to undertake
+technological tasks for others only if qualified by training or
+experience, or after full disclosure of pertinent limitations; 
+ to
+seek, accept, and offer honest criticism of technical work, to
+acknowledge and correct errors, and to credit properly the contributions
+of others; 
+ to treat fairly all persons and to not engage in
+acts of discrimination based on race, religion, gender, disability, age,
+national origin, sexual orientation, gender identity, or gender
+expression; 
+ to avoid injuring others, their property, reputation, or employment by false or malicious action; 
+ to assist colleagues and co-workers in their professional development and to support them in following this code of ethics. 
+ The pieces I've highlighted are things that I think are especially important to think about, and places where I think we, as a community, might need to work harder. 
+ After this past ACL, I spent some time combing through the Codes of Ethics mentioned before and tried to synthesize a list that would make sense for the ACL, IMLS or NIPS. This is in very "drafty" form, but hopefully the content makes sense. Also to be 100% clear, all of this is basically copy and paste with minor edits from one or more of the Codes linked above; nothing here is original. 
+ Responsibility to the Public 
+ Make research available to general public 
+ Be honest and realistic in stating claims; ensure empirical bases and limitations are communicated appropriately 
+ Only accept work and make statements on topics which you believe have competence to do 
+ Contribute to society and human well-being, and minimize negative consequences of computing systems 
+ Make reasonable effort to prevent misinterpretation of results 
+ Make decisions consistent with safety, health & welfare of public 
+ Improve understanding of technology, its application and its potential consequences (positive and negative) 
+ Responsibility in Research 
+ Protect the personal identification of research subjects, and abide by informed consent 
+ Conduct research honestly, avoiding plagiarism and fabrication of results 
+ Cite prior work as appropriate 
+ Preserve original data and documentation, and make available 
+ Follow through on promises made in grant proposals and acknowledge support of sponsors 
+ Avoid injuring others, their property, reputation or employment by false or malicious action 
+ Respect the privacy of others and honor confidentiality 
+ Honor contracts, agreements and assigned responsibilities 
+ Compliance with the code 
+ Uphold and promote the principles of this code 
+ Treat violations of this code as inconsistent with membership in this organization 
+ I'd love to see (and help, if wanted) ACL, IMLS and NIPS foundation work on constructing a code of ethics. Our fields are more and more dealing with problems that have real impact on society, and I would like to see us, as a community, come together and express our shared standards. 
+ Reinforcement learning has undergone a bit of a renaissance recently, largely due to the efficacy of its combination with good function approximation via deep neural networks. Even more arguably this advance has been due to the increased availability and interest in "interesting" simulated environments, mostly video games and typified by the Atari game collection. In a very similar way that ImageNet made neural networks really work for computer vision (by being large, and capitalizing on the existence of GPUs), I think it's fair to say that these simulated environments have provided the same large data setting for RL that can also be combined with GPU power to build impressive solutions to many games. 
+ In a real sense, many parts of the RL community are going all-in on the notion that learning to play games is a path toward broader AI. The usual refrain that I hear arguing against that approach is based on the quantity of data. The argument is roughly: if you actually want to build a robot that acts in the real world, you're not going to be able to simulate 10 million frames (from the Deepmind paper, which is just under 8 days of real time experience). 
+ I think this is an issue, but I actually don't think it's the most substantial issue. I think the most substantial issue is the fact that game playing is a simulated environment and the reward function is generally crafted to make humans find the games fun, which usually means frequent small rewards that point you in the right direction. This is exactly where RL works well, and something that I'm not sure is a reasonable assumption in the real world. 
+ Delayed reward is one of the hardest issues in RL, because (a) it means you have to do a lot of exploration and (b) you have a significant credit assignment problem. For instance, if you imagine a variant of (pick your favorite video game) where you only get a +1/-1 reward at the end of the game that says whether you won or lost, it becomes much much harder to learn, even if you play 10 million frames or 10 billion frames. 
+ That's all to say: games are really nice settings for RL because there's a very well defined reward function and you typically get that reward very frequently. Neither of these things is going to be true in the real world, regardless of how much data you have. 
+ At the end of the day, playing video games, while impressive, is really not that different from doing classification on synthetic data. Somehow it's better because the people doing the research were not those who invented the synthetic data, but games---even recent games that you might play on your (insert whatever the current popular gaming system is) are still heavily designed---are built in such a way that they are fun for their human players, which typically means increasing difficulty/complexity and relatively regularly reward function. 
+ As we move toward systems that we expect to work in the real world (even if that is not embodied---I don't necessarily mean the difficulty of physical robots), it's less and less clear where the reward function comes from. 
+ One option is to design a reward function. For complex behavior, I don't think we have any idea how to do this. There is the joke example in the R+N AI textbook where you give a vacuum cleaner a reward function for number of pieces of gunk picked up; the vacuum learns to pick up gunk, then drop it, then pick it up again, ad infinitum. It's a silly example, but I don't think we have much of an understanding of how to design reward functions for truly complex behaviors without significant risk of "unintended consequences." (To point a finger toward myself, we invented a reward function for simultaneous interpretation called Latency-Bleu a while ago, and six months later we realized there's a very simple way to game this metric. I was then disappointed that the models never learned that exploit.) 
+ This is one reason I've spent most of my RL effort on imitation learning (IL) like things, typically where you can simulate an oracle. I've rarely seen an NLP problem that's been solved with RL where I haven't thought that it would have been much better and easier to just do IL. Of course IL has it's own issues: it's not a panacea. 
+ One thing I've been thinking about a lot recently is forms of implicit feedback. One cool paper in this area I learned about when I visited GATech a few weeks ago is Learning from Explanations using Sentiment and Advice in RL by Samantha Krening and colleagues. In this work they basically have a coach sitting on the side of an RL algorithm giving it advice, and used that to tailor things that I think of as more immediate reward. I generally think of this kind of like a baby. There's some built in reward signal (it can't be turtles all the way down), but what we think of as a reward signal (like a friend saying "I really don't like that you did that") only turn into this true reward through a learned model that tells me that that's negative feedback. I'd love to see more work in the area of trying to figure out how to transform sparse and imperfect "true" reward signals into something that we can actually learn to optimize. 
+ 28 November 2016 
+ I've attended and organized two types of workshops in my time, one of which I'll call the ACL-style workshop (or "mini-conference"), the other of which I'll call the NIPS-style workshop (or "actual workshop"). Of course this is a continuum, and some workshops at NIPS are ACL-style and vice versa. As I've already given away with phrasing, I much prefer the NIPS style. Since many NLPers may never have been to NIPS or to a NIPS workshop, I'm going to try to describe the differences and explain my preference (and also highlight some difficulties). 
+ (Note: when I say ACL-style workshop, I'm not thinking of things like WMT that have effectively evolved into full-on co-located conferences.) 
+ To me, the key difference is whether the workshop is structured around invited talks, panels, discussion (NIPS-style) or around contributed, reviewed submissions (ACL-style). 
+ For example, Paul Mineiro, Amanda Stent, Jason Weston and I are organizing a workshop at NIPS this year on ML for dialogue systems, Let's Discuss. We have seven amazinginvited speakers: Marco Baroni, Antoine Bordes, Nina Dethlefs, Raquel Fernández, Milica Gasic, Helen Hastie and Jason Williams. If you look at our schedule, we have allocated 280 minutes to invited talks, 60 minutes to panel discussion, and 80 minutes to contributed papers. This is a quintessential NIPS-style workshop. 
+ For contrast, a standard ACL-style workshop might have one or two invited talks with the majority of the time spent on contributed (submitted/reviewed) papers. 
+ The difference in structure between NIPS-style and ACL-style workshops has some consequences: 
+ Reviewing in the NIPS-style tends to be very light, often without a PC, and often just by the organizers. 
+ NIPS-style contributed workshop papers tend to be shorter. 
+ NIPS-style workshop papers are almost always non-archival. 
+ My personal experience is that NIPS-style workshops are a lot more fun. Contributed papers at ACL-style workshops are often those that might not cut it at the main conference. (Note: this isn't always the case, but it's common. It's also less often the case at workshops that represent topics that are not well represented at the main conference.) On the other hand, when you have seven invited speakers who are all experts in their field and were chosen by hand to represent a diversity of ideas, you get a much more intellectually invigorating experience. 
+ (Side note: my experience is that many many NIPS attendees only attend workshops and skip the main conferences; I've rarely heard of this happening at ACL. Yes, I could go get the statistics, but they'd be incomparable anyway because of time of year.) 
+ There are a few other effects that matter. 
+ The first is the archival-ness of ACL workshops which have proceedings that appear in the anthology: 
+ (This is from EACL, but it's the same rules across the board.) I personally believe it's absurd that workshop papers are considered archival but papers on arxiv are not. By forcing workshop papers to be archival, you run the significant risk of guaranteeing that many submissions are things that authors have given up on getting into the main conference, which can lead to a weaker program. 
+ A second issue has to do with reviewing. Unfortunately as of about three years ago, the ACL organizing committee almost guaranteed that ACL workshops have to be ACL-style and not NIPS-style (personally I believe this is massive bureaucratic overreaching and micromanaging): 
+ By forcing a program committee and reviewing, we're largely locked into the ACL-style workshop. Of course, some workshops ignore this and do more of a NIPS-style anyway, but IMO this should never have been a rule. 
+ One tricky issue with NIPS-style workshops is that, as I understand it, some students (and perhaps faculty/researchers) might be unable to secure travel funding to present at a non-archival workshop. I honestly have little idea how widespread this factor is, but if it's a big deal (e.g., perhaps in certain parts of the world) then it needs to be factored in as a cost. 
+ A second concern I have about NIPS-style workshops is making sure that they're inclusive. A significant failure mode is that of "I'll just invite my friends." In order to prevent this outcome, the workshop organizers have to make sure that they work hard to find invited speakers who are not necessarily in their narrow social networks. Having a broader set of workshop organizers can help. I think that when NIPS-style workshops are proposed, they should be required to list potential invited speakers (even if these people have not yet been contacted) and a significant part of the review process should be to make sure that these lists represent a diversity of ideas and a diversity of backgrounds. In the best case, this can lead to a more inclusive program than ACL-style workshops (where basically you get whatever you get as submissions) but in the worst case it can be pretty horrible. There are lots of examples of pretty horrible at NIPS in the past few years. 
+ At any rate, these aren't easy choices, but my preference is strongly for the NIPS-style workshop. At the very least, I don't think that ACL should predetermine which type is allowed at its conferences. 
+ 08 November 2016 
+ Yesterday I gave a super duper high level 12 minutes presentation
+about some issues of bias in AI. I should emphasize (if it's not
+clear) that this is something I am not an expert in; most of
+what I know is by reading great papers by other people (there is a
+completely non-academic sample at the end of this post). This blog
+post is a variant of that presentation. 
+ Structure: most of the images below are prompts for talking
+points, which are generally written below the corresponding image. I
+think I managed to link all the images to the original source (let me
+know if I missed one!). 
+ Automated Decision
+Making is Part of Our Lives 
+ To me, AI is largely the study of automated decision making,
+and the investment therein has been growing at a dramatic rate. 
+ I'm currently teaching undergraduate artificial intelligence. The
+last time I taught this class was in 2012. The amount that's changed
+since there is incredible. Automated decision making is now a part of
+basically everyone's life, and will only be more so over time. The
+investment is in the billions of dollars per year. 
+ Things Can Go Really
+Badly 
+ If you've been paying attention to headlines even just over the
+past year, the number of high stakes settings in which automated
+decisions are being made is growing, and growing into areas that
+dramatically affect real people's real life, their well being, their
+safety, and their rights. 
+ This is obviously just a sample of some of the higher profile work
+in this area, and while all of this is work in progress, even if
+there's no impact today (hard to believe for me) it's hard to imagine
+that this isn't going to be a major societal issue in the very near
+future. 
+ Three (out of many)
+Source of Bias 
+ For the remainder, I want to focus on three specific ways that
+bias creeps in. The first I'll talk about more because we understand
+it more, and it's closely related to work that I've done over the
+past ten years or so, albeit in a different setting. These three are: 
+ data collection 
+ objective function 
+ feedback loops 
+ Sample Selection Bias 
+ The standard way that machine learning works is to take some
+samples from a population you care about, run it through a machine
+learning algorithm, to produce a predictor. 
+ The magic of statistics is that if you then take new samples from
+that same population, then, with high probability, the predictor will
+do a good job. This is true for basically all models of machine
+learning. 
+ The problem that arises is when your population samples are from a
+subpopulation (or different population) for those on which you're
+going to apply your predictor. 
+ Both of my parents work in marketing research and have spent a lot
+of their respective careers doing focuses groups and surveys. A few
+years ago, my dad had a project working for a European company that
+made skin care products. They wanted to break into the US market, and
+hired him to conduct studies of what the US population is looking for
+in skin care. He told them that he would need to conduct four or five
+different studies to do this, which they gawked at. They wanted one
+study, perhaps in the midwest (Cleveland or Chicago). The problem is
+that skin care needs are very different in the southwest (moisturizer
+matters) and the northwest (not so much), versus the northeast and
+southeast. Doing one study in Chicago and hoping it would generalize
+to Arizona and Georgia is unrealistic. 
+ This problem is often known as sample selection bias in the
+statistics community. It also has other names, like covariate shift
+and domain adaptation depending on who you talk to. 
+ One of the most influential pieces of work in this area is the
+1979 Econometrica paper by James Heckman, for which he won the 2000
+Nobel Prize in economics. He's pretty happy about that! If you
+haven't read this
+paper, you should: it's only about 7 pages long, it's not that
+difficult, and you won't believe the footnote in the last section.
+(Sorry for the clickbait, but you really should read the paper.)
+There's been a ton of work in machine learning land over the past
+twenty years, much of which builds on Heckman's original work. To
+highlight one specific paper: Corinna Cortes is the Head of Google Research New York and has had
+a number of excellent papers on this topic over the past ten years.
+One in particular is her
+2013 paper in Theoretical Computer Science (with Mohri) which
+provides an amazingly in depth overview and new algorithms. Also a
+highly recommended read. 
+ It's Not Just that Error
+Rate Goes Up 
+ When you move from one sample space (like the southwest) to
+another (like the northeast), you should first expect error rates to
+go up. 
+ Because I wanted to run some experiments for this talk, here are
+some simple adaptation numbers for predicting sentiment on Amazon
+reviews (data due to Mark
+Dredze and colleagues). Here we have four domains (books, DVDs,
+electronics and kitchen appliances) which you should think as
+standins for the different regions of the US, or different
+demographic qualifiers. 
+ The figure shows error rates when you train on one domain
+(columns) and test on another (rows). The error rates are normalized
+so that we have ones on the diagonal (actual error rates are about
+10%). The off-diagonal shows how much additional error you suffer due
+to sample selection bias. In particular, if you're making predictions
+about kitchen appliances and don't train on kitchen appliances,
+your error rate can be more than two times what it would have been. 
+ But that's not all. 
+ These data sets are balanced: 50% positive, 50% negative. If you
+train on electronics and make predictions on other domains, however,
+you get different false positive/false negative rates. This shows the
+number of test items predicted positively; you should expect it to be
+50%, which basically is what happens in electronics and DVDs.
+However, if you predict on books, you underpredict positives;
+while if you predict on kitchen, you overpredict positives. 
+ One thing I've been trying to get undergrads in my AI class to
+think about is what are we optimizing for, and whether the thing
+that's being optimized for is what is best for us. 
+ One of the first things you learn in a data structures class is
+how to do graph search, using simple techniques like breadth first
+search. In intro AI, you often learn more complex things like A*
+search. A standard motivating example is how to find routes on a map,
+like the planning shown above for me to drive from home to work
+(which I never do because I don't have a car and it's slower than
+metro anyway!). 
+ We spend a lot of time proving optimality of algorithms in terms
+of shortest path costs, for fixed costs that have been given to us by
+who-knows-where. I challenged my AI class to come up with features
+that one might use to construct these costs. They started with
+relatively obvious things: length of that segment of road, wait time
+at lights, average speed along that road, whether the road is
+one-way, etc. After more pushing, they came up with other ideas, like
+how much gas mileage one gets on that road (either to save the
+environment or to save money), whether the area is “dangerous”
+(which itself is fraught with bias), what is the quality of the road
+(ill-repaired, new, etc.). 
+ You can tell that my students are all quite well behaved. I then
+asked them to be evil. Suppose you were an evil company, how might
+you come up with path costs. Then you get things like: maybe
+businesses have paid me to route more customers past their stores.
+Maybe if you're driving the brand of car that my company owns or has
+invested it, I route you along better (or worse) roads. Maybe I route
+you so as to avoid billboards from competitors. 
+ The point is: we don't know, and there's no strong reason to a
+priori assume that what the underlying system is optimizing for is my
+personal best interest. (I should note that I'm definitely not saying
+that Google or any other company is doing any of these things: just
+that we should not assume that they're not.) 
+ A more nuanced example is that of a dating application for, e.g.,
+multi-colored robots. You can think of the color as representing any
+sort of demographic information you like: political leaning (as
+suggested by the red/blue choice here), sexual orientation, gender,
+race, religion, etc. For simplicity, let's assume there are way more
+blue robots than others, and let's assume that robots are at least
+somewhat homophilous: they tend to associate with other similar
+robots. 
+ If my objective function is something like “maximize number of
+swipe rights,” then I'm going to want to disproportionately show
+blue robots because, on average, this is going to increase my
+objective function. This is especially true when I'm predicting
+complex behaviors like robot attraction and love, and I don't have
+nearly enough features to do anywhere near a perfect matching.
+Because red robots, and robots of other colors, are more rare in my
+data, my bottom line is not affected greatly by whether I do a good
+job making predictions for them or not. 
+ I highly recommend reading Version
+Control, a recent novel by Dexter Palmer. I especially recommend
+it if you have, or will, teach AI. It's fantastic.
+There is an interesting vignette that Palmer describes (don't
+worry, no plot spoilers) in which a couple engineers build a dating
+service, like Crrrcuit, but for people. In this thought exercise, the
+system's objective function is to help people find true love, and
+they are wildly successful. They get investors. The investors realize
+that when their product succeeds, they lose business. This leads to a
+more nuanced objective in which you want to match most
+people (to maintain trust), but not perfectly (to maintain
+clientèle). But then, to make money, the company starts selling its
+data to advertisers. And different individuals' data may be more
+valuable: in particular, advertisers might be willing to pay a lot
+for data from members of underrepresented groups. This provides
+incentive to actively do a worse
+job than usual on such clients. In the book, this thought exercise
+proceeds by human reasoning, but it's pretty easy to see that if one
+set up, say, a reinforcement learning algorithm for predicting
+matches that had long term company profit as its objective function,
+it could learn something similar and we'd have no idea that that's
+what the system was doing. 
+ Feedback Loops 
+ Ravi Shroff recently visited the CLIP lab and talked about his work
+(with Justin Rao and Shared Goel) related to stop and frisk policies in New York. The setup here is that the “stop and frisk”
+rule (in 2011, over 685k people were stopped; this has subsequently been declared unconstitutional in New York) gave police
+officers the right to stop people with much lower thresholds than probable cause, to try
+to find contraband weapons or drugs. Shroff and colleagues focused on
+weapons. 
+ They considered the following model: a
+police officer sees someone behaving strangely, and decide that they
+want to stop and frisk that person. Before doing so, they enter a few
+values into their computer, and the computer either gives a thumbs up
+(go ahead and stop) or a thumbs down (let them live their life). One
+question was: can we cut down on the number of stops (good for
+individuals) while still finding most contraband weapons (good for
+society)? 
+ In this figure, we can see that
+if the system thumbs downed 90% of stops (and therefore only 10% of
+people that police would have
+stopped get stopped), they are still able to recover about 50% of the
+weapons. With stopping only
+about 1/3 of individuals, they are able to recover 75% of weapons.
+This is a massive
+reduction in privacy violations while still successfully keeping the
+majority of weapons off the streets. 
+ (Side note: you might worry about sample selection bias here,
+because the models are trained on people that the policy did actually
+stop. Shroff and colleagues get around this by the assumption I
+stated before: the model is only run on people who policy have
+already decided are suspicious and would have stopped and frisked
+anyway.) 
+ The question is: what happens if and when such a system is
+deployed in practice? 
+ The issue is that policy officers, like humans in general, are not
+stationary entities. Their behavior changes over time, and it's
+reasonable to assume that their behavior would change when they get
+this new system. They might feed more people into the system (in
+“hopes” of thumbs up) or feed fewer people into the system
+(having learned that the system is going to thumbs down them anyway).
+This is similar to how the sorts of queries people issue against web
+search engines change over time, partially because we learn to use
+the systems more effectively, and learn what to not consider asking a
+search engine to do for us because we know it will fail. 
+ Now, once we've (hypothetically) deployed this system, it's
+collecting its own data, which is going to be fundamentally different
+from the data is was originally trained one. It can continually
+adapt, but we need good technology for doing this that takes into
+account the human behavior of the officers. 
+ Wrap Up and Discussion 
+ There are many things that I didn't
+touch on above that I think are nonetheless really important. Some
+examples: 
+ All the example “failure”
+cases I showed above have to do with race or (binary) gender. There
+are other things to consider, like sexual orientation, religion,
+political views, disabilities, family and child status, first
+language, etc. I tried and failed to find examples of such things,
+and would appreciate pointers. For instance, I can easily imagine
+that speech recognition error rates skyrocket when working for users
+with speech impairments, or with non-standard accents, or who speak
+a dialect of English that not the “status quo academic English.”
+I can also imagine that visual tracking of people might fail badly
+on people with motor impairments or who use a wheelchair. 
+ I am particularly concerned
+about less “visible” issues because we might not even know. The
+standard example here is: could a social media platform sway an
+election by reminding people who (it believes) belong to a
+particular political party to vote? How would we even know? 
+ We need to start thinking about
+qualifying our research better with respect to the populations we
+expect it to work on. When we pick a problem to work on, who is
+being served? When we pick a dataset to work on, who is being left
+out? A silly example is the curation of older datasets for object
+detection in computer vision, which (I understand) decided on which
+objects to focus on by asking five year old relatives of the
+researchers constructing the datasets to name all the objects they
+could see. As a result of socio-economic status (among other
+things), mouse means the thing that attaches to your computer, not
+the cute furry animal. More generally, when we say we've “solved”
+task X, does this really mean task X or does this mean task X for
+some specific population that we haven't even thought to identify
+(i.e., “people like me” aka the white
+guys problem)? And does “getting more data” really solve the
+problem---is more data always good data? 
+ I'm at least as concerned with
+machine-in-the-loop decision making as fully automated decision
+making. Just because a human makes the final decision doesn't mean
+that the system cannot bias that human. For complex decisions, a
+system (think even just web search!) has to provide you with
+information that helps you decide, but what guarantees do we have
+that that information isn't going to be biased, either
+unintentionally or even intentionally. (I've also heard that, e.g.,
+in predicting recidivism, machine-in-the-loop predictions are worse
+than fully automated decisions, presumably because of some human
+bias we don't understand.) 
+ If you've read this far, I hope you've
+found some things to think about. If you want more to read, here are
+some people whose work I like, who tweet about these topics, and for
+whom you can citation chase to find other cool work. It's a highly
+biased list. 
+ Joanna Bryson (@j2bryson), who
+has been doing great work in ethics/AI for a long time and whose
+work on bias in language has given me tons of food for thought. 
+ 24 August 2016 
+ I've been thinking, mostly in the context of teaching, about how to specifically teach debugging of machine learning. Personally I find it very helpful to break things down in terms of the usual error terms: Bayes error (how much error is there in the best possible classifier), approximation error (how much do you pay for restricting to some hypothesis class), estimation error (how much do you pay because you only have finite samples), optimization error (how much do you pay because you didn't find a global optimum to your optimization problem). I've generally found that trying to isolate errors to one of these pieces, and then debugging that piece in particular (eg., pick a better optimizer versus pick a better hypothesis class) has been useful. 
+ For instance, my general debugging strategy involves steps like the following: 
+ First, ensure that your optimizer isn't the problem. You can do this by adding "cheating" features -- a feature that correlates perfectly with the label. Make sure you can successfully overfit the training data. If not, this is probably either an optimizer problem or a too-small-sample problem. 
+ Remove all the features except the cheating feature and make sure you can overfit then. Assuming that works, add feature back in incrementally (usually at an exponential rate). If at some point, things stop working, then probably you have too many features or too little data. 
+ Remove the cheating features and make your hypothesis class much bigger; e.g., by adding lots of quadratic features. Make sure you can overfit. If you can't overfit, maybe you need a better hypothesis class. 
+ Cut the amount of training data in half. We usually see test accuracy asymptote as the training data size increases, so if cutting the training data in half has a huge effect, you're not yet asymptoted and you might do better to get some more data. 
+ The problem is that this normal breakdown of error terms comes from theory land, and, well, sometimes theory misses out on some stuff because of a particular abstraction that has been taken. Typically this abstraction has to do with the fact that the overall goal has already been broken down into an iid/PAC style learning problem, and so you end up unable to see some types of error because the abstraction hides them. 
+ In an effort to try to understand this better, I tried to make a flow chart of sorts that encompasses all the various types of error I could think of that can sneak into a machine learning system. This is shown below: 
+ I've tried to give some reasonable names to the steps (the left part of the box) and then give a grounded example in the context of ad placement (because it's easy to think about). I'll walk through the steps (1-11) and try to say something about what sort of error can arise at that step. 
+ In the first step, we take our real world goal of increasing revenue for our company and decide to solve it by improving our ad displays. This immediately upper bounds how much increased revenue we can hope for because, well, maybe ads are the wrong thing to target. Maybe I would do better by building a better product. This is sort of a "business" decision, but it's perhaps the most important question you can ask: am I even going after the right things? 
+ Once you have a real world mechanism (better ad placement) you need to turn it into a learning problem (or not). In this case, we've decided that the way we're going to do this is by trying to predict clickthrough, and then use those predictions to place better ads. Is clickthrough a good thing to use to predict increased revenue? This itself is an active research area. But once you decide that you're going to predict clickthrough, you suffer some loss because of a mismatch between that prediction task and the goal of better ad placement. 
+ Now you have to collect some data. You might do this by logging interactions with a currently deployed system. This introduces all sorts of biases because the data you're collecting is not from the final system you want to deploy (the one you're building now), and you will pay for this in terms of distribution drift. 
+ You cannot possibly log everything that the current system is doing, so you have to only log a subset of things. Perhaps you log queries, ads, and clicks. This now hides any information that you didn't log, for instance time of day or day of week might be relevant, user information might be relevant, etc. Again, this upper bounds your best possible revenue. 
+ You then usually pick a data representation, for instance quadratic terms between a bag of words on the query side and a bag of words on the ad side, paired with a +/- on whether the user clicked or not. We're now getting into the position where we can start using theory words, but this is basically limited the best possible Bayes error. If you included more information, or represented it better, you might be able to get a lower Bayes error. 
+ You also have to choose a hypothesis class. I might choose decision trees. This is where my approximation error comes from. 
+ We have to pick some training data. The real world is basically never i.i.d., so any data we select is going to have some bias. It might not be identically distributed with the test data (because things change month to month, for instance). It might not be independent (because things don't change much second to second). You will pay for this. 
+ You now train your model on this data, probably tuning hyperparameters too. This is your usual estimation error. 
+ We now pick some test data on which to measure performance. Of course, this test data is only going to be representative of how well your system will do in the future if this data is so representative. In practice, it won't be, typically at least because of concept drift over time. 
+ After we make predictions on this test data, we have to choose some method for evaluating success. We might use accuracy, f measure, area under the ROC curve, etc. The degree to which these measures correlate with what we really care about (ad revenue) is going to affect how well we're able to capture the overall task. If the measure anti-correlates, for instance, we'll head downhill rather than uphill. 
+ (Minor note: although I put these in a specific order, that's not a prescriptive order, and many can be swapped. Also, of course there are lots of cycles and dependencies here as one continues to improve systems.) 
+ Some of these things are active research areas. Things like sample selection bias/domain adaptation/covariate shift have to do with mismatch of train/test data. For instance, if I can overfit train but generalization is horrible, I'll often randomly shuffle train/test into a new split and see if generalization is better. If it is, there's probably an adaptation problem. 
+ When people develop new evaluation metrics (like Bleu for machine translation), they try to look at things like #10 (correlation with some goal, perhaps not exactly the end goal). And standard theory and debugging (per above) covers some of this too. 
+ I'm very curious if y'all have topics/tricks that you like that aren't mentioned here. 
+ 16 August 2016 
+ I wrote my first (and only) coreference paper back in 2005. At the time, my goals were to (a) do well on coref, (b) integrate background knowledge (like "Bush" is "president") using simple techniques, and (c) try to figure out how important different (types of) features were for making coreference decisions. 
+ For the last, there is a reasonably extensive feature-type ablation experiment using backward selection (which I trust far more than forward selection). After writing the paper, I had many internal dialogues about why experiments like that are interesting. I have had, over the years, a couple of answers: 
+ The obvious answer is "it tells us something interesting about language." It would be nice if this were true, but I'm not totally sure it is, and it's definitely not true if one doesn't put a bunch more effort into it than I put into that 2005 paper. What can we say? Yeah, spelling is important. Knowledge is important. Syntax is hard to actualize. I don't know that we didn't already know these things before. 
+ Engineering. Suppose someone wanted to build a similar system. They want to put their effort where it's most valuable, and so feature ablation experiments tell you where you're likely to get the most bang for the buck. In a sense, you can see these as a type of negative result. Which features actually aren't that important. In the 2005 paper, you could remove syntactic, semantic, and class-based features with zero performance degradation; and also get rid of pattern-based features with minor performance degradation. This saves a lot of effort because some of these are actually quite a pain to implement and/or are slow and/or require lots of external resources. 
+ Today, I mostly lean toward the engineering answer, or at least that's what I want to use as a jumping off point here. 
+ Now that we're partially allergic to feature engineering and prefer to replace it with architecture engineering, I think the charge is stronger, not weaker, to do ablation experiments. Does that thing really need to be a biLSTM? Would an RNN suffice? What about just averaged bag of word embeddings? Do you need two layers of attention there or would one suffice? Do you need attention at all? Does that layer really need to be that wide? 
+ These are all easy questions to ablate and answer. 
+ There's never going to be a crisp answer like "yes, if I cut my hidden state from 493 units to 492 units performance goes down the drain." Many things will be gradual, but not all. 
+ Why do I think this is important? Precisely for reason #2 above, but about a bajillion times more so. Training these really complicated models with wide hidden units, bidirectional stuff, etc., is really slow. Really really slow. If you tell me I can be within 1% accuracy but can train 100 times faster, I'm going to do it. Sure, for a final test run I might crank everything up again (and then report that!) but for development, it's super useful to have a system you can train and evaluate efficiently. 
+ Does this tell us anything interesting about language? Almost certainly not (or at least not without a huge amount of extra work). But it does make everyone's life better. 
+ 14 August 2016 
+ A conference just ended, so it's that time of year! Here are some papers I liked with the usual caveats about recall. 
+ Before I go to the list, let me say that I really really enjoyed ACL this year. I was completely on the fence about going, and basically decided to go only because of giving a talk at Repl4NLP, and wanted to attend the business meeting for the discussion of diversity in the ACL community, led by Joakim Nivre with an amazing report that he, Lyn Walker, Yejin Choi and Min-Yen Kan put together. (Likely I'll post more, separately, about both of these; for the latter, I tried to transcribe much of Joakim's presentation.) 
+ All in all, I'm supremely glad I decided to go: it was probably my favorite conference in recent memory. This was not just because there were lots of great papers (there were!) but also because somehow it felt more like a large community conference than others I've attended recently. I'm not sure what made it like this, but I noticed it felt a lot less clique-y than NAACL, a lot more broad and interesting than ICML/NIPS (though that's probably because of my personal taste in research) and in general a lot friendlier. I don't know what the organizers did that managed this great combination, but it was great! 
+ I like this paper because it has a nice solution to a problem I spent a year thinking about on-and-off and never came up with. The problem is: suppose that you're training a discriminative MT system (they're doing neural; that's essentially irrelevant). You usually have far more monolingual data than parallel data, which typically gets thrown away in neural systems because we have no idea how to incorporate it (other than as a feature, but that's blech). What they do here is, assuming you have translation systems in both directions, back translate your monolingual target-side data, and then use that faux-parallel-data to train your MT system on. Obvious question is: how much of the improvement in performance is due to language modeling versus due to some weird kind of reverse-self-training, but regardless the answer, this is a really cool (if somewhat computationally expensive) answer to a question that's been around for at least five years. Oh and it also works really well. 
+ I didn't see this paper presented, but it was suggested to me at Monday's poster session. Suppose we're trying to learn representations of adjective/noun pairs, by modeling nouns as vectors and adjectives as matrices, evaluating on unseen pairs only. (Personally I don't love this style, but that's incidental to the main ideas in this paper.) This paper adjusts the adjective matrices depending on whether they're being used literally ("sweet candy") or metaphorically ("sweet dreams"). But then you can go further and posit that there's another matrix that can transform literal metaphors into metaphorical metaphors automatically, essentially implementing the Lakoff-style notion that there is great consistency in how metaphors are created. 
+ This paper should win some sort of award for thoroughness. The idea is that in many frames ("The walrus pummelled the sea squirt") there is implied connotation/polarity/etc. on not only the agent (walrus) and theme (sea squirt) of the frame but also tells us something about the relationship between the writer/speaker and the agent/theme (the writer might be closer to the sea squirt in this example, versus s/pummelled/fought/). The connotation frame for pummelled collects all this information. This paper also describes an approach to prediction of these complex frames using nice structured models. Totally want to try this stuff on our old plotunits data, where we had a hard time getting even a much simpler type of representation (patient polarity verbs) to work! 
+ This was perhaps my favorite paper of the conference because it's trying to do something new and hard and takes a nice approach. At a high level, suppose you're Facebook and you're trying to improve your translation system so you ask users to give 1 star to 5 star ratings. How can you use this to do better translation? This is basically the (structured) contextual bandit feedback learning problem. This paper approaches this from a dueling bandits perspective where I show you two translations and ask which is better. (Some of the authors had an earlier MT-Summit paper on the non-dueling problem which I imagine many people didn't see, but you should read it anyway.) The technical approach is basically probabilitic latent-variable models, optimized with gradient descent, with promising results. (I also like this because I've been thinking about similar structured bandit problems recently too :P.) 
+ [EDIT 14 Aug 2:40p: I misunderstood from the talk and therefore the following is basically inaccurate. I'm leaving this description and paper here on the list because Yoav's comment will make no sense otherwise, but please understand that it's wrong and, I hate to say this, it does make the paper less exciting to me. The part that's wrong is struck-out below.] There's a theme in the past two years of basically repeating all the structured prediction stuff we did ten years ago on our new neural network technology. This paper is about using Collins & Roark-style incremental perceptron for transition-based dependency parsing on top of neural networks. The idea is that label-bias is perhaps still a problem for neural network dependency parsers, like their linear grandparents. Why do I like this? Because I think a lot of neural nets people would argue that this shouldn't be necessary: the network can do arbitrarily far lookahead into the future and therefore should be able to learn to avoid the label-bias problem. This paper shows that current techniques don't achieve that: there's a consistent win to be had by doing global normalization. 
+ This paper shows pretty definitively that human evaluations against a reference translation are super biased toward the particular reference used (probably because evaluators are lazy and are basically doing ngram matching anyway -- a story I heard from MSR friends a while back). The paper also shows that this gets worse over time, presumably as evaluators get tireder. 
+ This is a nice paper summarizing four issues that come up in ethics that also come up in NLP. I mostly liked this paper because it gave names to things I've thought about off and on, but didn't have a name for. In particular, they consider exclusion (hey my ASR system doesn't work on people with an accent, I guess they don't get a voice), overgeneralization (to what degree are our models effectively stereotyping more than they should), over- and under-exposure (hey lets all work on parsing because that's what everyone else is working on, which then makes parsing seem more important...just to pick a random example :P), and dual-use (I made something for good but XYZ organization used it for evil!). This is a position/discussion-starting paper, and I thought quite engaging. 
+ Yoav is basically referring to the fact that the paper is all about (a) hashing features and (b) bigrams and (c) a projection that doesn't totally make sense to me, which (a) vw does by default (b) requires "--ngrams 2" and (c) I don't totally understand I don't think is necessary. (See this tutorial for more on how to do NLP in VW.) 
+ At the time, I said if they gave me the data, I'd run vw on it and report results. They were nice enough to share the data but I never got around to running it. The code for their technique ("fastText") was just released, which goaded me into finally doing something. 
+ So my goal here was to try to tell, without tuning any parameters, how competitive a baseline vw is to the results from fastText with minimal effort. 
+ Here are the results: 
+ fastText 
+ vw 
+ Dataset 
+ ng 
+ time 
+ acc 
+ time 
+ acc 
+ ag news 
+ 1 
+ 91.5 
+ 2s 
+ 91.9 
+ ag news 
+ 2 
+ 3s 
+ 92.5 
+ 5s 
+ 92.3 
+ amazon full 
+ 1 
+ 55.8 
+ 47s 
+ 53.6 
+ amazon full 
+ 2 
+ 33s 
+ 60.2 
+ 69s 
+ 56.6 
+ amazon polarity 
+ 1 
+ 91.2 
+ 46s 
+ 91.3 
+ amazon polarity 
+ 2 
+ 52s 
+ 94.6 
+ 68s 
+ 94.2 
+ dbpedia 
+ 1 
+ 98.1 
+ 8s 
+ 98.4 
+ dbpedia 
+ 2 
+ 8s 
+ 98.6 
+ 17s 
+ 98.7 
+ sogou news 
+ 1 
+ 93.9 
+ 25s 
+ 93.6 
+ sogou news 
+ 2 
+ 36s 
+ 96.8 
+ 30s 
+ 96.9 
+ yahoo answers 
+ 1 
+ 72.0 
+ 30s 
+ 70.6 
+ yahoo answers 
+ 2 
+ 27s 
+ 72.3 
+ 48s 
+ 71.0 
+ yelp full 
+ 1 
+ 60.4 
+ 16s 
+ 56.9 
+ yelp full 
+ 2 
+ 18s 
+ 63.9 
+ 37s 
+ 60.0 
+ yelp polarity 
+ 1 
+ 93.8 
+ 10s 
+ 93.6 
+ yelp polarity 
+ 2 
+ 15s 
+ 95.7 
+ 20s 
+ 95.5 
+ (Average accuracy for fastText is 83.2; for vw is 82.2.) 
+ In terms of accuracy, the two are roughly on par. vw occasionally wins; when it does, it's usually by 0.1% to 0.5%. fastText wins a bit more often, and on one dataset it wins significantly (yelp full: winning by 3%-4%) and on one a bit less (yahoo answers, up by about 1.3%). But the numbers are pretty much in line, and could almost certainly be brought up for vw with a wee bit of hyperparameter tuning (namely the learning rate, which is tuned in fastText). 
+ In terms of training time, fastText is maybe 30% faster on average, though these are such small datasets (eg 500k examples) that a difference of 52s versus 68s is not too significant. I also noticed that for most of the datasets, simply writing the model to disk for vw took a nontrivial amount of time. But wait, there's more. That 30% faster for fastText was run on 20 cores in parallel whereas the vw run did not use parallelized learning (vw runs two threads, one for I/O and one for learning).
+That said, a major caveat on comparing the training times. They're run on different machines. I don't know what type of machine the fastText results were achieved on, but it was a parallel 20-core run. The vw experiments were run on a single core, one pass over the data, on a 3.1Ghz Core i5-2400. Yes, I could have hogwild-ed vw and gotten it faster but it really didn't seem worth it for datasets this small. And yes, I could've rerun fastText on my machine, but... what can I say? I'm lazy. 
+ What did I do to get these vw numbers? Here's the entire training script: 
+ Basically the only flags to vw are (1) telling it to do multiclass classification with one-against-all, (2) telling it to use 25 bits (not tuned), and telling it to either use unigrams or bigrams. [Comparison note: this means vw is using 33m hash bins; fastText used 10m for unigram models and 100m for bigram models.] 
+ The only(*) data munging that occurs is in csv2vw.pl, which is a lightweight script for converting the data, lowercasing, and doing very minor tokenization: 
+ There are two exceptions where I did slightly more data munging. The datasets released for dbpedia and Soguo were not properly shuffled, which makes online learning hard. I preprocessed the training data by randomly shuffling it. This took 2.4s for dbpedia and 12s for Soguo. 
+ [[[EDIT 2:20p 5 Aug 2016: Out of curiosity, I upped the number of bits that vw uses for the experiments to 27 (so that it's on par with the 100m used by fastText). This makes it take about 5 seconds longer to run (writing the model to disk is slower). Performance stays the same on: ag news, amazon polarity, dbpedia, sogou, and yelp polarity; and it goes up from from 53.6/56.6 to 55.0/58.8 on amazon full, from 70.6/71.0 to 71.1/71.6 on yahoo answers, from 56.9/60.0 to 58.5/61.6 on yelp full. This puts the vw average with more bits at 82.6, which is 0.6% behind the fastText average.]]] 
+ Long story short... am I switching from vw to fastText? Probably not any time soon. 
+ 29 July 2016 
+ When I think of structured input models, I typically think of things like kernels over discrete input spaces. For instance, the famous all-substrings kernel for which K(d1,d2) effectively counts the number of common substrings in two documents, without spending exponential time enumerating them all. Of course there are many more ways of thinking about structured inputs: tree-to-string machine translation has a tree structured input. RNNs (on the input side) are essentially structured input models for sequence structures. 
+ When I think of structured output models, I typically think of things like CRFs, structured SVMs/M3Ns, multilabel predictors (those are borderline), various transition-based methods (eg., shift/reduce parsers), etc. Here, my internal model for the structure is essentially at prediction time: find a high scoring structure from this complicated discrete output space. 
+ Perhaps this has been obvious to everyone-but-me for a decade, but I only recently came to the recognition that these are essentially the same, at least if you restrict the sort of models you're willing to consider. (In particular, if you ignore things like imitation learning/learning to search for a moment.) 
+ In a pure structured input setting, you have some simple label space Y (let's assume it's the real numbers) and some complex input space X. Typically you want to learn a function f : X ➝ Y, which has low loss. In particular you want to minimize the expectation of loss(y, f(x)) over random draws of x,y. And the "interesting" thing is that x isn't just a vector, so you have to be clever. 
+ In the pure structure output setting, in, for instance, the structured SVM/CRF setup, you have some input space X (which may or may not be structured) and some complex output space Y. As before, you want to learn a function f : X ➝ Y, which has low loss. However, in the most common setups, the way you accomplish this is that instead of directly learning f, you instead learn a scoring function s that scores x,y pairs based on how "good" that y is for the corresponding x. For a fixed scoring function s, you derive f according to the argmax rule: fs(x) := argmaxy s(x,y). In this way, you have effectively separated the learning problem (get a good s) from the structured problem (solve the argmax). [Whether this is good or not is up to debate; I'm personally on the "nay" side.] You then want to minimize something like the expectation of loss(y, argmaxy' s(x,y')) over random draws x,y. 
+ The observation is that these two problems are essentially the same thing. That is, if you know how to do the structured input problem, then the structured output problem is essentially the same thing, as far as the learning problem goes. That is, if you can put structure in f(x) for structured input, you can just as well put structure in s(x,y)for structured output. Or, by example, if you can predict the fluency of an English sentence x as a structured input problem, you can predict the translation quality of a French/English sentence pair x,y in a structured output problem. This doesn't solve the argmax problem -- you have to do that separately -- but the underlying learning problem is essentially identical. 
+ You see similar ideas being reborn these days with papers like David Belanger's ICML paper this year on energy networks. With this framework of think-of-structured-input-and-structured-output-as-the-same, basically what they're doing is building a structured score function that uses both the input and output simultaneously, and throwing these through a deep network. (Ok it's a bit more than that, but that's the cartoon.) 
+ At any rate, maybe obvious to everyone but me, but I thought I'd write it down anyway :). 
+ 

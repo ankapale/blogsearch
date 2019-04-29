@@ -1,0 +1,4 @@
+Month: November 2015 
+ When we hear about Convolutional Neural Network (CNNs), we typically think of Computer Vision. CNNs were responsible for major breakthroughs in Image Classification and are the core of most Computer Vision systems today, from Facebook’s automated photo tagging to self-driving cars. 
+ More recently we’ve also started to apply CNNs to problems in Natural Language Processing and gotten some interesting results. In this post I’ll try to summarize what CNNs are, and how they’re used in NLP. The intuitions behind CNNs are somewhat easier to understand for the Computer Vision use case, so I’ll start there, and then slowly move towards NLP. 
+ 

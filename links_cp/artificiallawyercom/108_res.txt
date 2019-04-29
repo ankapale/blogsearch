@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="no-js mh-one-sb" lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<title>2016 &#8211; Page 3 &#8211; Artificial Lawyer</title>
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Feed" href="https://www.artificiallawyer.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Comments Feed" href="https://www.artificiallawyer.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.artificiallawyer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.10"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='chosen-css'  href='https://www.artificiallawyer.com/wp-content/plugins/wp-job-manager/assets/css/chosen.css?ver=1.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-job-manager-frontend-css'  href='https://www.artificiallawyer.com/wp-content/plugins/wp-job-manager/assets/css/frontend.css?ver=1.30.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-magazine-css'  href='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/style.css?ver=3.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-font-awesome-css'  href='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/includes/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,400italic,600,700' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://www.artificiallawyer.com/wp-content/plugins/jetpack/css/jetpack.css?ver=7.1.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/js/scripts.js?ver=3.6.1'></script>
+<link rel='https://api.w.org/' href='https://www.artificiallawyer.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.artificiallawyer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.artificiallawyer.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.10" />
+
+<!-- This site is using AdRotate v4.10 to display their advertisements - https://ajdg.solutions/products/adrotate-for-wordpress/ -->
+<!-- AdRotate CSS -->
+<style type="text/css" media="screen">
+	.g { margin:0px; padding:0px; overflow:hidden; line-height:1; zoom:1; }
+	.g img { height:auto; }
+	.g-col { position:relative; float:left; }
+	.g-col:first-child { margin-left: 0; }
+	.g-col:last-child { margin-right: 0; }
+	.g-1 { min-width:10px; max-width:340px; margin: 0 auto; }
+	.b-1 { margin:10px; }
+	@media only screen and (max-width: 480px) {
+		.g-col, .g-dyn, .g-single { width:100%; margin-left:0; margin-right:0; }
+	}
+</style>
+<!-- /AdRotate CSS -->
+
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><!--[if lt IE 9]>
+<script src="https://www.artificiallawyer.com/wp-content/themes/mh-magazine/js/css3-mediaqueries.js"></script>
+<![endif]-->
+<style type="text/css">
+h1, h2, h3, h4, h5, h6, .mh-custom-posts-small-title { font-family: "Ubuntu", sans-serif; }
+body { font-family: "Ubuntu", sans-serif; }
+</style>
+			<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- BEGIN GADWP v5.3.1.1 Universal Analytics - https://deconf.com/google-analytics-dashboard-wordpress/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-93892041-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END GADWP Universal Analytics -->
+			<style type="text/css" id="wp-custom-css">
+				/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+.mh-header-1 {
+    display: none;
+}
+
+#subscribe-submit {
+	margin-top: 10px;
+}
+
+.mh-custom-posts-xl-title {
+	display: none;
+}
+
+.heateor_sss_sharing_container {
+	margin: 0 0 20px 0;
+}			</style>
+		</head>
+<body id="mh-mobile" class="archive date paged paged-3 date-paged-3 mh-wide-layout mh-right-sb mh-loop-layout5 mh-widget-layout8 mh-magazine" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div class="mh-header-nav-mobile clearfix"></div>
+<header class="mh-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<div class="mh-container mh-container-inner clearfix">
+		<div class="mh-custom-header clearfix">
+<div class="mh-header-columns mh-row clearfix">
+<div class="mh-col-1-3 mh-site-identity">
+<div class="mh-site-logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+<style type="text/css" id="mh-header-css">.mh-header-title, .mh-header-tagline { color: #606060; }</style>
+<div class="mh-header-text">
+<a class="mh-header-text-link" href="https://www.artificiallawyer.com/" title="Artificial Lawyer" rel="home">
+<h2 class="mh-header-title">Artificial Lawyer</h2>
+<h3 class="mh-header-tagline">Changing The Business Of Law</h3>
+</a>
+</div>
+</div>
+</div>
+<aside class="mh-col-2-3 mh-header-widget-2">
+<div id="adrotate_widgets-5" class="mh-widget mh-header-2 adrotate_widgets"><!-- Either there are no banners, they are disabled or none qualified for this location! --></div></aside>
+</div>
+</div>
+	</div>
+	<div class="mh-main-nav-wrap">
+		<nav class="mh-navigation mh-main-nav mh-container mh-container-inner clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<div class="menu-home-container"><ul id="menu-home" class="menu"><li id="menu-item-15787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15787"><a href="https://www.artificiallawyer.com/legal-innovators-conference/">Legal Innovators Conference</a></li>
+<li id="menu-item-13495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13495"><a href="https://www.artificiallawyer.com/jobs/">AL JOBS</a></li>
+<li id="menu-item-13105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13105"><a href="https://www.artificiallawyer.com/al-100-directory/">AL 100 Directory</a>
+<ul class="sub-menu">
+	<li id="menu-item-13106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13106"><a href="https://www.artificiallawyer.com/al-100-directory/billing-time-analysis/">Billing + Time Analysis</a></li>
+	<li id="menu-item-13158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13158"><a href="https://www.artificiallawyer.com/al-100-directory/collaboration-legal-data-platforms/">Collaboration + Legal Data Platforms</a></li>
+	<li id="menu-item-13108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13108"><a href="https://www.artificiallawyer.com/al-100-directory/contracting-platforms/">Contracting Platforms (Document Automation)</a></li>
+	<li id="menu-item-13115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13115"><a href="https://www.artificiallawyer.com/al-100-directory/data-security-legal-risk/">Data Security + Legal Risk</a></li>
+	<li id="menu-item-13114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13114"><a href="https://www.artificiallawyer.com/al-100-directory/document-review-a-to-k/">Doc Review (A to K)</a></li>
+	<li id="menu-item-13113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13113"><a href="https://www.artificiallawyer.com/al-100-directory/document-review-l-to-z/">Doc Review (L to Z)</a></li>
+	<li id="menu-item-13112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13112"><a href="https://www.artificiallawyer.com/al-100-directory/expert-systems-legal-bots/">Expert Systems + Legal Bots</a></li>
+	<li id="menu-item-13111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13111"><a href="https://www.artificiallawyer.com/al-100-directory/legal-research-analytics/">Legal Research + Analytics</a></li>
+	<li id="menu-item-13216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13216"><a href="https://www.artificiallawyer.com/al-100-directory/smart-contracts/">Smart Contracts + Blockchain</a></li>
+	<li id="menu-item-13110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13110"><a href="https://www.artificiallawyer.com/al-100-directory/workflow-automation/">Workflow Automation</a></li>
+</ul>
+</li>
+<li id="menu-item-7384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7384"><a href="http://www.artificiallawyer.com">Home</a></li>
+<li id="menu-item-7382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7382"><a href="https://www.artificiallawyer.com/about/">ABOUT</a>
+<ul class="sub-menu">
+	<li id="menu-item-7383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7383"><a href="https://www.artificiallawyer.com/contact/">CONTACT</a></li>
+</ul>
+</li>
+<li id="menu-item-12501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12501"><a href="https://www.artificiallawyer.com/legal-tech-courses/">LEGAL TECH COURSES</a></li>
+</ul></div>		</nav>
+	</div>
+	</header>
+	<div class="mh-subheader">
+		<div class="mh-container mh-container-inner mh-row clearfix">
+										<div class="mh-header-bar-content mh-header-bar-bottom-right mh-col-1-3 clearfix">
+											<aside class="mh-header-search mh-header-search-bottom">
+							<form role="search" method="get" class="search-form" action="https://www.artificiallawyer.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>						</aside>
+									</div>
+					</div>
+	</div>
+<div class="mh-container mh-container-outer">
+<div class="mh-wrapper clearfix">
+	<div class="mh-main clearfix">
+		<div id="main-content" class="mh-loop mh-content" role="main">				<header class="page-header"><h1 class="page-title">Year: 2016</h1>				</header><article class="mh-posts-large-item clearfix post-5293 post type-post status-publish format-standard has-post-thumbnail hentry category-ai category-automation category-conference category-news">
+	<figure class="mh-posts-large-thumb">
+		<a class="mh-thumb-icon" href="https://www.artificiallawyer.com/2016/11/28/ilta-speakers-to-law-firms-engage-with-ai-new-legal-tech-sector/" title="ILTA Speakers to Law Firms: &#039;Engage with AI + New Legal Tech Sector&#039;"><img width="678" height="381" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-27-at-07-30-381-678x381.png" class="attachment-mh-magazine-content size-mh-magazine-content wp-post-image jetpack-lazy-image" alt="" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-27-at-07-30-381-678x381.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-large-caption">
+				AI			</div>
+			</figure>
+	<div class="mh-posts-large-content clearfix">
+		<header class="mh-posts-large-header">
+			<h3 class="entry-title mh-posts-large-title">
+				<a href="https://www.artificiallawyer.com/2016/11/28/ilta-speakers-to-law-firms-engage-with-ai-new-legal-tech-sector/" title="ILTA Speakers to Law Firms: &#039;Engage with AI + New Legal Tech Sector&#039;" rel="bookmark">
+					ILTA Speakers to Law Firms: &#039;Engage with AI + New Legal Tech Sector&#039;				</a>
+			</h3>
+			<div class="mh-meta mh-posts-large-meta">
+				<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>28th November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/28/ilta-speakers-to-law-firms-engage-with-ai-new-legal-tech-sector/#mh-comments">0</a></span>
+			</div>
+		</header>
+		<div class="mh-posts-large-excerpt clearfix">
+			<div class="mh-excerpt"><p>Earlier this month, ILTA hosted London Insight, which was one of the largest legal tech events in the UK this year. There were plenty of great speakers to see, but <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/28/ilta-speakers-to-law-firms-engage-with-ai-new-legal-tech-sector/" title="ILTA Speakers to Law Firms: &#039;Engage with AI + New Legal Tech Sector&#039;">&#8230;</a></p>
+</div>		</div>
+	</div>
+</article><div class="mh-row mh-posts-grid mh-loop-grid clearfix">
+<div class="mh-col-1-2 mh-posts-grid-col clearfix">
+<article class="post-5230 format-standard mh-posts-grid-item clearfix">
+	<figure class="mh-posts-grid-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/25/ai-start-up-legit-to-disrupt-patent-world-secures-seedcamp-funding/" title="AI Start-up ‘Legit’ to Disrupt Patent World, Secures Seedcamp Funding"><img width="326" height="245" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-25-at-09-26-18-326x245.png" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-25-at-09-26-18-326x245.png 326w, https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-25-at-09-26-18-80x60.png 80w" data-lazy-sizes="(max-width: 326px) 100vw, 326px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-25-at-09-26-18-326x245.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-grid-caption">
+				AI			</div>
+			</figure>
+	<h3 class="entry-title mh-posts-grid-title">
+		<a href="https://www.artificiallawyer.com/2016/11/25/ai-start-up-legit-to-disrupt-patent-world-secures-seedcamp-funding/" title="AI Start-up ‘Legit’ to Disrupt Patent World, Secures Seedcamp Funding" rel="bookmark">
+			AI Start-up ‘Legit’ to Disrupt Patent World, Secures Seedcamp Funding		</a>
+	</h3>
+	<div class="mh-meta mh-posts-grid-meta">
+		<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>25th November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/25/ai-start-up-legit-to-disrupt-patent-world-secures-seedcamp-funding/#mh-comments">0</a></span>
+	</div>
+	<div class="mh-posts-grid-excerpt clearfix">
+		<div class="mh-excerpt"><p>US-based legal AI start-up Legit Patents has secured funding from first round funder Seedcamp, as it prepares to disrupt the world of patent lawyers. Legit has <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/25/ai-start-up-legit-to-disrupt-patent-world-secures-seedcamp-funding/" title="AI Start-up ‘Legit’ to Disrupt Patent World, Secures Seedcamp Funding">&#8230;</a></p>
+</div>	</div>
+</article></div>
+<div class="mh-col-1-2 mh-posts-grid-col clearfix">
+<article class="post-5182 format-standard mh-posts-grid-item clearfix">
+	<figure class="mh-posts-grid-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/23/ai-podcast-a-new-beginning-for-lawyers-ai-and-the-law/" title="AI Podcast: A New Beginning for Lawyers? AI and the Law"><img width="326" height="245" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-22-at-17-33-52-326x245.png" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-22-at-17-33-52-326x245.png 326w, https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-22-at-17-33-52-80x60.png 80w" data-lazy-sizes="(max-width: 326px) 100vw, 326px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-22-at-17-33-52-326x245.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-grid-caption">
+				AI			</div>
+			</figure>
+	<h3 class="entry-title mh-posts-grid-title">
+		<a href="https://www.artificiallawyer.com/2016/11/23/ai-podcast-a-new-beginning-for-lawyers-ai-and-the-law/" title="AI Podcast: A New Beginning for Lawyers? AI and the Law" rel="bookmark">
+			AI Podcast: A New Beginning for Lawyers? AI and the Law		</a>
+	</h3>
+	<div class="mh-meta mh-posts-grid-meta">
+		<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>23rd November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/23/ai-podcast-a-new-beginning-for-lawyers-ai-and-the-law/#mh-comments">1</a></span>
+	</div>
+	<div class="mh-posts-grid-excerpt clearfix">
+		<div class="mh-excerpt"><p>Hello legal AI friends, here is something a bit different: our first AI Podcast. It features Fredrik Svärd, Editor of Legaltech.se in Sweden and myself, Richard Tromans, Editor <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/23/ai-podcast-a-new-beginning-for-lawyers-ai-and-the-law/" title="AI Podcast: A New Beginning for Lawyers? AI and the Law">&#8230;</a></p>
+</div>	</div>
+</article></div>
+</div>
+<article class="mh-posts-list-item clearfix post-5094 post type-post status-publish format-standard has-post-thumbnail hentry category-news">
+	<figure class="mh-posts-list-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/21/eys-richard-goold-legal-industry-faces-unprecedented-tech-change/"><img width="326" height="245" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/01-ey_47-edit-700x467-326x245.jpg" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/11/01-ey_47-edit-700x467-326x245.jpg 326w, https://www.artificiallawyer.com/wp-content/uploads/2016/11/01-ey_47-edit-700x467-80x60.jpg 80w" data-lazy-sizes="(max-width: 326px) 100vw, 326px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/01-ey_47-edit-700x467-326x245.jpg?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-list-caption">
+				News			</div>
+			</figure>
+	<div class="mh-posts-list-content clearfix">
+		<header class="mh-posts-list-header">
+			<h3 class="entry-title mh-posts-list-title">
+				<a href="https://www.artificiallawyer.com/2016/11/21/eys-richard-goold-legal-industry-faces-unprecedented-tech-change/" title="EY&#039;s Richard Goold: Legal Industry Faces Unprecedented Tech Change" rel="bookmark">
+					EY&#039;s Richard Goold: Legal Industry Faces Unprecedented Tech Change				</a>
+			</h3>
+			<div class="mh-meta mh-posts-list-meta">
+				<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>21st November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/21/eys-richard-goold-legal-industry-faces-unprecedented-tech-change/#mh-comments">2</a></span>
+			</div>
+		</header>
+		<div class="mh-posts-list-excerpt clearfix">
+			<div class="mh-excerpt"><p>Artificial Lawyer recently caught up with EY&#8217;s Richard Goold. We discussed how the $30bn revenue professional services firm is increasingly interested in AI and how legal tech and <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/21/eys-richard-goold-legal-industry-faces-unprecedented-tech-change/" title="EY&#039;s Richard Goold: Legal Industry Faces Unprecedented Tech Change">&#8230;</a></p>
+</div>		</div>
+	</div>
+</article><article class="mh-posts-list-item clearfix post-5047 post type-post status-publish format-standard has-post-thumbnail hentry category-comment category-guest-post category-product-development category-start-up">
+	<figure class="mh-posts-list-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/18/israel-legal-tech-in-the-start-up-nation/"><img width="326" height="245" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/city-362298_1920-326x245.jpg" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/11/city-362298_1920-326x245.jpg 326w, https://www.artificiallawyer.com/wp-content/uploads/2016/11/city-362298_1920-678x509.jpg 678w, https://www.artificiallawyer.com/wp-content/uploads/2016/11/city-362298_1920-80x60.jpg 80w" data-lazy-sizes="(max-width: 326px) 100vw, 326px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/city-362298_1920-326x245.jpg?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-list-caption">
+				Comment			</div>
+			</figure>
+	<div class="mh-posts-list-content clearfix">
+		<header class="mh-posts-list-header">
+			<h3 class="entry-title mh-posts-list-title">
+				<a href="https://www.artificiallawyer.com/2016/11/18/israel-legal-tech-in-the-start-up-nation/" title="Israel: Legal Tech in the Start-up Nation" rel="bookmark">
+					Israel: Legal Tech in the Start-up Nation				</a>
+			</h3>
+			<div class="mh-meta mh-posts-list-meta">
+				<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>18th November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/18/israel-legal-tech-in-the-start-up-nation/#mh-comments">4</a></span>
+			</div>
+		</header>
+		<div class="mh-posts-list-excerpt clearfix">
+			<div class="mh-excerpt"><p>As part of an effort to widen the awareness of different legal tech markets around the world Artificial Lawyer has asked guest writers to introduce their <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/18/israel-legal-tech-in-the-start-up-nation/" title="Israel: Legal Tech in the Start-up Nation">&#8230;</a></p>
+</div>		</div>
+	</div>
+</article><article class="mh-posts-list-item clearfix post-5016 post type-post status-publish format-standard has-post-thumbnail hentry category-news">
+	<figure class="mh-posts-list-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/16/nextlaw-labs-invests-in-on-demand-start-up-hire-an-esquire/"><img width="326" height="245" src="https://www.artificiallawyer.com/wp-content/uploads/2016/09/vista-nextlaw-326x245.png" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/09/vista-nextlaw-326x245.png 326w, https://www.artificiallawyer.com/wp-content/uploads/2016/09/vista-nextlaw-80x60.png 80w" data-lazy-sizes="(max-width: 326px) 100vw, 326px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/09/vista-nextlaw-326x245.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-list-caption">
+				News			</div>
+			</figure>
+	<div class="mh-posts-list-content clearfix">
+		<header class="mh-posts-list-header">
+			<h3 class="entry-title mh-posts-list-title">
+				<a href="https://www.artificiallawyer.com/2016/11/16/nextlaw-labs-invests-in-on-demand-start-up-hire-an-esquire/" title="Nextlaw Labs Invests in On Demand Legal Company &#039;Hire an Esquire&#039;" rel="bookmark">
+					Nextlaw Labs Invests in On Demand Legal Company &#039;Hire an Esquire&#039;				</a>
+			</h3>
+			<div class="mh-meta mh-posts-list-meta">
+				<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>16th November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/16/nextlaw-labs-invests-in-on-demand-start-up-hire-an-esquire/#mh-comments">0</a></span>
+			</div>
+		</header>
+		<div class="mh-posts-list-excerpt clearfix">
+			<div class="mh-excerpt"><p>Nextlaw Labs, the legal tech innovation platform of global law firm Dentons, has expanded its portfolio today with an investment in Hire an Esquire, a company <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/16/nextlaw-labs-invests-in-on-demand-start-up-hire-an-esquire/" title="Nextlaw Labs Invests in On Demand Legal Company &#039;Hire an Esquire&#039;">&#8230;</a></p>
+</div>		</div>
+	</div>
+</article><article class="mh-posts-list-item clearfix post-4930 post type-post status-publish format-standard has-post-thumbnail hentry category-news">
+	<figure class="mh-posts-list-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/16/advice-for-legal-tech-start-ups-from-seedcamps-tom-wilson/"><img width="326" height="245" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/seedcamp-logo-567x245-326x245.jpg" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/11/seedcamp-logo-567x245-326x245.jpg 326w, https://www.artificiallawyer.com/wp-content/uploads/2016/11/seedcamp-logo-567x245-80x60.jpg 80w" data-lazy-sizes="(max-width: 326px) 100vw, 326px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/seedcamp-logo-567x245-326x245.jpg?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-list-caption">
+				News			</div>
+			</figure>
+	<div class="mh-posts-list-content clearfix">
+		<header class="mh-posts-list-header">
+			<h3 class="entry-title mh-posts-list-title">
+				<a href="https://www.artificiallawyer.com/2016/11/16/advice-for-legal-tech-start-ups-from-seedcamps-tom-wilson/" title="Advice for Legal Tech Start-ups from Seedcamp&#039;s Tom Wilson" rel="bookmark">
+					Advice for Legal Tech Start-ups from Seedcamp&#039;s Tom Wilson				</a>
+			</h3>
+			<div class="mh-meta mh-posts-list-meta">
+				<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>16th November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/16/advice-for-legal-tech-start-ups-from-seedcamps-tom-wilson/#mh-comments">0</a></span>
+			</div>
+		</header>
+		<div class="mh-posts-list-excerpt clearfix">
+			<div class="mh-excerpt"><p>Seedcamp is a first round fund that backs founders of tech-driven companies across several sectors, including legal. Artificial Lawyer talked to Tom Wilson, a former corporate <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/16/advice-for-legal-tech-start-ups-from-seedcamps-tom-wilson/" title="Advice for Legal Tech Start-ups from Seedcamp&#039;s Tom Wilson">&#8230;</a></p>
+</div>		</div>
+	</div>
+</article><article class="mh-posts-list-item clearfix post-4878 post type-post status-publish format-standard has-post-thumbnail hentry category-a2j category-ai category-automation category-courts category-news category-product-development category-research">
+	<figure class="mh-posts-list-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/14/build-your-own-expert-system-these-psychologists-did/"><img width="326" height="245" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/cca-logo_blue-bkgrd-2-copy-326x245.jpeg" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/11/cca-logo_blue-bkgrd-2-copy-326x245.jpeg 326w, https://www.artificiallawyer.com/wp-content/uploads/2016/11/cca-logo_blue-bkgrd-2-copy-80x60.jpeg 80w" data-lazy-sizes="(max-width: 326px) 100vw, 326px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/cca-logo_blue-bkgrd-2-copy-326x245.jpeg?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-list-caption">
+				A2J			</div>
+			</figure>
+	<div class="mh-posts-list-content clearfix">
+		<header class="mh-posts-list-header">
+			<h3 class="entry-title mh-posts-list-title">
+				<a href="https://www.artificiallawyer.com/2016/11/14/build-your-own-expert-system-these-psychologists-did/" title="Build Your Own Expert System? – These Psychologists Did" rel="bookmark">
+					Build Your Own Expert System? – These Psychologists Did				</a>
+			</h3>
+			<div class="mh-meta mh-posts-list-meta">
+				<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>14th November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/14/build-your-own-expert-system-these-psychologists-did/#mh-comments">0</a></span>
+			</div>
+		</header>
+		<div class="mh-posts-list-excerpt clearfix">
+			<div class="mh-excerpt"><p>A new automated expert system focused on child custody issues seems an unlikely challenger to today’s legal tech leaders, but its creation shows you don’t have <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/14/build-your-own-expert-system-these-psychologists-did/" title="Build Your Own Expert System? – These Psychologists Did">&#8230;</a></p>
+</div>		</div>
+	</div>
+</article><article class="mh-posts-list-item clearfix post-4684 post type-post status-publish format-standard has-post-thumbnail hentry category-news">
+	<figure class="mh-posts-list-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/11/diy-legal-ai-the-pinsent-masons-way/"><img width="1" height="1" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-10-at-22-05-14.png" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/screen-shot-2016-11-10-at-22-05-14.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-list-caption">
+				News			</div>
+			</figure>
+	<div class="mh-posts-list-content clearfix">
+		<header class="mh-posts-list-header">
+			<h3 class="entry-title mh-posts-list-title">
+				<a href="https://www.artificiallawyer.com/2016/11/11/diy-legal-ai-the-pinsent-masons-way/" title="DIY Legal AI &#8211; The Pinsent Masons Way" rel="bookmark">
+					DIY Legal AI &#8211; The Pinsent Masons Way				</a>
+			</h3>
+			<div class="mh-meta mh-posts-list-meta">
+				<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>11th November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/11/diy-legal-ai-the-pinsent-masons-way/#mh-comments">0</a></span>
+			</div>
+		</header>
+		<div class="mh-posts-list-excerpt clearfix">
+			<div class="mh-excerpt"><p>Earlier this week UK-based law firm Pinsent Masons announced it was using AI technology to provide clients with a Brexit risk analysis tool. The story duly <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/11/diy-legal-ai-the-pinsent-masons-way/" title="DIY Legal AI &#8211; The Pinsent Masons Way">&#8230;</a></p>
+</div>		</div>
+	</div>
+</article><article class="mh-posts-list-item clearfix post-4592 post type-post status-publish format-standard has-post-thumbnail hentry category-news">
+	<figure class="mh-posts-list-thumb">
+		<a class="mh-thumb-icon mh-thumb-icon-small-mobile" href="https://www.artificiallawyer.com/2016/11/09/interview-ulf-zetterberg-seals-founder/"><img width="326" height="245" src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/seal_logo_color_transparent-326x245.png" class="attachment-mh-magazine-medium size-mh-magazine-medium wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/11/seal_logo_color_transparent-326x245.png 326w, https://www.artificiallawyer.com/wp-content/uploads/2016/11/seal_logo_color_transparent-80x60.png 80w" data-lazy-sizes="(max-width: 326px) 100vw, 326px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/11/seal_logo_color_transparent-326x245.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />		</a>
+					<div class="mh-image-caption mh-posts-list-caption">
+				News			</div>
+			</figure>
+	<div class="mh-posts-list-content clearfix">
+		<header class="mh-posts-list-header">
+			<h3 class="entry-title mh-posts-list-title">
+				<a href="https://www.artificiallawyer.com/2016/11/09/interview-ulf-zetterberg-seals-founder/" title="Interview: Ulf Zetterberg, Seal&#039;s Founder" rel="bookmark">
+					Interview: Ulf Zetterberg, Seal&#039;s Founder				</a>
+			</h3>
+			<div class="mh-meta mh-posts-list-meta">
+				<span class="mh-meta-date updated"><i class="fa fa-clock-o"></i>9th November 2016</span>
+<span class="mh-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="mh-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-count-link" href="https://www.artificiallawyer.com/2016/11/09/interview-ulf-zetterberg-seals-founder/#mh-comments">0</a></span>
+			</div>
+		</header>
+		<div class="mh-posts-list-excerpt clearfix">
+			<div class="mh-excerpt"><p>Artificial Lawyer caught up with legal AI company founder and CEO, Ulf Zetterberg, during his recent visit to London. We discussed how his AI company, <a class="mh-excerpt-more" href="https://www.artificiallawyer.com/2016/11/09/interview-ulf-zetterberg-seals-founder/" title="Interview: Ulf Zetterberg, Seal&#039;s Founder">&#8230;</a></p>
+</div>		</div>
+	</div>
+</article><div class="mh-loop-pagination clearfix">
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">Posts navigation</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="https://www.artificiallawyer.com/2016/page/2/">&laquo;</a>
+<a class='page-numbers' href='https://www.artificiallawyer.com/2016/'>1</a>
+<a class='page-numbers' href='https://www.artificiallawyer.com/2016/page/2/'>2</a>
+<span aria-current='page' class='page-numbers current'>3</span>
+<a class='page-numbers' href='https://www.artificiallawyer.com/2016/page/4/'>4</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='https://www.artificiallawyer.com/2016/page/10/'>10</a>
+<a class="next page-numbers" href="https://www.artificiallawyer.com/2016/page/4/">&raquo;</a></div>
+	</nav></div>		</div>
+			<aside class="mh-widget-col-1 mh-sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar"><div id="blog_subscription-7" class="mh-widget widget_blog_subscription jetpack_subscription_widget"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">News Alerts</span></h4>
+            <form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-7">
+				                    <div id="subscribe-text"><p>Enter your email to receive news alerts, plus info on Artificial Lawyer and 3rd party events.</p>
+</div>                    <p id="subscribe-email">
+                        <label id="jetpack-subscribe-label"
+                               class="screen-reader-text"
+                               for="subscribe-field-blog_subscription-7">
+							Email Address                        </label>
+                        <input type="email" name="email" required="required" class="required"
+                               value=""
+                               id="subscribe-field-blog_subscription-7"
+                               placeholder="Email Address"/>
+                    </p>
+
+                    <p id="subscribe-submit">
+                        <input type="hidden" name="action" value="subscribe"/>
+                        <input type="hidden" name="source" value="https://www.artificiallawyer.com/2016/page/3/"/>
+                        <input type="hidden" name="sub-type" value="widget"/>
+                        <input type="hidden" name="redirect_fragment" value="blog_subscription-7"/>
+						                        <button type="submit"
+	                        		                    	                        name="jetpack_subscriptions_widget"
+	                    >
+	                        Subscribe                        </button>
+                    </p>
+				            </form>
+		
+</div><div id="adrotate_widgets-2" class="mh-widget adrotate_widgets"><div class="g g-1"><div class="g-col b-1 a-43"><a class="gofollow" data-track="NDMsMSwxLDYw" href="https://www.legalsifter.com/legalsifter-product"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/04/LegalSifter-Ad.png" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-38"><a class="gofollow" data-track="MzgsMSwxLDYw" href="https://www.legalinnovators.co.uk"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/03/Legal-Innovators.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-32"><a class="gofollow" data-track="MzIsMSwxLDYw" href="https://content.thoughtriver.com/book-a-demo"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/04/new-TR-gif-.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-6"><a class="gofollow" data-track="NiwxLDEsNjA=" href="https://www.lawgeex.com/?utm_source=artificiallawyer&utm_medium=display&utm_campaign=artificiallawyer_display"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/02/n50-frames-side-bar-LG.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-40"><a class="gofollow" data-track="NDAsMSwxLDYw" href="http://info.juro.com/tools"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/03/AL-list-of-tools-Ad.png" /></a></div></div></div><div id="twitter_timeline-5" class="mh-widget widget_twitter_timeline"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Follow me on Twitter</span></h4><a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-tweet-limit="1" data-lang="EN" data-partner="jetpack" data-chrome="transparent" href="https://twitter.com/artificiallawya" href="https://twitter.com/artificiallawya">My Tweets</a></div>	</aside>	</div>
+	</div>
+</div><!-- .mh-container-outer -->
+<footer class="mh-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+<div class="mh-container mh-container-inner mh-footer-widgets mh-row clearfix">
+<div class="mh-col-1-1 mh-home-wide  mh-footer-area mh-footer-3">
+<div id="text-3" class="mh-footer-widget widget_text"><h6 class="mh-widget-title mh-footer-widget-title"><span class="mh-widget-title-inner mh-footer-widget-title-inner">Artificial Lawyer</span></h6>			<div class="textwidget"></div>
+		</div></div>
+</div>
+</footer>
+<div class="mh-copyright-wrap">
+	<div class="mh-container mh-container-inner clearfix">
+		<p class="mh-copyright">
+			Copyright &copy; 2019 | MH Magazine WordPress Theme by <a href="https://www.mhthemes.com/" title="Premium WordPress Themes" rel="nofollow">MH Themes</a>		</p>
+	</div>
+</div>
+	<div style="display:none">
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93892041-1', 'auto');
+  ga('send', 'pageview');
+
+</script><script type='text/javascript'>
+/* <![CDATA[ */
+var click_object = {"ajax_url":"https:\/\/www.artificiallawyer.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/adrotate/library/jquery.adrotate.clicktracker.js'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201917'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/twitter-timeline.min.js?ver=4.0.0'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/lazy-images/js/lazy-images.min.js?ver=7.1.1'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/wp-embed.min.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201917.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.1.1',blog:'121161150',post:'0',tz:'1',srv:'www.artificiallawyer.com'} ]);
+	_stq.push([ 'clickTrackerInit', '121161150', '0' ]);
+</script>
+</body>
+</html>

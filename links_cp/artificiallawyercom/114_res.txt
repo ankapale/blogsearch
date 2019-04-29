@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html class="no-js mh-one-sb" lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<title>LEGAL TECH COURSES &#8211; Artificial Lawyer</title>
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Feed" href="https://www.artificiallawyer.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Comments Feed" href="https://www.artificiallawyer.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.artificiallawyer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.10"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='chosen-css'  href='https://www.artificiallawyer.com/wp-content/plugins/wp-job-manager/assets/css/chosen.css?ver=1.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-job-manager-frontend-css'  href='https://www.artificiallawyer.com/wp-content/plugins/wp-job-manager/assets/css/frontend.css?ver=1.30.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-magazine-css'  href='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/style.css?ver=3.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-font-awesome-css'  href='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/includes/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,400italic,600,700' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://www.artificiallawyer.com/wp-content/plugins/jetpack/css/jetpack.css?ver=7.1.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/js/scripts.js?ver=3.6.1'></script>
+<link rel='https://api.w.org/' href='https://www.artificiallawyer.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.artificiallawyer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.artificiallawyer.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.10" />
+<link rel="canonical" href="https://www.artificiallawyer.com/legal-tech-courses/" />
+<link rel='shortlink' href='https://wp.me/P8cny6-3fu' />
+<link rel="alternate" type="application/json+oembed" href="https://www.artificiallawyer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.artificiallawyer.com%2Flegal-tech-courses%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.artificiallawyer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.artificiallawyer.com%2Flegal-tech-courses%2F&#038;format=xml" />
+
+<!-- This site is using AdRotate v4.10 to display their advertisements - https://ajdg.solutions/products/adrotate-for-wordpress/ -->
+<!-- AdRotate CSS -->
+<style type="text/css" media="screen">
+	.g { margin:0px; padding:0px; overflow:hidden; line-height:1; zoom:1; }
+	.g img { height:auto; }
+	.g-col { position:relative; float:left; }
+	.g-col:first-child { margin-left: 0; }
+	.g-col:last-child { margin-right: 0; }
+	.g-1 { min-width:10px; max-width:340px; margin: 0 auto; }
+	.b-1 { margin:10px; }
+	@media only screen and (max-width: 480px) {
+		.g-col, .g-dyn, .g-single { width:100%; margin-left:0; margin-right:0; }
+	}
+</style>
+<!-- /AdRotate CSS -->
+
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><!--[if lt IE 9]>
+<script src="https://www.artificiallawyer.com/wp-content/themes/mh-magazine/js/css3-mediaqueries.js"></script>
+<![endif]-->
+<style type="text/css">
+h1, h2, h3, h4, h5, h6, .mh-custom-posts-small-title { font-family: "Ubuntu", sans-serif; }
+body { font-family: "Ubuntu", sans-serif; }
+</style>
+			<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="LEGAL TECH COURSES" />
+<meta property="og:url" content="https://www.artificiallawyer.com/legal-tech-courses/" />
+<meta property="og:description" content="Hello and welcome to the Artificial Lawyer Legal Tech Course Directory, which shows a range of educational options for those seeking to learn more about legal technology and/or to gain a recognised…" />
+<meta property="article:published_time" content="2018-06-22T12:51:27+00:00" />
+<meta property="article:modified_time" content="2018-11-30T13:52:16+00:00" />
+<meta property="og:site_name" content="Artificial Lawyer" />
+<meta property="og:image" content="https://www.artificiallawyer.com/wp-content/uploads/2018/06/courthouse-303370_1280-e1529671104463.png" />
+<meta property="og:image:width" content="750" />
+<meta property="og:image:height" content="606" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:text:title" content="LEGAL TECH COURSES" />
+<meta name="twitter:card" content="summary" />
+
+<!-- End Jetpack Open Graph Tags -->
+
+<!-- BEGIN GADWP v5.3.1.1 Universal Analytics - https://deconf.com/google-analytics-dashboard-wordpress/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-93892041-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END GADWP Universal Analytics -->
+			<style type="text/css" id="wp-custom-css">
+				/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+.mh-header-1 {
+    display: none;
+}
+
+#subscribe-submit {
+	margin-top: 10px;
+}
+
+.mh-custom-posts-xl-title {
+	display: none;
+}
+
+.heateor_sss_sharing_container {
+	margin: 0 0 20px 0;
+}			</style>
+		</head>
+<body id="mh-mobile" class="page-template-default page page-id-12492 mh-wide-layout mh-right-sb mh-loop-layout5 mh-widget-layout8 mh-magazine" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div class="mh-header-nav-mobile clearfix"></div>
+<header class="mh-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<div class="mh-container mh-container-inner clearfix">
+		<div class="mh-custom-header clearfix">
+<div class="mh-header-columns mh-row clearfix">
+<div class="mh-col-1-3 mh-site-identity">
+<div class="mh-site-logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+<style type="text/css" id="mh-header-css">.mh-header-title, .mh-header-tagline { color: #606060; }</style>
+<div class="mh-header-text">
+<a class="mh-header-text-link" href="https://www.artificiallawyer.com/" title="Artificial Lawyer" rel="home">
+<h2 class="mh-header-title">Artificial Lawyer</h2>
+<h3 class="mh-header-tagline">Changing The Business Of Law</h3>
+</a>
+</div>
+</div>
+</div>
+<aside class="mh-col-2-3 mh-header-widget-2">
+<div id="adrotate_widgets-5" class="mh-widget mh-header-2 adrotate_widgets"><!-- Either there are no banners, they are disabled or none qualified for this location! --></div></aside>
+</div>
+</div>
+	</div>
+	<div class="mh-main-nav-wrap">
+		<nav class="mh-navigation mh-main-nav mh-container mh-container-inner clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<div class="menu-home-container"><ul id="menu-home" class="menu"><li id="menu-item-15787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15787"><a href="https://www.artificiallawyer.com/legal-innovators-conference/">Legal Innovators Conference</a></li>
+<li id="menu-item-13495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13495"><a href="https://www.artificiallawyer.com/jobs/">AL JOBS</a></li>
+<li id="menu-item-13105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13105"><a href="https://www.artificiallawyer.com/al-100-directory/">AL 100 Directory</a>
+<ul class="sub-menu">
+	<li id="menu-item-13106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13106"><a href="https://www.artificiallawyer.com/al-100-directory/billing-time-analysis/">Billing + Time Analysis</a></li>
+	<li id="menu-item-13158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13158"><a href="https://www.artificiallawyer.com/al-100-directory/collaboration-legal-data-platforms/">Collaboration + Legal Data Platforms</a></li>
+	<li id="menu-item-13108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13108"><a href="https://www.artificiallawyer.com/al-100-directory/contracting-platforms/">Contracting Platforms (Document Automation)</a></li>
+	<li id="menu-item-13115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13115"><a href="https://www.artificiallawyer.com/al-100-directory/data-security-legal-risk/">Data Security + Legal Risk</a></li>
+	<li id="menu-item-13114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13114"><a href="https://www.artificiallawyer.com/al-100-directory/document-review-a-to-k/">Doc Review (A to K)</a></li>
+	<li id="menu-item-13113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13113"><a href="https://www.artificiallawyer.com/al-100-directory/document-review-l-to-z/">Doc Review (L to Z)</a></li>
+	<li id="menu-item-13112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13112"><a href="https://www.artificiallawyer.com/al-100-directory/expert-systems-legal-bots/">Expert Systems + Legal Bots</a></li>
+	<li id="menu-item-13111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13111"><a href="https://www.artificiallawyer.com/al-100-directory/legal-research-analytics/">Legal Research + Analytics</a></li>
+	<li id="menu-item-13216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13216"><a href="https://www.artificiallawyer.com/al-100-directory/smart-contracts/">Smart Contracts + Blockchain</a></li>
+	<li id="menu-item-13110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13110"><a href="https://www.artificiallawyer.com/al-100-directory/workflow-automation/">Workflow Automation</a></li>
+</ul>
+</li>
+<li id="menu-item-7384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7384"><a href="http://www.artificiallawyer.com">Home</a></li>
+<li id="menu-item-7382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7382"><a href="https://www.artificiallawyer.com/about/">ABOUT</a>
+<ul class="sub-menu">
+	<li id="menu-item-7383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7383"><a href="https://www.artificiallawyer.com/contact/">CONTACT</a></li>
+</ul>
+</li>
+<li id="menu-item-12501" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-12492 current_page_item menu-item-12501"><a href="https://www.artificiallawyer.com/legal-tech-courses/">LEGAL TECH COURSES</a></li>
+</ul></div>		</nav>
+	</div>
+	</header>
+	<div class="mh-subheader">
+		<div class="mh-container mh-container-inner mh-row clearfix">
+										<div class="mh-header-bar-content mh-header-bar-bottom-right mh-col-1-3 clearfix">
+											<aside class="mh-header-search mh-header-search-bottom">
+							<form role="search" method="get" class="search-form" action="https://www.artificiallawyer.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>						</aside>
+									</div>
+					</div>
+	</div>
+<div class="mh-container mh-container-outer">
+<div class="mh-wrapper clearfix">
+	<div class="mh-main clearfix">
+    	<div id="main-content" class="mh-content" role="main" itemprop="mainContentOfPage"><article id="page-12492" class="post-12492 page type-page status-publish">
+	<header class="page-header">
+		<h1 class="entry-title page-title">LEGAL TECH COURSES</h1>	</header>
+		<div class="entry-content clearfix">
+		<h2><img class="aligncenter size-full wp-image-12497 jetpack-lazy-image" src="https://www.artificiallawyer.com/wp-content/uploads/2018/06/courthouse-303370_1280-e1529671104463.png" alt width="750" height="606" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2018/06/courthouse-303370_1280-e1529671104463.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img class="aligncenter size-full wp-image-12497" src="https://www.artificiallawyer.com/wp-content/uploads/2018/06/courthouse-303370_1280-e1529671104463.png" alt="" width="750" height="606" /></noscript></h2>
+<p>Hello and welcome to the <em><strong>Artificial Lawyer Legal Tech Course Directory</strong></em>, which shows a range of educational options for those seeking to learn more about legal technology and/or to gain a recognised qualification in that area, or as part of a wider legal course subject.</p>
+<p>The main listings here at present are free and the number of courses appearing will steadily grow over time. This is just the start. If you would like to include your course, whether it&#8217;s for short term study, or a full-time LLM, whether it&#8217;s in Europe, North America, Asia-Pacific or South America, Artificial Lawyer would be glad to list your legal tech education programme.</p>
+<p>The courses below are listed as: short courses and post-graduate courses first, by region, then alphabetically. The following section includes law or other undergraduate courses which include a notable legal tech module, by region, then alphabetically.</p>
+<p>If you are an educational establishment and would like to include your course, or would like to know more about this Directory, please drop me a line: <a href="https://www.artificiallawyer.com/contact/"><strong>Contact</strong></a>.</p>
+<h3>Graduate Level and Short Courses</h3>
+<h4><em><strong>North America</strong></em></h4>
+<p><a href="https://www.suffolk.edu/law/">Suffolk University Law School</a></p>
+<p><strong>Course title:  </strong>Legal Innovation &amp; Technology Certificate Program</p>
+<p><strong>Location:</strong> This program is fully online and offered by Suffolk University Law School, which is in Boston, MA, USA</p>
+<p><strong>Type of Course:  </strong>certificate program for legal professionals</p>
+<p><strong>Length: </strong>6 courses that run for 10 weeks each.  The courses are offered at a rate of 2 per semester, and a student can complete the certificate in less than 1 year (or can take longer if they choose). Participation takes 2-5 hours per week, per class.<strong>    </strong></p>
+<p><strong>Fee: </strong>The cost to take all six courses and obtain the certificate is $15,887.  If you do not plan to complete the certificate or are unsure if you will do so, you can simply pay for as many courses as you are interested in taking at this time. The price of the first course you take is $3,075, and each subsequent courses is discounted.</p>
+<p><strong>Description of Course:</strong></p>
+<p>The legal marketplace is rapidly evolving. That’s why Suffolk Law—a national leader in rethinking the delivery of legal services—is launching the online Legal Innovation &amp; Technology Certificate program.</p>
+<p>This program is designed for all legal professionals – not just attorneys.  Completing the certificate will also benefit paralegals, law librarians, and others who work in the profession.</p>
+<p>The program consists of six courses, which you can take individually or as part of the overall six-course certificate.</p>
+<p>Enhance your legal expertise by taking online courses in:</p>
+<ul>
+<li><a href="https://www.legaltechcertificate.com/courses#LegalOperations"><strong>Legal Operations</strong></a></li>
+<li><a href="https://www.legaltechcertificate.com/courses#ProcessImprovement"><strong>Process Improvement &amp; Legal Project Management</strong></a></li>
+<li><a href="https://www.legaltechcertificate.com/courses#21stCentury"><strong>21st Century Legal Services</strong></a></li>
+<li><a href="https://www.legaltechcertificate.com/courses#DesignThinking"><strong>Design Thinking for Legal Professionals</strong></a></li>
+<li><a href="https://www.legaltechcertificate.com/courses#DeliveringLegalServices"><strong>The Business of Delivering Legal Services</strong></a></li>
+<li><a href="https://www.legaltechcertificate.com/courses#LegalTechnologyToolkit"><strong>Legal Technology Toolkit</strong></a></li>
+</ul>
+<p>Contact: <a href="http://www.legaltechcertificate.com/">www.legaltechcertificate.com</a>; the contact is the program’s faculty director: <strong>Prof. Gabe Teninbaum</strong> (gteninbaum@suffolk.edu)</p>
+<p>&#8212;</p>
+<p><strong><a href="https://law.vanderbilt.edu/">Vanderbilt Law School</a></strong></p>
+<p><strong>Course title:</strong> <a href="https://law.vanderbilt.edu/courses/324">Legal Project Management</a></p>
+<p><strong>Location:</strong> Nashville, Tennessee USA</p>
+<p><strong>Type of Course:</strong> Law school academic offering in the J.D. program (and an Exec Ed offering in a non-academic workshop setting )</p>
+<p><strong>Length:</strong> The academic offering is a semester long program of 13 weeks meeting 2 hours each week (the Exec Ed offering is a 3 day workshop)</p>
+<p><strong>Fee:</strong> Both courses are priced at $3000 per student</p>
+<p><strong>Description:</strong> The course examines the economic and technological state of the legal industry today. As Artificial Intelligence, blockchain technology and cryptocurrency continues to emerge, the traditional legal service delivery model is no longer adequate to meet heightened client expectations. Lean and Agile methodologies begin with a mindset change for the legal professional. The first segment of the course teaches the basics of legal project management performed manually in Excel and related static technologies. The second segment introduces the technology applications that automate legal project management and enable legal services to be delivered better, faster and cheaper with greater profitability for outside counsel and price certainty for clients.</p>
+<p>Both courses are certified to qualify the students (law students and Executive Education students) for the International Institute for Legal Project Management LPP and LPA certification. See: <a href="http://www.iilpm.com/">http://www.iilpm.com/</a></p>
+<p><strong>Contact:</strong> Larry.bridgesmith@law.vanderbilt.edu</p>
+<p><span class="embed-youtube" style="text-align:center; display: block;"><iframe class='youtube-player' type='text/html' width='640' height='360' src='https://www.youtube.com/embed/vJSV6RMII1U?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe></span></p>
+<p>&#8212;</p>
+<p><strong>David R. Cheriton School of Computer Science at the <a href="https://cs.uwaterloo.ca/current-graduate-students/courses/current-course-offerings/fall-2018-course-offerings">University of Waterloo</a></strong> and <strong>Osgoode Hall Law School at <a href="https://www.osgoode.yorku.ca/courses-and-seminars/legal-values-artificial-intelligence/">York University</a></strong></p>
+<p><strong>Course title:</strong>  Advanced Research Topics – Artificial Intelligence: Law, Ethics, and Policy offered conjointly with Legal Values:  Artificial Intelligence</p>
+<p><strong>Location: </strong> David R. Cheriton School of Computer Science at the University of Waterloo and Osgoode Hall Law School at York University, respectively (both in Ontario, <strong>Canada</strong>)</p>
+<p><strong>Type of Course: </strong>Joint graduate computer science and upper-class law school seminar</p>
+<p><strong>Length:</strong>  Full semester-length course</p>
+<p><strong>Description of Course:</strong></p>
+<p>This unique, multidisciplinary, cross-listed seminar brings together (through linked videoconference rooms at both locations) graduate students from the School of Computer Science at the University of Waterloo, and law students from Osgoode Hall Law School at York University, to explore cutting-edge legal, ethical, policy, and technical challenges implicated by the rise of artificial intelligence (“AI”), robotics, automation, and big data, in applications as diverse as autonomous vehicles, predictive policing and criminal law, sex robots, and lethal autonomous weapons.</p>
+<p>Students in the course (i) learn about what is technically feasible today—and will likely be possible tomorrow; (ii) identify significant challenges that individuals and society are likely to face as a result of emerging technologies; and most importantly, (iii) explore and grapple with how the legal system and public policy is responding—or should respond in the future—to the issues presented by AI, robots, automation, and big data.</p>
+<p>Main email contact: <a href="mailto:maura.grossman@uwaterloo.ca">maura.grossman@uwaterloo.ca</a><br />
+Course Links:</p>
+<p><a href="https://cs.uwaterloo.ca/current-graduate-students/courses/current-course-offerings/fall-2018-course-offerings">https://cs.uwaterloo.ca/current-graduate-students/courses/current-course-offerings/fall-2018-course-offerings</a></p>
+<p>and <a href="https://www.osgoode.yorku.ca/courses-and-seminars/legal-values-artificial-intelligence/">https://www.osgoode.yorku.ca/courses-and-seminars/legal-values-artificial-intelligence/</a></p>
+<h4>&#8212;</h4>
+<h4><em><strong>Europe</strong></em></h4>
+<p><a href="https://www.bpp.com/courses/law/lpc-legal-practice-course"><b>BPP </b></a></p>
+<p><strong>Course title: </strong>Legal Practice Course (LPC), including <strong>Legal Technology Innovation and Design module</strong></p>
+<p><strong>Location</strong>: Bristol, Birmingham, Cambridge, Leeds Whitehall Quay, London Holborn, London Waterloo, Manchester &#8211; UK.</p>
+<p><strong>Type of Course:</strong> Postgraduate</p>
+<p><strong>Length: </strong>9 months or 24 months (Full time or Part time)</p>
+<p><strong>Fee: </strong>N/A</p>
+<p><strong>Description of Course</strong></p>
+<p>Legal technology is disrupting the delivery of legal services. So your legal training needs to stay one step ahead.</p>
+<p>Developed in close collaboration with law firms, the Legal Technology Innovation and Design optional module will introduce you to the innovation and project management skills desired by legal recruiters:</p>
+<ul>
+<li>Understanding legal technology, including AI, Blockchain, Big Data, and Automation</li>
+<li>Develop project management skills and techniques</li>
+<li>Learn skills to design technology that responds to problems</li>
+<li>Engage in design thinking and process mapping vital in the legal workplace</li>
+<li>Learn how to communicated innovation ideas with specialists, colleagues and clients</li>
+</ul>
+<p><strong>For more details visit: </strong> <a href="https://www.bpp.com/courses/law/lpc-legal-practice-course">https://www.bpp.com/courses/law/lpc-legal-practice-course</a></p>
+<p><strong>or contact: </strong><a href="mailto:Admissions@BPP.com">Admissions@BPP.com</a></p>
+<p>&#8212;</p>
+<p><a href="https://www.helsinki.fi/en/faculty-of-law">University of Helsinki School of Law</a></p>
+<p><strong>Course title:</strong> Dispute Resolution and Technology</p>
+<p><strong>Location:</strong> University of Helsinki School of Law, Finland</p>
+<p><strong>Type of course:</strong> Elective Bachelor’s and Master’s degree course</p>
+<p><strong>Length:</strong> 5 credits (135 hours of effort)</p>
+<p><strong>Fee:</strong> N/A</p>
+<p><strong>Description:</strong> Social interactions, trade and services are moving to the Internet. Online sales cause novel conflicts, which are increasingly resolved through algorithmic dispute resolution platforms. At the same time the courts are updated to answer the challenges of digitalisation. Society turns to technology in order to find new ways for dispute resolution, but what does this mean in practice?</p>
+<p>The course will inspect the interactions between dispute resolution and technology by evaluating, primarily, the digitalisation of legal proceedings and online dispute resolution. The main questions revolve around digitalisation, privacy, due process and the wider legal implications of information technology.</p>
+<p><strong>Contact:</strong> <a href="http://www.legaltechlab.fi/">www.legaltechlab.fi</a> is our website on which we are keeping up to date info on our workshops and events (upcoming courses would fall in here), and <strong>info@legaltechlab.fi</strong> is the best place of inquiry.</p>
+<p>&#8212;</p>
+<p><a href="https://www.helsinki.fi/en/faculty-of-law">University of Helsinki School of Law</a></p>
+<p><strong>Course title:</strong> Legal Design (<em>Note: this is not strictly &#8216;tech&#8217;, but is closely related to the legal tech ecosystem.</em>)</p>
+<p><strong>Location:</strong> University of Helsinki School of Law and Laurea</p>
+<p><strong>Type of course</strong>: Elective Bachelor’s and Master’s degree course</p>
+<p><strong>Length:</strong> 5 credits (135h of effort)</p>
+<p><strong>Fee:</strong> N/A</p>
+<p><strong>Description:</strong> Anyone with a background in legal studies knows how alien regulations, sections and directives look to the layperson. Everyone has agreed to terms and conditions without reading them, signed contracts riddled with legalese and gotten spooked by official letters full of government jargon. The complexity of legal writing alienates the layperson from the legal system, and in the worst case scenario erodes the trust in the system itself.</p>
+<p>During the course students will grasp the basics of design thinking in an interdisciplinary setting. The course will introduce the students in the role of legal design in producing clear and understandable legal writing in the future.</p>
+<p><strong>Contact:</strong> <a href="http://www.legaltechlab.fi/">www.legaltechlab.fi</a> is our website on which we are keeping up to date info on our workshops and events (upcoming courses would fall in here), and <strong>info@legaltechlab.fi</strong> is the best place of inquiry.</p>
+<p>&#8212;</p>
+<p><a href="https://www.ie.edu/law-school/"><strong>IE Law School</strong></a></p>
+<p><strong>Course title:</strong> <a href="https://www.ie.edu/law-school/programs/masters/master-legal-tech/">Master in Legaltech</a></p>
+<p><strong>Location</strong>: Online &#8211; Madrid &#8211; Silicon Valley &#8211; Herzliya</p>
+<p><strong>Type of Course</strong>: Masters &#8211; Blended</p>
+<p><strong>Length: </strong>10 months</p>
+<p><strong>Fee: </strong>31,700 Euros</p>
+<p><strong>Description</strong>: The Master in Legaltech of IE Law School is a cutting-edge, global program designed to empower lawyers, entrepreneurs and professionals from diverse backgrounds, to explore and harness the power of technology in the sector.</p>
+<p>The programme provides comprehensive academic and professional training in legal practice, as well as interdisciplinary analysis related to current developments in law and technology. The programme includes training in the areas of digital business, privacy regulation (EU &amp; USA), disruptive technologies, big data, legalbots and machine learning; e-commerce, online dispute resolution, coding, blockchain, cybersecurity, entrepreneurship and startups.</p>
+<p>Through this Masters, students will also gain crucial technical knowledge and learn innovative management methodologies and new business models.</p>
+<p>The global experience provided by this programme will help participants build a powerful network, as it exposes them to a top-tier professional network and a global legaltech community by offering access to three elite and innovative ecosystems: IE Law School, IDL Radzyner Law School and Silicon Valley. More information on the syllabus and study plan<a href="https://www.ie.edu/law-school/programs/masters/master-legal-tech/study-plan/"> here</a>.</p>
+<p><strong>Contact:</strong> <a href="mailto:paula.heras@ie.edu">paula.heras@ie.edu</a></p>
+<p>&#8212;</p>
+<p><strong><a href="http://www.swansea.ac.uk/law/">Swansea University School of Law</a></strong></p>
+<p><strong>Course title: </strong><a href="http://www.swansea.ac.uk/postgraduate/taught/law/llmlegaltech/?utm_source=Artificial%20Lawyer&amp;utm_medium=Legal%20Tech%20Education%20page">LLM in LegalTech</a></p>
+<p><strong>Location: </strong>Swansea University (Singleton Campus), Wales, UK</p>
+<p><strong>Type of Course: </strong>Postgraduate taught</p>
+<p><strong>Length:</strong> 1 year (full time)</p>
+<p><strong>Fee:</strong> £6,850 &#8211; UK/EU and £15,000 &#8211; International</p>
+<p><strong>Description:</strong> Swansea University’s School of Law is offering a brand new LLM in LegalTech from October 2018 &#8211; the first of its kind in the UK. This innovative postgraduate course will develop students into 21<sup>st</sup> century lawyers and legal service practitioners able to utilise technologies to drive innovation across the profession.</p>
+<p>The master of laws course will look at how Artificial Intelligence (AI) and other technologies are shaping the future of the legal profession and equip students with new skills. Teaching will be broken down into two general areas: how AI can be applied to the law and how the law is applied to AI.</p>
+<p>The LLM in LegalTech is aimed at law graduates and those currently practising at all levels within the legal profession. No prior knowledge or experience in coding or working with technology is needed, but legal knowledge is essential.</p>
+<p><strong>Contact: </strong>study@swansea.ac.uk</p>
+<p>For more information see: <a href="https://www.swansea.ac.uk/postgraduate/taught/law/llmlegaltech/">https://www.swansea.ac.uk/postgraduate/taught/law/llmlegaltech/</a></p>
+<p><span class="embed-youtube" style="text-align:center; display: block;"><iframe class='youtube-player' type='text/html' width='640' height='360' src='https://www.youtube.com/embed/U25sfmzr6Aw?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe></span></p>
+<p>&#8212;</p>
+<h3>Undergraduate Courses With Legal Tech Modules</h3>
+<h4><em><strong>Europe</strong></em></h4>
+<p><strong><a href="https://www.law.manchester.ac.uk/">The University of Manchester School of Law </a></strong></p>
+<p><strong>Course/Module Title:</strong> &#8216;LegalTech and Access to Justice&#8217; &#8211; Part of Undergraduate Course, for final year law students.</p>
+<p><strong>Location: </strong>The University of Manchester School of Law, Manchester, UK</p>
+<p><strong>Length:</strong> 12 weeks.</p>
+<p><strong>Fee:</strong> N/A.</p>
+<p><strong>Description:</strong> The emergence of LegalTech is one of the most significant trends in the legal services sector for decades. This project-based course aims to provide an academic and practical introduction to LegalTech. Student teams are assigned to non-profit clients, and work together under supervision on a project to build an app to solve a real-world ‘access to justice’ problem identified by their client.</p>
+<p>The apps are built using the <a href="https://www.neotalogic.com/">Neota Logic</a> software development platform. Weekly seminars will explore the access to justice crisis, how digital tools can help to address it, and how to design these tools using the Neota platform. The seminar classes are supported by weekly homework assignments.</p>
+<p>The course will end with a competition in which student teams present their apps to a panel of judges. The winners are selected based on criteria including effectiveness and creativity. After the course, the apps are deployed to leverage the students&#8217; work to address real-world legal and/or justice challenges over and over again on behalf of the non-profit clients.</p>
+<p><strong>Contact</strong>: Jenna Maddox &#8211; Undergraduate Admissions Administrator<br />
+por, Amy Colasurdo &#8211; Undergraduate Admissions Administrator</p>
+<p>Tel: 44 (0) 161 306 1271<br />
+Email: <a href="mailto:ug-law@manchester.ac.uk">ug-law@manchester.ac.uk</a></p>
+<p>&#8212;</p>
+<p><strong><a href="https://www.westminster.ac.uk/about-us/faculties/law">Westminster Law School</a></strong></p>
+<p><strong>Course title:</strong> A new core module to the second year cohort of our 3 year LLB (Hons) degree, called<strong> </strong><a href="https://www.westminster.ac.uk/law-courses/2018-19/september/full-time/law-llb-honours"><strong><u>21<sup>st</sup> Century Law</u></strong></a></p>
+<p><strong>Location</strong>: Little Titchfield St, Fitzrovia, building, London.</p>
+<p><strong>Type of Course/</strong><strong>Module</strong> &#8211; It’s a 20 credit undergraduate module, that’s taken as part of a 360 credit degree, and is one semester long. Students then have to do other core modules &#8211; and can choose from a range of options to make up the other 340 credits. Hence, its not a stand alone component.</p>
+<p><strong>Description:</strong> it’s a new module that I am currently designing for September 2018 wherein I’ll focus on the changing nature of legal practice over the last 1-2 decades to a diverse customer/service provider paradigm, what has driven this, especially in terms of policy and process innovation and LawTech, and the soft and hard practical legal skills, including entrepreneurship and technology, that students will need to succeed.</p>
+<p><strong>Contact: Marc Mason</strong>, M.Mason@westminster.ac.uk</p>
+	</div>
+	</article>        </div>
+			<aside class="mh-widget-col-1 mh-sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar"><div id="blog_subscription-7" class="mh-widget widget_blog_subscription jetpack_subscription_widget"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">News Alerts</span></h4>
+            <form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-7">
+				                    <div id="subscribe-text"><p>Enter your email to receive news alerts, plus info on Artificial Lawyer and 3rd party events.</p>
+</div>                    <p id="subscribe-email">
+                        <label id="jetpack-subscribe-label"
+                               class="screen-reader-text"
+                               for="subscribe-field-blog_subscription-7">
+							Email Address                        </label>
+                        <input type="email" name="email" required="required" class="required"
+                               value=""
+                               id="subscribe-field-blog_subscription-7"
+                               placeholder="Email Address"/>
+                    </p>
+
+                    <p id="subscribe-submit">
+                        <input type="hidden" name="action" value="subscribe"/>
+                        <input type="hidden" name="source" value="https://www.artificiallawyer.com/legal-tech-courses/"/>
+                        <input type="hidden" name="sub-type" value="widget"/>
+                        <input type="hidden" name="redirect_fragment" value="blog_subscription-7"/>
+						                        <button type="submit"
+	                        		                    	                        name="jetpack_subscriptions_widget"
+	                    >
+	                        Subscribe                        </button>
+                    </p>
+				            </form>
+		
+</div><div id="adrotate_widgets-2" class="mh-widget adrotate_widgets"><div class="g g-1"><div class="g-col b-1 a-38"><a class="gofollow" data-track="MzgsMSwxLDYw" href="https://www.legalinnovators.co.uk"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/03/Legal-Innovators.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-43"><a class="gofollow" data-track="NDMsMSwxLDYw" href="https://www.legalsifter.com/legalsifter-product"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/04/LegalSifter-Ad.png" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-32"><a class="gofollow" data-track="MzIsMSwxLDYw" href="https://content.thoughtriver.com/book-a-demo"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/04/new-TR-gif-.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-40"><a class="gofollow" data-track="NDAsMSwxLDYw" href="http://info.juro.com/tools"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/03/AL-list-of-tools-Ad.png" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-6"><a class="gofollow" data-track="NiwxLDEsNjA=" href="https://www.lawgeex.com/?utm_source=artificiallawyer&utm_medium=display&utm_campaign=artificiallawyer_display"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/02/n50-frames-side-bar-LG.gif" /></a></div></div></div><div id="twitter_timeline-5" class="mh-widget widget_twitter_timeline"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Follow me on Twitter</span></h4><a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-tweet-limit="1" data-lang="EN" data-partner="jetpack" data-chrome="transparent" href="https://twitter.com/artificiallawya" href="https://twitter.com/artificiallawya">My Tweets</a></div>	</aside>    </div>
+    </div>
+</div><!-- .mh-container-outer -->
+<footer class="mh-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+<div class="mh-container mh-container-inner mh-footer-widgets mh-row clearfix">
+<div class="mh-col-1-1 mh-home-wide  mh-footer-area mh-footer-3">
+<div id="text-3" class="mh-footer-widget widget_text"><h6 class="mh-widget-title mh-footer-widget-title"><span class="mh-widget-title-inner mh-footer-widget-title-inner">Artificial Lawyer</span></h6>			<div class="textwidget"></div>
+		</div></div>
+</div>
+</footer>
+<div class="mh-copyright-wrap">
+	<div class="mh-container mh-container-inner clearfix">
+		<p class="mh-copyright">
+			Copyright &copy; 2019 | MH Magazine WordPress Theme by <a href="https://www.mhthemes.com/" title="Premium WordPress Themes" rel="nofollow">MH Themes</a>		</p>
+	</div>
+</div>
+	<div style="display:none">
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93892041-1', 'auto');
+  ga('send', 'pageview');
+
+</script><script type='text/javascript'>
+/* <![CDATA[ */
+var click_object = {"ajax_url":"https:\/\/www.artificiallawyer.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/adrotate/library/jquery.adrotate.clicktracker.js'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201917'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/twitter-timeline.min.js?ver=4.0.0'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/lazy-images/js/lazy-images.min.js?ver=7.1.1'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/wp-embed.min.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201917.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.1.1',blog:'121161150',post:'12492',tz:'1',srv:'www.artificiallawyer.com'} ]);
+	_stq.push([ 'clickTrackerInit', '121161150', '12492' ]);
+</script>
+</body>
+</html>

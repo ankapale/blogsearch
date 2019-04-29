@@ -1,0 +1,23 @@
+Data Visualization: Creating Geo-spatial dashboards in Qlikview 
+ In my previous article, we discussed how to use Qlikview for visualization of tabular information. Now, let’s think of a scenario, where we need to represent location wise sales for a company running operations in India. 
+ We can represent this information in many ways – tabular format, graphical representation or representation on geographical maps. Let’s have a look at each of these representations and see why should we represent information on Geo-Map? 
+ A few key benefits of using geo-spatial visualization are: 
+ We can easily understand the distribution of Organizations presence across the country. 
+ Easy to represent high number of locations compare to tabular or graphical representation 
+ More intuitive decision making for the business owner. 
+ Due to these benefits, there has been a marked increase in geo-spatial visualizations. Almost all BI tools have started offering this visualization as a standard option (e.g. Qlikview, Tableau, SAS Visual Analytics etc.). 
+ When I started using Qlikview a years back, I wanted this visualization to be part of the dashboards I prepare, but i was unable to find a nicely structured tutorial around it. Hence I thought to contribute this article for the benefit of other analysts like me, who are struggling with similar question. 
+ Steps to represent information on Google Map: 
+ Load base data (with Latitude and Longitude of location). 
+ Generate Google Map Variables 
+ Create a Scatter plot and configure Google Map 
+ Loading the base data with the Latitude and Longitude of Location: 
+ Following is the excel file used for this tutorial. Load this in Qlikview: 
+ Qlikview Google Map Base Data 
+ Make sure that Latitude and Longitude variable names are in lower case, as google map variable gets generated based on lower case only. 
+ Generate Google map variables: 
+ Create another tab in script (File -> Edit Script. Then in new window Tab .> Add New). The paste the following code to generate Google Map variable. 
+ In Caption tab, width and height according to map_size_x and map_size_y (defined in the script). 
+ Finally, we get the desired results: 
+ This is an example where we represent information on geographical map in Qlikview. Have you done something similar in past? Do you have any experience / case studies illustrating the same in Qlikview or other visualization tools. 
+ 

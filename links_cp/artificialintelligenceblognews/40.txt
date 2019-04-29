@@ -1,0 +1,21 @@
+Jan 31 The State of Artificial Intelligence in 2019 
+ The Verge published a great article about the state of AI in 2019. The ever increasing hype around AI is being used by virtually every industry and sector to add “freshness” to their product and services lineup. 
+ They argue that never has the term AI meant so little, while it should be the most prominent thing we should consider for advances in 2019. 
+ Siraj Raval also published a great video on the same topic: 
+ The 10 predictions for 2019 in this video are: 
+ Client-side training will become much more popular. 
+ Kubernetes containers will become an integral part of the AI pipeline. 
+ AutoML will become standard for supervised learning tasks. 
+ Researches will focus on unsupervised & reinforcement learning. 
+ Mainstream generative model usage. 
+ Quantum machine learning in production. 
+ More AI-specific hardware. 
+ Data-driven decision making goes mainstream. 
+ AI will create more jobs than it destroys. 
+ In the here and now, artificial intelligence — machine learning — is still something new that often goes unexplained or under-examined. ... In the future, it’ll be so normal you won’t even notice. 
+ — The Verge 
+ Interest in artificial intelligence Over Time 
+ It is very interesting that in 2018 China was the place where most searches for Artificial Intelligence happened on Google. 
+ Comments on: The State of Artificial Intelligence in 2019 
+ AI is everywhere in tech right now, said to be powering everything from your TV to your toothbrush, but never have the words themselves meant less. This is what’s happening in artificial intelligence right now. 
+ 

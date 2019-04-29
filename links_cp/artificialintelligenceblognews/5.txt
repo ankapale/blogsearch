@@ -1,0 +1,42 @@
+Mar 20 When God Jokes 
+ This AI story was written by a friend of mine, Dr. Horst Walther, on his blog a few days ago, and I liked it so much I asked him if I could share it with you. 
+ Recently I joined a colleague for an after work beer at one of Düsseldorf’s oldest and most rustic Altbier (literally “old beer”) taverns. 
+ Quickly we engaged in a profound discussion about the nature of artificial intelligence and its effects on our lives and the World in general. 
+ We were not the only ones reflecting on their professional (and beyond) thoughts in a more convenient and inspiring atmosphere than a noisy, crowded, open-space office with only castrated and amputated computers at hand. 
+ At the table next to us sat God and the Devil. They seemed to be regular guests here as they blended in perfectly with the crowd, just like locals do. Maybe they indeed were locals. While my colleague suspected that God might be from rivalling Cologne, which is to be considered as rather daring in Düsseldorf, the Devil spoke a distinct and often ridiculed Saxon dialect. 
+ My colleague continued elaborating on the sad outlook that programmers might become the first victims of AI ... I could not help secretly and as inconspicuously as possible listening to the conversation at the neighbouring table. 
+ Seemingly the conversation was about the gaming business and the design and development of computer games, to be more precise ... using many specific terms I do not recall, as I am not good at memorizing these kinds of terms. 
+ And they seemed to be worried. 
+ “I told you before - under certain conditions it might run out of control”, I heard devil saying. He reminded me of that macho-type low-level programmer, who loves to touch the iron itself, who dreams of applying the raw power of a signal processor and for whom C, assembly or machine language was not too sharp a weapon, not to risk its use – and abuse. 
+ Under certain conditions it might run out of control. 
+ — The Devil 
+ “It is all about balance. The more autonomy you allow for the decisions taken, the more powerful the system's behaviour will be. Adding one control layer on top of the other, you have to let loose at some point. First you implement decisions, then overall beliefs driving these decisions, at the 3rd level these beliefs might change and take different shape, even new beliefs and meta-beliefs might emerge. Isn’t that all fascinating? No one knows the outcome!” was God's reply. 
+ New beliefs and meta-beliefs might emerge. Isn’t that all fascinating? 
+ — God 
+ He appeared to me to be the more intellectual types of nerd, one of those who go after architecture, UX & design. I wouldn’t be surprised if he was a proponent of the recently fashionable design thinking discipline. 
+ Meanwhile my colleague, a brilliant guy as well, went on contemplating the application of deep learning to more mundane tasks like driving a car in the asphalt jungle of a modern megalopolis. 
+ “How long do you think it will take for Google-translate grade systems to learn how to drive? And will the teachers, who tell these systems when their learning attempts were successful, be good enough at all? Or will they just learn from crashes? That would be a bit too human-like for my personal taste.“ 
+ I uttered some Aha, ahemm, nodding, shrugging and more sophisticated forms of structured silence, while clandestinely eavesdropping on some of the words from beyond the waiter’s highway, separating our two tables. 
+ “But it comes with some severe shortcomings: the outcome is no longer predictable, the overall energy consumption does not support our green computing intentions, and in the end you will lose control over the whole sprawling complexity. Eventually you will have to – and this let me tell you – you will have to push the reset button, rather sooner than later.” 
+ Well, you guessed it. This was the devil again, our real-politics guy. 
+ You will have to push the reset button, rather sooner than later. 
+ — The Devil 
+ Lame as a manager, but intellectually convincing, God's response was this: “Well I just could set the parameters right, I mean ... find the optimal set. Adjusting the degree of inclusion, compassion aggression, traditionalism, envy, trust … and the likes, and lock it into the firmware. While doable, this would still pose a daunting task. However by doing so I would cut off evolution, would severely limit emergent effects and stall overall progress. Letting mutation and selection adapt exactly these parameters on a secular time scale, led to those hyper successful emergent effects, like establishing a cultural evolution on top of the biological one. And now on top of that even the next layer is about to emerge in my breed, which is misleadingly dubbed Artificial Intelligence”. 
+ The next layer is about to emerge in my breed, which is misleadingly dubbed Artificial Intelligence 
+ — God 
+ At the same time my colleague mentioned this very word in some kind of mockery. As if it were the keyword, everyone was waiting for; it cut through the fog of the ear-deafening noise of the beer tavern. For a moment my colleague and god looked at each other, smiled, and nodded, like you may greet a rare compatriot in a foreign country, recognising that they are operating in a similar environment. Aren’t they? 
+ The Devil: “I don’t think that it is about flaws in the implementation, but the very goal is contradictory. The tricky thing is, that while pursuing the right thing, you will get the unwanted, rather the opposite of what you intended. Good is bad, remember Orwells, doublethink!' 
+ Good is bad, remember Orwells, doublethink! 
+ — The Devil 
+ "The design flaw is that making them utterly successful is the recipe for catastrophe. Every optimisation only makes the whole collective glide even faster down the slippery slope. Your favourite breed is too much bound to success, victory and glory. What made them thrive throughout the ramp-up period, will make your lemmings eventually hit a solid wall and lead to their complete self-destruction. That’s pretty deterministic. As you consider yourself a great thinker and architect, this should have been evident to you. Interesting, whichever way things turn out with the introduction of AI. I have to admit that. To be really helpful, AI must be able to make important decisions autonomously. By doing so, it has to follow pretty much the same path as your current breed did. So if you hesitate to reboot now and restart freshly, AI will take over your job rather sooner than later. Isn’t that a joke?” 
+ So if you hesitate to reboot now and restart freshly, AI will take over your job rather sooner than later. Isn’t that a joke? 
+ — The Devil 
+ God: “Hmmm, well, maybe you will turn out to be right. But, if so, it was a good fun either way.“ 
+ It was a good fun either way. 
+ — God 
+ After they paid their bills, in proven German manner ... separately, but with manna and glowing coals, they departed giving five, God to his cloud service environment and the Devil down to the devilish noise of his beloved hot and smelly server room. 
+ “See you soon, when I have more news. The story isn’t over yet, bye.“ 
+ My friend, after so many beers that you could consider him upgraded, came to the conclusion to apply AI to the entire development of the human species for it's better. 
+ “Hmmm, I mumbled. It can’t get worse anyway. See you tomorrow, Bye.” 
+ Will Artificial Intelligence be able to prove or disprove the existence of God? 
+ 

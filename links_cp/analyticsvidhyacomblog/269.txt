@@ -1,0 +1,33 @@
+How to re-use data models in Qlikview using Binary Load? 
+ What will you learn? 
+ After receiving a lot of queries on use optimization techniques in QlikView, I am compelled to write this article. The beauty of optimization is that it can be applied at any stage in QlikView application development cycle. 
+ There are multiple methods to optimize loading data in QlikView. In this article, I’ll discuss one of the optimization methods of loading data – ‘loading data from another QlikView document’. Before proceeding further, I would suggest you to go through Incremental data load in QlikView and Loading data from QVD files to get familiar with common loading data techniques. 
+ Now that we are familiar with various methods of loading data from different sources in QlikView, we will load data from a QlikView (.QVW file) itself. This method is known as Binary Load. 
+ What is Binary Load? 
+ Binary Load replicates the data model of an existing QlikView document into another QlikView document without accessing the original data source. Once the data model gets replicated into another QlikView document, it can be manipulated further, integrated into a bigger data model (by adding more tables to it or even reducing it by removing few tables). 
+ Syntax: Binary <Qlikview_filename.qvw> 
+ Some key facts to remember about Binary Load: 
+ A binary load must be in the very first statement on the left most (first) tab of your script 
+ You can only perform one binary load per script. 
+ It does not copy the objects of a document. 
+ Problem Case: 
+ During one of my assignment with a leading insurance company, I had created a sales dashboard for the sales team. After sometime, the fraud detection team asked for another dashboard, which should feature the sales metrics including the fraud metrics. 
+ This is an ideal use case for implementing binary load. I already had the data model in Sales dashboard. I can use this existing data model to create a new document and add more tables of fraud metrics for fraud detection. 
+ Implementation of Binary Load: 
+ Now, let’s implement this binary load to a new QlikView document. This can be done through following steps: 
+ Create a new QlikView document and save it as “Fraud.qvw” 
+ Open Edit Script window (Press Ctrl + E) 
+ Click on QlikView File button and locate “Sales.qvw”
+You can see that a new script statement is added at the top of the active script tab, which is “Binary sales.qvw” 
+ Add both fraud tables to the data model as we normally do. After reloading the script, the data model will be seen in a new QlikView document along with 2 additional Fraud tables. Following is the snapshot of the table viewer: 
+ Now, the rest of the task is of data visualization. 
+ Benefits of Binary Load 
+ Let’s look at some benefits of binary load: 
+ It helps to share existing data model of one document with another QlikView document. 
+ A Binary load statement is the fastest way to load data into a QlikView document. 
+ It saves development time and speeds up the reload process by avoiding extra load to create a new model from the data source. 
+ It helps in building advanced incremental load scenarios (we’ll discuss more on this in our forthcoming post). 
+ End Notes: 
+ In this article, we looked at binary load using an example of cloning data model of one QlikView document to another. We also looked at steps to implement binary load and its benefits. I recommend you to apply binary load whenever you are required use the data model of an existing QlikView document. 
+ In the next post, we’ll look at advanced use of Binary load with incremental data loading scenarios. 
+ 

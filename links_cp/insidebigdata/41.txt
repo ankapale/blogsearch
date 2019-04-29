@@ -1,0 +1,3 @@
+LogMeIn Rescue vs. TeamViewer Comparison 
+ We wanted to see just what a neutral third party would say about how LogMeIn Rescue stacks up against TeamViewer. So we asked the trusted software testing experts at QualiTest to compare and contrast these two solutions. Based on rigorous testing and data analysis, QualiTest found that Rescue beats TeamViewer in a number of key categories. 
+ 

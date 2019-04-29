@@ -1,0 +1,56 @@
+25 Questions to test a Data Scientist on Image Processing 
+ Introduction 
+ Extracting useful information from unstructured data has always been a topic of huge interest in the research community. One such example of unstructured data is an image, and analysis of image data has applications in various aspects of business. 
+ This skilltest is specially designed for you to test your knowledge on the knowledge on how to handle image data, with an emphasis on image processing. More than 300 people registered for the test. If you are one of those who missed out on this skill test, here are the questions and solutions. 
+ Our task is to segment the objects in the image. A simple way to do this is to represent the image in terms of the intensity of pixels and the cluster them according to the values. On doing this, we got this type of structure. 
+ Suppose we choose k-means clustering to solve the problem, what would be the appropriate value of k from just a visual inspection of the intensity graph? 
+ A) 1
+B) 2
+C) 3
+D) 4 
+ Solution: C 
+ Three clusters will be formed; points in the circle, points in the square and the points excluding both of these objects 
+ 6) 
+ In this image, you can find an edge labelled in the red region. Which form of discontinuity creates this kind of edge? 
+ The answer will be 8x100x100 because 8 bits will be required to represent a number from 0-256 
+ 9) [True or False] Quantizing an image will reduce the amount of memory required for storage. 
+ A) TRUE
+B) FALSE 
+ Solution: A 
+ The statement given is true. 
+ 10) Suppose we have a grayscale image, with most of the values of pixels being same. What can we use to compress the size of image? 
+ A) Encode the pixels with same values in a dictionary
+B) Encode the sequence of values of pixels
+C) No compression can be done 
+ Solution: A 
+ Encoding same values of pixels will greatly reduce the size for storage 
+ 11) [True or False] JPEG is a lossy image compression technique 
+ A) TRUE
+B) FALSE 
+ Solution: A 
+ The reason for JPEG being a lossy compression technique is because of the use of quantization. 
+ 12) Given an image with only 2 pixels and 3 possible values for each pixel, what is the number of possible image histograms that can be formed? 
+ A) 3
+B) 6
+C) 9
+D) 12 
+ Solution: C 
+ The permutations possible of the histograms would be 9. 
+ 13) Suppose we have a 1D image with values as 
+ [2, 5, 8, 5, 2] 
+ Now we apply average filter on this image of size 3. What would be the value of the last second pixel? 
+ A) The value would remain the same
+B) The value would increase by 2
+C) The value would decrease by 2
+D) None of the above 
+ Solution: A 
+ (8+5+2)/3 will become 5. So there will be no change. 
+ 14) fMRI (Functional magnetic resonance imaging) is a technology where volumetric scans of the brain are acquired while the subject is performing some cognitive tasks over time. What is the dimensionality of fMRI output signals? 
+ A) 1D
+B) 2D
+C) 3D
+D) None of the above 
+ Solution: D 
+ The question itself mentions “volumetric scans” over time, so it would be a series of 3D scans 
+ 15) Which of the following methods is used as a model fitting method for edge detection? 
+ 

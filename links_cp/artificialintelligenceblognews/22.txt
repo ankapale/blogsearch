@@ -1,0 +1,5 @@
+Feb 23 China Startup Funding Overtakes USA 
+ The competition between China and the US in AI development is tricky to quantify. While we do have some hard numbers, even they are open to interpretation. The latest comes from technology analysts CB Insights, which reports that China has overtaken the US in the funding of AI startups. The country accounted for 48 percent of the world’s total AI startup funding in 2017, compared to 38 percent for the US. 
+ The bottom line is that China is ahead when it comes to the dollar value of AI startup funding, which CB Insights says shows the country is “aggressively executing a thoroughly-designed vision for AI.” 
+ China’s natural advantages in AI are well-documented. Compared to the US, it has a huge population (1.4 billion), which offers a wealth of data and opportunity for companies to scale quickly. Its AI sector also has the backing of a central government that’s able to quickly shift resources (as opposed to the missing-in-action White House), and the country’s looser approach to digital regulations means companies can experiment more freely. 
+ 

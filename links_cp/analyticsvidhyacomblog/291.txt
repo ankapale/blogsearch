@@ -1,0 +1,1106 @@
+Advanced analytics certifications in India 
+ “How do I shift my career to work in Advanced Analytics?” 
+ A lot of people have asked this question to me. While there was no clear path for this around 3 years back, the scenario has changed today. Currently, professionals in MIS industry can undertake various certifications in advanced analytics to jump start their analytics career. This article summarizes various certifications available to people in India and rank orders them based on their merits. 
+ Consideration set 
+ This analysis is aimed for people with work experience. I plan to write a similar article for freshers some time later. Further, I have only considered courses from educational institutes well known across India. I have excluded certifications from Software companies (as they tend to focus on software training rather than the concepts behind) and other smaller training institutes. 
+ Following table summarizes various certification options available as of today: 
+ Note:There are courses running currently in IIM Bangalore and IIM Lucknow as well, but I am not sure whether they will continue as there is no information on websites of these institutes. 
+ Following are details for each of the courses with link to their websites: 
+ Certificate Programme in Business Analytics (CBA), ISB 
+ The program is a combination of classroom and Technology aided learning platform. Participants will typically be on campus for a 5 day schedule of classroom learning every alternate month for a span of 12 months, which would ideally be planned to include a weekend.
+In the month of no classroom connect, the classes will be conducted over a technology aided learning platform. The contact hours in this platform would be 24 hours a month and every alternate month. One more highlight of the programme is the Action learning project whose runs for 3- 6 months and asks students to solve a real business problem from an organization. For more information, go to: 
+ Advanced Certificate Program in Business Analytics (ACPBA), SJMSOM, IIT Bombay 
+ Jointly designed by the Shailesh J Mehta School Of Management at IIT Bombay, and HughesNet Global Education, the program is spread over one year and covers both the theoretical and practical aspects of the discipline. Industry experts also contribute to the course by giving lectures and presenting real-life consultancy projects. Towards the end of the course, there is 3 day on campus interaction between students and experts. For more information, go to: 
+ Again designed with HughesNet Global education, this executive long distance program is designed to expose participants to state of the art tools and techniques of analytics. The program coverage would include discussion on topics such as Data Mining, Design of Experiments, Survey Sampling, Statistical Inference, Investment Management, Financial Modeling, Advanced marketing Research etc. 
+ There are 2 sessions of 3 hour interaction every week (Thursday and Saturday). For more information, go to: 
+ This program is designed by Ivory education along with DMS, IIT Delhi. It is designed to build Advanced Skills in Business Analytics and Optimization and is divided in two parts. It follows a step-by-step approach where theoretical concepts will be followed by case studies and practical implementations. 
+ If I had 4 – 5 years of experience and the resources, I would go for the course offered by ISB. There are some clear benefits of this course: 
+ You get ISB brand on your CV 
+ Method of teaching is mostly classroom, there by giving a lot better learning experience 
+ They require higher work experience than most other courses, so you can expect to learn lot more 
+ If I had lesser work experience (resources could still be figured through education loans), I would go for the course run by IIM Calcutta because of more time spent to cover similar course material. Hopefully, this would mean that you have more time for interaction and hands on experience. 
+ So, following is the summary of my recommendations for advanced analytics certification: 
+ Which one would you join if you were a MIS professional? Also, If you are aware of any certification programmes, which could be helpful, please feel free to mention in comments or to write to me. 
+ P.S. All views mentioned here are my own and are in no way biased or influenced by any of the institutes above. 
+ Kunal is a post graduate from IIT Bombay in Aerospace Engineering. He has spent more than 10 years in field of Data Science. His work experience ranges from mature markets like UK to a developing market like India. During this period he has lead teams of various sizes and has worked on various tools like SAS, SPSS, Qlikview, R, Python and Matlab. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 652 Comments 
+ IIM Ranchi has also launched Executive Programme in Business Analytics & Business Intelligence, its a full day class room training spread over few weekends and 5 days training in IIM Ranchi. The course fee is only Rs. 1,50,000. 
+ NIIT program is fully disaster. The faculties are not from IIM or IIT at all. The teaching personalities there are redundant in the industry. Then they started a new venture to snatch people’s hard earned money by imparting most ineffective programme. Some good people already resigned from NIIT’s analytics program. 
+ I cannot agree more on this post. I don’t have words to express my anguish at NIIT’s program on Business Analytics. It is mere waste of your time, hard earned money and energy. I was one of the dropouts and I have seen many wanting/opting to drop out in the first module itself owing to the pathetic show much in contrary to their claims in their brochure and branding. Please go through other posts on this topic and take other experts’ advise / recommendations before taking your call. 
+ NiIT busi ess analytics course is fully bull **** I agree completely to what venu and vaidyanathan says…
+The drawbacks are ..these are my opinions in learning the course for 11 months ..and still finding it useless irrelevant… 
+ 1. NIIT just collects money from u and provide audio video conference and venue..NIIT staff dont know any **** abt the course..NIIT then outsources the course to Insanalytics..a third party vendor to run the course…so NIIT does not own the course.. 
+ 2. INS ANALYTICS gets paid by NIIT and they have their own courses separately ..they r not worried abt students and reputation at NIIT …they just arrange professors and run away ..no direct contact with students..insanalytics Just deals with NIiT and professors.. 
+ 3. The professors are paid by Insanalytics ..they take class infront of a camera ..they cant answer all the doubts asked by all 300 students from all over india ..they have option to deactivate ur questions and finish the session quuckly..they need to cover 3 batches in one day ..so they are also not worried abt u… 
+ 4. In real you pay 1.2 lakh and submit yourself to miltiple vendors where no one is interested in teaching u any new concept.. 
+ 5. Job support is zero..my batchmate was working for just rs.17 k inr salary per month ..they didnt even bother to get him a job for rs.25 k inr per month salary.forget salary ..no assistance to get u into any job in analytics industry.. 
+ 6. Better install free mobile application and learn using youtube videos …you will actually learn more and can crack an interview…. 
+ 7. In my opinion..all above points r opinions only ..may be legally technically the set up is different ..but this is what i felt in the course… 
+ I have two years of experience in a reputed MNC in Software Testing.
+I am selected for the Certification in Business Analytics from ISB.
+I do not have any experience in Analytics just that I started working with the Digital Analytics team few months back in one of projects. Should I go for this course considering the huge investment that needs to be done? How’s ROI ? Job prospects if I want to switch my company after this course? 
+ The certification is one of the best programme available in India. Since it a recent programme, it is difficult to be sure on ROI. However, given the shortage of talent in industry, I would expect that you will have good job prospects after the course. 
+ Thanks for your response to my query in another blog, Actually now i have applied for course by ISB , Since Swati is already through the admission process , could you please find a way for me to connect with her sinc e i want to know how do they evaluate a candidate, her experience can be of good help to me.
+looking for your timely response as always…. 
+ Glad to hear that you are selected for ISB CBA,
+Even I am in a same state of confusion as whether to take up the offer(being so expensive). As Kunal rightly said we have no clue on the placements record of this course from ISB, since its a first batch.
+Please give me an update, if you have any track on this. 
+ I would suggest you talk to the Organizer about placement / live project. It’s best answered by the Organiers. My personal view is that a fresher might not learn a lot from 3 month executive education programme. I wouldn’t rely too much on the course to help in the placement. 
+ I have taken admission in IIM ranchi for EPBABI programme and the programme will start from 30th November 2013.
+I have two month and I want to utilize this time by making myself expert in the area of subject. 
+ Can you please guide me about what are those area in which I should be strong. 
+ Try and spend time improving structured thinking and writing (you can read Pyramid Principle). Also, it would be great to pre-read basic terms related to Business Analytics, so that while you are at the course, you can focus on learning the concepts and networking with the group. 
+ Can you please let me know how to apply for this course (EPBABI), I’m interested in learning business analytic. Please give me details for the same, I’m looking out in bangalore. 
+ Hi Kunal, 
+ I have over 6 years of experience in software testing in eCommerce/Retail IT industry. I’m more interested in getting to business analyst/business analytic roles. Please suggest me, Is this course help me getting into the desired role? 
+ Hi , I have received a email from IIM-R offering me admission in the 3 month Business Analytics course . There was no interview or anything. Just based on my application , they have offered me . I want get more feedback about the the course 
+ Hi Kunal,
+I share the same thought with Gayathri, as I too got selected for the course (as everyone else did). Could you please help us to know…how the corporate houses have responded to this course. As far as course content is concerned it looks good to me. In short, is this course worth paying for? 
+ My wife did M.B.A. in International Business, worked with maspar on their loyalty program & data scrutiny for 2.5 years. Later she joined Body shop and worked on their loyalty program for a year. Then she left her job due to personal issues. She worked as guest faculty in couple of institutes. She is got selected in IIM ranchi 3 month executive program in business analytics. 
+ I want to know about career opportunities after completing this course. 
+ The course by IIM Ranchi is relatively new and they do not provide any placement support. Since its an executive education programme, as of now it will have limited impact on the CV. 
+ Past work experience of your wife would play a far more significant role in short term career opportunities. Additionally, I would urge you to check with the Organizers and Professors at the institute, if they have any tie-ups / live project opportunity. 
+ Most of these courses mentioned in the article are meant for people with little experience, who would work hands on with data themselves. Given your past experience, I am assuming you would have a IT Lead and Analytics Lead in your team. If that is the case, I would suggest that you do courses from outside India which deal with Management part of Analytics. One of the good courses open for registrations currently is here. There are various other courses, for which you can find details on KDNuggets.com 
+ On the other hand, if you want to be the hands on data person yourself, I would suggest the course from ISB (but I think they have closed their registrations for this year). 
+ Hi Kunal,
+I am working in a IT company.I want to shift to analytics side.I got selected for IIMRanchi EPBABI course,Later i got to know that IIT Bombay and IIT Delhi are also conducting Business analytics courses.Can you suggest me the good one among the three. IIMR is teaching tool like R,SAS etc.. where are IIT’s course in more of theory oriented i feel.Also pl are saying IIT’s wont concentrate much on practical application of the concepts.is it true?
+Some suggestions pls..!!! 
+ At this stage, I would put the three courses at par. You are right about learning the tools mentioned. Also, I have heard similar feedback about theoratical orientation of courses run by IITs. 
+ Please see the comment above by Vishwas where he mentions his discussion with Director of IIM Ranchi about the programme. However, before reaching any conclusion about ranking, I would want to see a couple of batches passing out of IIM R and then take feedback from some of those people. 
+ I was reading through all the above posts, and it was quite useful. I’m having similar type of queries, and need your expert advice.
+I did my Engg graduation from NIT and having around 7+ yrs of IT Exp (Employers: Accenture and Verizon).My current Role is
+System Architect and involving in Big Data Technologies (with few certification done on Apache Hadoop).And having good understanding
+on Data Science (just theoritical) and little comfortness with Statistical Analysis Tools Like ‘R’. 
+ I would like to take up a course which will help me to gain knowledge about whole spectrum of Business Intelligence/Analytics/Data Science.
+Considering my current exp. which course would be most valuable(as per knowledge) and will help me to get better opportunity/role. Thanks in advance! 
+ As I’m currently located in Chennai, is there any center too available for attending the Lectures for any specific course? 
+ Praxis Business School Kolkata is also offering a very good Program in business analytics. 2 batches are already out. They have a very good industry connect as ICICI, PwC, Target Corporation, Spencer and a few others are the knowledge partners. They impart education on the in depth study of the business processes, Statistical techniques, Predictive modelling, SAS,R etc. People from last two batches are working in reputed analytics organisations. I also did the same course from there more that an year back. I found that a very well structured and relevant program if anyone is seeking opportunities in the field of analytics. This is an honest review not doing any promotion for that college as I was also was very much confused when I Joined 2 years back. 
+ I am interested to know ,how is the opportunities for business analytics in European countries such as Ireland(Dublin). 
+ I am a computer science grad with about 3 yrs of exp in typical software development roles,keen to make a move into the field of analytics through a masters degree from outside of india.
+US is off course the best choice but high fee makes me to think , need your thoughts on alternate options (other than us) 
+ I have been selected for EPBABI course. It would be great if you could give me the contact of the person who did the same course as i want a feedback on the course or if you have already discussed with him about the course then please let me know. 
+ Since you have this site and heading an analytics division in a reputed co. thought of taking your guidance.
+I am a hotelier, did my diploma and am doing analytics in one of the firms in Banglore.
+I am a self learned guy and in recent time lot of things have started making sense to me. Still i was thinking if i should pursue a course in analytics.
+I am have been working for 11 years now and the career path seems to be fine.
+Please advise of what should be the right way to know more on analytics. 
+ As mentioned in the article, the course offered by ISB is one of the best and comparable to some best courses globally. However, since it has just started, it is difficult to say anything about placements are this program. 
+ A range of other courses are already mentioned in the article above. Let me know if you have any specific question. 
+ I have been shortlisted for the IIM-R EPBABI programme but im kinda confused because of two reasons:
+1. The course is relatively new and fee is a lil high.
+2. Iv heard they focus more on theory and a lil less of software exposure which I think is crucial in landing a job in this industry. 
+ I have 2 years of exp in supply chain mgt, and my job focuses on reporting using Ms Excel.
+I live in Bangalore and have heard a lot about an institute named Jigsaw Academy , their course content rocks good and faculty exp is rock solid. I actually had planned on taking up a basic foundation course in analystics from Jigsaw.
+In the men while I applied for IIM-R and got selected, Im all confused now which course to take up since the fee in Jigsaw is around 46K only. 
+ The founder and the faculty of Jigsaw have been roped by Great lakes Institute of Mgt for the 1 year programme in Analytics they have recently started, which indicates that they are definitely good . 
+ I have asked a couple of people who had taken up the course from Jigsaw, they all said course is really good as they deal with optimum amount of theory and more on case studies using tools that they teach. 
+ So now the big question for me is which among the two do i select 
+ JIGSAW ACADEMY or IIM-R ( Honestly specking i wanna go for IIM-R because of the brand name, although m skeptic about software tool exposure) 
+ Experts please help asap…..coz I have like only 14 days left to make the payment for IIM-R if I wanna take up analytics there. 
+ It is d first batch that they’v started at great lakes..fee is around 3L…while at IIM-R…it is the fifth batch.
+Is it that IIM-R course would be better for people with analytics exp since its an exec program? 
+ I meant Great Lakes is better brand than Jigsaw. This would be second or third batch for Great Lakes as well. I know a couple of students who are currently undergoing the curriculam. 
+ IIM-R is equivalent / slightly better brand, but lately, they have been relatively liberal with their intake of student. Going by their selections, I don’t think they expect analytics experience in the candidates. 
+ The course might have limited short term impact of your current career. However, they are related industries and I expect Analytics to create differentiation for a lot of applications. Read this story for example, so the course will have long term benefits. 
+ I don’t think switching after investing 10 years in a field is a great idea, when the field itself presents opportunities. 
+ I am B.E.(Computer Science) and MBA( Marketing& Systems).I have around 4 years of Sales & Marketing experience in world’s biggest battery manufacturing company.I want to shift my career to Business Analytics. I have following queries.
+1.Since i have sales and marketing experience and don’t have any software and programming experience.If i switch my career to analytic fields, will it be beneficial?
+2.ISB or Great Lakes Gurgaon for business analytics course (I live in delhi)?
+3.As i am planning to do this course next year. In the meantime should i try to learn SAS?
+4.What are my chances of getting job as a business analyst after completing course? 
+ 3. You can. However, I would focus more on learning concepts rather than tools. Go through some of the courses on Coursera mentioned in this article. 
+ 4. The industry is short of good talent and companies are looking out for people from premier institutes. However, lack of organized placements and relatively short term of the course makes it difficult to put any numbers on placements. The chances would be as good as your efforts and knowledge you earned during the course. 
+ Great Lakes Institute of Management,Gurgaon is also offering Post Graduate programme in Business Analytics for 11 months for working professional.
+Its a very good private college and the curriculum offered is also good.
+I am planning for it.http://pgpba.greatlakes.edu.in/ 
+ How has been your experience at Great Lakes-PGPBA? Please share as I am applying for the course too and want to know the complete picture in terms of the course content and future prospects after the completion for the course. 
+ I did MBA specialized in marketing and working with e-comm/telecom company completed almost 2 yrs. I am using some simple technique in excel for data analysis, but i want to move to the analytical side properly. I do not belong to technical background, I say it so because I think it contain some programing language(not sure). Please guide me and suggest best institute for this course around Delhi/ncr. 
+ Dear Kunal
+I have done B.E. and after that I have done M.B.A. in HR and I have two years of Experience in Sales. I want to move to business analyst side.Please suggest me best institute in mumbai, which offer this course. Thanks 
+ Hi Kunal,
+Thanks for the wonderful details about Business Analytics.
+I am a Sr. Data Warehousing / BI Professional based out of Singapore (with 4 yrs. in banking). I have handled the role of a Business Analyst as well. While planning for a career shift into Financial Risk Management (stuffs such as Basel III ), I came across Financial Risk Analytics as an option. Found it interesting as well….I would like your guidance on how to proceed further. 
+ I am a computer science grad with about 3 yrs of experience as software analyst,currently undergoing business analytics course by jigsaw to get in to analytics.
+I wanted to know if its advisable for me to go for FRM to look for risk analytics jobs.
+Is MBA mandatory for FRM?? 
+ This is Bhupendra, done MBA in Marketing & Finance and have 6 year of experience in Sales and 1 year in market research. I am looking to switch my career from sales to Market Research. Does Business Analyst course from ISB is a good option. As I have done MBA-Marketing so I think it will be great combination of marketing and business analyst. I can work for some market research firm as businee analyst. 
+ This is Ganesh here. I hope you will be able to give me good guidance and clear some of my doubts. I am a B. Pharm grad working as a Quality Analyst in a BPO (medical transcription, billing, coding). I have a total experience of 13 years in this field. I am thinking about a career shift to Analytics and have joined the foundation course at Jigsaw. I have two questions to ask you. #1) At age 36, is it too late to contemplate a career change to Analytics. Is it worth trying for me. #2) If I can, what other courses will help me to have a good entry into this career. I have good clinical/medical domain knowledge with my 13 years of experience. 
+ 1. It is never late for a change as long as you are doing it for the right reasons. However, you will lose the benefit of work experience and start afresh, which might make it difficult to change. 
+ 2. If I was in your place, I would have tried for an opportunity in Clinical Analysis. It fits with your education and experience. You can look out for courses in this domain. Coursera is a good place to start. 
+ Thanks a lot for the suggestions. You have mentioned about Clinical Analysis. Is it the same as Clinical Analytics. Can you tell me what knowledge should I have if I have to get into Clinical Analysis. How is the job market for it in India. I have searched Coursera, but I did not find any courses specific to Clinical Analysis. If I get to know what all domains are covered and what I should learn, I will try to get that knowledge by studying specific courses/doing specific training related to them. 
+ As always thank you and you have been a wonderful person in helping out naïve people like me get to know what it takes to be a part of an evolving field like Analytics. 
+ Yeah, Clinical Analysis and Analytics typically refer to same field. Knowledge about statistics hypothesis testing, A/B testing, DOE are must for clinical trials and analysis. Most of the jobs in India in this domain would be for US clients (in KPOs). 
+ I have done BE in IT and post that I have 4+ years of experience in IT industry 1.5 Years in Java,PHP programming and 2.8+ Years in BI,Analytics and Data warehousing field using Microsoft BI tool. Currently I am working in East Africa for a multi-million dollar telecom company as Data warehousing consultant. 
+ I am fascinated by the term Data Scientist and want to become one in near future. I am planning to pursue MS in Data Science course from university in US. I scored 308 in GRE recently. 
+ Could you please suggest if ISB would be better option than US university for me?
+Also could you please suggest me some great courses in US that fits my profile?
+I am also concerned about the jobs after MS in Data Science, Are there enough jobs in India and US for Data Scientist in present and in future? 
+ A data scientist should have good knowledge about following domains:
+1. Programming
+2. Data management
+3. Analytics & Statistics 
+ Since you already have experience with the first 2, you should aim for a course which gives maximum benefit in third domain. There are various courses in US which might fit the bill. You can check out details on KDnuggets.com for more details. The most advanced intensive course which I have seen in run by Zipfian Academy. You can check that out as well. 
+ As far as the jobs are concerned, US would be a bigger market for top end data scientists. However, that might change in time to come. 
+ I checked Zipfian Academy’s website and their course structure etc however it seems they do not offer a MS course. I am looking to go for a MS in data science/Analytics. 
+ I checked on KDnuggets.com and did some research on listed universities and their courses. I was impressed with few universities and their course structure however I cannot finalize any. 
+ Could you please guide me on some really good MS courses in US with good course content. 
+ I came across a university named Illinois institute of technology, Chicago ranked close to 200 in US. They have included a MS in Data Science course starting 2013. They have relatively low fees (~$20,000) and good course work with research options. 
+ Is it worth doing for my profile? Or you suggest I should apply for some other better ranked universities like NorthWestern, carnegie mellon, Louisiana state university etc. 
+ Hi Saurabh,
+Does data scientist course require a GMAT or GRE? Also,can you tell me whch university are you pursuing this course from? I am also interested in pursuing this course. I am working for a big IT firm, have almost 10 yrs exp in Oracle,pl/sql, business intelligence tools like informatica, business objects etc.
+Ashish 
+ The fit depends on what you want to do in your career and feel passionate about. The courses should benefit you in case you want to shift in this domain. Great Lakes institute (Gurgaon) and IIT Delhi run courses which you may find relevant. 
+ i can attend part time course only. As i seen IIT D’s course, they divided it into two parts basic and advance. Tools are also required to learn to grow in this field. Fees for the institutes are very high as i m from middle class family. Suggest me something sir. 
+ I have checked on website of IIT-B & SJMSOM, but none of them has details about BA 1 year course offered in association with Hughes education. Also, requested info on Hughes education website. But no response. 
+ Thank you for this wonderful post. I’m having 6+ Years of experience in Data-warehouse and Business Intelligence (Working on dimensional modelling, ETL and reporting) and I want to move myself into Analytics. Can you please advice on the path which I should be taking to achieve this. I’m planning to take some basic to advance level analytical course/certifications but not too sure which one I should be opting for. Also, if you could throw some light on the job prospects after undergoing these courses/certifications. 
+ I am having 2(1+1) years experience in Telecom n IT industry and now I am willing to move myself to analytics field as I feel I can use my skills more efficiently in this field. Could you please suggest me any good institute in Mumbai, as I can’t afford to leave my job and wanted to learn in weekends.
+I researched and find out a course “advanced certificate program in business analytics – iit mumbai”, but when I contacted them they told now the course is not in practice.
+Please suggest me some good option. 
+ I have about 14 years of experience out of which 12 years as a hardcore Business Analyst in the Insurance domain. Am in my late thirties now and want to switch over to Analytics. Basically a B Com and MBA (Finance). I haven’t worked for any BI projects though. My area of interest is insurance analytics since there are many areas in insurance where analytics is gaining momentum. I myself am driving an analytics initiative in my company as a requirement analyst, the actual stuff will be done by the BI/Analytics team. 
+ My question is whether it would mak sense now to switch over to analytics at this stage of my career. Which course can I go for and what ype of roles/designations can I expect with my industry experience ? Any idea about the analytics course started by NIIT ? 
+ I have few questions for you.
+1. Which software tools are used in “Advance Certificate Program in Business Analytics – IIT Bombay” ? (R or Python or any other ?)
+2. Which sector they focus on while teaching ? (Is it capital markets or any other?)
+3. How is their study material (Notes and other things)? Do they provide Video lectures ?
+4. How many faculties teach this entire course? What are the faculty names? 
+ I think your best bet is to contact Hughes education directly. I will answer whatever I can: 
+ 1. They used to focus mainly on MATLAB in past. I am not sure which tool they are using currently.
+2. They have a mix of examples / case studies across sectors 9including capital markets, marketing, segmentation etc.)
+3. They conduct webinars on set time and ask you to come to campus for a short duration. I haven’t seen the study material.
+4. This keeps changing. Best to check it with Hughes directly. 
+ While there is a huge overlap in the study material, the focus is on different applications. For example, Econometrics would typically focus more on things like macro-economic forecasts. Data science is a more broader term, which would include studying customer behaviour and taking decisions basis data. 
+ I reside in Mumbai (I am Mumbaikar).
+Basically I want to study financial time series modelling in R thoroughly and want to apply it to financial markets.
+For that IIT bombay course seems very good provided they conduct practical sessions in R for whole course.
+Also there will be huge demand for languages like R , Python, Stata in near future as compared to SAS or MATLAB so I am particularly looking for R.
+IIT Bombay’s course syllabus seems very good but there has to be practical sessions to use those concepts.
+And most importantly study material has to be very good in the form of notes. (I hate to read books) 
+ Dear kunal, I have 6 years of work exp in financial services n currently working in leading home finance company – credit deptt. After putting in so many years now I am seriously looking for a career shift and what better than analytics to go for .The isb course is very expensive n wants full time involvement. Kindly suggest me three options which r better in terms of placements ,fees. I am MBA in finance n stay in delhi. Thanks 
+ While the course from ISB is expensive and requires full time involvement, it provides better learning experience as well. None of the courses provide active placement services, so it is difficult to judge s course on it. 
+ Within Delhi, you can look at Great Lakes Institute of Management as one of the options. 
+ Need your guidance and advise to clear some of my doubts. I am a B Sc (Life Science) grad working as a Team Leader in a BPO (Health, Life Insurance). I have a total experience of 8 years in this field. I am thinking about a career shift to Analytics and planning to join NIIT Post Graduate program in Business Analytics. 
+ My thoughts/questions:
+> I think doing this PG will atleast add the higher edcucation in my resume (now its B.Sc) will this help ?
+> Will it be good to jump into Analytics field post BPO experience for 8 years
+> Is the course in NIIT worth trying (Fees: 1,40,000/-) 
+ 1. Idea of adding a masters is good. However, this degree from NIIT may not be considered at par with masters currently.
+2. It would be a good shift if you can get a good lateral opportunity. That typically depends on openings / structure of your current employer. If you want to look for opportunities outside, your current work ex will be discounted.
+3. I would have waited to see a batch pass out and then take a call. 
+ I am a fresher and want to start a career in BA. I’ve heard a lot about jigsaw academy, but I’m curious as to how much value these online courses hold ? Are there any other institutes that offer instructor led courses along with placement assistance ? And also I’ve heard about IIM-R collaborating with IBM to offer a course on BA. What is the eligibility criteria for that course ? Does it require work ex ? 
+ Jigsaw offers one of the better courses available as of today. Even though the interaction might be limited, the content and industry connect is better. As of now, I am not aware of any institute providing placement support. 
+ If you want to go through instructor led course, have a look at ISB offering as well. 
+ Hi,
+I have three plus years of experience in a reputed MNC in Software Testing.I am selected for the Certification in Business Analytics from ISB.I do not have any previous experience in Analytics. Should I go for this course considering the huge investment that needs to be done? How’s ROI ? Job prospects if I want to switch my company after this course? 
+ I received the email today morning.Have you done with the interview and received the admission offer?Next step is payment of the fee within the deadline as mentioned in the offer email and classes will commence from feb4th as per schedule. 
+ The course from ISB is one of the best course available in India as of now. While it does not provide a placement support, it is only a matter of time before people get picked up. 
+ It is difficult to establish ROI at this stage since it is a course in early stage. However, given ISB brand, tie-up with SAS and Biocon, you can expect some good options. However, you will need to rely on your network and lateral hiring for now. 
+ Congrats for the selection. The course from ISB is one of the best in the industry. Following is the approach I would take: 
+ 1. How much experience do you currently have? How much do you expect to earn in coming 5 years?
+2. By investing 5 Lacs in this course, it is reasonable to expect that you would be able to get starting jobs in advanced Analytics industry. Project the earnings in this scenario. 
+ Hi,
+Im currently working for an MNC as infrastructure management associate and i want to shift into analytics and I’m a fresher right so i wont be leaving this current job untill another year so, i want to utilize this time gap and complete some of the certifications in analytics and if possible SAS also …. so how do i start off or which training would be help full ….. plz help me out. 
+ I have around 11 years of IT experience. 5 Years in Database technology and rest 6 years in business intelligence (MSBI). I have been with premier organizations (Syntel, Microsoft, CSC). I am also an EMC certified data science associate professional. I am also a part of Big data analytics group run by CSC.
+I have got an offer for doing (CBA) Analytics course from ISB. 
+ After having such enritched IT experiecne, whether I should go ahead and do this course (considering such a huge investment at this stage of life). or I should try some other mean to gain the knowledge. Is it necessary to have analytics certificate to become a data scientist or a person can become a data scientist based on his passion after learning data science by itself. 
+ There is no necessity o a certification in case you get a break through in the industry. If you can get a break through into a good role, on job training is usually far more effective. I myself have not undergone formal certification for Analytics. 
+ If you don’t have an offer for a relevant position in data science, you should consider how easy or difficult it would be for you and compare it against the resources and time you will spend for ISB certification (and the chances of getting a relevant job ater the course). 
+ Answering this question generically would be too long and might not answer your question. If you can provide more details on some of the aspects, I might suggest some thing more relevant to you: 
+ 1. Which technologies have you worked on?
+2. How much of your role is business users facing?
+3. How much time and resources can you devote to learning analytics?
+4. What is the time frame in which you would want to switch your career to Analytics?
+5. Depending on your work ex, you may have to start as a fresher in this industry. Will you be comfortable in that situation? 
+ 1. Which technologies have you worked on?
+Answer :- Pl/sql, Sql.
+2. How much of your role is business users facing?
+Answer :- I am in a customer facing role, so it’s a day-in day-out job responding to business needs of customer and application users as well.
+3. How much time and resources can you devote to learning analytics?
+Answer :- I am ready to study for a year in analytics area and spend my savings as well.
+4. What is the time frame in which you would want to switch your career to Analytics?
+Answer :- In next 1-2 years.
+5. Depending on your work ex, you may have to start as a fresher in this industry. Will you be comfortable in that situation?
+Answer :- I think IT Services industry could offer me analytics jobs. What do you suggest? 
+ I have an overall exp of 12-13 yrs in the IT services industry. I am currently working as an engagement manager in the pharma research industry and am looking to gain analytics skills so as to take up similar roles in the analytics space which i think will help to leverage my current skills + gain analytics skills which i am interested in. Could you provide me your inputs on the courses that i should consider doing, to gain these skills sets to look for such roles. Would the courses from ISB/IIMs or insitutes like jigsaw, help me with this. 
+ Hi,
+I have been looking for a reputed course in business analytics. Particularly, web analytics. I have come across an online course offered by University of British Columbia.
+Is this course recognised by companies in India?
+Also, how does NIIT Imperia business analytics course rank?
+Regards,
+Anjali. 
+ As I can see from the message board that few people were asking about NIIT’s business analytics program. I can assure everyone not to attend this course. Because, I joined the course and then I left midway when I realised that it’s a wastage of money. I can share my experience with all of you. 
+ First, this program is really awful with respect to the current business analytics demand. Second, NIIT advertises some faculties and almost all of them do not take the course viz. Debasish Roy is no more attached with this program, Nidhan Choudhury lives in US and he won’t take any class ever, Sudhir Mallick is an old hat who struggles and stumbles at every part of teaching, Shyam Karmakar comes rarely and he takes Excel course ! Two folks from TCS, Tathagata Mukhopadhyay (TM) and Goutam Das (GD) are awfully junk. TM hardly has knowledge some basic statistics and his teaching & communication skill is horrible. GD is an empty vessel ! 
+ Lastly, the money that NIIT charges with respect to this current environment is ridiculous. So I’d strongly recommend not to attend this course. Then you’d waste your hard earned money. 
+ I am having 7+ yrs of IT experience as a Build & Release engineer. Tools & Technology i worked in are – Perl,Shell scripting, ANT,Maven, Linux, Jenkins, Weblogic. I am already earning a good package of about 14 LPA. I am interested in entering into Business Analytics but confused that after doing this course for 1 yr will i be getting a similar package. Even if it is close to it i am fine as i know that can covered once i have working experience in this field and there a huge demand for candidates having good knowledge. I live in Gurgaon and looking for Great lakes. Kindly guide me to right direction. 
+ Typical salaries for freshers entering advanced analytics domain start from 6L onwards and can be as high as 12L on the outer side. 
+ However, the course from Great Lakes is relatively new and might not be able to offer similar placements. You should check it with them directly. On the other hand, you can also check the course from ISB. 
+ Hi, presently I am working with hdfcbank with 5+ years of experience in retail banking. I am interested for a career in analytics, also I am pursuing an online course in analytics from jigsaw academy. However, I am not able to concentrate on it as my job is very much hectic 
+ I am also interested in Business Analytics . Presently i am working in one of NBFC as an AM and i want to switch my career as BA .As i am confused about how to enter in this domain .So,how is online course of jigsaw academy .How is the course material provided by jigsaw . is it beneficial and will it be useful in getting job ?
+Please do contact with me . 
+ Hi Kunal,
+I have >18 yrs of work ex with last 10 yrs in financial services. I have headed sales analytics department for 5 yrs during this period. While I strong analytical abilities I have mostly worked on ms office tools and have little exposure to sas etc.
+I am planning to take this isb course and make a shift to advanced analytics world.
+What kind of jobs can I get post these course?
+Does salaries in this field equsl or beeter than bfsi
+Pls help 
+ When you say you want to shift to Advanced Analytics world, what kind of shift do you have in mind? Do you want to shift in people management / leadership role? Or do you want to spend time hands on working on these advanced tools? Also, what is your motivation behind making this shift at this point in career? 
+ Salaries, in general are better (for like to like work ex), but it might be difficult to make a generic statement. 
+ I am an IT Business Analyst with 3+ years of professional exp. Prior to this I have a bachelors degree in Elect Engg. I’ve worked with TCS and ING Life. My domain specialization lies in Insurance, Superannuation and Banking.
+I enrolled with an institute for a course in Business Analytics last year. Although I got some hands-on in SAS, SPSS and some statistical techniques , but the course & learning was insufficient for further carrer opportunities.
+I appeared for some interviews but most of the roles were around data analysis, consulting. I am looking for something into pure analytics with domain exposure. 
+ 1. Can you help me by suggesting some courses which will prepare me for the role I am looking for?
+2. Is an MS degree required for getting a job in the role I am looking for?
+3. Also, let me know if my profile is suitable for acceptance to MS degree programs in US, given the fact I have little or no technical work-ex?
+Requesting guidance from your side… 
+ You can also see if some analytics consultancies can offer you a relevant role. It is typically easy to move internally in these Organizations as they are very dynamic in nature and work on diverse set of problems. 
+ Here are answers to specific questions: 
+ 1. Given your work experience, the course from ISB might be the best fit. In the meanwhile, you can continue to go through courses on Coursera. 
+ 2. It is not necessary, but might be a good way to enter the domain 
+ 3. I think profile fit would not be a challenge. However, this varies from college to college. 
+ I suggest you few points those who are in IT development or functional rolls are in career transition into Business analytics 
+ — Business analytics is not for freshers but it’s for experienced techno functional candidates
+Companies recruit only IIS or ISI or MSc stats graduates from premier schools only
+Some fake training institutes misguide even freshers are also eligible can join .. don’t trust them . 
+ -It not only needs technical skills but also needs management subjects like business, economic , statistics, finance, HR ,marketing, operations management and SCM
+If you have MBA or MSc statistics that would be great 
+ –do market survey on salary, designation, experience on BA before join the course .
+If your years of experience is not fulfilling market salary you won’t able to get rich salary in short duration by doing new course, you will again start new salary and new career . It just enhance those who are in similar field . 
+ My Profile : 
+ Since 8 years I have been recruiting plethora of technical candidates for US and Canada locations for fortune clients 
+ Thanks Chandra for sharing your perspective. While some of the things you have mentioned are hard realities about the industry, I don’t agree entirely with the point you mentioned on only IIS or ISI getting fresher placements. 
+ A lot of companies have started going to institutes beyond ISI. IITs see ~30% placement with Analytics firms and so do some NITs as well. IIMs and top 20 MBA colleges also see good placement in Analytics companies. 
+ Also, a lot of start-ups are now moving to big data infrastructure from the start, which will further increase the penetration of these jobs. Even though rare, I know people from non-premier institutes who are doing well in the sector. 
+ You have very good experience in IT and getting handsome salary. you will get good offers if you concentrate more on current job . Your current technical skills won’t match to Business analytics skills .Your current salary indicated your demand in the industry . I suggest you, you should stick your current job only . 
+ Hi Kunal,
+I am from Gurgaon presently working in KPO sector.I am B.Tech and MBA(Finance). I want to switch my career in BA profile. Apart from Great lakes, can you please provide some of the good training institutes based in Gurgaon or Delhi.
+I heard about Jigsaw, but it is mainly based in Hyderabad.I an looking for a classroom training.
+Thanks
+Avishek 
+ IIT Delhi runs a course which can be of your interest as well. While there are other options (e.g. NIIT has also started a course on BA and there are other boutique institutes running the course), these 2 courses are the best for classroom training. You can also look at the training provided by the SAS institute (although it would be only on SAS). 
+ Thanks for this very detailed & informative write-up and Q&As. I am a sales professional in real estate industry in Delhi-NCR having 8 years of experience with B.Tech . & M.B.A. Marketing as edu. qualifications. I have few queries:
+1. Moving to any other vertical / JR, would this be right course as i am having interest in stats. but apprehensive about the post program job offers.
+2. Though class room training is the best way to learn, is online program has similar advantage.
+3. Given a choice, which course is preferred over i. 1 year MICA course on Research ii. IIM Ranchi 3 months weekend program on Business Research iii. Any other online program 
+ 1. not sure which course you are referring to here. Please let me know and I will answer accordingly.
+2. Online programme has its own advantage and dis-advantage. Advantage is the flexibility it provides (specially for working professionals, like you and me). Disadvantage is that you do not get the entire ecosystem.
+3. The courses you are referring to have different course content. The right choice depends on what you want. Since I am not sure what do you want, it is difficult to provide right advice. 
+ Hi,
+I’ve done Pgdbm (finance) in2010 n workin in family business of civil works n transport for past 11 years.
+Since business is not doing good for some time now I wish to take a jo. Will a course in analytics be of any help?
+Any other suggestions that you find better. 
+ Analytics is a very specific skill set and might be difficult to learn / develop after working for 11 years. Also, it would be difficult to get a job only on basis of these courses as none of them provide any placement support. 
+ Hi, presently I am working with hdfcbank with 5+ years of experience in retail banking. I am a graduate in Bsc computer science. I am interested for a career in analytics, also I am pursuing an online course in analytics from jigsaw academy. However, I am not able to concentrate on it as my job is very much hectic. I am planning to leave my job and do some regular certification from institute like niit analytics.Can I expect better prospects in terms of job profile and salary after doing this course. Please suggest. 
+ Nice to get insights about the Analytic Industry through your blog. I am also looking for a good Analytic course, in past I had considered IIM Calcutta Distance Learning Course but they were unable to provide me any Alumni contacts through which I can get any feedback. I am now looking forward to IIM Ranchi course (as I am in Mumbai). But their website doesn’t show next admission schedule. Any Idea bout the same? I am working as Analyst in Pharma Industry for past 7 yrs. I am looking forward to switching in core Analytic company & hence looking for certifications. Any suggestions.. 
+ Thanks for writing such a insightful article .I Am working in one of finance company in sales and marketing unit with 2.3 yrs of exp .i am B Tech in ECE .Now i want to shift my career in BA industry .So, I have some query for which i want your advice .
+Below are some points : 
+ 1. Some of institutions are providing online certification courses in BA like JIGSAW /EDVANCER ,IMARTICUS provide classroom programme .are these acceptable in market .
+2. If i get certification from these institutions will it help me in getting a job as most of the openings in market are for experienced candidate .
+3.How BA & BI are related .Which one will be suitable for my profile . 
+ 1. These institutes are gaining recognition with time. I would say that you should expect good knowledge gain and some chances of getting a job. It would be difficult to get a job only on the basis on this certification. 
+ 2. Already answered 
+ 3. BI includes dashbaording and answering what has already happened. BA on the other hand could be detective and predictive analytics. Refer to this article for more details 
+ Hi Kunal,
+In my current job i manage an MIS + Planning team for a Call Centre that looks after the performance reporting / analysis, forecasting call volumes and hiring requirements for multiple lines of business.
+However all of this is done on excel. 
+ My current role puts me into the senior management category (10+ years of experience) that looks after a team of 50+.
+I wanted to upgrade my skillset in Analytics for future growth prospects.
+For that i was considering doing one of the below courses. 
+ 1) Executive Program in Business Analytics from IIM-C
+2) Advanced Certificate Program in Business Analytics – IIM-B 
+ Can you advice keeping in mind my professional experience what sort of jobs can i expect to fit in / should aim for in the Big Data / Analytics field and are the courses above ideal for those jobs. 
+ From an education point of view i have done my BCOM however don’t have any specific experience in IT/software language neither have any knowledge of tools like R, SAS etc. 
+ None of the two courses are aimed towards leadership role in Analytics. They are for people who want to start their career in analytics. There might be more relevant leadership courses from institutes outside India, which might be more relevant. 
+ I didn’t mean that you would not require know how of these techniques. The minimum you would need is a fine understanding of how these platforms work, their limitations and strengths. But this is very different form having hands on experience on them. Any thing more than this this understanding is better and beneficial. 
+ If you can get some hands on experience, that is good. But taking up a hands on role might not be the best thing for some one in your shoes. There are leadership roles available in several Organization where good high level understanding might be good enough to give a break. You might need to search a bit! 
+ Hi Kunal
+thanks for sharing great thoughts on this subject. You seems to have quite a lot of knowledge about this field of BA. I have few questions which i am sure you can help me with that. As few of the guys like me asking about little economical and short courses run by various institutes such as JIGSAW, EDVANCER ,EDUREKA, International School of engineering, Analytics Training Institute, Academy for Decision Science & Analytics, IMARTICUS & few more. courses run by these institutes start from approx Rs 20000 upto Rs 50000 etc 
+ Which of the course is best among all listed above (economical & short duration)
+1. In terms of course content
+2. Recognition of course by analytics industry
+3. Analytics industry collaboration/contacts for placement assistance from institute listed above 
+ I am sure answers will help who wants to enter in this industry with lowest possible cost, good recognition & strong knowledge 
+ 1. Jigsaw has the highest market share with good content among these.
+2. Recognition is increasing but is relatively low as of now.
+3. I don’t think any of these institutes provide extensive support. Jigsaw used to provide it some time back (not sure, please check for yourself). 
+ Thanks Kunal for the response.
+i finally decided to do something in this industry and joined a course with jigsaw.
+Moreover i am focusing on self study as internet has vast stuff on this subject.
+lets see where my career will take me…..fingers crossed.
+thanks again 
+ I will be joining the Jigsaw Foundation course too. However I am confused as to which program to opt, as in the Video one or the Instructor Led course. 
+ Can somebody provide an insight on this matter? I mean if there is someone who is already attending the course and can kindly reply. Getting problems sorted and stuff, how difficult would it be on Video course, because in my opinion that is the short coming of the Video course, otherwise I feel it has attributes like, it is cheaper, self-paced and no travel required etc. 
+ Hi all
+i have gone for Data scientist video led course just becoz of R, as i feel the same was as Abhishek referred that it has more scope over SAS. however in india at the moment there are more vacancies in SAS. i feel future is for R. its open source, more flexible to get customization.
+For Apurv—i have just joined this course, no issues till date with video.the actual picture will come up only when things will little complex to do on ur own.
+regards
+Parindsheel S Dhillon 
+ Thanks for replying back.
+One more thing, jigsaw provides all videos at once or step by step ?
+Does videos cover time series analysis ? becoz time series analysis is mentioned in their brochure but in outline/curriculum its not present ? 
+ R definitely has bright future, but as of now in India, SAS holds the biggest market share. Also, it is not that easy for corporates to migrate from one tool to another. Hence, from job perspective, you will find more jobs in SAS. On the flip side, the jobs in R, have less competition. 
+ I personally prefer instructor led over video as it gives you chance to clear your doubts and have higher engagement. But that is a personal preference. 
+ I have 16 years of work experience in Banking & 6 years with IT companies (Process Consulting and Program Management). I am a more of a functional person – providing consulting services around BFSI. I have done my PMP Certification as well. If I had a do a course in Analytics which will help me to ride the wave which course would fit me well – will it be the IIM Bangalore or IIM Lucknow course. I cannot do too many classroom sessions since I am working in a leadership role. I want to enrol into a course that is locally and globally recognized. 
+ I really appreciate the guidance you have been providing to all the aspirants and it provides a lot of information on Analytics after reading all the above comments from you. 
+ My question is simple, I am into IT industry for almost 7 years now but I am not into software coding like C, C++ or Java. How much coding background is required for these analytics courses ? and will there be a large part of curriculum where I have to learn coding concepts.. 
+ With current set of options, coding has almost become good to know. SAS has a very good GUI and R also has a few good ones. So, it is not mandatory to learn coding. Having said that, if you want to become an expert, knowing coding helps a lot. 
+ This is one of the reason why most of the training programmes focus on teaching coding. 
+ But as we go from linear bivariate regression modelling to advance level modelling, it becomes necessary to use software tools. Advance Complicated models can’t be fit with hand made calculations or excel (It will crash).
+So I think understanding softwares technologies like R/SAS for data analysis is a prerequisite.
+Even more, if one does not know exact mathematical formulae in details but he knows interpretation of output from software for models in R/SAS, he/she will have higher market value. 
+ I have IT industry experience of 10 years in business intelligence technologies. of that, i have been on customer facing role for 6 years in US. I have done a bit of analytics and customer insights based work, apart from my technical contributions. 
+ I am very eager to switch to BA as i want to make direct impact to costumers daily business operations. Kindly let me know which BA course would be better. As i am in chennai, i prefer Great Lakes. 
+ Please let me know how many batches have Great Lakes coached this.
+Does Great Lakes offer placements?
+What is their placement rate?
+Also, what would be the package offered for 10 yrs experienced professional.
+Is it worth spending 5L on this course or if i move to any big data start-up with my BI experience, would it pay off better? 
+ Hi Kunal,
+I am Mba finance and have 1 year exp in MIS and 3 years experience in corporate banking in Bank of America. I am planning to shift my career in analytics. I have gone through the course offered by NIIT on business analytics, it looks good. I am planning to take up the course in Bangalore. Can you suggest me other options ? 
+ I am Shivi Bhatia & currently working in Bangalore for Analytics firm (basically from Delhi). I have total of 8.1 years of exp of which 4.5 years is into Analytics and working on platforms such as SAS Developer, SAS EG, SAS Add in, Tableau, Qlikview, Cognos. I am a SAS Certified resource (Advanced) & PMP certified as well.
+I am currently in the process of short listing the course & have short listed IIM – Calcutta due to the brand name. (& the money which suits my pocket)
+Currently i also do a lot of self study on statisitical techniques such as ANNOVA, regression, clustering & have lead a project on modelling as well where I was leading it on the functional aspect & had Statisitcans & Modeller reporting to me. So my reason for attending the course is that first, I have have a brand name on my CV and further understanding on statisitcs relevant to market. ( I could be able to interpret statisitical results)
+Please advice. Also I cannot opt for ISB as the fee structure is way too high & furthermore none of these offer a placement.
+Looking forward to your exert advice. 
+ Thanks for your query. Given that you have already spent 4.5 years in industry with experience across multiple tools, I am not sure how much value the course from IIM Calcutta would add. 
+ If your primary reason to join is to gain statistical knowledge, there are multiple good courses on Coursera you can do to learn these techniques. If you still want a brand name – you can consider doing some of the online courses from MITx. These are available online and focus on big data -> which can help you add more knowledge to your repository. 
+ I am working in MNC from last 2 years with more or less of BA profile , but my work is more related to programming and I am advance SAS certified professional. As I want to be work as a BA , what should I do. 
+ Should I go with BA program available in market or start learning by own?? 
+ Your next steps depends on how determined and disciplined you are. If you are very disciplined, all the required information is available on internet in some form or other and hence you can start learning on your own. 
+ If you need interventions, you can go for trainings. Full time trainings typically have better quality output. 
+ Hi Kunal, I am currently working as BI Cognos developer with a reputed mnc. I am planning for a career shift as a BUsiness analyst. Please can you let me which course will be suitable for me and what are the career opportunities after the completion of these courses. 
+ I have completed MBA (Telecom Mgmt) in Marketing & Finance and currently working for Presales in an IT Infra Services firm since last 1 year. Prior MBA, I have worked for 3.5 years on PL/SQL, Oracle Discoverer, ETL. I have special interest in Mathematics and Statistics and would like to make a career in Business Analytics.
+I have gone through this post and Q&As. Could you please suggest me a short duration course and preferably weekend courses – which will have industry collaboration/contacts for placement assistance 
+ Hi Kunal,
+I have 7.5 years of Programming exp on embedded system and web .I want to move to analytics domain.GreatLakes offers Analytics course with good industry exposer as they claim , or shall i wait for ISB CBA? 
+ This is a very informative portal. Really appreciate the efforts you are putting in. 
+ I have 3 years of experience in operations more specifically into process improvement using six sigma. I am really interested to dive into data analytics field. I have a past experience of analyzing data using statistical softwares Minitab and R programming. 
+ In your above posts you mentioned, that the course at ISB is helpful only for MIS or people with programming skills. I am wondering if I can do the Certificate program at ISB. 
+ Plz suggest about Great Lakes Gurgaon course as I am planning to go for it.The last date is 3rd of April.So please give some insights about the program like 
+ -Curriculum as compared to other colleges like IIM,ISB,IIT etc.
+– Brand Name in the field of analytics
+– Placement scenario as you have said in previous posts that you have some interaction with their current batch students.
+-What range of salary we can expect after this course.
+-How relevant is it in terms of industry interaction as they claim it to be the best.
+-How would you rate this course for someone who has no prior relevant experience (different stream experience). 
+ I am a Marketing professional with total 5 years of experience. I have been reading articles and posts about the data boom and how every marketer needs to understand data and analytics to make more informed decisions to be successful. I am therefore considering course in analytics not for a career shift but to give myself an edge. 
+ Do you think that this course will add value to my CV and help me become a better marketer? 
+ Firstly, excellent article and very informative.
+I am working with Cognizant – DW/ ETL Testing completing 3 years of experience in July 2014. I want to apply for this ISB CBA course. I have already taken GMAT and scored 660, which clears me through the Online test. I have good acads. I have few queries on the application. Can someone please help me out? 
+ 1. Is it too ambitious?
+2. Is it already late to apply, as it is clearly mentioned on the site”First cum first basis”?
+3. Do i have to be working during this course or i can just resign and take the course?
+4. I do not want to reveal about this application to my manager. How do I manage to apply? 
+ 1. It depends on quality of your work experience. If it is good (i.e. you have differentiated yourself compared to people doing DW / ETL), then 3 years of experience might be good. Otherwise, it is slightly lower than what ISB has taken last year. 
+ 2. I don’t think it is late to apply. They have opened applications very recently. 
+ 3. It is better if you are working. More so, if you can apply what you learn to work. If you resign, you need to plan out what will you do when you are not in campus. 
+ 4. It is best to mention it to him. You will need holidays to attend classrooms during the year. 
+ Hello Kunal,
+I have been selected for Business Analytics course at Great Lakes Gurgaon. I have two questions:
+1. How would you rate this institute?
+2. I have been in IT for more than 13 yrs and had been in Business Intelligence for more than 8 years. At present, I am working in a senior leadership role. My question is what role can I expect in Analytics and which specific analytics has most demand at present eg. – Risk Analytics, Marketing analytics etc. It would be nice if you can also recommend some reading material to be on cutting edge of analytics industry. 
+ 1. Great Lakes has the second best offering amongst all other offerings in India. ISB has a better offering mainly due to the brand name. 
+ 2. It is difficult to answer this question because there is no generic answer. All fields in Analytics offer good growth currently (due to shortage of good resources.) Your deciding criteria should be more dependent on what you would enjoy and what you have done in past. Hope you understand what I mean. 
+ Hi Kunal,
+This was really helpful.
+I had 2 queries:
+1) Whats the kind of prep is needed for the ISB entrance and the answers to the sample paper on the ISB website.
+2)The other courses dont have an entrance exam?
+thanks! 
+ Hi Kunal,
+I am a software programmer with 2 yrs work ex. I have been on a sabbatical for the past 10 years and now want to get back to working and Analytics is a field that excites me. I want to know more about the job profile of an Analyst. More specifically, I want to know if there are part-time(4-6 hrs a day, 4 days a week) , work from home options available in the long run.
+Thanks and Regards. 
+ Tx Kunal, of course I am looking for a leadership role. But honestly have no idea what kind of jobs are available in that segment. 
+ Say with 18+ yrs of work exp largely in insurance industry on MIS and Analytics and doing say an ISB kinda course what kinda jobs can come my way. Pls help this would be a big decision making reason for me. 
+ I have total 1.5 years of exp and currently I am working as a Senior Analyst – Business Intelligence.Please advice something , so that I can learn new things in analytics and make a successful carrier. 
+ Hi Kunal, I am post graduate in business analytics from PRAXIS BUSINESS SCHOOL, KOLKATA. Its the FIrst school to offer FT program in Analytics since last 4 years. ICICI BANK & PWC are knowledge partners who hire directly from campus in their Analytics space. Other than that, leading companies from Banking, Telecom, Retail & consulting have hired from the past. Faculty consist of eminent people from industry with more than 20-25 yrs of experience from companies like PWC, Tata-steel, HP etc.. Faculty has been teaching across IIM’s & other top institutes across the country. 
+ Hi Kunal,
+My Education qualification is Bcom from DU and MBA from IMT Ghaziabad Distance Learning. I have been good in Academics. I have 8yrs experience in Merchandising, Retails and Sales/Marketing. Currently I am an Account Manager, Sales for last 4 years, for a Sweden MNC doing OEM business for Mobile Computing Business in India. Package 8Lcs. I wish to switch my industry and get into big corporates by taking up a Business Analytic Course. I read about Retail Analytics course from Jigsaw; will it help me OR do you recommend to go for a full fledged BA course from IIT or Great lakes or ISB? Do you see any growth for me If I do this course, profile wise and monetarily also? 
+ Since this is your first exposure to analytics, I would suggest to go for courses with wider coverage (e.g. Foundation course from Jigsaw) rather than segment specific course. 
+ BA course from ISB / Great Lakes might give better chances of placements, however they come at a higher cost as well. By taking up these courses, your profile will definitely improve and the jobs in future will likely be more rewarding. However, you should first answer whether you enjoy dealing with numbers and probability? Stats? Coding? 
+ If the answer to all that is yes, you should pursue a few courses from Coursera to get a flavour of industry. Machine Learning from Stanford University, Data Science track by John Hopkins University are some of the best places to start. 
+ First of all, we (all who wants to grab a profile in BA/BI) are really grateful to you to create a space for us where we can put our query, comments and share our views. 
+ I have around 5.5 years of experience in different fields like Retail, Market Research and now telecom,however, the role is into analysis. I did my MSc in Economics (Stat as optional) and MBA in Marketing and like to work on analysis. I have knowledge on regression, correlation, hypothesis, time series data analysis, but without in depth work experience, these are useless. However, I didn’t get an opportunity to learn analysis like Regression, Hypothesis, Time Series Data analysis in depth and that’s why rejected in interviews for the profile of analytics in big companies like Capgemini, iGate etc. They want in depth work knowledge in Regression, ARIMA, Conjoint analysis etc and also knowledge of statistical tools like SAS, R etc. I have work experience in SPSS but not on those critical statistical analysis. Now, I think, it’s high time to learn these analysis to grow further, else, I will not get a good job in analytical profile in big companies. 
+ Please suggest me a course that will help me to learn and then get an exposure in the field of analytics. 
+ I have gone through all the above mentioned courses, however, money is matter for me. I can afford max to max a course fee like IIM Ranchi- EPBABI course..below that, will be better for me. 
+ I am also afraid of the things that after completing the course, in case I didn’t get a job in analytics, I will forget the technique of using those statistical analysis in real business problem. Therefore, all money invest to learn will be in vain. 
+ First things first, you are in a lot better place compared to a lot of people who want to make a switch to analytics. If I was in your place, I would first get a good grasp on all the required statistical concepts & basics of R. There are some free courses on Coursera / eDX which would help you do so. So enroll for them. Look for data science specialization from John Hopkins University 
+ Once you are done with the basics, I would suggest that you can start participating in a few data science competitions (e.g. on Kaggle,com) to put some of these concepts into real world testing. This way you can invest in training at a low cost and get up the curve fast. 
+ I have 7.5 years of experience in Talent Management in HR Domain in IT-Consulting Industry. I am a graduate in Business Management (BBM) and now looking to move in Analytics domain and build my career in the same. I have read this blog of your’s and all the Q&A, there is good amount of information. I would seek your opinion on following to plan my move to Analytics domain. 
+ 1. I have no exposure to the software like SAS, R etc. As a layman where shall I start 
+ 2. I would like to know, if the courses from ISB / Great Lakes / Jigsaw etc. would be good stepping stone for a beginner in this domain. 
+ 3. I would request your expert opinion on CPEE – Big Data Analytics and Optimization program being offered by INSOFE, Hyderabad “http://www.insofe.edu.in/init/default/cee_program_features”. 
+ I am a CA and having 6 yrs experience in Banking- credit risk and operational risk. Now I have been selected for IIM Bangalore ‘s analytics program.
+Pl suggest from the point of view of placements the ranking in industry of this program from IIM Banglore. I applied for ISB as well however wasn’t selected.
+As such i am average in statistics and a layman in this field.
+How would my existing domain knowledge be valued post completion of this program. 
+ I am hoping that you would have had fair bit of experience with stats while managing credit risk for the bank. 
+ What are your expectations from a certification programme? What would you want to achieve post completion of the programme? 
+ Also, you might be average right now. More important question is, how motivated you are to learn / improve Stats and Probability? You can have a look at the last article I wrote for some more thoughts. 
+ Venu can u please tell me which NIIT u did that Business Analytics course from……..i stay at vashi New Mumbai and was seriously thinking of doing a course of this which gave training in R and Python and Advanced Excel and Solver, machine learning etc etc……………………..then where do i do the same or similar course from, do u have any suggestions in mumbai???? plz reply to me if possible at [email protected] which is my email………..
+plz i hope u find my comment and help me 
+ I’m aware of NIIT course and their current faculties. Their analytic program is awful. So I strongly suggested not to join their program at all in case you care of your money, time, knowledge etc. 
+ Now to answer where you can learn analytic course – there are some avenues as suggested by Kunal Jain at several places in his message board. Please go through. If you want to learn some computational tools you can learn R and Python by yourself, at least at some extent. 
+ HEY venu thanks a lot for the heads up to me…………………….i was thinking to do python and R from CodeAcaemy and some similar sites……i have heard they are good………..about R i dont know who is good at R, but ya i can learn softwares online that is not a question at all, infact my exp of a mix of “Codecademy”, “Learn python the Hard Way”, and “Stack Overflow” for support was very good only thing is that as soon as i started i had to leave the course in 4 days coz of some consequences……..i shd finish it now i guess. thnx. 
+ I read your post on Edvancer Eduventures offering analytics training programs and I also know a friend’s friend who has taken the course and found a job in analytics post that. What is your view on such a course? Do you think given the huge cost difference between the courses offered by IIM, ISB and Edvancer’s course it makes sense to do such a course considering people are able to get jobs post them too. Would be good to have your view. 
+ Thanks for your question. It is difficult to answer the question generically. It depends a lot on case to case basis. For example, what has been your experience before the courses? What do you want to achieve after the course? 
+ Courses from MBA institutes and institutes like Edvancer / Jigsaw are 2 different value propositions. I know of people who got jobs after both of them. 
+ I normally suggest to start from any of the MOOC – Coursera / eDX / Udacity. They have good courses which give you a flavour of analytics. To start with you can look at the courses under Data Science specialization from John Hopkins University. 
+ To kickstart your career in Analytics , Great Lakes Institute of Management are currently running Analytics Programmes in their Chennai and Gurgaon Campus .Its a 11 month PGPM course with Classrooms and online session. Very much effective and productive for candidates. All you have to be highly motivated to balance your work life with study. 
+ I have been a passive reader of your blog and i must say you have done an awesome job for the analytics community. Great to see people like you! 
+ I have been wanting to apply to the IIM-R course in Mumbai, but it seems that they have stopped the course in Mumbai. I called IIM-R office and they said that they are still thinking about the course. May I request you to please help me understand when and which location in Mumbai do they plan to start the course. Also, the admission form thats currently available is not detailed enough for someone to give the complete candidature. Hence, would surely want to understand if they plan to re-visit the online application for as well? 
+ I tried to reach out to IIM – R and they mentioned that they are yet to decide the location (within mumbai) for the 3 month program. It seems the one they launched earlier was in New Bombay and was not too convenient for the fellow participants. 
+ You have not mentioned about PRAXIS BUSINESS SCHOOL, Kolkata which offers a full time one year Post Graduate Program in Business Analytics (PGPBA) .The knowledge partners are India’s largest private bank ICICI Bank & world’s largest professinal services provider and largest of “Big Four” PwC (PricewaterhouseCoopers) . 
+ Its is the best course in India at this point of time. There are many reasons for that. First of all the study of Business Analytics is so wide and large that it cannot be covered in just 6 months or 3 months of part time study. It covers Advanced Statistics, Machine Learning, Data Mining, Data Visualization,etc. Apart from this one needs to learn tools like SAS or R. Also one needs to have domain knowledge of fields like Finance, Retail, Telecom, etc. All this is being covered in one course by Praxis Analytics Course. 
+ All this can’t be done in just 3 months or 6 months part time study. Only this course from PRAXIS http://praxis.ac.in/programs/b… offers all in one package. It is being taught by eminent faculties fron IIT Kharagpur, IIT Kanpur, IIM Calcutta, etc. The course content is very rich in terms of Technical, Business & Analytical learning.
+Last but not the least , placements are just excellent after completing the course. They have tie-ups with many niche companies like PwC,ICICI,Fidelity, Bridgei2i, etc. All the students have been placed so far by them. 
+ Further to the reviews on the Business Analytics (PGCBA) course being offered by NIIT, I wish to share my advise in just one sentence – DO NOT join this course and waste your time and money. This is based on my experience as a student (3rd batch). I will be glad to share more details one to one. 
+ There are many pitfalls in this program being offered by NIIT. I have already notified the management of the same, but tangible improvement is yet to be seen. 
+ First and foremost, the quality expected out of NIIT is a far cry – be it the faculty, courseware, content, content delivery, management, operations, technical infrastructure etc . When placement assurance is not an explicit expectation (or commitment), the scale automatically tilts to the quality of training and the level of knowledge gained. 
+ I am not sure who is overseeing the entire batch and course per se, who is gauging the training effectiveness, taking feedback on the faculty and conduct of the course etc. I can see that conducting several batches in parallel is taking a toll on their resources and hence the drop in quality on several aspects. 
+ The course modules are not happening in a proper sequence, there is no traceability between the presentation materials, courseware and any external references that we might do. The breaks are irregular, unplanned and long. More than 50% of the time spent gets wasted due to fluency (lack of) of communication, breaks, interruptions, searching for something etc. 
+ With around 2 months gone by out of the 6 months course, I am not too sure where I am at and upto. 
+ I hope these details are helpful to the intended audience. Just be aware of the facts, analyse the pros and cons before taking this course at NIIT and don’t fall for just the brand value, that may be ok for folks at the entry level. 
+ I don’t want to go with individual names for obvious reasons, but two of the set of four faculty mentioned in the brochure are part of the team. I have sent a detailed mail regarding my concerns to the South Zone Delivery Head at NIIT. He has also assured me of redressing the issues, but I am not sure by when and whether our batch will be benefited. 
+ I think Vaidhy has already provided enough information and feedback. There is no point in taking individual names on the platform. The feedback is sufficiently objective for audience of our site to read and take their decisions. 
+ firstly i seen you ve been doing a great job in evangelizing analytics. I have been considering a change for some time now and still un-decided about how to make a move.
+I have been in the traditional Sales and marketing profile handling B2C and B2B business taking decisions and planning sales and marketing strategies, my company dosent use analytics for any business decision.
+i am looking at getting into customer analytics, but lack
+1. knowledge of stats and other concepts like regression analysis, etc..which i can get by doing a course
+2. Hands on experience which is very crucial. 
+ Wanted to know how will a company hiring in the analytics domain look at me and how easy or difficult would it be for me to get into a customer analytics kind of a role. 
+ I have been working with an IT MNC company for 9+ years and i am playing Techno functional role.
+ISB CBA course will definitely take my profile to next level, and i am following Data Analytics topics for a year now. It interests me. 
+ I have few questions in mind
+1. ISB asks for letter from an employer. Incase i had to move out of organization, will it any way effect the ongoing course with ISB?
+2. Can people who are not working currently(but worked earlier) enrol for this course?
+3. I am anticipating travel outside India in next 6 months, should i hold myself from enroling in this course.
+Does any Indian Universities support continuing the course outside India?
+4. Can any 1st or 2nd batch ISB CBA Alumni, share their experiences with this course. 
+ I will definitely share my experiences as i go along this Data Analytics lane.
+Thanks to all wonderful people who shared their views so far. 
+ Nice to hear about your journey. Will definitely be interested in how it pans out. 
+ 1. It ideally should not, but the course is aimed towards working professionals. I am sure if you have a good reason for moving out, they should consider it. 
+ 2 & 3 – It is best that you check out with ISB directly. I don’t think any one supports course outside India, except for the ones which are purely online in nature. Depending on why and for how long you are travelling, you can consider doing a course outside India as well. 
+ I was surfing the web for a BA course and came to read this blog page. I have 6 years of work ex in secondary research, company profiling. My maths and stats are not so great, but I like to work in excel and play with excel functions and formulas. I want to change my fieid and build a career in core analytics. I do not beleive that I can afford ISB and also not sure whether I’ll be able to crack the interview and other stuff to get admitted to the top notch institutes as my aptitute is very average. I am in Noida. Can you suggest what are the options left for me to learn analytics and make a career into it. Is there a single institute which changes an average grade student to a smarty like IIM’s or ISB or equivalent. 
+ Thank you for your reply. There is a huge shortage of people like you who provide unbiased guidance to people like us. 
+ I checked both the institutes and did some Google search on both. Great lakes is too expensive for me and on top of it their course structure is prepared by Jigsaw itself. So I think I should go with Jigsaw’s online course – foundation course in analytics (video based). 
+ I have few more queries: 
+ 1) I do not have a programming back ground so is it necessary to learn R, hadoop etc or only learning SAS is enough. Because learning all at a time will be difficult I think. 
+ 2) Recently, I read another blog where a person took the basic course from Jigsaw and then took another comprehensive course from IIM Bangalore. So does that mean doing the basic course will not fetch me a job in analytics? Is the name of IIMs or any big institute so important in your resume? 
+ 3) After doing the course from Jigsaw, what should be my course of action to get a job in analytics? what are chances of getting a job in NCR. 
+ I have left my job at EY, Gurgaon as a Lead Analyst recently. I was into a dead end secondary research job that I could not carry on with me any further. I know my decision is bold enough as I am married too. But I had no other option, I could not do any course side by side over weekend as I was not able to focus in studies. 
+ I am sad that you have not started your own institute as of yet. please let me know if you are starting one. 
+ 1. Start with SAS and learn it completely before touching any other language. SAS has more than 60% market share in analytics today. 
+ 2. The course from Jigsaw would provide you all the material you need. But you, need to put in more efforts at your end. Given, you are out of job now, you can focus on learning new techniques. If I was in your position, I would take a course from Jigsaw, start learning additional skills on the side and try and demonstrate it by practical applications – e.g. application on a few simple Kaggle competitions. 
+ If you show enough willingess and learning, you should get a job straight after your course. If not, then probably 3 -6 months, before you get a job. 
+ I personally respect your decision a lot. I did something similar a few months back, when I decided to go full time in Analytics Vidhya. I have a 10 month old baby along with a wife (I was the only earning member) – but guess what, nothing beats the satisfaction you get, by doing the work you love. 
+ SAS has recently introduced a free university edition which I have installed which seems great for now. I explored more and found that SAS provided free e-learning modules like and they are really good in terms of explaining the basic concepts. 
+ Considering the free options which seem to be really good, my questions are: 
+ 1. Are the study material and video lectures of Jigsaw better than the free resources above?
+2. If the answer to the above question is simply Yes, then still it is hard for me to believe because I have seen the video lectures and e-learning videos and looks like they are created with very good research and using good technology (esp the SAS e-learning). To believe, I would like to see some videos that explain the concepts of statistics and SAS. The free resources on Jigsaw only have videos of general knowledge of analytics and the tools used. It does not provide a free video of the actual course content.
+3. As far as the certification is concerned, the free resources also provide certification at a very nominal fee and that too with a stamp of good foreign universities. 
+ I am just trying to be a devil’s advocate to get a clearer view. As you may agree that in India how various universities are running courses and taking huge money but they are so worthless. Same applies for the online study platforms. 
+ Last year I enrolled for a course of certified research expert from IIPMR.com for rs. 30,000. I joined the course after reading the detailed fancy course syllabus and few good reviews of the course. After joining the course I felt so bad that because the promise that it made turned out to be all false. The video lectures were not very good and not worth 30,000 at all. I stop the course in between as it resulted in deviating my interest from market research courses and any other online course for that matter. 
+ I am a B.Tech (Computer Science) + MBA with 8 years of strong domain exp in HR Recruitments and Talent Acquisition areas.. Now I want to shift to Analytics areas specially into HR Analytics areas.. Can you please suggest how can i get into the Analytics domain now.. ?? Is there any specific course / training that i need to undergo ? 
+ I would recommend that you read this article for understanding some background. You are actually in a lot better place than what the article describes, as you are shifting from a business role to Analytics role in same domain. Your experience will be of immense help. 
+ I can only make definitive recommendations, once I understand more details about: 
+ How good are you with Maths, Probability and Stats? 
+ How much coding experience do you have? Did you enjoy coding when you were in College? 
+ Are you looking for a complete shift into Analytics role or are looking to use analytics to help you in your role? 
+ While the exact answer would depend on what you say, you can check out the HR Analytics course from Jigsaw Academy. This course is one of the most relevant courses as of now. 
+ I have recently got admission into Program in Market Research and Data Analytics at MICA in association with Ivory education. I have 3 years of work exp. in related field. 
+ Can you tell me if you have any idea of how this course is and what are the advantages career-wise of pursuing it? There is so less information and people available on internet about this course so it would be great if you can help. 
+ I have 8 years of analytics experience and have worked on SAS,SAS BI tools and other BI tools as well.I donot have a ful time MBA from a premier istitute and thus looking for some executive program.can you suggest ay program for me.. 
+ I have 4 years 7 Months of IT Experience in data Extraction , data load , data management and reporting. I have worked on SAS.Currently I dont have any Master Degree , but i want go into analytics. Can you please guide me for the Program which can be best suited for me. 
+ I have 4 years of Exp with a MBA degree. I have seriously thought of pursuing a career towards Business Analytics and after lot of research found that ISB offers the right curriculum but the big question – 
+ As I have Marketing exp and no contacts towards software companies and also my company doesnt need business analyst how would I get placed after the course? Could you please throw some light towards how a candidate like me could be placed and the source of placement 
+ As I have heard, placements of ISB course have been good (80%+ placed). But these are not official numbers and should be taken with a pinch of salt. 
+ If you are serious about taking up this course from ISB, I would urge you to take a few courses from Coursera, Udacity and eDX till the run up to the admissions. This will give you a flavour of the course and give you some headstart in to the course. 
+ It is good to see that your helping many people by providing information and replying their queries with your experience. 
+ I am also seeking for some information about moving carrier from IT development to Analytics. 
+ I have 6 years of experience as application development and maintenance. I don’t have any prior experience in business analytics. I am planning to pursue Business Analytics certification courses from IIM Lucknow or ISB or IIM Calcutta. I want to know how these certification program will help me to move my carrier from IT developer to Business Analytics. As fees for the certification is high so need some input to make decision to go forward. 
+ On completion of the certificate, what are job opportunities will be available as I don’t have any experience in analytics? How employer will consider my resume for business analytics requirements. 
+ I want to know which program is better if I compare IIML and IIMC. Also it would be better if you can provide me a person’s contact details who had completed business analytics course and got placement. I also want to know what an average package we can expect once we complete the course from above three institutes with 7 years of experience but not in business analytics. 
+ Both of them are very similar, I would rate IIMC slightly more than IIML. I feel ISB and Great Lakes are better than the both of these. 
+ I think the placement across the courses would remain similar, what would change is the probability of getting placed. Given that your work ex is not in analytics, be prepared to be treated as a person with lower work ex. You can look at this article for more details: 
+ Hi Kunal,
+What is your assessment of the analytics course of IIMC? The course doesn’t seem to cover the tools needed for analytics n seems to be focussing on theoretical aspects more. Is the course at Great Lakes better than IIMC then? Coz IIMC has better branding etc. which of the 2 would you rate better? 
+ Hi Kunal , thanks for your prompt response(as always). Bridge univ has just announced their program in BA in collaboration with Northwestern Univ. So firstly, how do you rate their course. Secondly, they start as soon as 28 the June, where as all other programs start by sept/ oct, especially isb. So is it a good idea to wait for the isb result?
+Their course fee is quite high too.
+Thirdly, the course fee at ISB is v steep plus added cost of travel. Stay every alternate month. So does their course result in such good jobs?
+Thanks,
+Geetika. 
+ Hi Kunal,
+Should one do a basic courses in analytics before 1 proceeds to an advanced 1 year program? If yes, what are those basic courses and what are the institutes offering those courses.
+Thanks,
+Geetika. 
+ I did MS (Pharma) specialized in Medicinal Chemistry from NIPER Hyd . Currently I am working as an Analyst at Global Data Buisiness and Market Research Company, Hyderabad. Do really Buisiness Analytics course help to grow my career ? how will be the 9 months certificate course offered by NMIMS for Buisiness Analytics helpful. Can you please help me in this path, where we are supposed to pay nearly 2 Lakhs for this course in a span of 9 months. I am a confused and really seek your guidance. If i complete this course where and what kind of oppurtunities may i get? The institute people from NMIMS informed that thyey are not going to asist in any placement. If this is the case where should we search for the job after the completion of the course and spending such a huge amount? 
+ These courses definitely help people who are new to the industry. For people who are already in the industry, a lot depends on the quality of their work experience. If you already have a role, which requires you to apply advanced business analytics, there is little benefit to doing these certifications. 
+ However, if your role is more inclined towards MIS and reporting, then these courses are a boon. I would suggest that you take up a course which requires you to study part time, continue to work for your current employer and search for relevant openings during the course. 
+ I don’t know details about NMIMS, as it is a relatively new course. If you are open to other institutes, you should check out programmes from institutes with more experience. 
+ I am an Analyst with 2 years work ex in Healthcare Forecasting team currently specializing in Excel based models. What should be my next step? Should I think of these BA courses or should I train myself on R and SAS kind of specialities? 
+ Hi Kunal, thanks for providing good info on Business Analytics. I want to clear my confusion thru this message, as I am very new to Business Analytics (I just know that it’s about analyzing big Data, etc. as on internet).
+I am into SAP Materials Management, I am into Support (functional), since almost Five years.
+I am looking forward to do course in Business Analyst. 
+ • I have checked some Analytics courses from Edupristine IIT-B, etc, will it be a good start ?
+• Which other Institutes conduct this Course ?
+• Will it be the right course for me (SAP MM Background) ?
+* Are SAS & R necessary to learn ? 
+ I want to know which program is better if I compare IIML and IIMC. Also it would be better if you can provide me a person’s contact details who had completed business analytics course and got placement. I also want to know what an average package we can expect once we complete the course from above three institutes with 7 years of experience but not in business analytics. 
+ You need to provide me with more details and context, so that I can make a meaningful reco. What is your education background? What is your aim for taking up a course – shift to analytics or knowledge gain? What are your expectations from the course etc. 
+ Thanks for nurturing a very useful forum. I am into marketing research since past 6 years and predominantly in the FMCG industry. Totally agree that ISB offers one of the best Analytics cource in India. However, my worry is whether the course offered is technical in nature (more for data scientists) and hence what will be its relevance for my current role. 
+ Please note that currently I work on Analytic projects like market mix modelling and pricing anlaytics but from business stand and not actually run this analysis on my own. Work with the agencies closely to get the right output to answer the business questions. 
+ Need your views on whether this course will be relevant and helpful for my current role 
+ Very relevant question. The course is designed for people who want to get into hands on analytics role. Unfortunately, there aren’t too many courses available right now, which provide you the kind of exposure you are looking at. 
+ ISB started one course recently, which is a short duration course and is aimed towards senior management. If costs 7L + taxes. Otherwise, you can learn about analytics through a few high level courses available on Coursera as part of data science specialization. 
+ First of all I would like to appreciate the efforts put in by you for wonderful blog.I have a experience of 4.5 years in SAP business intelligence(implementations, rollout, support) and I am looking for the course offered by ISB in business analytics. My major concern is that since ISB does not provide placement assistance as of now what will be the growth I will get from this course.DO you have any info on someone who has completed this course? 
+ Hi Kunal,
+I had worked on Business Intelligence for a while. It was then I learnt about Business Analytics and a better job opportunity in that. I have applied at IIM-R for their 3-month weekend course( yet to know if I ll be selected).
+I simultaneously started learning R programming on Coursera. Is there any more idea you can give for me to start up? somewhere in Banglore? That would be of great help.
+Thank You 🙂 
+ Hi Kunal,
+I am a postgraduate in statistics having IT experience of about 17+ years, been a Bsiness Analyst for almost 7-8 years now. I have completed SAS Foundation and Data Scientist courses from Jigsaw. With this background, would you reccommend any other course from ISB, IIT-B, IIM-A, IIM-C for better job prospects? 
+ You seem to have all the technical knowledge which is required. You now need to take on more practical problems. While you might benefit from the brandof IITs and IIMs, they would repeat the same material. 
+ You are better of starting your own journey seeking out practical knowledge. This article might help you. 
+ Any feedback on Analytics course from EduPristine / Edvancer? I read in previous posts that Jigsaw is more popular however the course (around 60 hours) spread across into 5 months which is little overwhelming for me. 
+ Appreciate any feedback from fellow mates on a good online analytics course. I am looking only for learning instead of brand value. 
+ I am planning to do EPBABI course from IIM Ranchi. Having 8 years of exp. in software testing not sure if i manage to do career shift in the analytic area. Anybody who has done this course and able to shift carrer in analytics.Please share their exp. and advise.
+When is the next batch starting for hyderabad student? 
+ To be frank, I have done this programme and found very useful. If you are thinking you will get a job as soon as you finish this programme then it would be difficult. I am saying its difficult in a context that you will learn every module as mentioned in the programme structure and the eminent faculties will give you a clear concepts in each module, but the thing is you need to explore more into those module and acquire in depth knowledge with the help of concepts, case studies, tools and techniques which you will be learning there, as you can see just in three months they can’t cover all the topics in depth. In broad sense it requires your efforts post course completion. 
+ At last I would like to say with the help of “EPBABI + Your efforts post completion of the programme” you will be able to crack analytics interviews easily. 
+ You need to contact Prof. Pradip Kumar Bala to know when they will start next batch in Hyderabad. 
+ When exactly you have done this course. Are you getting any interview call based on it. Are you already working in analytics area or you want to switch to this area?Do you have any information on some other candidates who has 7-8 or more years of exp. and have done this course for the career shift. Give me some more insights on the course.Will the course helpful to those who is new to the maths, statistics from understanding point of view as i think the course must have most of math and stat concepts in it. How was ur exp with the faculty of this course. How it wlll be comfortable to do this course parallel with the job.And last but not least how interesting to work as a Data Analyst. For your info i am in s/w field with 8 years of exp. 
+ I am labeling your each question and providing the best possible answer that I can give : 
+ 1. I have completed this programme in mid Feb 2014.
+2. Yes I am getting lots of interview call, as always analyticsvidhya.com job section is really helpful in finding jobs into analytics.
+3. I am fresh grad and did this course because my stats and maths was strong and wanted to move into analytics.
+4. I was the only fresh grad and remaining were having work-ex ranging from 2 years -12 years. Now I have to ask them on our EPBABI group on Linkedin, if someone has successfully shifted his/her career after completing EPBABI Programme. I will intimate you once I get reply from them.
+5. For more insight of the course call me 8884766652.
+6.Yes, without maths, stats and probability you can not learn analytics. So I would recommend you get some time now itself to learn maths and stats before doing any analytics course and when you feel comfortable with these concepts you can enroll for EPBABI.
+7.Faculties are just awesome. I would give 9.5 out of 10. They are very helpful and will provide you every data sets, books, and materials a week ago and will help you even after finishing the course.
+8. Sorry, I don’t have experience how is that comfortable doing the course in parallel with job.
+9. If you have asked me this question ” How interesting to work as a Data Analyst” then based on my learning and understanding and in layman terms – Its like you are doctor of data where you will be dealing with lots of data but initially your data are speech-impaired and you have to give a right treatment then your data start speaking the truth. 😉 So you can understand how interesting the analytics field is… 
+ Also you might have heard the Harvard Business Reviews, “Data Scientist – The Sexiest Job of 21st Century” 
+ Hi Vishwash,
+Thanks for sharing the insights. I had sent an email to IIM Ranchi couple of months back but never received any response. I want to know when will the admission open for next batch in Mumbai. There is no information on their website. It would be very helpful if you could post some information in this regard. 
+ I have a 16 + experience in Sales and Banking . Currently working as the Deputy Vice President in a Private sector Bank .iam interested for carear movement into Analytics and hece planned to pursue a course to be armed with . 
+ Am 10 years experienced in Automotive domain with diverse roles already handled. Am interested to get in to analytics field. A private institute is offering 10 days Business Analytics course and they are also advising me that I can get some good job offers after doing this course. Is this true? Can a 10 days course help me to change my domain ? Can I get good jobs? Please help. 
+ Hi Kunal,
+Thanks for the reply. I have registered for some Courses on coursera. But not sure how I will get practical knowledge / hands- on experience as currently I am not working and looking for a job. 
+ Are you done with the comparison of the institutes such as ISB, IIMs,IIT’s and others offering Analytics courses? When will you be able to share the same will us? 
+ I have done BE(CS) + MBA(Marketing) and have 5+ years experience in IT sales, I have keen interest in getting in to Business Analytics, I am thinking of applying to IIM C ( EPBA ) prgramme, I want to know about the value of these kind of programmes run by various IIM’s & IIT’s through NIIT , Hughes education & Ivory education. Does these program are really given value by Corporates during job selection time. Or instead I should take BA related course from Jigsaw, Edureka, Edupristine like institutes ?? 
+ Really appreciate your effort that you put in guiding people in analytics field :))
+I need your opinion about IIM – Lucknow course offering in collaboration with Kelly Business School .
+I have around 7+ years of exp in IT , do you think would it give a good ROI ? 
+ Great work!!! Similar query. Have been selected in CPBAE-3 by IIM-L. Will it be good ROI? 4+ years n telecom, not much experience with analytics except a month or two.Need to give confirmation by 23rd July. Investment is approx 5.5lakhs. 
+ HI Kunal .
+I have around 7 years of exp in IT infra , I was a Quality manager that’s where developed the interest in data analytics . My current salary is approx 7L + course fee 5L expecting approx 12L to 14L in my next job of analytics ,As analytics is the next coming age of technology so would like to move in the mid level to management position in this field . 
+ I am a professional with around 8 yrs of experience primarily into research and analytics. I would like to equip myself with the latest analytics tools and techniques and hence I am looking at some good courses for experienced professionals. Since I am based out of Singapore currently, can you suggest if there are any good courses in this country that I could pursue or would you still suggest doing a course from ISB? Your views would be helpful for me to move in the right direction. 
+ I am currently continuing the instructor led course at Edvancer .Their course content is good and very practical .There instructors are very supportive and you won’t face any technical challenges during the course .Overall it is good . 
+ My name is Surya.I am 25 yrs old and a b.tech graduate( civil ).I currently don’t have a job.However I had 2.5 yrs of work Experience for a Back end Support Operations at amazon.com. 
+ I left my job for pursuing M.B.A , However I couldn,t get into Good B school.Now i have an admission offer for ISB-CBA Program(Differed my admission during January Intake),But I came across another institute called INSOFE which also imparts Analytics. (http://www.insofe.edu.in/) 
+ My graduation and Experience doesn’t relate to analytics. 
+ Please find Various parameters of both Programs below. 
+ Parameters: ISB-CBA INSOFE 
+ Brand Value: Yes No 
+ Cost: Rs 714160 /- Rs 252810/- 
+ (Including tax and SAS chrages) Including tax 
+ Duration: 1 year 6 Months 
+ Career Service: No Yes 
+ SAS: Yes No 
+ R Language: No Yes 
+ Hadoop: No Yes 
+ Type of Program: Certificate Program Certificate Program 
+ Mode of Learning: 5 day classes(alternate month) Weekend classes 
+ Is it right choice for me to do Analytics course at this moment as both my graduation and experience doesn’t co-relate with Analytics. 
+ Secondly , What is your suggestion on which program I need to choose among both ISB and INSOFE and why ? 
+ You can start your analytics journey with certification. Among the 2 choices, ISB is a better choice. However, it might become very expensive, given the charges and the travel. If this is the case, you can also look at Course from Great Lakes institute. 
+ I am an MSC Mathematics and have 7 yaers of work Ex. in Financial Planning, reporting and analysis. 
+ I also did Base SAS certification long back but now have forgotton most of things. Also learnt R Programming recently. I do have understanding on interpreting results of t tests, logistic, linear regression. 
+ I dont have much work ex in SAS, R . Also Though I have hands on exp on SAP, Cognos, Oracle tools etc. 
+ I find it difficult to get an interview call for analytics as they expect guys with hands on Industry exp. in SAS and R. can you suggest me how should i prepare for interviews and how can i utilize my skill set. I am very enthusiastic about making a career in analytics but unable to find a job. Please help. Currently I am working into core Finance and reporting profile. 
+ An extension to the question that Deepika has asked.
+I Currently have 7+ years of Experience in Software development and now trying to move to Analytics.
+I also did a Course in Analytics from Jigsaw Academy. Its has been almost 4 month of job Searching in analytics now and did not get even a single interview Call. I have also applied for the course in ISB an the results would be out in about a weeks time, i am now really confused and don’t understand how can i get into the analytics industry. You Suggestion in this regard would be of great help. 
+ i got the admission offer from ISB today.
+i am sure that analytics is the way for me to go regarding to my career.
+but now little confused as the course fee is almost 7 lakhs .
+could you please suggest. 
+ Thanks for your valuable feedback.
+1. I would appreciate if you can tell me about getting freelancing jobs from elance adn. Try searching on google but could not get info about getting freelancing jobs from elance adn.
+2. Will acquiring some certification in analytics help? If yes, can you suggest m.e some good certification /course in Delhi NCR. 
+ I am 34 years old , PGDBA (marketing) and having 10+ years of work exp. in sales of financial product , mainly equipment loan. Presently working as state head for a leading NBFC , 
+ Am looking forward to change my domain from sales to analytics ,and focusing on course offered by ISB . or IIT Delhi. I don’t have prior knowledge or any experience with analytics. 
+ Wanted your opinion on : 
+ 1) Does any of these two institutes offer placement help .
+2) With my background of 10+years in sales in financial sector , will I be able to get a job in analytics domain.
+3) what kind of salary could I expect after completing the course . right now I am in 15L -20 L bracket. 
+ 2. You should be able to. You can read this article for some more things, you should do to ensure a better shift. 
+ 3. Salaries for freshers vary from 5L – 12L in analytics. You get into the bracket you mentioned with 4 – 5 years of good experience in predictive anlaytics. Given you are not a complete freshere, you can probably expect similar salary in a couple of years. 
+ I am a commerce graduate with 13 year experience in travel & hospitality out if which 8 years is in revenue management for airline n hotels. Currently working with an IT service company as a domain consultant, purely functional into revenue management and travel. I need to upgrade myself in the field of analytics, however I also want to leverage my experience in travel industry. Would a certification in jigsaw would be a good option for me, or a PGPBA from Great lakes is way to go (a lil expensive though). Also I am looking at PGDBA from SCMHRD since I am based in pune. I do not have any technical background in terms of coding. 
+ Hope you are doing good, I am in Business Intelligence and have around 4 years of experience in Micro strategy BI tool, although in BI market is hot but i want myself in Analytics profile, so i searched for BA programs in US and in India, my question is should if go for Analytics or should i continue with BI profile( and add knowledge towards data modeling side like MSTR solution architect role) and after more exp in my profile i should go for it , bit confused now….is it a right time to go for it or to wait and continue in BI. In which profile i can get a broad future(money wise off course).
+Moreover pursuing MS in analytics from an good US university will a be a good move small training based program me from India( which include 2 months tool training or IIM, ISB 1 year program me) will do it better., and if i go for a US ,which university program me to go for?., as I don’t have any Analytics Experience so I will be counted as fresher in analytics if I got any job in analytics now.
+And if i continue with same BI profile in US with India exp, i won’t able to switch it to Analytics Profile. 
+ Just doing courses even if its from IIM doesnt help unless this is supplemented by actual work using analytics. Having IIM /ISB tag helps if this full time MBA but certificate course doesnt help much for getting job. 
+ I’m currently working in a BPO and have 6 years of experience in Operations. I’m a B.Com graduate and would like to do my post graduation in analytics. Please suggest me some good course to build my career in analytics considering the fact that I want to pursue this course along with my job which allow me to attend the classes during weekends only. 
+ Hi Kunal,
+This is my first conversation with you, I’ve literally swept across your discussions forum on Analytics Vidhya. It’s a really good thing you’re doing guiding people in this new field.
+No doubt i had quite a lot of questions answered there itself, unfortunately i have a few more. If you could give a little time here it’d be much appreciated. 
+ I’m an B.E (Comp science) from Bangalore, 2009. After that i didn’t pick up an IT job, tried couple of things here and there(nothing concrete). After that i prepared for MBA entrance and scored a 92 percentile in CAT. i did get admissions in a few good colleges but because of family issues i had to head back home.
+From there onwards I started a business in automobiles and have been running that from the past 3 years. I now wish to get back into the corporate world, i’ve done a decent amount of search in Data Analytics and yes it does excite me. 
+ I wish to do an Online course, I’ve seen you really rate ISB but i’m kinda late for that. IIT Bombay now has regular classes for 4 months(rather than a 1 year online course)
+IIT Delhi- Ivory education. This one seems feasible for me, in monetary terms and geographically as well. 
+ So here are my enquiries.
+1. Does my business/entrepreneur experience count or benefit in this line of work ?
+2. Is there a difference between Data Analyst and Business Analyst? Cause I’m not very interested in the coding dept. would want to work towards the business/managment end.
+3. I contacted Ivory education, they said they haven’t decided “Which IIT” will be conducting this program? (should i be worried? cuz it’s the IIT’s prestige and name which i think makes this one tick.
+4. There are massive chances i move to the states in the coming years, say about 2 years. I’m doing this so i could benefit from this course and increase my chances of getting a job there.
+5. This place (Ivory education) has 2 courses 1)Business Analytics and Optimization
+2) Advanced Business Analytics and Optimization program.
+Which course should i be going for? I spoke to the person from there and the lady said that a direct jump to the “Advanced” course isn’t impossible but jus requires you to work a little harder. I’m okay with that but me looking at the Course structure would not be able to choose wisely. Could u help with that.
+6. Apart from the Centres mentioned and IIM calcutta, if there is any other you suggest i’d surely look into it.(Online Course) 
+ It’d be really nice if you could respond to this soon as time is running out for the applications. 
+ Interesting, I had got a very similar query a few days back form a person who had very similar questions and situation! Anyways here are the answers: 
+ 1. Not much. Will help you understand the business perspective quickly though.
+2. Yes, data analyst is typically referred to as person involved in collating and cleaning data. Making sure that data is available for analytics. Business analyst typically interacts with business and performs the analysis. These description hold true in general and not always. You would require coding in both the scenarios for a long term career.
+3. I would be worried, if I was in your place.
+5. You can go for advanced.
+6. You can try certification programmes from the likes of Jigsaw, Edureka etc. 
+ I have got offer from ISB for CBA course but I am still confuse if this certification will help me to move in analytics as I don’t have prior experience in analytics. I have 6 years of IT experience and currently I am learning Hadoop. As the investment is huge, so just wanted to know If the certification will help me to move into analytics? 
+ I spoke to few people, ISB do not provide any placement, but I got to know that people are getting Jobs after doing certification from ISB. Package will vary person to person, depends on your knowledge in analytics, previous experience etc… 
+ I have also been shortlisted for the interview based on the online test. But haven’t received any details about the interview schedule and also have seen that on the ISB website the last day has been changed to Aug 20. 
+ Is your interview over or have you been given any schedule about the interview. 
+ I did a bit of research for SAS. Jigsaw provides a decent course for it. 
+ What do u think of Coursera? They are providing online courses and even providing certifications if you complete the course. I checked it out for R Programming. https://www.coursera.org/course/rprog
+(They are affiliated with Johns Hopkins Bloomberg School of Pubic health.) Now here’s the catch! they arent charging for it, its for free!!)
+What are your views on this? 
+ During interview they like to know, why do you want to do this course, How this course will add on to profile, why ISB, Where would you like to see yourself after 5 years in this field. such questions they will ask. 
+ When did you get the interview call from ISB and how long did they take to respond back for confirmation? I am waiting for interview call that hasn’t been scheduled yet since last week. The problem is I got selected for IIM L whose classes are starting from Aug 6 but my first choice is ISB. 
+ First of all Thanks to you for providing such a platform .I have come to know many facts from your blogs and found it really unbiased ,informative and helpful . 
+ Now coming to my query .After completion of my MBA I am working in a major Indian IT(Service oriented ) company since last 2 years.I am working there as PMO .Mainly I have to deal with Financial data preparation and keeping it in sync with internal system.Now in MBA days I developed interest in Business Statistics ,and have basic knowledge of stats and learnt SPSS also for my dissertation purpose. 
+ Now my query is if down the line may be after 6/7 months If i start taking a course in analytics will it be helpful to shift in this industry ?Will my work exp be counted ? 
+ And second query is there is one B school in Kolkata ,Praxis.which offers one year full time course in Business analytic .Could you kindly provide any insight on their program .Since I am based in kolkata and working here travelling to other places such as Hyd,Delhi ,Chennai may not be feasible ,Therefore only I am asking you and in their website also they have given placement details for that course . 
+ Initially I planned Full Time residential ,as they have mentioned placement details for that course only .But for that I have to a break from my service ,so Could you kindly provide any insight on placement support /assistance Fom Great lakes analytics course .As they have mentioned generally they dont provide any placement .Considering investment will be high ,This factor is very important . 
+ Experience: 6+ years experience in data modelling in the market research space but no exposure to any analytical tools. All I do is collection of various statistics from diff sources and prepare a meaningful picture, which is most likely topline information – trade economics, business volumes, pricing estimations etc. Also experienced in trend analysis, forecasting/estimates etc.. 
+ I have recently learned SAS BASE from an unauthorized institute. 
+ Questions:
+1. How does an executive program, probably from IIMs, apply to my career. Do I have any alternatives in economy.
+1.1 Which is the best institute. I’m not interested in ISB as I want continue to work
+1.2 Does IIM CULCUTTA cover SAS module in their curriculum, which is a basic foundation for analytics
+1.3 IIM Ranchi – do you have any updates so far to your beginning posts and questions of our folks.
+1.4 As I’m based out of Chennai, do you suggest me any premium institutes having contact hours in the weekend. 
+ 2. I’m hearing a lot about BIG DATA, what is this all about.
+2.1 do you have any idea how good is this going to penetrate the market.
+2.2 what sector companies foreseeing to this space. I heard mostly retail.
+2.3 what is the average size of employment, jus considering shortage of talent pool from domestic and international companies like eg flipkart or ebay or Pepsi etc etc 
+ 3. Finallyl it matters for everyone (compensation). Do you have any pay scale survey report – including freshers with none domain experience. 
+ Sorry for the late reply. I was not able to answer the queries for last few days. Here are your answers: 
+ 1. A lot depends on what you want to do after gaining knowledge in analytics. If you see this as skill enhancement for your next role in existing Organization, then IIMs are a good bet. If you are looking to transition into analytics completely, you will need to work and learn outside the curriculam offered from IIMs. 
+ 1.1 You can take classes from ISB while you are working. It is a part time course. 
+ 1.2 IIMC does not provide training on SAS currently. SAS is just a tool for applying analytics. There are others like R and Matlab, which are also popular. 
+ 1.3 No updates from IIM Ranchi – we can assume that there is no surety around next batch for now. 
+ 1.4 IIM Bangalore might be the nearest option. 
+ 2. You can read this article on Big data
+2.1 If you can believe forecasts, it would become a need for most of the MNCs
+2.2 The penetration would be led by Banks, Telecom, Retail and eCommerce because of the data they possess
+2.3 Not sure what you mean by size of employment, can you be a bit more specific? 
+ 3 Salaries for freshers vary from 5L on the lower side to 12L p.a. on the upper side depending on the role, company and the individual. 
+ Once again, regret the delay in reply. I promise to make every possible effort to avoid these delays in future. 
+ Reg-2.3. for eg: a company like Amazon / HDFC, What size of manpower require to handle their data. I don;t think this should be much. in that way, It might give some idea about employment size considering some factors across same line comp .. just to have an idea 
+ – I have applied for IIM C (EPBA). Recently, I got a call from Great lakes about their offering. Since I am based in Chennai. Which would be the best option. Again, I have budget constraints. Great Lakes is almost 4.4 L (inc Tax). (please let me know when you have published the article about Great Lakes). 
+ – If IIM C is the option – i am thinking of applying a program where i get exposure to learning SAS EG and R. I figured out there are institutes that costs <20K.
+– In terms of course outline, which one is better. (I heard Great Lakes is almost similar to ISB).
+– Which is one is a better brand that can shortlist my resume and fetch me a job. 
+ I have done certification in BASIC SAS and R .Now as far as Job is concerned I have got few interview call .But the interview call is for DATA ANALYST and DATA ENGINEER/DATA ARTIST which is not purely BA . So,Should I join for these position as I don’t have prior experience of analytics .After working for these position for a year or even 6 months will add some value to my profile .
+I am not getting much response for interview for BA ,as I am shifting my career so what should be my next step to enter this industry .I have almost 2.8 yrs of exp in Sales & Marketing . 
+ There is a Masters course in Singapore Management University for Business Analytics track. It is a one year residential program ( 2 years for part time). I have 8 years of IT experience on Mainframes (I know SAS language as well). I want to make a shift in Career. Will opting for a one Year MBA course be better option or should I look for part time courses e.g. ISB Biocon certification ? The cost is high and I m not sure on ROI for both. Can you shed some lights by comparing SMU with ISB course ? 
+ I got the offer from SMU, Singapore. Can you provide me an update on Singapore Management University Master in IT ( Analytic Track) ? The cost of full time course is high around 25 lakhs, so i was looking at RoI :(.
+Please help. 
+ First of all thanks a lot for writing these BA blogs. There are very helpul!! 
+ Just for the information, there is some conlict going on between Hughes & IIT-Bombay. So this course no more exists with Huhes. 
+ My Background :
+1. BE(EXTC) & Work exp of 2.5 yrs in Telecom domain
+2.followed that, MBA(Finance) & currently working in IT MNC in Hyperion (BI tool) technology for last 1 yr. 
+ I find my self very comfortable with Maths & Stats (We had basic stats in MBA as well).
+As long term prospect, I want to persue my career in Business Analytics. 
+ My queries are:
+1.Apart from these certifications program, what other options I have to get into BA industry?
+2.Through BI tool, How can I move towards BA profile?
+3.Will SAS certification in statistical business analyst will help me in getting BA profile in market?
+4.Do you have any information about BA course from IIT-Bombay. Will it be helpful in my case? 
+ These certification courses have been more effective for people like you – who already have experience in BI. Apart form these options, you can do Online certifications from websites like Coursera / Udacity / eDX or from the likes of Jigsaw Academy. 
+ SAS certification will definitely help – they have also released a few courses Online, which can be done at your own pace. You can look at that as well. 
+ I am not updated on the latest status about the course from IIT Bombay – I think you should prefer a course which provides more experience in classrooms – may be ISB / Great Lakes. 
+ I am a graduate in computer application with 12 years experience in ITIL Service Delivery and Project Management. I have been reading about Business Analytics for sometime and I got interested because of it’s supreme value in taking business decisions. Looking in a traditional way, people with educational background in mathematics, statistics and economics would have an edge and they would excel quite well. 
+ What would be your advise for people who don’t have a formal background in mathematics/statistics? how would your rate Great Lakes PGP-BA for beginners like me? 
+ How does business analytics could help in ITIL and Project Management? 
+ 1. It is difficult to enable career change through a part time short duration course until you put in extra efforts to learn the subject at your end. 
+ 2. If you are making a switch – be prepared to compromise on your past work experience. You will not be considered at par with some one with similar number of years in work ex in stats / analytics. 
+ So, if you are ready to put in extra efforts during the course, then these courses might help. A better strategy could be to take up roles which use similar skills but are in analytics doamin – e.g. project manager for analytics. 
+ Thanks for running this forum.
+I am B.com(Hons) Graduate, Presently working with EXL services as Assistant Manager -Life Insurance Domain for Last 6 years. I have few Queries.
+1. I want to switch my career to Business Analytics, will it be right time switch?
+2. If yes , which institute will be good in delhi/NCR?
+3. Doing Business Analytics program from NIIT/Edupristine will be worthful? 
+ Switching career from non-analytics background might mean that you will need to give up the benefit of work experience. As long as you are comfortable with loss of the work-ex, you can start the process to make a switch. Please avoid NIIT completely. Edupristine would also not be able to provide enough exposure to provide you a shift into this role. 
+ Great Lakes is a better, but a more expensive option. If you want me to connect you to them, drop me a mail and I’ll happy to do so. 
+ I was total unclear before going through all the comments and suggestions over here, thanks a lot. However, I still have a few, and would really need your help on the following. 
+ let me take you into my details – I am mastered in MBA Marketing and have over 5 years exp. I am associated in investment banking process for one of big ticket clients. Responsibilities include market research and analysis. 
+ I am considering IIM C for one year executive program. Please advice is this correct path to get into analytics. I heard any analytical tools (SAS, R, SPSS, Hadoop etcc) are not part of IIM C curriculum. 
+ or Is Jigsaw better than IIM C as they do train up on these tools, i am not sure about therotical and industry cases through. 
+ The choice for the right institute depends on what you want to do next. If you want to continue in investment profession, the course from IIM C can be good enough – you can always pick up the tools along the side as it is a 14 month programme. 
+ If you want to transition into a predictive modeler king o role, then Jigsaw is much better compared to IIM C offering. Hope that gives you some clarity? 
+ Hi sir,
+I am a b.com grad and working with a verification company since 03 years. Willing to switch for a change. Am I eligible for this field? If yes then how to join and if no then how to be eligible for this field. Your kind help is highly anticipated. 
+ Email will help me better as I may have a record for future reference. 
+ Kindly refer to the earlier posts on the PGCBA course being offered by NIIT. I dropped off after the first sem due to gross mismatch between expectations vs reality. It was sheer waste of money. I am now taking the relevant modules on a piece-meal basis from other vendors. 
+ Thanks a million Vaidhyanathan. I had a doubt in my mind and was looking for some feedback on same. NIIT is also telling that they will try getting the students placements which seems very unrealistic. In mid career , it is very difficult to switch on basis of a 6 months certification. 
+ I got an admission offer at ISB for CBA course 2014-15 but i was unable to make financial arrangement so i had to drop this. What i really missed is a platform and brand name which could have boosted my career . I aim to be a data scientist and keep doing free coursed available like mongoDB’s M101 M102 and coursera’s data scientist tool box. 
+ i have 2.2 yr working exp at an MNC in Pl/sql ,core java and unix apart from my own interest in data science. 
+ Do you think only knowledge can get me opportunity , or can i get some internship at any analytics firm ? 
+ Kunal,
+Do you have any idea about gems B school CERTIFIED BUSINESS ANALYTICS PROFESSIONAL which is a certificate program of 120 hours duration, comprising of classroom, online and live-project sessions. 
+ Hi I have 3 and a half year experience in retail,cpg and healthcare domain analytics.earlier i was a part of start up but now i have joined IBM as an assistant manager.i would like to go for IIM c EPBA programme but i am little apprehensive about that because of the fees. Can kunal sir put throw any light on it ?? i am just an eng graduate from a mediocre college so really wants to go for something advance which will leverage my caree.ISB is too costly….whether i should go for these types of courses or not? Do these courses have relevance in the industry?will they add weightage to my resume? 
+ The course definitely adds value – but it depends exactly on what you want to achieve and what kind of role do you enjoy. If you want to become a hands on data scientist – this course will not help as much. However, if you want to become a consultant, client manager – these kind of courses can help. In this case, you can also look at course offered from Great Lakes. 
+ Can you pass on some contacts who were from IT background(different technology) and have completed Business Analytics courses from ISB and are successfully placed.
+I have the ISB offer and tomorrow is the last day to block for course.
+I want to evaluate options before investing high . 
+ Sorry for the delay is response. I had been a bit busy for the last few days due to some personal commitments. Not sure, if this is still relevant – but if it is, please drop me an email through the contact us box on the right hand bar and I’ll put you in touch with people from ISB. 
+ After going through numerous reviews, regarding the growing trends of Business Analytics within different verticals of any corporate house, and the outline of the curriculum for BA, I’ve become interested in pursing some course for BA training. Currently, I’m working in quality engineering and assurance (QE&A) area in the retail domain as a manual software tester in a US-based IT company in Kolkata. Being bored down by the mechanical nature of web-application testing, I want to shift my career from a vanilla-tester to a business analyst role. I’m interested to join the EPBA course provided by IIM-C delivered on Hughes Global Education interactive learning platform.
+In 2008, I passed the ISC exam with a 94.75% and in 2012, I had completed my B.Tech in Electronics & Comm. Engg. from St.Thomas’ college of Engg. & Tech. in Kolkata with a DGPA of 9.23. So after 2 years of work experience, now I’m eagerly trying to find a career which has some creative, analytical and innovative instinct in it, and I’m finding the Business Analytics course, suits to my tastes.
+Could you please provide me some advice regarding my current choice on BA course, or if any other better options, and taking it as a career in the near future. 
+ Hope you are doing great.
+Thanks a lot for sharing your knowledge and providing this excellent discussion platform. 
+ I have 5.5 Yrs of experience in application development and currently working with Tier I company in Kolkata.
+I always had a knack for database and mathematics, which drew my focus in the field of analytic.
+I have already installed R and started exploring it while brushing the fundamentals of statistics. 
+ I often come across few internal job postings for Business Analytic in my organization which I want to opt for in the coming months and for the same I want to take 6 months to 1 year time gaining knowledge and getting certified in Business Analytic. 
+ Last week I got a call from Huges (for IIMC EPBA) and I also came to know that Praxis is going to start next week end online batch. 
+ Could you please render some input/advice so that I can decide the next step (whether to opt for IIMC or Praxis or wait for the next openings) based on the below details. 
+ a) Should I spend some more time on self learning since there are excellent materials available and I am able to learn as well? 
+ b) IIMC EPBA is 14 months Course and it will give me ample time to learn. Also I can continue self learning (R programming etc.). 
+ Doubt : This course seems to more on the theories. Will it worth attending the course for 14 months and no tools except Excel will be used. 
+ c) Praxis offering 4 months course now and using many tools which is always handy while getting the real work. Also I will get a good overview and guideline very quickly using which I can upgrade myself at the same time I can start attending internal and external interviews. 
+ Doubt: In 4 months (16 weeks) course with use of many tools, how conceptual it will be? 
+ d) I am not in a hurry, but very keen to have a technical career in business analytic. 
+ Please share your view and also comments from others folks (specially experienced BA) are as welcome. 
+ Joy, How are you? I am also in the virtue of figuring out the best, and I am considering IIM C. As I am almost simiar to your comments, It would be great if you could get me an update on your final call. meantime, can you share me if you have any course outline you recieved from praxis. 
+ As per the information provided by Praxis the course would be 4 months (16 weeks) for new batches contrary to the earlier program which was of 6 months (21 + weeks).
+They will update the details of course outline and schedule in a week. And it might be similar to the previous course with some small changes (http://praxis.ac.in/programs/weekend-business-analytics/ ). 
+ Could you also please share your thoughts on skewing towards IIMC course, specially on the technicality of the it? 
+ pig me on [email protected] , i can share you the docs including course outline and details, sample certificate that i have recieved from the Hughes executive . I have also contacted 2013, 2010 and 09 batch and recvied at least 10 responses with pros and cons…overall this program is at +ve side…. 
+ what is fee for praxis and any placement assistnce. Reg IMC – i can share you the docs including course outline and details, sample certificate that i have recieved from the Hughes executive . I have also contacted 2013, 2010 and 09 batch and recvied at least 10 responses with pros and cons…overall this program is at +ve side…. 
+ Thanks for helping each other out. Here is my take for the questions Joy had asked originally: 
+ Given that you are working with Tier I MNC – you should aim for getting the certification from ISB. That is the best among the lot. Also, if you are some one who is motivated enough – you can do most of the learning online and gain a bit of experience as well. 
+ So, best option is to start learning from Coursera / eDX and then apply for ISB when they offer next batch. If ISB feels expensive and a bit ahead – go for IIMC course – but be prepared to put in efforts to learn technical details yourself. 
+ Praxis also has decent reviews, but IIM brand trumps the backing on corporates like ICICI for some one like you. 
+ As per the information provided by Praxis the course would be 4 months (16 weeks) for new batches contrary to the earlier program which was of 6 months (21 + weeks).
+They will update the details of course outline and schedule in a week. And it might be similar to the previous course with some small changes (http://praxis.ac.in/programs/weekend-business-analytics/ ). 
+ Could you also please share your thoughts on skewing towards IIMC course, specially on the technicality of the it? 
+ I have 4 years of experience in SAS and Analytics. I have done B Tech in ECE.
+Now I want to apply for Business Analytics course in ISB.
+Will it be helpful or are there any other institutes that offers better courses than ISB.
+Also is their any placement support after certification programme in ISB ? 
+ There is no placement support ISB provides. If you are already in the industry, and have worked on SAS already – why not try the courses available on Coursera / Udacity / eDX. You would get some really good courses there. 
+ I am BTech in ECE and working in Digital marketing since 2012 May. I am also perusing my MBA in HR and Marketing. Now as I deal in Google Analytics and higher positions is Digital Marketing needs knowledge of big data and Data Science I am willing to do some Certificate/Degree in the same. I am also willing to build my career in the same field i.e. in Data Science. I am confused among MS in data science and certificates. MS will involve big investment where certification may or may not give me that much exposure. I have 44% in my 10th standard which pull me back always. That’s why I am little bit worried as well. Further I am not associated with any MNC although I have work experience in IT companies based in UK/Ireland. Can you please suggest me following? 
+ 1. Is it good to go with Certificate (Jigsaw/Green Lakes/Praxis)/MS (Germany)/M.Tech(Amity). I am not eligible for ISB and in IITs/IIMs I am not interested as most of them are currently offering short term programs less than a year. 
+ 2. Placement chances will be higher with which option? Will Jigsaw/Green Lakes/Praxis help in getting better jobs without placement assistance? 
+ 3. Indian companies prefer degrees or certificates? Especially MNCs 
+ 4. I am not form a premium business school/engineering college and also not working with a big brand. So which option is good for me Degree or certificate and from where? 
+ Thanks for the brilliant effort in proving useful inputs regarding the analytic course in this forum.
+I have around 13years of IT experience, out of which 10years in SAS ETL and SAS BI.I have not done work in analytics side, but used sas more for data management related to Data Warehouse/reporting(just simple business rules etc with out much analytics calculation).
+I have two kids, whom I need to spend sometime on the evening and weekends. 
+ I am considering to take up IIMC EPBA 1yr program(by Hughes) for the following reasons, even though the cost is bit high
+and not dealing much technically into analytics tools.
+1.IIM brand value
+2.Gives me chance to get into and explore business analytics and adds value to my experience
+3.This analytics appln knowledge an certificate may fetch me managerial promotion in current organization.
+4.course center is very near to my house 
+ Please suggest me, if I am taking good decision or any other option will be better than this.
+I explored following as well.
+ISB – it is very costly beyond my budget and travel to Hyderabad
+Jigsaw – very short term course covering technically.Also they are providing only online classes(which is difficult for me to take from home when kids are around).Also I have lots of online material and access to sas.
+IIT B 1yr program(by Hughes) – more technical, but for some reason has been stopped for past 2yrs 
+ Given your constraints and criteria, I would say that IIM and Great Lakes are the possible choices. Given some of the reasons you mentioned, IIMC is a good choice. 
+ However, you should keep following things in mind – don’t expect placement support from the course. If you are some one who doesn’t get comfortable until you get into details or have some hands on experience – the course might feel a bit superficial. However, it should impart you most of what an analytics manager needs to know. 
+ Also, the course doesn’t cover any thing on Big data – until and unless they have changed the syllabus recently. I would take up a few online courses (even if it required you to sit in a coffee shop and watch them) to gear up on Big data along with the course. 
+ Hi Kunal,
+I saw in your profile that you have worked in a couple of firms like capital one. Taking examples in your role in both this firm, can you please explain how analytics is used in India Vs US company. Specifically can you highlight what tools are used, did you pick up knwoledge of these tools on the job, what is the focus on analytics in Indian company vs US focused companies, and how are such companies to work in from career growth perspective. Does working for US based company a disadvantage to get a job later in Indian financial services industry? Is an analytics focused company like musigma better or is a US bank like capital one better? 
+ I have 9 yrs of experience in Retail Store Operations, mainly into front end people management, stock planning and vendor management. Grew from a store manager profile to Regional Manager. Would like to know the scope in analytic in Retail setup. 
+ Making a career shift after such a long experience can be a difficult experience. You can read this article for more details: “Planning a late career shift to Analytics/ Big data? Better be prepared”. You will need to start as a fresher and might find it hard getting a job in industry. Hence, I do not recommend making a shift after such long experience. If you are still convinced that you want to make a shift, you can go ahead and do it simultaneously. But, I normally do not recommend career shift with so much experience. 
+ I am pursuing M.Tech. in Analytics from NIT Delhi, currently in the first semester. Wanted to know the certifications that could be done (and from where) that would be beneficial for entry into an IT/Analytics industry. Also, please let me know the internship opportunities available, as my comple 2nd year would be dissertation. 
+ You can look at the courses available on Coursera / eDX / Udacity for free – but the certification only holds value when you complete these courses. Also, there will be minimal assistance you will get – you have to be self motivated to learn from these platforms. Alternately, you can look at Jigsaw and a few others for their certification programmes. 
+ With regards to internship, you can look at the opportunities in Delhi NCR itself – Absolutdata, Aviva, WNS are some of the companies I know of. Hope this helps. 
+ Thank you for the reply. I would take up a course on Coursera.
+Jigsaw is in Bangalore, right. I stay in New Delhi. Is there a good institute in NCR that provides classroom training on weekends?
+Also, I saw your profile. I find that you have worked for Capital One and Aviva. It would be really helpful if you can provide me the contact details of the HR of the companies you have worked for (or additionally any other company you are aware of) so that my college Training & Placement Officer can contact them for internships and/or recruitements. 
+ Thanks for all useful information. I am working with Xerox, having 6 year of work exp. I am Commerce Graduate and done MCA recently. I want to get involved with Data analytics leadership. Since i dont have exposure towards this but i can. Could you please advise me weather the IIT delhi course in suitable for me or not. If yes then please let me know how tpo get involve into this. If no then please advis eme other courses. 
+ Hi Kunal,
+I am an M.Sc in Statisctics (from Delhi University) and have 14+ years of experience in web technologies (Microsoft Technologies) including good exposer to RDBMS and BI reporting tools (MSRS,CRYSTAL Reporting, BO). 
+ I am looking for an alternative career and so exploring opportunities in Analytics:
+1. What would be your advice to me regarding career shift to Analytics?
+2. Should I opt for some recognized a)PG/Diploma course from recognized institute OR b)techinical courses on SAS/R/SPSS etc?
+3. If i successfully complete a course(a or b from above) and what is the chance of getting a break?
+4. It would be great if you could provide a range that is normally offerred for my kind of experiance? 
+ I am currently into PGDM financial services course from a tier 2 institute in Mumbai,i have 2 yrs exp with oracle apps,I am interested in BA profile in financial services industry like HSBC,Genpact etc.Would it be wise investing in basic sas programming from SAS or to do foundation course from jigshaw…I am already doing course on coursera?
+Which path i would choose to increase my weightage in placement process in my desired profile. 
+ I am Business Analyst working for the company “X”(Among Fortune 100 Fastest Growing Companies) in Supply Chain Analytics. I have Analytics Exp. from day one of my professional career. Having done B.Tech in Computer Science I have good understanding of programming paradigm. I owns expertise on skills like MSBI, Advanced Excel and currently I have focused on learning Python thorough online source like edX and Coursera. 
+ I am a Data Science Enthusiast and I want to keep growing in my skills in Analytics. I would be really grateful to you if you could suggest me future path, in terms of skills to develop, that I should traverse through. 
+ And I am not a rich guy. I want to pursue Post Graduation in Analytics/Data Science. Is there any options available in India itself? 
+ I am an IT employee with 2.4 years of experience in Application server support domain. I reside in Chennai and I got selected for the PGP-BA program offered by Great Lakes, Chennai. I have knowledge on SAS and Web analytics. Please answer my doubts below: 
+ * Do you have contact details of any student in Great Lakes, Chennai PGP-BA 2013 batch ? If so, can you please forward the details to me. 
+ * Do you have any placement details for the 2013 batch? 
+ * I am looking for a technical role after completion of the programme. In your opinion, is the course well structured for an IT professional like me with minimum eligible experience needed for the course (2 yrs) . I have a gut feel that its a touch management-oriented. 
+ I really liked the blog above & also appreciate the efforts put in the long feed of replies to queries of people like me. From the discusssions above I have a clear understanding that ISB is a better option than the rest but I think my set of circumstances & requirements may need your opinion added to it. 
+ I have B.E. degree in computer science & I am currently employed with the Business Development team of an IT solutions company at a decent package of 6 LPA in Mumbai with 1.5 years of experience till date. 
+ I wish to make my career in the Business Analytics domain, for which I am looking for executive PG options related to the same so that I can pursue them alongwith my job at Mumbai. 
+ My questions to you are : 
+ 1. ISB is a better option because of more on campus hours but it may not be practical & possible for someone like me employed in Mumbai to fly back & worth so frequently with my 5 day job.
+What would you suggest in this case? If I go with IIT B.. I will compromise with the quality of the program may be. 
+ 2. Since my course will begin sametime next year, by then I will b at a package of 7 atleast, with no prior experience in analytics. Do you think post the completion of my PG in Business Analytics from one of the above mentioned institutes can help me transition from a BD role to a Business Analyst role on the same or higher package ? 
+ Trust you are doing good.. Your blog is very informative and your responses to some of the aspirants have been brilliant.. Appreciate what you do to a lot of us who come to you with loads of questions in minds. 
+ Let me ask you something which I’ve been pondering over for some time now. I’m an MBA with 10+yrs of exp and in a middle management role in one of the largest banks in india, managing the portfolio of credit cards in the functional side of it. I thought a certification on business analysis would help my career, where I’ll be able to take quick and informed decisions. We do have analytical teams in our bank to support us make decisions. But I thought it’ll help me if I’m an expert myself. Eventually will help me become an independant consultan, who provides credit card insights to tomorrows bankers. 
+ I’m very keen on trying out isb cba. Pls suggest me whether this will help me in my career considering I’ve never done analytics in my job (my bachelor degree was statistics though).
+Waiting for our reply 
+ Thank you
+Can you also give me some contacts of similar profile guys who have done cba in isb? Or any isb cba pass out or students? 
+ Trust you are doing good.. Your blog is very informative and your responses to some of the aspirants have been brilliant.. Appreciate what you do to a lot of us who come to you with loads of questions in minds. 
+ Let me ask you something which I’ve been pondering over for some time now. I’m an MBA with 10+yrs of exp and in a middle management role in one of the largest banks in india, managing the portfolio of credit cards in the functional side of it. I thought a certification on business analysis would help my career, where I’ll be able to take quick and informed decisions. We do have analytical teams in our bank to support us make decisions. But I thought it’ll help me if I’m an expert myself. Eventually will help me become an independant consultan, who provides credit card insights to tomorrows bankers. 
+ I’m very keen on trying out isb cba. Pls suggest me whether this will help me in my career considering I’ve never done analytics in my job (my bachelor degree was statistics though). 
+ Can you also give me some contacts of similar profile guys who have done cba in isb? Or any isb cba pass out or students? 
+ When I called isb, the co-ordinator wanted me to gain some technical experience before applying so that the chances of getting through are higher. Pls suggest why should I learn and where? 
+ Appreciate your efforts in answering every single questions in the forum.The length of this thread suggest how informative it is. 
+ Coming back to my Concerns and queries:-
+I have a 2 year PGDM degree in Marketing from ISB&M Pune and B.tech (ECE).Currently i have around 2 and 1/2 years of work experience working in an advanced analytics project of an Automobile Major.Although My work involves majorly in data analysis & Dashboards using MS excel, i want to learn and use core Analytics applications for pursuing better Opportunities. I have successfully completed the Analytics in R through Coursera and also have a little exposure to Base SAS. 
+ Please suggest me some latest short term certifications courses in Analytics with placement assistance.
+I am based in Bangalore presently. 
+ I have total 5+ yrs. of experience and since last 4 years of experience I have been working in a Market Research Data Processing KPO in Pune. I am currently working as Consultant-Enterprise Feedback Solutions. I would like to advance my career in the area of Business Insights & Knowledge Management (broadly put). I am more inclined towards Retail. I do not have any programming or statistics background as far as academics is concerned. Since last few years I got exposed to the usage of data exploration techniques (reduction,clustering,etc.) majorly in SPSS (no SAS); although I gained knowledge about those techniques from methodology perspective while pursuing my Masters in Marketing Management. 
+ My concerns:
+1. I have to deal with enterprise data, so need to get Business Analytics-Data science certification for understanding data analytics methods in more detail. But how is it really going to help me in my career advancement considering my background in Market Research. What professional roles will I fit in after completion of BA course?
+2. What kind of institutes offer best courses for professionals like me? Reading through earlier posts, Jigsaw Academy seems to be offering good courses, even they have a tie-up with Great Lakes. 
+ Hi kunal i am B-tech graduate post graduate in marketing presently in Grasim Industries Ltd. in maintenance profile i want to switch my profile in Business Intelligence or some good analytic stream, would you please suggest me some good institute and there fees, is online courses in analytic is good for getting job. 
+ Praxis Business School, Kolkata is rolling out its popular analytics program in Bangalore under the aegis of Praxis Academy. 
+ Praxis pioneered the teaching of analytics as a discipline by launching a one-year full-time program in Business Analytics from its campus in Kolkata in 2011, as it believed that India needs to be well-positioned to grasp the huge opportunity this discipline provides to trained professionals. 
+ While the one-year program has grown in strength and stature, and has been ranked in the top-5 analytics programs in the country by the Analytics India Magazine, Praxis has launched weekend classroom training programs in Bangalore and Kolkata for working, time-poor executives. Praxis is confident about the importance of and demand for Data Analytics professionals, and has put together a robust program for working executives that will equip them for a seamless transition into the Analytics world. 
+ I am working at Datacenter . My work includes monitoring of alerts generated due to any fault in servers , applications , database , or network devices and little bit of analysis on these alerts for refinement of the process. I am work on excel for about six month and is in learning phase. I came to know about analytics from one of my senior . I m quite interested in this field could you kindly suggest how can I move towards analytics from where to start, is there any certification , can I move to some other company which deals in analytics using my current experience . 
+ I would like to suggest the Business Analytics Professional program at Imarticus is designed for careers within this exciting domain. After completing the comprehensive program with SAS certification, aspirants will gain an in-depth knowledge of Business Analytics tools and techniques. 
+ I am glad I somehow reached your blog. It cleared a lot of questions I had and wanted to thank you for answering all these questions. 
+ I’ve done B.Tech in EnTC and Diploma in Business Management from Symbiosis Pune (Graduation 2012). I have been working into recruitment since then. I can’t call it a HR profile since my focus has mostly been into recruitment and sales. I clearly do not possess as much experience as the people who are trying to get into Analytic. But I really want to switch to a job that is rewarding and interesting. I was pursuing SAP BI earlier this year – I got trained in it but did not get any job because they all want experienced folks (or they would pay you peanuts if you’re a fresher – or fake experience which I don’t want to do) 
+ I recently learned about this field from a friend who is one of the top notch guy in HP here and also teaches out of passion . He has placed all the students who he has taught (through his connections). But they all are quite experienced people.
+I wanted to know with my background, can I make a career in Analytics? If I go for this course, do I have a chance of getting into this field? 
+ Thanks for creating a portal on analytics. The information shared above is really helpful. 
+ I had few queries regarding PGPBA course offered by Great Lakes. 
+ I have 8 years of work experience in Telecom domain, though my designation is of Business Analyst but my role basically involves vendor management, consulting, assessing bussiness requirements and client project management, it does not involve SAS and R tool. 
+ I do not have much coding or programming experience but I want to learn Analytics tools and technologies and build my career in this field as I am feeling stagnant in current profile. 
+ Please suggest me whether Great Lakes BA offering would be suitable for me, does the course requires people to have strong programming skills? 
+ Hoping for an early response as last date for admissions in Great Lakes November batch is approaching. 
+ I have about 14 yrs of experience in BI. I was wondering if ISB CBA or any other similar program could benefit a profile like mine considering i am interested to work on the analytics area going forward. 
+ Transition from BI to BA would be beneficial. ISB is one of the best course available in India as of now. If you want to move into Business analytics, this would be the best chance. You are an eligible candidate for CBA course. While it does not provide a placement support, but you will expect to learn about the domain. 
+ I am interested in the field of market research and consumer insights. I have a Bachelors in Business Administration and a Masters in Marketing. I have done Maths till 12th Standard and Basic Statistics as a module in Bachelors. 
+ Would you recommend the BA and data mining courses for such a profile as well? Should I look for courses offered by MICA instead which are more focused towards market research? In short term courses, would you recommend the course by Indian Statistics Institute? 
+ Analytics companies typically hire freshers only from the top institutes in India (e.g. IIT / NIT / IIM )
+You need to put extra effort to pursue career in Analytics. You can check out some other options to pursue in Research & Data Analytics. 
+ I do not have a lot of information about the course from ISI, as it a relatively new course. For short term courses, you can also look at some other options on our training page. 
+ I am glad that I was able to find this website. Thank you so much for your effort in explaining us about Analytics. I wanted to do CBA from ISB. I am a 2012 CSE Graduate.
+After that, I did SAP-BI course through which I was not placed in any company as I was a fresher. Later, May 2014 I was placed in an IT company. 
+ My questions are 
+ 1) What would be the chance of me doing this course and getting placed without experience?
+2) Would ISB consider fresher in their certification ?
+3) When would be the best time for a person like me to start this course i.e considering the work experience? 
+ 1. The admission to ISB programme is dependent on many parameters rather than just the number of years of experience. On itself, 10 months looks to be on the lower side. The required work experience by ISB is 4-6 years. Presently the chance of getting selected at ISB is very less.
+2. ISB doesn’t prefer fresher for Certified Program in Business Analytics.
+3. For pursuing CBA courses, working Professional should possess 4-6 years of full-time work experience. 
+ Hello Sir,
+I have reviewed many of your articles and comments & reply.
+______/\_______ to you and your website. 
+ My Profile:
+10th 78.13%-Maharashtra Board
+12th 81.17%-Maharashtra Board
+Grad(BE[IT])-63.13-Pune University
+Work Ex.-3.5 years in IT with mixed support and development 
+ Have been very good at maths since my childhood as we have our own Grocery Shop.
+Even my Math academics are Good at each stage. 
+ Now, I am fed up with Programming and this IT culture(low level politics) and preparing for management exams.
+Suddenly, came across your website while searching for big data and data analytics courses. 
+ What is your view on my profile and also do we need extensive programming there.
+I am more of a favoured towards logics and numbers. 
+ We feel that the courses from Edupristine cover a very broad range of topics in a short span. You probably won’t get time to digest and apply what you are learning before the course is over!
+You can look at other options like General Assembly and Galvanize. Hope this helps. 
+ Did you get any reply from then that you have been shortlisted . I have also applied for it but haven’t got any reply from them. How much experience do you have. Do you have any CAT/GMAT score with you ? 
+ This course does not provide a placement support, but you would expect that you will have good job prospects. ISB is one of the best course available in India as of now. If you want to move into Business analytics, this is the best chance. With the ISB brand and tie-up with SAS, the course provides almost everything a person want to learn in this domain. 
+ I am BE ( Electronics ) and PGDBM – Full Time from one of the top 20 Indian Institutes. I have 8 years of total work experience with the break up as follows 4 Years in Sales & Marketing ( 2 years in Insurance, 1 year in Manufacturing and 1 Year in Media ). I also have 4 Years of experience as a Functional Consultant in a leading MNC. I have enrolled for SAS and Big Data courses at Jigsaw Academy. However, I am not being able to find time and energy to immerse myself into the courses ( business analytics in completely different from SAP ) I am seriously considering quitting my job and joining the full time program at Praxis Business School ( Post Graduate Diploma in Business Analytics ). I am planning this because 1 year shall give me more time to evaluate job options as well as to grasp the subject mater in a better manner. Praxis Business School also have an organised placement cell which provides placements in a structured manner. I want to avoid a gap on my CV at all costs as I already have that due to recession. Please advise 
+ Praxis has a good curriculum and learning experience. You can benefit from it definitely. However, most of the placement efforts are made for entry level positions, which may not be the right fit with your experience. People at Praxis are very helpful and have shown a lot of ownership, but you may need to negotiate for a larger role with potential employers later on. 
+ I have 10 years of IT experience starting from technical support team and Project Manager for leading bank managing production environment in mainframe technologies . Now I wanted to change my carrier to Big data to advance my skills and knowledge. Please can some one suggest me how I can kick start to archive my goal. 
+ I have been working with a MNC for close to 4 years now in reporting and minor analytics. I have also completed my certification in SAS ( Base SAS & pridictive modelling and Logistic regression) for which i have paid 1.75L 
+ However i was not able to switch to a SAS profile post the certification because of several resons, one being moving upto a senior role in my exsisting team. 
+ Now i really want to learn something new in analytics. the ISB certification was one option but after an MBA then SAS certification. it seems to be too much investment without returns. 
+ Hi Kunal,
+I am a commerce graduate & MBA, Having 8 years of Experience in Retail Banking Sales & Relationship Management role.
+Now I wants to consider career in Analytics , I understand that my past experience will not be counted for this career. So Please suggest that 6 months Course from IIT delhi is appropriate for me or should I go for long duration course.
+Eagerly waiting for your response….. 
+ Kunal, I have an MBA in HR & Marketing. I also have around 7+ years of work experience in HR domain wherein i have worked across the gamut. However i took a break post my marriage and am now looking forward to get back in the race. Several friends and colleagues have recommended the field of Analytics and personally i find the it to be an interesting opportunity. 
+ Now come the questions :
+1. I am based out of Bangalore, hence would request if you could help me select some good institues to get certified from, in Bangalore itself
+2. What could be some interesting Domain specializations (2-3 options) to look at. For greater clarity, I could send across my c.v. on your mail id, if you could share it. 
+ Iam sure your work is helping many people. So, thanks for all your help and guidance.
+Regards,
+Ac 
+ Reason I am asking this thing is that last time in January, people started getting selection emails within a week after giving the interviews. Therefore, wanted to confirm that if people have started getting the selection emails. 
+ When did you appear for the interview? Even i am waiting for the final selection results. ISB site initially mentioned the date for final list as Jan 15 but they have now modified it to Jan 30. Fingers crossed. ATB 
+ I am selected for ISB(Business analytic s 1 year program),Presently I am working on OBIEE having a experience of 4 yrs in Business Intelligence,How will the program help me . Will a shift from BI to BA is going help me ?.Please suggest me as i find you are the best person to guide me,also program do not provide any placement and a considerable amount of money is involved,please do reply. 
+ Hi Kunal,
+I am selected for ISB(Certificate in Business Analytic s ) I am working in BI (OBIEE) ,Having work experience of 4 yrs in BI ,How is the program going to benefit me ,and a shift from BI to BA how far is relevant.I find you the best person suggest me as program does not provide any placement and a considerable amount of money is involved in it. 
+ I have I more program in consideration,Certification in BI/BA from IIM kozikode ,It’s around 4 month program with BI in it.but its all online program no class room involved .IS it going to benefit me or shall I go for ISB ,I have a offer.please suggest. 
+ Its good to see that we are getting to know each other even before the start of the course. I got the admission offer on 22nd Jan and I have accepted the same, will see each other on the inauguration day. 
+ I also got admission offer last week and have accepted it. I completely agree with Michael, Let’s meet in ISB or we can create email group so that we start collaborate before the class. My email id is [email protected]. 
+ Can someone let me know the final dates for the commencement of CBA batch 4? I am assuming we’ll have to visit the campus from 21st Feb to 25th Feb ’15. Need to make travel bookings accordingly. Anyone from Mumbai joining CBA batch 4? 
+ With 4 years of experience in BI, A shift from BI to BA will prove beneficial. Business Intelligence is needed to run the business while Business Analytics is needed to make critical decisions in business. 
+ ISB is one of the best course available in India as of now. If you want to move into Business analytics, this might be the best chance. While it does not provide a placement support, but you will expect to learn a lot more. 
+ ISB is one of the best course available in India as of now. If you want to be a good Business analytics, this is the best chance to go with. ISB has the best offering among all the courses in India to become a BA. 
+ Hi Rahul ,
+I also got a offer letter yesterday itself,I think they have mention about the payment link they will sharing ,
+just i think need to confirm on mail itself ,but not sure about it.yet not replied. 
+ Currently I am preparing for “EMC – Data science Associate” Certification to get into Analytics industry.
+It would be greatful if anyone of you could get me the study material for the same (which outside costs 400USD). 
+ Hi Kunal,
+I am a Arts graduate , and i have more than 7 years of Experience in BPO, Retail & now in Travel as a Heading MIS Role.
+Now I m looking career in Analytics , I understand that my education will not be more enough for this career bcz i dont have knowledge of any language like C C++ , So Please suggest that am i eligible for 6 months Course for data science from IIT delhi is appropriate for me or should I go for long duration course???
+Eagerly waiting for your response…..please suggest dear. 
+ Thank you so much for providing valuable inputs. My academic background is B.Tech (Elect & Comm Engg), CFA (ICFAI University) & Diploma in Business Finance (ICFAI University). I possess 12 years experience in ETL/DWH Testing in Financial Domain in Gurgaon. I possess good SQL writing skills, good Excel skills & good at numbers. 
+ I have been reading(books/blogs/tutorials) about Business Analytics, Web Analytics (SEO, MVT, A/B) & Data Sciences for sometime now and I am very much interested in pursuing this to help me as Entrepreneur (as i aspire to be) or to change in my career from ETL/DWH testing to Analytics/Data Sciences, being this is the future of technology pace. 
+ Need your help on certain questions below as a firmed starting point 
+ – How much valuable is to have Instructor led programs offered by institutes in comparison to the self study.
+I do not want to spend more than 1 lac on on course fees (if i decide to take) 
+ – If answer to 1st question is Training institutes, then pls advise the ones in Delhi/Gurgaon 
+ – Should i pursue course in Data Sciences or in Business Analytics, thinking entrepreneurship is the primary motive. 
+ Hey guys, I have subscribed for the “Certified Professional in Business Analytics” course offered by
+Edzyme Academy. Have been through some lectures so far. I really liked the material and way of teaching. Worth condidering! 
+ Hi Kunal, I have 10 years of experience in mainframes and want to shift my career. I have worked with a variety of projects in finance, PLM and healthcare. Will the shift be a good option. Thanks, Veena. 
+ Hi Kunal
+Nirbhay this side actually I have bachelors degree in business administration and no work experience I have. So I just want to know that I should join business analyst program or not?
+will good for me? 
+ It is very difficult to provide a view based on the information provided. Your education background, comfort with maths and stats can matter a lot. 
+ As far as eligibility is concerned, any graduate can undergo certification in Business Analyst courses. If your learning path is a self paced manner, then you can learn about the subject matter of your’s interest from freely available online trainings. You can also look at our learning path. You can also start learning from an institute. 
+ Have been exploring this website for quite sometime and its very interesting one. Your suggestions are quite informative and bang on the target. 
+ I seek your suggestion in my case also.
+I am BTech from NIT Rourkela and Masters in International Business from Bocconi and CEMS with 6 Years of work experience in fields related to project management, business/market analysis, strategy and pre-sales in one of the leading engineering & construction firms in India. 
+ Due to reasons which are both personal and professional, i have taken a decision for a job/industry switch. And I felt, business analytics is an area which is emerging with loads of demand and also related to something which I guess I am passionate of i.e. business analysis. 
+ The only thing that is coming as a barrier is the lack of knowledge of tools like SAS, R etc. and the insight of the industry requirements expected from the joinee. 
+ At this point, what would be your suggestion? How to plan the shift so that I dont have to compromise with my work experience and salary levels and end up in a well-recognized firm. 
+ Have been exploring this website for quite sometime and its very interesting one. Your suggestions are quite informative and bang on the target. 
+ I seek your suggestion in my case also.
+I am BTech in Electrical Engineering from UPTU and have 7.5 of work experience in the field of like Intellectual Property wherein the nature of work is mainly related to Patents, Trademarks & other IP activities like Audit, Open Source Compliance etc. 
+ Due to reasons which are both personal and professional, I decided for a job/industry switch and I feel, business analytics is an area which is emerging with loads of demand, & an industry which is growing will allow me to grow with it. 
+ I have no prior knowledge of Analytics at all & this is becoming a barrier for me, along with the insight of the industry requirements expected from a joinee. 
+ At this point, what would be your suggestion? 
+ How to plan the shift so that I don’t have to compromise with my work experience and salary levels (at present 10L) and end up in a well-recognized firm. 
+ Have been exploring this website for quite sometime and its very interesting one. Your suggestions are quite informative and bang on the target. 
+ I seek your suggestion in my case also.
+I am BTech in Electrical Engineering from UPTU and have 7.5 of work experience in the field of like Intellectual Property wherein the nature of work is mainly related to Patents, Trademarks & other IP activities like Audit, Open Source Compliance etc. 
+ Due to reasons which are both personal and professional, I decided for a job/industry switch and I feel, business analytics is an area which is emerging with loads of demand, & an industry which is growing will allow me to grow with it. 
+ I have no prior knowledge of Analytics at all & this is becoming a barrier for me, along with the insight of the industry requirements expected from a joinee. 
+ At this point, what would be your suggestion? 
+ How to plan the shift so that I don’t have to compromise with my work experience and salary levels (at present 10L) and end up in a well-recognized firm. 
+ I would suggest that you make career decisions based on your interest and passion rather than just by looking at which field is set for growth. 
+ You might find it hard getting a job in the Analytics industry. Making a shift after such a long experience can be a difficult experience. You will consider as a fresher in Analytics. Typically a freshers in analytics can get anywhere between 3L – 12L. You can be lucky, if any company will offer you with a salary package of 10L or above. 
+ From the above courses you mentioned, I would recommend to join ISB for CBA. ISB is one of the best course available in India as of now. While it does not provide a placement support, but you will expect to learn a lot more. 
+ Praxis Business School, is probably the only one which takes ownership to solve for placements of students by its industry tie-ups. 
+ I am selected for IIMB BAI program and Great Lakes Chennai PGPBA/BI program.
+I am really confused between the two course. I have a BTech and MBA in gen management.
+I am looking forward to getting into analytics. However,I am not which one will be better in terms of career perspective. Could you please give your thoughts on Great lakes PGPBA? 
+ MICA’s PGC in Market Research and Data Analytics is a very good program. Many industry leaders who have done the program have given a very good feedback. You can see more details at http://www.mica.ac.in. It is also reasonably priced. (Less than 1 lakh) 
+ I would recommend, that you go for Post Graduate Program in Business Analytics from Great Lakes Institute of Management rather than IIM-B. For detailed comparison, you can read this article “Top 5 Analytics Programs in India (2014 – 15)”. I feel that the course at IIM-B is more focused on theory in comparison to Great Lakes. 
+ Disclaimer: I am a guest faculty at GL, but this view is my independent view. 
+ Post Graduate Program in Business Analytics from Great Lakes Institute of Management has better offering than IIM B. You will expect to learn alot more. For detailed comparison, you can read this article “Top 5 Analytics Programs in India (2014 – 15)”. 
+ Disclaimer: I am a guest faculty at GL, but this view is my independent view. 
+ Hi Kunal
+Thanks for making a site, which has given me and many others interested in the field of data science.
+I work in the Manufacturing sector as a Program Manager in the New Program Development domain.
+My past experience includes steel research with CORUS and I am holding a total of 9.5 years of domain experience. I have done a Master’s in Mech. Engg.
+Although, I am not directly involved with data analysis, but I do work with a lot with risk analysis in programs and projects , which helps my company to make decisions.
+My main intention is to shift to a role of Project Manager in the Information Technology domain, wherein I can be directly involved with product development as well as business forecasting.
+Do you think, I am a good enough fit to embark on a career of Program Manager and Business analyst in the IT sector, after taking up one of these courses offered? If yes, it will be great if you can suggest which one should be the best for my back ground. Your suggestion will make a difference in my decision making.
+Thanks and Best Regards
+Sourav Majumder 
+ Hi Kunal – I have nearly 17+ years IT experience. Had experience with SIEBEL ANALYTICS/OBIEE. Did some siebel implementation as well. My domain predominantly with CRM. Am a Management guy, wanted to move in functional. Would you suggest, which analytical course will support to my move as DATA SCIENTIST/DATA FUNCTIONAL. 
+ It would be very difficult to get into a hands on role after so much experience in IT and techno-functional management. I am sure, you would understand the kind of challenges HR will face by providing you role along side freshers and people with 2-3 years of experience. 
+ If you still want to get into hands on role – you should undergo a few certification / courses and then participate in a few open platforms like Kaggle. If you perform well there, you can break into data scientist role. 
+ Another option could be to do a Ph.D. / research associate in IITs / NITs on the subject and then move into industry. Irrespective, it would not be easy. 
+ The Bridge school of management offers a certificate course in predictive business analytics and there are placements too. They have a collaboration with Northwestern University, USA.
+The fee is around 3.25 lakhs (8 months). Is it a good course ? Would you suggest enrolling for this course? 
+ I’m from Bangalore, I’m planning to to apply to IIMB business analytics instead of ISB because of the difference in fee, and travelling arrangement for Hyderabad. Is it worth paying extra fee for ISB instead of IIMB? I’ve 4 years of experience in SAS programming , but not in Analytics, and planning to shift to BA. 
+ Hi Kunal,
+I m interested in doing a course in SAS and SPSS and looking for a institute in Delhi.
+Can u please share information regarding these institutes along with details like content, fee, duration etc. 
+ This is in reference to the CPBAE course provided by IIM Lucknow and Kelley Business School. Currently, I’m working as Software Developer at Shopclues.com and have total experience of 3.3 years. I’m interested in pursuing this course, but I need some guidance and would really appreciate your help. 
+ I have few queries and need some advice regarding the following:
+• Advantages of doing this course in the future run.
+• What about the job prospects and ROI?
+• Is this course worth?
+• Since I am working in a private firm, will the course work be manageable?
+• As classroom coaching might be little difficult for me to manage, so are there any other alternative course you can suggest which is in par or better than IIM-L. 
+ This is in reference to the CPBAE course provided by IIM Lucknow and Kelley Business School. Currently, I’m working as Software Developer at Shopclues.com and have total experience of 3.3 years. I’m interested in pursuing this course, but I need some guidance and would really appreciate your help. 
+ I have few queries and need some advice regarding the following:
+• Selection process
+• Advantages of doing this course in the future run.
+• Job prospects and ROI?
+• Is this course worth?
+• Since I am working in a private firm, will the course work be manageable?
+• As classroom coaching might be little difficult for me to manage, so are there any other alternative course that you can suggest which is in par with or better than IIM-L. 
+ Hi ,
+I am currently working into a role which demands to analyse the sales data of the organisation/business verticals from diff prospectives. Though this is a critical role in many companies now days in India but I see the scope is limited for me as I am holding a graduation degree and have no brand uplifting me in terms of further growth. I have got 5 years of exp working in MIS and sales data analysis. 
+ I want to do a course in sales analytic , is there anything you can recommend me to go ahead with. I am also having a six sigma green belt certification from ISI Delhi. 
+ My current role demands to analyse the sales data of the organisation/business vertical from diff prospectives and help management to make the better business strategies to achieve the goal. 
+ I am a graduate and have 5 yrs of exp in MIS and sales data analysis. Since this is an important role for many companies now days but nothing seems to uplift me in terms of my personal growth despite of having good exp. 
+ I wish to do sales analyst certification to have further growth in career & would seek your recommendation on the same in case there are institutes / private bodies providing such kind of certifications. I also have Six Sigma Green Belt Certification from ISI Delhi. 
+ I have 3 yrs of work experience in SAS(Base, Macro, SQL, EG, STAT, CI) and have fair knowledge in Linear regression, Logistic regression , Predictive Modeling Forecasting etc. Currently working in Campaign Management in BFSI industry. Did a course from Coursera on Regression Model in R. Now I want to move completely to Analytics. It would be great if you can guide me on this.Planning
+to do an Advanced Analytics course from Jigshaw. Is doing a course will be necessary or I can get a Analytics job without that. 
+ Hi Kunal
+I am looking for your honest advise and suggestion
+I wish to make a career shift into Oil & Gas Data/Business analytics with focus on Oil & Gas/Energy research
+I wish to join Consulting firm such as Deolitte, Accenture etc who are providing such services in Oil & Gas Domain
+Presently I am working in the field of Oil & Gas Pipeline transportation in downstream sector of a reputed oil company with seven years of experience in operations. I would like to go for an analytic course which would help me readily shift my carrier with good packages and growth opportunities. Can you suggest me any program or institute located in Mumbai with placement assistance in those above mentioned companies that would help me shift my carrier. 
+ Hi Kunal,
+Very good Article for starters like me. I need your guidance regarding career Path in Big Data and Hadoop.
+I am an Electronics engineer and 7 years of experience in embedded software/system level components and BSP (board support packages/kennel porting/Linux device driver). I have 2 years of experience in porting BSP for network devices and WLAN. I want to move from system level to Application.I have great interest in cloud computing / Data analytics/clusters etc.
+Right now I am thinking to shift my career in Big data/Hadoop. I have good experience in c++,basics of JAVA programming and sound knowledge of Linux /Unix operating system. I am thinking Big data / Data analytic relevant to my field in IoT (Internet of things / connected device)
+What career path you can suggest for person with this background , to make future career aligned with Big data? 
+ The doubt that creeps up in my mind is the recognition for ISB or any other institute by Govt of India as it is slightly scary to know that Gov tof India does not approve or recognise these institutes after we have enrolled for the courses.
+Does the recognition matter in this case if the course is recommended. 
+ Hi,
+I am currently working in leading IT, i work on BI part. have 2yr of reporting development experience in Tableau, know the basics of R, Qlikview, SQL. I work in co ordination with the analytics team.
+Which would be the best program for me to join. i am looking for a 6 months part time program.
+Also is IIT delhi better or great lakes, as i live in Delhi.
+Placements is not a concern for me. looking for better quality of knowledge and learning. 
+ Hi Kunal,
+Thanks for your good suggestions.
+I am B.Tech in CS and has 10 years of exp in IT industry. With 7 years exp as C/Java programmer, I have been managing project since last 3 years. I worked for High performance and banking domain mainly.
+Do you think its worth switching to Data scientist/Data science field in terms of career growth? 
+ I have done a lot of research and all that research matches with your article above. So I have a lot of confidence in your article. With respect to that, I wanted to take a small advice from you, if you feel it is the right forum for me to ask this question. 
+ My Question:
+I am 6+ years java , datastructure, algorithm engineer working in telco analytics as big data technical lead. I am trying to get into data science and become data scientist because I love machine learning from my heart and wat to earn name in this field and contribute by doing some research. 
+ With these aspirations in my mind, is ISB the right place for me or should I go abroad for MS/Phd Programs to fulfill my aspirations. 
+ Also, would like to mention that I have given the Online Test of ISB and have been shortlisted and now awaiting for interviews to happen. for the next batch (that is batch 5). 
+ Please guide me as to how to fulfill my aspiration. Also I desire to work in the industry. 
+ Hi Kunal,
+1)i am 27 years old an i have 6 year exp in server administrator i really want to switch my profile data Analytics.
+i don’t have good communication skill so how many percent possibly chances after SAS Base and Advance (BI) certification i will get the JOB.
+2) Data Analytics is Travel job because i love travelling around the world 😀
+Please Reply ASAP. 
+ I have 8 years of Data Analytics experience but mostly over descriptive part & very less on predictive/modeling part. Please suggest me some courses which basically focus on sdvanced analytics covering indepth statistics part since I am not from statistics background.
+ISB course is too costly for me. 
+ Hi Kunal,
+I am having 7.5 yrs of Instrumentation engineering exp. in energy sector.I want to switch my profile from engineering to energy analytics. I am planning to start with few online courses followed by jigsaw academy certification along with PGPBA program from IIMB.
+Which one is better for PGPBA Great lakes or IIMB??.
+Please guide how could I Switch into analytic profile in energy sector.
+Regards,
+Ravish 
+ I am having 4 years experience in TCS as an Business Intelligence developer. I got admit into PGP BA , great Lakes. i am in dilemma whether to go for it or not. I am confused is it worthy? will it help me get into better position in the company and better package ? is it a Post graduate Degree or a distance diploma. What do u you suggest. i have less time to confirm . please do reply. 
+ I Have work experience of 6 yr’s in FMCG sales and i am a MBA marketing graduate, i just want shift my carrer towards analytic s but i am a Lehman in this knowledge. kindly guide me how could i enter in the Analytic fields and what skills i need to acquire for that. . 
+ I am Btech (IT) and MBA (Finance). I wanted to make my career in Business Analysis/Analytics after MBA but things back fired and I landed in Finance Operations (working in Fixed Income Securities domain, market risk) kind of role. I have total 6 years of experience and looking out for a role in Analytics.
+I want to join some course but confused which training institute to join and if it can bring some life to my career. Also I dont want to spend a big amount as I have already wasted that by doing MBA.
+I am currently working in Gurgaon and looking for a training institute which can help in learning R, SAS in short span of time so that I can switch to a company where I can get the practical exposure. 
+ After doing google, I got to know about Analytixlab where the similar course is for Rs 25,000 to Rs 30,000. 
+ Please let me know your views if the above approach is correct or is there any approach too? 
+ I’ve around 15+ years IT industry experience, I am planning to move to data analytic now, Can you please let me know whether this is a wise decision? can you please suggest what will be good for me to start with. 
+ 

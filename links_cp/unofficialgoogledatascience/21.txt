@@ -1,0 +1,4 @@
+Posts 
+ Randomized experiments represent the gold standard for determining the causal effects of app or website design decisions on user behavior. We might be interested in comparing, for example, different subscription offers, different versions of terms and conditions, or different user interfaces. When it comes to online ads, there is also a fundamental need to estimate the return on investment. Observational data such as paid clicks, website visits, or sales can be stored and analyzed easily. However, it is generally not possible to determine the incremental impact of advertising by merely observing such data across time. One approach that Google has long used to obtain causal estimates of the impact of advertising is geo experiments. 
+ What does it take to estimate the impact of online exposure on user behavior? Consider, for example, an A/Bexperiment, where one or the other version (A or B) of a web page is shown at random to a user. The analysis… 
+ 

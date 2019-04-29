@@ -1,0 +1,72 @@
+Using Facebook as an analyst (Hint – using R) 
+ Facebook has huge data bank and it allows us to make use of it to some extent. 
+ October is a month of celebration in India. We have festivals like Diwali and Dushehra in October, which makes the entire month a time to celebrate and reunion. Every time we meet our friends and relatives at different places, to make it easier for everyone to reunite. Every time before going to the city, I update my FB/Twitter status to “Going to city xyz” and get a bunch of replies from people who are traveling to the same place. But almost every time I miss some of my friends just because of lack of information. This time I went a step ahead and connected my FB account to R and looked for people who have their current city as my target location. Surprisingly, I got 10 more friends who were in the city, whom I might have missed if this exercise was never done. In this process, I had a lot of fun with other user profile variables FB permits us to look at. In this article, I will help readers to understand this process of connecting FB to R and demonstrate the simplicity of the process. This type of analysis is not restricted only to the case in hand but a much broader set of daily life problems. 
+ We will use library Rfacebook for this analysis. 
+ How to connect R to Facebook 
+ Facebook provides you two simple ways to import data from the website. I will demonstrate the simpler one in this article. 
+ Step 2: Change the API Version(Red box in the picture) to “unversioned” 
+ Step 3: Click the “Get Access Token” (Green box in the picture). 
+ Step 4: Check all the boxes in all three tabs. These are the permissions you are asking from yourself to access. Assuming you do not wish to hide anything from yourself, you can safely check all boxes. 
+ Step 6 : Store your token as variable in R studio. You can use the following code for the same : 
+ > token <- "XXXXX12333YYY" 
+ > me <- getUsers("me", token=token) 
+ > me$name 
+ [1] “Tavish Srivastava” 
+ Now, you have facebook connected to your R session for the next 2 hours. 
+ Search people in a particular city among your friend list 
+ I and all my relatives decided to meet in Pune (Maharashtra) this year and hence “Pune” is the location I am looking for in the current location field of all my friends profile. Imagine doing the same thing manually on facebook. Let’s take a smarter route and check out the frequency distribution of current location among the user IDs in my friend list. To accomplish this task you can execute a simple code on R. 
+ Step1 : Pull out the list of all friends and their ID. 
+ Step 2 : Pull all the user details corresponding to this table of IDs. 
+ Step 3 : Check the frequency distribution of all current location. This is done to make sure the same name “Pune” is not appearing in different formats. 
+ This frequency distribution is a reason why this method adds power over traditional search on Facebook. For example, if we were meeting in Delhi, I would want to search Delhi, Gurgaon, Noida and possibly Faridabad for my friends. However, through this method, I can write one single query to get it. 
+ Finally I get the list of names of my friends, who have their current location as Pune. While doing this exercise, I found some other interesting facts about my friend list. It is very easy to tabulate the relationship_status of all your friends. Because the possible values are very few, it becomes interesting to analyze the same. Following is a code I used to tabulate the relationship_status of my friends. 
+ > table(my_friends_info$relationship_status) 
+ Engaged : 3 
+ In a relationship : 6 
+ It’s complicated : 5 
+ Married : 126 
+ Single : 434 
+ As I have been lately busy in my work, I completely lost track of people getting engaged. Here is an easy method to find the same : 
+ I did a tabulation on each of the user information Facebook shared and discovered new things about my friends every single time. 
+ End Notes 
+ I found this small piece of analysis both interesting and insightful. It just helps you get a summary of everything. You can go through the user information of your entire friend list in less than 5 minutes. You can use this data to visualize your friends on a graph and see various clusters of population (Hint – you will need to use igraph library for this). You can do some cool things like define the distance between nodes basis interactions on Facebook and see which are the closest people to you as per Facebook. 
+ How would you play around with your social media data? Have you done such small experiments on your Facebook or twitter profile? Did you go beyond the scope of this article in your analysis? Please share with us your thoughts on the topic. 
+ Tavish is an IIT post graduate, a results-driven analytics professional and a motivated leader with 7+ years of experience in data science industry. He has led various high performing data scientists teams in financial domain. His work range from creating high level business strategy for customer engagement and acquisition to developing Next-Gen cognitive Deep/Machine Learning capabilities aligned to these high level strategies for multiple domains including Retail Banking, Credit Cards and Insurance. Tavish is fascinated by the idea of artificial intelligence inspired by human intelligence and enjoys every discussion, theory or even movie related to this idea. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ Really impressed!! This sounds interesting for a nascent learner of R (Like me) Kudos mate. I am trying to execute the steps specified here and i am facing a problem while getting the location list of the users in my profile, i was shown only 5 people across 3 locations, can you please help me out on this. 
+ Also i went through the Rfacebook package and was trying different codes like getLikes, getCheckins etc. I came across a function called “fbOAuth” which says , it creates a long-lived OAuth access token that enables R to make authenticated calls tothe Facebook API. Can you throw some light on this . 
+ Avinash,
+The limited list you are getting is because of your facebook settings. Check what restrictions have you added for any application to access your profile.
+fbOAuth is another way to access your network. Here you will create a dummy application on facebook which will redirect your entire facebook data to localhost. You can check out detailed instructions in CRAN website. Let me know in case you face any challenge. 
+ I tried above example but couldn’t able to get few variables like “location” , “relationship_status” and “hometown”etc. In all the places i am able to see only “NA” values, even though i am able to see those values in facebook correctly. Can you help me if i got wrong somewhere? 
+ load the library using the command library(“Rook”) and library(“Rfacebook”). there are certain dependancies like brew, httr, json and tools that needs to be added along with them. just check whether they are also loaded along with it 
+ Hi…on running this code “table(my_friends_info$location)”, I am getting a statement saying “table of extent 0 >”. Can you please tell me what I am doing wrong? I have checked all the boxes, I believe there is some problem when I am trying to run “my_friends_info <- getUsers(my_friends$id, token=token, private_info=TRUE)" coz in this case when I print the "my_friends_info" dataset, I get a table with only NA values. Please help. 
+ Hi,
+while loading Rfacebook (after downloading it), it’s saying that you need to install ‘httr’ package..But I am not able to download the same. Is it available in the open R version or available for enterprise version only?? 
+ Executing the command to get the friend list using the function getFriends, I am only able to extract 26 friends in my friend list, though I have more than 900 friends. Can you please let me know what is the issue here? 
+ Great job Tavish,
+we have a small provate facebook group and I have been given an admin right to this group so that I can do some data mining.
+After doing some research and with my limited R knowledge decided to use RFacebook package. But it appears that after the introduction of version 2.0 of the Graph API, only friends/groups who are using the APPLICATION that I used to generate the token to query the API will be returned.
+I know in order to get the token ( for short term seession) or App_id and App_secret ( for long term term use) we need to create an app. Now, my question is can I allow this app to the group that I admin? If so, how do I do this?
+Thank you 
+ Well I am ardent reader of Analytics Vidhya. I started following AV since last month. You won’t believe I read almost every article just in one week. It helped me lot to improve my analytics skills. Keep Going My best wishes are with you Guys.
+BTW
+I followed the procedure to fetch the data of friends on facebook. But i got only 1 friend. So i checked Permissions clause of facebook and found following 
+ 1 ) A user access token with user_friends permission is required to view the current person’s friends.
+2 ) This will only return any friends who have used (via Facebook Login) the app making the request.
+3 ) If a friend of the person declines the user_friends permission, that friend will not show up in the friend list for this person. 
+ So It is clear that i need permission to access my friend’s data. How can i do that is there any alternate way to fetch data. 
+ hey…when I tried to run the code….it displays the following error:
+“Only friends who use the application will be returned
+See ?getFriends for more details
+Error in getFriends(token, simplify = TRUE) :
+No friend information is available. See ?getFriends for more details.” 
+ Is it really necessary that friends only who made application can be accessed? 
+ Unfortunately with the Graph API Explorer upgrade to version 2.4 since May 2015 , this is pretty much deprecated. I rely on getting the user IDs in by looping through the comments made by users ( and then scrape the user information available by the virtue of the user IDs that I get ). But again when we get the user details it is very minimal and we will get to know only those pieces of information that the user has consented to keep public in facebook profile privacy settings. 
+ hi.,.i really interesting about facebook mining but i have problm about it. when i was running in r i get the information error. can you help me?
+> my_friends <- getFriends(access_token, simplify=TRUE)
+Only friends who use the application will be returned
+See ?getFriends for more details
+Error in getFriends(access_token, simplify = TRUE) :
+No friend information is available. See ?getFriends for more details. 
+ 

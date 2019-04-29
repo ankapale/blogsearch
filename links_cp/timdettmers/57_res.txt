@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- This site is optimized with the Yoast SEO plugin v9.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>How to Parallelize Deep Learning on GPUs Part 1/2: Data Parallelism &mdash; Tim Dettmers</title>
+<link rel="canonical" href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Parallelize Deep Learning on GPUs Part 1/2: Data Parallelism &mdash; Tim Dettmers" />
+<meta property="og:description" content="Model parallelism is the bread and butter parallelism algorithm for deep learning. Here I explain how it works, and where the bottlenecks lie, which may cripple performance." />
+<meta property="og:url" content="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/" />
+<meta property="og:site_name" content="Tim Dettmers" />
+<meta property="article:publisher" content="https://www.facebook.com/people/Tim-Dettmers/100004739865154" />
+<meta property="article:tag" content="CUDA" />
+<meta property="article:tag" content="Deep Learning" />
+<meta property="article:tag" content="GPU" />
+<meta property="article:tag" content="HPC" />
+<meta property="article:tag" content="MPI" />
+<meta property="article:tag" content="Neural Networks" />
+<meta property="article:section" content="Hardware" />
+<meta property="article:published_time" content="2014-10-09T14:59:09+00:00" />
+<meta property="article:modified_time" content="2016-11-10T21:18:38+00:00" />
+<meta property="og:updated_time" content="2016-11-10T21:18:38+00:00" />
+<meta property="og:image" content="https://i1.wp.com/timdettmers.com/wp-content/uploads/2014/10/datapara1.png?fit=1025%2C626&#038;ssl=1" />
+<meta property="og:image:secure_url" content="https://i1.wp.com/timdettmers.com/wp-content/uploads/2014/10/datapara1.png?fit=1025%2C626&#038;ssl=1" />
+<meta property="og:image:width" content="1025" />
+<meta property="og:image:height" content="626" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Model parallelism is the bread and butter parallelism algorithm for deep learning. Here I explain how it works, and where the bottlenecks lie, which may cripple performance." />
+<meta name="twitter:title" content="How to Parallelize Deep Learning on GPUs Part 1/2: Data Parallelism &mdash; Tim Dettmers" />
+<meta name="twitter:site" content="@Tim_Dettmers" />
+<meta name="twitter:image" content="https://i1.wp.com/timdettmers.com/wp-content/uploads/2014/10/datapara1.png?fit=1025%2C626&#038;ssl=1" />
+<meta name="twitter:creator" content="@Tim_dettmers" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Person","url":"https:\/\/timdettmers.com\/","sameAs":["https:\/\/www.facebook.com\/people\/Tim-Dettmers\/100004739865154","https:\/\/twitter.com\/Tim_Dettmers"],"@id":"#person","name":"Tim Dettmers"}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//timdettmers.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; Feed" href="https://timdettmers.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; Comments Feed" href="https://timdettmers.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; How to Parallelize Deep Learning on GPUs Part 1/2: Data Parallelism Comments Feed" href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/timdettmers.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.10"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='child-theme-css'  href='https://timdettmers.com/wp-content/themes/genesis/style.css?ver=2.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://timdettmers.com/wp-content/tablepress-combined.min.css?ver=3' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='https://timdettmers.com/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://timdettmers.com/wp-content/plugins/jetpack/css/jetpack.css?ver=6.8' type='text/css' media='all' />
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20150408'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/skip-links.js?ver=4.9.10'></script>
+<link rel='https://api.w.org/' href='https://timdettmers.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://timdettmers.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://timdettmers.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.10" />
+<link rel='shortlink' href='https://wp.me/p7dUt6-13' />
+<link rel="alternate" type="application/json+oembed" href="https://timdettmers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftimdettmers.com%2F2014%2F10%2F09%2Fdeep-learning-data-parallelism%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://timdettmers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftimdettmers.com%2F2014%2F10%2F09%2Fdeep-learning-data-parallelism%2F&#038;format=xml" />
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-68592625-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//i0.wp.com'/>
+<link rel='dns-prefetch' href='//i1.wp.com'/>
+<link rel='dns-prefetch' href='//i2.wp.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><link rel="pingback" href="https://timdettmers.com/xmlrpc.php" />
+<!--[if lt IE 9]><script src="https://timdettmers.com/wp-content/themes/genesis/lib/js/html5shiv.min.js"></script><![endif]-->
+<style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; }
+/* ]]> */
+</style>
+<link rel="icon" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+<link rel="icon" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=192%2C192&#038;ssl=1" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=180%2C180&#038;ssl=1" />
+<meta name="msapplication-TileImage" content="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=270%2C270&#038;ssl=1" />
+</head>
+<body class="post-template-default single single-post postid-65 single-format-standard nolayout" itemscope itemtype="http://schema.org/WebPage"><div class="site-container"><section><h2 class="screen-reader-text">Skip links</h2><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li><li><a href="#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li></ul></section>
+<header class="site-header" itemscope itemtype="http://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="https://timdettmers.com/">Tim Dettmers</a></p><p class="site-description" itemprop="description">Making deep learning accessible.</p></div><div class="widget-area header-widget-area"><h2 class="genesis-sidebar-title screen-reader-text">Header Right</h2><section id="categories-4" class="widget widget_categories"><div class="widget-wrap"><h3 class="widgettitle widget-title">Blog Posts Topics</h3>
+		<ul>
+	<li class="cat-item cat-item-2"><a href="https://timdettmers.com/category/deep-learning/" >Deep Learning</a> (7)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://timdettmers.com/category/featured/" >Featured</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://timdettmers.com/category/hardware/" >Hardware</a> (7)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://timdettmers.com/category/neuroscience/" >Neuroscience</a> (1)
+</li>
+		</ul>
+</div></section>
+</div></div></header><h2 class="screen-reader-text">Main navigation</h2><nav class="nav-primary" itemscope itemtype="http://schema.org/SiteNavigationElement" id="genesis-nav-primary" aria-label="Main navigation"><div class="wrap"><ul id="menu-menu" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-431" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-431"><a href="http://timdettmers.com" data-ps2id-api="true" itemprop="url"><span itemprop="name">Blog</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-434" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-434"><a href="https://timdettmers.com/category/deep-learning/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Deep Learning</span></a></li>
+	<li id="menu-item-436" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-436"><a href="https://timdettmers.com/category/hardware/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Hardware</span></a></li>
+	<li id="menu-item-435" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-435"><a href="https://timdettmers.com/category/neuroscience/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Neuroscience</span></a></li>
+</ul>
+</li>
+<li id="menu-item-668" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-668"><a href="http://timdettmers.com/about/#Publications" data-ps2id-api="true" itemprop="url"><span itemprop="name">Publications</span></a></li>
+<li id="menu-item-433" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-433"><a href="https://timdettmers.com/about/" data-ps2id-api="true" itemprop="url"><span itemprop="name">About Me</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-65 post type-post status-publish format-standard has-post-thumbnail category-hardware tag-cuda tag-deep-learning tag-gpu tag-hpc tag-mpi tag-neural-networks entry" itemscope itemtype="http://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">How to Parallelize Deep Learning on GPUs Part 1/2: Data Parallelism</h1> 
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2014-10-09T14:59:09+00:00">2014-10-09</time> by <span class="entry-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="https://timdettmers.com/author/tim-dettmers/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Tim Dettmers</span></a></span> <span class="entry-comments-link"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comments">17 Comments</a></span> </p></header><div class="entry-content" itemprop="text"><p>In my <a title="How To Build and Use a Multi GPU System for Deep Learning" href="http://timdettmers.com/2014/09/21/how-to-build-and-use-a-multi-gpu-system-for-deep-learning/">last blog post</a> I showed what to look out for when you build a GPU cluster. Most importantly, you want a fast network connection between your servers and using MPI in your programming will make things much easier than to use the options available in CUDA itself.</p>
+<p><span lang="en-US">In this blog post I explain how to utilize such a cluster to parallelize neural networks in different ways and what the advantages and downfalls are for such algorithms. The two different algorithms are data and model parallelism. In this blog entry I will focus on data parallelism.</span></p>
+<p><span id="more-65"></span></p>
+<p><span lang="en-US">So what are these two? Data parallelism is when you use the same model for every thread, but feed it with different parts of the data; model parallelism is when you use the same data for every thread, but split the model among threads.</span></p>
+<p><span lang="en-US">For neural networks this means that data parallelism uses the same weights and but different mini-batches in each thread; the gradients need to be synchronized, i.e. averaged, after each pass through a mini-batch.</span></p>
+<p><span lang="en-US">Model parallelism splits the weights of the net equally among the threads and all threads work on a single mini-batch; here the generated output after each layer needs to be synchronized, i.e. stacked, to provide the input to the next layer.</span></p>
+<p><span lang="en-US">Each method has its advantages and disadvantages which change from architecture to architecture. Let us look at data parallelism first and its bottlenecks first and in the next post I will look at model parallelism.<br />
+</span></p>
+<p><b>Severity of the network bottleneck of data parallelism</b></p>
+<p><span lang="en-US">The idea of data parallelism is simple. If you have, say, 4 GPUs you split a mini-batch into parts for each of them, say, you split a mini-batch with 128 examples into 32 examples for each GPU. Then you feed the respective batch through the net and obtain gradients for each split of the mini-batch. You then use MPI to collect all the gradients and update the parameters with the overall average.</span></p>
+<figure><img id="featured-image" src="https://i1.wp.com/timdettmers.com/wp-content/uploads/2014/10/datapara1.png?resize=1025%2C626" alt="Featured image" width="1025" height="626" data-recalc-dims="1" /><figcaption>Data parallelism diagram. There is no communication in the forward pass, and during the backward pass you synchronize gradients.</figcaption></figure>
+<p><span lang="en-US">The biggest problem with this approach is that during the backward pass you have to pass the whole gradient to the all other GPUs. If you have a 1000&#215;1000 weight matrix then you need to pass 4000000 bytes to each network. If we take a 40Gbit/s network card – which is already quite fast – then you will need <img src='https://s0.wp.com/latex.php?latex=%7B%5Cfrac%7B4000000%7D%7B40%7D%5Cfrac%7B1%7D%7B40%5Ctimes+1024%5Ctimes+1024+%5Ctimes+102%7D%5Cfrac%7B1%7D%7B8%5Ctimes+1000%7D+%3D+0.75%5Cmbox%7Bms%7D%7D&#038;bg=ffffff&#038;fg=000000&#038;s=0' alt='{\frac{4000000}{40}\frac{1}{40\times 1024\times 1024 \times 102}\frac{1}{8\times 1000} = 0.75\mbox{ms}}' title='{\frac{4000000}{40}\frac{1}{40\times 1024\times 1024 \times 102}\frac{1}{8\times 1000} = 0.75\mbox{ms}}' class='latex' />  to pass the data from one node to another node (however, there is some additional overhead that is neglected here). If you have six GPUs in two nodes you need to pass the data to five other GPUs, three of which need to go through the network card (3x 0.75ms), while two can use PCIe 3.0 to pass the data to the other two GPUs (about three times as fast; 2x 0.25ms). However, the PCIe pass is independent of the network card pass, so the time needed is determined by the network card time alone, i.e. 2.25ms. However, only one GPU can transfer data through the network card at any one time in any one node, so that we have to multiply that time by three, i.e. 7.75ms. Now the bottom line is, that we just need about 0.2ms for a matrix multiply through that layer (100&#215;1000 dot 1000&#215;1000) and about twice as much for the backward pass. We can pass the gradient while we work on the next layer, but in the end the network card speed limits our overall computation by quite a bit. This is more marked the larger you scale your system: A four node system working on the same problem needs about 20.25ms to pass the gradients around to the other GPUs. One can easily see that data parallelism does not scale with size of the cluster. </span></p>
+<p><span lang="en-US">To counter this bottleneck is to reduce the parameters of the gradient through max pooling, maxout units or by simply using convolution. Another way is to increase the computational time/network time ratio by other means, e.g. by using is computationally intensive optimization techniques like RMSProp. You need the same time to pass the gradients to each other, but more time is spend on computation, thus increasing the utility of the fast GPUs.</span></p>
+<p><span lang="en-US">Another thing you can do when you use computationally intensive optimization techniques is to hide latency of networking under the computation of the gradients. This means while you passing the first gradient to all other nodes, you can already start a big RMSProp computation asynchronously for the next layer. This technique can give a speedup of about 0-20 % depending on network architecture.</span></p>
+<p><span lang="en-US">But this is not the only problem with data parallelism. There is a very technical bottleneck hidden in the GPU architecture which took me quite a while to understand. To understand why the GPU architecture is a problem we first need to look at the usage and purpose of mini-batches.</span></p>
+<p><span lang="en-US"><b>A divergence: Why do we use mini-batches?</b></span></p>
+<p><span lang="en-US">If we start with randomly initialized parameters or even if we start with pretrained parameters, we do not need a pass through all the data to get an accurate gradient update that will head into the direction of a local minimum. If we take MNIST as an example, if we have a gradient which includes 10 common mistakes that the network does for each class (mini-batch size of about 128), then we will go into a direction that reduces the error greatly already as the gradient captures rough and common mistakes. If we choose a greater batch size (say 512) then we not only capture common errors, but also catch errors that are more subtle. However, it is not very sensible to fine-tune a system if you know it still has major errors. So overall we gain little by increasing the batch size. We need more computation to do roughly the same and this is the main argument why we use a mini-batch size as small as possible. However, if we choose a mini-batch size that is too small, then we do not capture all the common errors which are relevant for the data set and thus our gradient might not head near a local optimum, so there is a limit how small you can make mini-batches.</span></p>
+<p><span lang="en-US">How does this relate to data parallelism? If we want a mini-batch size of 128 and use data parallelism to divide it among, say, eight GPUs, then each net calculates gradients for 16 samples which is then averages with the data from the other GPUs. And exactly here kicks the hardware bottleneck in.</span></p>
+<p><span lang="en-US"><b>Memory tiles: Patches of fast GPU memory for efficient dot product calculations</b></span></p>
+<p><span lang="en-US">To calculate dot products on the GPU, you need to copy small patches, called memory tiles, into shared memory, i.e. very fast but very small memory (limited to a few kilobytes). The problem is that the standard cuBLAS uses either a 64&#215;128 memory tiles and when you have a batch size less than 64 you waste a lot of precious shared memory. Also if you use a batch size not equal to a multiple of 32 you equally waste shared memory (threads are only started in blocks of 32 threads), so one should use a batch size which is a multiple of 32 or multiple of 64 if possible. For data parallelism this means that you lose significant processing speed once you go below a batch size of 64 for each GPU. If you have many GPUs this can be quite limiting and this is yet another reason why the data parallelism approach does not scale well beyond a certain point.</span></p>
+<p><span lang="en-US">All in all this sounds quite dire for data parallelism, but data parallelism has its uses. If you know the bottlenecks, you can wield data parallelism as a might tool for certain applications. This is demonstrated by Alex Krishevsky in his <a title="One weird trick for parallelizing convolutional neural networks" href="http://arxiv.org/pdf/1404.5997v2.pdf" target="_blank">paper</a> where he uses data parallelism in the convolutional layers of his net, and thus achieves a speedup of 3.74x by using four GPUs and 6.25x using eight GPUs. His system features two CPUs and 8 GPUs in one node, so he can use the full PCIe speed for the two sets of four GPUs and relatively fast PCIe connection between CPUs to distribute the data among all eight GPUs. </span></p>
+<p><span lang="en-US">Besides convolutional neural networks, another use of data parallelism might be to use it in recurrent neural networks, which typically have less parameters and highly computationally intensive gradient updates – both are wins for data parallelism.</span></p>
+<p><span lang="en-US">In my next blog post I will focus on model parallelism, which is efficient for large networks and scales well to larger clusters.</span></p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-65" class="share-twitter sd-button share-icon no-text" href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-65" class="share-facebook sd-button share-icon no-text" href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-google-plus-1"><a rel="nofollow noopener noreferrer" data-shared="sharing-google-65" class="share-google-plus-1 sd-button share-icon no-text" href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/?share=google-plus-1" target="_blank" title="Click to share on Google+"><span></span><span class="sharing-screen-reader-text">Click to share on Google+ (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div><!--<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/"
+    dc:identifier="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/"
+    dc:title="How to Parallelize Deep Learning on GPUs Part 1/2: Data Parallelism"
+    trackback:ping="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/trackback/" />
+</rdf:RDF>-->
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://timdettmers.com/category/hardware/" rel="category tag">Hardware</a></span> <span class="entry-tags">Tagged With: <a href="https://timdettmers.com/tag/cuda/" rel="tag">CUDA</a>, <a href="https://timdettmers.com/tag/deep-learning/" rel="tag">Deep Learning</a>, <a href="https://timdettmers.com/tag/gpu/" rel="tag">GPU</a>, <a href="https://timdettmers.com/tag/hpc/" rel="tag">HPC</a>, <a href="https://timdettmers.com/tag/mpi/" rel="tag">MPI</a>, <a href="https://timdettmers.com/tag/neural-networks/" rel="tag">Neural Networks</a></span></p></footer></article><h2 class="screen-reader-text">Reader Interactions</h2><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-200">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f57f9599e75eb53fc9159504c87abd87?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/f57f9599e75eb53fc9159504c87abd87?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jeff</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-20T00:14:29+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-200" class="comment-time-link" itemprop="url">2015-01-20 at 00:14</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Great article!  There maybe additional tricks for this data parallel architecture.  Since I/O between nodes is 3x slower than I/O between GPUs within node, you can eliminate many point-to-point comminucation by aggregating the gradients from GPUs from the same node first, and then send them over.  For your configuration of 2 nodes with 3  GPUs each, you&#8217;d reduce the time from 2x (3x3xTnet + 3x2xTpcie) to 2x (2xTpcie + 2xTaggreg + Tnet).  Since all I/O is RDMA, Taggreg is all Gpu time which should be very small compared to I/O.  This can be significant savings. If you further interleave the Tnet with Tpcie and Taggreg, you can probably synchronize all within 2xTnet (amortized).</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-200' onclick='return addComment.moveForm( "comment-200", "200", "respond", "65" )' aria-label='Reply to Jeff'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-201">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/f57f9599e75eb53fc9159504c87abd87?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/f57f9599e75eb53fc9159504c87abd87?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Jeff</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-20T00:23:32+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-201" class="comment-time-link" itemprop="url">2015-01-20 at 00:23</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Oops, the above formula should read 2x (2x Tpcie + Taggreg + Tnet + Taggreg + 2xTpcie).  I forgot the time to distribute the result to the ither 2GPUs after the final aggregation.  But the reasoning still holds.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-201' onclick='return addComment.moveForm( "comment-201", "201", "respond", "65" )' aria-label='Reply to Jeff'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-2" id="comment-202">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="https://timdettmers.wordpress.com" class="comment-author-link" rel="external nofollow" itemprop="url">timdettmers</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-01-20T07:18:41+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-202" class="comment-time-link" itemprop="url">2015-01-20 at 07:18</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for your comment Jeff – very sound logic! In fact I thought of this too, but I could not get it working better than straightforward GPU to GPU communication. I do not know why this is exactly so, but as far as I could understand it was probably a factor of two things: (1) One has a step by step procedure where every aggregation needs to be completed before you can proceed to the next step, this is also true when one writes the results back to the 2 other GPUs; (2) you will have extra compute time to aggregate the gradients in the &#8220;master GPU&#8221; of each node.</p>
+<p>For (2) my implementation was naive, where I added all gradients together. I think I could have improved (2) by adding the gradients asynchronously by using streams. It might well be that my implementation for (1) was not optimal (cudaStreamSynchronize() after the kernel followed by MPI communication; and MPI_Wait() followed by MPI communication). I think one can make this procedure actually work, but it just requires some additional work.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-202' onclick='return addComment.moveForm( "comment-202", "202", "respond", "65" )' aria-label='Reply to timdettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-204">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a314c06c3141aa87e41200eac2e16085?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a314c06c3141aa87e41200eac2e16085?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Prasanna S</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-08-08T13:34:37+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-204" class="comment-time-link" itemprop="url">2015-08-08 at 13:34</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Have you checked the current implementation in caffe? Recent PRs seem to have circumvented the problem in a different way. They organize the solvers in a tree in the order of speed of communication between the nodes and the final backprop is computed by the root GPU which receives the added gradient from all the children nodes. Do check them out. And NVIDIA&#8217;s Digits uses some of the PRs for multi gpu training.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-204' onclick='return addComment.moveForm( "comment-204", "204", "respond", "65" )' aria-label='Reply to Prasanna S'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-851">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2dca33a91933973c5a5115b1cc6f9c88?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/2dca33a91933973c5a5115b1cc6f9c88?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Pyry</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-08T18:46:39+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-851" class="comment-time-link" itemprop="url">2015-11-08 at 18:46</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thanks for the excellent posts Tim, very useful reads! We&#8217;re looking into training a large RNN language model, and are thinking of ways of parallelizing it. We have access to large numbers of free credits on AWS (also Google Cloud and Azure), and would like to train our model there.</p>
+<p>Given this hardware constraint, any recommendations on parallelization to speed up training times? Could e.g. asynchronous updating of weights help with data parallelization, even when the network speed is not that fast? Any other ideas we should look into?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-851' onclick='return addComment.moveForm( "comment-851", "851", "respond", "65" )' aria-label='Reply to Pyry'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-856">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2015-11-09T09:39:36+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-856" class="comment-time-link" itemprop="url">2015-11-09 at 09:39</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Parallelization of deep learning in cloud-based systems is difficult, because these systems are often optimized for regular high performance application which are not as bandwidth hungry as deep learning algorithms. If you find a cloud-service which offers InfiniBand and direct access to GPUs this could work very well. Otherwise your best bet might be to use a lot of CPU instances for the work (they do not need so much bandwidth). But it all comes down to the numbers: RNNs usually do not need so much bandwidth to begin with. Best is to take a sheet of paper and crunch the numbers: (1) How long does a forward-backward pass take? (2) How much parameters do you need to update during this time? Combining (1) and (2) will give you some bandwidth constraints (parameters in GB/s) and then you can choose your cloud-based provider accordingly. You can do this both for CPUs and GPUs and see what will work best.</p>
+<p>For CPU based services a dedicated shard-server-system for the parameters works well; for GPUs this practice will not work well (multiple GPUs need to access the same network card for both in and out passes). I also recommend to look at parallelization papers of Google, Baidu, and Microsoft for ideas.</p>
+<p>Hope this helps. If you need more help you are always free to ask.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-856' onclick='return addComment.moveForm( "comment-856", "856", "respond", "65" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-1861">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ac7948efad2764f882cf2e41f89f9104?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ac7948efad2764f882cf2e41f89f9104?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Séb</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-04T18:43:49+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-1861" class="comment-time-link" itemprop="url">2016-02-04 at 18:43</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I asked Tim a couple of questions per email, and here are his answers.</p>
+<p>Q: Is it possible to use GPUDirect RDMA with Geforce cards ? (Which don&#8217;t officially support it)</p>
+<p>A: You will be able to use GPUDirect RDMA if you have Mellanox Infiniband cards. Although it is not directly supported for GTX Titan X, it also should work there (I got it also to work for a GTX Titan, for which there is also no official support). I also heard that other people got it working with other network cards, but that probably always involves some complicated hacks.</p>
+<p>Q: Is it worth it to go for InfiniBands instead of Ethernet for distributed deep learning ?</p>
+<p>A: I never tested ethernet networking myself, but the stats alone speak for themselves. Especially if you want to train large convolutional networks the network bandwidth remains the main bottleneck. If your network grows larger in nodes latency will also be an issue, and as I heard ethernet latency is pretty bad. So the latency on ethernet for 8 machines might slow you down a bit (my guess would be an additional 1-10% slower or so over infiniband). If you are mainly interested to train recurrent architectures then the ethernet might be okay, since for such architectures you have much communication overhead. </p>
+<p>Thanks again for your help,<br />
+Séb</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-1861' onclick='return addComment.moveForm( "comment-1861", "1861", "respond", "65" )' aria-label='Reply to Séb'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-1951">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-02-07T11:46:55+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-1951" class="comment-time-link" itemprop="url">2016-02-07 at 11:46</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you for posting the Q&#038;A here Seb! That is very helpful!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-1951' onclick='return addComment.moveForm( "comment-1951", "1951", "respond", "65" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-2932">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ea5d8a7fd000f59fd70486a7ab7af698?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ea5d8a7fd000f59fd70486a7ab7af698?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bafu</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-03-28T10:00:20+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-2932" class="comment-time-link" itemprop="url">2016-03-28 at 10:00</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi Tim,</p>
+<p>I like all your articles pretty much and here is a little correction for the formula calculating the time to pass a weight matrix:</p>
+<p>    passing time = weight matrix size / network bandwidth = (1000*1000*4*8) / (40*1024^3) = 0.75 (ms)</p>
+<p>Thanks for sharing!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-2932' onclick='return addComment.moveForm( "comment-2932", "2932", "respond", "65" )' aria-label='Reply to Bafu'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-2" id="comment-7940">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/633e75c16e3977e16f53c7155585faaf?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/633e75c16e3977e16f53c7155585faaf?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Justin</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-30T23:25:04+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-7940" class="comment-time-link" itemprop="url">2016-08-30 at 23:25</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Yeah, I noticed the same thing. </p>
+<p>The equation listed in the article is incorrect, but the one Baru listed isn&#8217;t quite right either. For example, the equation in the article divides by 40 twice, which is wrong, and the last 1024 is a 102, which is also wrong. In addition, to convert from seconds to milliseconds, you have to multiply the numerator by 1000, not divide by 1000.</p>
+<p>And as Bafu points out, you need to multiply the numerator by 8 to convert the weight matrix from bytes to bits, not divide by it. Bafu&#8217;s equation missed converting from seconds to MS which should be an additional *1000 in the numerator.</p>
+<p>I believe the correct equation is:</p>
+<p>(4 * 8 * 1000 * 1000 * 1000) / (40 * 1024 ^ 3)</p>
+<p>= ~0.74ms</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7940' onclick='return addComment.moveForm( "comment-7940", "7940", "respond", "65" )' aria-label='Reply to Justin'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-7177">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/c6d387ef412a94dfce1c424574dceeeb?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/c6d387ef412a94dfce1c424574dceeeb?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name"><a href="http://vinhomeriversidehaiphong.com.vn/" class="comment-author-link" rel="external nofollow" itemprop="url">vinhomes riverside hai phong</a></span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-02T15:05:47+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-7177" class="comment-time-link" itemprop="url">2016-08-02 at 15:05</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hello there,  You have done an incredible job. I will definitely digg it and personally suggest to my friends.</p>
+<p>I&#8217;m confident they&#8217;ll be benefited from this site.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7177' onclick='return addComment.moveForm( "comment-7177", "7177", "respond", "65" )' aria-label='Reply to vinhomes riverside hai phong'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-7212">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-08-04T06:46:56+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-7212" class="comment-time-link" itemprop="url">2016-08-04 at 06:46</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-7212' onclick='return addComment.moveForm( "comment-7212", "7212", "respond", "65" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-8908">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/012b6512b2154091d9431873a630b6b9?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/012b6512b2154091d9431873a630b6b9?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Masoud</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-10-07T14:06:32+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-8908" class="comment-time-link" itemprop="url">2016-10-07 at 14:06</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi</p>
+<p>Thanks for your nice explanation<br />
+Regarding to memory tiles section, I notices the same degradation when using batch size smaller than 32.<br />
+I am wondering if you have and reference that I can follow?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-8908' onclick='return addComment.moveForm( "comment-8908", "8908", "respond", "65" )' aria-label='Reply to Masoud'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-9556">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/170a14d8e2271a0851c6c3804c3b5dec?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/170a14d8e2271a0851c6c3804c3b5dec?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Yogita</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-09T11:48:45+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-9556" class="comment-time-link" itemprop="url">2016-11-09 at 11:48</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Your blog is really useful. Your link to previous blog is unavailable. Where can I get to read that blog?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-9556' onclick='return addComment.moveForm( "comment-9556", "9556", "respond", "65" )' aria-label='Reply to Yogita'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-9588">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2016-11-10T23:19:30+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/#comment-9588" class="comment-time-link" itemprop="url">2016-11-10 at 23:19</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you for pointing out that error! I correct the link&#8217;s address and it should work now.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-9588' onclick='return addComment.moveForm( "comment-9588", "9588", "respond", "65" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2014/10/09/deep-learning-data-parallelism/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://timdettmers.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='65' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8dd07d2afa" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="52"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="http://schema.org/WPSideBar" id="genesis-sidebar-primary"><h2 class="genesis-sidebar-title screen-reader-text">Primary Sidebar</h2><section id="blog_subscription-5" class="widget jetpack_subscription_widget"><div class="widget-wrap"><h3 class="widgettitle widget-title">Subscribe to Blog via Email</h3>
+
+			<form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-5">
+				<div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div><p>Join 1,406 other subscribers</p>
+					<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" for="subscribe-field-blog_subscription-5">
+							Email Address						</label>
+						<input type="email" name="email" required="required" class="required" value="" id="subscribe-field-blog_subscription-5" placeholder="Email Address" />
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe" />
+						<input type="hidden" name="source" value="https://timdettmers.com/2014/10/09/deep-learning-data-parallelism/" />
+						<input type="hidden" name="sub-type" value="widget" />
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-5" />
+												<input type="submit" value="Subscribe" name="jetpack_subscriptions_widget" />
+					</p>
+							</form>
+
+			<script>
+			/*
+			Custom functionality for safari and IE
+			 */
+			(function( d ) {
+				// In case the placeholder functionality is available we remove labels
+				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-5]' );
+						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+						label.style.position = 'absolute';
+						label.style.height   = '1px';
+						label.style.width    = '1px';
+						label.style.overflow = 'hidden';
+				}
+
+				// Make sure the email value is filled in before allowing submit
+				var form = d.getElementById('subscribe-blog-blog_subscription-5'),
+					input = d.getElementById('subscribe-field-blog_subscription-5'),
+					handler = function( event ) {
+						if ( '' === input.value ) {
+							input.focus();
+
+							if ( event.preventDefault ){
+								event.preventDefault();
+							}
+
+							return false;
+						}
+					};
+
+				if ( window.addEventListener ) {
+					form.addEventListener( 'submit', handler, false );
+				} else {
+					form.attachEvent( 'onsubmit', handler );
+				}
+			})( document );
+			</script>
+				
+</div></section>
+<section id="jetpack_display_posts_widget-3" class="widget widget_jetpack_display_posts_widget"><div class="widget-wrap"><h3 class="widgettitle widget-title">Recent Posts: Tim Dettmers</h3>
+<div class="jetpack-display-remote-posts"><h4><a href="https://timdettmers.com/2019/04/03/which-gpu-for-deep-learning/">Which GPU(s) to Get for Deep Learning: My Experience and Advice for Using GPUs in Deep Learning</a></h4>
+<h4><a href="https://timdettmers.com/2018/12/16/deep-learning-hardware-guide/">A Full Hardware Guide to Deep Learning</a></h4>
+<h4><a href="https://timdettmers.com/2018/11/26/phd-applications/">Machine Learning PhD Applications — Everything You Need to Know</a></h4>
+<h4><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/">TPUs vs GPUs for Transformers (BERT)</a></h4>
+<h4><a href="https://timdettmers.com/2017/12/21/deep-learning-hardware-limbo/">Deep Learning Hardware Limbo</a></h4>
+<h4><a href="https://timdettmers.com/2017/09/16/credit-assignment-deep-learning/">Credit Assignment in Deep Learning</a></h4>
+</div><!-- .jetpack-display-remote-posts --></div></section>
+<section id="twitter_timeline-3" class="widget widget_twitter_timeline"><div class="widget-wrap"><a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-lang="EN" data-partner="jetpack" data-chrome="noheader nofooter noborders noscrollbar" href="https://twitter.com/@tim_dettmers" href="https://twitter.com/@tim_dettmers">My Tweets</a></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="http://schema.org/WPSideBar" id="genesis-sidebar-secondary"><h2 class="genesis-sidebar-title screen-reader-text">Secondary Sidebar</h2><section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter"><div class="wrap"><p>Copyright &#x000A9;&nbsp;2019 &#x000B7;  <a href="http://www.studiopress.com/">Genesis Framework</a> &#x000B7; <a href="http://wordpress.org/">WordPress</a> &#x000B7; <a rel="nofollow" href="https://timdettmers.com/wp-login.php">Log in</a></p></div></footer></div>	<div style="display:none">
+	<div class="grofile-hash-map-f57f9599e75eb53fc9159504c87abd87">
+	</div>
+	<div class="grofile-hash-map-1c7fd49c0548d7369d17e59f99b8d11c">
+	</div>
+	<div class="grofile-hash-map-a314c06c3141aa87e41200eac2e16085">
+	</div>
+	<div class="grofile-hash-map-2dca33a91933973c5a5115b1cc6f9c88">
+	</div>
+	<div class="grofile-hash-map-a2403083d31517f7ad848c67a51cf2d2">
+	</div>
+	<div class="grofile-hash-map-ac7948efad2764f882cf2e41f89f9104">
+	</div>
+	<div class="grofile-hash-map-ea5d8a7fd000f59fd70486a7ab7af698">
+	</div>
+	<div class="grofile-hash-map-633e75c16e3977e16f53c7155585faaf">
+	</div>
+	<div class="grofile-hash-map-c6d387ef412a94dfce1c424574dceeeb">
+	</div>
+	<div class="grofile-hash-map-012b6512b2154091d9431873a630b6b9">
+	</div>
+	<div class="grofile-hash-map-170a14d8e2271a0851c6c3804c3b5dec">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/timdettmers.com\/2014\/10\/09\/deep-learning-data-parallelism\/":65};
+	</script>
+				<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/photon/photon.min.js?ver=20130122'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201917'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mPS2id_params = {"instances":{"mPS2id_instance_0":{"selector":"a[rel='m_PageScroll2id']","autoSelectorMenuLinks":"true","scrollSpeed":200,"autoScrollSpeed":"true","scrollEasing":"easeInOutQuint","scrollingEasing":"easeOutQuint","pageEndSmoothScroll":"true","stopScrollOnUserAction":"false","autoCorrectScroll":"false","layout":"vertical","offset":"200","highlightSelector":"","clickedClass":"mPS2id-clicked","targetClass":"mPS2id-target","highlightClass":"mPS2id-highlight","forceSingleHighlight":"false","keepHighlightUntilNext":"false","highlightByNextTarget":"false","appendHash":"false","scrollToHash":"true","scrollToHashForAll":"true","scrollToHashDelay":0,"scrollToHashUseElementData":"true","scrollToHashRemoveUrlHash":"false","disablePluginBelow":0,"adminDisplayWidgetsId":"true","adminTinyMCEbuttons":"true","unbindUnrelatedClickEvents":"false","normalizeAnchorPointTargets":"false"}},"total_instances":"1","shortcode_class":"_ps2id"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/page-scroll-to-id/js/page-scroll-to-id.min.js?ver=1.6.3'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2019Apraa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/comment-reply.min.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.5'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=2.2.6'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/twitter-timeline.min.js?ver=4.0.0'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/wp-embed.min.js?ver=4.9.10'></script>
+<script async="async" type='text/javascript' src='https://timdettmers.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=6.8'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-201917.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.8',blog:'106749684',post:'65',tz:'-7',srv:'timdettmers.com'} ]);
+	_stq.push([ 'clickTrackerInit', '106749684', '65' ]);
+</script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.291 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-04-26 14:51:14 -->
+
+<!-- super cache -->

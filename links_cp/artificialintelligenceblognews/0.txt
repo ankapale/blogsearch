@@ -1,0 +1,5 @@
+AI is everywhere in tech right now, said to be powering everything from your TV to your toothbrush, but never have the words themselves meant less. This is what’s happening in artificial intelligence right now. 
+ Amazon revealed its SageMaker AI service today, unveiling how its customers are able to train machine learning models at massive scale while keeping costs down. The company uses novel techniques to keep the needed amount of computing power locked down while providing similar performance. 
+ Many of Google’s machine learning efforts are open sourced so that developers can take advantage of the latest advancements. The latest release is for semantic image segmentation, or the technology behind the Pixel 2’s single lens portrait mode. 
+ How to use Mechanical Turk in combination with machine learning for dataset labelling. Whether you build your own machine learning models in the cloud or using complex mathematical tools, one of the most expensive and time-consuming part of building your model is likely to be generating a high-quality dataset. 
+ 

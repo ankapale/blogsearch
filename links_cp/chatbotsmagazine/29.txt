@@ -1,0 +1,39 @@
+CBaaS 
+ Chatbots-as-a-Service 
+ Chatbots are going to rule the world, but most people don’t know it yet. In recent years, the internet has had its most rapid growth since its invention in the ’90s. Behind this growth curve were mobile apps and data analytics companies. In other words, the internet’s rapid growth was powered by companies that provided Software-as-a-Service and Database-as-a-Service. 
+ Story of the Mobile App Wars 
+ Most of these applications were targeted at consumers. They offered a variety of services from brain training applications to apps that could teach you how to cook. 
+ As more and more people used mobile phones to gain access to these applications that lived on the internet, the apps themselves became huge databases with vital information about how their users behaved. 
+ Data analytics companies then designed and created new software capable of reading and interpreting the surplus stream of information that poured in from these mobile applications. This service was then targeted at businesses that produce mobile apps. 
+ With this information, the mobile app companies were now able to design and build better applications that were more focused around the expressed needs of their consumers. 
+ Then the cycle was repeated. 
+ Victory for Communication 
+ As we all know, the applications that emerged as winners of the first mobile app wars were the social networking and social media apps like Facebook, Twitter, and Instagram. 
+ But as more and more people took to using these mobile platforms, it soon became obvious that their text messaging features were what people used the most. 
+ Sending messages on Snapchat, Facebook Messenger, and Whatsapp has become the norm. 
+ Today, people would rather use these applications to communicate with their families and friends than pick up the phone to call them. And it’s not just the millennials either. 
+ As the above image shows, messaging apps own the top 5 spots in the mobile app world. Everyone with a smartphone frequently uses one of these popular messaging apps. 
+ The Rise of the Chatbots 
+ If all the signs today point to messaging apps as the future of communication, then it makes sense that the next major service to be offered by software architects will be Chatbots-as-a-Service. 
+ Why? I’ll explain. 
+ People originally loved Twitter because in addition to offering the possibility of growing a huge following for your personal brand, it also offered the possibility of direct communication with the people and brands you cared about. 
+ It suggested that you could follow Pharrell Williams and Abercrombie and Fitch for example, and you would be able to send them direct messages if they followed you back or you could send messages using their Twitter handles and hashtags. 
+ The reality of this however, is that Pharell Williams cannot possibly respond to all the messages sent by his millions of followers. 
+ But a chatbot could. 
+ What Chatbots Do 
+ In the simplest of definitions, a chatbot is basically a conversational algorithm. 
+ A chabot is a service, powered by rules and sometimes artificial intelligence, that you interact with via a chat interface —Matt Schlicht 
+ Pharrell Williams could commission a software design company to create a bespoke chatbot for him and his brand. 
+ The chatbot would live on Twitter, or be built as a standalone app designed to answer the frequently asked questions from his many fans. 
+ Abercrombie and Fitch could do the same and create a branded chatbot app of their own or create one that lives on Facebook Messenger, where many chatbots currently live. 
+ Customers would simply ask the chatbot anything they wished to know about Abercrombie and Fitch, and the app would send the answers. 
+ The Power of the Chatbot 
+ Chatbots save time. 
+ For those people who have huge followings or are interested in becoming a brand, a chatbot would drastically increase your chances of attaining and communicating with large audiences. 
+ As a writer, I could have a chatbot on Messenger for example. 
+ As I grow my following here on Medium, the chatbot would come in handy when it becomes too difficult to communicate with every single one of my followers. 
+ When they follow me and my chatbot, I could easily answer FAQs and send updates of new releases and upcoming events. Due to the interactive nature of chatbots, I will also have clear insights as to who might want to buy my book or tickets to my reading event. 
+ This is the power of the chatbot. 
+ As people slowly begin to wrap their minds around the idea of owning and communicating with chatbots, I imagine the next wave of superstar software developers will be those who choose to offer the design and development of personal and commercial chatbots, as a service. 
+ I’m so grateful you took the time to read my post. All I need is for you to help me spread the word! If you’ve enjoyed reading this, please do me a favour and show me some love by ‘hearting’ and sharing this piece. Thanks. 
+ 

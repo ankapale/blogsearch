@@ -1,0 +1,3 @@
+Will Your Data Benefit from a Cloud Consumption Model? 
+ As companies transition to become digital enterprises, they must increasingly manage cost and performance across a hybrid IT environment. On-demand consumption strategies can be used to optimize your data storage costs, whether you are running applications in a private data center, across a hybrid cloud, or in the public cloud. Read this eBook and learn how on-demand consumption models can help you align IT spending with your business needs, both on-premises and in the cloud. 
+ 

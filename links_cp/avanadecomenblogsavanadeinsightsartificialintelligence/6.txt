@@ -1,0 +1,22 @@
+Implementing chatbots? Watch out for these 3 common pitfalls 
+ Article by 
+ By 
+ The potential of artificial intelligence (AI) technologies that can sense, comprehend, act, and learn over time, is immense and fast maturing. As AI becomes more democratised and easily accessible, the temptation for companies to dip their toes is irresistible. 
+ Outside of robotic process automation (RPA), I am seeing heightened client interest for employee or customer facing chatbots (i.e. smart assistants) that interact with people and backend systems to support or advise with tasks or questions. 
+ The speed trap
+The technology underlying chatbots is straightforward and one can get started with a basic bot in a few hours. This is music to companies looking to make a quick start with AI on a shoestring budget! 
+ In their rush, however, I find companies getting some implementation basics wrong. The issues manifest in the form of poorly designed bots that lack empathy, cannot answer basic questions or, worse, proliferation of bots across departments adding to the confusion. 
+ The net result is not just poor customer (or employee) experience, but also a sense of “burnt fingers” making the leadership a lot more cautious about embarking on wider AI initiatives. 
+ Chatbot 101
+I use the design principles below to give clients a reality check when they embark on chatbot or related AI projects: 
+ 1.An IT-led chatbot project will fail – intentionally provocative, this is designed to reiterate the need for a multi-disciplinary effort involving business representatives, data scientists, user experience designers and technologists. A good example is designing the personality of a bot (user experience) and aligning it with the company culture (HR). Another area is thinking through the hierarchy of bots and integration allowing for a seamless end user interface while recognising that specialist queries (e.g. legal or HR) may require separate bots. 
+ 2.Don’t expect magic from Day 1 – it is tempting to believe the marketing hype that chatbots will answer all questions from the word go! While natural language processing (NLP) capabilities are developing, a bot is only as good as the inputs it is fed with and its access to underlying systems. Supervised learning, both before and after the bot is deployed, improves accuracy and robustness. This takes time! 
+ 3.Internal first, then external – building on the earlier point, due to the nuances involved in chatbot implementations, I strongly recommend starting with employee-facing bots first before letting bots run loose with your brand outside your firewall. Even internal implementations are best done with a “friendly” department or user group with clearly defined use cases to allow for learning loops. Avanade helped a leading consumer goods major start their journey with a chatbot targeted at new joiner queries. This allowed the client and us to gather feedback and refine the approach before scaling. 
+ In closing, chatbots are undoubtedly a powerful tool, a great way to start the AI journey and well implemented ones yield results rapidly. 
+ For instance, we helped a large software company achieve a 50% reduction in incident resolution time through a chatbot powered by a machine learning model. The consumer goods client, referred to above, saw 85% employee satisfaction and a 40% reduction in processing time with the chatbot. 
+ These are powerful results but, like a loaded gun, need a safe pair of hands to help realise (and sustain) the results. 
+ What has been your experience with chatbot implementations? Drop a comment below and let me know. 
+ Tags 
+ Avanade is committed to protecting your information security. Your information will be used in accordance with any applicable data privacy law, our internal policies and our Privacy Policy, and will be held securely. Avanade will not share your personal information with any third party, except as needed to manage the events or features for which you register. By using this site you agree that we can place cookies on your device. Please review our complete Privacy Policy for additional information. 
+ Some of the required fields (*) are missing, please review your information. 
+ 

@@ -1,0 +1,43 @@
+Apr 23 Artificial Intelligence in Formula 1 Strategy - Part 2/2 
+ I looked at the scenarios of pit-stop timing, tyre choice and team orders to give a few examples as to what AI in F1 could focus on. 
+ In this article I want to look at a few key areas Formula 1 needs to focus on to make the transition to more and better artificial intelligence applications for strategy: 
+ Data 
+ More Data 
+ Even More Data 
+ Machine Learning Models 
+ Huge Investment in Compute Power 
+ Data 
+ The teams are currently collecting a plethora of data from each test, qualifying and race. This "big data" will just grow and grow and grow. And the more teams learn about the data requirements for AI the more data they will undoubtably collect. 
+ I won't go into more detail here as it is the given and obvious basis the sport is already operating on. 
+ More Data 
+ Of course, no matter how much data you can collect in the real world, there is always the opportunity to create useful data. 
+ Not every race progress and outcome thinkable can be measured – given the limited amount of races per year. 
+ However teams can create race simulations with realistic parameters and random influences to simulate millions of races. This simulation data can be used as "input" into machine/deep learning systems. 
+ For example, imagine a "game like" simulation of every race on the calendar with many potential technical variations, weather variations, temperature variations, random crash and safety car insertions, etc. You suddenly have the chance to have enough data for an algorithm to learn what outcome was best in which scenario without ever having seen that actual race happen in real life. 
+ It cannot be too hard to get data like this from pure simulations. This is actual data from the Monaco race in 2011. 
+ The impact of fictitious strategy decisions can then be observed and understood in quantitative ways with prediction abilities that give the team, sometimes maybe unexpected, strategy suggestions for any given race situation. 
+ Compared to real world data this of course has the opportunity to become a much larger set of information. 
+ I have a strong suspicion AI based systems will do an incredible job with this data given they have the right kind of machine learning models paired with them. 
+ Even More Data 
+ This is where the teams need to be innovative. As humans we can hear something is wrong with a competitor's car when it drives by, we can judge how bad flat spots are visually in the TV slow-motion footage, we can judge tyre wear visually, we can "somewhat" hear things computers will not immediately be able to comprehend. 
+ Of course you won't expect to see images as clear as this, but you will see how bad a flat spot is ... paid that image recognition with other data ... e viola. 
+ But, what stops Formula 1 teams from shooting super-high resolution, high speed, images or videos of cars driving by? Pairing that data with their own to judge vibration levels caused by tyre flat spots (usually created when a driver locks the breaks) should not be too hard either. Installing high fidelity microphones to record sounds in so much more detail than the human ear and brain can handle and using that data in correlation with their data to predict changes to a competitor's car performance. Natural language input from other team's radio communications. Visually measuring brake performance via relative deceleration comparisons and thermal vision. The list is endless, so many things could be done beyond what is already happening to collect more valuable and actionable data. 
+ This is where F1 teams can gain an edge ... by being more creative and clever than others. 
+ Machine Learning 
+ I won't elaborate too much here. It is a given that a sufficient quantity and quality of input data is required to then feed into a new set of machine learning systems to start gaining insights and reap the benefits of AI. 
+ F! teams will likely need to think of AI as a new department at least, with it's own R&D, it's own facilities and it's own world-class staff. 
+ An additional upside is that F1 teams can independently become leaders in artificial intelligence in general. Technology Groups like McLaren could start rivalling companies like IBM with a similar offering to Watson with the emphasis on strategic decision making in business. 
+ Compute Power 
+ Naturally all of this will require several orders of magnitude more storage space, computational requirements, communications speeds, etc. 
+ But all of these problems can fairly easily be overcome these days. The cloud has vast storage and compute power to offer. And I bet it is not too much of an issue to set up a bespoke datacenter for these needs as well. If you can afford to run a wind-tunnel 24/7 you can afford what it takes to do AI the right way. 
+ The biggest burden here is cost – how much is 1s per lap worth vs how much would it cost to get that advantage with AI is what it all boils down to. 
+ Summary 
+ It will happen, it just simply has to happen. In a game of diminishing returns on the hardware and aerodynamics engineering side of things, other avenues need to be explored to gain an advantage. 
+ Artificial Intelligence with Machine & Deep Learning in Formula 1 Strategy will provide unknown and unexpected insights as well as highlight new areas to be explored for maximum gain. 
+ Artificial Intelligence is one of the most glaringly obvious places where Formula 1 teams can make substantial competitive gains by: 
+ Reducing or even eliminating human error in some areas. 
+ Making better strategy decisions and predictions when little data may be available or processing is just not fast or conclusive enough. 
+ Exploring completely new areas where AI can offer advantages. 
+ Assuring drivers that the artificial intelligence is unbiased and will always work towards the maximum gain of first, and foremost, the team ... and then the drivers. 
+ This is a team sport and the money is awarded at team level after all ... so the teams will have to move fast and significantly invest in AI before someone else does. 
+ 

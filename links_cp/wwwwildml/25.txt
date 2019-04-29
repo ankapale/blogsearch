@@ -1,0 +1,4 @@
+Month: July 2016 
+ Retrieval-Based bots 
+ In this post we’ll implement a retrieval-based bot. Retrieval-based models have a repository of pre-defined responses they can use, which is unlike generative models that can generate responses they’ve never seen before. A bit more formally, the input to a retrieval-based model is a context (the conversation up to this point) and a potential response . The model outputs is a score for the response. To find a good response you would calculate the score for multiple responses and choose the one with the highest score. 
+ 

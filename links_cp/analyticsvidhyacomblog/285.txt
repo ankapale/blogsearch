@@ -1,0 +1,40 @@
+How to use “VLOOKUP()” like functionality in QlikView? 
+ Whenever I interact with a Qlikview user, who has migrated from Excel recently – one of the most common queries which comes through is: 
+ “How do I apply VLOOKUP() in Qlikview?” 
+ For the starters, VLOOKUP is the excel way of joining 2 datasets through a common key. It is somewhat similar to joins in SQL. 
+ Why do we need an external VLOOKUP() like function in Qlikview? 
+ Whenever you import an external dataset in Qlikview, it searches for common columns and performs joins on its own. Hence, people somewhat familiar with Qlikview might ask, why do we need a VLOOKUP() like function in the first place? 
+ The answer is, to build efficient data models. Let me explain with a real life situation, I had faced, in my initial days with Qlikview. I had been told by a few experienced people that, it is always advisable to minimize the number of tables in your data model. In my first assignment as a Qlikview developer, I used multiple joins and associations. As a result, my data model became too complex and difficult to understand. I was not able to identify and fix bugs easily (a similar data model example shown in the figure below for reference). 
+ As I spent more time with Qlikview, I came across the use of Mapping table with Applymap() function and I found them to be similar to VLOOKUP(), where we retrieve information from a mapping dataset to a primary dataset. This helps us simplify our data models quite significantly. 
+ In Qlikview, joins can be performed using Association, Join and Applymap. Applymap works in a similar fashion as VLOOKUP with a few additional features. For example, if VLOOKUP does not find a match in mapping table, it returns “#NA”. Applymap, on the other hand, can return string / number / fields of similar table, in case there is no match. We can also write nested Applymap, to refer other mapping table, in case the value is not found. 
+ How can we define Mapping Table? 
+ Mapping table must have two columns – first for the lookup key and second for the exchange value. Mapping tables are stored separately in memory and used only during script execution. After script execution, they are dropped automatically. 
+ The syntax to load a mapping table is similar to LOAD statement with an additional prefix (MAPPING) before LOAD. The source of mapping table can be a database, spreadsheet, resident table, inline table or a QVD file: 
+ The syntax is very similar to a lookup function – it takes one value as input, checks if this value exists in a mapping table and returns the corresponding value from the second column of the mapping table. The Applymap function is always used after defining a Mapping Table: 
+ Syntax: 
+ applymap(‘mapname’, lookupkey [ , defaultexpr ] ) 
+ where: 
+ mapname is the name of mapping table, that has been already created through the mapping load. Its name must be enclosed in single quotes. 
+ lookupkey is the expression, the result of which should be mapped. 
+ defaultexpr is an optional expression, which will be used as default mapping value, if the mapping table does not contain a matching value for lookupkey. If no default value is given, the value of lookup will be returned as is. 
+ How can we use Applymap? 
+ Let’s look at a scenario, where we have employee data set with their employee code, designation code, salary and Marital status. Further, you need employee designation description and Bonus details, which are available in a different table. You want to calculate total payout of an employee and report it along with his designation (Total Payout=Salary + Bonus). In SQL, you would join the required tables to get additional information. In Excel, we can use the Vlookup() function to do this. Here, we will use the Applymap function to map BONUS and DESIGNATION DESCRIPTION from respective mapping table. 
+ Please note that this problem can also be solved through Join or Association. We will solve this using Applymap in this article. 
+ Now, we have joined the fields Bonus and Designation description with the Employee dataset, without using a join or association. 
+ Benefits of using ApplyMap: 
+ Multiple tables in your data model is not a good thing. So, you don’t want a situation where you have many lookups joined to your master table. This can be resolved by creating a mapping table using ApplyMap. 
+ The mapping table only exists during load, we can call it as temporary table. 
+ ApplyMap has great features as its third (optional) parameter. The third parameter allows you to return something more useful, when lookup value not found in mapping table. Third parameter can be string, Number, field of base dataset, Mixture of string and field and more important reference to another mapping table using nested Applymap function. 
+ ApplyMap(‘Bonus’,EmpCode,0): Maps Bonus amount from Mapping table (Bonus). If Empcode does not exist in mapping table, then returns 0 (Zero). 
+ ApplyMap(‘Designation_desc’,DesignationCode,’Unknown’): Map Designation description from Mapping table (Designation_desc). If DesignatonCode does not exist in mapping table, then returns “Unknown”. 
+ ApplyMap(‘Bonus’,EmpCode,Salary*0.05): Map Bonus amount from Mapping table (Bonus). If Empcode does not exist in mapping table, then it returns 5% of Salary (Field exists in Employee data set). 
+ ApplyMap(‘Designation_desc’,DesignationCode, ApplyMap(‘Bonus’,EmpCode,Salary*0.05)) : Map Designation description from Mapping table (Designation_desc). If DesignatonCode does not exist in mapping table, then it returns Bonus from Mapping Table (Bonus). Here we have used nested Applymap. 
+ When mapping table has duplicate rows, JOIN will lead to double counting where as ApplyMap deals with the first instance of the key in the mapping table. It automatically ignores the subsequent duplicate values. Again, this is similar to how VLOOKUP() works in Excel. 
+ Concluding thoughts: 
+ If we require multiple fields from reference table based on a key field, we can not do it through Applymap. We can have only two columns in a Mapping table. If we are required to map 4 or 5 fields, then I would prefer to create 4 or 5 mapping tables. However, if we need to join more than that, then I will look for another options like Join. 
+ This is an example where we can improve our data models and enhance the performance of QV dashboards. Do you have any experience / case studies illustrating the same in Qlikview? Do you have any other tip to share to make dashboards better? 
+ 4 Comments 
+ I want to do MS in Business Analytics from USA. Could you please suggest me some reputed Universities in USA,who conduct this program.
+Earlier i asked you about an institute in Gurgaon “Analytix Lab”. I have joined the SAS+Business Analytics course there. The faculty is quite good and helpful. If you want to ask anything about this institute, i can tell you. 
+ The VLOOKUP function doesn’t just lookup on key values and return only exact values. If you give it the numbers 1, 5 and 10 and then lookup 3 it will return 1. The functionality in Qlikview is more like VLOOKUP with the 4th argument as false which forces VLOOKUP to return only exact matches. 
+ 

@@ -1,0 +1,27 @@
+Virtual Assistants development in the healthcare business. 
+ A new potential source of information on patients 
+ Past, Present and Future of patients assistance 
+ The healthcare industry’s weight in advanced economies is modelling not just leading technologies in surgery, imagery and research but also information technologies and communication solutions for enhancing healthcare professionals and medical institutions communications with patients. 
+ Practitioners and managers in the healthcare sector have drawn attention to the fact the importance of the information technologies and AI disruption in redesigning the clinic as well as both the interaction of practitioners with patients. 
+ Actually, the Doctor-Patient relationship has not changed that much since Pericles period in ancient Greece, when Hippocrates established first rules of Doctor-Patient relationship. In this regard, the spotlight is still focused on physicians and patients relationship. 
+ Thus, health sector consultants have warned that the web-based symptom checkers may get it wrong, but at the same time can be quite helpful, particularly in guiding seriously ill patients. 
+ A new toy for marketers 
+ There is no doubt about the potential impacts of IT in the optimization of communication, especially in the health assistance from hospitals to practitioners. Cutting down consultations time through decreasing or even eliminating needless visits to Hospitals will definitely improve not just the service quality, but other relevant areas in Healthcare business management such as marketing strategies and corporate image. 
+ Recent commercial assessments on the chatbot market have reported that messaging apps are growing fast. The system can respond instantly and communicate with an “unlimited” number of people simultaneously. 
+ The marketing outreach from such an action has near intangible possibilities. 
+ Additionally, great advances on conversational platforms have already been made to change the way patients and health insurance clients interact with services. 
+ Many startups have been working on easiness and simplicity as the main features of their technological developments, particularly on virtual assistants for patients. The objective of the easiness feature is the reduction of time span in the patient/user experience. 
+ A Virtual Nurse Bot 
+ Virtual assistants supported by AI are being developed in order to support the activities of Hospitals, research departments and professionals of the healthcare industry. 
+ A Virtual Assistant Nurse or chatbot solution would allow the adaptation to all kind of needs, from a virtual assistant responding FAQ’s from users/patients to a transactional bot with the ability of interacting with an external information system or database. 
+ Some systems can be easily integrated into a corporative app already developed as well as in the most popular messaging platforms like Facebook Messenger, Skype, Google Actions, Slack or Twitter. 
+ Hence, patients can be constantly monitored by the assistance team enhancing the medical attention even when the patient leaves the consultation room. 
+ Data privacy and regulatory framework 
+ The absence of a solid legal framework regarding virtual assistants and chatbots development in the health industry underlines future legal resources demanded by patients and the healthcare sector. 
+ In this regard, one interesting aspect about the impact of virtual assistants and Bots in the healthcare systems will be the individualised assistance which bots will provide to patients. This aspect facilitates a patient’s access to services and can also help practitioners to find the correct treatment. 
+ Four key areas will demand particular attention from professionals in private/public health law, from patients data privacy and cybersecurity to research and regulatory framework. 
+ Data privacy and access to sensitive information is strategic in the development of the AI and critical in the data management of patients in the Healthcare industry. 
+ How Bots access and use data will be a key factor in its development. The rise of Bots with its massive data deciphers and collection capabilities will definitely increase the geometric progression of potential threats of cyberattacks, as well as in the robustness and adaptability of Health business corporations. 
+ Regarding inaccurate or sensitive information Bots may dispense, it is particularly relevant how liability should be apportioned as well as the types of online agreements which will demand special attention. 
+ Regulatory framework is and aspect which deserves particularly critical attention. Potential litigation associated with what users-patients will experience with a virtual nurse or doctor, together with the monitoring of Bot-related guidelines which global regulators may develop in the AI industry, will be of great concern for health sector attorneys as potential areas with business implications inside. 
+ 

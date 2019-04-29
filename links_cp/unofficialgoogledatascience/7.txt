@@ -1,0 +1,6 @@
+Search This Blog 
+ Posts 
+ Randomized A/B experiments are the gold standard for estimating causal effects. The analysis can be straightforward, especially when it's safe to assume that individual observations of an outcome measure are independent. However, this is not always the case. When observations are not independent, an analysis that assumes independence can lead us to believe that effects are significant when they actually aren't. This blog post explores how this problem arises in applications at Google, and how we can 'mind our units' through analysis and logging. 
+ A tale of two units
+Imagine you are interested in the effectiveness of a new mathematics curriculum. You might run an experiment in which some students are exposed to the new curriculum while others are taught based on the existing curriculum. At the end of the semester, you administer a proficiency test to the students and compare test performance across the groups. For example, you might compare the average te… 
+ 

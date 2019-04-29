@@ -1,0 +1,5 @@
+Posts 
+ Since inception, this blog has defined “data science” as inference derived from data too big to fit on a single computer. Thus the ability to manipulate big data is essential to our notion of data science. While MapReduce remains a fundamental tool, many interesting analyses require more than it can offer. For instance, the well-known Mantel-Haenszel estimator cannot be implemented in a single MapReduce. Apache Spark and Google Cloud Dataflow represent two alternatives as “next generation” data processing frameworks. This post compares the two, relying on the author’s first-hand experience and subsequent background research. 
+ Introduction
+That MapReduce was the solution to write data processing pipelines scalable to hundreds of terabytes (or more) is evidenced by the massive uptake. This was true within Google as well as outside of Google in the form of Hadoop/MapReduce (for some “Hadoop” and “data science” are synonyms). However, it didn’t take long for the pain of writi… 
+ 

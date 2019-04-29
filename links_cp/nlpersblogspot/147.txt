@@ -1,0 +1,5 @@
+04 April 2007 
+ Karen Sparck-Jones passed away this morning. You can find more information about her here and in many other places on the web. I, personally, remember Karen as endlessly enthusiastic and always willing to push me to think about problems in new (and interesting) lights. She's been immensely important in both NLP and IR, and her death is an enormous loss to the field; I have greatly valued her contributions in DUC discussions, among other things. Many will miss her. 
+ I'll leave this discussion with a quote from an email I have from her from only a few weeks ago, since I think it's something we should all think about, whatever our context: 
+ Document collections is a much misumnderstood topic -- you have to think what its for and eg where (in retrieval) you are going to get real queries from. Just assembling some bunch of stuff and saying hey giys, what would you like to do with this is useless. 
+ 

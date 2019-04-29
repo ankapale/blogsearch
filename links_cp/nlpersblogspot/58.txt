@@ -1,0 +1,157 @@
+24 August 2016 
+ I've been thinking, mostly in the context of teaching, about how to specifically teach debugging of machine learning. Personally I find it very helpful to break things down in terms of the usual error terms: Bayes error (how much error is there in the best possible classifier), approximation error (how much do you pay for restricting to some hypothesis class), estimation error (how much do you pay because you only have finite samples), optimization error (how much do you pay because you didn't find a global optimum to your optimization problem). I've generally found that trying to isolate errors to one of these pieces, and then debugging that piece in particular (eg., pick a better optimizer versus pick a better hypothesis class) has been useful. 
+ For instance, my general debugging strategy involves steps like the following: 
+ First, ensure that your optimizer isn't the problem. You can do this by adding "cheating" features -- a feature that correlates perfectly with the label. Make sure you can successfully overfit the training data. If not, this is probably either an optimizer problem or a too-small-sample problem. 
+ Remove all the features except the cheating feature and make sure you can overfit then. Assuming that works, add feature back in incrementally (usually at an exponential rate). If at some point, things stop working, then probably you have too many features or too little data. 
+ Remove the cheating features and make your hypothesis class much bigger; e.g., by adding lots of quadratic features. Make sure you can overfit. If you can't overfit, maybe you need a better hypothesis class. 
+ Cut the amount of training data in half. We usually see test accuracy asymptote as the training data size increases, so if cutting the training data in half has a huge effect, you're not yet asymptoted and you might do better to get some more data. 
+ The problem is that this normal breakdown of error terms comes from theory land, and, well, sometimes theory misses out on some stuff because of a particular abstraction that has been taken. Typically this abstraction has to do with the fact that the overall goal has already been broken down into an iid/PAC style learning problem, and so you end up unable to see some types of error because the abstraction hides them. 
+ In an effort to try to understand this better, I tried to make a flow chart of sorts that encompasses all the various types of error I could think of that can sneak into a machine learning system. This is shown below: 
+ I've tried to give some reasonable names to the steps (the left part of the box) and then give a grounded example in the context of ad placement (because it's easy to think about). I'll walk through the steps (1-11) and try to say something about what sort of error can arise at that step. 
+ In the first step, we take our real world goal of increasing revenue for our company and decide to solve it by improving our ad displays. This immediately upper bounds how much increased revenue we can hope for because, well, maybe ads are the wrong thing to target. Maybe I would do better by building a better product. This is sort of a "business" decision, but it's perhaps the most important question you can ask: am I even going after the right things? 
+ Once you have a real world mechanism (better ad placement) you need to turn it into a learning problem (or not). In this case, we've decided that the way we're going to do this is by trying to predict clickthrough, and then use those predictions to place better ads. Is clickthrough a good thing to use to predict increased revenue? This itself is an active research area. But once you decide that you're going to predict clickthrough, you suffer some loss because of a mismatch between that prediction task and the goal of better ad placement. 
+ Now you have to collect some data. You might do this by logging interactions with a currently deployed system. This introduces all sorts of biases because the data you're collecting is not from the final system you want to deploy (the one you're building now), and you will pay for this in terms of distribution drift. 
+ You cannot possibly log everything that the current system is doing, so you have to only log a subset of things. Perhaps you log queries, ads, and clicks. This now hides any information that you didn't log, for instance time of day or day of week might be relevant, user information might be relevant, etc. Again, this upper bounds your best possible revenue. 
+ You then usually pick a data representation, for instance quadratic terms between a bag of words on the query side and a bag of words on the ad side, paired with a +/- on whether the user clicked or not. We're now getting into the position where we can start using theory words, but this is basically limited the best possible Bayes error. If you included more information, or represented it better, you might be able to get a lower Bayes error. 
+ You also have to choose a hypothesis class. I might choose decision trees. This is where my approximation error comes from. 
+ We have to pick some training data. The real world is basically never i.i.d., so any data we select is going to have some bias. It might not be identically distributed with the test data (because things change month to month, for instance). It might not be independent (because things don't change much second to second). You will pay for this. 
+ You now train your model on this data, probably tuning hyperparameters too. This is your usual estimation error. 
+ We now pick some test data on which to measure performance. Of course, this test data is only going to be representative of how well your system will do in the future if this data is so representative. In practice, it won't be, typically at least because of concept drift over time. 
+ After we make predictions on this test data, we have to choose some method for evaluating success. We might use accuracy, f measure, area under the ROC curve, etc. The degree to which these measures correlate with what we really care about (ad revenue) is going to affect how well we're able to capture the overall task. If the measure anti-correlates, for instance, we'll head downhill rather than uphill. 
+ (Minor note: although I put these in a specific order, that's not a prescriptive order, and many can be swapped. Also, of course there are lots of cycles and dependencies here as one continues to improve systems.) 
+ Some of these things are active research areas. Things like sample selection bias/domain adaptation/covariate shift have to do with mismatch of train/test data. For instance, if I can overfit train but generalization is horrible, I'll often randomly shuffle train/test into a new split and see if generalization is better. If it is, there's probably an adaptation problem. 
+ When people develop new evaluation metrics (like Bleu for machine translation), they try to look at things like #10 (correlation with some goal, perhaps not exactly the end goal). And standard theory and debugging (per above) covers some of this too. 
+ I'm very curious if y'all have topics/tricks that you like that aren't mentioned here. 
+ 16 August 2016 
+ I wrote my first (and only) coreference paper back in 2005. At the time, my goals were to (a) do well on coref, (b) integrate background knowledge (like "Bush" is "president") using simple techniques, and (c) try to figure out how important different (types of) features were for making coreference decisions. 
+ For the last, there is a reasonably extensive feature-type ablation experiment using backward selection (which I trust far more than forward selection). After writing the paper, I had many internal dialogues about why experiments like that are interesting. I have had, over the years, a couple of answers: 
+ The obvious answer is "it tells us something interesting about language." It would be nice if this were true, but I'm not totally sure it is, and it's definitely not true if one doesn't put a bunch more effort into it than I put into that 2005 paper. What can we say? Yeah, spelling is important. Knowledge is important. Syntax is hard to actualize. I don't know that we didn't already know these things before. 
+ Engineering. Suppose someone wanted to build a similar system. They want to put their effort where it's most valuable, and so feature ablation experiments tell you where you're likely to get the most bang for the buck. In a sense, you can see these as a type of negative result. Which features actually aren't that important. In the 2005 paper, you could remove syntactic, semantic, and class-based features with zero performance degradation; and also get rid of pattern-based features with minor performance degradation. This saves a lot of effort because some of these are actually quite a pain to implement and/or are slow and/or require lots of external resources. 
+ Today, I mostly lean toward the engineering answer, or at least that's what I want to use as a jumping off point here. 
+ Now that we're partially allergic to feature engineering and prefer to replace it with architecture engineering, I think the charge is stronger, not weaker, to do ablation experiments. Does that thing really need to be a biLSTM? Would an RNN suffice? What about just averaged bag of word embeddings? Do you need two layers of attention there or would one suffice? Do you need attention at all? Does that layer really need to be that wide? 
+ These are all easy questions to ablate and answer. 
+ There's never going to be a crisp answer like "yes, if I cut my hidden state from 493 units to 492 units performance goes down the drain." Many things will be gradual, but not all. 
+ Why do I think this is important? Precisely for reason #2 above, but about a bajillion times more so. Training these really complicated models with wide hidden units, bidirectional stuff, etc., is really slow. Really really slow. If you tell me I can be within 1% accuracy but can train 100 times faster, I'm going to do it. Sure, for a final test run I might crank everything up again (and then report that!) but for development, it's super useful to have a system you can train and evaluate efficiently. 
+ Does this tell us anything interesting about language? Almost certainly not (or at least not without a huge amount of extra work). But it does make everyone's life better. 
+ 14 August 2016 
+ A conference just ended, so it's that time of year! Here are some papers I liked with the usual caveats about recall. 
+ Before I go to the list, let me say that I really really enjoyed ACL this year. I was completely on the fence about going, and basically decided to go only because of giving a talk at Repl4NLP, and wanted to attend the business meeting for the discussion of diversity in the ACL community, led by Joakim Nivre with an amazing report that he, Lyn Walker, Yejin Choi and Min-Yen Kan put together. (Likely I'll post more, separately, about both of these; for the latter, I tried to transcribe much of Joakim's presentation.) 
+ All in all, I'm supremely glad I decided to go: it was probably my favorite conference in recent memory. This was not just because there were lots of great papers (there were!) but also because somehow it felt more like a large community conference than others I've attended recently. I'm not sure what made it like this, but I noticed it felt a lot less clique-y than NAACL, a lot more broad and interesting than ICML/NIPS (though that's probably because of my personal taste in research) and in general a lot friendlier. I don't know what the organizers did that managed this great combination, but it was great! 
+ I like this paper because it has a nice solution to a problem I spent a year thinking about on-and-off and never came up with. The problem is: suppose that you're training a discriminative MT system (they're doing neural; that's essentially irrelevant). You usually have far more monolingual data than parallel data, which typically gets thrown away in neural systems because we have no idea how to incorporate it (other than as a feature, but that's blech). What they do here is, assuming you have translation systems in both directions, back translate your monolingual target-side data, and then use that faux-parallel-data to train your MT system on. Obvious question is: how much of the improvement in performance is due to language modeling versus due to some weird kind of reverse-self-training, but regardless the answer, this is a really cool (if somewhat computationally expensive) answer to a question that's been around for at least five years. Oh and it also works really well. 
+ I didn't see this paper presented, but it was suggested to me at Monday's poster session. Suppose we're trying to learn representations of adjective/noun pairs, by modeling nouns as vectors and adjectives as matrices, evaluating on unseen pairs only. (Personally I don't love this style, but that's incidental to the main ideas in this paper.) This paper adjusts the adjective matrices depending on whether they're being used literally ("sweet candy") or metaphorically ("sweet dreams"). But then you can go further and posit that there's another matrix that can transform literal metaphors into metaphorical metaphors automatically, essentially implementing the Lakoff-style notion that there is great consistency in how metaphors are created. 
+ This paper should win some sort of award for thoroughness. The idea is that in many frames ("The walrus pummelled the sea squirt") there is implied connotation/polarity/etc. on not only the agent (walrus) and theme (sea squirt) of the frame but also tells us something about the relationship between the writer/speaker and the agent/theme (the writer might be closer to the sea squirt in this example, versus s/pummelled/fought/). The connotation frame for pummelled collects all this information. This paper also describes an approach to prediction of these complex frames using nice structured models. Totally want to try this stuff on our old plotunits data, where we had a hard time getting even a much simpler type of representation (patient polarity verbs) to work! 
+ This was perhaps my favorite paper of the conference because it's trying to do something new and hard and takes a nice approach. At a high level, suppose you're Facebook and you're trying to improve your translation system so you ask users to give 1 star to 5 star ratings. How can you use this to do better translation? This is basically the (structured) contextual bandit feedback learning problem. This paper approaches this from a dueling bandits perspective where I show you two translations and ask which is better. (Some of the authors had an earlier MT-Summit paper on the non-dueling problem which I imagine many people didn't see, but you should read it anyway.) The technical approach is basically probabilitic latent-variable models, optimized with gradient descent, with promising results. (I also like this because I've been thinking about similar structured bandit problems recently too :P.) 
+ [EDIT 14 Aug 2:40p: I misunderstood from the talk and therefore the following is basically inaccurate. I'm leaving this description and paper here on the list because Yoav's comment will make no sense otherwise, but please understand that it's wrong and, I hate to say this, it does make the paper less exciting to me. The part that's wrong is struck-out below.] There's a theme in the past two years of basically repeating all the structured prediction stuff we did ten years ago on our new neural network technology. This paper is about using Collins & Roark-style incremental perceptron for transition-based dependency parsing on top of neural networks. The idea is that label-bias is perhaps still a problem for neural network dependency parsers, like their linear grandparents. Why do I like this? Because I think a lot of neural nets people would argue that this shouldn't be necessary: the network can do arbitrarily far lookahead into the future and therefore should be able to learn to avoid the label-bias problem. This paper shows that current techniques don't achieve that: there's a consistent win to be had by doing global normalization. 
+ This paper shows pretty definitively that human evaluations against a reference translation are super biased toward the particular reference used (probably because evaluators are lazy and are basically doing ngram matching anyway -- a story I heard from MSR friends a while back). The paper also shows that this gets worse over time, presumably as evaluators get tireder. 
+ This is a nice paper summarizing four issues that come up in ethics that also come up in NLP. I mostly liked this paper because it gave names to things I've thought about off and on, but didn't have a name for. In particular, they consider exclusion (hey my ASR system doesn't work on people with an accent, I guess they don't get a voice), overgeneralization (to what degree are our models effectively stereotyping more than they should), over- and under-exposure (hey lets all work on parsing because that's what everyone else is working on, which then makes parsing seem more important...just to pick a random example :P), and dual-use (I made something for good but XYZ organization used it for evil!). This is a position/discussion-starting paper, and I thought quite engaging. 
+ Yoav is basically referring to the fact that the paper is all about (a) hashing features and (b) bigrams and (c) a projection that doesn't totally make sense to me, which (a) vw does by default (b) requires "--ngrams 2" and (c) I don't totally understand I don't think is necessary. (See this tutorial for more on how to do NLP in VW.) 
+ At the time, I said if they gave me the data, I'd run vw on it and report results. They were nice enough to share the data but I never got around to running it. The code for their technique ("fastText") was just released, which goaded me into finally doing something. 
+ So my goal here was to try to tell, without tuning any parameters, how competitive a baseline vw is to the results from fastText with minimal effort. 
+ Here are the results: 
+ fastText 
+ vw 
+ Dataset 
+ ng 
+ time 
+ acc 
+ time 
+ acc 
+ ag news 
+ 1 
+ 91.5 
+ 2s 
+ 91.9 
+ ag news 
+ 2 
+ 3s 
+ 92.5 
+ 5s 
+ 92.3 
+ amazon full 
+ 1 
+ 55.8 
+ 47s 
+ 53.6 
+ amazon full 
+ 2 
+ 33s 
+ 60.2 
+ 69s 
+ 56.6 
+ amazon polarity 
+ 1 
+ 91.2 
+ 46s 
+ 91.3 
+ amazon polarity 
+ 2 
+ 52s 
+ 94.6 
+ 68s 
+ 94.2 
+ dbpedia 
+ 1 
+ 98.1 
+ 8s 
+ 98.4 
+ dbpedia 
+ 2 
+ 8s 
+ 98.6 
+ 17s 
+ 98.7 
+ sogou news 
+ 1 
+ 93.9 
+ 25s 
+ 93.6 
+ sogou news 
+ 2 
+ 36s 
+ 96.8 
+ 30s 
+ 96.9 
+ yahoo answers 
+ 1 
+ 72.0 
+ 30s 
+ 70.6 
+ yahoo answers 
+ 2 
+ 27s 
+ 72.3 
+ 48s 
+ 71.0 
+ yelp full 
+ 1 
+ 60.4 
+ 16s 
+ 56.9 
+ yelp full 
+ 2 
+ 18s 
+ 63.9 
+ 37s 
+ 60.0 
+ yelp polarity 
+ 1 
+ 93.8 
+ 10s 
+ 93.6 
+ yelp polarity 
+ 2 
+ 15s 
+ 95.7 
+ 20s 
+ 95.5 
+ (Average accuracy for fastText is 83.2; for vw is 82.2.) 
+ In terms of accuracy, the two are roughly on par. vw occasionally wins; when it does, it's usually by 0.1% to 0.5%. fastText wins a bit more often, and on one dataset it wins significantly (yelp full: winning by 3%-4%) and on one a bit less (yahoo answers, up by about 1.3%). But the numbers are pretty much in line, and could almost certainly be brought up for vw with a wee bit of hyperparameter tuning (namely the learning rate, which is tuned in fastText). 
+ In terms of training time, fastText is maybe 30% faster on average, though these are such small datasets (eg 500k examples) that a difference of 52s versus 68s is not too significant. I also noticed that for most of the datasets, simply writing the model to disk for vw took a nontrivial amount of time. But wait, there's more. That 30% faster for fastText was run on 20 cores in parallel whereas the vw run did not use parallelized learning (vw runs two threads, one for I/O and one for learning).
+That said, a major caveat on comparing the training times. They're run on different machines. I don't know what type of machine the fastText results were achieved on, but it was a parallel 20-core run. The vw experiments were run on a single core, one pass over the data, on a 3.1Ghz Core i5-2400. Yes, I could have hogwild-ed vw and gotten it faster but it really didn't seem worth it for datasets this small. And yes, I could've rerun fastText on my machine, but... what can I say? I'm lazy. 
+ What did I do to get these vw numbers? Here's the entire training script: 
+ Basically the only flags to vw are (1) telling it to do multiclass classification with one-against-all, (2) telling it to use 25 bits (not tuned), and telling it to either use unigrams or bigrams. [Comparison note: this means vw is using 33m hash bins; fastText used 10m for unigram models and 100m for bigram models.] 
+ The only(*) data munging that occurs is in csv2vw.pl, which is a lightweight script for converting the data, lowercasing, and doing very minor tokenization: 
+ There are two exceptions where I did slightly more data munging. The datasets released for dbpedia and Soguo were not properly shuffled, which makes online learning hard. I preprocessed the training data by randomly shuffling it. This took 2.4s for dbpedia and 12s for Soguo. 
+ [[[EDIT 2:20p 5 Aug 2016: Out of curiosity, I upped the number of bits that vw uses for the experiments to 27 (so that it's on par with the 100m used by fastText). This makes it take about 5 seconds longer to run (writing the model to disk is slower). Performance stays the same on: ag news, amazon polarity, dbpedia, sogou, and yelp polarity; and it goes up from from 53.6/56.6 to 55.0/58.8 on amazon full, from 70.6/71.0 to 71.1/71.6 on yahoo answers, from 56.9/60.0 to 58.5/61.6 on yelp full. This puts the vw average with more bits at 82.6, which is 0.6% behind the fastText average.]]] 
+ Long story short... am I switching from vw to fastText? Probably not any time soon. 
+ 

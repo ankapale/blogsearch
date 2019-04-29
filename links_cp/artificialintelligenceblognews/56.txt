@@ -1,0 +1,7 @@
+Dec 21 Warning: This Christmas Carol May Haunt Your Dreams 
+ Behold, a new Christmas carol for the 2016 holiday season! Have a listen: 
+ Neural Story Singing Christmas from Hang Chu on Vimeo. 
+ Perhaps the flat delivery, the Christmas word salad and the elementary melody tipped you off to the computer-generated nature of this performance. 
+ It's from a team at the University of Toronto Computer Science Department, which has been teaching a computer to write sing-along music. Dubbed "neural karaoke," this artificial intelligence system has been fed more than 100 hours of music to learn how to create simple melodies. It was also trained to recognize images and compose related lyrics. 
+ Using an algorithm, the AI finds patterns in the data and essentially "learns" music — including beats and chords. It learned the correlation between lyrics and music notes from around 50 hours of pop songs, says Hang Chu, one of the researchers. 
+ 

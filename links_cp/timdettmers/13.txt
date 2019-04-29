@@ -1,0 +1,4 @@
+Main navigation 
+ SSD 
+ Deep Learning is very computationally intensive, so you will need a fast CPU with many cores, right? Or is it maybe wasteful to buy a fast CPU? One of the worst things you can do when building a deep learning system is to waste money on hardware that is unnecessary. Here I will guide you step by step through the hardware you will need for a cheap high-performance system. 
+ 

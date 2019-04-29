@@ -1,0 +1,4 @@
+The Wild Week in AI Newsletter 
+ The Wild Week in AI is a weekly newsletter with hand-curated stories in Deep Learning and Artificial Intelligence. It highlights interesting articles, code projects and research papers. It’s sent out every Monday. 
+ Oh and don’t worry, I hate spam too. Your email address will only be used for this newsletter. 
+ 

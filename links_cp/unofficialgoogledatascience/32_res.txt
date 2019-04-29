@@ -1,0 +1,3501 @@
+<!DOCTYPE html>
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<title>Attributing a deep network&#8217;s prediction to its input features</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content='#eaeaea' name='theme-color'/>
+<!-- Windows Phone -->
+<meta content='#eaeaea' name='msapplication-navbutton-color'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.unofficialgoogledatascience.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="http://www.unofficialgoogledatascience.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="The Unofficial Google Data Science Blog - RSS" href="http://www.unofficialgoogledatascience.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="https://www.blogger.com/feeds/5825758052688213474/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="http://www.unofficialgoogledatascience.com/feeds/3311282216595193329/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href='https://lh3.googleusercontent.com/OdmC9gir5TIFrk39uuxI92pK4FaXzLyAAi6PO1sLdTJTaR-mPdbdB6owk2IaTfCN3MWHhK7HVAIaVyXZ2Gyzm75bN8QukZFTEA7EZpb20oP9B-M4AeMTY1E3PWsuMDKnTPq3QkJ6' rel='image_src'/>
+<meta content='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' property='og:url'/>
+<meta content='Attributing a deep network’s prediction to its input features' property='og:title'/>
+<meta content='By MUKUND SUNDARARAJAN, ANKUR TALY, QIQI YAN     Editor&#39;s note:  Causal inference is central to answering questions in science, engineering ...' property='og:description'/>
+<meta content='https://lh3.googleusercontent.com/OdmC9gir5TIFrk39uuxI92pK4FaXzLyAAi6PO1sLdTJTaR-mPdbdB6owk2IaTfCN3MWHhK7HVAIaVyXZ2Gyzm75bN8QukZFTEA7EZpb20oP9B-M4AeMTY1E3PWsuMDKnTPq3QkJ6=w1200-h630-p-k-no-nu' property='og:image'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<style type='text/css'>@font-face{font-family:'Roboto';font-style:italic;font-weight:300;src:local('Roboto Light Italic'),local('Roboto-LightItalic'),url(//fonts.gstatic.com/s/roboto/v19/KFOjCnqEu92Fr1Mu51TjASc6CsE.ttf)format('truetype');}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),url(//fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxP.ttf)format('truetype');}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local('Roboto-Bold'),url(//fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc9.ttf)format('truetype');}</style>
+<style id='page-skin-1' type='text/css'><!--
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+/* 
+<!-- Constants -->
+
+<Variable name="damionRegular36" description="Damion Regular 36" type="font" default="400 36px Damion, cursive" hideEditor="true" />
+<Variable name="damionRegular62" description="Damion Regular 62" type="font" default="400 62px Damion, cursive" hideEditor="true" />
+<Variable name="playfairDisplayBlack28" description="Playfair Display Black 28" type="font" default="900 28px Playfair Display, serif" hideEditor="true" />
+<Variable name="playfairDisplayBlack36" description="Playfair Display Black 36" type="font" default="900 36px Playfair Display, serif" hideEditor="true" />
+<Variable name="playfairDisplayBlack44" description="Playfair Display Black 44" type="font" default="900 44px Playfair Display, serif" hideEditor="true" />
+<Variable name="robotoNormal15" description="Roboto Normal 15" type="font" default="15px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoNormal16" description="Roboto Normal 16" type="font" default="16px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoLightItalic15" description="Roboto Light Italic 15" type="font" default="italic 300 15px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold22" description="Roboto Bold 22" type="font" default="bold 22px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold30" description="Roboto Bold 30" type="font" default="bold 30px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold45" description="Roboto Bold 45" type="font" default="bold 45px Roboto, sans-serif" hideEditor="true" />
+
+<!-- Variable definitions -->
+
+<Variable name="keycolor" description="Main Color" type="color" default="#2196f3" />
+<Variable name="startSide" description="Start side in blog language" type="automatic" default="left" hideEditor="true" />
+<Variable name="endSide" description="End side in blog language" type="automatic" default="right" hideEditor="true" />
+
+<Group description="Page Text">
+  <Variable name="body.text.font" description="Font"
+      type="font"
+      default="15px Roboto, sans-serif" />
+  <Variable name="body.text.color" description="Color"
+      type="color"
+      default="#757575" />
+</Group>
+
+<Group description="Backgrounds">
+  <Variable name="body.background.height" description="Background height"
+      type="length"
+      min="420px"
+      max="640px"
+      default="480px" />
+  <Variable name="body.background" description="Background"
+      color="#eaeaea"
+      type="background"
+      default="$(color) none repeat scroll top left" />
+  <Variable name="body.background.color" description="Body background color"
+      type="color"
+      default="#eee" />
+  <Variable name="posts.background.color" description="Post background color"
+      type="color"
+      default="#fff" />
+  <Variable name="body.background.blur" description="Background blur"
+      type="length"
+      min="0px"
+      max="50px"
+      default="0px" />
+</Group>
+
+<Group description="Links">
+  <Variable name="body.link.color" description="Link color"
+      type="color"
+      default="#2196f3" />
+  <Variable name="body.link.visited.color" description="Visited link color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="body.link.hover.color" description="Link Hover Color"
+      type="color"
+      default="#3c79a7" />
+</Group>
+
+<Group description="Blog title" selector="div.widget.Header">
+  <Variable name="blog.title.font" description="Font"
+      type="font"
+      default="bold 45px Roboto, sans-serif" />
+  <Variable name="blog.title.color" description="Color"
+      type="color"
+      default="#fff" />
+  <Variable name="header.icons.color"
+      description="Background icons color"
+      type="color"
+      default="#fff" />
+</Group>
+
+<Group description="Tabs text" selector="div.widget.PageList">
+  <Variable name="tabs.font" description="Font"
+      type="font"
+      family="Roboto, sans-serif"
+      size="15px"
+      default="700 normal $(size) $(family)" />
+  <Variable name="tabs.color" description="Text color"
+      type="color"
+      default="#ccc" />
+  <Variable name="tabs.selected.color" description="Selected color"
+      type="color"
+      default="#fff" />
+  <Variable name="tabs.overflow.background.color" description="Popup background color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="tabs.overflow.color" description="Popup text color"
+      type="color"
+      default="#4e4e4e" />
+  <Variable name="tabs.overflow.selected.color" description="Popup selected color"
+      type="color"
+      default="#3b3b3b" />
+</Group>
+
+<Group description="Posts" selector="div.widget.Blog">
+  <Variable name="posts.title.color" description="Post title color"
+      type="color"
+      default="#212121" />
+  <Variable name="posts.title.font" description="Post title font"
+      type="font"
+      default="bold 22px Roboto, sans-serif" />
+  <Variable name="posts.stream.title.font" description="Post title stream font"
+      type="font"
+      default="bold 30px Roboto, sans-serif" />
+  <Variable name="posts.text.font" description="Post text font"
+      type="font"
+      default="15px Roboto, sans-serif" />
+  <Variable name="posts.text.color" description="Post text color"
+      type="color"
+      default="#666666" />
+  <Variable name="posts.byline.color" description="Post byline color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="blockquote.font" description="Blockquote font"
+      type="font"
+      default="italic 300 15px Roboto, sans-serif" />
+  <Variable name="blockquote.color" description="Blockquote color"
+      type="color"
+      default="#444" />
+  <Variable name="posts.icons.color"
+      description="Post icons color"
+      type="color"
+      default="#707070" />
+</Group>
+
+<Group description="Search">
+  <Variable name="search.input.color" description="Input color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="search.input.font" description="Input font"
+      type="font"
+      default="16px Roboto, sans-serif" />
+  <Variable name="search.placeholder.color" description="Placeholder text color"
+      type="color"
+      default="#ffffff" />
+</Group>
+
+<Group description="Sharing">
+  <Variable name="sharing.background.color"
+      description="Sharing background color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="sharing.text.color" description="Sharing text color"
+      type="color"
+      default="#3b3b3b" />
+  <Variable name="sharing.icons.color"
+      description="Sharing icons color"
+      type="color"
+      default="#212121" />
+</Group>
+
+<Group description="Popular posts" selector="div.widget.PopularPosts">
+  <Variable name="popularposts.background.color"
+      description="Popular post background color"
+      type="color"
+      default="#eaeaea" />
+  <Variable name="popularposts.byline.color"
+      description="Popular post byline color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="popularposts.title.color"
+      description="Popular post title color"
+      type="color"
+      default="#3b3b3b" />
+  <Variable name="popularposts.text.color"
+      description="Popular post text color"
+      type="color"
+      default="#4e4e4e" />
+  <Variable name="popularposts.link.color"
+      description="Popular post link color"
+      type="color"
+      default="#3c79a7" />
+</Group>
+
+<Group description="Post navigation" selector='div.blog-pager'>
+  <Variable name="posts.navigation.link.color"
+      description="Post navigation links color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="posts.navigation.link.visited.color"
+      description="Post navigation links visited color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="posts.navigation.link.hover.color"
+      description="Post navigations links hover color"
+      type="color"
+      default="#2196f3" />
+</Group>
+
+<Group description="Sidebar" selector="div.sidebar-container">
+  <Variable name="sidebar.backgroundColorTop"
+      description="Background color (Top)"
+      type="color"
+      default="#f7f7f7" />
+  <Variable name="sidebar.backgroundColorTopHD"
+      description="Background color (Top) - HD"
+      type="color"
+      default="rgba(255, 255, 255, 1)" />
+  <Variable name="sidebar.backgroundColorBottom"
+      description="Background color (Bottom)"
+      type="color"
+      default="#fff" />
+  <Variable name="sidebar.separator.color"
+      description="Separator color"
+      type="color"
+      default="#ccc" />
+  <Variable name="widget.title.color"
+      description="Gadget title color"
+      type="color"
+      default="#212121" />
+  <Variable name="sidebar.icons.color"
+      description="Sidebar icons color"
+      type="color"
+      default="#707070" />
+</Group>
+
+<Group description="Author profile" selector='.widget.Profile'>
+  <Variable name="profile.title.color" description="Profile title color"
+      type="color"
+      default="rgba(0,0,0,0.52)" />
+  <Variable name="profile.text.color" description="Profile text color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="profile.link.color" description="Profile link color"
+      type="color"
+      default="#3b3b3b" />
+</Group>
+
+<Group description="Labels" selector=".widget.Label">
+  <Variable name="labels.text.color"
+      description="Label text color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="labels.background.color"
+      description="Label background color"
+      type="color"
+      red="0"
+      green="0"
+      blue="0"
+      default="rgba($red, $green, $blue, 0.05)" />
+</Group>
+
+<Group description="Attribution" selector=".widget.Attribution">
+  <Variable name="attribution.text.color" description="Attribution text color"
+      type="color"
+      default="#666666" />
+  <Variable name="attribution.link.color" description="Attribution link color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="attribution.icon.color" description="Attribution icon color"
+      type="color"
+      default="#707070"
+      hideEditor="true" />
+</Group>
+
+<Group description="Widths">
+  <Variable name="sidebar.width" description="Sidebar width" type="length"
+            min="100px" max="1000px" default="284px" />
+  <Variable name="content.width" description="Content width" type="length"
+            min="600px" max="2400px" default="922px" />
+  <Variable name="content.margin" description="Content margin" type="length"
+            min="0px" max="1000px" default="117px" />
+</Group>
+ */
+
+/*!************************************************
+ * Blogger Template Style
+ * Name: Contempo
+ **************************************************/
+body{
+overflow-wrap:break-word;
+word-break:break-word;
+word-wrap:break-word
+}
+.hidden{
+display:none
+}
+.invisible{
+visibility:hidden
+}
+.container::after,.float-container::after{
+clear:both;
+content:"";
+display:table
+}
+.clearboth{
+clear:both
+}
+#comments .comment .comment-actions,.subscribe-popup .FollowByEmail .follow-by-email-submit,.widget.Profile .profile-link,.widget.Profile .profile-link.visit-profile{
+background:0 0;
+border:0;
+box-shadow:none;
+color:#3c79a7;
+cursor:pointer;
+font-size:14px;
+font-weight:700;
+outline:0;
+text-decoration:none;
+text-transform:uppercase;
+width:auto
+}
+.dim-overlay{
+background-color:rgba(0,0,0,.54);
+height:100vh;
+left:0;
+position:fixed;
+top:0;
+width:100%
+}
+#sharing-dim-overlay{
+background-color:transparent
+}
+input::-ms-clear{
+display:none
+}
+.blogger-logo,.svg-icon-24.blogger-logo{
+fill:#ff9800;
+opacity:1
+}
+.loading-spinner-large{
+-webkit-animation:mspin-rotate 1.568s infinite linear;
+animation:mspin-rotate 1.568s infinite linear;
+height:48px;
+overflow:hidden;
+position:absolute;
+width:48px;
+z-index:200
+}
+.loading-spinner-large>div{
+-webkit-animation:mspin-revrot 5332ms infinite steps(4);
+animation:mspin-revrot 5332ms infinite steps(4)
+}
+.loading-spinner-large>div>div{
+-webkit-animation:mspin-singlecolor-large-film 1333ms infinite steps(81);
+animation:mspin-singlecolor-large-film 1333ms infinite steps(81);
+background-size:100%;
+height:48px;
+width:3888px
+}
+.mspin-black-large>div>div,.mspin-grey_54-large>div>div{
+background-image:url(https://www.blogblog.com/indie/mspin_black_large.svg)
+}
+.mspin-white-large>div>div{
+background-image:url(https://www.blogblog.com/indie/mspin_white_large.svg)
+}
+.mspin-grey_54-large{
+opacity:.54
+}
+@-webkit-keyframes mspin-singlecolor-large-film{
+from{
+-webkit-transform:translateX(0);
+transform:translateX(0)
+}
+to{
+-webkit-transform:translateX(-3888px);
+transform:translateX(-3888px)
+}
+}
+@keyframes mspin-singlecolor-large-film{
+from{
+-webkit-transform:translateX(0);
+transform:translateX(0)
+}
+to{
+-webkit-transform:translateX(-3888px);
+transform:translateX(-3888px)
+}
+}
+@-webkit-keyframes mspin-rotate{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(360deg);
+transform:rotate(360deg)
+}
+}
+@keyframes mspin-rotate{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(360deg);
+transform:rotate(360deg)
+}
+}
+@-webkit-keyframes mspin-revrot{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(-360deg);
+transform:rotate(-360deg)
+}
+}
+@keyframes mspin-revrot{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(-360deg);
+transform:rotate(-360deg)
+}
+}
+.skip-navigation{
+background-color:#fff;
+box-sizing:border-box;
+color:#000;
+display:block;
+height:0;
+left:0;
+line-height:50px;
+overflow:hidden;
+padding-top:0;
+position:fixed;
+text-align:center;
+top:0;
+-webkit-transition:box-shadow .3s,height .3s,padding-top .3s;
+transition:box-shadow .3s,height .3s,padding-top .3s;
+width:100%;
+z-index:900
+}
+.skip-navigation:focus{
+box-shadow:0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+height:50px
+}
+#main{
+outline:0
+}
+.main-heading{
+position:absolute;
+clip:rect(1px,1px,1px,1px);
+padding:0;
+border:0;
+height:1px;
+width:1px;
+overflow:hidden
+}
+.Attribution{
+margin-top:1em;
+text-align:center
+}
+.Attribution .blogger img,.Attribution .blogger svg{
+vertical-align:bottom
+}
+.Attribution .blogger img{
+margin-right:.5em
+}
+.Attribution div{
+line-height:24px;
+margin-top:.5em
+}
+.Attribution .copyright,.Attribution .image-attribution{
+font-size:.7em;
+margin-top:1.5em
+}
+.BLOG_mobile_video_class{
+display:none
+}
+.bg-photo{
+background-attachment:scroll!important
+}
+body .CSS_LIGHTBOX{
+z-index:900
+}
+.extendable .show-less,.extendable .show-more{
+border-color:#3c79a7;
+color:#3c79a7;
+margin-top:8px
+}
+.extendable .show-less.hidden,.extendable .show-more.hidden{
+display:none
+}
+.inline-ad{
+display:none;
+max-width:100%;
+overflow:hidden
+}
+.adsbygoogle{
+display:block
+}
+#cookieChoiceInfo{
+bottom:0;
+top:auto
+}
+iframe.b-hbp-video{
+border:0
+}
+.post-body img{
+max-width:100%
+}
+.post-body iframe{
+max-width:100%
+}
+.post-body a[imageanchor="1"]{
+display:inline-block
+}
+.byline{
+margin-right:1em
+}
+.byline:last-child{
+margin-right:0
+}
+.link-copied-dialog{
+max-width:520px;
+outline:0
+}
+.link-copied-dialog .modal-dialog-buttons{
+margin-top:8px
+}
+.link-copied-dialog .goog-buttonset-default{
+background:0 0;
+border:0
+}
+.link-copied-dialog .goog-buttonset-default:focus{
+outline:0
+}
+.paging-control-container{
+margin-bottom:16px
+}
+.paging-control-container .paging-control{
+display:inline-block
+}
+.paging-control-container .comment-range-text::after,.paging-control-container .paging-control{
+color:#3c79a7
+}
+.paging-control-container .comment-range-text,.paging-control-container .paging-control{
+margin-right:8px
+}
+.paging-control-container .comment-range-text::after,.paging-control-container .paging-control::after{
+content:"\b7";
+cursor:default;
+padding-left:8px;
+pointer-events:none
+}
+.paging-control-container .comment-range-text:last-child::after,.paging-control-container .paging-control:last-child::after{
+content:none
+}
+.byline.reactions iframe{
+height:20px
+}
+.b-notification{
+color:#000;
+background-color:#fff;
+border-bottom:solid 1px #000;
+box-sizing:border-box;
+padding:16px 32px;
+text-align:center
+}
+.b-notification.visible{
+-webkit-transition:margin-top .3s cubic-bezier(.4,0,.2,1);
+transition:margin-top .3s cubic-bezier(.4,0,.2,1)
+}
+.b-notification.invisible{
+position:absolute
+}
+.b-notification-close{
+position:absolute;
+right:8px;
+top:8px
+}
+.no-posts-message{
+line-height:40px;
+text-align:center
+}
+@media screen and (max-width:800px){
+body.item-view .post-body a[imageanchor="1"][style*="float: left;"],body.item-view .post-body a[imageanchor="1"][style*="float: right;"]{
+float:none!important;
+clear:none!important
+}
+body.item-view .post-body a[imageanchor="1"] img{
+display:block;
+height:auto;
+margin:0 auto
+}
+body.item-view .post-body>.separator:first-child>a[imageanchor="1"]:first-child{
+margin-top:20px
+}
+.post-body a[imageanchor]{
+display:block
+}
+body.item-view .post-body a[imageanchor="1"]{
+margin-left:0!important;
+margin-right:0!important
+}
+body.item-view .post-body a[imageanchor="1"]+a[imageanchor="1"]{
+margin-top:16px
+}
+}
+.item-control{
+display:none
+}
+#comments{
+border-top:1px dashed rgba(0,0,0,.54);
+margin-top:20px;
+padding:20px
+}
+#comments .comment-thread ol{
+margin:0;
+padding-left:0;
+padding-left:0
+}
+#comments .comment .comment-replybox-single,#comments .comment-thread .comment-replies{
+margin-left:60px
+}
+#comments .comment-thread .thread-count{
+display:none
+}
+#comments .comment{
+list-style-type:none;
+padding:0 0 30px;
+position:relative
+}
+#comments .comment .comment{
+padding-bottom:8px
+}
+.comment .avatar-image-container{
+position:absolute
+}
+.comment .avatar-image-container img{
+border-radius:50%
+}
+.avatar-image-container svg,.comment .avatar-image-container .avatar-icon{
+border-radius:50%;
+border:solid 1px #5b5b5b;
+box-sizing:border-box;
+fill:#5b5b5b;
+height:35px;
+margin:0;
+padding:7px;
+width:35px
+}
+.comment .comment-block{
+margin-top:10px;
+margin-left:60px;
+padding-bottom:0
+}
+#comments .comment-author-header-wrapper{
+margin-left:40px
+}
+#comments .comment .thread-expanded .comment-block{
+padding-bottom:20px
+}
+#comments .comment .comment-header .user,#comments .comment .comment-header .user a{
+color:#3b3b3b;
+font-style:normal;
+font-weight:700
+}
+#comments .comment .comment-actions{
+bottom:0;
+margin-bottom:15px;
+position:absolute
+}
+#comments .comment .comment-actions>*{
+margin-right:8px
+}
+#comments .comment .comment-header .datetime{
+bottom:0;
+color:rgba(59,59,59,.54);
+display:inline-block;
+font-size:13px;
+font-style:italic;
+margin-left:8px
+}
+#comments .comment .comment-footer .comment-timestamp a,#comments .comment .comment-header .datetime a{
+color:rgba(59,59,59,.54)
+}
+#comments .comment .comment-content,.comment .comment-body{
+margin-top:12px;
+word-break:break-word
+}
+.comment-body{
+margin-bottom:12px
+}
+#comments.embed[data-num-comments="0"]{
+border:0;
+margin-top:0;
+padding-top:0
+}
+#comments.embed[data-num-comments="0"] #comment-post-message,#comments.embed[data-num-comments="0"] div.comment-form>p,#comments.embed[data-num-comments="0"] p.comment-footer{
+display:none
+}
+#comment-editor-src{
+display:none
+}
+.comments .comments-content .loadmore.loaded{
+max-height:0;
+opacity:0;
+overflow:hidden
+}
+.extendable .remaining-items{
+height:0;
+overflow:hidden;
+-webkit-transition:height .3s cubic-bezier(.4,0,.2,1);
+transition:height .3s cubic-bezier(.4,0,.2,1)
+}
+.extendable .remaining-items.expanded{
+height:auto
+}
+.svg-icon-24,.svg-icon-24-button{
+cursor:pointer;
+height:24px;
+width:24px;
+min-width:24px
+}
+.touch-icon{
+margin:-12px;
+padding:12px
+}
+.touch-icon:active,.touch-icon:focus{
+background-color:rgba(153,153,153,.4);
+border-radius:50%
+}
+svg:not(:root).touch-icon{
+overflow:visible
+}
+html[dir=rtl] .rtl-reversible-icon{
+-webkit-transform:scaleX(-1);
+-ms-transform:scaleX(-1);
+transform:scaleX(-1)
+}
+.svg-icon-24-button,.touch-icon-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0
+}
+.touch-icon-button .touch-icon:active,.touch-icon-button .touch-icon:focus{
+background-color:transparent
+}
+.touch-icon-button:active .touch-icon,.touch-icon-button:focus .touch-icon{
+background-color:rgba(153,153,153,.4);
+border-radius:50%
+}
+.Profile .default-avatar-wrapper .avatar-icon{
+border-radius:50%;
+border:solid 1px #5b5b5b;
+box-sizing:border-box;
+fill:#5b5b5b;
+margin:0
+}
+.Profile .individual .default-avatar-wrapper .avatar-icon{
+padding:25px
+}
+.Profile .individual .avatar-icon,.Profile .individual .profile-img{
+height:120px;
+width:120px
+}
+.Profile .team .default-avatar-wrapper .avatar-icon{
+padding:8px
+}
+.Profile .team .avatar-icon,.Profile .team .default-avatar-wrapper,.Profile .team .profile-img{
+height:40px;
+width:40px
+}
+.snippet-container{
+margin:0;
+position:relative;
+overflow:hidden
+}
+.snippet-fade{
+bottom:0;
+box-sizing:border-box;
+position:absolute;
+width:96px
+}
+.snippet-fade{
+right:0
+}
+.snippet-fade:after{
+content:"\2026"
+}
+.snippet-fade:after{
+float:right
+}
+.post-bottom{
+-webkit-box-align:center;
+-webkit-align-items:center;
+-ms-flex-align:center;
+align-items:center;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap
+}
+.post-footer{
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap;
+-webkit-box-ordinal-group:2;
+-webkit-order:1;
+-ms-flex-order:1;
+order:1
+}
+.post-footer>*{
+-webkit-box-flex:0;
+-webkit-flex:0 1 auto;
+-ms-flex:0 1 auto;
+flex:0 1 auto
+}
+.post-footer .byline:last-child{
+margin-right:1em
+}
+.jump-link{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-box-ordinal-group:3;
+-webkit-order:2;
+-ms-flex-order:2;
+order:2
+}
+.centered-top-container.sticky{
+left:0;
+position:fixed;
+right:0;
+top:0;
+width:auto;
+z-index:50;
+-webkit-transition-property:opacity,-webkit-transform;
+transition-property:opacity,-webkit-transform;
+transition-property:transform,opacity;
+transition-property:transform,opacity,-webkit-transform;
+-webkit-transition-duration:.2s;
+transition-duration:.2s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1)
+}
+.centered-top-placeholder{
+display:none
+}
+.collapsed-header .centered-top-placeholder{
+display:block
+}
+.centered-top-container .Header .replaced h1,.centered-top-placeholder .Header .replaced h1{
+display:none
+}
+.centered-top-container.sticky .Header .replaced h1{
+display:block
+}
+.centered-top-container.sticky .Header .header-widget{
+background:0 0
+}
+.centered-top-container.sticky .Header .header-image-wrapper{
+display:none
+}
+.centered-top-container img,.centered-top-placeholder img{
+max-width:100%
+}
+.collapsible{
+-webkit-transition:height .3s cubic-bezier(.4,0,.2,1);
+transition:height .3s cubic-bezier(.4,0,.2,1)
+}
+.collapsible,.collapsible>summary{
+display:block;
+overflow:hidden
+}
+.collapsible>:not(summary){
+display:none
+}
+.collapsible[open]>:not(summary){
+display:block
+}
+.collapsible:focus,.collapsible>summary:focus{
+outline:0
+}
+.collapsible>summary{
+cursor:pointer;
+display:block;
+padding:0
+}
+.collapsible:focus>summary,.collapsible>summary:focus{
+background-color:transparent
+}
+.collapsible>summary::-webkit-details-marker{
+display:none
+}
+.collapsible-title{
+-webkit-box-align:center;
+-webkit-align-items:center;
+-ms-flex-align:center;
+align-items:center;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex
+}
+.collapsible-title .title{
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto;
+-webkit-box-ordinal-group:1;
+-webkit-order:0;
+-ms-flex-order:0;
+order:0;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap
+}
+.collapsible-title .chevron-down,.collapsible[open] .collapsible-title .chevron-up{
+display:block
+}
+.collapsible-title .chevron-up,.collapsible[open] .collapsible-title .chevron-down{
+display:none
+}
+.flat-button{
+cursor:pointer;
+display:inline-block;
+font-weight:700;
+text-transform:uppercase;
+border-radius:2px;
+padding:8px;
+margin:-8px
+}
+.flat-icon-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0;
+margin:-12px;
+padding:12px;
+cursor:pointer;
+box-sizing:content-box;
+display:inline-block;
+line-height:0
+}
+.flat-icon-button,.flat-icon-button .splash-wrapper{
+border-radius:50%
+}
+.flat-icon-button .splash.animate{
+-webkit-animation-duration:.3s;
+animation-duration:.3s
+}
+.overflowable-container{
+max-height:46px;
+overflow:hidden;
+position:relative
+}
+.overflow-button{
+cursor:pointer
+}
+#overflowable-dim-overlay{
+background:0 0
+}
+.overflow-popup{
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+background-color:#ffffff;
+left:0;
+max-width:calc(100% - 32px);
+position:absolute;
+top:0;
+visibility:hidden;
+z-index:101
+}
+.overflow-popup ul{
+list-style:none
+}
+.overflow-popup .tabs li,.overflow-popup li{
+display:block;
+height:auto
+}
+.overflow-popup .tabs li{
+padding-left:0;
+padding-right:0
+}
+.overflow-button.hidden,.overflow-popup .tabs li.hidden,.overflow-popup li.hidden{
+display:none
+}
+.pill-button{
+background:0 0;
+border:1px solid;
+border-radius:12px;
+cursor:pointer;
+display:inline-block;
+padding:4px 16px;
+text-transform:uppercase
+}
+.ripple{
+position:relative
+}
+.ripple>*{
+z-index:1
+}
+.splash-wrapper{
+bottom:0;
+left:0;
+overflow:hidden;
+pointer-events:none;
+position:absolute;
+right:0;
+top:0;
+z-index:0
+}
+.splash{
+background:#ccc;
+border-radius:100%;
+display:block;
+opacity:.6;
+position:absolute;
+-webkit-transform:scale(0);
+-ms-transform:scale(0);
+transform:scale(0)
+}
+.splash.animate{
+-webkit-animation:ripple-effect .4s linear;
+animation:ripple-effect .4s linear
+}
+@-webkit-keyframes ripple-effect{
+100%{
+opacity:0;
+-webkit-transform:scale(2.5);
+transform:scale(2.5)
+}
+}
+@keyframes ripple-effect{
+100%{
+opacity:0;
+-webkit-transform:scale(2.5);
+transform:scale(2.5)
+}
+}
+.search{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+line-height:24px;
+width:24px
+}
+.search.focused{
+width:100%
+}
+.search.focused .section{
+width:100%
+}
+.search form{
+z-index:101
+}
+.search h3{
+display:none
+}
+.search form{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-flex:1;
+-webkit-flex:1 0 0;
+-ms-flex:1 0 0px;
+flex:1 0 0;
+border-bottom:solid 1px transparent;
+padding-bottom:8px
+}
+.search form>*{
+display:none
+}
+.search.focused form>*{
+display:block
+}
+.search .search-input label{
+display:none
+}
+.centered-top-placeholder.cloned .search form{
+z-index:30
+}
+.search.focused form{
+border-color:#ffffff;
+position:relative;
+width:auto
+}
+.collapsed-header .centered-top-container .search.focused form{
+border-bottom-color:transparent
+}
+.search-expand{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.search-expand-text{
+display:none
+}
+.search-close{
+display:inline;
+vertical-align:middle
+}
+.search-input{
+-webkit-box-flex:1;
+-webkit-flex:1 0 1px;
+-ms-flex:1 0 1px;
+flex:1 0 1px
+}
+.search-input input{
+background:0 0;
+border:0;
+box-sizing:border-box;
+color:#ffffff;
+display:inline-block;
+outline:0;
+width:calc(100% - 48px)
+}
+.search-input input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #ffffff
+}
+.collapsed-header .centered-top-container .search-action,.collapsed-header .centered-top-container .search-input input{
+color:#3b3b3b
+}
+.collapsed-header .centered-top-container .search-input input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #3b3b3b
+}
+.collapsed-header .centered-top-container .search-input input.no-cursor:focus,.search-input input.no-cursor:focus{
+outline:0
+}
+.search-focused>*{
+visibility:hidden
+}
+.search-focused .search,.search-focused .search-icon{
+visibility:visible
+}
+.search.focused .search-action{
+display:block
+}
+.search.focused .search-action:disabled{
+opacity:.3
+}
+.widget.Sharing .sharing-button{
+display:none
+}
+.widget.Sharing .sharing-buttons li{
+padding:0
+}
+.widget.Sharing .sharing-buttons li span{
+display:none
+}
+.post-share-buttons{
+position:relative
+}
+.centered-bottom .share-buttons .svg-icon-24,.share-buttons .svg-icon-24{
+fill:#212121
+}
+.sharing-open.touch-icon-button:active .touch-icon,.sharing-open.touch-icon-button:focus .touch-icon{
+background-color:transparent
+}
+.share-buttons{
+background-color:#ffffff;
+border-radius:2px;
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+color:#212121;
+list-style:none;
+margin:0;
+padding:8px 0;
+position:absolute;
+top:-11px;
+min-width:200px;
+z-index:101
+}
+.share-buttons.hidden{
+display:none
+}
+.sharing-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0;
+cursor:pointer
+}
+.share-buttons li{
+margin:0;
+height:48px
+}
+.share-buttons li:last-child{
+margin-bottom:0
+}
+.share-buttons li .sharing-platform-button{
+box-sizing:border-box;
+cursor:pointer;
+display:block;
+height:100%;
+margin-bottom:0;
+padding:0 16px;
+position:relative;
+width:100%
+}
+.share-buttons li .sharing-platform-button:focus,.share-buttons li .sharing-platform-button:hover{
+background-color:rgba(128,128,128,.1);
+outline:0
+}
+.share-buttons li svg[class*=" sharing-"],.share-buttons li svg[class^=sharing-]{
+position:absolute;
+top:10px
+}
+.share-buttons li span.sharing-platform-button{
+position:relative;
+top:0
+}
+.share-buttons li .platform-sharing-text{
+display:block;
+font-size:16px;
+line-height:48px;
+white-space:nowrap
+}
+.share-buttons li .platform-sharing-text{
+margin-left:56px
+}
+.sidebar-container{
+background-color:#ffffff;
+max-width:284px;
+overflow-y:auto;
+-webkit-transition-property:-webkit-transform;
+transition-property:-webkit-transform;
+transition-property:transform;
+transition-property:transform,-webkit-transform;
+-webkit-transition-duration:.3s;
+transition-duration:.3s;
+-webkit-transition-timing-function:cubic-bezier(0,0,.2,1);
+transition-timing-function:cubic-bezier(0,0,.2,1);
+width:284px;
+z-index:101;
+-webkit-overflow-scrolling:touch
+}
+.sidebar-container .navigation{
+line-height:0;
+padding:16px
+}
+.sidebar-container .sidebar-back{
+cursor:pointer
+}
+.sidebar-container .widget{
+background:0 0;
+margin:0 16px;
+padding:16px 0
+}
+.sidebar-container .widget .title{
+color:#000000;
+margin:0
+}
+.sidebar-container .widget ul{
+list-style:none;
+margin:0;
+padding:0
+}
+.sidebar-container .widget ul ul{
+margin-left:1em
+}
+.sidebar-container .widget li{
+font-size:16px;
+line-height:normal
+}
+.sidebar-container .widget+.widget{
+border-top:1px dashed #c6c6c6
+}
+.BlogArchive li{
+margin:16px 0
+}
+.BlogArchive li:last-child{
+margin-bottom:0
+}
+.Label li a{
+display:inline-block
+}
+.BlogArchive .post-count,.Label .label-count{
+float:right;
+margin-left:.25em
+}
+.BlogArchive .post-count::before,.Label .label-count::before{
+content:"("
+}
+.BlogArchive .post-count::after,.Label .label-count::after{
+content:")"
+}
+.widget.Translate .skiptranslate>div{
+display:block!important
+}
+.widget.Profile .profile-link{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex
+}
+.widget.Profile .team-member .default-avatar-wrapper,.widget.Profile .team-member .profile-img{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+margin-right:1em
+}
+.widget.Profile .individual .profile-link{
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column
+}
+.widget.Profile .team .profile-link .profile-name{
+-webkit-align-self:center;
+-ms-flex-item-align:center;
+align-self:center;
+display:block;
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto
+}
+.dim-overlay{
+background-color:rgba(0,0,0,.54);
+z-index:100
+}
+body.sidebar-visible{
+overflow-y:hidden
+}
+@media screen and (max-width:1439px){
+.sidebar-container{
+bottom:0;
+position:fixed;
+top:0;
+left:0;
+right:auto
+}
+.sidebar-container.sidebar-invisible{
+-webkit-transition-timing-function:cubic-bezier(.4,0,.6,1);
+transition-timing-function:cubic-bezier(.4,0,.6,1);
+-webkit-transform:translateX(-284px);
+-ms-transform:translateX(-284px);
+transform:translateX(-284px)
+}
+}
+@media screen and (min-width:1440px){
+.sidebar-container{
+position:absolute;
+top:0;
+left:0;
+right:auto
+}
+.sidebar-container .navigation{
+display:none
+}
+}
+.dialog{
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+background:#ffffff;
+box-sizing:border-box;
+color:#666666;
+padding:30px;
+position:fixed;
+text-align:center;
+width:calc(100% - 24px);
+z-index:101
+}
+.dialog input[type=email],.dialog input[type=text]{
+background-color:transparent;
+border:0;
+border-bottom:solid 1px rgba(102,102,102,.12);
+color:#666666;
+display:block;
+font-family:Roboto, sans-serif;
+font-size:16px;
+line-height:24px;
+margin:auto;
+padding-bottom:7px;
+outline:0;
+text-align:center;
+width:100%
+}
+.dialog input[type=email]::-webkit-input-placeholder,.dialog input[type=text]::-webkit-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::-moz-placeholder,.dialog input[type=text]::-moz-placeholder{
+color:#666666
+}
+.dialog input[type=email]:-ms-input-placeholder,.dialog input[type=text]:-ms-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::-ms-input-placeholder,.dialog input[type=text]::-ms-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::placeholder,.dialog input[type=text]::placeholder{
+color:#666666
+}
+.dialog input[type=email]:focus,.dialog input[type=text]:focus{
+border-bottom:solid 2px #3c79a7;
+padding-bottom:6px
+}
+.dialog input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #666666
+}
+.dialog input.no-cursor:focus{
+outline:0
+}
+.dialog input.no-cursor:focus{
+outline:0
+}
+.dialog input[type=submit]{
+font-family:Roboto, sans-serif
+}
+.dialog .goog-buttonset-default{
+color:#3c79a7
+}
+.subscribe-popup{
+max-width:364px
+}
+.subscribe-popup h3{
+color:#3b3b3b;
+font-size:1.8em;
+margin-top:0
+}
+.subscribe-popup .FollowByEmail h3{
+display:none
+}
+.subscribe-popup .FollowByEmail .follow-by-email-submit{
+color:#3c79a7;
+display:inline-block;
+margin:0 auto;
+margin-top:24px;
+width:auto;
+white-space:normal
+}
+.subscribe-popup .FollowByEmail .follow-by-email-submit:disabled{
+cursor:default;
+opacity:.3
+}
+@media (max-width:800px){
+.blog-name div.widget.Subscribe{
+margin-bottom:16px
+}
+body.item-view .blog-name div.widget.Subscribe{
+margin:8px auto 16px auto;
+width:100%
+}
+}
+.tabs{
+list-style:none
+}
+.tabs li{
+display:inline-block
+}
+.tabs li a{
+cursor:pointer;
+display:inline-block;
+font-weight:700;
+text-transform:uppercase;
+padding:12px 8px
+}
+.tabs .selected{
+border-bottom:4px solid #ffffff
+}
+.tabs .selected a{
+color:#ffffff
+}
+body#layout .bg-photo,body#layout .bg-photo-overlay{
+display:none
+}
+body#layout .page_body{
+padding:0;
+position:relative;
+top:0
+}
+body#layout .page{
+display:inline-block;
+left:inherit;
+position:relative;
+vertical-align:top;
+width:540px
+}
+body#layout .centered{
+max-width:954px
+}
+body#layout .navigation{
+display:none
+}
+body#layout .sidebar-container{
+display:inline-block;
+width:40%
+}
+body#layout .hamburger-menu,body#layout .search{
+display:none
+}
+.centered-top-container .svg-icon-24,body.collapsed-header .centered-top-placeholder .svg-icon-24{
+fill:#ffffff
+}
+.sidebar-container .svg-icon-24{
+fill:#5b5b5b
+}
+.centered-bottom .svg-icon-24,body.collapsed-header .centered-top-container .svg-icon-24{
+fill:#5b5b5b
+}
+.centered-bottom .share-buttons .svg-icon-24,.share-buttons .svg-icon-24{
+fill:#212121
+}
+body{
+background-color:#eaeaea;
+color:#666666;
+font:15px Roboto, sans-serif;
+margin:0;
+min-height:100vh
+}
+img{
+max-width:100%
+}
+h3{
+color:#666666;
+font-size:16px
+}
+a{
+text-decoration:none;
+color:#3c79a7
+}
+a:visited{
+color:#3c79a7
+}
+a:hover{
+color:#2196f3
+}
+blockquote{
+color:#000000;
+font:italic 300 15px Roboto, sans-serif;
+font-size:x-large;
+text-align:center
+}
+.pill-button{
+font-size:12px
+}
+.bg-photo-container{
+height:470px;
+overflow:hidden;
+position:absolute;
+width:100%;
+z-index:1
+}
+.bg-photo{
+background:#eaeaea url(http://2.bp.blogspot.com/-x4SlpiHfSJ8/Vyjtmvpt5kI/AAAAAAAADn4/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B/s1600/newton_cropped.jpg) repeat fixed top left;
+background-attachment:scroll;
+background-size:cover;
+-webkit-filter:blur(3px);
+filter:blur(3px);
+height:calc(100% + 2 * 3px);
+left:-3px;
+position:absolute;
+top:-3px;
+width:calc(100% + 2 * 3px)
+}
+.bg-photo-overlay{
+background:rgba(0,0,0,.26);
+background-size:cover;
+height:470px;
+position:absolute;
+width:100%;
+z-index:2
+}
+.hamburger-menu{
+float:left;
+margin-top:0
+}
+.sticky .hamburger-menu{
+float:none;
+position:absolute
+}
+.search{
+border-bottom:solid 1px rgba(255, 255, 255, 0);
+float:right;
+position:relative;
+-webkit-transition-property:width;
+transition-property:width;
+-webkit-transition-duration:.5s;
+transition-duration:.5s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1);
+z-index:101
+}
+.search .dim-overlay{
+background-color:transparent
+}
+.search form{
+height:36px;
+-webkit-transition-property:border-color;
+transition-property:border-color;
+-webkit-transition-delay:.5s;
+transition-delay:.5s;
+-webkit-transition-duration:.2s;
+transition-duration:.2s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1)
+}
+.search.focused{
+width:calc(100% - 48px)
+}
+.search.focused form{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-flex:1;
+-webkit-flex:1 0 1px;
+-ms-flex:1 0 1px;
+flex:1 0 1px;
+border-color:#ffffff;
+margin-left:-24px;
+padding-left:36px;
+position:relative;
+width:auto
+}
+.item-view .search,.sticky .search{
+right:0;
+float:none;
+margin-left:0;
+position:absolute
+}
+.item-view .search.focused,.sticky .search.focused{
+width:calc(100% - 50px)
+}
+.item-view .search.focused form,.sticky .search.focused form{
+border-bottom-color:#4e4e4e
+}
+.centered-top-placeholder.cloned .search form{
+z-index:30
+}
+.search_button{
+-webkit-box-flex:0;
+-webkit-flex:0 0 24px;
+-ms-flex:0 0 24px;
+flex:0 0 24px;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column
+}
+.search_button svg{
+margin-top:0
+}
+.search-input{
+height:48px
+}
+.search-input input{
+display:block;
+color:#ffffff;
+font:16px Roboto, sans-serif;
+height:48px;
+line-height:48px;
+padding:0;
+width:100%
+}
+.search-input input::-webkit-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::-moz-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input:-ms-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::-ms-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-action{
+background:0 0;
+border:0;
+color:#ffffff;
+cursor:pointer;
+display:none;
+height:48px;
+margin-top:0
+}
+.sticky .search-action{
+color:#4e4e4e
+}
+.search.focused .search-action{
+display:block
+}
+.search.focused .search-action:disabled{
+opacity:.3
+}
+.page_body{
+position:relative;
+z-index:20
+}
+.page_body .widget{
+margin-bottom:16px
+}
+.page_body .centered{
+box-sizing:border-box;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column;
+margin:0 auto;
+max-width:922px;
+min-height:100vh;
+padding:24px 0
+}
+.page_body .centered>*{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.page_body .centered>#footer{
+margin-top:auto
+}
+.blog-name{
+margin:24px 0 16px 0
+}
+.item-view .blog-name,.sticky .blog-name{
+box-sizing:border-box;
+margin-left:36px;
+min-height:48px;
+opacity:1;
+padding-top:12px
+}
+.blog-name .subscribe-section-container{
+margin-bottom:32px;
+text-align:center;
+-webkit-transition-property:opacity;
+transition-property:opacity;
+-webkit-transition-duration:.5s;
+transition-duration:.5s
+}
+.item-view .blog-name .subscribe-section-container,.sticky .blog-name .subscribe-section-container{
+margin:0 0 8px 0
+}
+.blog-name .PageList{
+margin-top:16px;
+padding-top:8px;
+text-align:center
+}
+.blog-name .PageList .overflowable-contents{
+width:100%
+}
+.blog-name .PageList h3.title{
+color:#ffffff;
+margin:8px auto;
+text-align:center;
+width:100%
+}
+.centered-top-container .blog-name{
+-webkit-transition-property:opacity;
+transition-property:opacity;
+-webkit-transition-duration:.5s;
+transition-duration:.5s
+}
+.item-view .return_link{
+margin-bottom:12px;
+margin-top:12px;
+position:absolute
+}
+.item-view .blog-name{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap;
+margin:0 48px 27px 48px
+}
+.item-view .subscribe-section-container{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.item-view #header,.item-view .Header{
+margin-bottom:5px;
+margin-right:15px
+}
+.item-view .sticky .Header{
+margin-bottom:0
+}
+.item-view .Header p{
+margin:10px 0 0 0;
+text-align:left
+}
+.item-view .post-share-buttons-bottom{
+margin-right:16px
+}
+.sticky{
+background:#ffffff;
+box-shadow:0 0 20px 0 rgba(0,0,0,.7);
+box-sizing:border-box;
+margin-left:0
+}
+.sticky #header{
+margin-bottom:8px;
+margin-right:8px
+}
+.sticky .centered-top{
+margin:4px auto;
+max-width:890px;
+min-height:48px
+}
+.sticky .blog-name{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+margin:0 48px
+}
+.sticky .blog-name #header{
+-webkit-box-flex:0;
+-webkit-flex:0 1 auto;
+-ms-flex:0 1 auto;
+flex:0 1 auto;
+-webkit-box-ordinal-group:2;
+-webkit-order:1;
+-ms-flex-order:1;
+order:1;
+overflow:hidden
+}
+.sticky .blog-name .subscribe-section-container{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-box-ordinal-group:3;
+-webkit-order:2;
+-ms-flex-order:2;
+order:2
+}
+.sticky .Header h1{
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+margin-right:-10px;
+margin-bottom:-10px;
+padding-right:10px;
+padding-bottom:10px
+}
+.sticky .Header p{
+display:none
+}
+.sticky .PageList{
+display:none
+}
+.search-focused>*{
+visibility:visible
+}
+.search-focused .hamburger-menu{
+visibility:visible
+}
+.item-view .search-focused .blog-name,.sticky .search-focused .blog-name{
+opacity:0
+}
+.centered-bottom,.centered-top-container,.centered-top-placeholder{
+padding:0 16px
+}
+.centered-top{
+position:relative
+}
+.item-view .centered-top.search-focused .subscribe-section-container,.sticky .centered-top.search-focused .subscribe-section-container{
+opacity:0
+}
+.page_body.has-vertical-ads .centered .centered-bottom{
+display:inline-block;
+width:calc(100% - 176px)
+}
+.Header h1{
+color:#ffffff;
+font:bold 45px Roboto, sans-serif;
+line-height:normal;
+margin:0 0 13px 0;
+text-align:center;
+width:100%
+}
+.Header h1 a,.Header h1 a:hover,.Header h1 a:visited{
+color:#ffffff
+}
+.item-view .Header h1,.sticky .Header h1{
+font-size:24px;
+line-height:24px;
+margin:0;
+text-align:left
+}
+.sticky .Header h1{
+color:#4e4e4e
+}
+.sticky .Header h1 a,.sticky .Header h1 a:hover,.sticky .Header h1 a:visited{
+color:#4e4e4e
+}
+.Header p{
+color:#ffffff;
+margin:0 0 13px 0;
+opacity:.8;
+text-align:center
+}
+.widget .title{
+line-height:28px
+}
+.BlogArchive li{
+font-size:16px
+}
+.BlogArchive .post-count{
+color:#4e4e4e
+}
+#page_body .FeaturedPost,.Blog .blog-posts .post-outer-container{
+background:#ffffff;
+min-height:40px;
+padding:30px 40px;
+width:auto
+}
+.Blog .blog-posts .post-outer-container:last-child{
+margin-bottom:0
+}
+.Blog .blog-posts .post-outer-container .post-outer{
+border:0;
+position:relative;
+padding-bottom:.25em
+}
+.post-outer-container{
+margin-bottom:16px
+}
+.post:first-child{
+margin-top:0
+}
+.post .thumb{
+float:left;
+height:20%;
+width:20%
+}
+.post-share-buttons-bottom,.post-share-buttons-top{
+float:right
+}
+.post-share-buttons-bottom{
+margin-right:24px
+}
+.post-footer,.post-header{
+clear:left;
+color:rgba(0, 0, 0, 0.54);
+margin:0;
+width:inherit
+}
+.blog-pager{
+text-align:center
+}
+.blog-pager a{
+color:#2196f3
+}
+.blog-pager a:visited{
+color:#2196f3
+}
+.blog-pager a:hover{
+color:#2196f3
+}
+.post-title{
+font:bold 22px Roboto, sans-serif;
+float:left;
+margin:0 0 8px 0;
+max-width:calc(100% - 48px)
+}
+.post-title a{
+font:bold 30px Roboto, sans-serif
+}
+.post-title,.post-title a,.post-title a:hover,.post-title a:visited{
+color:#3b3b3b
+}
+.post-body{
+color:#4e4e4e;
+font:15px Roboto, sans-serif;
+line-height:1.6em;
+margin:1.5em 0 2em 0;
+display:block
+}
+.post-body img{
+height:inherit
+}
+.post-body .snippet-thumbnail{
+float:left;
+margin:0;
+margin-right:2em;
+max-height:128px;
+max-width:128px
+}
+.post-body .snippet-thumbnail img{
+max-width:100%
+}
+.main .FeaturedPost .widget-content{
+border:0;
+position:relative;
+padding-bottom:.25em
+}
+.FeaturedPost img{
+margin-top:2em
+}
+.FeaturedPost .snippet-container{
+margin:2em 0
+}
+.FeaturedPost .snippet-container p{
+margin:0
+}
+.FeaturedPost .snippet-thumbnail{
+float:none;
+height:auto;
+margin-bottom:2em;
+margin-right:0;
+overflow:hidden;
+max-height:calc(600px + 2em);
+max-width:100%;
+text-align:center;
+width:100%
+}
+.FeaturedPost .snippet-thumbnail img{
+max-width:100%;
+width:100%
+}
+.byline{
+color:rgba(0, 0, 0, 0.54);
+display:inline-block;
+line-height:24px;
+margin-top:8px;
+vertical-align:top
+}
+.byline.post-author:first-child{
+margin-right:0
+}
+.byline.reactions .reactions-label{
+line-height:22px;
+vertical-align:top
+}
+.byline.post-share-buttons{
+position:relative;
+display:inline-block;
+margin-top:0;
+width:100%
+}
+.byline.post-share-buttons .sharing{
+float:right
+}
+.flat-button.ripple:hover{
+background-color:rgba(60,121,167,.12)
+}
+.flat-button.ripple .splash{
+background-color:rgba(60,121,167,.4)
+}
+a.timestamp-link,a:active.timestamp-link,a:visited.timestamp-link{
+color:inherit;
+font:inherit;
+text-decoration:inherit
+}
+.post-share-buttons{
+margin-left:0
+}
+.clear-sharing{
+min-height:24px
+}
+.comment-link{
+color:#3c79a7;
+position:relative
+}
+.comment-link .num_comments{
+margin-left:8px;
+vertical-align:top
+}
+#comment-holder .continue{
+display:none
+}
+#comment-editor{
+margin-bottom:20px;
+margin-top:20px
+}
+#comments .comment-form h4,#comments h3.title{
+position:absolute;
+clip:rect(1px,1px,1px,1px);
+padding:0;
+border:0;
+height:1px;
+width:1px;
+overflow:hidden
+}
+.post-filter-message{
+background-color:rgba(0,0,0,.7);
+color:#fff;
+display:table;
+margin-bottom:16px;
+width:100%
+}
+.post-filter-message div{
+display:table-cell;
+padding:15px 28px
+}
+.post-filter-message div:last-child{
+padding-left:0;
+text-align:right
+}
+.post-filter-message a{
+white-space:nowrap
+}
+.post-filter-message .search-label,.post-filter-message .search-query{
+font-weight:700;
+color:#3c79a7
+}
+#blog-pager{
+margin:2em 0
+}
+#blog-pager a{
+color:#2196f3;
+font-size:14px
+}
+.subscribe-button{
+border-color:#ffffff;
+color:#ffffff
+}
+.sticky .subscribe-button{
+border-color:#4e4e4e;
+color:#4e4e4e
+}
+.tabs{
+margin:0 auto;
+padding:0
+}
+.tabs li{
+margin:0 8px;
+vertical-align:top
+}
+.tabs .overflow-button a,.tabs li a{
+color:#c6c6c6;
+font:700 normal 15px Roboto, sans-serif;
+line-height:18px
+}
+.tabs .overflow-button a{
+padding:12px 8px
+}
+.overflow-popup .tabs li{
+text-align:left
+}
+.overflow-popup li a{
+color:#757575;
+display:block;
+padding:8px 20px
+}
+.overflow-popup li.selected a{
+color:#212121
+}
+a.report_abuse{
+font-weight:400
+}
+.Label li,.Label span.label-size,.byline.post-labels a{
+background-color:#f7f7f7;
+border:1px solid #f7f7f7;
+border-radius:15px;
+display:inline-block;
+margin:4px 4px 4px 0;
+padding:3px 8px
+}
+.Label a,.byline.post-labels a{
+color:rgba(0, 0, 0, 0.54)
+}
+.Label ul{
+list-style:none;
+padding:0
+}
+.PopularPosts{
+background-color:#eeeeee;
+padding:30px 40px
+}
+.PopularPosts .item-content{
+color:#757575;
+margin-top:24px
+}
+.PopularPosts a,.PopularPosts a:hover,.PopularPosts a:visited{
+color:#2196f3
+}
+.PopularPosts .post-title,.PopularPosts .post-title a,.PopularPosts .post-title a:hover,.PopularPosts .post-title a:visited{
+color:#212121;
+font-size:18px;
+font-weight:700;
+line-height:24px
+}
+.PopularPosts,.PopularPosts h3.title a{
+color:#4e4e4e;
+font:15px Roboto, sans-serif
+}
+.main .PopularPosts{
+padding:16px 40px
+}
+.PopularPosts h3.title{
+font-size:14px;
+margin:0
+}
+.PopularPosts h3.post-title{
+margin-bottom:0
+}
+.PopularPosts .byline{
+color:rgba(0, 0, 0, 0.54)
+}
+.PopularPosts .jump-link{
+float:right;
+margin-top:16px
+}
+.PopularPosts .post-header .byline{
+font-size:.9em;
+font-style:italic;
+margin-top:6px
+}
+.PopularPosts ul{
+list-style:none;
+padding:0;
+margin:0
+}
+.PopularPosts .post{
+padding:20px 0
+}
+.PopularPosts .post+.post{
+border-top:1px dashed #c6c6c6
+}
+.PopularPosts .item-thumbnail{
+float:left;
+margin-right:32px
+}
+.PopularPosts .item-thumbnail img{
+height:88px;
+padding:0;
+width:88px
+}
+.inline-ad{
+margin-bottom:16px
+}
+.desktop-ad .inline-ad{
+display:block
+}
+.adsbygoogle{
+overflow:hidden
+}
+.vertical-ad-container{
+float:right;
+margin-right:16px;
+width:128px
+}
+.vertical-ad-container .AdSense+.AdSense{
+margin-top:16px
+}
+.inline-ad-placeholder,.vertical-ad-placeholder{
+background:#ffffff;
+border:1px solid #000;
+opacity:.9;
+vertical-align:middle;
+text-align:center
+}
+.inline-ad-placeholder span,.vertical-ad-placeholder span{
+margin-top:290px;
+display:block;
+text-transform:uppercase;
+font-weight:700;
+color:#3b3b3b
+}
+.vertical-ad-placeholder{
+height:600px
+}
+.vertical-ad-placeholder span{
+margin-top:290px;
+padding:0 40px
+}
+.inline-ad-placeholder{
+height:90px
+}
+.inline-ad-placeholder span{
+margin-top:36px
+}
+.Attribution{
+color:#757575
+}
+.Attribution a,.Attribution a:hover,.Attribution a:visited{
+color:#2196f3
+}
+.Attribution svg{
+fill:#5b5b5b
+}
+.sidebar-container{
+box-shadow:1px 1px 3px rgba(0,0,0,.1)
+}
+.sidebar-container,.sidebar-container .sidebar_bottom{
+background-color:#ffffff
+}
+.sidebar-container .navigation,.sidebar-container .sidebar_top_wrapper{
+background-color:#ffffff
+}
+.sidebar-container .sidebar_top{
+overflow:auto
+}
+.sidebar-container .sidebar_bottom{
+width:100%;
+padding-top:16px
+}
+.sidebar-container .widget:first-child{
+padding-top:0
+}
+.sidebar_top .widget.Profile{
+padding-bottom:16px
+}
+.widget.Profile{
+margin:0;
+width:100%
+}
+.widget.Profile h2{
+display:none
+}
+.widget.Profile h3.title{
+color:rgba(0, 0, 0, 0.52);
+margin:16px 32px
+}
+.widget.Profile .individual{
+text-align:center
+}
+.widget.Profile .individual .profile-link{
+padding:1em
+}
+.widget.Profile .individual .default-avatar-wrapper .avatar-icon{
+margin:auto
+}
+.widget.Profile .team{
+margin-bottom:32px;
+margin-left:32px;
+margin-right:32px
+}
+.widget.Profile ul{
+list-style:none;
+padding:0
+}
+.widget.Profile li{
+margin:10px 0
+}
+.widget.Profile .profile-img{
+border-radius:50%;
+float:none
+}
+.widget.Profile .profile-link{
+color:#212121;
+font-size:.9em;
+margin-bottom:1em;
+opacity:.87;
+overflow:hidden
+}
+.widget.Profile .profile-link.visit-profile{
+border-style:solid;
+border-width:1px;
+border-radius:12px;
+cursor:pointer;
+font-size:12px;
+font-weight:400;
+padding:5px 20px;
+display:inline-block;
+line-height:normal
+}
+.widget.Profile dd{
+color:#757575;
+margin:0 16px
+}
+.widget.Profile location{
+margin-bottom:1em
+}
+.widget.Profile .profile-textblock{
+font-size:14px;
+line-height:24px;
+position:relative
+}
+body.sidebar-visible .page_body{
+overflow-y:scroll
+}
+body.sidebar-visible .bg-photo-container{
+overflow-y:scroll
+}
+@media screen and (min-width:1440px){
+.sidebar-container{
+margin-top:470px;
+min-height:calc(100% - 470px);
+overflow:visible;
+z-index:32
+}
+.sidebar-container .sidebar_top_wrapper{
+background-color:#f3f3f3;
+height:470px;
+margin-top:-470px
+}
+.sidebar-container .sidebar_top{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+height:470px;
+-webkit-box-orient:horizontal;
+-webkit-box-direction:normal;
+-webkit-flex-direction:row;
+-ms-flex-direction:row;
+flex-direction:row;
+max-height:470px
+}
+.sidebar-container .sidebar_bottom{
+max-width:284px;
+width:284px
+}
+body.collapsed-header .sidebar-container{
+z-index:15
+}
+.sidebar-container .sidebar_top:empty{
+display:none
+}
+.sidebar-container .sidebar_top>:only-child{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-align-self:center;
+-ms-flex-item-align:center;
+align-self:center;
+width:100%
+}
+.sidebar_top_wrapper.no-items{
+display:none
+}
+}
+.post-snippet.snippet-container{
+max-height:120px
+}
+.post-snippet .snippet-item{
+line-height:24px
+}
+.post-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+color:#666666;
+height:24px
+}
+.popular-posts-snippet.snippet-container{
+max-height:72px
+}
+.popular-posts-snippet .snippet-item{
+line-height:24px
+}
+.PopularPosts .popular-posts-snippet .snippet-fade{
+color:#666666;
+height:24px
+}
+.main .popular-posts-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#eeeeee 0,#eeeeee 20%,rgba(238, 238, 238, 0) 100%);
+background:linear-gradient(to left,#eeeeee 0,#eeeeee 20%,rgba(238, 238, 238, 0) 100%)
+}
+.sidebar_bottom .popular-posts-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%)
+}
+.profile-snippet.snippet-container{
+max-height:192px
+}
+.has-location .profile-snippet.snippet-container{
+max-height:144px
+}
+.profile-snippet .snippet-item{
+line-height:24px
+}
+.profile-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+color:#757575;
+height:24px
+}
+@media screen and (min-width:1440px){
+.profile-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#f3f3f3 0,#f3f3f3 20%,rgba(243, 243, 243, 0) 100%);
+background:linear-gradient(to left,#f3f3f3 0,#f3f3f3 20%,rgba(243, 243, 243, 0) 100%)
+}
+}
+@media screen and (max-width:800px){
+.blog-name{
+margin-top:0
+}
+body.item-view .blog-name{
+margin:0 48px
+}
+.centered-bottom{
+padding:8px
+}
+body.item-view .centered-bottom{
+padding:0
+}
+.page_body .centered{
+padding:10px 0
+}
+body.item-view #header,body.item-view .widget.Header{
+margin-right:0
+}
+body.collapsed-header .centered-top-container .blog-name{
+display:block
+}
+body.collapsed-header .centered-top-container .widget.Header h1{
+text-align:center
+}
+.widget.Header header{
+padding:0
+}
+.widget.Header h1{
+font-size:24px;
+line-height:24px;
+margin-bottom:13px
+}
+body.item-view .widget.Header h1{
+text-align:center
+}
+body.item-view .widget.Header p{
+text-align:center
+}
+.blog-name .widget.PageList{
+padding:0
+}
+body.item-view .centered-top{
+margin-bottom:5px
+}
+.search-action,.search-input{
+margin-bottom:-8px
+}
+.search form{
+margin-bottom:8px
+}
+body.item-view .subscribe-section-container{
+margin:5px 0 0 0;
+width:100%
+}
+#page_body.section div.widget.FeaturedPost,div.widget.PopularPosts{
+padding:16px
+}
+div.widget.Blog .blog-posts .post-outer-container{
+padding:16px
+}
+div.widget.Blog .blog-posts .post-outer-container .post-outer{
+padding:0
+}
+.post:first-child{
+margin:0
+}
+.post-body .snippet-thumbnail{
+margin:0 3vw 3vw 0
+}
+.post-body .snippet-thumbnail img{
+height:20vw;
+width:20vw;
+max-height:128px;
+max-width:128px
+}
+div.widget.PopularPosts div.item-thumbnail{
+margin:0 3vw 3vw 0
+}
+div.widget.PopularPosts div.item-thumbnail img{
+height:20vw;
+width:20vw;
+max-height:88px;
+max-width:88px
+}
+.post-title{
+line-height:1
+}
+.post-title,.post-title a{
+font-size:20px
+}
+#page_body.section div.widget.FeaturedPost h3 a{
+font-size:22px
+}
+.mobile-ad .inline-ad{
+display:block
+}
+.page_body.has-vertical-ads .vertical-ad-container,.page_body.has-vertical-ads .vertical-ad-container ins{
+display:none
+}
+.page_body.has-vertical-ads .centered .centered-bottom,.page_body.has-vertical-ads .centered .centered-top{
+display:block;
+width:auto
+}
+div.post-filter-message div{
+padding:8px 16px
+}
+}
+@media screen and (min-width:1440px){
+body{
+position:relative
+}
+body.item-view .blog-name{
+margin-left:48px
+}
+.page_body{
+margin-left:284px
+}
+.search{
+margin-left:0
+}
+.search.focused{
+width:100%
+}
+.sticky{
+padding-left:284px
+}
+.hamburger-menu{
+display:none
+}
+body.collapsed-header .page_body .centered-top-container{
+padding-left:284px;
+padding-right:0;
+width:100%
+}
+body.collapsed-header .centered-top-container .search.focused{
+width:100%
+}
+body.collapsed-header .centered-top-container .blog-name{
+margin-left:0
+}
+body.collapsed-header.item-view .centered-top-container .search.focused{
+width:calc(100% - 50px)
+}
+body.collapsed-header.item-view .centered-top-container .blog-name{
+margin-left:40px
+}
+}
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+body#layout .hidden,
+body#layout .invisible {
+display: inherit;
+}
+body#layout .navigation {
+display: none;
+}
+body#layout .page,
+body#layout .sidebar_top,
+body#layout .sidebar_bottom {
+display: inline-block;
+left: inherit;
+position: relative;
+vertical-align: top;
+}
+body#layout .page {
+float: right;
+margin-left: 20px;
+width: 55%;
+}
+body#layout .sidebar-container {
+float: right;
+width: 40%;
+}
+body#layout .hamburger-menu {
+display: none;
+}
+--></style>
+<style>
+    .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/s1600\/newton_cropped.jpg);}
+    
+@media (max-width: 480px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w480\/newton_cropped.jpg);}}
+@media (max-width: 640px) and (min-width: 481px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w640\/newton_cropped.jpg);}}
+@media (max-width: 800px) and (min-width: 641px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w800\/newton_cropped.jpg);}}
+@media (max-width: 1200px) and (min-width: 801px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w1200\/newton_cropped.jpg);}}
+/* Last tag covers anything over one higher than the previous max-size cap. */
+@media (min-width: 1201px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w1600\/newton_cropped.jpg);}}
+  </style>
+<script async='async' src='//www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js'></script>
+<!-- START: ADDED BY AMIR -->
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS"],
+     tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+  },
+  "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+    </script>
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'>
+    </script>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
+<!-- END: ADDED BY AMIR -->
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=5825758052688213474&amp;zx=5e2ad629-d23a-49a7-a013-9294d5a6515f' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=5825758052688213474&amp;zx=5e2ad629-d23a-49a7-a013-9294d5a6515f' rel='stylesheet'/></noscript>
+
+</head>
+<body class='item-view variant-indie_light'>
+<a class='skip-navigation' href='#main' tabindex='0'>
+Skip to main content
+</a>
+<div class='page'>
+<div class='bg-photo-overlay'></div>
+<div class='bg-photo-container'>
+<div class='bg-photo'></div>
+</div>
+<div class='page_body'>
+<div class='centered'>
+<div class='centered-top-placeholder'></div>
+<header class='centered-top-container' role='banner'>
+<div class='centered-top'>
+<a class='return_link' href='http://www.unofficialgoogledatascience.com/'>
+<button class='svg-icon-24-button back-button rtl-reversible-icon flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_arrow_back_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</button>
+</a>
+<div class='search'>
+<button aria-label='Search' class='search-expand touch-icon-button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24 search-expand-icon'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_search_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='section' id='search_top' name='Search (Top)'><div class='widget BlogSearch' data-version='2' id='BlogSearch1'>
+<h3 class='title'>
+Search This Blog
+</h3>
+<div class='widget-content' role='search'>
+<form action='http://www.unofficialgoogledatascience.com/search' target='_top'>
+<div class='search-input'>
+<input aria-label='Search this blog' autocomplete='off' name='q' placeholder='Search this blog' value=''/>
+</div>
+<input class='search-action' type='submit' value='Search'/>
+</form>
+</div>
+</div></div>
+</div>
+<div class='clearboth'></div>
+<div class='blog-name container'>
+<div class='container section' id='header' name='Header'><div class='widget Header' data-version='2' id='Header1'>
+<div class='header-widget'>
+<div>
+<h1>
+<a href='http://www.unofficialgoogledatascience.com/'>
+The Unofficial Google Data Science Blog
+</a>
+</h1>
+</div>
+<p>
+</p>
+</div>
+</div></div>
+<nav role='navigation'>
+<div class='clearboth section' id='page_list_top' name='Page List (Top)'><div class='widget PageList' data-version='2' id='PageList1'>
+<div class='widget-content'>
+<div class='overflowable-container'>
+<div class='overflowable-contents'>
+<div class='container'>
+<ul class='tabs'>
+<li class='overflowable-item'>
+<a href='http://www.unofficialgoogledatascience.com/'>Home</a>
+</li>
+<li class='overflowable-item'>
+<a href='http://www.unofficialgoogledatascience.com/p/about.html'>About this blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='overflow-button hidden'>
+<a class='flat-button'>More&hellip;</a>
+</div>
+</div>
+</div>
+</div></div>
+</nav>
+</div>
+</div>
+</header>
+<div>
+<div class='vertical-ad-container no-items section' id='ads' name='Ads'>
+</div>
+<main class='centered-bottom' id='main' role='main' tabindex='-1'>
+<div class='main section' id='page_body' name='Page Body'>
+<div class='widget Blog' data-version='2' id='Blog1'>
+<div class='blog-posts hfeed container'>
+<article class='post-outer-container'>
+<div class='post-outer'>
+<div class='post'>
+<script type='application/ld+json'>{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html"
+  },
+  "headline": "Attributing a deep network&#8217;s prediction to its input features","description": "By MUKUND SUNDARARAJAN, ANKUR TALY, QIQI YAN\u003ci\u003e\u003c/i\u003e\u003ci\u003e\u003ci\u003e\u003cb\u003e Editor\u0026#39;s note:\u003c/b\u003e Causal inference is central to answering questions in science, engineering and business&#8230;","datePublished": "2017-03-13T13:54:00-07:00",
+  "dateModified": "2017-03-16T11:35:33-07:00","image": {
+    "@type": "ImageObject","url": "https://lh3.googleusercontent.com/OdmC9gir5TIFrk39uuxI92pK4FaXzLyAAi6PO1sLdTJTaR-mPdbdB6owk2IaTfCN3MWHhK7HVAIaVyXZ2Gyzm75bN8QukZFTEA7EZpb20oP9B-M4AeMTY1E3PWsuMDKnTPq3QkJ6=w1200-h630-p-k-no-nu",
+    "height": 630,
+    "width": 1200},"publisher": {
+    "@type": "Organization",
+    "name": "Blogger",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=h60",
+      "width": 206,
+      "height": 60
+    }
+  },"author": {
+    "@type": "Person",
+    "name": "Amir Najmi"
+  }
+}</script>
+<a name='3311282216595193329'></a>
+<h3 class='post-title entry-title'>
+Attributing a deep network&#8217;s prediction to its input features
+</h3>
+<div class='post-share-buttons post-share-buttons-top'>
+<div class='byline post-share-buttons goog-inline-block'>
+<div aria-owns='sharing-popup-Blog1-byline-3311282216595193329' class='sharing' data-title='Attributing a deep network’s prediction to its input features'>
+<button aria-controls='sharing-popup-Blog1-byline-3311282216595193329' aria-label='Share' class='sharing-button touch-icon-button' id='sharing-button-Blog1-byline-3311282216595193329' role='button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_share_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='share-buttons-container'>
+<ul aria-hidden='true' aria-label='Share' class='share-buttons hidden' id='sharing-popup-Blog1-byline-3311282216595193329' role='menu'>
+<li>
+<span aria-label='Get link' class='sharing-platform-button sharing-element-link' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Get link'>
+<svg class='svg-icon-24 touch-icon sharing-link'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_link_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Get link</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Facebook' class='sharing-platform-button sharing-element-facebook' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=facebook' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Share to Facebook'>
+<svg class='svg-icon-24 touch-icon sharing-facebook'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_facebook_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Facebook</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Twitter' class='sharing-platform-button sharing-element-twitter' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=twitter' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Share to Twitter'>
+<svg class='svg-icon-24 touch-icon sharing-twitter'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_twitter_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Twitter</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Pinterest' class='sharing-platform-button sharing-element-pinterest' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=pinterest' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Share to Pinterest'>
+<svg class='svg-icon-24 touch-icon sharing-pinterest'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_pinterest_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Pinterest</span>
+</span>
+</li>
+<li>
+<span aria-label='Email' class='sharing-platform-button sharing-element-email' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=email' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Email'>
+<svg class='svg-icon-24 touch-icon sharing-email'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_email_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Email</span>
+</span>
+</li>
+<li aria-hidden='true' class='hidden'>
+<span aria-label='Share to other apps' class='sharing-platform-button sharing-element-other' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Share to other apps'>
+<svg class='svg-icon-24 touch-icon sharing-sharingOther'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_more_horiz_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Other Apps</span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class='post-header'>
+<div class='post-header-line-1'>
+<span class='byline post-timestamp'>
+<meta content='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html'/>
+<a class='timestamp-link' href='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' rel='bookmark' title='permanent link'>
+<time class='published' datetime='2017-03-13T13:54:00-07:00' title='2017-03-13T13:54:00-07:00'>
+March 13, 2017
+</time>
+</a>
+</span>
+</div>
+</div>
+<div class='post-body entry-content float-container' id='post-body-3311282216595193329'>
+By MUKUND SUNDARARAJAN, ANKUR TALY, QIQI YAN<i><br />
+<br />
+</i><br />
+<div>
+<i><i><b><u>Editor's note:</u> </b>Causal inference is central to answering questions in science, engineering and business and hence the topic has received particular attention on this blog. Typically, causal inference in data science is framed in probabilistic terms, where there is statistical uncertainty in the outcomes as well as model uncertainty about the true causal mechanism connecting inputs and outputs. And yet even when the relationship between inputs and outputs is fully known and entirely deterministic, causal inference is far from obvious for a complex system. In this post, we explore causal inference in this setting via the problem of attribution in deep networks. This investigation has practical as well as philosophical implications for causal inference. On the other hand, if you just care about understanding what a deep network is doing, this post is for you too.</i></i><br />
+<i><br /></i>
+<i><br /></i>
+Deep networks have had remarkable success in variety of tasks. For instance, they identify objects in images, perform language translation, enable web search &#8212; all with surprising accuracy. Can we improve our understanding of these methods? Deep networks are the latest instrument in our large toolbox of modeling techniques, and it is natural to wonder about their limits and capabilities. Based on&nbsp;<a href="https://arxiv.org/abs/1703.01365">our paper</a>&nbsp;[4],&nbsp;this post is motivated primarily by intellectual curiosity.<br />
+<div>
+<br />
+Of course, there is benefit to an improved understanding of deep networks beyond the satisfaction of curiosity &#8212; developers can use this to debug and improve models; end-users can understand the cause of a model&#8217;s prediction, and develop trust in the model. As an example of the latter, suppose that a deep network was used to predict an illness based on an image (from an X-ray, or an MRI, or some other imaging technology). It would be very helpful for a doctor to examine which pixels led to a positive prediction, and cross-check this with her intuition.</div>
+<div>
+<br />
+We are all familiar with linear and logistic regression models. If we were curious about such a model&#8217;s prediction for a given input, we would simply inspect the weights (model coefficients) of the features present in the input. The top few features with the largest weight (i.e., coefficient times feature value) would be indicative of what the model deemed noteworthy.<br />
+<br />
+The goal of this post is to mimic this inspection process for deep models. <b>Can we identify what parts of the input the deep network finds noteworthy?</b> As we soon discuss, the nonlinearity of deep networks makes this problem challenging. The outline of this post is as follows:</div>
+<div>
+<ul>
+<li>we introduce a natural approach to attribution based on gradients</li>
+<li>use failures of the gradient approach to guide the design of our method</li>
+<li>present our method more formally and discuss its properties</li>
+<li>describe applications to networks other than Inception/ImageNet (our running example)&nbsp;</li>
+</ul>
+</div>
+<div>
+We&nbsp;conclude&nbsp;with some areas for future work.</div>
+<div>
+<br /></div>
+<div>
+<h2>
+Feature Importance via Gradients</h2>
+<h4>
+Feature attribution for (generalized) linear models</h4>
+Suppose that our model is linear. Then, there is a simple, commonly followed practice to identify the importance of features &#8212; examine the coefficients of the features present in the input, weighted by the values of these features in the input. (One can think of categorical features as having values in $\{0,1\}$.) A summation of the resulting vector would equal the prediction score less the intercept term and so this process accounts for the entire prediction. If instead of summing, we sorted this vector in decreasing sequence of magnitude, we would identify the features that the model finds important. Occasionally, we may find that the coefficients don&#8217;t match our intuition of what is important. We may then check for overfitting, or for biases in the training data, and fix these issues. Or we find may that some of the features are correlated, and the strange coefficients are an artifact thereof. In either case, this process is integral to improving the network or trusting its prediction. Let us now attempt to mimic this process for deep networks.</div>
+<div>
+<h4>
+The Inception architecture and ImageNet</h4>
+For concreteness, let us focus on a network that performs object recognition. We consider a deep network using the <a href="https://arxiv.org/abs/1602.07261">Inception</a>&nbsp;[1] architecture trained on the <a href="http://www.image-net.org/">ImageNet</a> dataset. It takes an image as input and assigns scores for 1000 different <a href="http://image-net.org/challenges/LSVRC/2014/browse-synsets">ImageNet categories</a>. The input is specified via the R,G,B values of the pixels of the image. At the output, the network produces a score (probability) for each label using a multinomial logit (Softmax) function. The network &#8220;thinks&#8221; that objects with large output scores are probably present in the image. For instance, here is an image and its top few labels:</div>
+<div>
+<br /></div>
+<div>
+<img height="289" src="https://lh3.googleusercontent.com/OdmC9gir5TIFrk39uuxI92pK4FaXzLyAAi6PO1sLdTJTaR-mPdbdB6owk2IaTfCN3MWHhK7HVAIaVyXZ2Gyzm75bN8QukZFTEA7EZpb20oP9B-M4AeMTY1E3PWsuMDKnTPq3QkJ6" width="640" /></div>
+<div>
+<br /></div>
+<div>
+Notice that the score for the top label, &#8220;fireboat&#8221;, is very close to 1.0, indicating that the network is very sure that there is a &#8220;fireboat&#8221; somewhere in the image. The network is absolutely right in this case &#8212; a fireboat is a special boat used to fight fires on shorelines and aboard ships.</div>
+<div>
+<h4>
+Applying Gradients to Inception</h4>
+Which pixels made the network think of this as a fireboat? We cannot just examine the coefficients of the model as we do with linear models.&nbsp;<a href="https://en.wikipedia.org/wiki/Deep_learning">Deep networks</a> have multiple layers of  logic and coefficients, combined using nonlinear <a href="https://en.wikipedia.org/wiki/Activation_function">activation functions</a>. For instance, the Inception architecture has 22 layers. The coefficients of the input layer do not adequately cover the logic of the network. In contrast, the coefficients of the hidden layers aren&#8217;t in any human intelligible space. <br />
+<br />
+Instead, we could use the gradients of the output with respect to the input &#8212; if our deep network were linear, this would coincide exactly with the process for linear models, because the gradients correspond to the model coefficients. In effect, we are using a local linear approximation of the (nonlinear) deep network. This approach has been applied to deep networks in previous literature.</div>
+<div>
+<br />
+Let us see how this does. We are going to inspect the  gradient of the score for the object &#8220;fireboat&#8221; with respect to the input, multiplied point-wise by the input itself (essentially, a Taylor approximation of the prediction function at the input). The result is a matrix that has three dimensions. Two of these correspond to the height and width of the image, and the third is for the primary color (R, G, or B).<br />
+<h4>
+A note on visualization</h4>
+The most convenient way to inspect our feature importances (attributions) is to visualize them. We do this by using the attributions as a (soft) window over the image itself. We construct the window by first removing the primary color dimension from the attributions, by taking the sum of  absolute value of the R, G, B values. To window the image, we take an element-wise product of the window with the pixel values and visualize the resulting image. The result is that unimportant pixels are dimmed. Our <a href="https://github.com/ankurtaly/Attributions/blob/master/attributions.ipynb">code</a> has details (there are probably other reasonable visualization approaches that work just as well). The visualization of the gradients for the &#8220;fireboat&#8221; image looks like this:<br />
+<br />
+<img height="320" src="https://lh6.googleusercontent.com/J09LPNlCY3zp4cR3dTtKIf9YWv5honnvpu9GvZy7l6jodrTmLLm8Hg0WQBVqL-kOXRA-kTFXso_WqGE8Z1yWFn25A1dHWM0UFkzifOqYfIkkOuiEYJfg09z0scLuzDJKHhrzKiWp" width="320" /><br />
+<br />
+Unfortunately, gradients highlight pixels below the bridge which seem completely irrelevant to the &#8220;fireboat&#8221; prediction. This is unlikely to be a model bug &#8212; recall that the prediction was  correct. So what is happening?</div>
+<div>
+<br />
+It turns out that our local linear approximation does a poor job of indicating what the network thinks is important. The prediction function flattens in the vicinity of the input, and consequently, the gradient of the prediction function with respect to the input is tiny in the vicinity of the input vector. The dot product of the gradient with the image, which represents a first-order Taylor approximation of the prediction function at the input, adds up to only $4.6 \times 10^{-5}$ (while the actual value of the prediction is $0.999961$ &#8212; gradients aren&#8217;t accounting for a large portion of the score.<br />
+<br />
+A simple analysis substantiates this. We construct a series of images by scaling down the pixel intensities from the actual image to zero (black). Call this scaling parameter $\alpha$. One can see that the prediction function flattens after $\alpha$ crosses $0.2$.<img height="275" src="https://lh5.googleusercontent.com/faUu3mDx2KZqUVunkHrJSSpwD1koGOd6j9ll64gYCw3bGOyymufRpoXYXAJQtcjFBDumnJMBsq3LUTePHC-VynH_TAKTm__qFbTSI4tglOGZMA8aht7Kw_Y3Edw5bUKlgfgCIxkT" width="400" /><br />
+<br />
+This phenomenon of flattening is specific neither to this label (&#8220;fireboat&#8221;), this image, the output neuron, or nor even to this network. It has been observed by other work [2] and our previous paper [3].</div>
+<div>
+<br /></div>
+<div>
+<h2>
+Our method: Integrated Gradients</h2>
+The same plot that demonstrates why gradients don&#8217;t work also tells us how to fix the issue. Notice that there is a large jump in the prediction score at low intensities. Perhaps it is useful to inspect the gradients of those images. The figure below visualizes these gradients, visualized with the same logic as in the previous section;  these are just the gradients of the original image at different levels of brightness.<br />
+<br />
+<img height="212" src="https://lh3.googleusercontent.com/zivMJ35RijWrGFQIjitWZo_TguhcoYxSVdhyB0gZpRE0R8x0MZ7-XSIEdz0lGiKdOcwM8Q9WgruqvxEfrwzNoYWvLBfN3LjIGkw6qBvaDk8QT1TrQvoVjCtXlPuRVvbKftoZU3Og" width="640" /><br />
+<br />
+<br />
+<img height="148" src="https://lh3.googleusercontent.com/rUxCx7wNiVbcgLjLGl-4uZzwx41sKtMCpfNHuy7rT9PSOlhVEhjqjyWQ-JkV74YPPS8KZVJZgpGX0oP78Jss-LazUmf7KYiNuVWDV8XMi-9S8HlHlZ_wJvaThkXdXO-jIaoYwKwc" width="640" /><br />
+<img height="148" src="https://lh4.googleusercontent.com/I7hEI-cCfB7Ck81tSUsN4itQeX3N06R1PoS_ziwYMCo6uxEfhrS_uu3leWv331McByaKoQfJPibT4KfiWuClkb6pelHH3lVZw_CfEH8qtdNCyjyQlRAvP4Kp3V3J4kWP-k7yKPef" width="640" /><img height="149" src="https://lh3.googleusercontent.com/W6hWPcQg-cgJRehxMPQldqa5wh57W5qHT_rSjNeCivdLnci-1kSvMYoV_1pFjlsMZiLr-aSDLH0rPzzcnWETx28jqBy13LBFIHLjyMbfjmAnS0eTLEk5KojVxZh4XX5xtGdnR0EC" width="640" /><br />
+<br />
+The visualizations show that at lower values of the scaling parameter $\alpha$, the pixels constituting the fireboat and spout of water are most important. But as $\alpha$ increases, the region around the fireboat (rather than the fireboat itself) gains relative importance. As the plot shows, the visualizations corresponding to lower values of the scale parameter are more important to the score because they have higher gradient magnitudes. This does not come through in our visualizations because they are each normalized for brightness; if they weren&#8217;t, the last few images would look nearly black. By summing the gradients across the images, and then visualizing this, we get a more realistic picture of what is going on.<br />
+<br />
+<img height="320" src="https://lh4.googleusercontent.com/QNKn83Z1Aa2-CSIUmklDdWxJvN56gMKGAz3v-FXoQbxZ1gc9Mq930vLwTjxiaAG6nEKRUbjSZpvxkFePTki3s9YMB96tgcG2uB31sikwOV0W3GyeZJxSv-pYRvxHxNVrszrgW4WM" width="320" /><br />
+<br />
+This is the essence of our method. We call this method "integrated gradients". Informally, we average the gradients of the set of scaled images and then take the element-wise product of this with the original image. Formally, this approximates a certain integral as we will see later.<br />
+<br />
+The complete code for loading the Inception model and visualizing the attributions is available from&nbsp;<a href="https://github.com/ankurtaly/Attributions">GitHub repository</a>. The code is packaged as a single IPython notebook with less than 70 lines of Python TensorFlow code. Instructions for running the notebook are provided in our <a href="https://github.com/ankurtaly/Attributions/blob/master/README.md">README</a>. Below is the key method for generating integrated gradients for a given image and label. It involves scaling the image and invoking the gradient operation on the scaled images:</div>
+<div>
+<i><br /></i></div>
+<div>
+<i><span id="docs-internal-guid-e64e2514-c8b3-5fd8-df5e-cc715b393176"></span></i><br />
+<div dir="ltr" style="line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<i><span id="docs-internal-guid-e64e2514-c8b3-5fd8-df5e-cc715b393176"><span style="background-color: transparent; color: #38761d; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">def</span><span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span style="background-color: transparent; color: blue; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">integrated_gradients</span><span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">(img, label, steps=50):</span></span></i></div>
+<span id="docs-internal-guid-e64e2514-c8b3-5fd8-df5e-cc715b393176">
+</span>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span id="docs-internal-guid-e64e2514-c8b3-5fd8-df5e-cc715b393176"><span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;'''</span><span style="background-color: transparent; color: #cc0000; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Returns attributions for the prediction label based</span></span></div>
+<span id="docs-internal-guid-e64e2514-c8b3-5fd8-df5e-cc715b393176">
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #cc0000; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;on integrated gradients at the image.</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<b id="docs-internal-guid-e64e2514-c8b4-1971-8674-4c1aac33a82d" style="font-weight: normal;"><br /></b></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #cc0000; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;Specifically, the method returns the dot product of the image</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #cc0000; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;and the average of the gradients of the prediction label (w.r.t.</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #cc0000; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;the image) at uniformly spaced scalings of the provided image.</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<b style="font-weight: normal;"><br /></b></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #cc0000; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;The provided image must of shape (224, 224, 3), which is </span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #cc0000; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;&nbsp;&nbsp;&nbsp;also the shape of the returned attributions tensor.</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;'''</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<b style="font-weight: normal;"><br /></b></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #e69138; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: italic; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;# Obtain the tensor representing the softmax output of the provided label.</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;t_output = output_label_tensor(label) </span><span style="background-color: transparent; color: #e69138; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: italic; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"># shape: scalar</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;t_grad = tf.gradients(t_output, T('</span><span style="background-color: transparent; color: #cc0000; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">input</span><span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">'))[0]</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<b style="font-weight: normal;"><br /></b></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;scaled_images = [(float(i)/steps)*img </span><span style="background-color: transparent; color: #38761d; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">for</span><span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> i </span><span style="background-color: transparent; color: #38761d; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">in</span><span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> range(1, steps+1)]</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #e69138; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: italic; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;# Compute the gradients of the scaled images</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: black; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;grads = run_network(sess, t_grad, scaled_images)</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<b style="font-weight: normal;"><br /></b></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #e69138; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: italic; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;# Average the gradients of the scaled images and dot product with the original</span></div>
+<div dir="ltr" style="font-style: italic; line-height: 1.2; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: #e69138; font-family: &quot;courier new&quot;; font-size: 10pt; font-style: italic; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;# image</span></div>
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="font-family: &quot;courier new&quot;; font-size: 10pt; vertical-align: baseline; white-space: pre-wrap;"> &nbsp;</span><span style="color: #38761d; font-family: &quot;courier new&quot;; font-size: 10pt; font-weight: 700; vertical-align: baseline; white-space: pre-wrap;">return</span><span style="font-family: &quot;courier new&quot;; font-size: 10pt; vertical-align: baseline; white-space: pre-wrap;"> img*np.average(grads, axis=0)</span></div>
+</span></div>
+<div>
+<br /></div>
+The following figure shows some more visualizations of integrated gradients. Our visualization logic is identical to that of the gradient approach. For comparison, we also show the visualization for the gradient approach. From the visualizations, it is evident that the integrated gradients are better at capturing important features.<br />
+<br />
+<br />
+<div>
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: white; color: #212121; font-family: &quot;roboto&quot;; font-size: 10pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img height="19" src="https://lh5.googleusercontent.com/no8tjBZXv-aC8vigd7tCuA8L5dp9EXAnQzzm3vZsfMRoetOa89ZOq9E1gYEqcx1DLGwJbzmPuU7oYVmBFzEJtiFFip6SykW1QnK7BVjaPaa99q-ftsrY5ZeIXzXs8vAS9nB5B7-2" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /></span></div>
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: white; color: #212121; font-family: &quot;roboto&quot;; font-size: 10pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img height="140" src="https://lh3.googleusercontent.com/6-GtG3lq4YRSX195jv8_Kh_Rj393iHNJhVdOUp5G7EfsN7gNvCYeAne1tnXjsNmbz82jEMU-KsM-YsoypfuQQ6o94DtE6ViJ4uw_cmvTzcXogWgWTHwAyQsqJRTo5kHvJUmC9vGl" style="border: none; transform: rotate(0rad);" width="640" /></span></div>
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: white; color: #212121; font-family: &quot;roboto&quot;; font-size: 10pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img height="140" src="https://lh5.googleusercontent.com/y55rBOVNg9s0fD3J66yLyZWRtv4AdAqbWYJibD6rVY9YYJ1e3d8h_rco7OyEnIfvvkJaX9wtkXmskgMI89P-Vgzy4e7eOQqm4S3c8-dcROP-p6MQR19zxP9bgqKS3lGwAtLWZwyG" style="border: none; transform: rotate(0rad);" width="640" /></span></div>
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: white; color: #212121; font-family: &quot;roboto&quot;; font-size: 10pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img height="140" src="https://lh3.googleusercontent.com/nzWquJGwQ4t2dyCROSUWc6srv4Z5SdLsWB8xt-1-dj7r4cMuaBnC2Eixm3WavO08N3YwWPvvsvOqRediQTSbQn8DL382hlJmavGY0POzz4TGXu_VZs67xDs9RiThMexhrahiA96m" style="border: none; transform: rotate(0rad);" width="640" /></span></div>
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: white; color: #212121; font-family: &quot;roboto&quot;; font-size: 10pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img height="140" src="https://lh4.googleusercontent.com/5zKe8_4wRB1V-3uVTy-dCwhZD2iTJL1w-gAaOD7JxsShZRHCURuJPwBjsm46A-3oOpER1toCWApaYFTQEfnYK1-fbgOkl-nuWgTlBaKg9wfzxqb4_E1wMmLCJz_5RbAAGg78FXfm" style="border: none; transform: rotate(0rad);" width="640" /></span></div>
+<br />
+<h4>
+Misclassifications</h4>
+</div>
+<div>
+We now turn to images that are misclassified by the Inception network, i.e., where the top five labels assigned by the Inception network are different from the ground truth label provided by the ImageNet dataset. The goal is understand <b>what made the network choose the wrong label</b>? To understand this we visualize the integrated gradients with respect to the top label assigned by the Inception network (i.e., the wrong label).<br />
+<b style="font-weight: normal;"><br /></b>
+<br />
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 11pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img alt="title.jpg" height="25" src="https://lh5.googleusercontent.com/RGxV4TwEzNySNJ3sAOKj0cA5_YVjSQrw5TLJ3V70Q38PrJ2eQZ0yAsGo-YiwQRTu4ywWUOqFM6M6TagwuxeUndDTdP4Aru6l-ma_ToEQouQrNiOK9Rd5tpaKr-b9vC-79GO_1y2o" style="-webkit-transform: rotate(0.00rad); border: none; transform: rotate(0.00rad);" width="624" /></span></div>
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 20pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img alt="861e9130da1f0c34.jpg" height="196" src="https://lh5.googleusercontent.com/LQzvirMd2-MGT91nu-xuafHrZ2zg3z9ps99BSdoLTE2OG9F479Z7FcJDt6sNuPONVa1c7Pdg68oH4OkkMaVF2webiCK10dxmTGgr-ZyYghqpVAjEJoVPFXdC5J4yp6LamJvPQrDN" style="border: none; transform: rotate(0rad);" width="640" /></span><span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 11pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img alt="152ce04bb42aed36.jpg" height="196" src="https://lh6.googleusercontent.com/aNGC9YxtdWopPoMz9LpGBx1n3jG6CJ0LMNZi0TNYXpOdVJb5-fzzRpgaowoRXzPv5KMlFW2q1LNM-2_GRO5BqSH-_7W5UfnHVmGcdrMDfk7sIrePDDgzJ_76bWd_Go0Z-QGPZPX0" style="border: none; transform: rotate(0rad);" width="640" /></span></div>
+<b style="font-weight: normal;"><br /></b>
+<br />
+<div dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;">
+<span style="background-color: transparent; color: black; font-family: &quot;arial&quot;; font-size: 11pt; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"><img alt="8cb79ab87da08e55.jpg" height="196" src="https://lh5.googleusercontent.com/_3ygmBdP2SoDFgTylEWfd3iIaXXDykKLjETHAXeVKZUkbSOxe8vYFDB1fIajbYmupnl4XhqNCr9bBfDeRt_KkQSWs8Uv7UicickYZWyhe9gg4RbirU8r7whIxZ_7jfM4bsvGqmcN" style="border: none; transform: rotate(0rad);" width="640" /></span></div>
+<br />
+<br />
+With the first image, it is clear what went wrong even without examining the integrated gradients. The image does have a strainer, but the ground truth label is about a different object within the image (cabbage butterfly).  In contrast, the second and third images are more mysterious. Inspecting the images alone do not tell us anything about the source of the error. The integrated gradient visualization is clarifying &#8212; it identifies blurry shapes within the image that seem to resemble a walking stick and a vacuum cleaner. Perhaps a fix for these misclassifications is to feed these images as negative examples for the incorrect labels.</div>
+<div>
+<br />
+<h2>
+Properties of Integrated Gradients</h2>
+We use this section to be precise about our problem statement, our method, and its properties. Part of the reason for the rigor is to argue why our method does not introduce artifacts into the attributions, and faithfully reflects the workings of the deep network.<br />
+<h4>
+Attribution Problem</h4>
+<div>
+Formally, suppose we have a function $F: \mathbb{R}^n \rightarrow [0,1]$ that represents a deep network, and an input $x = (x_1,\ldots,x_n) \in \mathbb{R}^n$.  An attribution of the prediction at input $x$ relative to a baseline input $x'$ is a vector $A_F(x, x') = (a_1,\ldots,a_n) \in \mathbb{R}^n$ where $a_i$ is the contribution of $x_i$ to the function $F(x)$.</div>
+<br />
+In our ImageNet example, the function $F$ represents the Inception deep network (for a given output class). The input vector $x$ is simply the image &#8212; if one represents the image in grayscale, the indices of $x$ correspond to the pixels. The attribution vector $a$ is exactly what we visualize in the previous sections.</div>
+<div>
+<br />
+Let us briefly examine the need for the baseline in the definition of the attribution problem.  A common way for humans to perform attribution relies on counterfactual intuition.  When we assign blame to a certain cause we implicitly consider the absence of the cause as a baseline &#8212; would the outcome change if the supposed cause were not present?&nbsp;</div>
+<div>
+<br />
+The attribution scheme for linear models that inspects the weights of the input features has an implicit baseline of an input with no features. The gradient based approach uses a baseline that is a slight perturbation of the original input. Of course, gradients, as we argued earlier, are a poor attribution scheme. Intuitively, the baseline is &#8220;too close&#8221; to the input. For integrated gradients, we will use baselines that are far enough away from the input that they don&#8217;t just focus on the flat region in the sense of the saturation plot shown in the earlier section. We will also ensure that baseline is fairly &#8220;neutral&#8221;, i.e., the predictions for this input are nearly zero. For instance, the black image for an object recognition network. This will allow us to interpret the attributions independent of the baseline as a property of the input alone.</div>
+<h4>
+Integrated Gradients</h4>
+We are now ready to define our method formally. The integrated gradient along the $i^{th}$ dimension for an input $x$ and baseline $x'$ is defined as follows:<br />
+<div>
+$$<br />
+\mathrm{IntegratedGrads}_i(x) ::= (x-x')\times\int_{\alpha=0}^{1}<br />
+\frac{\partial F(x' + \alpha \times(x-x'))}{\partial x_i<br />
+}~d\alpha<br />
+$$</div>
+<div>
+where $\frac{\partial F(x)}{\partial x_i}$ is the gradient of $F$ along the $i^{th}$ dimension at $x$.&nbsp;</div>
+<div>
+<br /></div>
+<div>
+Below we list a number of properties that our method satisfies:</div>
+<div>
+<br />
+<b>Completeness:</b> The attributions from integrated gradients sum to the difference between the prediction scores of the input and the baseline. The proof follows from the famous <a href="https://en.wikipedia.org/wiki/Gradient_theorem">gradient theorem</a>. This property is desirable because we can be sure that the prediction is entirely accounted for. <br />
+<br />
+<b>Linearity preservation:</b> If a network $F$ is a linear combination $a*F_1 + b*F_2$ of two networks $F_1$ and $F_2$, then a linear combination of the attributions for $F_1$ and $F_2$, with weights $a$ and $b$ respectively, is the attribution for the network $F$. The property is desirable because the attribution method preserves any linear logic present within a network. <br />
+<b><br />Symmetry preservation:</b> Integrated gradients preserve symmetry. That is, if the network behaves symmetrically with respect to two input features, then the attributions are symmetric as well. For instance, suppose $F$ is a function of three variables $x_1, x_2, x_3$, and $F(x_1,x_2, x_3) = F(x_2,x_1, x_3)$ for all values of $x_1, x_2, x_3$. Then $F$ is symmetric in the two variables $x_1$ and $x_2$. If the variables have identical values in the input and baseline, i.e., $x_1 = x_2$, and $x'_1 =x'_2$, then symmetry preservation requires that&nbsp;$a_1 = a_2$. This property seems desirable because of the connotation of attributions as blame assignment. Why should two symmetric variables be blamed differently?</div>
+<div>
+<br />
+<b>Sensitivity: </b>We define two aspects of sensitivity.<br />
+<ul>
+<li>(A) If the baseline and the input differ only in one feature, but have different predictions, then this feature gets non-zero attribution.</li>
+<li>(B) If a feature does not play any role in the network, it receives no attributions.</li>
+</ul>
+It is self-evident why we&#8217;d like Sensitivity to hold. Further, notice that the failure of gradients discussed earlier  was essentially a failure to satisfy Sensitivity(A). For instance, suppose we have a simple function $\min(x, 5)$. If the input is $x = 8$ and the baseline is $x'=0$, then difference between the function value at the input and the baseline is $5$, but the gradient at $x=8$ is zero, and therefore the gradient-based attribution is zero. This is a one-variable caricature of what we saw with the object recognition network earlier.<br />
+<br />
+At first glance, these requirements above seem quite basic and we may expect that many methods ought to provably satisfy them. Unfortunately, other methods in literature fall into classes &#8212; they either violate Sensitivity(A) or  they violate an even more basic property, namely they depend on the implementation of the network in an undesirable way. That is, we can find examples where two networks have identical input-output behavior, but the method yields different attributions (due to a difference in the underlying structure of the two networks). In contrast, our method relies only on the functional representation of the network, and not its implementation, i.e., we say that it satisfies "implementation invariance".</div>
+<div>
+<br />
+In contrast, we can show that our method is essentially the unique method to satisfy all the properties listed above (up to certain convex combinations). We invite the interested reader to read <a href="https://arxiv.org/abs/1703.01365">our paper</a>&nbsp;[4], where we have formal descriptions of these properties, the uniqueness result, and comparisons with other methods.</div>
+<div>
+<br />
+<h2>
+Application to other networks</h2>
+Our paper also includes application of integrated gradients to other networks (none of these networks were trained by us). One network is an image network that predicts diabetic retinopathy &#8212; we demonstrate the use of attributions in a user-facing context to help doctors gain some transparency into the network&#8217;s prediction. The second network is a chemistry network that performs virtual screening of drug molecules &#8212; we show how attributions help identify degenerate model features.  A third network categorizes queries in the context of a question-answering system &#8212; we demonstrate the use of attribution to extract human-intelligible rules.</div>
+<div>
+<br />
+A quick checklist on applying our method to your favorite deep network. You will have to resolve three issues:<br />
+<ol>
+<li>Identify a good baseline, i.e., the analog of the black image in our example. This should be treated as neutral by the network, i.e., the prediction score for this input should be nearly zero.</li>
+<li>Identify the right variables to attribute to. This step is trivial for ImageNet. But in a text network the input is usually represented as embeddings. The attributions are then naturally produced in the space of embeddings and some simple processing is needed to map them to the space of terms.</li>
+<li>Find a convenient visualization technique. Our paper&nbsp;[4] has some ideas.</li>
+</ol>
+<br />
+<h2>
+Concluding thoughts</h2>
+This post discusses the problem of identifying input feature importance for a deep network. We present a very simple method, called "integrated gradients", to do this. All it involves is a few calls to a gradient operator. It yields insightful results for a variety of deep networks.<br />
+<br />
+Of course, our problem formulation has limitations. It says nothing about the logic that is employed by the network to combine features. This is an interesting direction for future work. <br />
+<br />
+Our method and our problem statement are also restricted to providing insight into the behavior of the network on a single input. It does not directly offer any global understanding of the network. Other work has made progress in this direction via clustering inputs using the pattern of neuron activations, for instance, [5] or [6]. There is also work (such as <a href="http://gabgoh.github.io/ThoughtVectors/">this</a>)&nbsp;on architecting deep networks in ways that allow us to understand the internal representations of these networks. These are all very insightful. It is interesting to ask if there is a way to turn these insights into guarantees of some form as we do for the problem of feature attribution.</div>
+<div>
+<br />
+Overall, we hope that deep networks lose their reputation for being impenetrable black-boxes which perform black magic. Though they are harder to debug than other models, there are ways to analyze them. And the process can be enlightening and fun!</div>
+<div>
+<div>
+<br /></div>
+<div>
+<br />
+<h3>
+References</h3>
+</div>
+<div>
+<br /></div>
+<div>
+[1] Szegedy, Christian, Liu, Wei, Jia, Yangqing, Sermanet,
+Pierre, Reed, Scott E., Anguelov, Dragomir, Erhan, Dumitru,
+Vanhoucke, Vincent, and Rabinovich, Andrew.
+Going deeper with convolutions. CoRR, 2014.</div>
+<div>
+<br />
+[2] Shrikumar, Avanti, Greenside, Peyton, Shcherbina, Anna,
+and Kundaje, Anshul. Not just a black box: Learning
+important features through propagating activation differences.
+CoRR, 2016.</div>
+<div>
+<br /></div>
+[3] Mukund Sundararajan, Ankur Taly, Qiqi Yan, 2016, "Gradients of Counterfactuals", &nbsp;<a href="https://arxiv.org/abs/1611.02639">arXiv:1611.02639</a></div>
+<div>
+</div>
+<br />
+[4] Mukund Sundararajan, Ankur Taly, Qiqi Yan, 2017, "Axiomatic Attribution for Deep Networks", &nbsp;<a href="https://arxiv.org/abs/1703.01365">arXiv:1703.01365</a><br />
+<br />
+[5]&nbsp;Ian J. Goodfellow, Quoc V. Le, Andrew M. Saxe, Honglak Lee, and Andrew Y. Ng. 2009, "<a href="http://ai.stanford.edu/~hllee/nips09-MeasuringInvariancesDeepNetworks.pdf">Measuring invariances in deep networks</a>". In Proceedings of the 22nd International Conference on Neural Information Processing Systems (NIPS'09), USA, 646-654<br />
+<div>
+<br /></div>
+<div>
+[6] Erhan, Dumitru, Bengio, Yoshua, Courville, Aaron, and
+Vincent, Pascal. "<a href="http://igva2012.wikispaces.asu.edu/file/view/Erhan+2009+Visualizing+higher+layer+features+of+a+deep+network.pdf">Visualizing higher-layer features of a deep network</a>". Technical Report 1341, University of
+Montreal, 2009.</div>
+<div>
+<i><br /></i></div>
+<div>
+<i><br /></i></div>
+<div>
+<i><br /></i></div>
+</div>
+</div>
+<div class='post-bottom'>
+<div class='post-footer float-container'>
+<div class='post-footer-line post-footer-line-1'>
+</div>
+</div>
+<div class='post-share-buttons post-share-buttons-bottom invisible'>
+<div class='byline post-share-buttons goog-inline-block'>
+<div aria-owns='sharing-popup-Blog1-byline-3311282216595193329' class='sharing' data-title='Attributing a deep network’s prediction to its input features'>
+<button aria-controls='sharing-popup-Blog1-byline-3311282216595193329' aria-label='Share' class='sharing-button touch-icon-button' id='sharing-button-Blog1-byline-3311282216595193329' role='button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_share_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='share-buttons-container'>
+<ul aria-hidden='true' aria-label='Share' class='share-buttons hidden' id='sharing-popup-Blog1-byline-3311282216595193329' role='menu'>
+<li>
+<span aria-label='Get link' class='sharing-platform-button sharing-element-link' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Get link'>
+<svg class='svg-icon-24 touch-icon sharing-link'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_link_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Get link</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Facebook' class='sharing-platform-button sharing-element-facebook' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=facebook' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Share to Facebook'>
+<svg class='svg-icon-24 touch-icon sharing-facebook'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_facebook_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Facebook</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Twitter' class='sharing-platform-button sharing-element-twitter' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=twitter' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Share to Twitter'>
+<svg class='svg-icon-24 touch-icon sharing-twitter'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_twitter_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Twitter</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Pinterest' class='sharing-platform-button sharing-element-pinterest' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=pinterest' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Share to Pinterest'>
+<svg class='svg-icon-24 touch-icon sharing-pinterest'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_pinterest_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Pinterest</span>
+</span>
+</li>
+<li>
+<span aria-label='Email' class='sharing-platform-button sharing-element-email' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=3311282216595193329&target=email' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Email'>
+<svg class='svg-icon-24 touch-icon sharing-email'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_email_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Email</span>
+</span>
+</li>
+<li aria-hidden='true' class='hidden'>
+<span aria-label='Share to other apps' class='sharing-platform-button sharing-element-other' data-url='http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html' role='menuitem' tabindex='-1' title='Share to other apps'>
+<svg class='svg-icon-24 touch-icon sharing-sharingOther'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_more_horiz_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Other Apps</span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class='comments threaded' data-embed='true' data-num-comments='3' id='comments'>
+<a name='comments'></a>
+<h3 class='title'>Comments</h3>
+<div class='comments-content'>
+<script async='async' src='' type='text/javascript'></script>
+<script type='text/javascript'>(function(){var g=function(h,E,k){var l=null;h&&0<h.length&&(l=parseInt(h[h.length-1].timestamp,10)+1);var c=null,t=null,x=void 0,y=null,u=(window.location.hash||"#").substring(1),z,A;/^comment-form_/.test(u)?z=u.substring(13):/^c[0-9]+$/.test(u)&&(A=u.substring(1));var F={id:k.postId,data:h,loadNext:function(e){if(l){var f=k.feed+"?alt=json&v=2&orderby=published&reverse=false&max-results=50";l&&(f+="&published-min="+(new Date(l)).toISOString());window.bloggercomments=function(v){l=null;var p=[];if(v&&v.feed&&
+v.feed.entry)for(var B=0,a;a=v.feed.entry[B];B++){var d={},b=/blog-(\d+).post-(\d+)/.exec(a.id.$t);d.id=b?b[2]:null;b=d;a:{var q=void 0;var C=a&&(a.content&&a.content.$t||a.summary&&a.summary.$t)||"";if(a&&a.gd$extendedProperty)for(q in a.gd$extendedProperty)if("blogger.contentRemoved"==a.gd$extendedProperty[q].name){q='<span class="deleted-comment">'+C+"</span>";break a}q=C}b.body=q;d.timestamp=Date.parse(a.published.$t)+"";a.author&&a.author.constructor===Array&&(b=a.author[0])&&(d.author={name:b.name?
+b.name.$t:void 0,profileUrl:b.uri?b.uri.$t:void 0,avatarUrl:b.gd$image?b.gd$image.src:void 0});a.link&&(a.link[2]&&(d.link=d.permalink=a.link[2].href),a.link[3]&&(b=/.*comments\/default\/(\d+)\?.*/.exec(a.link[3].href))&&b[1]&&(d.parentId=b[1]));d.deleteclass="item-control blog-admin";if(a.gd$extendedProperty)for(var w in a.gd$extendedProperty)"blogger.itemClass"==a.gd$extendedProperty[w].name?d.deleteclass+=" "+a.gd$extendedProperty[w].value:"blogger.displayTime"==a.gd$extendedProperty[w].name&&
+(d.displayTime=a.gd$extendedProperty[w].value);p.push(d)}l=50>p.length?null:parseInt(p[p.length-1].timestamp,10)+1;e(p);window.bloggercomments=null};var m=document.createElement("script");m.type="text/javascript";m.src=f+"&callback=bloggercomments";document.getElementsByTagName("head")[0].appendChild(m)}},hasMore:function(){return!!l},getMeta:function(e,f){return"iswriter"==e?f.author&&f.author.name==k.authorName&&f.author.profileUrl==k.authorUrl?"true":"":"deletelink"==e?k.baseUri+"/delete-comment.g?blogID="+
+k.blogId+"&postID="+f.id:"deleteclass"==e?f.deleteclass:""},onReply:function(e,f){null==c&&(c=document.getElementById("comment-editor"),null!=c&&(y=c.style.height,c.style.display="block",t=c.src.split("#")));if(c&&e&&e!==x){document.getElementById(f).insertBefore(c,null);var m=t[0]+(e?"&parentID="+e:"");t[1]&&(m=m+"#"+t[1]);c.src=m;c.style.height=y||c.style.height;x=e;c.removeAttribute("data-resized");c.dispatchEvent(new Event("iframeMoved"))}},rendered:!0,initComment:A,initReplyThread:z,config:{maxDepth:k.maxThreadDepth},
+messages:E};h=function(){window.goog&&window.goog.comments&&window.goog.comments.render(document.getElementById("comment-holder"),F)};window.goog&&window.goog.comments?h():(window.goog=window.goog||{},window.goog.comments=window.goog.comments||{},window.goog.comments.loadQueue=window.goog.comments.loadQueue||[],window.goog.comments.loadQueue.push(h))},n=["blogger","widgets","blog","initThreadedComments"],r=this||self;n[0]in r||"undefined"==typeof r.execScript||r.execScript("var "+n[0]);
+for(var D;n.length&&(D=n.shift());)n.length||void 0===g?r=r[D]&&r[D]!==Object.prototype[D]?r[D]:r[D]={}:r[D]=g;}).call(this);
+</script>
+<script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        null,
+        null,
+        {});
+  </script>
+<div id='comment-holder'>
+<div class="comment-thread toplevel-thread"><ol id="top-ra"><li class="comment" id="c6846531562425657074"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/06656010332760512823" rel="nofollow">dp1080</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html?showComment=1510982774170#c6846531562425657074">November 17, 2017 at 9:26 PM</a></span></div><p class="comment-content">Hello!  I came across this while studying for an interview at google and this concept seems very interesting to me.  I know highly regulated fields like in risk management and medicine (&quot;old fashioned statistic&quot;) are adverse to using neural networking models because they currently are unexplainable in terms of the feature space. Defining metrics like these could go a long way in changing hearts and minds!<br><br>A few constructive feedback pieces I would like to offer if it helps:  <br><br>1) Although noise might be considered meaningless here if the data is large enough, it would be useful to see how your metric infers confidence bounds on neural networks.  Particularly, I would love to see if this constructs a GLM &quot;p-value&quot; of sorts which can gauge the probability that at least the function has a critical point at x_0.<br><br>2) By assuming the function has a gradient it seems you aren&#39;t entirely adverse to believing the function is smooth.  If I were designing this I think I would have come up with something similar actually except I would have used the absolute value of the partial derivative.  Reason being that as I think the neural network is an analytic function (in its classical construction it is a finite composition of sigmoid functions) and showing an analytic function is zero uniformly on any closed curve implies it is zero on the interior.   Have you considered this approach?<br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6846531562425657074">Reply</a><span class="item-control blog-admin blog-admin pid-739130471"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=6846531562425657074">Delete</a></span></span></div><div class="comment-replies"><div id="c6846531562425657074-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6846531562425657074-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c4158330043463647473"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/13602407747938225794" rel="nofollow">mukund</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html?showComment=1511290745703#c4158330043463647473">November 21, 2017 at 10:59 AM</a></span></div><p class="comment-content">Dear dp1080,<br><br>I&#39;d love to have a more detailed chat about what you mean with the stokes theorem references and also the p-value point. It sounds interesting, but I am not able to unpack all of it.  Could we chat over mail (mukunds@google.com)?<br><br>I am happy to update this blog post with a summary of our chat.<br> <br>(1. we have played with absolute values in the past<br>2. ReLU based networks provably satisfy the degree of smoothness we need to run our method.)<br><br>thanks!<br><br><br> </p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-1613412194"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=4158330043463647473">Delete</a></span></span></div><div class="comment-replies"><div id="c4158330043463647473-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4158330043463647473-ra" class="thread-chrome thread-expanded"><div></div><div id="c4158330043463647473-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4158330043463647473">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4158330043463647473-ce"></div></li></div><div id="c6846531562425657074-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6846531562425657074">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6846531562425657074-ce"></div></li><li class="comment" id="c4200616174454866401"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/-j7hX0Kfd6qg/AAAAAAAAAAI/AAAAAAAAADM/XJGLw_pOzUc/s35-c/photo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/15655840352246505075" rel="nofollow">Liwen Ouyang</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html?showComment=1533305578289#c4200616174454866401">August 3, 2018 at 7:12 AM</a></span></div><p class="comment-content">It seems that if one has a more traditional supervised learning problem with a set of features and either numeric or categorical response, this method does not work?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="4200616174454866401">Reply</a><span class="item-control blog-admin blog-admin pid-464993973"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=4200616174454866401">Delete</a></span></span></div><div class="comment-replies"><div id="c4200616174454866401-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c4200616174454866401-ra" class="thread-chrome thread-expanded"><div></div><div id="c4200616174454866401-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="4200616174454866401">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c4200616174454866401-ce"></div></li></ol><div id="top-continue" class="continue"><a class="comment-reply" target="_self">Add comment</a></div><div class="comment-replybox-thread" id="top-ce"></div><div class="loadmore hidden" data-post-id="3311282216595193329"><a target="_self">Load more...</a></div></div>
+</div>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>Post a Comment</h4>
+<a href='https://www.blogger.com/comment-iframe.g?blogID=5825758052688213474&postID=3311282216595193329&skin=contempo&skin=contempo' id='comment-editor-src'></a>
+<iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='90px' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<script src='https://www.blogger.com/static/v1/jsbin/3820394884-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+</p>
+</section>
+</article>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer class='footer section' id='footer' name='Footer'><div class='widget Attribution' data-version='2' id='Attribution1'>
+<div class='widget-content'>
+<div class='blogger'>
+<a href='https://www.blogger.com' rel='nofollow'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_post_blogger_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+Powered by Blogger
+</a>
+</div>
+</div>
+</div></footer>
+</div>
+</div>
+</div>
+<aside class='sidebar-container container sidebar-invisible' role='complementary'>
+<div class='navigation'>
+<button class='svg-icon-24-button flat-icon-button ripple sidebar-back'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_arrow_back_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</button>
+</div>
+<div class='sidebar_top_wrapper no-items'>
+<div class='sidebar_top no-items section' id='sidebar_top' name='Sidebar (Top)'>
+</div>
+</div>
+<div class='sidebar_bottom section' id='sidebar_bottom' name='Sidebar (Bottom)'><div class='widget BlogArchive' data-version='2' id='BlogArchive1'>
+<details class='collapsible extendable'>
+<summary>
+<div class='collapsible-title'>
+<h3 class='title'>
+Archive
+</h3>
+<svg class='svg-icon-24 chevron-down'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_expand_more_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<svg class='svg-icon-24 chevron-up'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_expand_less_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</summary>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<div class='first-items'>
+<ul class='flat'>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2019/04/'>April 2019<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/07/'>July 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/03/'>March 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/01/'>January 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/10/'>October 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/07/'>July 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/04/'>April 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/03/'>March 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/01/'>January 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/10/'>October 2016<span class='post-count'>1</span></a>
+</li>
+</ul>
+</div>
+<div class='remaining-items'>
+<ul class='flat'>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/09/'>September 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/08/'>August 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/07/'>July 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/06/'>June 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/05/'>May 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/03/'>March 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/02/'>February 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/01/'>January 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/12/'>December 2015<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/11/'>November 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/10/'>October 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/09/'>September 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/08/'>August 2015<span class='post-count'>2</span></a>
+</li>
+</ul>
+</div>
+<span class='show-more pill-button'>Show more</span>
+<span class='show-less hidden pill-button'>Show less</span>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</aside>
+<script type="text/javascript" src="https://resources.blogblog.com/blogblog/data/res/1608028642-indie_compiled.js" async="true"></script>
+<script type='text/javascript'>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-66929694-1', 'auto', 'blogger');
+        ga('blogger.send', 'pageview');
+      </script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/640298382-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY7ZEaqCCvxJbFIbCpeulUzfvEBZrA:1556312268736';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d5825758052688213474','//www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html','5825758052688213474');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '5825758052688213474', 'title': 'The Unofficial Google Data Science Blog', 'url': 'http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html', 'canonicalUrl': 'http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html', 'homepageUrl': 'http://www.unofficialgoogledatascience.com/', 'searchUrl': 'http://www.unofficialgoogledatascience.com/search', 'canonicalHomepageUrl': 'http://www.unofficialgoogledatascience.com/', 'blogspotFaviconUrl': 'http://www.unofficialgoogledatascience.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': false, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-66929694-1', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - RSS\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/5825758052688213474/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/3311282216595193329/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/b1e9f650b2e5f9f3', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '3311282216595193329', 'postImageThumbnailUrl': 'https://lh3.googleusercontent.com/OdmC9gir5TIFrk39uuxI92pK4FaXzLyAAi6PO1sLdTJTaR-mPdbdB6owk2IaTfCN3MWHhK7HVAIaVyXZ2Gyzm75bN8QukZFTEA7EZpb20oP9B-M4AeMTY1E3PWsuMDKnTPq3QkJ6\x3ds72-c', 'postImageUrl': 'https://lh3.googleusercontent.com/OdmC9gir5TIFrk39uuxI92pK4FaXzLyAAi6PO1sLdTJTaR-mPdbdB6owk2IaTfCN3MWHhK7HVAIaVyXZ2Gyzm75bN8QukZFTEA7EZpb20oP9B-M4AeMTY1E3PWsuMDKnTPq3QkJ6', 'pageName': 'Attributing a deep network&#8217;s prediction to its input features', 'pageTitle': 'The Unofficial Google Data Science Blog: Attributing a deep network&#8217;s prediction to its input features'}}, {'name': 'features', 'data': {'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': true, 'isAlternateRendering': false, 'isCustom': true, 'variant': 'indie_light', 'variantId': 'indie_light'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Attributing a deep network&#8217;s prediction to its input features', 'description': 'By MUKUND SUNDARARAJAN, ANKUR TALY, QIQI YAN     Editor\x27s note:  Causal inference is central to answering questions in science, engineering ...', 'featuredImage': 'https://lh3.googleusercontent.com/OdmC9gir5TIFrk39uuxI92pK4FaXzLyAAi6PO1sLdTJTaR-mPdbdB6owk2IaTfCN3MWHhK7HVAIaVyXZ2Gyzm75bN8QukZFTEA7EZpb20oP9B-M4AeMTY1E3PWsuMDKnTPq3QkJ6', 'url': 'http://www.unofficialgoogledatascience.com/2017/03/attributing-deep-networks-prediction-to.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 3311282216595193329}}, {'name': 'widgets', 'data': [{'title': 'Search This Blog', 'type': 'BlogSearch', 'sectionId': 'search_top', 'id': 'BlogSearch1'}, {'title': 'The Unofficial Google Data Science Blog (Header)', 'type': 'Header', 'sectionId': 'header', 'id': 'Header1'}, {'title': '', 'type': 'PageList', 'sectionId': 'page_list_top', 'id': 'PageList1'}, {'title': 'Blog Posts', 'type': 'Blog', 'sectionId': 'page_body', 'id': 'Blog1', 'posts': [{'id': '3311282216595193329', 'title': 'Attributing a deep network&#8217;s prediction to its input features', 'featuredImage': 'https://lh3.googleusercontent.com/OdmC9gir5TIFrk39uuxI92pK4FaXzLyAAi6PO1sLdTJTaR-mPdbdB6owk2IaTfCN3MWHhK7HVAIaVyXZ2Gyzm75bN8QukZFTEA7EZpb20oP9B-M4AeMTY1E3PWsuMDKnTPq3QkJ6', 'showInlineAds': false}], 'headerByline': {'regionName': 'header1', 'items': [{'name': 'share', 'label': ''}, {'name': 'timestamp', 'label': ''}]}, 'footerBylines': [{'regionName': 'footer1', 'items': [{'name': 'comments', 'label': 'comments'}]}], 'allBylineItems': [{'name': 'share', 'label': ''}, {'name': 'timestamp', 'label': ''}, {'name': 'comments', 'label': 'comments'}]}, {'type': 'Attribution', 'sectionId': 'footer', 'id': 'Attribution1'}, {'title': '', 'type': 'BlogArchive', 'sectionId': 'sidebar_bottom', 'id': 'BlogArchive1'}]}]);
+_WidgetManager._RegisterWidget('_BlogSearchView', new _WidgetInfo('BlogSearch1', 'search_top', document.getElementById('BlogSearch1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'page_list_top', document.getElementById('PageList1'), {'title': '', 'links': [{'isCurrentPage': false, 'href': 'http://www.unofficialgoogledatascience.com/', 'title': 'Home'}, {'isCurrentPage': false, 'href': 'http://www.unofficialgoogledatascience.com/p/about.html', 'id': '8495885157735034905', 'title': 'About this blog'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'page_body', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1977841774-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar_bottom', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+</script>
+</body>
+</html>

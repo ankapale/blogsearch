@@ -1,0 +1,47 @@
+How to become an analytics rockstar? 
+ I walked in the office with high ambitions and little understanding of what it takes for an analyst to become successful. 
+ The decision to take up the job was based on the fact that some of my college alumni (whom I thought highly of) thought highly about the company and the role. 
+ It took me almost 6 months to understand what is required to achieve success in Analytics industry. It happened only because I had the luxury of some really good mentors and loads of enthusiasm to learn new things.Not every person is lucky to have them early in their career. 
+ While the understanding has obviously evolved over the years, most of my initial learning has stayed. I have obviously practiced and improved these learning during this time. In the remaining article, I’ll outline these success ‘mantras’ for becoming an analytics rockstar. These ‘mantras’ are as effective for a newbie as they are for a seasoned professional. 
+ For sake of better understanding, I have mentioned these in flow of an analytics project: 
+ Achieve flawless business (& business process) understanding 
+ Unless you understand the business, you can not succeed in creating a solution for it. You have to understand the process end to end, why do things happen in the manner they do? What are the alternatives? What are the gaps? What are the opportunities? Are there places where execution differs from intended strategy? Why? 
+ Before starting any project or working on any problem, following are some of the best practices I follow to achieve better business understanding: 
+ Ask, ask and ask until the entire process makes sense and you have all the answers 
+ Draw out the process flow and identify any gaps and opportunities. 
+ If you are new to the area, spend a day on field (or the place of action) to understand the process end to end 
+ Nominate yourself as a customer / business lead to see how the process works for customer. 
+ Share your understanding with business and make sure there is no gap in understanding. Even a whiteboard / paper based discussion is fine. No need of any fancy presentation at this stage 
+ Structure, structure and structure….and then some more structure 
+ Structured thinking and writing is by far the biggest learning for any analyst. I have written an entire article on this before, but can not stop emphasizing it again. Putting a structure helps you deal with open ended business problems and statements like: 
+ How do we keep write-offs from lending portfolio below 3%? 
+ Who are our ideal customers and how much can we invest to acquire them? 
+ The article written before has some best practices mentioned in order to improve structured thinking. Find them here. 
+ Call out your assumptions 
+ Remember to call out your assumptions in doing the analysis. Remember the implicit rate of interest? or the product margin you assumed? All of that needs to be mentioned to the stakeholders and decision makers. 
+ Why is this important? 
+ This is important because you need to tell all the ingredients to your stakeholders. If you do this right, this will help you understand the errors coming in because of wrong assumption vs. gap in framework later on. Especially, in scenarios where you are entering the unknown, you will be able to go back and see what went as per expectation and what did not. 
+ One of the best practice which helps to achieve this is to create a holistic list of assumption in your document / presentation and keep it as ready reference. 
+ List down all the hypothesis and then prove, discard or suspend them 
+ This is the most interesting part for business owners. Some of the answers they would look out for are: 
+ Which business hypothesis stand validated with data / analysis? 
+ Which hypothesis business was not aware of? What opportunity can they translate into? 
+ Which hypothesis stand rejected? What is the impact of these corrections / changes? 
+ In addition to this, list down all the hypothesis you had but have not been able to prove / dis-prove them due to lack of data, time or resources. Decision owners should know the blind spots before taking a decision. 
+ Keep implementation in mind and take business feedback on the solution as early as possible 
+ A solution is only as good as it can be implemented. Hence, keep your business owners in loop on the solution you are proposing. Until they feel excited about the solution, it is unlikely to fly. Following are the best practices to ensure this: 
+ Keep it simple: It is always easy to create the next Pandora’s box with the tools and data. But what would you do if your CRM does not support it? or if there is no campaign management solution? Even if there is, can you create so many segments automatically? More often than not, keeping it simple makes it easy to implement solution. You can always propose that Pandora box in next iteration. 
+ Apply 80 / 20 ruthlessly: If applying 20% of analysis outcome brings in 80% of benefits, apply them and focus on how you can boost these 80% benefits further. 
+ Presentation – What is the story? 
+ All your hard work gets culminated in the way you present it. So, give it the necessary thought space. Nothing beats preparation here. Consider following aspects before you present: 
+ Are you presenting the story (coming out of numbers and analysis) or you are presenting what you did? If you are doing the later, STOP. It won’t help! Even if you have done various pieces of analysis and they don’t fit in the story, don’t present them. Also, if this happens regularly, think about how good was your structure in first place? 
+ Who are you presenting to? What would they be interested in? Have you called out the solution to their needs in this presentation? 
+ Follow the practice: “Tell them – what you will tell them, tell them – tell them, tell them – what you have told them” in structuring your presentation. Start with summary, present the findings and finish with summary of recommendations and benefits from the project. 
+ Learn something new regularly 
+ While, all the ‘mantras’ mentioned above help you become better with every project, this one improves you in long term. Make sure that you spend time learning something new. Analytics is a dynamic, fast paced industry. New software and solutions arrive every alternate month. Spend quality time regularly on your own development and learning. This will set you up for long term success. Here is what I do: 
+ Read for 30 minutes daily before going to bed. 
+ Create a learning group with people from diverse background and share each others learning through the week 
+ If followed in disciplined manner, these ‘mantras’ will become your guide to make sure you are on your path to achieve success. If you know of any other practices which can help analysts accelerate on their path to success, please feel free to share them below. 
+ Kunal is a post graduate from IIT Bombay in Aerospace Engineering. He has spent more than 10 years in field of Data Science. His work experience ranges from mature markets like UK to a developing market like India. During this period he has lead teams of various sizes and has worked on various tools like SAS, SPSS, Qlikview, R, Python and Matlab. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 

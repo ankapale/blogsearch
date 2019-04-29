@@ -1,0 +1,24 @@
+Highlights of 2013 
+ 2013 has been an outstanding year for me personally. Among other things, there have been 2 key highlights for this year: 
+ Becoming a father to the cutest baby (Jenika) in this world; and 
+ Starting up and running Analytics Vidhya 
+ While there is no comparison between the 2, there have been times when I felt that I am raising 2 babies simultaneously. I still remember sitting along side baby incubator (while Jenika was being treated for Jaundice) and scrambling my notes @ 3:00 a.m. in morning to make sure that a post goes out next day. 
+ So while I was creating a collage of Jenika’s photos from 2013, I thought it might be a good idea to quickly reflect on 2013 for Analytics Vidhya and bring out some of the highlights. 
+ Here is what we achieved in 2013: 
+ In the first 8 months of existence, Analytics Vidhya was visited by more than 20,000 unique visitors who made more than 33,000 visits to the blog. 
+ We have published a total of 51 posts till date and are still counting 
+ Our monthly visits has been consistently growing (except for the month when I took ~15 day break and Jenika was born). 
+ I can go on and on….but you get the idea! We are one of the most read blogs in India in Analytics domain. 
+ To summarize, the journey has been extremely fulfilling for me personally and every one involved in creation of Analytics Vidhya. We hope that we have created a difference in life of several analysts and the larger analytics community. 
+ We thank our audience for their engagement, feedback and comments and hope that we have contributed to their Analytics learning in some way or the other. For those of you, who might have missed some of the awesome articles and discussions we have had, following are the key articles we posted on various topics: 
+ The sheer number of articles in this list is just a representation of the effort and quality time we have spent creating Analytics Vidhya. We hope that we have created enormous value for our audience and would continue to do so in 2014. 
+ If you have any suggestions, feedback, instances how Analytics Vidhya helped you or what you would want more out of Analytics Vidhya please let us know. As always, we are eager to listen from you. 
+ Wishing a Happy and Properous New Year to all our audience, team members and patrons. 
+ Kunal is a post graduate from IIT Bombay in Aerospace Engineering. He has spent more than 10 years in field of Data Science. His work experience ranges from mature markets like UK to a developing market like India. During this period he has lead teams of various sizes and has worked on various tools like SAS, SPSS, Qlikview, R, Python and Matlab. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 6 Comments 
+ This is great progress 🙂
+And it is heartening to see such a quality platform being built in India. Hope to see AnalyticsVidhya add many more feathers to its cap n 2014 and become StackOverflow of Analytic community globally! 
+ This is tremendous progress and helps all those who are seeking carrier in Analytic s at one platform. The articles are really useful and helps to refresh your thoughts. Kudos to Kunal for regularly publishing these articles …………….. 
+ I just came across your website, while searching for Analytics courses online. I am pursuing MBA at IIFT Delhi. I will be graduating in 2014 March. I am very interested in pursuing a career in Business Analytics. I am planning to apply to University of Cincinnati, Masters in Analytics program…one year course.. I would like to know your thoughts regarding the same. 
+ 

@@ -1,0 +1,7 @@
+Feb 23 Criminals are Working on Exploiting Artificial Intelligence 
+ You check your voicemail – it’s your daughter, panicking, garbled. She’s travelling, away on her gap year. You’ve had a series of emails from her – she’s lost her phone and money, she needs help. Now, you’re tech savvy; you’re not easy to con. But this is her – her voice. You wire the money. 
+ However, across the world, a thousand other parents have received their own personalised emails and voicemails. A criminal’s algorithm has scraped social media for holiday videos and photos and created finely-targeted, tailor-made messages. The voice on your phone was synthesised. This was all done at low cost with minimal human labour, through the use of artificial intelligence. 
+ AI has recently made significant progress, which unfortunately also make scenarios like the one above increasingly plausible. 
+ But as our new report, released today, makes clear, AI technology is ‘dual-use.’ While it will be used to benefit society in many ways, it can and will also be used maliciously. Criminals, terrorists and rogue states will exploit these powerful tools to harm people. We must explore ways to more systematically forecast, prevent, and mitigate these malicious uses. 
+ You check your voicemail – it’s your daughter, panicking, garbled. She’s travelling, away on her gap year. You’ve had a series of emails from her – she’s lost her phone and money, she needs help. What happened? 
+ 

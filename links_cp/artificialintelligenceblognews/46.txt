@@ -1,0 +1,8 @@
+Jan 29 Why Artificial Intelligence is the New Electricity 
+ Just as electricity transformed almost everything 100 years ago, today I actually have a hard time thinking of an industry that I don’t think AI will transform in the next several years. 
+ — Andrew Ng 
+ Electricity changed how the world operated. It upended transportation, manufacturing, agriculture, healthcare. AI is poised to have a similar impact, he says. Information technology, web search, and advertising are already being powered by artificial intelligence. It decides whether we’re approved for a bank loan. It helps us order a pizza and estimate our wait time, and even tells the driver where to deliver it. Other areas ripe for AI impact: fin-tech, logistics, healthcare, security, and transportation. 
+ Andrew Ng Video 
+ Artificial intelligence already powers many of our interactions today. When you ask Siri for directions, peruse Netflix’s recommendations, or get a fraud alert from your bank, these interactions are led by computer systems using large amounts of data to predict your needs. 
+ The market is only going to grow. By 2020, research firm IDC predicts, AI will help drive worldwide revenues to over $47 billion, up from $8 billion in 2016. 
+ 

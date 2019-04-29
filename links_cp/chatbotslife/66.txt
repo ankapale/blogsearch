@@ -1,0 +1,63 @@
+Chatbots 
+ Origins 
+ Alan Turing, for more than one a God and from my point of view was the one who triggers this actual concept of machines. It was during 50’s when Turing postulate Turing Test. It was theoretical postulate only and as It’s own concept was lacking of variables we have now, nevertheless, It was one of first human being asking himself if we can determine if a machine is actually behaving as one or most like a human. 
+ It was 1966 and a MIT professor called Joseph Weizenbaum, came up with ELIZA. This bot was able to start a conversation and simulate a Rogerian psychotherapy by most of the cases rephrasing client’s statements. 
+ But everything changed with SmarterChild, why? basically because It changed a little bit the way a bot was perceive. Before, bots was for entertaining only, this bot was able to help you in different ways, like movies or appointments. 
+ The older chatbots just compared patterns and that was everything, they build an answer based on patterns. Now, a bot can analyze data and elaborate an intelligent answer within learning included. This is where it gets interesting … 
+ What is? 
+ All chatbots are powered by NLP (Natural Language Processing), nevertheless, that only allow to us to understand/process inputs, the tricky part is when we answer to those questions, we need real big data. 
+ In other words by it’s own conception, chatbots are useful without a good database where we can process and give an extra value to chatbots. A chatbot without big data is like an app that just show information, it just consumes memory and phone resources without a good unique value. 
+ So, chatbots have use machine learning to process users inputs, this learning can be supervised or unsupervised, everything resumes un patterns which are processed by neuronal networks, which can detect patterns and learn from this. But machine learning is a topic we can go though later. 
+ At the time we tech/feed that chatbot data, more valuable it becomes. Let’s say you have a e-commerce company, with a good chatbot, you can get reports really easily by asking something like: 
+ What is my projection in the next 2 years ? 
+ What has been my revenue this month ? 
+ What is the most buyed item ? 
+ Give me the email of our most recurrent buyer. 
+ To answer that question a chatbot will have to go and processed some big data. That’s the importance of a database well fed. 
+ A human is totally able to do what a chatbot is capable to do, at the end of the day, we want to make our lives easier, don’t we? Who wants to perform a search for hours when you can only ask for something. 
+ Future of Marketing 
+ Why? 
+ Navigation Assistant 
+ Automatic Responses 
+ Reactive Communication 
+ Recommendations 
+ Receive Orders 
+ Visit Registration 
+ Clients Monitoring 
+ Engagement beyond clicks 
+ What are the benefits of chatbots overall 
+ Reduction of operating costs and moderation. 
+ Increase in response rate 
+ Support 24/7 
+ Telemarketing savings. 
+ Increase in service during peak hours. 
+ Automation and simplification of sales 
+ Improvement of the customer experience (CX) 
+ Musts 
+ Having a chatbot is a continuous work (like everything in this life), but there is always some rules you have to consider if you want to have a good and realistic chatbot. 
+ It has to sound familiar, like a human been, you can see this approach like easy/difficult, but It’s very important, people have to feel like they are talking with a real person, so, an identity and personality (artificial) for a chatbot is crucial. So, Does it have to be funny, introverted, friendly ? Your choice. 
+ You have to give people reasons to comeback and use your bot again, create a necessity. That’s why it’s important to create a familiar environment. 
+ To continuous improvement on your chatbot you must check logs and look for user needs, and make your chatbot learning faster. 
+ It’s important to create all basics for your bot, it’s like to create a building, you first have to put all the foundations. 
+ Before start a chatbot 
+ Objetive 
+ Make a realistic scope of your bot, so, you can have a metrics and check how is your bot going on. 
+ Personality 
+ Give to you bot a personality, just like we talked before, It’ll be nice people talk about you bot with specific characteristics and a differentiator from others. 
+ Solution 
+ What your bot will solve for your end users. It as to be a key differentiator for your clients. 
+ Lifecycle 
+ The most important part. What is the workflow of your bot, what is the beginning and what’s the end. 
+ As you see all those points depend on each other, so It’s important to have all of them well described and decided. Then you are ready to start your bot. 
+ I’m a developer 
+ If you are a developer like me, and you want to start digging into this obscure world, there are some tools that right now does the NLP for you: 
+ Cloud Natural Language API — Google 
+ Cognitive Services APIs — Microsoft 
+ Watson Conversation — IBM 
+ Free for all (for now): 
+ API.AI — Google 
+ Wit.ai — Facebook 
+ Those tools can help you to create a cool chatbot. At 4Geeks we have used API.AI to play with our Google Home. It’s easy and funny. 
+ So, as you can see there is a list of benefits and and todo-list before start with you chatbot, but, the most important part of this is to have a cool chatbot with excellent data and a well defined goal. I argue you to comment and contribute by adding more and more info. 
+ If you are asking if there is something more and more deep I want to invite you to be in touch, cause later, I will talk about how to create a Neurologic Network with Python to create the basics of a custom bot with self learning. 
+ 

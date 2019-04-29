@@ -1,0 +1,65 @@
+20 February 2010 
+ In the context of something completely unrelated, I was looking for a fairly general pattern in the Google 1TB corpus. In particular, I was looking for verbs that are sort of transitive. I did a quick grep for 5grams of the form "the SOMETHING BLAHed the SOMETHING." Or, more specifically: 
+ grep -i '^the [a-z][a-z]* [a-z][a-z]*ed the [a-z]*' 
+ I then took these, lower cased them, and then merged the counts. Here are the top 25, sorted and with counts: 
+ 1 101500 the surveyor observed the use 2 30619 the rivals shattered the farm 3 27999 the link entitled the names 4 22928 the trolls ambushed the dwarfs 5 22843 the dwarfs ambushed the trolls 6 21427 the poet wicked the woman 7 15644 the software helped the learning 8 13481 the commission released the section 9 12273 the mayor declared the motion 10 11046 the player finished the year 11 10809 the chicken crossed the road 12 8968 the court denied the motion 13 8198 the president declared the bill 14 7890 the board approved the following 15 7848 the bill passed the house 16 7373 the fat feed the muscle 17 7362 the report presented the findings 18 7115 the committee considered the report 19 6956 the respondent registered the domain 20 6923 the chairman declared the motion 21 6767 the court rejected the argument 22 6307 the court instructed the jury 23 5962 the complaint satisfied the formal 24 5688 the lord blessed the sabbath 25 5486 the bill passed the senate 
+ What the heck?! First of all, the first one is shocking, but maybe you could convince me. How about numbers 4 and 5? "The trolls ambushed the dwarfs" (and vice versa)? These things are the fourth and fifth most common five grams matching my pattern on the web? "The poet wicked the woman"? What does "wicked" even mean? And yet these all beat out "The bill passed the house" and "The court instructed the jury". But then #23: "The prince compiled the Mishna"??? (#30 is also funny: "the matrix reloaded the matrix" is an amusing segmentation issue.) 
+ If we do a vanilla google search for the counts of some of these, we get: 
+ 1 10900 the surveyor observed the use 4 7750 the trolls ambushed the dwarfs 5 7190 the dwarfs ambushed the trolls 6 ZERO! the poet wicked the woman 15 20200000 the bill passed the house 22 3600000 the court instructed the jury 
+ This just flabbergasts me. I'm told that lots of people have expressed worries over the Google 1TB corpus, but have never actually heard anything myself... And never seen anything myself. 
+ Does anyone have an explanation for these effects? How can I expect to get anything done with such ridiculous data! 
+ 17 February 2010 
+ I come from a tradition of not really believing in word senses. I fondly remember a talk Ed Hovy gave when I was a grad student. He listed the following example sentences and asked each audience member to group them in to senses: 
+ John drove his car to work. 
+ We dove to the university every morning. 
+ She drove me to school every day. 
+ He drives me crazy. 
+ She is driven by her passion. 
+ He drove the enemy back. 
+ She finally drove him to change jobs. 
+ He drove a nail into the wall. 
+ Bill drove the ball far out into the field. 
+ My students are driving away at ACL papers. 
+ What are you driving at? 
+ My new truck drives well. 
+ He drives a taxi in New York. 
+ The car drove around the corner. 
+ The farmer drove the cows into the barn. 
+ We drive the turnpike to work. 
+ Sally drove a golf ball clear across the green. 
+ Mary drove the baseball with the bat. 
+ We drove a tunnel through the hill. 
+ The steam drives the engine in the train. 
+ We drove the forest looking for game. 
+ Joe drove the game from their hiding holes. 
+ Most people in the audience came up with 5 or 6 senses. One came up with two (basically the physical versus mental distinction). According to wordnet, each of these is a separate sense. (And this is only for the verb form!) A common "mistake" people made was to group 1, 2, 3, 13 and 14, all of which seem to have to do with driving cars. The key distinction is that 1 expresses the operation of the vehicle, 2 expresses being transported, 3 expresses being caused to move and 13 expresses driving for a job. You can read the full WordNet descriptions if you don't believe me. 
+ Now, the point of this isn't to try to argue that WordNet is wacky in any way. The people who put it together really know what they're talking about. After all, these senses are all really different, in the sense there really is a deep interprative difference between 1, 2, 3 and 13. It's just sufficiently subtle that unless it's pointed out to you, it's not obvious. There's been a lot of work recently from Ed and others on "consolidating" senses in the OntoNotes project: in fact, they have exactly the same example (how convenient) where they've grouped the verb drive in to seven senses, rather than 22. These are: 
+ operating or traveling via a vehicle (WN 1, 2, 3, 12, 13, 14, 16) 
+ force to a position or stance (WN 4, 6, 7, 8, 15, 22) 
+ exert energy on behalf of something (WN 5, 10) 
+ cause object to move rapidly by striking it (WN 9, 17, 18) 
+ a directed course of conversation (WN 11) 
+ excavate horizontally, as in mining (WN 19) 
+ cause to function or operate (WN 20) 
+ Now, again, I'm not here to argue that these are better or worse or anything in comparison to WordNet. 
+ The point is that there are (at least) two ways of explaining the wide senses of a word like "drive." One is through senses and this is the typical approach, at least in NLP land. The other is metaphor (and yes, that is a different Mark Johnson). I'm not going to go so far as to claim that everything is a metaphor, but I do think it provides an alternative perspective on this issue. And IMO, alternative perspectives, if plausible, are always worth looking at. 
+ Let's take a really simple "off the top of my head" example based on "drive." Let's unrepentantly claim that there is exactly one sense of drive. Which one? It seems like the most reasonable is probably OntoNotes' sense 2; Merriam-Webster claims that drive derives from Old-High-German "triban" which, from what I can tell in about a five minute search, has more to do with driving cattle than anything else. (But even if I'm wrong, this is just a silly example.) 
+ Obviously we don't drive cars like we drive cattle. For one, we're actually inside the cars. But the whole point of driving cattle is to get them to go somewhere. If we think of cars as metaphorical cattle, then by operating them, we are "driving" them (in the drive-car sense). 
+ These are mostly literal. However, for "drive a nail", we need to think of the nail as like a cow that we're trying to get into a pen (the wall). 
+ This is, I think, the most clear metaphorical usage. "He is driving away at his thesis" really means that he's trying to get his thesis to go somewhere (where == to completion). 
+ Driving balls is like driving cattle, except you have to work harder to do it because they aren't self-propelled. This is somewhat like driving nails. 
+ "What are you driving at" is analogous to driving-at-thesis to me. 
+ "Drive a tunnel through the mountain" is less clear to me. But it's also not a sense of this word that I think I have ever used or would ever use. So I can't quite figure it out. 
+ "Steam drives an engine" is sort of a double metaphor. Engine is standing in for cow and steam is standing in for cowboy. But otherwise it's basically the same as driving cattle. 
+ Maybe this isn't the greatest example, but hopefully at least it's a bit thought-worthy. (And yes, I know I'm departing from Lakoff... in a Lakoff style, there's always a concrete thing and a non-concrete thing in the Lakoff setup from what I understand.) 
+ This reminds me of the annoying thing my comrades and I used to do as children. "I come from a tradition..." Yields "You literallycome from a tradition?" (No, I was educated in such a tradition.... although even that you could ask whether I was really inside a tradition.) "A talk Ed Hovy gave..." Yields "Ed literallygave a talk?" (No, he spoke to an audience.) "I drove the golf ball across the field" Yields "You got in the golf ball and drove it across the field?" Sigh. Kids are annoying. 
+ Why should I care which analysis I use (senses or metaphor)? I'm not sure. It's very rare that I actually feel like I'm being seriously hurt by the word sense issue, and it seems that if you want to use sense to do a real task like translation, you have to depart from human-constructed sense inventories anyway. 
+ But I can imagine a system roughly like the following. First, find the verb and it's frame and true literal meaning (maybe it actually does have more than one). This verb frame will impose some restrictions on its arguments (for instance, drive might say that both the agent and theme have to be animate). If you encounter something where this is not true (eg., a "car" as a theme or "passion" as an agent), you know that this must be a metaphorical usage. At this point, you have to deduce what it must mean. That is, if we have some semantics associated with the literal interpretation, we have to figure out how to munge it to work in the metaphorical case. For instance, for drive, we might say that the semantics are roughly "E = theme moves & E' = theme executes E & agent causes E'" If the patient cannot actually execute things (it's a nail), then we have to figure that something else (eg., in this case, the agent) did the actual executing. Etc. 
+ So it seems like the options are: come up with semantics and frames for every sense (this is what's done, eg., in VerbNet). Or, have a single (or small number) of semantics and frames and have some generic rules (hopefully generic!) for how to derive metaphorical uses from them. 
+ 07 February 2010 
+ I started this blog ages ago while still in grad school in California at USC/ISI. It came with me three point five years ago when I started as an Assistant Professor at the University of Utah. Starting some time this coming summer, I will take it even further east: to CS at the University of Maryland where I have just accepted a faculty offer. 
+ These past (almost) four years at Utah have been fantastic for me, which has made this decision to move very difficult. I feel very lucky to have been able to come here. I've had enormous freedom to work in directions that interest me, great teaching opportunities (which have taught me a lot), and great colleagues. Although I know that moving doesn't mean forgetting one's friends, it does mean that I won't run in to them in hallways, or grab lunch, or afternoon coffee or whatnot anymore. Ellen, Suresh, Erik, John, Tom, Tolga, Ross, and everyone else here have made my time wonderful. I will miss all of them. 
+ The University here has been incredibly supportive in every way, and I've thoroughly enjoyed my time here. Plus, having world-class skiing a half hour drive from my house isn't too shabby either. (Though my # of days skiing per year declined geometrically since I started: 30-something the first year, then 18, then 10... so far only a handful this year. Sigh.) Looking back, my time here has been great and I'm glad I had the opportunity to come. 
+ That said, I'm of course looking forward to moving to Maryland also, otherwise I would not have done it! There are a number of great people there in natural language processing, machine learning and related fields. I'd like to think that UMD should be and is one of the go-to places for these topics, and am excited to be a part of it. Between Bonnie, Philip, Lise, Mary, Doug, Judith, Jimmy and the other folks in CLIP and related groups, I think it will be a fantastic place for me to be, and a fantastic place for all those PhD-hungry students out there to go! Plus, having all the great folks at JHU's CLSP a 45 minute drive a way will be quite convenient. 
+ A part of me is sad to be leaving, but another part of me is excited at new opportunities. The move will take place some time over the summer (carefully avoiding conferences), so if I blog less then, you'll know why. Thanks again to everyone who has made my life here fantastic. 
+ 

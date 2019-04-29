@@ -1,0 +1,5 @@
+About 
+ My name is Denny Britz. In the past, I was a resident on the Google Brain team where I worked o NLP problems such as Machine Translation, Conversational Modeling, and Summarization. I studied Computer Science at Stanford University, where I worked on probabilistic models for Information Extraction, and UC Berkeley, where I worked on a popular cluster-computing framework called Spark. 
+ I started WildML to share my excitement about Deep Learning. I am still learning myself, but I found that writing posts and tutorials is the best way to deepen my own understanding. Topics I am currently excited about are Natural Language Understanding and Reinforcement Learning, so these will account for most of the posts on here. 
+ I also have a personal blog where I write about startups, software engineering, and life in general. I enjoy traveling and I’ve lived in Asia (Japan, South Korea, Thailand) for several years. I am happy to help in any way I can so don’t hesitate to get in touch! 
+ 

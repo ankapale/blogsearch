@@ -1,0 +1,3 @@
+Niara 
+ Niaras security analytics platform automates the detection of attacks within organizations by applying advanced machine learning to network and security data. By combining big data technologies with machine intelligence and forensics, Niara surfaces attacks that have evaded real-time defense systems and accurately discovers compromised users and malicious insiders, speeds threat hunting efforts, and reduces the time for incident investigation and response by focusing security teams on the threats that matter. For more information, visit www.niara.com. 
+ 

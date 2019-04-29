@@ -1,0 +1,3 @@
+JBoss Developer 
+ JBoss, by Red Hat, is the leader in enterprise-class open source middleware. JBoss Enterprise Middleware is comprised of certified, supported platform and framework distributions that are based on JBoss Community projects. 
+ 

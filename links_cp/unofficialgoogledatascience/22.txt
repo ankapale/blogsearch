@@ -1,0 +1,5 @@
+Posts 
+ In the previous post we looked at how large scale online services (LSOS) must contend with the high coefficient of variation (CV) of the observations of particular interest to them. In this post we explore why some standard statistical techniques to reduce variance are often ineffective in this “data-rich, information-poor” realm. 
+ Despite a very large number of experimental units, the experiments conducted by LSOS cannot presume statistical significance of all effects they deem practically significant. We previously went into some detail as to why observations in an LSOS have particularly high coefficient of variation (CV). The result is that experimenters can’t afford to be sloppy about quantifying uncertainty. Estimating confidence intervals with precision and at scale was one of the early wins for statisticians at Google. It has remained an important area of investment for us over the years. 
+ Given the role played by the variability of the underlying observations, the fi… 
+ 

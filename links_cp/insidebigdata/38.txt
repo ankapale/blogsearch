@@ -1,0 +1,5 @@
+As the rapid rise in the number of mobile devices and users creates an explosion in data and virtual machine instances, datacenter transformation becomes imperative for many enterprises. It is essential enterprises move to consolidate resources and cut both capital and operating costs while still providing support for distributed applications. 
+ This brief white paper delves into a Q&A with Eric Sheppard, research director of IDCs Storage Software program, on integrated systems and whether you should buy compute, network, and storage resources together. Read on as you will discover: 
+ What integrated systems are, and its benefits 
+ The differences between an integrated platform and integrated infrastructure 
+ 

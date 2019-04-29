@@ -1,0 +1,21 @@
+Search This Blog 
+ Welcome to the unofficial Google data science blog 
+ Despite Google’s technical achievements with big data, it may come as a surprise that there is no official Google blog for data science. True, Google Research puts out many academic papers and has a blog describing matters of interest to researchers. But what has been missing to date is a conversation about the nuts-and-bolts, the day-to-day of large scale analytical systems Google builds to serve its users. 
+ We’d like to change that. We are a group of individuals from across several engineering teams at Google whose job it is to design and build the analytics used in Google’s products and services. While most of us have PhDs in statistics, machine learning or a related field, ours is not a blog aimed at academia. We’ll provide academic references if necessary, but we mean for this to be a practitioners’ blog. At the same time, the problems we face are often complex enough to require highly technical solutions in statistics and computation. Thus many of our posts might not be suited to the casual business analyst. Our intended audience is other data scientists in industry, as well as students who wish to pursue such a career. 
+ Of course, this somewhat begs the question: what is this field we are calling “data science”? We don’t presume to define its contours and, besides, others may possess greater wit. All we know is that there is an emerging discipline at the nexus of statistics, machine learning and computation which seeks to derive inference from data too big to fit on a single computer (aka “big data”). We know because this is the solution space of most business problems we are tasked to solve in our daily professional lives. 
+ This is not an official Google blog to communicate with users about Google's products and policies. This blog does not speak for Google and will not articulate Google's position on anything. Rather, our goal here is to contribute as data professionals to the ongoing discourse around the nascent field we might as well call “data science”. We’d like to do this by communicating what we’ve learned, what we’ve failed to learn and how we are searching for answers. Our authentic experiences, be they good, bad, or ugly. 
+ To give you a sense of the kind of material you can expect from us, here is a partial list: 
+ experiment design for large, sparse data 
+ streaming algorithms for statistical inference 
+ machine learning models we have found useful 
+ analysis methodologies we've invented/reinvented/repurposed that proved particularly effective for us 
+ when standard statistical methods work even better for big data 
+ when standard statistical methods fail and need to be tweaked 
+ practices which we have found to make data scientists more effective 
+ our experience towards building successful data science teams 
+ the business context within which all our technical problems exist 
+ On that last point: we strongly believe that the analytical problems of data science must be situated in actual business decisions. Over time, we hope to provide some insight into our business context as it connects with our methodologies, culture and way of thinking. 
+ Ideally, we’d like for this to be a conversation. We encourage you to tell us what you found particularly useful or interesting, or how you could improve upon an approach we describe. We’re in this together, this brave new world of data science. 
+ really nice thanks, this is very exciting because i recently begin my master on computer sciencie and im searching for material, topics of ML data science NLP that topics are very actual and kind of exciting to my. 
+ The material being presented is quite interesting! Would it be possible to also provide more interactive material so we can play around with the ideas and lessons you learned? For example, Peter Norvig occasionally uses Jupyter notebooks (e.g. http://nbviewer.ipython.org/url/norvig.com/ipython/Probability.ipynb). Having something like this would really make your blog posts come alive! 
+ 

@@ -1,0 +1,31 @@
+Welcome to Analytics Vidhya! 
+ For those of you, who are wondering what is “Analytics Vidhya”, “Analytics” can be defined as the science of extracting insights from raw data. The spectrum of analytics starts from capturing data and evolves into using insights / trends from this data to make informed decisions. “Vidhya” on the other hand is a Sanskrit noun meaning “Knowledge” or “Clarity on a subject”. Knowledge, which has been gained through reading literature or through self practice / experimentation. 
+ Through this blog, I want to create a passionate community, which dedicates itself in study of Analytics. I share my learning and tips on Analytics through this blog. 
+ Why study Analytics? 
+ With growing data and complexity, data analytics will become a competitive advantage for companies doing it well. Have you ever wondered how social networking sites like Facebook and Linkedin can suggest you friends in near time? How can Google use its search query data to identify areas under pandemic influence? How can a grocery store predict pregnancy of its customer even before it was known to her family? 
+ All of these are examples of analytics at work in real time. And this is just the start. With increasing usage of mobile devices and digitization across the globe, advantages of investing in cutting edge analytics are unlimited. 
+ According to Harvard Business Review (October 2012 edition), job of a data scientist is the sexiest job of 21st century. If you are still not convinced, look at some of the trends on Business Analytics related keywords (as per Google Trends): 
+ How can this blog help? 
+ While the need for analytics experts is clear, the shortage is shocking! 
+ According to theMcKinsey Global Institute (In a May 2011 report): “By 2018, the United States alone could face a shortage of 140,000 to 190,000 people with deep analytical skills as well as 1.5 million managers and analysts with the know-how to use the analysis of big data to make effective decisions.” 
+ Imagine what would be the number across the globe… 
+ While this blog would not be able to cover shortfall of this magnitude, it can certainly provide resources for people willing to learn the subject. 
+ What can you find on this blog? 
+ I aim to provide as many resources as possible for learning analytics. These resources include: 
+ Training and tutorials: Stuff to get you going 
+ Tips and tricks related to Business Analytics and Business Intelligence tools 
+ Case studies: Case studies of problems and their analytical solutions 
+ Interviews of Business Analytics & Business Intelligence leaders 
+ Who am I? 
+ I am Kunal Jain, a post graduate from IIT Bomaby in Aerospace Engineering. I have spent more than 6 years in field of Business Analytics. My work experience ranges from mature markets like UK to a developing market like India. Over last 3 years, I have been instrumental in setting up a Business Analytics & Intelligence team in a multi national Insurance company. During these 6 years, I have worked with tools like SAS, SPSS, Qlikview, R and Matlab. For any queries ir questions, please feel free to reach out to me on [email protected] 
+ Like this: 
+ Related Articles 
+ Kunal is a post graduate from IIT Bombay in Aerospace Engineering. He has spent more than 10 years in field of Data Science. His work experience ranges from mature markets like UK to a developing market like India. During this period he has lead teams of various sizes and has worked on various tools like SAS, SPSS, Qlikview, R, Python and Matlab. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ I need your guidance relating to my careere in analytics.I am postgraduate in stat.I have nearly 6 years of total experiance.But out of 6.5,5 years I have given to analytical testing and 7 months back I have joined an analytics company.Now having nearly 6 years of experiance my new company is expecting more from me from analytics perspective.but in this total years I have lost my confidence and touch in analytics. 
+ I need your guidance how do I cope up with my new companies expectation.How can I improve my self and gain confidence that I can do anything which will come on my way.
+Also wanted to know what is expectation of a company from a employee who has 6 years of experiance in anaytics,by this I mean to say which techniques and what level of details of the same is expected. 
+ As long as you can back up yourself – you are in good stead. You are one of the few lucky people to be part of this industry. There are a lot of people who want to get into analytics, but an’t get a break. 
+ As far as learning is required – I would say start from data science specialization courses or Statistics1 course available on sas.com Make sure you spend 1 -2 hours daily with some more time over weekends and you will be up to speed before you realize. 
+ It is difficult to answer the expectation as it might vary from company to company and role to role. You can be a specialist in a few techniques (e.g. risk modeling) or you can be some one who has worked across several peoblems and industries. 
+ 

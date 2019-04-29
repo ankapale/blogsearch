@@ -1,0 +1,119 @@
+14 October 2011 
+ If you're an NLP or ML person and graduating in the next six months or so and are looking for a postdoc position with very very open goals, read on. The position would be at UMD College Park, in the greater DC area, with lots of awesome people around (as well as JHU and other universities a short drive/train away). 
+ This position could start as early as January 2012, probably more likely around June 2012 and could be as late as September 2012 for the right person. Even if you're not graduating until the one-year-from-now time frame, please contact me now! I'm looking more for a brilliant, hard-working, creative person than anyone with any particular skills. That said, you probably know what sort of problems I tend to work on, so it would be good if you're at least interested in things roughly in that space (regardless of whether you've worked on them before or not). 
+ The position would be for one year, with an extension to two if things are working out well for both of us (not subject to funding). 
+ If you're interested, please email me at postdoc@hal3.name with the following information: 
+ 11 October 2011 
+ As Daniel Hsu and John Langford pointed out recently,
+there has been a lot of recent progress in active learning. This is to
+the point where I might actually be tempted to suggest some of these
+algorithms to people to use in practice, for instance the one John has
+that learns faster than supervised learning because it's very careful
+about what work it performs. That is, in particular, I might suggest
+that people try it out instead of the usual query-by-uncertainty (QBU)
+or query-by-committee (QBC). This post is a brief overview of what I
+understand of the state of the art in active learning (paragraphs 2 and
+3) and then a discussion of why I think (a) researchers don't tend to
+make much use of active learning and (b) why the problem is far from
+solved. (a will lead to b.) 
+ For those who know what QBU and QBC are, skip
+this paragraph. The idea with QBU is exactly what you think: when
+choosing the next point to as for the label of, choose the one on which
+your current model is maximally uncertain. If you're using a
+probabilistic model, this means something like "probability is closest
+to 0.5," or, in the non-binary case, something like "highest entropy of
+p(y|x)." If you're using something like an SVM, perhaps margin (aka
+distance to the hyperplane) is a reasonable measure of uncertainty. In
+QBC, the idea is still to query on uncertain points, but the uncertainty
+is computed by the amount of agreement among a committee of
+classifiers, for instance, classifiers trained in a boostrap manner on
+whatever data you have previously labeled. 
+ One of the issues with QBU and QBC and really a lot
+of the classic methods for active learning is that you end up with a
+biased set of training data. This makes it really hard to prove
+anything about how well your algorithm is going to do on future test
+examples, because you've intentially selected examples that are not
+random (and probably not representative). One of the "obvious in
+retrospect" ideas that's broken this barrier is to always train your
+classifier on all examples: the label for those that you've
+queried on is given by the human, and the label for those that you
+haven't queried on is given by your model from the previous iteration.
+Thus, you are always training on an iid sample from the
+distribution you care about (at least from a p(x) perspective). This
+observation, plus a lot of other work, leads to some of the
+breakthroughs that John mentions. 
+ An easy empirical observation is that not many people
+(in my sphere) actually use active learning. In fact, the only case
+that I know of was back in 2004 where IBM annotated extra coreference
+data for the Automatic Content Extraction (ACE) challenge using active
+learning. Of course people use it to write papers about active
+learning, but that hardly counts. (Note that the way that previously
+learned taggers, for instance the Brill Tagger, were used in the
+construction of the Penn Treebank does not fall under the auspices of
+active learning, at least as I'm thinking about it here.) 
+ It is worth thinking about why this is. I think that
+the main issue is that you end up with a biased training set. If you
+use QBC or QBU, this is very obvious. If you use one of the new
+approaches that self-label the rest of the data to ensure that you don't
+have a biased training set, then of course p(x) is unbiased, but p(y|x)
+is very biased by whatever classifier you are using. 
+ I think the disconnect is the following. The predominant view of active learning is that the goal is a classifier. That data that is labeled is a byproduct that will be thrown away, once the classifier exists. 
+ The problem is that this view flies in the face of the
+whole point of active learning: that labeling is expensive. If
+labeling is so expensive, we should be able to reuse this data so
+that the cost is amortized. That is, yes, of course we care about a
+classifier. But just as much, we care about having a data set (or
+"corpus" in the case of NLP). 
+ Consider, for instance, the Penn Treebank. The sorts of techniques that are good at parsing now
+were just flat-out not available (and perhaps not even conceivable)
+back in the late 1990s when the Treebank was being annotated. If we had
+done active learning for the Treebank under a non-lexicalized,
+non-parent-annoted PCFG that gets 83% accuracy, maybe worse because we
+didn't know how to smooth well, then how well would this data set work
+for modern day state splitting grammars with all sorts of crazy
+Markovization and whatnot going on? 
+ The answer is: I have no idea. I have never seen an
+experiment that looks at this issue. And it would be so easy! Run your
+standard active learning algorithm with one type of classifier. Plot
+your usual active-versus-passive learning curves. Now, using the same sequence of data,
+train another classifier. Plot that learning curve. Does it still
+beat passive selection? By how much? And then, of course, can we say
+anything formal about how well this will work? 
+ There are tons of ways that this problem can arise.
+For instance, when I don't have much data I might use a generative model
+and then when I have lots of data I might use a discriminative model.
+Or, as I get more data, I add more features. Or someone finds awesome
+features 5 years later for my problem. Or new machine learning
+techniques are developed. Or anything. I don't want my data to become
+obselete when this happens. 
+ I am happy to acknowledge that this is a very hard
+problem. In fact, I suspect that there's some sort of no-free-lunch
+theorem lurking in here. Essentially, if the inductive biases of the
+classifier that you use to the active learning and the classifier you
+train at the end are too different, then you could do (arbitrarily?)
+badly. But in the real world, our hypothesis classes aren't all that
+different, or perhaps you can assume you're using a universal function
+approximator or a universal kernel or something. Assume what you want
+to start, but I think it's an interesting question. 
+ And then, while we're on the topic of active learning,
+I'd also like to see whether an active learning algorithm's performance
+asymptotes before all your training data is exhausted. That is,
+the usual model in active learning experiments is that you have 1000
+training examples because that's what someone labeled. You then do
+active learning up to 1000 examples, and of course at that point,
+everything has been labeled, so active learning performance coincides
+precisely with passive learning performance. But this is a poor
+reflection of many problems in the world, where new inputs are almost
+always free. I want the Banko and Brill
+paper for active learning... perhaps it's out there, and if you've seen
+it, I'd love a pointer. I ran a couple experiments along these lines
+(nothing concrete), but it actually seemed that active learning from a smaller
+pool was better, perhaps because you have fewer outliers (I was using
+QBU). But these results are by no means concrete, so don't cite me as
+saying this :). 
+ At any rate, I agree that active learning has come a
+long way. I would humbly suggest that the goal of simply building a
+classifier is not in the real spirit of trying to save money. If you
+wanted to save money, you would save your data and share it (modulo
+lawyers). In the long run, passive learning currently seems much less expensive than active learning to me. 
+ 

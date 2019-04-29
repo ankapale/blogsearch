@@ -1,0 +1,72 @@
+Introduction 
+ Every once in a while, a python library is developed that has the potential of changing the landscape in the field of deep learning. PyTorch is one such library. 
+ In the last few weeks, I have been dabbling a bit in PyTorch. I have been blown away by how easy it is to grasp. Among the various deep learning libraries I have used till date – PyTorch has been the most flexible and effortless of them all. 
+ In this article, we will explore PyTorch with a more hands-on approach, covering the basics along with a case study. We will also compare a neural network built from scratch in both numpy and PyTorch to see their similarities in implementation. 
+ Let’s get on with it! 
+ Note – This article assumes that you have a basic understanding of deep learning. If you want to get up to speed with deep learning, please go through this article first. 
+ Table of Contents 
+ An Overview of PyTorch 
+ Diving into the Technicalities 
+ Building a neural network in Numpy vs. PyTorch 
+ Comparison with other deep learning libraries 
+ Case Study – Solving an image recognition problem with PyTorch 
+ An Overview of PyTorch 
+ PyTorch’s creators say that they have a philosophy – they want to be imperative. This means that we run our computation immediately. This fits right into the python programming methodology, as we don’t have to wait for the whole code to be written before getting to know if it works or not. We can easily run a part of the code and inspect it in real time. For me as a neural network debugger, this is a blessing! 
+ PyTorch is a python based library built to provide flexibility as a deep learning development platform. The workflow of PyTorch is as close as you can get to python’s scientific computing library – numpy. 
+ Now you might ask, why would we use PyTorch to build deep learning models? I can list down three things that might help answer that: 
+ Easy to use API – It is as simple as python can be. 
+ Python support – As mentioned above, PyTorch smoothly integrates with the python data science stack. It is so similar to numpy that you might not even notice the difference. 
+ Dynamic computation graphs – Instead of predefined graphs with specific functionalities, PyTorch provides a framework for us to build computational graphs as we go, and even change them during runtime. This is valuable for situations where we don’t know how much memory is going to be required for creating a neural network. 
+ A few other advantages of using PyTorch are it’s multiGPU support, custom data loaders and simplified preprocessors. 
+ Since its release in the start of January 2016, many researchers have adopted it as a go-to library because of its ease of building novel and even extremely complex graphs. Having said that, there is still some time before PyTorch is adopted by the majority of data science practitioners due to it’s new and “under construction” status. 
+ Diving into the Technicalities 
+ Before diving into the details, let us go through the workflow of PyTorch. 
+ PyTorch uses an imperative / eager paradigm. That is, each line of code required to build a graph defines a component of that graph. We can independently perform computations on these components itself, even before your graph is built completely. This is called “define-by-run” methodology. 
+ Installing PyTorch is pretty easy. You can follow the steps mentioned in the official docs and run the command as per your system specifications. For example, this was the command I used on the basis of the options I chose: 
+ conda install pytorch torchvision cuda91 -c pytorch 
+ The main elements we should get to know when starting out with PyTorch are: 
+ PyTorch Tensors 
+ Mathematical Operations 
+ Autograd module 
+ Optim module and 
+ nn module 
+ Below, we’ll take a look at each one in some detail. 
+ PyTorch Tensors 
+ Tensors are nothing but multidimensional arrays. Tensors in PyTorch are similar to numpy’s ndarrays, with the addition being that Tensors can also be used on a GPU. PyTorch supports various types of Tensors. 
+ Mathematical Operations 
+ As with numpy, it is very crucial that a scientific computing library has efficient implementations of mathematical functions. PyTorch gives you a similar interface, with more than 200+ mathematical operations you can use. 
+ Below is an example of a simple addition operation in PyTorch: 
+ a = torch.FloatTensor([2])
+b = torch.FloatTensor([3])
+a + b 
+ 5
+[torch.FloatTensor of size 1] 
+ Doesn’t this look like a quinessential python approach? We can also perform various matrix operations on the PyTorch tensors we define. For example, we’ll transpose a two dimensional matrix: 
+ Autograd module 
+ PyTorch uses a technique called automatic differentiation. That is, we have a recorder that records what operations we have performed, and then it replays it backward to compute our gradients. This technique is especially powerful when building neural networks, as we save time on one epoch by calculating differentiation of the parameters at the forward pass itself. 
+ Optim module 
+ torch.optim is a module that implements various optimization algorithms used for building neural networks. Most of the commonly used methods are already supported, so that we don’t have to build them from scratch (unless you want to!). 
+ nn module 
+ PyTorch autograd makes it easy to define computational graphs and take gradients, but raw autograd can be a bit too low-level for defining complex neural networks. This is where the nn module can help. 
+ The nn package defines a set of modules, which we can think of as a neural network layer that produces output from input and may have some trainable weights. 
+ Now that you know the basic components of PyTorch, you can easily build your own neural network from scratch. Follow along if you want to know how! 
+ Building a neural network in Numpy vs. PyTorch 
+ I have mentioned previously that PyTorch and Numpy are remarkably similar. Let’s look at why. In this section, we’ll see an implementation of a simple neural network to solve a binary classification problem (you can go through this article for it’s in-depth explanation). 
+ The APIs for data loading are well designed in PyTorch. The interfaces are specified in a dataset, a sampler, and a data loader. 
+ On comparing the tools for data loading in TensorFlow (readers, queues, etc.), I found PyTorch’s data loading modules pretty easy to use. Also, PyTorch is seamless when we try to build a neural network, so we don’t have to rely on third party high-level libraries like keras. 
+ On the other hand, I would not yet recommend using PyTorch for deployment. PyTorch is yet to evolve. As the PyTorch developers have said, “What we are seeing is that users first create a PyTorch model. When they are ready to deploy their model into production, they just convert it into a Caffe 2 model, then ship it into either mobile or another platform.” 
+ Case Study – Solving an Image Recognition problem in PyTorch 
+ To get familiar with PyTorch, we will solve Analytics Vidhya’s deep learning practice problem – Identify the Digits. Let’s take a look at our problem statement: 
+ Our problem is an image recognition problem, to identify digits from a given 28 x 28 image. We have a subset of images for training and the rest for testing our model. 
+ So first, download the train and test files. The dataset contains a zipped file of all the images and both the train.csv and test.csv have the name of corresponding train and test images. Any additional features are not provided in the datasets, just the raw images are provided in ‘.png’ format. 
+ STEP 2: Model Building 
+ a) Now comes the main part! Let us define our neural network architecture. We define a neural network with 3 layers input, hidden and output. The number of neurons in input and output are fixed, as the input is our 28 x 28 image and the output is a 10 x 1 vector representing the class. We take 50 neurons in the hidden layer. Here, we use Adam as our optimization algorithms, which is an efficient variant of Gradient Descent algorithm. 
+ This is a pretty impressive score especially when we have trained a very simple neural network for just five epochs! 
+ End Notes 
+ I hope this article gave you a glimpse of how PyTorch can change the perspective of building deep learning models. In this article, we have just scratched the surface. To delve deeper, you can read the documentation and tutorials on the official PyTorch page itself. 
+ In the next few articles, I will apply PyTorch for audio analysis, and we will attempt to build Deep Learning models for Speech Processing. Stay tuned! 
+ Have you used PyTorch to build an application or in any of your data science projects? Let me know in the comments below. 
+ Thanks a lot for your nice and compact introduction on pytorch.
+Just a little mistake I spotted: In the Mathematical Operations section, you do not use the same matrix to show how the transpose operation works, i.e. matrix.t() is not the transpose of the matrix you earlier defined. 
+ Faizen is using minibatches here. In theory, yes, an epoch is supposed to take one step in the average direction of the negative gradient of the entire training set. But that’s expensive and slow, and it’s a good trade to use minibatches with only a subset of the training set. Choosing with replacement is a bit odd though – I would have shuffled the training set and then iterated through it in chunks. 
+ 

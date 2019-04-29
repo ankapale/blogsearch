@@ -1,0 +1,77 @@
+10 March 2011 
+ Okay, now is why I take serious unfair advantage of having this blog. We have a postdoc opening. See the official ad below for details: 
+ A postdoc position is available in the Computational Linguistics and
+Information Processing (CLIP) Laboratory in the Institute for Advanced
+Computer Studies at University of Maryland. We are seeking a talented
+researcher in natural language processing, with strong interests in
+the processing of scientific literature. 
+ A successful candidate should have a strong NLP background with a
+track record of top-tier research publications. A Ph.D. in computer
+science and strong organizational and coordination skills are a must.
+In addition to pursuing original research in scientific literature
+processing, the ideal candidate will coordinate the efforts of the
+other members of that project. While not necessary, experience in one
+or more of the following areas is highly advantageous: summarization,
+NLP or data mining for scientific literature, machine learning, and
+the use of linguistic knowledge in computational systems.
+Additionally, experience with large-data NLP and system building will
+be considered favorably. 
+ The successful candidate will work closely with current CLIP faculty,
+especially Bonnie Dorr, Hal Daume III and Ken Fleischmann, while
+interacting with a large team involving NLP researchers across several
+other prominent institutions. The duration of the position is one
+year, starting Summer or Fall 2011, and is potentially extendible. 
+ CLIP is a a dynamic interdisciplinary computational linguistics
+program with faculty from across the university, and major research
+efforts in machine translation, information retrieval, semantic
+analysis, generation, and development of large-scale statistical
+language processing tools. 
+ Please send a CV and names and contact information of 3 referees,
+preferably by e-mail, to: 
+ 08 March 2011 
+ Having the option of authors submitting supplementary materials is becoming popular in NLP/ML land. NIPS was one of the first conferences I submit to that has allowed this; I think ACL allowed it this past year, at least for specific types of materials (code, data), and EMNLP is thinking of allowing it at some point in the near future. 
+ Here is a snippet of the NIPS call for papers (see section 5) that describes the role of supplementary materials: 
+ In addition to the submitted PDF paper, authors can additionally submit supplementary material for their paper... Such extra material may include long technical proofs that do not fit into the paper, image, audio or video sample outputs from your algorithm, animations that describe your algorithm, details of experimental results, or even source code for running experiments. Note that the reviewers and the program committee reserve the right to judge the paper solely on the basis of the 8 pages, 9 pages including citations, of the paper; looking at any extra material is up to the discretion of the reviewers and is not required. 
+ (Emphasis mine.) Now, before everyone goes misinterpreting what I'm about to say, let me make it clear that in general I like the idea of supplementary materials, given our current publishing model. 
+ You can think of the emphasized part of the call as a form of reviewer protection. It basically says: look, we know that reviewers are overloaded; if your paper isn't very interesting, the reviewers aren't required to read the supplement. (As an aside, I feel the same thing happens with pages 2-8 given page 1 in a lot of cases :P.) 
+ I think it's good to have such a form a reviewer protection. What I wonder is whether it also makes sense to add a form of author protection. In other words, the current policy -- which seems only explicitly stated in the case of NIPS, but seems to be generally understood elsewhere, too -- is that reviewers are protected from overzealous authors. I think we need to have additional clauses that protect authors from overzealous reviewers. 
+ Why? Already I get annoyed with reviewers who seem to think that extra experiments, discussion, proofs or whatever can somehow magically fit in an already crammed 8 page page. A general suggestion to reviewers is that if you're suggesting things to add, you should also suggest things to cut. 
+ This situation is exacerbated infinity-fold with the "option" of supplementary material. There now is no length-limit reason why an author couldn't include everything under the sun. And it's too easy for a reviewer just to say that XYZ should have been included because, well, it could just have gone in the supplementary material! 
+ So what I'm proposing is that supplementary material clauses should have two forms of protection. The first being the existing one, protecting reviewers from overzealous authors. The second being the reverse, something like: 
+ Authors are not obligated to include supplementary materials. The paper should stand on its own, excluding any supplement. Reviewers must take into account the strict 8 page limit when evaluating papers. 
+ Or something like that: the wording isn't quite right. But without this, I fear that supplementary materials will, in the limit, simply turn into an arms race. 
+ 02 March 2011 
+ You may recall a while ago I ran a survey on where people applied to grad school. Obviously I've been sitting on these results for a while now, but I figured since it's that time of year when people are choosing grad schools, that I would say how things turned out. Here's a summary of things that people thought were most important (deciding factor), and moderately important (contributing factor, in parens): 
+ Academic Program 
+ Specialty degree programs in my research area, 48% 
+ (Availability of interesting courses, 16%) 
+ (Time to completion, 4%) 
+ Application Process 
+ Nothing 
+ Faculty Member(s) 
+ Read research papers by faculty member, 44% 
+ Geographic Area 
+ (Outside interests/personal preference, 15%) 
+ Recommendations from People 
+ Professors in technical area, 45% 
+ (Teachers/academic advisors, 32%) 
+ (Technical colleagues, 20%) 
+ Reputation 
+ ... of research group, 61% 
+ ... of department/college, 50% 
+ (Ranking of university, 35%) 
+ (Reputation of university, 34%) 
+ Research Group 
+ Research group works on interesting problems, 55% 
+ Many faculty in a specialty area (eg., ML), 44% 
+ (Many faculty/students in general area (eg., AI), 33%) 
+ (Research group publishes a lot, 26%) 
+ Web Presence 
+ (Learned about group via web search, 37%) 
+ (Learned about dept/univ via web search, 24%) 
+ General 
+ Funding availability, 49% 
+ (High likelihood of being accepted, 12%) 
+ (Size of dept/university, 5%) 
+ Overall these seem pretty reasonable. And of course they all point to the fact that everyone should come to Maryland :P. Except for the fact that we don't have specialty degree programs, but that's the one thing on the list that I actually think is a bit silly: it might make sense for MS, but I don't really think it should be an important consideration for Ph.D.s. You can get the full results if you want to read them and the comments: they're pretty interesting, IMO. 
+ 

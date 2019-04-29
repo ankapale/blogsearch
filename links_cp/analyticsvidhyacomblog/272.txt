@@ -1,0 +1,8 @@
+Hackathon Problem Description: Do you know who’s a Megastar? 
+ Predict the category of a working professional 
+ Welcome to the final stage of this contest. If you have reached till here, we assume either you love Analytics or Amazon 😉 , whichever way it is, go ahead and show what you’ve got. Just remember, either you will win or you will learn. 
+ This hackathon has been designed to help you practice and evaluate your analytics learning and gift yourself the Amazon Voucher worth Rs. 5000(~$100). We have made sure that the difficulty level of this dataset is lower than kaggle, yet challenging. Because, you love challenges. Right? 
+ The Dataset 
+ Objective: The objective of this dataset is to predict the correct category of the working professionals in India. 
+ Description: The dataset shows the data of 16,611 working professionals in India. These working professionals belong to various categories (Rookie, Champion, Rising Star, Star, Rock Star and Mega Star) . The dataset has been divided into 2 parts: Training(9,887) and Test(6,724) Dataset. Categories of working professionals are given in training dataset. You have to predict the categories of professionals in the test dataset. Below is data dictionary to help you understand the variables. 
+ 

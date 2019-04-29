@@ -1,0 +1,148 @@
+Market mix modeling – Simplified! 
+ US market spends on an average more than $140 Billion on just marketing every year. 
+ Provided that marketing is such an important component of the total expense by every company, it is very essential to know the actual benefit from these marketing campaign. But today, marketing is not done using a single channel. Every company uses multiple channels like TV, radio, outdoor activities, banners, social media, and many more, to advertise their products. With such a wide spread types of expense, it becomes very difficult to quantify the benefit from each of these channel campaigns. Market mix model is a statistical model accepted industry wide to quantify these benefits and optimize the budget allotment to different campaigns. 
+ What is a Market mix model ? 
+ There is a very famous quote “BRAND IS BUILT OVER YEARS, but managed over quarters”. Quantifying benefits in shorter window helps business to optimize their spends on marketing. 
+ The total sales can be divided into four primary components: 
+ Market Mix Modeling is an analytical approach that uses historic information like point of sales to quantify the impact of some of the above mentioned components on sales. 
+ Suppose the total sale is 100$, this total can be broken into sub components i.e. 60$ base sale, 20$ pricing, 18$ may be distribution and 2$ might be due to promotional activity. These numbers can be achieved using various logical methods. Every method can give a different break up. Hence, it becomes very important to standardize the process of breaking up the total sales into these components. This formal technique is formally known as MMM or Market Mix Modeling. 
+ How is Market mix model quantified? 
+ We have all heard regression and I think regression continues to be savior here as well. This raises a couple of important questions : 
+ Why do we need econometric techniques like OLS, multivariate time series models to estimate a marketing ROI? Why can‘t we be simply estimate the ROI, which can be calculated as the ratio of income to the investment or expenditure? 
+ The answer to the above questions is simple and straightforward: each brand has a different characteristic, tastes, and so different market and cost structure. Thus the marketing efforts of each brand are not homogeneous; it depends on different kind of promotions and advertising. It is very useful to separate and decompose the effect of marketing effort. The purpose of econometric modelling is to create response curves for each type of marketing spend and then use them to calibrate an optimization model to determine a more optimal marketing mix. Response curves, in turn, measure the incremental lift in actual $ Orders per additional $ spent on marketing activities like promotions, advertising, and so on. A response model forecasts the change in a dependent variable, Y, as a function of the change in one or more independent variables, X, e.g., the change in sales of a product as a result of a change in advertising or price of that product or the change in a person‘s preference for a service as a result of a change in the quality, timeliness, or price of the service. 
+ Decoding Market Mix Modeling with a Retailer’s sample dataset 
+ Suppose there is a large retailer and we have 2 departments, 2 year sales for 2 DMA’s i.e. marketing regions. 
+ Wk_end_dt 
+ Region 
+ Department 
+ SBU 
+ Sales 
+ Tvsn_game 
+ 06/07/2014 
+ 500 
+ D001 
+ FOOD 
+ $10000 
+ 467 
+ 06/13/2014 
+ 500 
+ D001 
+ FOOD 
+ $10500 
+ 467 
+ 06/20/2014 
+ 500 
+ D001 
+ FOOD 
+ $10476 
+ 462 
+ 06/07/2014 
+ 500 
+ D002 
+ CONSUMABLES 
+ $10001 
+ 467 
+ 06/13/2014 
+ 500 
+ D002 
+ CONSUMABLES 
+ $10502 
+ 467 
+ 06/20/2014 
+ 500 
+ D002 
+ CONSUMABLES 
+ $10503 
+ 462 
+ 06/07/2014 
+ 501 
+ D001 
+ FOOD 
+ $10000 
+ 467 
+ 06/13/2014 
+ 501 
+ D001 
+ FOOD 
+ $10500 
+ 467 
+ 06/20/2014 
+ 501 
+ D001 
+ FOOD 
+ $10476 
+ 462 
+ 06/07/2014 
+ 501 
+ D002 
+ CONSUMABLES 
+ $10001 
+ 467 
+ 06/13/2014 
+ 501 
+ D002 
+ CONSUMABLES 
+ $10502 
+ 467 
+ 06/20/2014 
+ 501 
+ D002 
+ CONSUMABLES 
+ $10503 
+ 462 
+ Here is the description of the dataset: 
+ Wk_end_dt: Cumulative sales till the weekend date 
+ Region: Sales at store level is rolled up for each Region 
+ Department: Every retailer combines each item into a category and each category is mapped to a Strategic business unit i.e. SBU 
+ Sales: Total sales rolled up at Region wk_end_dt and department level. 
+ TVSN_game:TV grp’s for a particular campaign rolled out by retailer. 
+ This dataset represents an example of correlated data, several sales measurements may be taken over time on each of the several subjects.Since the same response variable i.e. sales is being measured at different times ,we typically refer to such data as repeated data and the collection of responses on the same subject is often called a cluster responses. 
+ When such repeated measures are taken over time, the study is called longitudinal study. 
+ There are several approaches to analyze repeated measures data and one of them is general linear mixed model. 
+ The SAS MIXED procedure can carry out the computations required to fit such a model. 
+ Market Mix modeling with SAS mixed procedure: 
+ Typical SAS syntax to illustrate the use of mixed procedure: 
+ proc mixed data =dataset name; 
+ class region department wk_end_dt; 
+ model sales= base_sales tvsn_grp/s; 
+ run; 
+ This program will give us a coefficient for TVSN_grp which when multiplied by GRP value will give us the contribution by this variable. 
+ Contribution =coefficient * value of GRP. 
+ GRP= reach X frequency, where reach (expressed in %) is a measure of the number people in the target market exposed to advertising, and frequency is the average number of people have the opportunity to see/hear advertising. For example, 100 GRPs mean 100% of market exposed once or 50% of market exposed twice or 25% of market exposed 4 times and so on. 
+ We can then roll up the contribution for the total time period i.e. the period in which we want to know the efficiencies of the campaign and calculate the values given below in the table. 
+ MEDIA DRIVER 
+ Contribution 
+ Investment 
+ ROI(Average) 
+ TV 
+ X$ 
+ Y$ 
+ X/Y (say 190%) 
+ RADIO 
+ A$ 
+ Y$ 
+ A/Y(say 100%) 
+ Internet Search 
+ B$ 
+ Y$ 
+ B/Y(say 90%) 
+ PRINT 
+ C$ 
+ Y$ 
+ C/Y(say 50%) 
+ In this example, TV is lucrative marketing channel. But all other marketing channel seem to have a higher investment than the additional value they bring in. Radio is a channel which can be considered, provided it brings in some other non-quantifiable value. This table is a typical output shared with the clients when dealing with MMM projects. This helps clients to optimize their media mix across various channels. 
+ Typical Challenges faced during MMM: 
+ Data issues: 
+ GRP data is basically given by media agencies .The data collected by them can be at different levels, i.e. different from the requirements of our project.The data has to be sliced and aggregated at various levels which sometimes affects the accuracy of data. 
+ Veracity of data: Sometimes there arises a discrepancy between what is actually planned and what is actually done in the market .There is a certain advertising budget planned for the year and correspondingly there are planned GRP’s but what actually happen’ s is a different scenario. These discrepancies sometimes lead to spurious results in the regression 
+ Modeling issues: 
+ In MMM we typically calculate response curves of advertising on sales and assume a S shape response curve but due to change in media i.e. typically digital data we can’t expect the same response and hence we get spurious. 
+ Food for thought 
+ Narendra Modi, current prime minister of India, has rewritten the rules of the game and redefined Indian politics. Brand Modi has not only captured popular imagination but also trumped Brand BJP but for the next elections, it will be worth knowing the role of various mediums in his stellar electoral performance and MMM is the most apt technique to do that. 
+ Dependent Variable: Votes recorded in each region of BJP. 
+ Independent Variable: Impressions recorded across mediums or trp’s of news channels, radio when NarendraModi is giving a speech. 
+ This article was submitted by Amogh Gupta as part of his application for Analytics Vidhya Apprentics programme. Amogh is a master’s graduate in business economics from Delhi University, having a total work experience of ~3 years in analytics. He has worked across multiple domains like Hospitality, Retail, Manufacturing performing various kinds of analysis and has worked on several techniques like which includes response modeling, market mix modeling, and exploratory analysis. Amogh has worked extensively on SAS products and uses Tableau for visualizations. He is also an avid Swimmer and likes reading books in his free time. 
+ How are the interaction effects and random effects captured in the model? To have a very simple linear relationship would be not very representative of real examples. Often there are interactions and random effects? 
+ Can you please explain this? 
+ Also, I am interested in knowing if any t-test or z-test is done? If so in what stage? 
+ 

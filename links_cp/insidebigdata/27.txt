@@ -1,0 +1,5 @@
+International law firm Volterra Fietta needed a data-sharing solution for safe, secure, and productive collaboration among internal staff member and external third parties  clients, witnesses, co-counsel, and so forth. 
+ The solution has to be easy to use. For example, the firms security managers didnt want to require external users to download plugins, as many of their clients were not technically savvy; IT wanted a clean, simple interface for loading and downloading content. 
+ At the same time, the solution also had to be flexible and powerful enough to allow highly targeted document permissioning and support advanced information rights management that protects documents wherever they are. 
+ In short, the solution had to be not too complicated but not too simplistic. Like Goldilocks porridge, it had to be just right. 
+ 

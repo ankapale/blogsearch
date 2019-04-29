@@ -1,0 +1,27 @@
+Building a Logistic Regression model from scratch 
+ Do you understand how does logistic regression work? If your answer is yes, I have a challenge for you to solve. Here is an extremely simple logistic problem. 
+ X = { 1,2,3,4,5,6,7,8,9,10} 
+ Y = {0,0,0,0,1,0,1,0,1,1} 
+ Here is the catch : YOU CANNOT USE ANY PREDEFINED LOGISTIC FUNCTION! 
+ Why am I asking you to build a Logistic Regression from scratch? 
+ Here is a small survey which I did with professionals with 1-3 years of experience in analytics industry (my sample size is ~200). 
+ I was amazed to see such low percent of analyst who actually knows what goes behind the scene. We have now moved towards a generation where we are comfortable to see logistic regression also as a black box. In this article, I aim to kill this problem for once and all. The objective of the article is to bring out how logistic regression can be made without using inbuilt functions and not to give an introduction on Logistic regression. 
+ Refreshers of mathematics terminology 
+ Logistic regression is an estimation of Logit function. Logit function is simply a log of odds in favor of the event. This function creates a s-shaped curve with the probability estimate, which is very similar to the required step wise function. Here goes the first definition : 
+ Logit Function: 
+ Logistic regression is an estimate of a logit function. Here is how the logit function looks like: 
+ Now that you know what we are trying to estimate, next is the definition of the function we are trying to optimize to get the estimates of coefficient. This function is analogous to the square of error in linear regression and is known as the likelihood function. Here goes our next definition. 
+ Likelihood Function 
+ Given the complicated derivative of the likelihood function, we consider a monotonic function which can replicate the likelihood function and simplify derivative. This is the log of likelihood function. Here goes the next definition. 
+ Log Likelihood 
+ Finally we have the derivatives of log likelihood function. Following are the first and second derivative of log likelihood function. 
+ Derivative of Likelihood Function 
+ Hessian Matrix (second derivative) 
+ Finally, we are looking to solve the following equation. 
+ As we now have all the derivative, we will finally apply the Newton Raphson method to converge to optimal solution. Here is a recap of Newton Raphson method. 
+ End Notes 
+ This might seem like a simple exercise, but I feel that this is extremely important before you start using Logistic as a black box. As an exercise you should try making these calculations using a gradient descent method. Also, for people conversant with Python, here is a small challenge to you – can you write a Python code for the larger community and share it in comments below? 
+ Did you find this article useful? Have you tried this exercise before? I’ll be happy to hear from you in the comments section below. 
+ Tavish is an IIT post graduate, a results-driven analytics professional and a motivated leader with 7+ years of experience in data science industry. He has led various high performing data scientists teams in financial domain. His work range from creating high level business strategy for customer engagement and acquisition to developing Next-Gen cognitive Deep/Machine Learning capabilities aligned to these high level strategies for multiple domains including Retail Banking, Credit Cards and Insurance. Tavish is fascinated by the idea of artificial intelligence inspired by human intelligence and enjoys every discussion, theory or even movie related to this idea. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 

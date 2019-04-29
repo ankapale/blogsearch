@@ -1,0 +1,31 @@
+Aug 10 Asilomar AI Principles 
+ Artificial intelligence has already provided beneficial tools that are used every day by people around the world. Its continued development, guided by the following principles, will offer amazing opportunities to help and empower people in the decades and centuries ahead. 
+ Research Issues 
+ Research Goal 
+ The goal of AI research should be to create not undirected intelligence, but beneficial intelligence. 
+ Research Funding 
+ Investments in AI should be accompanied by funding for research on ensuring its beneficial use, including thorny questions in computer science, economics, law, ethics, and social studies, such as: 
+ How can we make future AI systems highly robust, so that they do what we want without malfunctioning or getting hacked? 
+ How can we grow our prosperity through automation while maintaining people’s resources and purpose? 
+ How can we update our legal systems to be more fair and efficient, to keep pace with AI, and to manage the risks associated with AI? 
+ What set of values should AI be aligned with, and what legal and ethical status should it have? 
+ Science-Policy Link 
+ There should be constructive and healthy exchange between AI researchers and policy-makers. 
+ Research Culture 
+ A culture of cooperation, trust, and transparency should be fostered among researchers and developers of AI. 
+ AI/Robotics Researchers 
+ Yoshua Bengio, University of Montréal, head of the Montreal Institute for Learning Algorithms 
+ Stuart Russell, University of California, Berkeley, Professor of Computer Science, director of the Center for Intelligent Systems, co-author of the standard textbook Artificial Intelligence: a Modern Approach. 
+ Zoubin Ghahramani, University of Cambridge; Deputy Director, Leverhulme Centre for the Future of Intelligence; Cambridge Director of the Alan Turing Institute and Co-Director, Uber AI Labs, Professor, member of IEEE CS 
+ Wolfgang Konen, Cologne University of Applied Sciences (TH Köln), Professor of Computer Science, AI researcher, member of ACM SIGEVO group on GA and Evol.Comp. 
+ Mirco Musolesi, University College London and Alan Turing Institute, Reader in Data Science, member of AAAI, ACM 
+ Emma Ruttkamp-Bloem, University of Pretoria, Professor of Philosophy, member of PSA, EPSA 
+ Fernand Gobet, University of Liverpool, Professor of Decision Making and Expertise, member of AISB 
+ Mohammad Mahdi Amirian, AUT, Lecturer 
+ Peter Stone, The University of Texas at Austin, Professor of Computer Science, Chair of the first Study Panel of the One Hundred Year Study on Artificial Intelligence (AI100), member of AAAI, ACM, IEEE RAS, AAAS, RoboCup Federation 
+ John E. Laird, University of Michigan, Professor of Computer Science and Engineering, member of AAAI, ACM 
+ Chris Irwin Davis, The University of Texas at Dallas, Adjunct Professor of Computer Science, member of AAAI, Association for Computational Linguistics 
+ Wolfgang Banzhaf, Michigan State University, John R. Koza Chair in Genetic Programming, Professor of Computer Science, member of ACM 
+ Comments on: Asilomar AI Principles 
+ Artificial intelligence has already provided beneficial tools that are used every day by people around the world. Its continued development, guided by the following principles, will offer amazing opportunities to help and empower people in the decades and centuries ahead. 
+ 

@@ -1,0 +1,3 @@
+Red Hat Jboss Fuse Compared with Mule ESB Enterprise 
+ The ability to integrate systems and share data across the enterprise is a common datacenter need. The needs of an integration bus, the technology used for middleware-based integration, can varyin complexity, data volume, and required performance. Both Red Hat and MuleSoft offer multiple products that can help customers develop and deploy middleware integration solutions. This competitive overview compares Red Hat® JBoss® Fuse to Mule ESB Enterprise. 
+ 

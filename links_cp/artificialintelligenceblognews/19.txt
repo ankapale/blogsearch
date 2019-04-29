@@ -1,0 +1,11 @@
+Mar 12 Pitfalls of Artificial Intelligence 
+ No one could argue that life hasn’t been more convenient since the initial breakthrough of artificial intelligence (AI) in 2012. The world is moving faster and faster, driven by technology and innovation. From speech recognition to facial recognition allowing you to unlock the new iPhone with your face to cars self-navigating the streets in Silicon Valley, AI is all around us. And if a seating chart is telling for a tech company's priorities, Google’s AI researchers were recently moved to sit near the boss in its Silicon Valley office. However, with the hype and noise around AI, it’s easy for companies to take missteps along the way when trying to take advantage of the technology. As it’s always a good idea to exercise caution when deploying an AI-driven service, here are a few common pitfalls to watch out for: 
+ 1. Being Shielded by the Hype 
+ Adopters need to look beyond the hype to accurately judge AI's benefits, as it’s far too easy for organizations to underestimate the time, knowledge, and data required to effectively implement AI systems. 
+ 2. Lacking IT Team to Manage AI Effectively 
+ A major pitfall is lacking an IT team that has the expertise to effectively manage the AI system and interpret insights to their maximum value. 
+ 3. Trying to Keep Up With Google 
+ Organizations also can’t fall into the trap of comparing themselves to Google. Developing and utilizing neural networks the correct way requires a ton of expertise and computing resources, something that Google clearly has. 
+ Comments on: Pitfalls of Artificial Intelligence 
+ No one could argue that life hasn’t been more convenient since the initial breakthrough of artificial intelligence (AI) in 2012. The world is moving faster and faster, driven by technology and innovation. However, with the hype and noise around AI, it’s easy for companies to take missteps along the way when trying to take advantage of the technology. 
+ 

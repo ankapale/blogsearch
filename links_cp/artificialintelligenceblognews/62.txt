@@ -1,0 +1,12 @@
+Feb 26 Xiaomi Heavily Investing in AI Research for Smartphone Chips 
+ TL;DR Xiaomi is doing research to decide whether they want to include custom AI chips in their future smartphones in order to speed up local AI processing, rather than requiring the cloud for AI. 
+ Xiaomi is researching chips that enable artificial intelligence (AI) on mobile devices but has not made a decision on whether to make one. 
+ We are also working on doing a lot of research on AI on chips, 
+ — Wang Xiang of Xiaomi 
+ There's been a lot of focus from smartphone makers to create chips that enable better AI applications. Huawei launched the Kirin 970 chip that is now in its high-end Mate 10 Pro device, Apple has put its own A11 bionic chip in the iPhone X, while Samsung has its Exynos series of silicon. 
+ These specific AI chips allow more of the processes to happen on the device, rather than in the cloud. That means AI apps will be faster and smoother on the smartphone because it's being processed on the device. 
+ The main purpose of doing our own chips is to learn the technology … deeper … we launched the first Surge-based smartphone … into the market. And we will continue to explore the technology and do the research. Not only the chipset but also the AI and other related technologies, 
+ — Wang Xiang of Xiaomi 
+ He added that the company has made no decision on whether to create its own AI chip. 
+ Opinion: Over the coming years we will see custom chips for AI emerge in pretty much everything you can imagine. A lot of it will amount to nothing more than marketing hype and frankly not even be that good/fast/powerful, but some designs will definitely succeed in taking A.I. compute power from the cloud back to the local level. I also expect to see standard AI silicon for mobile devices to emerge and be widely (in 100s of millions of devices) used as well as improved over time. [Steve] 
+ 

@@ -1,0 +1,7 @@
+The world’s largest hedge fund is building a piece of software to automate the day-to-day management of the firm, including hiring, firing and other strategic decision-making. 
+ Bridgewater Associates has a team of software engineers working on the project at the request of billionaire founder Ray Dalio, who wants to ensure the company can run according to his vision even when he’s not there, the Wall Street Journal reported. 
+ The role of many remaining humans at the firm wouldn’t be to make individual choices but to design the criteria by which the system makes decisions, intervening when something isn’t working, 
+ — Wall Street Journal 
+ “The role of many remaining humans at the firm wouldn’t be to make individual choices but to design the criteria by which the system makes decisions, intervening when something isn’t working,” wrote the Journal, which spoke to five former and current employees. 
+ The firm, which manages $160bn, created the team of programmers specializing in analytics and artificial intelligence, dubbed the Systematized Intelligence Lab, in early 2015. The unit is headed up by David Ferrucci, who previously led IBM’s development of Watson, the supercomputer that beat humans at Jeopardy! in 2011. 
+ 

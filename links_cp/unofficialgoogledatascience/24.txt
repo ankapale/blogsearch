@@ -1,0 +1,12 @@
+Search This Blog 
+ About this blog 
+ Get link 
+ Facebook 
+ Twitter 
+ Pinterest 
+ Email 
+ Other Apps 
+ This blog is the work of some data scientists at Google who wish to bring out stories of interest to data scientists outside of Google. As editors, we hope to publish articles from across Google written by those individuals most knowledgeable about any given subject matter. 
+ While most Google data scientists have PhDs in statistics, machine learning or a related field, ours is not a blog aimed at academia. We’ll provide academic references if necessary, but we mean for this to be a practitioners’ blog. At the same time, the problems we face are often complex enough to require highly technical solutions in statistics and computation. Thus many of our posts might not be suited to the casual business analyst. Our intended audience is other data scientists in industry, as well as students who wish to pursue such a career. 
+ Please note that this is not an official Google blog to communicate with users about Google's products and policies. This blog does not speak for Google and will not articulate Google's position on anything. Rather, our goal here is to contribute as data professionals to the ongoing discourse around this nascent field (...). We’d like to do this by communicating what we’ve learned, what we’ve failed to learn and how we are searching for answers. Our authentic experiences, be they good, bad, or ugly. Feel free to drop us a line at datascience-blog@google.com. 
+ 

@@ -1,0 +1,3352 @@
+<!DOCTYPE html>
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<title>Causality in machine learning</title>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta content='#eaeaea' name='theme-color'/>
+<!-- Windows Phone -->
+<meta content='#eaeaea' name='msapplication-navbutton-color'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.unofficialgoogledatascience.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="http://www.unofficialgoogledatascience.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="The Unofficial Google Data Science Blog - RSS" href="http://www.unofficialgoogledatascience.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="https://www.blogger.com/feeds/5825758052688213474/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="The Unofficial Google Data Science Blog - Atom" href="http://www.unofficialgoogledatascience.com/feeds/5343098145846379837/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<link href='https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/s400/puppies.png' rel='image_src'/>
+<meta content='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' property='og:url'/>
+<meta content='Causality in machine learning' property='og:title'/>
+<meta content='By OMKAR MURALIDHARAN, NIALL CARDIN, TODD PHILLIPS, AMIR NAJMI   Given recent advances and interest in machine learning, those of us with tr...' property='og:description'/>
+<meta content='https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/w1200-h630-p-k-no-nu/puppies.png' property='og:image'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<style type='text/css'>@font-face{font-family:'Roboto';font-style:italic;font-weight:300;src:local('Roboto Light Italic'),local('Roboto-LightItalic'),url(//fonts.gstatic.com/s/roboto/v19/KFOjCnqEu92Fr1Mu51TjASc6CsE.ttf)format('truetype');}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local('Roboto'),local('Roboto-Regular'),url(//fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxP.ttf)format('truetype');}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local('Roboto-Bold'),url(//fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmWUlfBBc9.ttf)format('truetype');}</style>
+<style id='page-skin-1' type='text/css'><!--
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+/* 
+<!-- Constants -->
+
+<Variable name="damionRegular36" description="Damion Regular 36" type="font" default="400 36px Damion, cursive" hideEditor="true" />
+<Variable name="damionRegular62" description="Damion Regular 62" type="font" default="400 62px Damion, cursive" hideEditor="true" />
+<Variable name="playfairDisplayBlack28" description="Playfair Display Black 28" type="font" default="900 28px Playfair Display, serif" hideEditor="true" />
+<Variable name="playfairDisplayBlack36" description="Playfair Display Black 36" type="font" default="900 36px Playfair Display, serif" hideEditor="true" />
+<Variable name="playfairDisplayBlack44" description="Playfair Display Black 44" type="font" default="900 44px Playfair Display, serif" hideEditor="true" />
+<Variable name="robotoNormal15" description="Roboto Normal 15" type="font" default="15px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoNormal16" description="Roboto Normal 16" type="font" default="16px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoLightItalic15" description="Roboto Light Italic 15" type="font" default="italic 300 15px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold22" description="Roboto Bold 22" type="font" default="bold 22px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold30" description="Roboto Bold 30" type="font" default="bold 30px Roboto, sans-serif" hideEditor="true" />
+<Variable name="robotoBold45" description="Roboto Bold 45" type="font" default="bold 45px Roboto, sans-serif" hideEditor="true" />
+
+<!-- Variable definitions -->
+
+<Variable name="keycolor" description="Main Color" type="color" default="#2196f3" />
+<Variable name="startSide" description="Start side in blog language" type="automatic" default="left" hideEditor="true" />
+<Variable name="endSide" description="End side in blog language" type="automatic" default="right" hideEditor="true" />
+
+<Group description="Page Text">
+  <Variable name="body.text.font" description="Font"
+      type="font"
+      default="15px Roboto, sans-serif" />
+  <Variable name="body.text.color" description="Color"
+      type="color"
+      default="#757575" />
+</Group>
+
+<Group description="Backgrounds">
+  <Variable name="body.background.height" description="Background height"
+      type="length"
+      min="420px"
+      max="640px"
+      default="480px" />
+  <Variable name="body.background" description="Background"
+      color="#eaeaea"
+      type="background"
+      default="$(color) none repeat scroll top left" />
+  <Variable name="body.background.color" description="Body background color"
+      type="color"
+      default="#eee" />
+  <Variable name="posts.background.color" description="Post background color"
+      type="color"
+      default="#fff" />
+  <Variable name="body.background.blur" description="Background blur"
+      type="length"
+      min="0px"
+      max="50px"
+      default="0px" />
+</Group>
+
+<Group description="Links">
+  <Variable name="body.link.color" description="Link color"
+      type="color"
+      default="#2196f3" />
+  <Variable name="body.link.visited.color" description="Visited link color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="body.link.hover.color" description="Link Hover Color"
+      type="color"
+      default="#3c79a7" />
+</Group>
+
+<Group description="Blog title" selector="div.widget.Header">
+  <Variable name="blog.title.font" description="Font"
+      type="font"
+      default="bold 45px Roboto, sans-serif" />
+  <Variable name="blog.title.color" description="Color"
+      type="color"
+      default="#fff" />
+  <Variable name="header.icons.color"
+      description="Background icons color"
+      type="color"
+      default="#fff" />
+</Group>
+
+<Group description="Tabs text" selector="div.widget.PageList">
+  <Variable name="tabs.font" description="Font"
+      type="font"
+      family="Roboto, sans-serif"
+      size="15px"
+      default="700 normal $(size) $(family)" />
+  <Variable name="tabs.color" description="Text color"
+      type="color"
+      default="#ccc" />
+  <Variable name="tabs.selected.color" description="Selected color"
+      type="color"
+      default="#fff" />
+  <Variable name="tabs.overflow.background.color" description="Popup background color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="tabs.overflow.color" description="Popup text color"
+      type="color"
+      default="#4e4e4e" />
+  <Variable name="tabs.overflow.selected.color" description="Popup selected color"
+      type="color"
+      default="#3b3b3b" />
+</Group>
+
+<Group description="Posts" selector="div.widget.Blog">
+  <Variable name="posts.title.color" description="Post title color"
+      type="color"
+      default="#212121" />
+  <Variable name="posts.title.font" description="Post title font"
+      type="font"
+      default="bold 22px Roboto, sans-serif" />
+  <Variable name="posts.stream.title.font" description="Post title stream font"
+      type="font"
+      default="bold 30px Roboto, sans-serif" />
+  <Variable name="posts.text.font" description="Post text font"
+      type="font"
+      default="15px Roboto, sans-serif" />
+  <Variable name="posts.text.color" description="Post text color"
+      type="color"
+      default="#666666" />
+  <Variable name="posts.byline.color" description="Post byline color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="blockquote.font" description="Blockquote font"
+      type="font"
+      default="italic 300 15px Roboto, sans-serif" />
+  <Variable name="blockquote.color" description="Blockquote color"
+      type="color"
+      default="#444" />
+  <Variable name="posts.icons.color"
+      description="Post icons color"
+      type="color"
+      default="#707070" />
+</Group>
+
+<Group description="Search">
+  <Variable name="search.input.color" description="Input color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="search.input.font" description="Input font"
+      type="font"
+      default="16px Roboto, sans-serif" />
+  <Variable name="search.placeholder.color" description="Placeholder text color"
+      type="color"
+      default="#ffffff" />
+</Group>
+
+<Group description="Sharing">
+  <Variable name="sharing.background.color"
+      description="Sharing background color"
+      type="color"
+      default="#ffffff" />
+  <Variable name="sharing.text.color" description="Sharing text color"
+      type="color"
+      default="#3b3b3b" />
+  <Variable name="sharing.icons.color"
+      description="Sharing icons color"
+      type="color"
+      default="#212121" />
+</Group>
+
+<Group description="Popular posts" selector="div.widget.PopularPosts">
+  <Variable name="popularposts.background.color"
+      description="Popular post background color"
+      type="color"
+      default="#eaeaea" />
+  <Variable name="popularposts.byline.color"
+      description="Popular post byline color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="popularposts.title.color"
+      description="Popular post title color"
+      type="color"
+      default="#3b3b3b" />
+  <Variable name="popularposts.text.color"
+      description="Popular post text color"
+      type="color"
+      default="#4e4e4e" />
+  <Variable name="popularposts.link.color"
+      description="Popular post link color"
+      type="color"
+      default="#3c79a7" />
+</Group>
+
+<Group description="Post navigation" selector='div.blog-pager'>
+  <Variable name="posts.navigation.link.color"
+      description="Post navigation links color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="posts.navigation.link.visited.color"
+      description="Post navigation links visited color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="posts.navigation.link.hover.color"
+      description="Post navigations links hover color"
+      type="color"
+      default="#2196f3" />
+</Group>
+
+<Group description="Sidebar" selector="div.sidebar-container">
+  <Variable name="sidebar.backgroundColorTop"
+      description="Background color (Top)"
+      type="color"
+      default="#f7f7f7" />
+  <Variable name="sidebar.backgroundColorTopHD"
+      description="Background color (Top) - HD"
+      type="color"
+      default="rgba(255, 255, 255, 1)" />
+  <Variable name="sidebar.backgroundColorBottom"
+      description="Background color (Bottom)"
+      type="color"
+      default="#fff" />
+  <Variable name="sidebar.separator.color"
+      description="Separator color"
+      type="color"
+      default="#ccc" />
+  <Variable name="widget.title.color"
+      description="Gadget title color"
+      type="color"
+      default="#212121" />
+  <Variable name="sidebar.icons.color"
+      description="Sidebar icons color"
+      type="color"
+      default="#707070" />
+</Group>
+
+<Group description="Author profile" selector='.widget.Profile'>
+  <Variable name="profile.title.color" description="Profile title color"
+      type="color"
+      default="rgba(0,0,0,0.52)" />
+  <Variable name="profile.text.color" description="Profile text color"
+      type="color"
+      default="rgba(0, 0, 0, 0.54)" />
+  <Variable name="profile.link.color" description="Profile link color"
+      type="color"
+      default="#3b3b3b" />
+</Group>
+
+<Group description="Labels" selector=".widget.Label">
+  <Variable name="labels.text.color"
+      description="Label text color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="labels.background.color"
+      description="Label background color"
+      type="color"
+      red="0"
+      green="0"
+      blue="0"
+      default="rgba($red, $green, $blue, 0.05)" />
+</Group>
+
+<Group description="Attribution" selector=".widget.Attribution">
+  <Variable name="attribution.text.color" description="Attribution text color"
+      type="color"
+      default="#666666" />
+  <Variable name="attribution.link.color" description="Attribution link color"
+      type="color"
+      default="#3c79a7" />
+  <Variable name="attribution.icon.color" description="Attribution icon color"
+      type="color"
+      default="#707070"
+      hideEditor="true" />
+</Group>
+
+<Group description="Widths">
+  <Variable name="sidebar.width" description="Sidebar width" type="length"
+            min="100px" max="1000px" default="284px" />
+  <Variable name="content.width" description="Content width" type="length"
+            min="600px" max="2400px" default="922px" />
+  <Variable name="content.margin" description="Content margin" type="length"
+            min="0px" max="1000px" default="117px" />
+</Group>
+ */
+
+/*!************************************************
+ * Blogger Template Style
+ * Name: Contempo
+ **************************************************/
+body{
+overflow-wrap:break-word;
+word-break:break-word;
+word-wrap:break-word
+}
+.hidden{
+display:none
+}
+.invisible{
+visibility:hidden
+}
+.container::after,.float-container::after{
+clear:both;
+content:"";
+display:table
+}
+.clearboth{
+clear:both
+}
+#comments .comment .comment-actions,.subscribe-popup .FollowByEmail .follow-by-email-submit,.widget.Profile .profile-link,.widget.Profile .profile-link.visit-profile{
+background:0 0;
+border:0;
+box-shadow:none;
+color:#3c79a7;
+cursor:pointer;
+font-size:14px;
+font-weight:700;
+outline:0;
+text-decoration:none;
+text-transform:uppercase;
+width:auto
+}
+.dim-overlay{
+background-color:rgba(0,0,0,.54);
+height:100vh;
+left:0;
+position:fixed;
+top:0;
+width:100%
+}
+#sharing-dim-overlay{
+background-color:transparent
+}
+input::-ms-clear{
+display:none
+}
+.blogger-logo,.svg-icon-24.blogger-logo{
+fill:#ff9800;
+opacity:1
+}
+.loading-spinner-large{
+-webkit-animation:mspin-rotate 1.568s infinite linear;
+animation:mspin-rotate 1.568s infinite linear;
+height:48px;
+overflow:hidden;
+position:absolute;
+width:48px;
+z-index:200
+}
+.loading-spinner-large>div{
+-webkit-animation:mspin-revrot 5332ms infinite steps(4);
+animation:mspin-revrot 5332ms infinite steps(4)
+}
+.loading-spinner-large>div>div{
+-webkit-animation:mspin-singlecolor-large-film 1333ms infinite steps(81);
+animation:mspin-singlecolor-large-film 1333ms infinite steps(81);
+background-size:100%;
+height:48px;
+width:3888px
+}
+.mspin-black-large>div>div,.mspin-grey_54-large>div>div{
+background-image:url(https://www.blogblog.com/indie/mspin_black_large.svg)
+}
+.mspin-white-large>div>div{
+background-image:url(https://www.blogblog.com/indie/mspin_white_large.svg)
+}
+.mspin-grey_54-large{
+opacity:.54
+}
+@-webkit-keyframes mspin-singlecolor-large-film{
+from{
+-webkit-transform:translateX(0);
+transform:translateX(0)
+}
+to{
+-webkit-transform:translateX(-3888px);
+transform:translateX(-3888px)
+}
+}
+@keyframes mspin-singlecolor-large-film{
+from{
+-webkit-transform:translateX(0);
+transform:translateX(0)
+}
+to{
+-webkit-transform:translateX(-3888px);
+transform:translateX(-3888px)
+}
+}
+@-webkit-keyframes mspin-rotate{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(360deg);
+transform:rotate(360deg)
+}
+}
+@keyframes mspin-rotate{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(360deg);
+transform:rotate(360deg)
+}
+}
+@-webkit-keyframes mspin-revrot{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(-360deg);
+transform:rotate(-360deg)
+}
+}
+@keyframes mspin-revrot{
+from{
+-webkit-transform:rotate(0);
+transform:rotate(0)
+}
+to{
+-webkit-transform:rotate(-360deg);
+transform:rotate(-360deg)
+}
+}
+.skip-navigation{
+background-color:#fff;
+box-sizing:border-box;
+color:#000;
+display:block;
+height:0;
+left:0;
+line-height:50px;
+overflow:hidden;
+padding-top:0;
+position:fixed;
+text-align:center;
+top:0;
+-webkit-transition:box-shadow .3s,height .3s,padding-top .3s;
+transition:box-shadow .3s,height .3s,padding-top .3s;
+width:100%;
+z-index:900
+}
+.skip-navigation:focus{
+box-shadow:0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
+height:50px
+}
+#main{
+outline:0
+}
+.main-heading{
+position:absolute;
+clip:rect(1px,1px,1px,1px);
+padding:0;
+border:0;
+height:1px;
+width:1px;
+overflow:hidden
+}
+.Attribution{
+margin-top:1em;
+text-align:center
+}
+.Attribution .blogger img,.Attribution .blogger svg{
+vertical-align:bottom
+}
+.Attribution .blogger img{
+margin-right:.5em
+}
+.Attribution div{
+line-height:24px;
+margin-top:.5em
+}
+.Attribution .copyright,.Attribution .image-attribution{
+font-size:.7em;
+margin-top:1.5em
+}
+.BLOG_mobile_video_class{
+display:none
+}
+.bg-photo{
+background-attachment:scroll!important
+}
+body .CSS_LIGHTBOX{
+z-index:900
+}
+.extendable .show-less,.extendable .show-more{
+border-color:#3c79a7;
+color:#3c79a7;
+margin-top:8px
+}
+.extendable .show-less.hidden,.extendable .show-more.hidden{
+display:none
+}
+.inline-ad{
+display:none;
+max-width:100%;
+overflow:hidden
+}
+.adsbygoogle{
+display:block
+}
+#cookieChoiceInfo{
+bottom:0;
+top:auto
+}
+iframe.b-hbp-video{
+border:0
+}
+.post-body img{
+max-width:100%
+}
+.post-body iframe{
+max-width:100%
+}
+.post-body a[imageanchor="1"]{
+display:inline-block
+}
+.byline{
+margin-right:1em
+}
+.byline:last-child{
+margin-right:0
+}
+.link-copied-dialog{
+max-width:520px;
+outline:0
+}
+.link-copied-dialog .modal-dialog-buttons{
+margin-top:8px
+}
+.link-copied-dialog .goog-buttonset-default{
+background:0 0;
+border:0
+}
+.link-copied-dialog .goog-buttonset-default:focus{
+outline:0
+}
+.paging-control-container{
+margin-bottom:16px
+}
+.paging-control-container .paging-control{
+display:inline-block
+}
+.paging-control-container .comment-range-text::after,.paging-control-container .paging-control{
+color:#3c79a7
+}
+.paging-control-container .comment-range-text,.paging-control-container .paging-control{
+margin-right:8px
+}
+.paging-control-container .comment-range-text::after,.paging-control-container .paging-control::after{
+content:"\b7";
+cursor:default;
+padding-left:8px;
+pointer-events:none
+}
+.paging-control-container .comment-range-text:last-child::after,.paging-control-container .paging-control:last-child::after{
+content:none
+}
+.byline.reactions iframe{
+height:20px
+}
+.b-notification{
+color:#000;
+background-color:#fff;
+border-bottom:solid 1px #000;
+box-sizing:border-box;
+padding:16px 32px;
+text-align:center
+}
+.b-notification.visible{
+-webkit-transition:margin-top .3s cubic-bezier(.4,0,.2,1);
+transition:margin-top .3s cubic-bezier(.4,0,.2,1)
+}
+.b-notification.invisible{
+position:absolute
+}
+.b-notification-close{
+position:absolute;
+right:8px;
+top:8px
+}
+.no-posts-message{
+line-height:40px;
+text-align:center
+}
+@media screen and (max-width:800px){
+body.item-view .post-body a[imageanchor="1"][style*="float: left;"],body.item-view .post-body a[imageanchor="1"][style*="float: right;"]{
+float:none!important;
+clear:none!important
+}
+body.item-view .post-body a[imageanchor="1"] img{
+display:block;
+height:auto;
+margin:0 auto
+}
+body.item-view .post-body>.separator:first-child>a[imageanchor="1"]:first-child{
+margin-top:20px
+}
+.post-body a[imageanchor]{
+display:block
+}
+body.item-view .post-body a[imageanchor="1"]{
+margin-left:0!important;
+margin-right:0!important
+}
+body.item-view .post-body a[imageanchor="1"]+a[imageanchor="1"]{
+margin-top:16px
+}
+}
+.item-control{
+display:none
+}
+#comments{
+border-top:1px dashed rgba(0,0,0,.54);
+margin-top:20px;
+padding:20px
+}
+#comments .comment-thread ol{
+margin:0;
+padding-left:0;
+padding-left:0
+}
+#comments .comment .comment-replybox-single,#comments .comment-thread .comment-replies{
+margin-left:60px
+}
+#comments .comment-thread .thread-count{
+display:none
+}
+#comments .comment{
+list-style-type:none;
+padding:0 0 30px;
+position:relative
+}
+#comments .comment .comment{
+padding-bottom:8px
+}
+.comment .avatar-image-container{
+position:absolute
+}
+.comment .avatar-image-container img{
+border-radius:50%
+}
+.avatar-image-container svg,.comment .avatar-image-container .avatar-icon{
+border-radius:50%;
+border:solid 1px #5b5b5b;
+box-sizing:border-box;
+fill:#5b5b5b;
+height:35px;
+margin:0;
+padding:7px;
+width:35px
+}
+.comment .comment-block{
+margin-top:10px;
+margin-left:60px;
+padding-bottom:0
+}
+#comments .comment-author-header-wrapper{
+margin-left:40px
+}
+#comments .comment .thread-expanded .comment-block{
+padding-bottom:20px
+}
+#comments .comment .comment-header .user,#comments .comment .comment-header .user a{
+color:#3b3b3b;
+font-style:normal;
+font-weight:700
+}
+#comments .comment .comment-actions{
+bottom:0;
+margin-bottom:15px;
+position:absolute
+}
+#comments .comment .comment-actions>*{
+margin-right:8px
+}
+#comments .comment .comment-header .datetime{
+bottom:0;
+color:rgba(59,59,59,.54);
+display:inline-block;
+font-size:13px;
+font-style:italic;
+margin-left:8px
+}
+#comments .comment .comment-footer .comment-timestamp a,#comments .comment .comment-header .datetime a{
+color:rgba(59,59,59,.54)
+}
+#comments .comment .comment-content,.comment .comment-body{
+margin-top:12px;
+word-break:break-word
+}
+.comment-body{
+margin-bottom:12px
+}
+#comments.embed[data-num-comments="0"]{
+border:0;
+margin-top:0;
+padding-top:0
+}
+#comments.embed[data-num-comments="0"] #comment-post-message,#comments.embed[data-num-comments="0"] div.comment-form>p,#comments.embed[data-num-comments="0"] p.comment-footer{
+display:none
+}
+#comment-editor-src{
+display:none
+}
+.comments .comments-content .loadmore.loaded{
+max-height:0;
+opacity:0;
+overflow:hidden
+}
+.extendable .remaining-items{
+height:0;
+overflow:hidden;
+-webkit-transition:height .3s cubic-bezier(.4,0,.2,1);
+transition:height .3s cubic-bezier(.4,0,.2,1)
+}
+.extendable .remaining-items.expanded{
+height:auto
+}
+.svg-icon-24,.svg-icon-24-button{
+cursor:pointer;
+height:24px;
+width:24px;
+min-width:24px
+}
+.touch-icon{
+margin:-12px;
+padding:12px
+}
+.touch-icon:active,.touch-icon:focus{
+background-color:rgba(153,153,153,.4);
+border-radius:50%
+}
+svg:not(:root).touch-icon{
+overflow:visible
+}
+html[dir=rtl] .rtl-reversible-icon{
+-webkit-transform:scaleX(-1);
+-ms-transform:scaleX(-1);
+transform:scaleX(-1)
+}
+.svg-icon-24-button,.touch-icon-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0
+}
+.touch-icon-button .touch-icon:active,.touch-icon-button .touch-icon:focus{
+background-color:transparent
+}
+.touch-icon-button:active .touch-icon,.touch-icon-button:focus .touch-icon{
+background-color:rgba(153,153,153,.4);
+border-radius:50%
+}
+.Profile .default-avatar-wrapper .avatar-icon{
+border-radius:50%;
+border:solid 1px #5b5b5b;
+box-sizing:border-box;
+fill:#5b5b5b;
+margin:0
+}
+.Profile .individual .default-avatar-wrapper .avatar-icon{
+padding:25px
+}
+.Profile .individual .avatar-icon,.Profile .individual .profile-img{
+height:120px;
+width:120px
+}
+.Profile .team .default-avatar-wrapper .avatar-icon{
+padding:8px
+}
+.Profile .team .avatar-icon,.Profile .team .default-avatar-wrapper,.Profile .team .profile-img{
+height:40px;
+width:40px
+}
+.snippet-container{
+margin:0;
+position:relative;
+overflow:hidden
+}
+.snippet-fade{
+bottom:0;
+box-sizing:border-box;
+position:absolute;
+width:96px
+}
+.snippet-fade{
+right:0
+}
+.snippet-fade:after{
+content:"\2026"
+}
+.snippet-fade:after{
+float:right
+}
+.post-bottom{
+-webkit-box-align:center;
+-webkit-align-items:center;
+-ms-flex-align:center;
+align-items:center;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap
+}
+.post-footer{
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap;
+-webkit-box-ordinal-group:2;
+-webkit-order:1;
+-ms-flex-order:1;
+order:1
+}
+.post-footer>*{
+-webkit-box-flex:0;
+-webkit-flex:0 1 auto;
+-ms-flex:0 1 auto;
+flex:0 1 auto
+}
+.post-footer .byline:last-child{
+margin-right:1em
+}
+.jump-link{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-box-ordinal-group:3;
+-webkit-order:2;
+-ms-flex-order:2;
+order:2
+}
+.centered-top-container.sticky{
+left:0;
+position:fixed;
+right:0;
+top:0;
+width:auto;
+z-index:50;
+-webkit-transition-property:opacity,-webkit-transform;
+transition-property:opacity,-webkit-transform;
+transition-property:transform,opacity;
+transition-property:transform,opacity,-webkit-transform;
+-webkit-transition-duration:.2s;
+transition-duration:.2s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1)
+}
+.centered-top-placeholder{
+display:none
+}
+.collapsed-header .centered-top-placeholder{
+display:block
+}
+.centered-top-container .Header .replaced h1,.centered-top-placeholder .Header .replaced h1{
+display:none
+}
+.centered-top-container.sticky .Header .replaced h1{
+display:block
+}
+.centered-top-container.sticky .Header .header-widget{
+background:0 0
+}
+.centered-top-container.sticky .Header .header-image-wrapper{
+display:none
+}
+.centered-top-container img,.centered-top-placeholder img{
+max-width:100%
+}
+.collapsible{
+-webkit-transition:height .3s cubic-bezier(.4,0,.2,1);
+transition:height .3s cubic-bezier(.4,0,.2,1)
+}
+.collapsible,.collapsible>summary{
+display:block;
+overflow:hidden
+}
+.collapsible>:not(summary){
+display:none
+}
+.collapsible[open]>:not(summary){
+display:block
+}
+.collapsible:focus,.collapsible>summary:focus{
+outline:0
+}
+.collapsible>summary{
+cursor:pointer;
+display:block;
+padding:0
+}
+.collapsible:focus>summary,.collapsible>summary:focus{
+background-color:transparent
+}
+.collapsible>summary::-webkit-details-marker{
+display:none
+}
+.collapsible-title{
+-webkit-box-align:center;
+-webkit-align-items:center;
+-ms-flex-align:center;
+align-items:center;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex
+}
+.collapsible-title .title{
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto;
+-webkit-box-ordinal-group:1;
+-webkit-order:0;
+-ms-flex-order:0;
+order:0;
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap
+}
+.collapsible-title .chevron-down,.collapsible[open] .collapsible-title .chevron-up{
+display:block
+}
+.collapsible-title .chevron-up,.collapsible[open] .collapsible-title .chevron-down{
+display:none
+}
+.flat-button{
+cursor:pointer;
+display:inline-block;
+font-weight:700;
+text-transform:uppercase;
+border-radius:2px;
+padding:8px;
+margin:-8px
+}
+.flat-icon-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0;
+margin:-12px;
+padding:12px;
+cursor:pointer;
+box-sizing:content-box;
+display:inline-block;
+line-height:0
+}
+.flat-icon-button,.flat-icon-button .splash-wrapper{
+border-radius:50%
+}
+.flat-icon-button .splash.animate{
+-webkit-animation-duration:.3s;
+animation-duration:.3s
+}
+.overflowable-container{
+max-height:46px;
+overflow:hidden;
+position:relative
+}
+.overflow-button{
+cursor:pointer
+}
+#overflowable-dim-overlay{
+background:0 0
+}
+.overflow-popup{
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+background-color:#ffffff;
+left:0;
+max-width:calc(100% - 32px);
+position:absolute;
+top:0;
+visibility:hidden;
+z-index:101
+}
+.overflow-popup ul{
+list-style:none
+}
+.overflow-popup .tabs li,.overflow-popup li{
+display:block;
+height:auto
+}
+.overflow-popup .tabs li{
+padding-left:0;
+padding-right:0
+}
+.overflow-button.hidden,.overflow-popup .tabs li.hidden,.overflow-popup li.hidden{
+display:none
+}
+.pill-button{
+background:0 0;
+border:1px solid;
+border-radius:12px;
+cursor:pointer;
+display:inline-block;
+padding:4px 16px;
+text-transform:uppercase
+}
+.ripple{
+position:relative
+}
+.ripple>*{
+z-index:1
+}
+.splash-wrapper{
+bottom:0;
+left:0;
+overflow:hidden;
+pointer-events:none;
+position:absolute;
+right:0;
+top:0;
+z-index:0
+}
+.splash{
+background:#ccc;
+border-radius:100%;
+display:block;
+opacity:.6;
+position:absolute;
+-webkit-transform:scale(0);
+-ms-transform:scale(0);
+transform:scale(0)
+}
+.splash.animate{
+-webkit-animation:ripple-effect .4s linear;
+animation:ripple-effect .4s linear
+}
+@-webkit-keyframes ripple-effect{
+100%{
+opacity:0;
+-webkit-transform:scale(2.5);
+transform:scale(2.5)
+}
+}
+@keyframes ripple-effect{
+100%{
+opacity:0;
+-webkit-transform:scale(2.5);
+transform:scale(2.5)
+}
+}
+.search{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+line-height:24px;
+width:24px
+}
+.search.focused{
+width:100%
+}
+.search.focused .section{
+width:100%
+}
+.search form{
+z-index:101
+}
+.search h3{
+display:none
+}
+.search form{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-flex:1;
+-webkit-flex:1 0 0;
+-ms-flex:1 0 0px;
+flex:1 0 0;
+border-bottom:solid 1px transparent;
+padding-bottom:8px
+}
+.search form>*{
+display:none
+}
+.search.focused form>*{
+display:block
+}
+.search .search-input label{
+display:none
+}
+.centered-top-placeholder.cloned .search form{
+z-index:30
+}
+.search.focused form{
+border-color:#ffffff;
+position:relative;
+width:auto
+}
+.collapsed-header .centered-top-container .search.focused form{
+border-bottom-color:transparent
+}
+.search-expand{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.search-expand-text{
+display:none
+}
+.search-close{
+display:inline;
+vertical-align:middle
+}
+.search-input{
+-webkit-box-flex:1;
+-webkit-flex:1 0 1px;
+-ms-flex:1 0 1px;
+flex:1 0 1px
+}
+.search-input input{
+background:0 0;
+border:0;
+box-sizing:border-box;
+color:#ffffff;
+display:inline-block;
+outline:0;
+width:calc(100% - 48px)
+}
+.search-input input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #ffffff
+}
+.collapsed-header .centered-top-container .search-action,.collapsed-header .centered-top-container .search-input input{
+color:#3b3b3b
+}
+.collapsed-header .centered-top-container .search-input input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #3b3b3b
+}
+.collapsed-header .centered-top-container .search-input input.no-cursor:focus,.search-input input.no-cursor:focus{
+outline:0
+}
+.search-focused>*{
+visibility:hidden
+}
+.search-focused .search,.search-focused .search-icon{
+visibility:visible
+}
+.search.focused .search-action{
+display:block
+}
+.search.focused .search-action:disabled{
+opacity:.3
+}
+.widget.Sharing .sharing-button{
+display:none
+}
+.widget.Sharing .sharing-buttons li{
+padding:0
+}
+.widget.Sharing .sharing-buttons li span{
+display:none
+}
+.post-share-buttons{
+position:relative
+}
+.centered-bottom .share-buttons .svg-icon-24,.share-buttons .svg-icon-24{
+fill:#212121
+}
+.sharing-open.touch-icon-button:active .touch-icon,.sharing-open.touch-icon-button:focus .touch-icon{
+background-color:transparent
+}
+.share-buttons{
+background-color:#ffffff;
+border-radius:2px;
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+color:#212121;
+list-style:none;
+margin:0;
+padding:8px 0;
+position:absolute;
+top:-11px;
+min-width:200px;
+z-index:101
+}
+.share-buttons.hidden{
+display:none
+}
+.sharing-button{
+background:0 0;
+border:0;
+margin:0;
+outline:0;
+padding:0;
+cursor:pointer
+}
+.share-buttons li{
+margin:0;
+height:48px
+}
+.share-buttons li:last-child{
+margin-bottom:0
+}
+.share-buttons li .sharing-platform-button{
+box-sizing:border-box;
+cursor:pointer;
+display:block;
+height:100%;
+margin-bottom:0;
+padding:0 16px;
+position:relative;
+width:100%
+}
+.share-buttons li .sharing-platform-button:focus,.share-buttons li .sharing-platform-button:hover{
+background-color:rgba(128,128,128,.1);
+outline:0
+}
+.share-buttons li svg[class*=" sharing-"],.share-buttons li svg[class^=sharing-]{
+position:absolute;
+top:10px
+}
+.share-buttons li span.sharing-platform-button{
+position:relative;
+top:0
+}
+.share-buttons li .platform-sharing-text{
+display:block;
+font-size:16px;
+line-height:48px;
+white-space:nowrap
+}
+.share-buttons li .platform-sharing-text{
+margin-left:56px
+}
+.sidebar-container{
+background-color:#ffffff;
+max-width:284px;
+overflow-y:auto;
+-webkit-transition-property:-webkit-transform;
+transition-property:-webkit-transform;
+transition-property:transform;
+transition-property:transform,-webkit-transform;
+-webkit-transition-duration:.3s;
+transition-duration:.3s;
+-webkit-transition-timing-function:cubic-bezier(0,0,.2,1);
+transition-timing-function:cubic-bezier(0,0,.2,1);
+width:284px;
+z-index:101;
+-webkit-overflow-scrolling:touch
+}
+.sidebar-container .navigation{
+line-height:0;
+padding:16px
+}
+.sidebar-container .sidebar-back{
+cursor:pointer
+}
+.sidebar-container .widget{
+background:0 0;
+margin:0 16px;
+padding:16px 0
+}
+.sidebar-container .widget .title{
+color:#000000;
+margin:0
+}
+.sidebar-container .widget ul{
+list-style:none;
+margin:0;
+padding:0
+}
+.sidebar-container .widget ul ul{
+margin-left:1em
+}
+.sidebar-container .widget li{
+font-size:16px;
+line-height:normal
+}
+.sidebar-container .widget+.widget{
+border-top:1px dashed #c6c6c6
+}
+.BlogArchive li{
+margin:16px 0
+}
+.BlogArchive li:last-child{
+margin-bottom:0
+}
+.Label li a{
+display:inline-block
+}
+.BlogArchive .post-count,.Label .label-count{
+float:right;
+margin-left:.25em
+}
+.BlogArchive .post-count::before,.Label .label-count::before{
+content:"("
+}
+.BlogArchive .post-count::after,.Label .label-count::after{
+content:")"
+}
+.widget.Translate .skiptranslate>div{
+display:block!important
+}
+.widget.Profile .profile-link{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex
+}
+.widget.Profile .team-member .default-avatar-wrapper,.widget.Profile .team-member .profile-img{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+margin-right:1em
+}
+.widget.Profile .individual .profile-link{
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column
+}
+.widget.Profile .team .profile-link .profile-name{
+-webkit-align-self:center;
+-ms-flex-item-align:center;
+align-self:center;
+display:block;
+-webkit-box-flex:1;
+-webkit-flex:1 1 auto;
+-ms-flex:1 1 auto;
+flex:1 1 auto
+}
+.dim-overlay{
+background-color:rgba(0,0,0,.54);
+z-index:100
+}
+body.sidebar-visible{
+overflow-y:hidden
+}
+@media screen and (max-width:1439px){
+.sidebar-container{
+bottom:0;
+position:fixed;
+top:0;
+left:0;
+right:auto
+}
+.sidebar-container.sidebar-invisible{
+-webkit-transition-timing-function:cubic-bezier(.4,0,.6,1);
+transition-timing-function:cubic-bezier(.4,0,.6,1);
+-webkit-transform:translateX(-284px);
+-ms-transform:translateX(-284px);
+transform:translateX(-284px)
+}
+}
+@media screen and (min-width:1440px){
+.sidebar-container{
+position:absolute;
+top:0;
+left:0;
+right:auto
+}
+.sidebar-container .navigation{
+display:none
+}
+}
+.dialog{
+box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+background:#ffffff;
+box-sizing:border-box;
+color:#666666;
+padding:30px;
+position:fixed;
+text-align:center;
+width:calc(100% - 24px);
+z-index:101
+}
+.dialog input[type=email],.dialog input[type=text]{
+background-color:transparent;
+border:0;
+border-bottom:solid 1px rgba(102,102,102,.12);
+color:#666666;
+display:block;
+font-family:Roboto, sans-serif;
+font-size:16px;
+line-height:24px;
+margin:auto;
+padding-bottom:7px;
+outline:0;
+text-align:center;
+width:100%
+}
+.dialog input[type=email]::-webkit-input-placeholder,.dialog input[type=text]::-webkit-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::-moz-placeholder,.dialog input[type=text]::-moz-placeholder{
+color:#666666
+}
+.dialog input[type=email]:-ms-input-placeholder,.dialog input[type=text]:-ms-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::-ms-input-placeholder,.dialog input[type=text]::-ms-input-placeholder{
+color:#666666
+}
+.dialog input[type=email]::placeholder,.dialog input[type=text]::placeholder{
+color:#666666
+}
+.dialog input[type=email]:focus,.dialog input[type=text]:focus{
+border-bottom:solid 2px #3c79a7;
+padding-bottom:6px
+}
+.dialog input.no-cursor{
+color:transparent;
+text-shadow:0 0 0 #666666
+}
+.dialog input.no-cursor:focus{
+outline:0
+}
+.dialog input.no-cursor:focus{
+outline:0
+}
+.dialog input[type=submit]{
+font-family:Roboto, sans-serif
+}
+.dialog .goog-buttonset-default{
+color:#3c79a7
+}
+.subscribe-popup{
+max-width:364px
+}
+.subscribe-popup h3{
+color:#3b3b3b;
+font-size:1.8em;
+margin-top:0
+}
+.subscribe-popup .FollowByEmail h3{
+display:none
+}
+.subscribe-popup .FollowByEmail .follow-by-email-submit{
+color:#3c79a7;
+display:inline-block;
+margin:0 auto;
+margin-top:24px;
+width:auto;
+white-space:normal
+}
+.subscribe-popup .FollowByEmail .follow-by-email-submit:disabled{
+cursor:default;
+opacity:.3
+}
+@media (max-width:800px){
+.blog-name div.widget.Subscribe{
+margin-bottom:16px
+}
+body.item-view .blog-name div.widget.Subscribe{
+margin:8px auto 16px auto;
+width:100%
+}
+}
+.tabs{
+list-style:none
+}
+.tabs li{
+display:inline-block
+}
+.tabs li a{
+cursor:pointer;
+display:inline-block;
+font-weight:700;
+text-transform:uppercase;
+padding:12px 8px
+}
+.tabs .selected{
+border-bottom:4px solid #ffffff
+}
+.tabs .selected a{
+color:#ffffff
+}
+body#layout .bg-photo,body#layout .bg-photo-overlay{
+display:none
+}
+body#layout .page_body{
+padding:0;
+position:relative;
+top:0
+}
+body#layout .page{
+display:inline-block;
+left:inherit;
+position:relative;
+vertical-align:top;
+width:540px
+}
+body#layout .centered{
+max-width:954px
+}
+body#layout .navigation{
+display:none
+}
+body#layout .sidebar-container{
+display:inline-block;
+width:40%
+}
+body#layout .hamburger-menu,body#layout .search{
+display:none
+}
+.centered-top-container .svg-icon-24,body.collapsed-header .centered-top-placeholder .svg-icon-24{
+fill:#ffffff
+}
+.sidebar-container .svg-icon-24{
+fill:#5b5b5b
+}
+.centered-bottom .svg-icon-24,body.collapsed-header .centered-top-container .svg-icon-24{
+fill:#5b5b5b
+}
+.centered-bottom .share-buttons .svg-icon-24,.share-buttons .svg-icon-24{
+fill:#212121
+}
+body{
+background-color:#eaeaea;
+color:#666666;
+font:15px Roboto, sans-serif;
+margin:0;
+min-height:100vh
+}
+img{
+max-width:100%
+}
+h3{
+color:#666666;
+font-size:16px
+}
+a{
+text-decoration:none;
+color:#3c79a7
+}
+a:visited{
+color:#3c79a7
+}
+a:hover{
+color:#2196f3
+}
+blockquote{
+color:#000000;
+font:italic 300 15px Roboto, sans-serif;
+font-size:x-large;
+text-align:center
+}
+.pill-button{
+font-size:12px
+}
+.bg-photo-container{
+height:470px;
+overflow:hidden;
+position:absolute;
+width:100%;
+z-index:1
+}
+.bg-photo{
+background:#eaeaea url(http://2.bp.blogspot.com/-x4SlpiHfSJ8/Vyjtmvpt5kI/AAAAAAAADn4/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B/s1600/newton_cropped.jpg) repeat fixed top left;
+background-attachment:scroll;
+background-size:cover;
+-webkit-filter:blur(3px);
+filter:blur(3px);
+height:calc(100% + 2 * 3px);
+left:-3px;
+position:absolute;
+top:-3px;
+width:calc(100% + 2 * 3px)
+}
+.bg-photo-overlay{
+background:rgba(0,0,0,.26);
+background-size:cover;
+height:470px;
+position:absolute;
+width:100%;
+z-index:2
+}
+.hamburger-menu{
+float:left;
+margin-top:0
+}
+.sticky .hamburger-menu{
+float:none;
+position:absolute
+}
+.search{
+border-bottom:solid 1px rgba(255, 255, 255, 0);
+float:right;
+position:relative;
+-webkit-transition-property:width;
+transition-property:width;
+-webkit-transition-duration:.5s;
+transition-duration:.5s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1);
+z-index:101
+}
+.search .dim-overlay{
+background-color:transparent
+}
+.search form{
+height:36px;
+-webkit-transition-property:border-color;
+transition-property:border-color;
+-webkit-transition-delay:.5s;
+transition-delay:.5s;
+-webkit-transition-duration:.2s;
+transition-duration:.2s;
+-webkit-transition-timing-function:cubic-bezier(.4,0,.2,1);
+transition-timing-function:cubic-bezier(.4,0,.2,1)
+}
+.search.focused{
+width:calc(100% - 48px)
+}
+.search.focused form{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-flex:1;
+-webkit-flex:1 0 1px;
+-ms-flex:1 0 1px;
+flex:1 0 1px;
+border-color:#ffffff;
+margin-left:-24px;
+padding-left:36px;
+position:relative;
+width:auto
+}
+.item-view .search,.sticky .search{
+right:0;
+float:none;
+margin-left:0;
+position:absolute
+}
+.item-view .search.focused,.sticky .search.focused{
+width:calc(100% - 50px)
+}
+.item-view .search.focused form,.sticky .search.focused form{
+border-bottom-color:#4e4e4e
+}
+.centered-top-placeholder.cloned .search form{
+z-index:30
+}
+.search_button{
+-webkit-box-flex:0;
+-webkit-flex:0 0 24px;
+-ms-flex:0 0 24px;
+flex:0 0 24px;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column
+}
+.search_button svg{
+margin-top:0
+}
+.search-input{
+height:48px
+}
+.search-input input{
+display:block;
+color:#ffffff;
+font:16px Roboto, sans-serif;
+height:48px;
+line-height:48px;
+padding:0;
+width:100%
+}
+.search-input input::-webkit-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::-moz-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input:-ms-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::-ms-input-placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-input input::placeholder{
+color:#ffffff;
+opacity:.3
+}
+.search-action{
+background:0 0;
+border:0;
+color:#ffffff;
+cursor:pointer;
+display:none;
+height:48px;
+margin-top:0
+}
+.sticky .search-action{
+color:#4e4e4e
+}
+.search.focused .search-action{
+display:block
+}
+.search.focused .search-action:disabled{
+opacity:.3
+}
+.page_body{
+position:relative;
+z-index:20
+}
+.page_body .widget{
+margin-bottom:16px
+}
+.page_body .centered{
+box-sizing:border-box;
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-orient:vertical;
+-webkit-box-direction:normal;
+-webkit-flex-direction:column;
+-ms-flex-direction:column;
+flex-direction:column;
+margin:0 auto;
+max-width:922px;
+min-height:100vh;
+padding:24px 0
+}
+.page_body .centered>*{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.page_body .centered>#footer{
+margin-top:auto
+}
+.blog-name{
+margin:24px 0 16px 0
+}
+.item-view .blog-name,.sticky .blog-name{
+box-sizing:border-box;
+margin-left:36px;
+min-height:48px;
+opacity:1;
+padding-top:12px
+}
+.blog-name .subscribe-section-container{
+margin-bottom:32px;
+text-align:center;
+-webkit-transition-property:opacity;
+transition-property:opacity;
+-webkit-transition-duration:.5s;
+transition-duration:.5s
+}
+.item-view .blog-name .subscribe-section-container,.sticky .blog-name .subscribe-section-container{
+margin:0 0 8px 0
+}
+.blog-name .PageList{
+margin-top:16px;
+padding-top:8px;
+text-align:center
+}
+.blog-name .PageList .overflowable-contents{
+width:100%
+}
+.blog-name .PageList h3.title{
+color:#ffffff;
+margin:8px auto;
+text-align:center;
+width:100%
+}
+.centered-top-container .blog-name{
+-webkit-transition-property:opacity;
+transition-property:opacity;
+-webkit-transition-duration:.5s;
+transition-duration:.5s
+}
+.item-view .return_link{
+margin-bottom:12px;
+margin-top:12px;
+position:absolute
+}
+.item-view .blog-name{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+-webkit-flex-wrap:wrap;
+-ms-flex-wrap:wrap;
+flex-wrap:wrap;
+margin:0 48px 27px 48px
+}
+.item-view .subscribe-section-container{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto
+}
+.item-view #header,.item-view .Header{
+margin-bottom:5px;
+margin-right:15px
+}
+.item-view .sticky .Header{
+margin-bottom:0
+}
+.item-view .Header p{
+margin:10px 0 0 0;
+text-align:left
+}
+.item-view .post-share-buttons-bottom{
+margin-right:16px
+}
+.sticky{
+background:#ffffff;
+box-shadow:0 0 20px 0 rgba(0,0,0,.7);
+box-sizing:border-box;
+margin-left:0
+}
+.sticky #header{
+margin-bottom:8px;
+margin-right:8px
+}
+.sticky .centered-top{
+margin:4px auto;
+max-width:890px;
+min-height:48px
+}
+.sticky .blog-name{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+margin:0 48px
+}
+.sticky .blog-name #header{
+-webkit-box-flex:0;
+-webkit-flex:0 1 auto;
+-ms-flex:0 1 auto;
+flex:0 1 auto;
+-webkit-box-ordinal-group:2;
+-webkit-order:1;
+-ms-flex-order:1;
+order:1;
+overflow:hidden
+}
+.sticky .blog-name .subscribe-section-container{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-box-ordinal-group:3;
+-webkit-order:2;
+-ms-flex-order:2;
+order:2
+}
+.sticky .Header h1{
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+margin-right:-10px;
+margin-bottom:-10px;
+padding-right:10px;
+padding-bottom:10px
+}
+.sticky .Header p{
+display:none
+}
+.sticky .PageList{
+display:none
+}
+.search-focused>*{
+visibility:visible
+}
+.search-focused .hamburger-menu{
+visibility:visible
+}
+.item-view .search-focused .blog-name,.sticky .search-focused .blog-name{
+opacity:0
+}
+.centered-bottom,.centered-top-container,.centered-top-placeholder{
+padding:0 16px
+}
+.centered-top{
+position:relative
+}
+.item-view .centered-top.search-focused .subscribe-section-container,.sticky .centered-top.search-focused .subscribe-section-container{
+opacity:0
+}
+.page_body.has-vertical-ads .centered .centered-bottom{
+display:inline-block;
+width:calc(100% - 176px)
+}
+.Header h1{
+color:#ffffff;
+font:bold 45px Roboto, sans-serif;
+line-height:normal;
+margin:0 0 13px 0;
+text-align:center;
+width:100%
+}
+.Header h1 a,.Header h1 a:hover,.Header h1 a:visited{
+color:#ffffff
+}
+.item-view .Header h1,.sticky .Header h1{
+font-size:24px;
+line-height:24px;
+margin:0;
+text-align:left
+}
+.sticky .Header h1{
+color:#4e4e4e
+}
+.sticky .Header h1 a,.sticky .Header h1 a:hover,.sticky .Header h1 a:visited{
+color:#4e4e4e
+}
+.Header p{
+color:#ffffff;
+margin:0 0 13px 0;
+opacity:.8;
+text-align:center
+}
+.widget .title{
+line-height:28px
+}
+.BlogArchive li{
+font-size:16px
+}
+.BlogArchive .post-count{
+color:#4e4e4e
+}
+#page_body .FeaturedPost,.Blog .blog-posts .post-outer-container{
+background:#ffffff;
+min-height:40px;
+padding:30px 40px;
+width:auto
+}
+.Blog .blog-posts .post-outer-container:last-child{
+margin-bottom:0
+}
+.Blog .blog-posts .post-outer-container .post-outer{
+border:0;
+position:relative;
+padding-bottom:.25em
+}
+.post-outer-container{
+margin-bottom:16px
+}
+.post:first-child{
+margin-top:0
+}
+.post .thumb{
+float:left;
+height:20%;
+width:20%
+}
+.post-share-buttons-bottom,.post-share-buttons-top{
+float:right
+}
+.post-share-buttons-bottom{
+margin-right:24px
+}
+.post-footer,.post-header{
+clear:left;
+color:rgba(0, 0, 0, 0.54);
+margin:0;
+width:inherit
+}
+.blog-pager{
+text-align:center
+}
+.blog-pager a{
+color:#2196f3
+}
+.blog-pager a:visited{
+color:#2196f3
+}
+.blog-pager a:hover{
+color:#2196f3
+}
+.post-title{
+font:bold 22px Roboto, sans-serif;
+float:left;
+margin:0 0 8px 0;
+max-width:calc(100% - 48px)
+}
+.post-title a{
+font:bold 30px Roboto, sans-serif
+}
+.post-title,.post-title a,.post-title a:hover,.post-title a:visited{
+color:#3b3b3b
+}
+.post-body{
+color:#4e4e4e;
+font:15px Roboto, sans-serif;
+line-height:1.6em;
+margin:1.5em 0 2em 0;
+display:block
+}
+.post-body img{
+height:inherit
+}
+.post-body .snippet-thumbnail{
+float:left;
+margin:0;
+margin-right:2em;
+max-height:128px;
+max-width:128px
+}
+.post-body .snippet-thumbnail img{
+max-width:100%
+}
+.main .FeaturedPost .widget-content{
+border:0;
+position:relative;
+padding-bottom:.25em
+}
+.FeaturedPost img{
+margin-top:2em
+}
+.FeaturedPost .snippet-container{
+margin:2em 0
+}
+.FeaturedPost .snippet-container p{
+margin:0
+}
+.FeaturedPost .snippet-thumbnail{
+float:none;
+height:auto;
+margin-bottom:2em;
+margin-right:0;
+overflow:hidden;
+max-height:calc(600px + 2em);
+max-width:100%;
+text-align:center;
+width:100%
+}
+.FeaturedPost .snippet-thumbnail img{
+max-width:100%;
+width:100%
+}
+.byline{
+color:rgba(0, 0, 0, 0.54);
+display:inline-block;
+line-height:24px;
+margin-top:8px;
+vertical-align:top
+}
+.byline.post-author:first-child{
+margin-right:0
+}
+.byline.reactions .reactions-label{
+line-height:22px;
+vertical-align:top
+}
+.byline.post-share-buttons{
+position:relative;
+display:inline-block;
+margin-top:0;
+width:100%
+}
+.byline.post-share-buttons .sharing{
+float:right
+}
+.flat-button.ripple:hover{
+background-color:rgba(60,121,167,.12)
+}
+.flat-button.ripple .splash{
+background-color:rgba(60,121,167,.4)
+}
+a.timestamp-link,a:active.timestamp-link,a:visited.timestamp-link{
+color:inherit;
+font:inherit;
+text-decoration:inherit
+}
+.post-share-buttons{
+margin-left:0
+}
+.clear-sharing{
+min-height:24px
+}
+.comment-link{
+color:#3c79a7;
+position:relative
+}
+.comment-link .num_comments{
+margin-left:8px;
+vertical-align:top
+}
+#comment-holder .continue{
+display:none
+}
+#comment-editor{
+margin-bottom:20px;
+margin-top:20px
+}
+#comments .comment-form h4,#comments h3.title{
+position:absolute;
+clip:rect(1px,1px,1px,1px);
+padding:0;
+border:0;
+height:1px;
+width:1px;
+overflow:hidden
+}
+.post-filter-message{
+background-color:rgba(0,0,0,.7);
+color:#fff;
+display:table;
+margin-bottom:16px;
+width:100%
+}
+.post-filter-message div{
+display:table-cell;
+padding:15px 28px
+}
+.post-filter-message div:last-child{
+padding-left:0;
+text-align:right
+}
+.post-filter-message a{
+white-space:nowrap
+}
+.post-filter-message .search-label,.post-filter-message .search-query{
+font-weight:700;
+color:#3c79a7
+}
+#blog-pager{
+margin:2em 0
+}
+#blog-pager a{
+color:#2196f3;
+font-size:14px
+}
+.subscribe-button{
+border-color:#ffffff;
+color:#ffffff
+}
+.sticky .subscribe-button{
+border-color:#4e4e4e;
+color:#4e4e4e
+}
+.tabs{
+margin:0 auto;
+padding:0
+}
+.tabs li{
+margin:0 8px;
+vertical-align:top
+}
+.tabs .overflow-button a,.tabs li a{
+color:#c6c6c6;
+font:700 normal 15px Roboto, sans-serif;
+line-height:18px
+}
+.tabs .overflow-button a{
+padding:12px 8px
+}
+.overflow-popup .tabs li{
+text-align:left
+}
+.overflow-popup li a{
+color:#757575;
+display:block;
+padding:8px 20px
+}
+.overflow-popup li.selected a{
+color:#212121
+}
+a.report_abuse{
+font-weight:400
+}
+.Label li,.Label span.label-size,.byline.post-labels a{
+background-color:#f7f7f7;
+border:1px solid #f7f7f7;
+border-radius:15px;
+display:inline-block;
+margin:4px 4px 4px 0;
+padding:3px 8px
+}
+.Label a,.byline.post-labels a{
+color:rgba(0, 0, 0, 0.54)
+}
+.Label ul{
+list-style:none;
+padding:0
+}
+.PopularPosts{
+background-color:#eeeeee;
+padding:30px 40px
+}
+.PopularPosts .item-content{
+color:#757575;
+margin-top:24px
+}
+.PopularPosts a,.PopularPosts a:hover,.PopularPosts a:visited{
+color:#2196f3
+}
+.PopularPosts .post-title,.PopularPosts .post-title a,.PopularPosts .post-title a:hover,.PopularPosts .post-title a:visited{
+color:#212121;
+font-size:18px;
+font-weight:700;
+line-height:24px
+}
+.PopularPosts,.PopularPosts h3.title a{
+color:#4e4e4e;
+font:15px Roboto, sans-serif
+}
+.main .PopularPosts{
+padding:16px 40px
+}
+.PopularPosts h3.title{
+font-size:14px;
+margin:0
+}
+.PopularPosts h3.post-title{
+margin-bottom:0
+}
+.PopularPosts .byline{
+color:rgba(0, 0, 0, 0.54)
+}
+.PopularPosts .jump-link{
+float:right;
+margin-top:16px
+}
+.PopularPosts .post-header .byline{
+font-size:.9em;
+font-style:italic;
+margin-top:6px
+}
+.PopularPosts ul{
+list-style:none;
+padding:0;
+margin:0
+}
+.PopularPosts .post{
+padding:20px 0
+}
+.PopularPosts .post+.post{
+border-top:1px dashed #c6c6c6
+}
+.PopularPosts .item-thumbnail{
+float:left;
+margin-right:32px
+}
+.PopularPosts .item-thumbnail img{
+height:88px;
+padding:0;
+width:88px
+}
+.inline-ad{
+margin-bottom:16px
+}
+.desktop-ad .inline-ad{
+display:block
+}
+.adsbygoogle{
+overflow:hidden
+}
+.vertical-ad-container{
+float:right;
+margin-right:16px;
+width:128px
+}
+.vertical-ad-container .AdSense+.AdSense{
+margin-top:16px
+}
+.inline-ad-placeholder,.vertical-ad-placeholder{
+background:#ffffff;
+border:1px solid #000;
+opacity:.9;
+vertical-align:middle;
+text-align:center
+}
+.inline-ad-placeholder span,.vertical-ad-placeholder span{
+margin-top:290px;
+display:block;
+text-transform:uppercase;
+font-weight:700;
+color:#3b3b3b
+}
+.vertical-ad-placeholder{
+height:600px
+}
+.vertical-ad-placeholder span{
+margin-top:290px;
+padding:0 40px
+}
+.inline-ad-placeholder{
+height:90px
+}
+.inline-ad-placeholder span{
+margin-top:36px
+}
+.Attribution{
+color:#757575
+}
+.Attribution a,.Attribution a:hover,.Attribution a:visited{
+color:#2196f3
+}
+.Attribution svg{
+fill:#5b5b5b
+}
+.sidebar-container{
+box-shadow:1px 1px 3px rgba(0,0,0,.1)
+}
+.sidebar-container,.sidebar-container .sidebar_bottom{
+background-color:#ffffff
+}
+.sidebar-container .navigation,.sidebar-container .sidebar_top_wrapper{
+background-color:#ffffff
+}
+.sidebar-container .sidebar_top{
+overflow:auto
+}
+.sidebar-container .sidebar_bottom{
+width:100%;
+padding-top:16px
+}
+.sidebar-container .widget:first-child{
+padding-top:0
+}
+.sidebar_top .widget.Profile{
+padding-bottom:16px
+}
+.widget.Profile{
+margin:0;
+width:100%
+}
+.widget.Profile h2{
+display:none
+}
+.widget.Profile h3.title{
+color:rgba(0, 0, 0, 0.52);
+margin:16px 32px
+}
+.widget.Profile .individual{
+text-align:center
+}
+.widget.Profile .individual .profile-link{
+padding:1em
+}
+.widget.Profile .individual .default-avatar-wrapper .avatar-icon{
+margin:auto
+}
+.widget.Profile .team{
+margin-bottom:32px;
+margin-left:32px;
+margin-right:32px
+}
+.widget.Profile ul{
+list-style:none;
+padding:0
+}
+.widget.Profile li{
+margin:10px 0
+}
+.widget.Profile .profile-img{
+border-radius:50%;
+float:none
+}
+.widget.Profile .profile-link{
+color:#212121;
+font-size:.9em;
+margin-bottom:1em;
+opacity:.87;
+overflow:hidden
+}
+.widget.Profile .profile-link.visit-profile{
+border-style:solid;
+border-width:1px;
+border-radius:12px;
+cursor:pointer;
+font-size:12px;
+font-weight:400;
+padding:5px 20px;
+display:inline-block;
+line-height:normal
+}
+.widget.Profile dd{
+color:#757575;
+margin:0 16px
+}
+.widget.Profile location{
+margin-bottom:1em
+}
+.widget.Profile .profile-textblock{
+font-size:14px;
+line-height:24px;
+position:relative
+}
+body.sidebar-visible .page_body{
+overflow-y:scroll
+}
+body.sidebar-visible .bg-photo-container{
+overflow-y:scroll
+}
+@media screen and (min-width:1440px){
+.sidebar-container{
+margin-top:470px;
+min-height:calc(100% - 470px);
+overflow:visible;
+z-index:32
+}
+.sidebar-container .sidebar_top_wrapper{
+background-color:#f3f3f3;
+height:470px;
+margin-top:-470px
+}
+.sidebar-container .sidebar_top{
+display:-webkit-box;
+display:-webkit-flex;
+display:-ms-flexbox;
+display:flex;
+height:470px;
+-webkit-box-orient:horizontal;
+-webkit-box-direction:normal;
+-webkit-flex-direction:row;
+-ms-flex-direction:row;
+flex-direction:row;
+max-height:470px
+}
+.sidebar-container .sidebar_bottom{
+max-width:284px;
+width:284px
+}
+body.collapsed-header .sidebar-container{
+z-index:15
+}
+.sidebar-container .sidebar_top:empty{
+display:none
+}
+.sidebar-container .sidebar_top>:only-child{
+-webkit-box-flex:0;
+-webkit-flex:0 0 auto;
+-ms-flex:0 0 auto;
+flex:0 0 auto;
+-webkit-align-self:center;
+-ms-flex-item-align:center;
+align-self:center;
+width:100%
+}
+.sidebar_top_wrapper.no-items{
+display:none
+}
+}
+.post-snippet.snippet-container{
+max-height:120px
+}
+.post-snippet .snippet-item{
+line-height:24px
+}
+.post-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+color:#666666;
+height:24px
+}
+.popular-posts-snippet.snippet-container{
+max-height:72px
+}
+.popular-posts-snippet .snippet-item{
+line-height:24px
+}
+.PopularPosts .popular-posts-snippet .snippet-fade{
+color:#666666;
+height:24px
+}
+.main .popular-posts-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#eeeeee 0,#eeeeee 20%,rgba(238, 238, 238, 0) 100%);
+background:linear-gradient(to left,#eeeeee 0,#eeeeee 20%,rgba(238, 238, 238, 0) 100%)
+}
+.sidebar_bottom .popular-posts-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%)
+}
+.profile-snippet.snippet-container{
+max-height:192px
+}
+.has-location .profile-snippet.snippet-container{
+max-height:144px
+}
+.profile-snippet .snippet-item{
+line-height:24px
+}
+.profile-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+background:linear-gradient(to left,#ffffff 0,#ffffff 20%,rgba(255, 255, 255, 0) 100%);
+color:#757575;
+height:24px
+}
+@media screen and (min-width:1440px){
+.profile-snippet .snippet-fade{
+background:-webkit-linear-gradient(left,#f3f3f3 0,#f3f3f3 20%,rgba(243, 243, 243, 0) 100%);
+background:linear-gradient(to left,#f3f3f3 0,#f3f3f3 20%,rgba(243, 243, 243, 0) 100%)
+}
+}
+@media screen and (max-width:800px){
+.blog-name{
+margin-top:0
+}
+body.item-view .blog-name{
+margin:0 48px
+}
+.centered-bottom{
+padding:8px
+}
+body.item-view .centered-bottom{
+padding:0
+}
+.page_body .centered{
+padding:10px 0
+}
+body.item-view #header,body.item-view .widget.Header{
+margin-right:0
+}
+body.collapsed-header .centered-top-container .blog-name{
+display:block
+}
+body.collapsed-header .centered-top-container .widget.Header h1{
+text-align:center
+}
+.widget.Header header{
+padding:0
+}
+.widget.Header h1{
+font-size:24px;
+line-height:24px;
+margin-bottom:13px
+}
+body.item-view .widget.Header h1{
+text-align:center
+}
+body.item-view .widget.Header p{
+text-align:center
+}
+.blog-name .widget.PageList{
+padding:0
+}
+body.item-view .centered-top{
+margin-bottom:5px
+}
+.search-action,.search-input{
+margin-bottom:-8px
+}
+.search form{
+margin-bottom:8px
+}
+body.item-view .subscribe-section-container{
+margin:5px 0 0 0;
+width:100%
+}
+#page_body.section div.widget.FeaturedPost,div.widget.PopularPosts{
+padding:16px
+}
+div.widget.Blog .blog-posts .post-outer-container{
+padding:16px
+}
+div.widget.Blog .blog-posts .post-outer-container .post-outer{
+padding:0
+}
+.post:first-child{
+margin:0
+}
+.post-body .snippet-thumbnail{
+margin:0 3vw 3vw 0
+}
+.post-body .snippet-thumbnail img{
+height:20vw;
+width:20vw;
+max-height:128px;
+max-width:128px
+}
+div.widget.PopularPosts div.item-thumbnail{
+margin:0 3vw 3vw 0
+}
+div.widget.PopularPosts div.item-thumbnail img{
+height:20vw;
+width:20vw;
+max-height:88px;
+max-width:88px
+}
+.post-title{
+line-height:1
+}
+.post-title,.post-title a{
+font-size:20px
+}
+#page_body.section div.widget.FeaturedPost h3 a{
+font-size:22px
+}
+.mobile-ad .inline-ad{
+display:block
+}
+.page_body.has-vertical-ads .vertical-ad-container,.page_body.has-vertical-ads .vertical-ad-container ins{
+display:none
+}
+.page_body.has-vertical-ads .centered .centered-bottom,.page_body.has-vertical-ads .centered .centered-top{
+display:block;
+width:auto
+}
+div.post-filter-message div{
+padding:8px 16px
+}
+}
+@media screen and (min-width:1440px){
+body{
+position:relative
+}
+body.item-view .blog-name{
+margin-left:48px
+}
+.page_body{
+margin-left:284px
+}
+.search{
+margin-left:0
+}
+.search.focused{
+width:100%
+}
+.sticky{
+padding-left:284px
+}
+.hamburger-menu{
+display:none
+}
+body.collapsed-header .page_body .centered-top-container{
+padding-left:284px;
+padding-right:0;
+width:100%
+}
+body.collapsed-header .centered-top-container .search.focused{
+width:100%
+}
+body.collapsed-header .centered-top-container .blog-name{
+margin-left:0
+}
+body.collapsed-header.item-view .centered-top-container .search.focused{
+width:calc(100% - 50px)
+}
+body.collapsed-header.item-view .centered-top-container .blog-name{
+margin-left:40px
+}
+}
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+body#layout .hidden,
+body#layout .invisible {
+display: inherit;
+}
+body#layout .navigation {
+display: none;
+}
+body#layout .page,
+body#layout .sidebar_top,
+body#layout .sidebar_bottom {
+display: inline-block;
+left: inherit;
+position: relative;
+vertical-align: top;
+}
+body#layout .page {
+float: right;
+margin-left: 20px;
+width: 55%;
+}
+body#layout .sidebar-container {
+float: right;
+width: 40%;
+}
+body#layout .hamburger-menu {
+display: none;
+}
+--></style>
+<style>
+    .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/s1600\/newton_cropped.jpg);}
+    
+@media (max-width: 480px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w480\/newton_cropped.jpg);}}
+@media (max-width: 640px) and (min-width: 481px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w640\/newton_cropped.jpg);}}
+@media (max-width: 800px) and (min-width: 641px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w800\/newton_cropped.jpg);}}
+@media (max-width: 1200px) and (min-width: 801px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w1200\/newton_cropped.jpg);}}
+/* Last tag covers anything over one higher than the previous max-size cap. */
+@media (min-width: 1201px) { .bg-photo {background-image:url(http\:\/\/2.bp.blogspot.com\/-x4SlpiHfSJ8\/Vyjtmvpt5kI\/AAAAAAAADn4\/7NTxE5yxeE8_M58uwT6AoZ3W6P9sxB6TwCK4B\/w1600\/newton_cropped.jpg);}}
+  </style>
+<script async='async' src='//www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js'></script>
+<!-- START: ADDED BY AMIR -->
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS"],
+     tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+  },
+  "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+    </script>
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'>
+    </script>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
+<!-- END: ADDED BY AMIR -->
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=5825758052688213474&amp;zx=5e2ad629-d23a-49a7-a013-9294d5a6515f' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=5825758052688213474&amp;zx=5e2ad629-d23a-49a7-a013-9294d5a6515f' rel='stylesheet'/></noscript>
+
+</head>
+<body class='item-view variant-indie_light'>
+<a class='skip-navigation' href='#main' tabindex='0'>
+Skip to main content
+</a>
+<div class='page'>
+<div class='bg-photo-overlay'></div>
+<div class='bg-photo-container'>
+<div class='bg-photo'></div>
+</div>
+<div class='page_body'>
+<div class='centered'>
+<div class='centered-top-placeholder'></div>
+<header class='centered-top-container' role='banner'>
+<div class='centered-top'>
+<a class='return_link' href='http://www.unofficialgoogledatascience.com/'>
+<button class='svg-icon-24-button back-button rtl-reversible-icon flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_arrow_back_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</button>
+</a>
+<div class='search'>
+<button aria-label='Search' class='search-expand touch-icon-button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24 search-expand-icon'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_search_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='section' id='search_top' name='Search (Top)'><div class='widget BlogSearch' data-version='2' id='BlogSearch1'>
+<h3 class='title'>
+Search This Blog
+</h3>
+<div class='widget-content' role='search'>
+<form action='http://www.unofficialgoogledatascience.com/search' target='_top'>
+<div class='search-input'>
+<input aria-label='Search this blog' autocomplete='off' name='q' placeholder='Search this blog' value=''/>
+</div>
+<input class='search-action' type='submit' value='Search'/>
+</form>
+</div>
+</div></div>
+</div>
+<div class='clearboth'></div>
+<div class='blog-name container'>
+<div class='container section' id='header' name='Header'><div class='widget Header' data-version='2' id='Header1'>
+<div class='header-widget'>
+<div>
+<h1>
+<a href='http://www.unofficialgoogledatascience.com/'>
+The Unofficial Google Data Science Blog
+</a>
+</h1>
+</div>
+<p>
+</p>
+</div>
+</div></div>
+<nav role='navigation'>
+<div class='clearboth section' id='page_list_top' name='Page List (Top)'><div class='widget PageList' data-version='2' id='PageList1'>
+<div class='widget-content'>
+<div class='overflowable-container'>
+<div class='overflowable-contents'>
+<div class='container'>
+<ul class='tabs'>
+<li class='overflowable-item'>
+<a href='http://www.unofficialgoogledatascience.com/'>Home</a>
+</li>
+<li class='overflowable-item'>
+<a href='http://www.unofficialgoogledatascience.com/p/about.html'>About this blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class='overflow-button hidden'>
+<a class='flat-button'>More&hellip;</a>
+</div>
+</div>
+</div>
+</div></div>
+</nav>
+</div>
+</div>
+</header>
+<div>
+<div class='vertical-ad-container no-items section' id='ads' name='Ads'>
+</div>
+<main class='centered-bottom' id='main' role='main' tabindex='-1'>
+<div class='main section' id='page_body' name='Page Body'>
+<div class='widget Blog' data-version='2' id='Blog1'>
+<div class='blog-posts hfeed container'>
+<article class='post-outer-container'>
+<div class='post-outer'>
+<div class='post'>
+<script type='application/ld+json'>{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html"
+  },
+  "headline": "Causality in machine learning","description": "By OMKAR MURALIDHARAN, NIALL CARDIN, TODD PHILLIPS, AMIR NAJMI \nGiven recent advances and interest in machine learning, those of us with traditional s&#8230;","datePublished": "2017-01-31T17:55:00-08:00",
+  "dateModified": "2017-12-22T07:59:31-08:00","image": {
+    "@type": "ImageObject","url": "https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/w1200-h630-p-k-no-nu/puppies.png",
+    "height": 630,
+    "width": 1200},"publisher": {
+    "@type": "Organization",
+    "name": "Blogger",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=h60",
+      "width": 206,
+      "height": 60
+    }
+  },"author": {
+    "@type": "Person",
+    "name": "Amir Najmi"
+  }
+}</script>
+<a name='5343098145846379837'></a>
+<h3 class='post-title entry-title'>
+Causality in machine learning
+</h3>
+<div class='post-share-buttons post-share-buttons-top'>
+<div class='byline post-share-buttons goog-inline-block'>
+<div aria-owns='sharing-popup-Blog1-byline-5343098145846379837' class='sharing' data-title='Causality in machine learning'>
+<button aria-controls='sharing-popup-Blog1-byline-5343098145846379837' aria-label='Share' class='sharing-button touch-icon-button' id='sharing-button-Blog1-byline-5343098145846379837' role='button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_share_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='share-buttons-container'>
+<ul aria-hidden='true' aria-label='Share' class='share-buttons hidden' id='sharing-popup-Blog1-byline-5343098145846379837' role='menu'>
+<li>
+<span aria-label='Get link' class='sharing-platform-button sharing-element-link' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Get link'>
+<svg class='svg-icon-24 touch-icon sharing-link'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_link_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Get link</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Facebook' class='sharing-platform-button sharing-element-facebook' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=facebook' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Share to Facebook'>
+<svg class='svg-icon-24 touch-icon sharing-facebook'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_facebook_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Facebook</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Twitter' class='sharing-platform-button sharing-element-twitter' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=twitter' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Share to Twitter'>
+<svg class='svg-icon-24 touch-icon sharing-twitter'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_twitter_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Twitter</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Pinterest' class='sharing-platform-button sharing-element-pinterest' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=pinterest' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Share to Pinterest'>
+<svg class='svg-icon-24 touch-icon sharing-pinterest'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_pinterest_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Pinterest</span>
+</span>
+</li>
+<li>
+<span aria-label='Email' class='sharing-platform-button sharing-element-email' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=email' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Email'>
+<svg class='svg-icon-24 touch-icon sharing-email'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_email_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Email</span>
+</span>
+</li>
+<li aria-hidden='true' class='hidden'>
+<span aria-label='Share to other apps' class='sharing-platform-button sharing-element-other' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Share to other apps'>
+<svg class='svg-icon-24 touch-icon sharing-sharingOther'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_more_horiz_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Other Apps</span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class='post-header'>
+<div class='post-header-line-1'>
+<span class='byline post-timestamp'>
+<meta content='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html'/>
+<a class='timestamp-link' href='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' rel='bookmark' title='permanent link'>
+<time class='published' datetime='2017-01-31T17:55:00-08:00' title='2017-01-31T17:55:00-08:00'>
+January 31, 2017
+</time>
+</a>
+</span>
+</div>
+</div>
+<div class='post-body entry-content float-container' id='post-body-5343098145846379837'>
+By OMKAR MURALIDHARAN, NIALL CARDIN, TODD PHILLIPS, AMIR NAJMI<br />
+<br />
+Given recent advances and interest in machine learning, those of us with traditional statistical training have had occasion to ponder the similarities and differences between the fields. Many of the distinctions are due to culture and tooling, but there are also differences in thinking which run deeper. Take, for instance, how each field views the provenance of the training data when building predictive models. For most of ML, the training data is a given, often presumed to be representative of the data against which the prediction model will be deployed, but not much else. With a few notable exceptions, ML abstracts away from the data generating mechanism, and hence sees the data as raw material from which predictions are to be extracted. Indeed, machine learning generally lacks the vocabulary to capture the distinction between observational data and randomized data that statistics finds crucial. To contrast machine learning with statistics is not the object of this post (we can do such a post if there is sufficient interest). Rather, the focus of this post is on combining observational data with randomized data in model training, especially in a machine learning setting. The method we describe is applicable to prediction systems employed to make decisions when choosing between uncertain alternatives.<br />
+<div>
+<br /></div>
+<div>
+<h2>
+Predicting and intervening</h2>
+Most of the prediction literature assumes that predictions are made by a passive observer who has no influence on the phenomenon. On the other hand, most prediction systems are used to make decisions about how to intervene in a phenomenon. Often, the assumption of non-influence is quite reasonable &#8212;&nbsp;say if we predict whether or not it will rain in order to determine if we should carry an umbrella. In this case, whether or not we decide to carry an umbrella clearly doesn't affect the weather. But at other times, matters are less clear. For instance, if the predictions are used to decide between uncertain alternative scenarios then we observe only the outcomes which were realized. In this framing, the decisions we make influence our future training data. Depending on how the model is structured, we typically use the information we gain from realized <i>factual</i>&nbsp;scenarios to assess probabilities associated with unrealized <i>counterfactual</i>&nbsp;scenarios. But this involves extrapolation and hence the counterfactual prediction might be less accurate. Some branches of machine learning (e.g. multi-arm bandits and reinforcement learning) adopt this framing of choice between alternative scenarios in order to study optimal tradeoffs between exploration and exploitation. Our goal here is specifically to evaluate and improve counterfactual predictions.<br />
+<br />
+Why would we care about the prediction accuracy of unrealized scenarios? There are a number of reasons. First is that our decision not to choose a particular scenario might be incorrect, but we might never learn this because we never generate data to contradict the prediction. Second, real-world prediction systems are constantly being updated and improved &#8212;&nbsp;knowledge of errors would help us target model development efforts. Finally, a more niche reason is the use in auction mechanisms such as second-pricing where the winner (predicted highest) must pay what value the runner up is predicted to have realized.</div>
+<div>
+<br />
+Let's start with a simple example to illustrate the problems of predicting and intervening. Suppose a mobile carrier builds a "churn" model to predict which of its customers are likely to discontinue their service in the next three months. The carrier offers a special renewal deal to those who were predicted by the model as most likely to churn. When we analyze the set of customers who have accepted the special deal (and hence not churned), we don't immediately know which customers would have continued their service anyway versus those who renewed <i>because</i> of the special deal. This lack of information has some consequences:<br />
+<ul>
+<li>we cannot directly measure churn prediction accuracy on customers to whom we made offers</li>
+<li>we cannot directly measure if the offer was effective (did its benefit exceeded its cost)</li>
+<li>we must (somehow) account for the intervention when training future churn models</li>
+</ul>
+What we want to know is what would have happened had the carrier not acted on the predictions of its churn model.<br />
+<br />
+In this simple example, we could of course have run an experiment where we have a randomized control group to whom we would have made a special offer but did not (a "holdback" group). This gives us a way to answer each of the questions above. But what if we are faced with many different situations and many possible interventions, with the objective to select the best intervention in each case?<br />
+<br />
+Let's consider a more complex problem to serve as the running example in this post. Suppose an online newspaper provides a section on their front page called <i>Recommended for you</i>&nbsp;where they highlight news stories they believe a given user will find interesting (the NYTimes does this for its subscribers). We can imagine a sophisticated algorithm to maximize the number of stories a user will find valuable. It may predict which stories to highlight and in which order, based on the user's location, reading history and the topic of news stories.<br />
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/s1600/puppies.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="236" src="https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/s400/puppies.png" width="400" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Figure 1: A hypothetical example of personalized news recommendations</td></tr>
+</tbody></table>
+<br />
+Those stories which are recommended are likely to be uptaken both because the algorithm works and because of sheer prominence of the recommendation. If the model is more complex (say, multiple levels of prominence, interaction effects), holdback experiments won't scale because they would leave little opportunity to take the optimal action. Randomized experiments are "costly" because we do something different from what we think is best. We want to bring a small amount of randomization into the machine learning process, but do it in manner that uses randomization effectively.<br />
+<br />
+Predicting well on counterfactuals is usually harder than predicting well on the observed data because the decision making process creates confounding associations in the data. Continuing our news story recommendation example, the correct decision rule will tend to make recommendations which are most likely to be uptaken. If we try to estimate the effect of recommendation prominence by comparing how often users read recommended stories against stories not recommended, the association between our prediction and prominence would probably dominate &#8212;&nbsp;after all, the algorithm chooses to make prominent only those stories which appear likely to be of interest to the reader.<br />
+<br />
+If we want to use predictions to make good decisions, we have to answer the following questions:<br />
+<ul>
+<li>How do we measure accuracy on counterfactuals?</li>
+<li>Are there counterfactual predictions we should avoid in decision making?</li>
+<li>How can we construct our prediction system to do well on counterfactuals?</li>
+</ul>
+The rest of this post outlines an approach we have used to tackle these questions.</div>
+<br />
+<h2>
+A problem of counterfactual prediction</h2>
+<div>
+<div>
+Before we describe solutions, it is important to be precise about the problem we are trying to address. First off, let's be clear that if the model we are training is the true model (i.e. it correctly specifies the generating mechanism), there is no problem. Likelihood theory guarantees that we will estimate the true model in an unbiased way and asymptotically converge upon it. The problem is that every real-world model is misspecified in some way, and this is what leads to poor counterfactual estimates.<br />
+<br />
+For illustration purposes, assume there is a single level of prominence and that the true model is binomial for the binary event of uptake $Y$. This true model is described by the GLM equation</div>
+<div>
+$$\mathrm{logit}(EY) = \beta_1 X_1 + \beta_2 X_2 + \beta_{\pi} X_{\pi} \tag{Eq 1} &nbsp; $$</div>
+<div>
+where $X_1$ and $X_2$ are continuous features we use to estimate the relevance of the news story to the user, $X_{\pi}$ is the binary variable indicating whether the story was made prominent. Let's define $\beta_1 X_1 + \beta_2&nbsp;X_2$ to be the <i>quality score&nbsp;</i>of the model. We wish to estimate $\beta_{\pi}$, the true log odds effect of prominence on uptake $Y$.</div>
+<div>
+<br /></div>
+<div>
+Now suppose we fit the following misspecified model using maximum likelihood</div>
+<div>
+$$ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \mathrm{logit}(EY) = \beta_1 X_1 + \beta_{\pi} X_{\pi} &nbsp; &nbsp; &nbsp; &nbsp; \tag{Eq 2} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $$</div>
+<div>
+This model is misspecified because our quality score is missing $X_2$. Our estimate of $\beta_{\pi}$ will pick up the projection of $X_2$ onto $X_{\pi}$ (and onto $X_1$). In general, we will have misattribution to the extent that errors in our model are correlated with $X_{\pi}$. This isn't anything new. If all we care about is prediction on observed $Y$, we do fine, at least to the extent $X_2$ can be projected on the space spanned by $X_1$ and $X_{\pi}$. The fact that our estimate of $\beta_{\pi}$ is not unbiased isn't a concern because our predictions are unbiased (i.e. correct on average on the logit scale). The problem only arises when we use the model to predict on observations where the distribution of predictors is different from the training distribution &#8212;&nbsp;this of course happens when we are deciding on which stories to administer prominence. Depending on the situation, this could be a big deal, and so it has been at Google.</div>
+<div>
+<br />
+In theory, we could use a holdback experiment to estimate the effect of prominence where we randomly do not recommend stories which we would otherwise have recommended. We can estimate the causal effect of prominence as the difference in log odds of uptake between stories which were recommended and those which were eligible (i.e. would have been recommended) but were randomly not recommended. The value of $\beta_{\pi}$ in following GLM equation is the causal estimate we seek:<br />
+$$<br />
+\mathrm{logit}(EY) = \beta_{\pi} X_{\pi}&nbsp;+ \beta_e X_e&nbsp;&nbsp; &nbsp;\tag{Eq 3}<br />
+<br />
+$$ where $X_e$ is the binary variable denoting the story was eligible for recommendation and $\beta_e$ its associated coefficient. Since we only recommend eligible stories, $X_{\pi}=1$ implies $X_e=1$, and $X_{\pi} \neq X_e$ occurs only in our holdback.</div>
+<div>
+<br /></div>
+<div>
+Observe that $\beta_{\pi}$ is estimated as the difference in $\mathrm{logit}(EY)$ when $X_{\pi} = 1$, $X_e = 1$ and when $X_{\pi} = 0$, $X_e = 1$. Why we use this roundabout GLM model to express a simple odds ratio calculation will become clearer further on. The point is that this method works to estimate the causal effect of prominence because randomization breaks the correlation between $X_2$ and $X_{\pi}$ (<a href="http://www.unofficialgoogledatascience.com/2016/06/to-balance-or-not-to-balance.html">see an earlier post</a> for a more detailed discussion on this point). As per Eq 2, we can apply this estimate of $\beta_{\pi}$ from our randomized holdback in estimating $\beta_1$ on observational data.</div>
+<br />
+<h2>
+Checking accuracy with randomization &#8212; realism vs. interpretability</h2>
+The best and most obvious way to tell how well we are predicting the effects of counterfactual actions is to randomly take those counterfactual actions a fraction of the time and see what happens. In our news recommendation example, we can randomly decide to recommend or not some stories, and see if our decision-time prediction of the change in uptake rates is correct. As we saw, this works because randomization breaks the correlations between our chosen action (whether to recommend) and other decision inputs (the quality of the recommendation).<br />
+<br />
+In a complex system, randomization can still be surprisingly subtle because there are often multiple ways to randomize. For example, we can randomize inputs to the decision procedure, or directly randomize decisions. The former approach will tend to produce more realistic outcomes, but can be harder to understand, and may not give us adequate data to assess unlikely decisions. The latter approach is usually easier to understand, but can produce unrealistic outcomes.<br />
+<br />
+To show how subtle things can be, let's go back to our example earlier where we computed the causal effect of prominence by running a holdback experiment. What we did there was to randomly not recommend stories we would have recommended. But this is just one kind of random perturbation. This particular procedure allows us to estimate (and hence check on) what statisticians call <i>treatment on the treated</i>. In other words, we estimate the average effect of prominence on the uptake of stories we recommend. This is different than the average effect of prominence across the population of stories.&nbsp;What we miss is the effect of prominence on the kinds of stories we <i>never</i> recommend. Suppose the effect of prominence is significantly lower for a news topic that no one finds interesting, say, news on the proceedings of the local chamber of commerce (PLCC). If we never recommend stories of the PLCC, they won't contribute to our holdback experiment and hence we will never learn that our estimates for such stories were too high. We could fix this problem by recommending random stories (as well as randomly suppressing recommendations) and hence directly measure the average effect of recommendation on all stories. But this might not be quite what we want either &#8212; it is unclear what we are learning from the unnatural scenario of recommending news of the intolerable PLCC. These recommendations might themselves cause users to react in an atypical manner, perhaps by not bothering to look at recommendations further down the list.</div>
+<div>
+<br />
+Random expression and suppression of recommendation are examples of what we called <i>randomizing the decision</i>. The alternative we mentioned was to <i>randomize inputs to the decision</i>. We could achieve this by adding random noise to each news story's quality score and feeding it into the decision procedure. If the amount of random noise is commensurate with the variability in the quality score then we will truly generate a realistic set of perturbations. The data we collect from these randomized perturbations will tend to be near the quality threshold for recommendation, which is usually where data is most valuable. On the other hand, this data might be less interpretable &#8212; all sorts of decisions might change, not just the stories whose scores we randomized. The impact of each individual perturbation is not easily separated and this can make the data harder to use for modeling and analysis of prediction errors.<br />
+<br />
+There is no easy way to make the choice between realism and interpretability. We&#8217;ve often chosen artificial randomization that is easy to understand, since it is more likely to produce data useful for multiple applications, and subsequently checked the results against more realistic randomization. Happily, in our case, we found that answers between these two approaches were in good agreement.<br />
+<br />
+<h2>
+The No Fake Numbers Principle</h2>
+<div>
+<div>
+Automated decision systems are often mission-critical, so it is important that everything which goes into them is accurate and checkable. We can&#8217;t reliably check counterfactual predictions for actions we can&#8217;t randomize. These facts lead to the <i>No Fake Numbers</i> (NFN) principle:<br />
+<i>&nbsp; &nbsp; &nbsp;Avoid decisions based on predictions for counterfactual actions you cannot take.</i></div>
+<div>
+In other words, NFN says not to use predictions of unobservable quantities to make decisions.</div>
+<div>
+<br />
+Now why would anyone ever place demands on a prediction system which run counter this seemingly reasonable principle? In our work, violations of this principle have arisen when we've wanted to impose invariants on the decisions we make, usually with good intentions. The problem isn't the invariants themselves but rather the hypothetical nature of their premises.<br />
+<br />
+For example, suppose the online newspaper wishes to enforce a policy of "platform neutrality" whereby the quality of recommendations should be the same on iPhone and Android mobile phones. Perhaps the newspaper wishes to ensure that users would see the same recommendations regardless of the type of phone they use. However, this is a slippery notion. iPhone users might actually have different aggregate usage patterns and preferences from Android users, making a naive comparison inappropriate.<br />
+<br />
+One way to address this is to use techniques to derive causal inference from observational analysis to predict what an iPhone user would do if she were using Android. There is valuable literature on this (e.g.&nbsp;<a href="https://en.wikipedia.org/wiki/Rubin_causal_model">Rubin Causal Model</a>) but, fundamentally, you really need to understand what you are doing with a causal model. That means the model needs careful, manual attention from an experienced modeler, and a nuanced understanding of its strengths and weaknesses. This is why observational analysis models are used only when there is no alternative, where the inference made by the model is carefully traded off against its assumptions. Such fine inspection is not feasible for production models, which are updated by many people (and automatically over time), require ongoing automated monitoring, and whose predictions are used for many applications.</div>
+<div>
+<br />
+Why is NFN necessary? First, it is generally a better way to design decision systems. Actions violating NFN can never be realized. This usually means they are not directly important for decisions, and the system can be improved by thinking about its goals more carefully.<br />
+<br />
+Second, and more importantly, mission-critical systems have much stronger requirements than one-off analyses &#8212;&nbsp;we need to be able to monitor them for correctness, to define clear notions of improvement, to check that their behavior is stable, and to debug problems. For example, suppose our system uses predictions for what iPhone users would do on Android. If those predictions drift over time, we have no way to tell if the system is working well or not. One-off analyses might be able to get away with using observational analysis techniques, but critical systems need ongoing, robust, direct validation with randomized data. Crucially, we can never check how accurate this prediction is, since we cannot randomly force the iPhone user to use Android.</div>
+<div>
+<br />
+In summary, the NFN principle cautions us against imposing requirements whose solutions may have unintended consequences we cannot easily detect. As with any principle, we would override it with great caution.</div>
+<br />
+<h2>
+Using randomization in training</h2>
+The previous sections described how to use randomization to check our prediction models and guide the design of our decision systems. This section describes how to go further, and directly incorporate randomized data into the systems.<br />
+<br />
+Large scale prediction systems are often bad at counterfactual predictions out of the box. This is because a large scale prediction system is almost certainly misspecified. Thus even very sophisticated ones suffer from a kind of overfitting. These systems don&#8217;t classically overfit &#8212;&nbsp;they use cross-validation or progressive validation to avoid that &#8212;&nbsp;but they tend to overfit to the observed distribution of the data. As we described earlier, this factual distribution doesn&#8217;t match the counterfactual distribution of data and hence the model can fail to generalize. When deciding which stories to recommend, we need predictions with and without the prominence of recommendation &#8212;&nbsp;but that means we'll need good predictions for interesting stories which don't get recommended and uninteresting stories which are recommended, rare and strange parts of the factual data.<br />
+<br />
+An obvious attempt to fix this is to upweight randomized data in training, or even train the model solely on the randomized data. Unfortunately, such direct attempts perform poorly. Let's say 1% of the data are randomized. If we train on both randomized and observational data, the observational data will push estimates off course due to model misspecification. However, training solely on randomized data will suffer from data sparseness because you are training on 1% of the data. Nor is upweighting the randomized data of much of a solution &#8212;&nbsp;we reduce the influence of observational data only to the extent we reduce its role in modeling. Thus, upweighting is tantamount to throwing away non-randomized data.</div>
+<div>
+<br />
+The problem is that the model <i>doesn&#8217;t know</i> the random data is random, so it uses it in exactly the same way as it uses any data. As we observed at the start of this post, standard machine learning techniques don&#8217;t distinguish between randomized and observational data the way statistical models do. To make better estimates, we need the randomized data to play a different role than the observational data in model training.<br />
+<br />
+What is the right role for randomized data? There is probably more than one good answer to that question. For instance, one could imagine shrinking the unbiased, high-variance estimates from randomized data towards the potentially-biased, low-variance observational estimates. This is not the approach we chose for our application but we nonetheless do use the observational estimates to reduce the variance of the estimates made from randomized data.<br />
+<br />
+Previously we used separate models to learn the effects of prominence and quality. The quality model (Eq 2) took the estimates of the prominence model (Eq 3) as an input. While this does achieve some of our goals it has its own problems. Firstly, this set-up is clunky, we have to maintain two models and changes in performance are the result of complex interactions between the two. Also, updating either is made harder by its relationship to the other. Secondly, the prominence model fails to take advantage of the information in the quality model.</div>
+<div>
+<br /></div>
+The approach we have found most effective is best motivated as a refinement of the simple model we used to estimate the causal effect of prominence from our holdback in Eq 3. Let the quality score for each story be the log odds prediction of uptake without prominence. For the model in Eq 2 it would simply be $\beta_1 X_1$ where $\beta_1$ is the coefficient of $X_1$ estimated by ML. Assume for a moment that the quality score component is given. An improved estimate of the causal effect of prominence is possible from estimating $\beta_{\pi}$ in the model</div>
+<div>
+$$ \mathrm{logit}(EY) = \mathrm{offset}(\hat{\beta_1} X_1) +&nbsp;\beta_{\pi} X_{\pi}&nbsp;+ \beta_e X_e &nbsp; &nbsp; &nbsp; &nbsp; \tag{Eq 4} $$</div>
+<div>
+where $\mathrm{offset}$ is an abuse of R syntax to indicate that this component is given and not estimated. The estimate of $\beta_{\pi}$ in this model is still unbiased but by accounting for the (presumed) known quality effect, we reduce the variability of our estimate. In reality, the quality score is not known, and is estimated from the observational data. But regardless, randomization ensures that the estimate from this procedure will be unbiased. As long as we employ an estimate of quality score that is better than nothing, we account for some of the variability and hence reduce estimator variance. We have every reason to be optimistic of a decent-but-misspecified model.</div>
+<div>
+<br />
+<div>
+<span id="docs-internal-guid-03ce73af-f5d6-34b8-2a41-39070960a47a">The procedure above involves first training a model entirely on observational data and then using the quality score thus derived to estimate a second model for prominence, trained on randomized data. The astute reader will note that the observational model itself estimates a prominence effect which we discard. It turns out we can do even better by co-training the quality score together with the prominence. Consider the following iterative updating procedure:</span><br />
+<ol><span id="docs-internal-guid-03ce73af-f5d6-34b8-2a41-39070960a47a">
+<li>On non-randomized data, use the model $$ \mathrm{logit}(EY) = \beta_1 X_1 + \mathrm{offset}(\hat{\beta_{\pi}} X_{\pi})&nbsp;$$ and only update the quality score coefficients (here just $\beta_1$).</li>
+<li>On randomized data, use the model $$ \mathrm{logit}(EY) = \mathrm{offset}(\hat{\beta_1} X_1) +&nbsp;\beta_{\pi} X_{\pi}&nbsp;+ \beta_e X_e$$ and only update the prominence coefficients (here $\beta_{\pi}$ and $\beta_e$).</li>
+</span></ol>
+<span id="docs-internal-guid-03ce73af-f5d6-34b8-2a41-39070960a47a">
+This co-training works better because it allows the causal estimate of $\beta_{\pi}$ to be used in estimating the quality score. There is a lot more to the mechanics of training a large model efficiently at scale, but the crux of our innovation is this.</span><br />
+<h2>
+Conclusion</h2>
+</div>
+<div>
+In this post we described how some randomized data may be applied both to check and improve the accuracy of a machine learning system trained largely on observational data. We also shared some of the subtleties of randomization applied to causal modeling. While we've spent years trying to understand and overcome issues arising from counterfactual (and "counter-usual", atypical) predictions, there is much we have still to learn. And yet the ideas we describe here have already been deployed to solve some long-standing prediction problems at Google. We hope they will be useful to you as well.</div>
+</div>
+</div>
+<div class='post-bottom'>
+<div class='post-footer float-container'>
+<div class='post-footer-line post-footer-line-1'>
+</div>
+</div>
+<div class='post-share-buttons post-share-buttons-bottom invisible'>
+<div class='byline post-share-buttons goog-inline-block'>
+<div aria-owns='sharing-popup-Blog1-byline-5343098145846379837' class='sharing' data-title='Causality in machine learning'>
+<button aria-controls='sharing-popup-Blog1-byline-5343098145846379837' aria-label='Share' class='sharing-button touch-icon-button' id='sharing-button-Blog1-byline-5343098145846379837' role='button'>
+<div class='flat-icon-button ripple'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_share_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</button>
+<div class='share-buttons-container'>
+<ul aria-hidden='true' aria-label='Share' class='share-buttons hidden' id='sharing-popup-Blog1-byline-5343098145846379837' role='menu'>
+<li>
+<span aria-label='Get link' class='sharing-platform-button sharing-element-link' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Get link'>
+<svg class='svg-icon-24 touch-icon sharing-link'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_link_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Get link</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Facebook' class='sharing-platform-button sharing-element-facebook' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=facebook' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Share to Facebook'>
+<svg class='svg-icon-24 touch-icon sharing-facebook'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_facebook_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Facebook</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Twitter' class='sharing-platform-button sharing-element-twitter' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=twitter' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Share to Twitter'>
+<svg class='svg-icon-24 touch-icon sharing-twitter'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_twitter_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Twitter</span>
+</span>
+</li>
+<li>
+<span aria-label='Share to Pinterest' class='sharing-platform-button sharing-element-pinterest' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=pinterest' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Share to Pinterest'>
+<svg class='svg-icon-24 touch-icon sharing-pinterest'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_pinterest_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Pinterest</span>
+</span>
+</li>
+<li>
+<span aria-label='Email' class='sharing-platform-button sharing-element-email' data-href='https://www.blogger.com/share-post.g?blogID=5825758052688213474&postID=5343098145846379837&target=email' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Email'>
+<svg class='svg-icon-24 touch-icon sharing-email'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_24_email_dark' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Email</span>
+</span>
+</li>
+<li aria-hidden='true' class='hidden'>
+<span aria-label='Share to other apps' class='sharing-platform-button sharing-element-other' data-url='http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html' role='menuitem' tabindex='-1' title='Share to other apps'>
+<svg class='svg-icon-24 touch-icon sharing-sharingOther'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_more_horiz_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<span class='platform-sharing-text'>Other Apps</span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class='comments threaded' data-embed='true' data-num-comments='6' id='comments'>
+<a name='comments'></a>
+<h3 class='title'>Comments</h3>
+<div class='comments-content'>
+<script async='async' src='' type='text/javascript'></script>
+<script type='text/javascript'>(function(){var g=function(h,E,k){var l=null;h&&0<h.length&&(l=parseInt(h[h.length-1].timestamp,10)+1);var c=null,t=null,x=void 0,y=null,u=(window.location.hash||"#").substring(1),z,A;/^comment-form_/.test(u)?z=u.substring(13):/^c[0-9]+$/.test(u)&&(A=u.substring(1));var F={id:k.postId,data:h,loadNext:function(e){if(l){var f=k.feed+"?alt=json&v=2&orderby=published&reverse=false&max-results=50";l&&(f+="&published-min="+(new Date(l)).toISOString());window.bloggercomments=function(v){l=null;var p=[];if(v&&v.feed&&
+v.feed.entry)for(var B=0,a;a=v.feed.entry[B];B++){var d={},b=/blog-(\d+).post-(\d+)/.exec(a.id.$t);d.id=b?b[2]:null;b=d;a:{var q=void 0;var C=a&&(a.content&&a.content.$t||a.summary&&a.summary.$t)||"";if(a&&a.gd$extendedProperty)for(q in a.gd$extendedProperty)if("blogger.contentRemoved"==a.gd$extendedProperty[q].name){q='<span class="deleted-comment">'+C+"</span>";break a}q=C}b.body=q;d.timestamp=Date.parse(a.published.$t)+"";a.author&&a.author.constructor===Array&&(b=a.author[0])&&(d.author={name:b.name?
+b.name.$t:void 0,profileUrl:b.uri?b.uri.$t:void 0,avatarUrl:b.gd$image?b.gd$image.src:void 0});a.link&&(a.link[2]&&(d.link=d.permalink=a.link[2].href),a.link[3]&&(b=/.*comments\/default\/(\d+)\?.*/.exec(a.link[3].href))&&b[1]&&(d.parentId=b[1]));d.deleteclass="item-control blog-admin";if(a.gd$extendedProperty)for(var w in a.gd$extendedProperty)"blogger.itemClass"==a.gd$extendedProperty[w].name?d.deleteclass+=" "+a.gd$extendedProperty[w].value:"blogger.displayTime"==a.gd$extendedProperty[w].name&&
+(d.displayTime=a.gd$extendedProperty[w].value);p.push(d)}l=50>p.length?null:parseInt(p[p.length-1].timestamp,10)+1;e(p);window.bloggercomments=null};var m=document.createElement("script");m.type="text/javascript";m.src=f+"&callback=bloggercomments";document.getElementsByTagName("head")[0].appendChild(m)}},hasMore:function(){return!!l},getMeta:function(e,f){return"iswriter"==e?f.author&&f.author.name==k.authorName&&f.author.profileUrl==k.authorUrl?"true":"":"deletelink"==e?k.baseUri+"/delete-comment.g?blogID="+
+k.blogId+"&postID="+f.id:"deleteclass"==e?f.deleteclass:""},onReply:function(e,f){null==c&&(c=document.getElementById("comment-editor"),null!=c&&(y=c.style.height,c.style.display="block",t=c.src.split("#")));if(c&&e&&e!==x){document.getElementById(f).insertBefore(c,null);var m=t[0]+(e?"&parentID="+e:"");t[1]&&(m=m+"#"+t[1]);c.src=m;c.style.height=y||c.style.height;x=e;c.removeAttribute("data-resized");c.dispatchEvent(new Event("iframeMoved"))}},rendered:!0,initComment:A,initReplyThread:z,config:{maxDepth:k.maxThreadDepth},
+messages:E};h=function(){window.goog&&window.goog.comments&&window.goog.comments.render(document.getElementById("comment-holder"),F)};window.goog&&window.goog.comments?h():(window.goog=window.goog||{},window.goog.comments=window.goog.comments||{},window.goog.comments.loadQueue=window.goog.comments.loadQueue||[],window.goog.comments.loadQueue.push(h))},n=["blogger","widgets","blog","initThreadedComments"],r=this||self;n[0]in r||"undefined"==typeof r.execScript||r.execScript("var "+n[0]);
+for(var D;n.length&&(D=n.shift());)n.length||void 0===g?r=r[D]&&r[D]!==Object.prototype[D]?r[D]:r[D]={}:r[D]=g;}).call(this);
+</script>
+<script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        null,
+        null,
+        {});
+  </script>
+<div id='comment-holder'>
+<div class="comment-thread toplevel-thread"><ol id="top-ra"><li class="comment" id="c6566485653632012671"><div class="avatar-image-container"><img src="//3.bp.blogspot.com/-yIK17BF_Zh8/VDoby6hXTsI/AAAAAAAABdw/da6BXGx-P3o/s35/10203368276954634.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/17599666647827994634" rel="nofollow">Rajesh Kumar</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html?showComment=1495431697052#c6566485653632012671">May 21, 2017 at 10:41 PM</a></span></div><p class="comment-content">Insightful. Thanks for sharing!<br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="6566485653632012671">Reply</a><span class="item-control blog-admin blog-admin pid-1026476954"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=6566485653632012671">Delete</a></span></span></div><div class="comment-replies"><div id="c6566485653632012671-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6566485653632012671-ra" class="thread-chrome thread-expanded"><div></div><div id="c6566485653632012671-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6566485653632012671">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6566485653632012671-ce"></div></li><li class="comment" id="c9043054314745442537"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/15491003711073193299" rel="nofollow">Daniel Duckworth</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html?showComment=1496466594852#c9043054314745442537">June 2, 2017 at 10:09 PM</a></span></div><p class="comment-content">First, what guarantees that the co-training procedure described before the conclusion is stable? That is to say, why shouldn&#39;t the estimated values in 1. and 2. oscillate?  <br><br>Second, how are X_{\pi} and X_{e} set at prediction time? Are they both always set to 1?</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="9043054314745442537">Reply</a><span class="item-control blog-admin blog-admin pid-1394560198"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=9043054314745442537">Delete</a></span></span></div><div class="comment-replies"><div id="c9043054314745442537-rt" class="comment-thread inline-thread"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c9043054314745442537-ra" class="thread-chrome thread-expanded"><div><li class="comment" id="c6664018732815712805"><div class="avatar-image-container"><img src="//lh4.googleusercontent.com/-3I_5SClwY1U/AAAAAAAAAAI/AAAAAAAAAF8/RRRXDiKIF0A/s35-c/photo.jpg" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/18174523203317227640" rel="nofollow">Amir Najmi</a></cite><span class="icon user blog-author"></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html?showComment=1513963807265#c6664018732815712805">December 22, 2017 at 9:30 AM</a></span></div><p class="comment-content">If you train the models with likelihood maximization and the likelihood function for each model has a single maximum then it must converge.</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-1234037751"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=6664018732815712805">Delete</a></span></span></div><div class="comment-replies"><div id="c6664018732815712805-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c6664018732815712805-ra" class="thread-chrome thread-expanded"><div></div><div id="c6664018732815712805-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="6664018732815712805">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c6664018732815712805-ce"></div></li><li class="comment" id="c8852859979308911188"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/01405040170640769293" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html?showComment=1526262746254#c8852859979308911188">May 13, 2018 at 6:52 PM</a></span></div><p class="comment-content">I am interested in the answer to the second question as well: &quot;Second, how are X_{\pi} and X_{e} set at prediction time? Are they both always set to 1?&quot;</p><span class="comment-actions secondary-text"><span class="item-control blog-admin blog-admin pid-273834650"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=8852859979308911188">Delete</a></span></span></div><div class="comment-replies"><div id="c8852859979308911188-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c8852859979308911188-ra" class="thread-chrome thread-expanded"><div></div><div id="c8852859979308911188-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="8852859979308911188">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c8852859979308911188-ce"></div></li></div><div id="c9043054314745442537-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="9043054314745442537">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c9043054314745442537-ce"></div></li><li class="comment" id="c5730873015406320819"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/14785741357941193152" rel="nofollow">bn</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html?showComment=1510580717486#c5730873015406320819">November 13, 2017 at 5:45 AM</a></span></div><p class="comment-content">Very interesting, looking forward to the machine learning vs statistics...</p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="5730873015406320819">Reply</a><span class="item-control blog-admin blog-admin pid-1371944141"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=5730873015406320819">Delete</a></span></span></div><div class="comment-replies"><div id="c5730873015406320819-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c5730873015406320819-ra" class="thread-chrome thread-expanded"><div></div><div id="c5730873015406320819-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="5730873015406320819">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c5730873015406320819-ce"></div></li><li class="comment" id="c3133835802242188030"><div class="avatar-image-container"><img src="//lh3.googleusercontent.com/zFdxGE77vvD2w5xHy6jkVuElKv-U9_9qLkRYK8OnbDeJPtjSZ82UPq5w6hJ-SA=s35" alt=""/></div><div class="comment-block"><div class="comment-header"><cite class="user"><a href="https://www.blogger.com/profile/17660359223501562306" rel="nofollow">Unknown</a></cite><span class="icon user "></span><span class="datetime secondary-text"><a rel="nofollow" href="http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html?showComment=1511665140746#c3133835802242188030">November 25, 2017 at 6:59 PM</a></span></div><p class="comment-content">I am interested in reading your comparison of machine learning and statistics.<br></p><span class="comment-actions secondary-text"><a class="comment-reply" target="_self" data-comment-id="3133835802242188030">Reply</a><span class="item-control blog-admin blog-admin pid-429658602"><a target="_self" href="https://www.blogger.com/delete-comment.g?blogID=5825758052688213474&amp;postID=3133835802242188030">Delete</a></span></span></div><div class="comment-replies"><div id="c3133835802242188030-rt" class="comment-thread inline-thread hidden"><span class="thread-toggle thread-expanded"><span class="thread-arrow"></span><span class="thread-count"><a target="_self">Replies</a></span></span><ol id="c3133835802242188030-ra" class="thread-chrome thread-expanded"><div></div><div id="c3133835802242188030-continue" class="continue"><a class="comment-reply" target="_self" data-comment-id="3133835802242188030">Reply</a></div></ol></div></div><div class="comment-replybox-single" id="c3133835802242188030-ce"></div></li></ol><div id="top-continue" class="continue"><a class="comment-reply" target="_self">Add comment</a></div><div class="comment-replybox-thread" id="top-ce"></div><div class="loadmore hidden" data-post-id="5343098145846379837"><a target="_self">Load more...</a></div></div>
+</div>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>Post a Comment</h4>
+<a href='https://www.blogger.com/comment-iframe.g?blogID=5825758052688213474&postID=5343098145846379837&skin=contempo&skin=contempo' id='comment-editor-src'></a>
+<iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='90px' id='comment-editor' name='comment-editor' src='' width='100%'></iframe>
+<script src='https://www.blogger.com/static/v1/jsbin/3820394884-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+</p>
+</section>
+</article>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer class='footer section' id='footer' name='Footer'><div class='widget Attribution' data-version='2' id='Attribution1'>
+<div class='widget-content'>
+<div class='blogger'>
+<a href='https://www.blogger.com' rel='nofollow'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_post_blogger_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+Powered by Blogger
+</a>
+</div>
+</div>
+</div></footer>
+</div>
+</div>
+</div>
+<aside class='sidebar-container container sidebar-invisible' role='complementary'>
+<div class='navigation'>
+<button class='svg-icon-24-button flat-icon-button ripple sidebar-back'>
+<svg class='svg-icon-24'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_arrow_back_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</button>
+</div>
+<div class='sidebar_top_wrapper no-items'>
+<div class='sidebar_top no-items section' id='sidebar_top' name='Sidebar (Top)'>
+</div>
+</div>
+<div class='sidebar_bottom section' id='sidebar_bottom' name='Sidebar (Bottom)'><div class='widget BlogArchive' data-version='2' id='BlogArchive1'>
+<details class='collapsible extendable'>
+<summary>
+<div class='collapsible-title'>
+<h3 class='title'>
+Archive
+</h3>
+<svg class='svg-icon-24 chevron-down'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_expand_more_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+<svg class='svg-icon-24 chevron-up'>
+<use xlink:href='/responsive/sprite_v1_6.css.svg#ic_expand_less_black_24dp' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
+</svg>
+</div>
+</summary>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<div class='first-items'>
+<ul class='flat'>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2019/04/'>April 2019<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/07/'>July 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/03/'>March 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2018/01/'>January 2018<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/10/'>October 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/07/'>July 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/04/'>April 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/03/'>March 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2017/01/'>January 2017<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/10/'>October 2016<span class='post-count'>1</span></a>
+</li>
+</ul>
+</div>
+<div class='remaining-items'>
+<ul class='flat'>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/09/'>September 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/08/'>August 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/07/'>July 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/06/'>June 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/05/'>May 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/03/'>March 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/02/'>February 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2016/01/'>January 2016<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/12/'>December 2015<span class='post-count'>1</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/11/'>November 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/10/'>October 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/09/'>September 2015<span class='post-count'>2</span></a>
+</li>
+<li class='archivedate'>
+<a href='http://www.unofficialgoogledatascience.com/2015/08/'>August 2015<span class='post-count'>2</span></a>
+</li>
+</ul>
+</div>
+<span class='show-more pill-button'>Show more</span>
+<span class='show-less hidden pill-button'>Show less</span>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</aside>
+<script type="text/javascript" src="https://resources.blogblog.com/blogblog/data/res/1608028642-indie_compiled.js" async="true"></script>
+<script type='text/javascript'>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-66929694-1', 'auto', 'blogger');
+        ga('blogger.send', 'pageview');
+      </script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/640298382-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY6EVWqdx5B_RrgfDjRRqAxzLL6UGw:1556312265984';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d5825758052688213474','//www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html','5825758052688213474');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '5825758052688213474', 'title': 'The Unofficial Google Data Science Blog', 'url': 'http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html', 'canonicalUrl': 'http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html', 'homepageUrl': 'http://www.unofficialgoogledatascience.com/', 'searchUrl': 'http://www.unofficialgoogledatascience.com/search', 'canonicalHomepageUrl': 'http://www.unofficialgoogledatascience.com/', 'blogspotFaviconUrl': 'http://www.unofficialgoogledatascience.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': false, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-66929694-1', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - RSS\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/5825758052688213474/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22The Unofficial Google Data Science Blog - Atom\x22 href\x3d\x22http://www.unofficialgoogledatascience.com/feeds/5343098145846379837/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/b1e9f650b2e5f9f3', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '5343098145846379837', 'postImageThumbnailUrl': 'https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/s72-c/puppies.png', 'postImageUrl': 'https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/s400/puppies.png', 'pageName': 'Causality in machine learning', 'pageTitle': 'The Unofficial Google Data Science Blog: Causality in machine learning'}}, {'name': 'features', 'data': {'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': true, 'isAlternateRendering': false, 'isCustom': true, 'variant': 'indie_light', 'variantId': 'indie_light'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Causality in machine learning', 'description': 'By OMKAR MURALIDHARAN, NIALL CARDIN, TODD PHILLIPS, AMIR NAJMI   Given recent advances and interest in machine learning, those of us with tr...', 'featuredImage': 'https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/s400/puppies.png', 'url': 'http://www.unofficialgoogledatascience.com/2017/01/causality-in-machine-learning.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 5343098145846379837}}, {'name': 'widgets', 'data': [{'title': 'Search This Blog', 'type': 'BlogSearch', 'sectionId': 'search_top', 'id': 'BlogSearch1'}, {'title': 'The Unofficial Google Data Science Blog (Header)', 'type': 'Header', 'sectionId': 'header', 'id': 'Header1'}, {'title': '', 'type': 'PageList', 'sectionId': 'page_list_top', 'id': 'PageList1'}, {'title': 'Blog Posts', 'type': 'Blog', 'sectionId': 'page_body', 'id': 'Blog1', 'posts': [{'id': '5343098145846379837', 'title': 'Causality in machine learning', 'featuredImage': 'https://2.bp.blogspot.com/-SPMRpqxF5Tg/WJGHwp8ZqQI/AAAAAAAAcBE/V3nSX-o_U0UZ9RSSp8p8HPxsFxtxHQK0gCLcB/s400/puppies.png', 'showInlineAds': false}], 'headerByline': {'regionName': 'header1', 'items': [{'name': 'share', 'label': ''}, {'name': 'timestamp', 'label': ''}]}, 'footerBylines': [{'regionName': 'footer1', 'items': [{'name': 'comments', 'label': 'comments'}]}], 'allBylineItems': [{'name': 'share', 'label': ''}, {'name': 'timestamp', 'label': ''}, {'name': 'comments', 'label': 'comments'}]}, {'type': 'Attribution', 'sectionId': 'footer', 'id': 'Attribution1'}, {'title': '', 'type': 'BlogArchive', 'sectionId': 'sidebar_bottom', 'id': 'BlogArchive1'}]}]);
+_WidgetManager._RegisterWidget('_BlogSearchView', new _WidgetInfo('BlogSearch1', 'search_top', document.getElementById('BlogSearch1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'page_list_top', document.getElementById('PageList1'), {'title': '', 'links': [{'isCurrentPage': false, 'href': 'http://www.unofficialgoogledatascience.com/', 'title': 'Home'}, {'isCurrentPage': false, 'href': 'http://www.unofficialgoogledatascience.com/p/about.html', 'id': '8495885157735034905', 'title': 'About this blog'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'page_body', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1977841774-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar_bottom', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+</script>
+</body>
+</html>

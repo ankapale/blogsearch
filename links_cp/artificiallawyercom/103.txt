@@ -1,0 +1,29 @@
+AL 100 Directory 
+ Welcome to the AL 100 Legal Tech Directory 
+ The AL 100 legal tech directory has been created by Artificial Lawyer to showcase the best and most progressive legal technology from around the world. 
+ It is focused on applications that use automation and AI technology, as well as those systems that are designed to integrate with and support these applications. 
+ The purpose of the AL 100 is to provide readers across the legal ecosystem with a useful resource they can refer to. 
+ At present there are now several dozen companies listed across a range of categories. Many more companies will be added to each category and new categories will also be added. 
+ The idea is that the directory will grow and evolve, providing you with information about some of the best and most interesting legal tech companies and applications in the market. The goal, for now, is to reach a total of 100 companies, hence ‘the AL 100’. 
+ Who Is It Useful For? 
+ Buyers – This resource is designed to be of use to law firms and their innovation and IT teams, as well as inhouse legal teams and legal operations experts inside corporates, when looking to find data on potential vendors. 
+ Job Hunters – The directory also could be helpful to automation experts and business development professionals seeking to learn more about a company before applying for a job. 
+ Investors – And it could be of use to investors looking to gather information about the legal tech companies that are helping to transform this market. 
+ It may also be of use to legal engineers, law students, academics working in the field of legal technology, Bar organisations and conference organisers. In short, just about anyone who works within or is connected to the legal tech ecosystem may hopefully find some value in this directory. 
+ What Does It Cover? 
+ As mentioned, the AL 100 will grow and launch new categories. New opportunities to share additional types of content and information will also appear. 
+ For now, each company has been asked a range of questions, from who is their CTO, to how many people work there, to explaining a bit about their underlying tech and its use cases, to their pricing structures, to their security standards, to where they currently operate globally. 
+ Below are the main categories (see bottom of page). You can either click the links on this page or use the dropdown menu on the main navigation bar on the Artificial Lawyer homepage, designated: AL 100 Directory. 
+ The companies listed here are mostly quite well developed, but there some that are also still in Beta, and these are labelled as such. They also come from all over the world: Canada, US, UK, Israel, Singapore, the Netherlands, and Germany, with hopefully many other companies from other locations soon to join. 
+ As one would expect, there are plenty of companies in areas such as Legal Research + Analysis, and Doc Review – with 16 listed so far, but the directory has also sought to bring in categories where there may be fewer companies, for example, Expert Systems, or Billing + Time Systems, which has just three listed so far. 
+ Also, it should be noted, not being listed here yet does not mean a company is not important, far from it, they may simply not have got around to sending back their information, or their category is still in the process of being edited or perhaps even created. Watch this space as the AL 100 grows! 
+ Listing Criteria 
+ The goal here is to present the companies that are forward thinking and are a part of the change that Artificial Lawyer really believes needs to happen in the legal market, i.e. progressive legal technology. This tends to mean companies with an interest in the automation of legal tasks, whether this is via NLP/ML or any other method. 
+ In terms of ranking, the lists are alphabetical to give everyone a fair chance to be seen. Where a company has multiple, linked applications it has been listed under a single main category to avoid duplication of core data. 
+ At present all of the companies listed have been invited to do so – and many more are in the process of being invited and inducted. I hope this proves to be a useful resource and that it helps to increase knowledge and connections within the legal tech world. 
+ And finally, please note the information here has been supplied by the companies to be published by Artificial Lawyer, please do not repost; or re-use except for internal and/or non-commercial purposes. Thank you. 
+ Richard Tromans, Founder, Artificial Lawyer and the AL 100. 
+ MAIN CATEGORIES 
+ Below are links to the main category pages. 
+ You can also access each page of the directory through the dropdown menu via the main AL 100 navigation button: 
+ 

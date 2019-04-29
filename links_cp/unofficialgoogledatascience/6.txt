@@ -1,0 +1,5 @@
+Posts 
+ Time series data are everywhere, but time series modeling is a fairly specialized area within statistics and data science. This post describes the bsts software package, which makes it easy to fit some fairly sophisticated time series models with just a few lines of R code. 
+ Introduction
+Time series data appear in a surprising number of applications, ranging from business, to the physical and social sciences, to health, medicine, and engineering. Forecasting (e.g. next month's sales) is common in problems involving time series data, but explanatory models (e.g. finding drivers of sales) are also important. Time series data are having something of a moment in the tech blogs right now, with Facebook announcing their "Prophet" system for time series forecasting (Taylor and Letham 2017), and Google posting about its forecasting system in this blog (Tassone and Rohani 2017). 
+ 

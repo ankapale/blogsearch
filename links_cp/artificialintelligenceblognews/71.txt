@@ -1,0 +1,6 @@
+Devices are requiring more and more computing power, but AI software is expected to push those demands even further. To address this shift, ARM is launching a major update to its chip architecture with what it calls DynamIQ. 
+ Artificial intelligence is at the heart of everything digital around us, from smartphones and buildings to self-driving cars. 
+ — ARM 
+ ARM's new central processing unit (or CPU) architecture will cluster multiple different processing cores together with each one tailored for right software, including a dedicated processor for handling AI algorithms. Chipmakers will be able to develop CPUs with up to eight cores. ARM will also be releasing software libraries to better run the most popular AI techniques on its processors. 
+ ARM claims this approach will boost AI performance 50 times compared with its current chips over the next three to five years. 
+ 

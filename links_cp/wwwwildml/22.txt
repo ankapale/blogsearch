@@ -1,0 +1,5 @@
+Month: August 2016 
+ In a previous tutorial series I went over some of the theory behind Recurrent Neural Networks (RNNs) and the implementation of a simple RNN from scratch. That’s a useful exercise, but in practice we use libraries like Tensorflow with high-level primitives for dealing with RNNs. 
+ With that using an RNN should be as easy as calling a function, right? Unfortunately that’s not quite the case. In this post I want to go over some of the best practices for working with RNNs in Tensorflow, especially the functionality that isn’t well documented on the official site. 
+ The post comes with a Github repository that contains Jupyter notebooks with minimal examples for: 
+ 

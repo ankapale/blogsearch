@@ -1,0 +1,24 @@
+Introduction to PIG Latin 
+ In previous article, we discussed the Hadoop ecosystem ( link ). We also spoke about two most heavily used Hadoop tools i.e. PIG and HIVE. Both the languages have their followers and there is no specific preference between the two, in general. However, in cases where the team using these tools is more programming oriented, PIG is sometimes chosen above HIVE as it gives them more freedom while coding. In cases where the team is not very programming savvy, HIVE probably is a better option, given its similarity to SQL queries. Queries on PIG are written on PIG latin. In this article we will introduce you to PIG Latin using a simple practical example. 
+ Installation of PIG 
+ PIG engine operates on client server. It is simply an interpreter which converts your simple code into complex map-reduce operations. This mapreduce is now handled on distributed network of Hadoop. Note that the entire network will not even know that the query was executed from a PIG engine. PIG only remains at the user interface and is meant to make it easier for the user to code. 
+ Follow the following steps in your shell to install PIG : 
+ To install Pig On Red Hat-compatible systems: 
+ $ sudo yum install pig 
+ To install Pig on SLES systems: 
+ $ sudo zypper install pig 
+ To install Pig on Ubuntu and other Debian systems: 
+ $ sudo apt-get install pig 
+ If you are thinking of running Pig on Windows, you should just get a virtual machine running on Linux and then work on it. You can use VMWare Player or Oracle VirtualBox to start one. 
+ Case Background 
+ You are the lead of analytics in Retail store named XYZ. XYZ maintains a record of all customers who shop at this store. Your task for this exercise is to create a new column called tax on Sale which is 5% of the sale. Then filter out people for whom the tax amount is less than $35. Once this subsetting is done, choose the top 2 customers with least customer number. Following is sample table for the Retail store which is saved in form of a .csv . 
+ Writing a query in PIG Latin 
+ Let’s build this query step by step. Following are the steps you need to follow : 
+ Step 1 :Load dataset in the PIG understandable format and temporary storage from where PIG query can directly reference the table 
+ Note that the above command does not load the variable age. While working with Big Data, you need to be very specific about the variables you need to use and hence make sure you pick only those variables which are of importance to you in the code. 
+ End Notes 
+ In this article, we learned how to write basic codes in PIG Latin. However, we have restricted this article to simple filter and sort statements, we will also talk about more complex merge and other statements in few of the coming articles. 
+ Did you find the article useful? Share with us any practical application of PIG you encountered in your work . Do let us know your thoughts about this article in the box below. 
+ Tavish is an IIT post graduate, a results-driven analytics professional and a motivated leader with 7+ years of experience in data science industry. He has led various high performing data scientists teams in financial domain. His work range from creating high level business strategy for customer engagement and acquisition to developing Next-Gen cognitive Deep/Machine Learning capabilities aligned to these high level strategies for multiple domains including Retail Banking, Credit Cards and Insurance. Tavish is fascinated by the idea of artificial intelligence inspired by human intelligence and enjoys every discussion, theory or even movie related to this idea. 
+ This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's Discussion portal to get your queries resolved 
+ 

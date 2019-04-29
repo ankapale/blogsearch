@@ -1,0 +1,1835 @@
+<!doctype html>
+<head lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<meta name="google-play-app" content="app-id=com.analyticsvidhya.android">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="//www.google-analytics.com" rel="dns-prefetch">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="pingback" href="https://www.analyticsvidhya.com/xmlrpc.php">
+<link rel='icon' id='favicon' type='image/png' href='https://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'><link rel='apple-touch-icon' href='https://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'><link rel='apple-touch-icon' sizes='76x76' href='https://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'><link rel='apple-touch-icon' sizes='114x114' href='https://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'><link rel='apple-touch-icon' sizes='144x144' href='https://www.analyticsvidhya.com/wp-content/uploads/2015/02/logo_square_v2.jpg'>
+<link rel='stylesheet' href="https://www.analyticsvidhya.com/wp-content/themes/Curated/custom/custom_style.css?ver=4.6" type='text/css' media='all'>
+<link rel="stylesheet" href="https://www.analyticsvidhya.com/wp-content/themes/Curated/custom/smart-app-banner.css" type="text/css" media="screen">
+<link rel="stylesheet" href="https://www.analyticsvidhya.com/wp-content/themes/Curated/custom/special-offer-strip-2.css?ver=2.0" type="text/css" media="screen">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods</title>
+<script>
+                            /* You can add more configuration options to webfontloader by previously defining the WebFontConfig with your options */
+                            if ( typeof WebFontConfig === "undefined" ) {
+                                WebFontConfig = new Object();
+                            }
+                            WebFontConfig['google'] = {families: ['Oswald:400', 'Raleway:400&amp;subset=latin']};
+
+                            (function() {
+                                var wf = document.createElement( 'script' );
+                                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js';
+                                wf.type = 'text/javascript';
+                                wf.async = 'true';
+                                var s = document.getElementsByTagName( 'script' )[0];
+                                s.parentNode.insertBefore( wf, s );
+                            })();
+                        </script>
+<style>
+.stb-container-css {margin: 10px 10px 10px 10px;}.stb-box {}.stb-caption-box {}.stb-body-box {}
+/* Class Dependent Parameters */
+.stb-border.stb-alert-container {border: 1px none #FF4F4A;}.stb-side.stb-alert-container {background: #FF4F4A;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF4F4A', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #FF4F4A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FF4F4A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #FF4F4A 30%,#504848 90%);background: -o-linear-gradient(top,  #FF4F4A 30%,#504848 90%);background: -ms-linear-gradient(top,  #FF4F4A 30%,#504848 90%);background: linear-gradient(#FF4F4A 30%, #504848 90%);}.stb-side-none.stb-alert-container {background: #FFE7E6;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFE7E6', endColorstr='#fb7d78',GradientType=0 );background: -moz-linear-gradient(top,  #FFE7E6 30%, #fb7d78 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FFE7E6), color-stop(90%,#fb7d78));background: -webkit-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: -o-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: -ms-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: linear-gradient(#FFE7E6 30%, #fb7d78 90%);}.stb-alert_box {background: #FFE7E6;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFE7E6', endColorstr='#fb7d78',GradientType=0 );background: -moz-linear-gradient(top,  #FFE7E6 30%, #fb7d78 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FFE7E6), color-stop(90%,#fb7d78));background: -webkit-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: -o-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: -ms-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: linear-gradient(#FFE7E6 30%, #fb7d78 90%);color: #000000;}.stb-alert-caption_box {background: #FF4F4A;background: -moz-linear-gradient(top,  #FF4F4A 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FF4F4A), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #FF4F4A 30%,#504848 90%);background: -o-linear-gradient(top,  #FF4F4A 30%,#504848 90%);background: -ms-linear-gradient(top,  #FF4F4A 30%,#504848 90%);background: linear-gradient(#FF4F4A 30%, #504848 90%);color: #FFFFFF;}.stb-alert-body_box {background: #FFE7E6;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFE7E6', endColorstr='#fb7d78',GradientType=0 );background: -moz-linear-gradient(top,  #FFE7E6 30%, #fb7d78 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FFE7E6), color-stop(90%,#fb7d78));background: -webkit-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: -o-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: -ms-linear-gradient(top,  #FFE7E6 30%,#fb7d78 90%);background: linear-gradient(#FFE7E6 30%, #fb7d78 90%);color: #000000;}.stb-border.stb-black-container {border: 1px none #6E6E6E;}.stb-side.stb-black-container {background: #333333;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #333333 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#333333), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #333333 30%,#504848 90%);background: -o-linear-gradient(top,  #333333 30%,#504848 90%);background: -ms-linear-gradient(top,  #333333 30%,#504848 90%);background: linear-gradient(#333333 30%, #504848 90%);}.stb-side-none.stb-black-container {background: #000000;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=0 );background: -moz-linear-gradient(top,  #000000 30%, #000000 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#000000), color-stop(90%,#000000));background: -webkit-linear-gradient(top,  #000000 30%,#000000 90%);background: -o-linear-gradient(top,  #000000 30%,#000000 90%);background: -ms-linear-gradient(top,  #000000 30%,#000000 90%);background: linear-gradient(#000000 30%, #000000 90%);}.stb-black_box {background: #000000;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=0 );background: -moz-linear-gradient(top,  #000000 30%, #000000 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#000000), color-stop(90%,#000000));background: -webkit-linear-gradient(top,  #000000 30%,#000000 90%);background: -o-linear-gradient(top,  #000000 30%,#000000 90%);background: -ms-linear-gradient(top,  #000000 30%,#000000 90%);background: linear-gradient(#000000 30%, #000000 90%);color: #FFFFFF;}.stb-black-caption_box {background: #333333;background: -moz-linear-gradient(top,  #333333 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#333333), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #333333 30%,#504848 90%);background: -o-linear-gradient(top,  #333333 30%,#504848 90%);background: -ms-linear-gradient(top,  #333333 30%,#504848 90%);background: linear-gradient(#333333 30%, #504848 90%);color: #FFFFFF;}.stb-black-body_box {background: #000000;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=0 );background: -moz-linear-gradient(top,  #000000 30%, #000000 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#000000), color-stop(90%,#000000));background: -webkit-linear-gradient(top,  #000000 30%,#000000 90%);background: -o-linear-gradient(top,  #000000 30%,#000000 90%);background: -ms-linear-gradient(top,  #000000 30%,#000000 90%);background: linear-gradient(#000000 30%, #000000 90%);color: #FFFFFF;}.stb-border.stb-custom-container {border: 1px none #f844ee;}.stb-side.stb-custom-container {background: #f844ee;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f844ee', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #f844ee 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#f844ee), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #f844ee 30%,#504848 90%);background: -o-linear-gradient(top,  #f844ee 30%,#504848 90%);background: -ms-linear-gradient(top,  #f844ee 30%,#504848 90%);background: linear-gradient(#f844ee 30%, #504848 90%);}.stb-side-none.stb-custom-container {background: #f7cdf5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7cdf5', endColorstr='#f77df1',GradientType=0 );background: -moz-linear-gradient(top,  #f7cdf5 30%, #f77df1 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#f7cdf5), color-stop(90%,#f77df1));background: -webkit-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: -o-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: -ms-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: linear-gradient(#f7cdf5 30%, #f77df1 90%);}.stb-custom_box {background: #f7cdf5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7cdf5', endColorstr='#f77df1',GradientType=0 );background: -moz-linear-gradient(top,  #f7cdf5 30%, #f77df1 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#f7cdf5), color-stop(90%,#f77df1));background: -webkit-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: -o-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: -ms-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: linear-gradient(#f7cdf5 30%, #f77df1 90%);color: #000000;}.stb-custom-caption_box {background: #f844ee;background: -moz-linear-gradient(top,  #f844ee 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#f844ee), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #f844ee 30%,#504848 90%);background: -o-linear-gradient(top,  #f844ee 30%,#504848 90%);background: -ms-linear-gradient(top,  #f844ee 30%,#504848 90%);background: linear-gradient(#f844ee 30%, #504848 90%);color: #ffffff;}.stb-custom-body_box {background: #f7cdf5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7cdf5', endColorstr='#f77df1',GradientType=0 );background: -moz-linear-gradient(top,  #f7cdf5 30%, #f77df1 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#f7cdf5), color-stop(90%,#f77df1));background: -webkit-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: -o-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: -ms-linear-gradient(top,  #f7cdf5 30%,#f77df1 90%);background: linear-gradient(#f7cdf5 30%, #f77df1 90%);color: #000000;}.stb-border.stb-download-container {border: 1px none #65ADFE;}.stb-side.stb-download-container {background: #65ADFE;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65ADFE', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #65ADFE 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#65ADFE), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #65ADFE 30%,#504848 90%);background: -o-linear-gradient(top,  #65ADFE 30%,#504848 90%);background: -ms-linear-gradient(top,  #65ADFE 30%,#504848 90%);background: linear-gradient(#65ADFE 30%, #504848 90%);}.stb-side-none.stb-download-container {background: #DFF0FF;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DFF0FF', endColorstr='#2e7cb9',GradientType=0 );background: -moz-linear-gradient(top,  #DFF0FF 30%, #2e7cb9 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#DFF0FF), color-stop(90%,#2e7cb9));background: -webkit-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: -o-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: -ms-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: linear-gradient(#DFF0FF 30%, #2e7cb9 90%);}.stb-download_box {background: #DFF0FF;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DFF0FF', endColorstr='#2e7cb9',GradientType=0 );background: -moz-linear-gradient(top,  #DFF0FF 30%, #2e7cb9 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#DFF0FF), color-stop(90%,#2e7cb9));background: -webkit-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: -o-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: -ms-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: linear-gradient(#DFF0FF 30%, #2e7cb9 90%);color: #000000;}.stb-download-caption_box {background: #65ADFE;background: -moz-linear-gradient(top,  #65ADFE 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#65ADFE), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #65ADFE 30%,#504848 90%);background: -o-linear-gradient(top,  #65ADFE 30%,#504848 90%);background: -ms-linear-gradient(top,  #65ADFE 30%,#504848 90%);background: linear-gradient(#65ADFE 30%, #504848 90%);color: #FFFFFF;}.stb-download-body_box {background: #DFF0FF;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DFF0FF', endColorstr='#2e7cb9',GradientType=0 );background: -moz-linear-gradient(top,  #DFF0FF 30%, #2e7cb9 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#DFF0FF), color-stop(90%,#2e7cb9));background: -webkit-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: -o-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: -ms-linear-gradient(top,  #DFF0FF 30%,#2e7cb9 90%);background: linear-gradient(#DFF0FF 30%, #2e7cb9 90%);color: #000000;}.stb-border.stb-grey-container {border: 1px none #BBBBBB;}.stb-side.stb-grey-container {background: #BBBBBB;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BBBBBB', endColorstr='#6e6e6e',GradientType=0 );background: -moz-linear-gradient(top,  #BBBBBB 30%, #6e6e6e 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#BBBBBB), color-stop(90%,#6e6e6e));background: -webkit-linear-gradient(top,  #BBBBBB 30%,#6e6e6e 90%);background: -o-linear-gradient(top,  #BBBBBB 30%,#6e6e6e 90%);background: -ms-linear-gradient(top,  #BBBBBB 30%,#6e6e6e 90%);background: linear-gradient(#BBBBBB 30%, #6e6e6e 90%);}.stb-side-none.stb-grey-container {background: #EEEEEE;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEEEEE', endColorstr='#ababab',GradientType=0 );background: -moz-linear-gradient(top,  #EEEEEE 30%, #ababab 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#EEEEEE), color-stop(90%,#ababab));background: -webkit-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: -o-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: -ms-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: linear-gradient(#EEEEEE 30%, #ababab 90%);}.stb-grey_box {background: #EEEEEE;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEEEEE', endColorstr='#ababab',GradientType=0 );background: -moz-linear-gradient(top,  #EEEEEE 30%, #ababab 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#EEEEEE), color-stop(90%,#ababab));background: -webkit-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: -o-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: -ms-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: linear-gradient(#EEEEEE 30%, #ababab 90%);color: #000000;}.stb-grey-caption_box {background: #BBBBBB;background: -moz-linear-gradient(top,  #BBBBBB 30%, #6e6e6e 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#BBBBBB), color-stop(90%,#6e6e6e));background: -webkit-linear-gradient(top,  #BBBBBB 30%,#6e6e6e 90%);background: -o-linear-gradient(top,  #BBBBBB 30%,#6e6e6e 90%);background: -ms-linear-gradient(top,  #BBBBBB 30%,#6e6e6e 90%);background: linear-gradient(#BBBBBB 30%, #6e6e6e 90%);color: #FFFFFF;}.stb-grey-body_box {background: #EEEEEE;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EEEEEE', endColorstr='#ababab',GradientType=0 );background: -moz-linear-gradient(top,  #EEEEEE 30%, #ababab 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#EEEEEE), color-stop(90%,#ababab));background: -webkit-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: -o-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: -ms-linear-gradient(top,  #EEEEEE 30%,#ababab 90%);background: linear-gradient(#EEEEEE 30%, #ababab 90%);color: #000000;}.stb-border.stb-info-container {border: 1px none #7AD975;}.stb-side.stb-info-container {background: #7AD975;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7AD975', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #7AD975 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#7AD975), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #7AD975 30%,#504848 90%);background: -o-linear-gradient(top,  #7AD975 30%,#504848 90%);background: -ms-linear-gradient(top,  #7AD975 30%,#504848 90%);background: linear-gradient(#7AD975 30%, #504848 90%);}.stb-side-none.stb-info-container {background: #E2F8DE;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E2F8DE', endColorstr='#79b06e',GradientType=0 );background: -moz-linear-gradient(top,  #E2F8DE 30%, #79b06e 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#E2F8DE), color-stop(90%,#79b06e));background: -webkit-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: -o-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: -ms-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: linear-gradient(#E2F8DE 30%, #79b06e 90%);}.stb-info_box {background: #E2F8DE;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E2F8DE', endColorstr='#79b06e',GradientType=0 );background: -moz-linear-gradient(top,  #E2F8DE 30%, #79b06e 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#E2F8DE), color-stop(90%,#79b06e));background: -webkit-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: -o-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: -ms-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: linear-gradient(#E2F8DE 30%, #79b06e 90%);color: #000000;}.stb-info-caption_box {background: #7AD975;background: -moz-linear-gradient(top,  #7AD975 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#7AD975), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #7AD975 30%,#504848 90%);background: -o-linear-gradient(top,  #7AD975 30%,#504848 90%);background: -ms-linear-gradient(top,  #7AD975 30%,#504848 90%);background: linear-gradient(#7AD975 30%, #504848 90%);color: #FFFFFF;}.stb-info-body_box {background: #E2F8DE;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E2F8DE', endColorstr='#79b06e',GradientType=0 );background: -moz-linear-gradient(top,  #E2F8DE 30%, #79b06e 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#E2F8DE), color-stop(90%,#79b06e));background: -webkit-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: -o-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: -ms-linear-gradient(top,  #E2F8DE 30%,#79b06e 90%);background: linear-gradient(#E2F8DE 30%, #79b06e 90%);color: #000000;}.stb-border.stb-section-container {border: 1px none #2982C5;}.stb-side.stb-section-container {background: #2982C5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2982C5', endColorstr='#2944f2',GradientType=0 );background: -moz-linear-gradient(top,  #2982C5 30%, #2944f2 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#2982C5), color-stop(90%,#2944f2));background: -webkit-linear-gradient(top,  #2982C5 30%,#2944f2 90%);background: -o-linear-gradient(top,  #2982C5 30%,#2944f2 90%);background: -ms-linear-gradient(top,  #2982C5 30%,#2944f2 90%);background: linear-gradient(#2982C5 30%, #2944f2 90%);}.stb-side-none.stb-section-container {background: #2982C5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2982C5', endColorstr='#294ee3',GradientType=0 );background: -moz-linear-gradient(top,  #2982C5 30%, #294ee3 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#2982C5), color-stop(90%,#294ee3));background: -webkit-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: -o-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: -ms-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: linear-gradient(#2982C5 30%, #294ee3 90%);}.stb-section_box {background: #2982C5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2982C5', endColorstr='#294ee3',GradientType=0 );background: -moz-linear-gradient(top,  #2982C5 30%, #294ee3 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#2982C5), color-stop(90%,#294ee3));background: -webkit-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: -o-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: -ms-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: linear-gradient(#2982C5 30%, #294ee3 90%);color: #000000;}.stb-section-caption_box {background: #2982C5;background: -moz-linear-gradient(top,  #2982C5 30%, #2944f2 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#2982C5), color-stop(90%,#2944f2));background: -webkit-linear-gradient(top,  #2982C5 30%,#2944f2 90%);background: -o-linear-gradient(top,  #2982C5 30%,#2944f2 90%);background: -ms-linear-gradient(top,  #2982C5 30%,#2944f2 90%);background: linear-gradient(#2982C5 30%, #2944f2 90%);color: #FFFFFF;}.stb-section-body_box {background: #2982C5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2982C5', endColorstr='#294ee3',GradientType=0 );background: -moz-linear-gradient(top,  #2982C5 30%, #294ee3 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#2982C5), color-stop(90%,#294ee3));background: -webkit-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: -o-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: -ms-linear-gradient(top,  #2982C5 30%,#294ee3 90%);background: linear-gradient(#2982C5 30%, #294ee3 90%);color: #000000;}.stb-border.stb-warning-container {border: 1px none #FE9A05;}.stb-side.stb-warning-container {background: #FE9A05;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FE9A05', endColorstr='#504848',GradientType=0 );background: -moz-linear-gradient(top,  #FE9A05 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FE9A05), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #FE9A05 30%,#504848 90%);background: -o-linear-gradient(top,  #FE9A05 30%,#504848 90%);background: -ms-linear-gradient(top,  #FE9A05 30%,#504848 90%);background: linear-gradient(#FE9A05 30%, #504848 90%);}.stb-side-none.stb-warning-container {background: #FEFFD5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEFFD5', endColorstr='#f0d208',GradientType=0 );background: -moz-linear-gradient(top,  #FEFFD5 30%, #f0d208 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FEFFD5), color-stop(90%,#f0d208));background: -webkit-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: -o-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: -ms-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: linear-gradient(#FEFFD5 30%, #f0d208 90%);}.stb-warning_box {background: #FEFFD5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEFFD5', endColorstr='#f0d208',GradientType=0 );background: -moz-linear-gradient(top,  #FEFFD5 30%, #f0d208 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FEFFD5), color-stop(90%,#f0d208));background: -webkit-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: -o-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: -ms-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: linear-gradient(#FEFFD5 30%, #f0d208 90%);color: #000000;}.stb-warning-caption_box {background: #FE9A05;background: -moz-linear-gradient(top,  #FE9A05 30%, #504848 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FE9A05), color-stop(90%,#504848));background: -webkit-linear-gradient(top,  #FE9A05 30%,#504848 90%);background: -o-linear-gradient(top,  #FE9A05 30%,#504848 90%);background: -ms-linear-gradient(top,  #FE9A05 30%,#504848 90%);background: linear-gradient(#FE9A05 30%, #504848 90%);color: #FFFFFF;}.stb-warning-body_box {background: #FEFFD5;filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEFFD5', endColorstr='#f0d208',GradientType=0 );background: -moz-linear-gradient(top,  #FEFFD5 30%, #f0d208 90%);background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,#FEFFD5), color-stop(90%,#f0d208));background: -webkit-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: -o-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: -ms-linear-gradient(top,  #FEFFD5 30%,#f0d208 90%);background: linear-gradient(#FEFFD5 30%, #f0d208 90%);color: #000000;}</style>
+
+<meta name="description" content="This case study is based on Chennai Floods 2015 and measures people&#039;s sentiments during he floods by analyzing the response on twitter." />
+<link rel="canonical" href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods" />
+<meta property="og:description" content="This case study is based on Chennai Floods 2015 and measures people&#039;s sentiments during he floods by analyzing the response on twitter." />
+<meta property="og:url" content="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/" />
+<meta property="og:site_name" content="Analytics Vidhya" />
+<meta property="article:publisher" content="https://www.facebook.com/AnalyticsVidhya/" />
+<meta property="article:tag" content="analytics case study" />
+<meta property="article:tag" content="Analytics projects" />
+<meta property="article:tag" content="Chennai" />
+<meta property="article:tag" content="Great Lakes institute of management" />
+<meta property="article:tag" content="real time analysis" />
+<meta property="article:tag" content="Social Media Analytics" />
+<meta property="article:tag" content="twitter sentiment" />
+<meta property="article:section" content="Business Analytics" />
+<meta property="article:published_time" content="2016-07-06T03:55:39+00:00" />
+<meta property="article:modified_time" content="2017-05-29T09:06:35+00:00" />
+<meta property="og:updated_time" content="2017-05-29T09:06:35+00:00" />
+<meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2016/07/man-dog-chennai-759.jpg" />
+<meta property="og:image:secure_url" content="https://www.analyticsvidhya.com/wp-content/uploads/2016/07/man-dog-chennai-759.jpg" />
+<meta property="og:image:width" content="759" />
+<meta property="og:image:height" content="503" />
+<meta property="og:image:alt" content="Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="This case study is based on Chennai Floods 2015 and measures people&#039;s sentiments during he floods by analyzing the response on twitter." />
+<meta name="twitter:title" content="Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods" />
+<meta name="twitter:site" content="@analyticsvidhya" />
+<meta name="twitter:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2016/07/man-dog-chennai-759.jpg" />
+<meta name="twitter:creator" content="@analyticsvidhya" />
+<script type='application/ld+json'>{"@context":"https://schema.org","@type":"Organization","url":"https://www.analyticsvidhya.com/","sameAs":["https://www.facebook.com/AnalyticsVidhya/","https://www.linkedin.com/company/analytics-vidhya","https://twitter.com/analyticsvidhya"],"@id":"https://www.analyticsvidhya.com/#organization","name":"Analytics Vidhya","logo":"https://www.analyticsvidhya.com/wp-content/uploads/2014/12/analytics-logo-300x70.jpg"}</script>
+
+<link rel='dns-prefetch' href='//www.analyticsvidhya.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Analytics Vidhya &raquo; Feed" href="https://www.analyticsvidhya.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Analytics Vidhya &raquo; Comments Feed" href="https://www.analyticsvidhya.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Analytics Vidhya &raquo; Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods Comments Feed" href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/feed/" />
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.analyticsvidhya.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.analyticsvidhya.com/wp-includes/css/dist/block-library/style.min.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css' href='https://www.analyticsvidhya.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0.4' type='text/css' media='all' />
+<link rel='stylesheet' id='dgd-scrollbox-plugin-core-css' href='https://www.analyticsvidhya.com/wp-content/plugins/dreamgrow-scroll-triggered-box/css/style.css?ver=2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='inline-tweet-sharer-style-css' href='https://www.analyticsvidhya.com/wp-content/plugins/inline-tweet-sharer/inline-tweet-sharer.css?ver=2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='maha-bootstrap-css' href='https://www.analyticsvidhya.com/wp-content/themes/Curated/static/css/bootstrap-responsive.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='maha-tm-icons-css' href='https://www.analyticsvidhya.com/wp-content/themes/Curated/static/css/font-tm.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='maha-basix-css' href='https://www.analyticsvidhya.com/wp-content/themes/Curated/static/css/basix.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='maha-basix-r-css' href='https://www.analyticsvidhya.com/wp-content/themes/Curated/static/css/basix-responsive.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='maha-dynamic-css' href='https://www.analyticsvidhya.com/wp-content/themes/Curated/includes/functions/dynamic-style.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://www.analyticsvidhya.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.15' type='text/css' media='all' />
+<style id='addtoany-inline-css' type='text/css'>
+@media screen and (max-width:980px){
+.a2a_floating_style.a2a_vertical_style{display:none;}
+}
+@media screen and (min-width:981px){
+.a2a_floating_style.a2a_default_style{display:none;}
+}
+</style>
+<link rel='stylesheet' id='yith-tcountdown-css' href='https://www.analyticsvidhya.com/wp-content/plugins/yith-topbar-countdown/assets/css/style.css?ver=1.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='yith-tcountdown-google-fonts-css' href='//fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C700&#038;ver=1.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='stbCoreCSS-css' href='https://www.analyticsvidhya.com/wp-content/plugins/wp-special-textboxes/css/stb-core.css?ver=5.9.107' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css' href='https://www.analyticsvidhya.com/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='https://www.analyticsvidhya.com/wp-content/plugins/jetpack/css/jetpack.css?ver=7.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wpss-style-css' href='https://www.analyticsvidhya.com/wp-content/plugins/wordpress-simple-survey/assets/build/css/wpss-pkg.min.css?ver=5.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wpss-custom-db-style-css' href='https://www.analyticsvidhya.com/wp-content/plugins/wordpress-simple-survey/assets/css/custom-performance.css?ver=5.0.3' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1' defer='defer'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20181228' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' defer='defer'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var $DGD = {"ajaxurl":"\/wp-admin\/admin-ajax.php","nonce":"9cec325327","debug":"","permalink":"https:\/\/www.analyticsvidhya.com\/blog\/2016\/07\/capstone-project\/","title":"Tapping Twitter Sentiments: A Complete\u00a0Case-Study on 2015 Chennai Floods","thumbnail":"https:\/\/www.analyticsvidhya.com\/wp-content\/uploads\/2016\/07\/man-dog-chennai-759.jpg","scripthost":"\/wp-content\/plugins\/dreamgrow-scroll-triggered-box\/","scrollboxes":[{"id":"dgd_scrollbox-49146-tab","parentid":"dgd_scrollbox-49146","trigger":{"action":"tab"},"height":"auto","width":"auto","vpos":"bottom","hpos":"right","theme":"clean_white","jsCss":{"margin":"0","backgroundImageUrl":"","backgroundColor":"","boxShadow":"0px","borderColor":"","borderWidth":"0px","borderRadius":""},"transition":{"effect":"none","from":"b","speed":"400"},"lightbox":0,"closeImageUrl":"","hide_mobile":"1","submit_auto_close":0,"delay_auto_close":0,"hide_submitted":0,"cookieLifetime":-1,"receiver_email":"0","thankyou":"You are subscribed. Thank You!","widget_enabled":"0"},{"trigger":{"action":"scroll","scroll":"0","delaytime":"5000","element":""},"vpos":"bottom","hpos":"right","cookieLifetime":"-1","hide_mobile":"1","receiver_email":"0","thankyou":"You are subscribed. Thank You!","submit_auto_close":"5","hide_submitted":"1","delay_auto_close":"0","lightbox":{"color":"#000000","opacity":"0.7","blur":"2"},"theme":"clean_white","widget_enabled":"1","height":"auto","width":"350","jsCss":{"padding":"10","margin":"10","backgroundColor":"","boxShadow":"0px","borderColor":"","borderWidth":"0px","borderRadius":"0px","backgroundImageUrl":""},"closeImageUrl":"","transition":{"from":"b","effect":"none","speed":"400"},"tab":"1","social":{"facebook":"","twitter":"","google":"","pinterest":"","stumbleupon":"","linkedin":""},"id":"dgd_scrollbox-49146","mode":"stb","voff":0,"hoff":0,"tabid":"dgd_scrollbox-49146-tab"},{"id":"dgd_scrollbox-49848-tab","parentid":"dgd_scrollbox-49848","trigger":{"action":"tab"},"height":"auto","width":"auto","vpos":"bottom","hpos":"center","theme":"none","jsCss":{"margin":"0","backgroundImageUrl":"","backgroundColor":"#ffffff","boxShadow":"0px","borderColor":"#000000","borderWidth":"1px","borderRadius":""},"transition":{"effect":"fade","from":"b","speed":"400"},"lightbox":0,"closeImageUrl":"","hide_mobile":"1","submit_auto_close":0,"delay_auto_close":0,"hide_submitted":0,"cookieLifetime":-1,"receiver_email":"0","thankyou":"You are subscribed. Thank You!","widget_enabled":"0"},{"trigger":{"action":"scroll","scroll":"0","delaytime":"0","element":""},"vpos":"center","hpos":"center","cookieLifetime":"0","hide_mobile":"1","receiver_email":"0","thankyou":"You are subscribed. Thank You!","submit_auto_close":"5","hide_submitted":"1","delay_auto_close":"60","lightbox":{"color":"#000000","opacity":"0.7","blur":"2"},"theme":"none","widget_enabled":"1","height":"350","width":"600","jsCss":{"padding":"10","margin":"10","backgroundColor":"#ffffff","boxShadow":"0px","borderColor":"#000000","borderWidth":"2px","borderRadius":"1px","backgroundImageUrl":""},"closeImageUrl":"","transition":{"from":"b","effect":"fade","speed":"400"},"tab":"1","social":{"facebook":"","twitter":"","google":"","pinterest":"","stumbleupon":"","linkedin":""},"id":"dgd_scrollbox-49848","mode":"stb","voff":0,"hoff":0,"tabid":"dgd_scrollbox-49848-tab"}]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/dreamgrow-scroll-triggered-box/js/script.js?ver=2.3' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/inline-tweet-sharer/inline-tweet-sharer.js?ver=2.3' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/wordpress-simple-survey/assets/build/js/wpss-pkg.min.js?ver=3.0.0' defer='defer'></script>
+<link rel='https://api.w.org/' href='https://www.analyticsvidhya.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.analyticsvidhya.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.analyticsvidhya.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.0.3" />
+<link rel='shortlink' href='https://www.analyticsvidhya.com/?p=25771' />
+<link rel="alternate" type="application/json+oembed" href="https://www.analyticsvidhya.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.analyticsvidhya.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&#038;format=xml" />
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+a2a_config.thanks = {
+    postShare: true,
+    ad: false
+};
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+<script type="text/javascript"><!--
+function powerpress_pinw(pinw_url){window.open(pinw_url, 'PowerPressPlayer','toolbar=0,status=0,resizable=1,width=460,height=320');	return false;}
+//-->
+</script>
+<script type="text/javascript">/* <![CDATA[ */ jQuery.post("https://www.analyticsvidhya.com/wp-admin/admin-ajax.php", { action: "wmp_update", id: 25771, token: "045d879b5b" }); /* ]]> */</script>
+<style type="text/css">
+
+
+
+                #yith-topbar-countdown.topbar-countdown-container{
+
+                    
+                                            background-color: #134576;
+                    
+                    
+                    background-repeat:repeat;
+                    background-position:top left;
+                    background-attachment:scroll;
+                }
+
+                #yith-topbar-countdown .countdown_slogan{
+                    color: #FFFFFF;
+font-size: 14px;
+font-family: 'Roboto';
+font-weight: 400;
+font-style: normal;
+                }
+
+                #yith-topbar-countdown .countdown_information .countdown .num {color: #ffffff;
+font-size: 14px;
+font-family: 'Roboto';
+font-weight: 700;
+font-style: normal;
+}
+
+                #yith-topbar-countdown .countdown_information .countdown_slogan strong{
+                    color: #ffffff;
+font-size: 14px;
+font-family: 'Roboto';
+font-weight: 700;
+font-style: normal;
+                }
+
+                #yith-topbar-countdown .countdown_information .message,
+                #yith-topbar-countdown .countdown_information .countdown-label{
+                    color: #FFFFFF;
+font-size: 14px;
+font-family: 'Roboto';
+font-weight: 400;
+font-style: normal;
+                }
+
+                #yith-topbar-countdown .countdown_button {
+
+                                            background-color: #ee3d24;
+                    
+                    color: #FFFFFF;
+font-size: 14px;
+font-family: 'Roboto';
+font-weight: 700;
+font-style: normal;
+                }
+
+                #yith-topbar-countdown .countdown_button a{color: #FFFFFF;
+font-size: 14px;
+font-family: 'Roboto';
+font-weight: 700;
+font-style: normal;
+}
+
+                #yith-topbar-countdown .countdown_button:hover {
+                                            background-color: #821919;
+                                    }
+
+            </style>
+<link rel='dns-prefetch' href='//widgets.wp.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+
+<meta property="og:url" content="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/" />
+<meta property="og:title" content="Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods" />
+<meta property="og:description" content="Introduction We did this case study as a part of our capstone project at Great Lakes Institute of Management, Chennai. After we presented this study, we got an overwhelming response from our professors &amp; mentors. Later, they encouraged us to share our work to help others learn something new. We've been following Analytics Vidhya for a" />
+<meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2016/07/man-dog-chennai-759-200x200.jpg" />
+
+<link rel='canonical' href='https://www.analyticsvidhya.com/blog/2016/07/capstone-project/' />
+<style type="text/css"></style><script>
+if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {     
+jQuery(document).ready(function(){
+jQuery( ".col-sm-12" ).removeClass( "myrun" );    
+});
+}
+</script>
+<script>
+//subscribe android app
+jQuery(document).ready(function(){
+   jQuery('#submit-subscribe-android-app').click(function(){
+       var email = jQuery('#email-subscribe-android-app').val();
+       if(email){
+           jQuery.ajax({
+               url: "/subscriptions/early-android-access.php",
+               type: "POST",
+               data: {
+                   "email": email
+               },
+               success: function(data){
+                   if(data.success){
+                       jQuery("#bg-sbox ul").hide(1);
+                       jQuery("#bg-sbox h5").text('yay!');
+                       jQuery("#bg-sbox p.msg1").text('Your email has been added to our beta list');
+                       jQuery("#bg-sbox p.msg2").text('You will hear from us soon');
+                   } else {
+                       jQuery("#bg-sbox h5").text('Something went wrong, try again!');
+                       console.log(data.error);
+                   }
+               },
+               error: function(e){
+                   console.log(e);
+                   jQuery("#bg-sbox h5").text('Something went wrong, try again!');
+               }
+           })
+       }
+   });
+});
+</script>
+<script>
+jQuery(document).ready(function(){
+	jQuery(".filter-button").click(function(){
+		var value = jQuery(this).attr('data-filter');
+       if(value == "all"){
+           $('.filter').show('1000');
+       }else{
+			jQuery(".filter").not('.'+value).hide('3000');
+			jQuery('.filter').filter('.'+value).show('3000');
+       }
+   });
+});
+</script>
+<script>//----------footer js start------</script>
+<script type="text/javascript">
+     jQuery(document).ready(function(){
+       jQuery('.footer-links-holder .links-show').click(function () {
+       jQuery(this).parent().toggleClass('active');
+     });
+   });
+</script>
+<script type="text/javascript">
+     var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[]};
+ // replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+ clevertap.account.push({"id": "R5K-4WR-7W5Z"});
+ (function () {
+		 var wzrk = document.createElement('script');
+		 wzrk.type = 'text/javascript';
+		 wzrk.async = true;
+		 wzrk.src = ('https:' == document.location.protocol ? 'https://d2r1yp2w7bby2u.cloudfront.net' : 'http://static.clevertap.com') + '/js/a.js';
+		 var s = document.getElementsByTagName('script')[0];
+		 s.parentNode.insertBefore(wzrk, s);
+  })();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40101183-1', 'auto');
+  ga('require', 'GTM-PBZGQJ4');
+  //ga('send', 'pageview');
+  ga('send', 'pageview', {
+     'dimension1': 'Guest Blog',
+     'dimension2': 'Business Analytics'
+     });
+</script>
+<meta property="fb:pages" content="452065408218678" />
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MPSM42V');</script>
+
+</head>
+<body class="post-template-default single single-post postid-25771 single-format-standard mh-body unknown">
+
+<noscript><iframe src="//googletagmanager.com/ns.html?id=GTM-MPSM42V"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<div class="container-fluid">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.analyticsvidhya.com/wp-content/themes/Curated/custom/smart-app-banner.js"></script>
+<script type="text/javascript">
+    if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+      new SmartBanner({
+          daysHidden: 15,   // days to hide banner after close button is clicked (defaults to 15)
+          daysReminder: 1, // days to hide banner after "VIEW" button is clicked (defaults to 90)
+          appStoreLanguage: 'us', // language code for the App Store (defaults to user's browser language)
+          title: '',
+          author: '',
+          button: '',
+          store: {
+              android: ' ',
+          },
+          price: {
+              android: '',
+          }
+          , theme: 'android' // put platform type ('ios', 'android', etc.) here to force single theme on all device
+          // , icon: '' // full path to icon image if not using website icon image
+          , force: 'android' // Uncomment for platform emulation
+      });
+    }
+    </script>
+<script>
+    $(document).ready(function(){
+        $(".smartbanner-container").click(function(){
+            ga('send', {'hitType': 'event', 'eventCategory': 'smart-banner', 'eventAction': 'clicked'});
+            window.open("https://play.google.com/store/apps/details?id=com.analyticsvidhya.android", '_blank');
+        });
+    });
+    </script>
+</div>
+
+<script>
+    /*
+    $(document).ready(function(){
+        var cat_id1 = 3761;
+        var cat_id2 = 3952;
+
+        var cat2 = [5];
+        var type = $('meta[property="og:title"]').attr("content");
+        // alert(type);
+        if (jQuery.inArray(cat_id1, cat2) !='-1'){
+            var cat3 = "Best Course on Computer Vision Using Deep Learning";
+            var cat1 = "Solve Real-Life Computer Vision Problems";
+            var cat = 3761;
+        }else if(jQuery.inArray(cat_id2, cat2) !='-1'){
+            var cat3 = "Best Course on Natural Language Processing";
+            var cat1 = "Master Your Skills In Natural Language Processing";
+            var cat = 3952;
+        }else{
+            var cat3 = "Course On Introduction To Data Science";
+            var cat1 = "Launch Your Dream Career In Data Science";
+        }
+
+        $('#cat').html(cat1);
+        $("#cat1").val(cat);
+        $("#cat2").val(type);
+        $("#dwn-btn").append(cat3);
+        // $('#dgd_scrollbox-48773-tab').append(cat3);
+    });
+*/
+
+    </script>
+<script>
+    $(document).ready(function(){
+        var cat_id1 = 3761;
+        var cat_id2 = 3952;
+        var cat_id3 = 4939;
+
+        var cat2 = [5];
+        var type = $('meta[property="og:title"]').attr("content");
+        // alert(type);
+        // Popup on Category
+        if (jQuery.inArray(cat_id3, cat2) !='-1'){
+                 var cat3 = "Download the infographic to crack your data science interview anywhere in the world!";
+                 var cat1 = "7 Steps to Ace Data Science Interview";
+                 var cat = 4939;
+             }
+        else if (jQuery.inArray(cat_id1, cat2) !='-1'){
+            var cat3 = "Download this resource to build your first computer vision model in just 10 minutes.";
+            var cat1 = "Computer Vision Model in 10 minutes";
+            var cat = 3761;
+        }else if(jQuery.inArray(cat_id2, cat2) !='-1'){
+            var cat3 = "Download your text classification project here to build your first NLP model.";
+            var cat1 = "Your Text Classification Project";
+            var cat = 3952;
+        }else{
+            var cat3 = "Download this learning path to start your data science journey.";
+            var cat1 = "Your Ultimate path for Becoming a DATA Scientist!";
+        }
+
+        $('#cat').html(cat1);
+        $("#cat1").val(cat);
+        $("#cat2").val(type);
+        $("#dwn-btn").append(cat3);
+    });
+
+    </script>
+<div id="body-maha" class="body-maha" data-tmloader="https://www.analyticsvidhya.com/wp-content/themes/Curated/images/ellipsis.gif">
+<nav id="mobile-bar-sticky" role="navigation" class="mobile-bar bar-sticky">
+<div id="close-mobile-bar"><i class="tm-cancel"></i></div>
+<div id="search-mobile-bar"><form action="https://www.analyticsvidhya.com/" class="searchform" method="get">
+<button class="search-button"><i class="tm-search"></i></button>
+<input type="text" name="s" class="search-input" value="Search" onfocus="if(this.value=='Search')this.value='';" onblur="if(this.value=='')this.value='Search';" autocomplete="off" />
+</form></div>
+<ul id="menu-main-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><span></span><a href="#">Learn</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/blog-archive/">Blog Archive</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-2498"><span></span><a href="https://www.analyticsvidhya.com/blog/category/machine-learning/">Machine Learning</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-3761"><span></span><a href="https://www.analyticsvidhya.com/blog/category/deep-learning/">Deep Learning</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-4121"><span></span><a href="https://www.analyticsvidhya.com/blog/category/career/">Career</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-3118"><span></span><a href="https://www.analyticsvidhya.com/blog/category/stories/">Stories</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/blog/category/podcast/">DataHack Radio</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-2284"><span></span><a href="https://www.analyticsvidhya.com/blog/category/infographics/">Infographics</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://courses.analyticsvidhya.com?utm_source=home_blog_navbar">Training</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/">Learning Paths</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-business-analyst-sas/">SAS Business Analyst</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/">LeaRn Data Science on R</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-data-science-python/">Data Science in Python</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/weka-gui-learn-machine-learning/">DATA SCIENCE IN WEKA</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/tableau-learning-path/">Data Visualization with Tableau</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/qlikview-learning-path/">Data Visualization with QlikView</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/newbie-d3-js-expert-complete-path-create-interactive-visualization-d3-js/">Interactive Data Stories with D3.js</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/glossary-of-common-statistics-and-machine-learning-terms/">Glossary</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><span></span><a href="#">Engage</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://discuss.analyticsvidhya.com">Discuss</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-1915"><span></span><a href="https://www.analyticsvidhya.com/blog/category/events/">Events</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/datahack-summit-2018/">Datahack Summit 2018</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/datahacksummit/">DataHack Summit 2017</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/student-datafest-2018/?utm_source=homepage_menu">Student Datafest</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="http://www.analyticsvidhya.com/about-me/write/">Write For Us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><span></span><a href="#">Compete</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://datahack.analyticsvidhya.com/contest/all">Hackathons</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><span></span><a href="#">Get Hired</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-170"><span></span><a href="https://www.analyticsvidhya.com/jobs/">Jobs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><span></span><a href="https://courses.analyticsvidhya.com">Courses</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://courses.analyticsvidhya.com/courses/computer-vision-using-deep-learning/?utm_source=blog-navbar&amp;utm_medium=web">COMPUTER VISION USING DEEP LEARNING</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://courses.analyticsvidhya.com/courses/natural-language-processing-nlp/?utm_source=blog-navbar&amp;utm_medium=web">NATURAL LANGUAGE PROCESSING USING PYTHON</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://courses.analyticsvidhya.com/courses/introduction-to-data-science-2/?utm_source=blog-navbar&amp;utm_medium=web">INTRODUCTION TO DATA SCIENCE</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://courses.analyticsvidhya.com/courses/microsoft-excel-beginners-to-advanced/?utm_source=blog-navbar&amp;utm_medium=web">MICROSOFT EXCEL</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><span></span><a href="https://courses.analyticsvidhya.com/collections/?utm_source=blog-navbar&amp;utm_medium=web">MORE COURSES</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/contact/">Contact</a></li>
+</ul> </nav>
+
+<div id='body-background'>
+
+<div id="off-canvas-body" class="off-canvas-body animati-on">
+
+<div id="top-bar-sticky" class="bar-sticky">
+<div class="top-bar">
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div id="top-right-nav">
+<div class="social-top">
+<ul><li><a target="_blank" href="https://www.facebook.com/AnalyticsVidhya"><i class="tm-facebook"></i></a></li><li><a target="_blank" href="https://twitter.com/analyticsvidhya"><i class="tm-twitter"></i></a></li><li><a target="_blank" href="https://plus.google.com/+Analyticsvidhya/posts"><i class="tm-googleplus"></i></a></li><li><a target="_blank" href="https://in.linkedin.com/company/analytics-vidhya"><i class="tm-linkedin"></i></a></li></ul>
+</div>
+<div class="top-user">
+<i class='tm-user'></i>
+<a class="login-modal-closer" data-reveal-id="cur-register" data-animation="fade" data-dismissmodalclass="register-reveal-modal" id="login1"></a><span id="regiter1"></span>
+</div>
+</div>
+<nav id="top-nav-wrapper" class="ul-nav">
+<ul id="menu-top" class="menu"><li id="menu-item-42575" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-42575 mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com">Home</a></li>
+<li id="menu-item-12992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12992 mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/blog-archive/">Blog Archive</a></li>
+<li id="menu-item-41279" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41279 mh-navcat-0"><span></span><a href="https://courses.analyticsvidhya.com?utm_source=home_blog_navbar">Trainings</a></li>
+<li id="menu-item-12952" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12952 mh-navcat-0"><span></span><a href="https://discuss.analyticsvidhya.com">Discuss</a></li>
+<li id="menu-item-45058" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-45058 mh-navcat-0"><span></span><a href="https://datahack.analyticsvidhya.com">Datahack</a></li>
+<li id="menu-item-12658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12658 mh-navcat-170"><span></span><a href="https://www.analyticsvidhya.com/jobs/">Jobs</a></li>
+<li id="menu-item-39605" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39605 mh-navcat-0"><span></span><a href="https://www.analyticsvidhya.com/corporate/">Corporate</a></li>
+</ul> </nav>
+<nav id="top-mobile-wrapper" class="ul-nav">
+<ul><li><a><i class="tm-menu"></i></a></li></ul>
+</nav>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="main-logo-ads-wrap">
+<div class="main-logo-ads">
+
+<div class="container">
+<div class="row ">
+<div class="col-sm-12">
+
+<div id="thelogo" class="logo ">
+<a href="https://www.analyticsvidhya.com/blog/">
+<img alt="Analytics Vidhya - Learn everything about Analytics" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/03/18122331/av100.png" data-retina="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/03/18122331/av100.png" data-first="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/03/18122331/av100.png" />
+</a>
+</div>
+<h2 class='site-outline'>Learn everything about Analytics</h2>
+
+<div id="main-ads" class="">
+<div class="vp-1170 vp-fluid"><a href="https://courses.analyticsvidhya.com/bundles/ai-blackbelt-beginner-to-master?utm_source=AVtopbanner&utm_medium=display" target="_blank"><img src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/ai-ml-blackbelt.gif"></a></div>
+<div class="vp-970 vp-750"><a href="https://courses.analyticsvidhya.com/bundles/ai-blackbelt-beginner-to-master?utm_source=AVtopbanner&utm_medium=display" target="_blank"><img src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/ai-ml-blackbelt.gif"></a></div>
+<div class="vp-320"><a href="https://courses.analyticsvidhya.com/bundles/ai-blackbelt-beginner-to-master?utm_source=AVtopbanner&utm_medium=display" target="_blank"><img src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/ai-ml-blackbelt.gif"></a></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div id="main-nav">
+<div id="main-nav-bar" class="main-nav-bar clearfix ">
+<div id="main-search" class=" clearfix">
+<div id="con-search">
+<div class="container">
+<div class="cols-sm12">
+<div id="main-search-form">
+<span class="close-search-form"><i class="tm-cancel"></i></span>
+<span class="loading-search-result"><img src="https://www.analyticsvidhya.com/wp-content/themes/Curated/images/ellipsis.gif" alt=""></span>
+<form action="https://www.analyticsvidhya.com/" class="searchform" method="get">
+<button class="search-button"><i class="tm-search"></i></button>
+<input type="text" name="s" class="search-input" value="Search" onfocus="if(this.value=='Search')this.value='';" onblur="if(this.value=='')this.value='Search';" autocomplete="off" />
+</form> <div class="search-result">
+<div class="container search-result-content"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='maha-notification container'><div id="main-notif"></div></div>
+<div class="container clearfix">
+</div>
+
+<div class="container clearfix">
+<div class="row clearfix">
+<div class="col-sm-12 clearfix">
+
+
+<div id="search-nav" class="search-nav clearfix">
+<span class="open-search-form"><i class="tm-search"></i></span>
+</div>
+
+
+<nav id="main-nav-wrapper" class="main-ul-nav clearfix">
+<div id="thelogosmall" class="logo">
+<a href="https://www.analyticsvidhya.com/blog/">
+<img alt="Analytics Vidhya - Learn everything about Analytics" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/03/18121731/av44.png" data-retina="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/03/18121731/av44.png" data-first="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/03/18121731/av44.png" />
+</a>
+</div>
+<ul id="menu-main-menu-1" class="menu"><li id="menu-item-37781" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><a href="#">Learn</a><div class="nav-sub-wrap container"><div class="nsw clearfix row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-12993" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><a href="https://www.analyticsvidhya.com/blog-archive/">Blog Archive</a><div class="nav-sub-wrap container"><div class="nsw clearfix row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-47251" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-2498"><a href="https://www.analyticsvidhya.com/blog/category/machine-learning/">Machine Learning</a></li>
+<li id="menu-item-47265" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-3761"><a href="https://www.analyticsvidhya.com/blog/category/deep-learning/">Deep Learning</a></li>
+<li id="menu-item-47191" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-4121"><a href="https://www.analyticsvidhya.com/blog/category/career/">Career</a></li>
+<li id="menu-item-27174" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-3118"><a href="https://www.analyticsvidhya.com/blog/category/stories/">Stories</a></li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-45209" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-0"><a href="https://www.analyticsvidhya.com/blog/category/podcast/">DataHack Radio</a></li>
+<li id="menu-item-18233" class="menu-item menu-item-type-taxonomy menu-item-object-category mh-navcat-2284"><a href="https://www.analyticsvidhya.com/blog/category/infographics/">Infographics</a></li>
+<li id="menu-item-41036" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://courses.analyticsvidhya.com?utm_source=home_blog_navbar">Training</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-12170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children mh-navcat-0"><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/">Learning Paths</a><div class="nav-sub-wrap container"><div class="nsw clearfix row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-12503" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-business-analyst-sas/">SAS Business Analyst</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-14416" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/">LeaRn Data Science on R</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-12171" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-data-science-python/">Data Science in Python</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-13207" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/weka-gui-learn-machine-learning/">DATA SCIENCE IN WEKA</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-23077" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/tableau-learning-path/">Data Visualization with Tableau</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-12320" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/qlikview-learning-path/">Data Visualization with QlikView</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-23078" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/newbie-d3-js-expert-complete-path-create-interactive-visualization-d3-js/">Interactive Data Stories with D3.js</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-31580" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/glossary-of-common-statistics-and-machine-learning-terms/">Glossary</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-37782" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><a href="#">Engage</a><div class="nav-sub-wrap container"><div class="nsw clearfix row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-11881" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://discuss.analyticsvidhya.com">Discuss</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-24639" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-1915"><a href="https://www.analyticsvidhya.com/blog/category/events/">Events</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-45075" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://www.analyticsvidhya.com/datahack-summit-2018/">Datahack Summit 2018</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-39652" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://www.analyticsvidhya.com/datahacksummit/">DataHack Summit 2017</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-43948" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://www.analyticsvidhya.com/student-datafest-2018/?utm_source=homepage_menu">Student Datafest</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-22625" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="http://www.analyticsvidhya.com/about-me/write/">Write For Us</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-37783" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><a href="#">Compete</a><div class="nav-sub-wrap container"><div class="nsw clearfix row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-24638" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://datahack.analyticsvidhya.com/contest/all">Hackathons</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-37784" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><a href="#">Get Hired</a><div class="nav-sub-wrap container"><div class="nsw clearfix row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-31593" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-170"><a href="https://www.analyticsvidhya.com/jobs/">Jobs</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-44643" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children mh-navcat-0"><a href="https://courses.analyticsvidhya.com">Courses</a><div class="nav-sub-wrap container"><div class="nsw clearfix row">
+<div class="nav-sub-menus"><ul>
+<li id="menu-item-48964" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://courses.analyticsvidhya.com/courses/computer-vision-using-deep-learning/?utm_source=blog-navbar&amp;utm_medium=web">COMPUTER VISION USING DEEP LEARNING</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-48965" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://courses.analyticsvidhya.com/courses/natural-language-processing-nlp/?utm_source=blog-navbar&amp;utm_medium=web">NATURAL LANGUAGE PROCESSING USING PYTHON</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-44644" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://courses.analyticsvidhya.com/courses/introduction-to-data-science-2/?utm_source=blog-navbar&amp;utm_medium=web">INTRODUCTION TO DATA SCIENCE</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-44645" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://courses.analyticsvidhya.com/courses/microsoft-excel-beginners-to-advanced/?utm_source=blog-navbar&amp;utm_medium=web">MICROSOFT EXCEL</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+<li id="menu-item-44646" class="menu-item menu-item-type-custom menu-item-object-custom mh-navcat-0"><a href="https://courses.analyticsvidhya.com/collections/?utm_source=blog-navbar&amp;utm_medium=web">MORE COURSES</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+</ul></div>
+</div></div>
+</li>
+<li id="menu-item-24641" class="menu-item menu-item-type-post_type menu-item-object-page mh-navcat-0"><a href="https://www.analyticsvidhya.com/contact/">Contact</a><div class="nav-sub-wrap container"><div class="nsw clearfix row"></div></div>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="page-wrapper">
+
+<div class="mh-el page-sidebar single-regular" itemscope itemtype="https://schema.org/Article">
+
+<div class="container">
+<div class="row">
+
+<div class="col-sm-8">
+<div class="main-content">
+
+<div class="maha-crumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span><a href="https://www.analyticsvidhya.com/">Home</a></span> <i class="tm-crumb-right"></i> <span itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem"><a itemscope itemprop="item" itemtype="https://schema.org/Thing" href="https://www.analyticsvidhya.com/blog/category/business-analytics/"><span itemprop="name">Business Analytics</span></a><meta itemprop="position" content="1"></span> <i class="tm-crumb-right"></i> <span><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/">Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods</a></span></div>
+<article id="post-25771" class="main-content single-post-box">
+<header>
+<meta itemprop="headline" content="Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods">
+<meta itemprop="datecreated" content="2016-07-06T03:55:39+00:00">
+<meta itemprop="datePublished" content="2016-07-06T03:55:39+00:00">
+<meta itemprop="dateModified" content="2017-05-29T14:36:35+00:00">
+<meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/" />
+<span class="hidden" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+<meta itemprop="url" content="https://www.analyticsvidhya.com/wp-content/uploads/2016/07/man-dog-chennai-759.jpg">
+<meta itemprop="width" content="503">
+<meta itemprop="height" content="503">
+</span>
+<span class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+<span class="hidden" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+<meta itemprop="url" content="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/03/18122331/av100.png">
+</span>
+<meta itemprop="name" content="Analytics Vidhya">
+</span>
+<div class="meta-count">
+<span class="i-category"><span class="mh-cat-item"><a class="mh-elcat-5" href="https://www.analyticsvidhya.com/blog/category/business-analytics/" title="Business Analytics" rel="category">Business Analytics</a></span></span>
+</div>
+<h1 itemprop="name" class="entry-title">Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods</h1>
+<div class="meta-info">
+<span class="entry-author">
+<a href="https://www.analyticsvidhya.com/blog/author/guest-blog/"><span>Guest Blog</span></a>,
+</span>
+<time class="entry-date" content="2016-07-06" datetime="2016-07-06T03:55:39+00:00">
+July 6, 2016 </time>
+<div class="count-data right">
+</div>
+<span class="save-for-later"></span>
+</div>
+</header>
+<div class="text-content">
+<div id="ban3_av"></div><h2>Introduction</h2>
+<p style="text-align: justify;">We did this case study as a part of our capstone project at Great Lakes Institute of Management, Chennai. After we presented this study, we got an overwhelming response from our professors &amp; mentors. Later, they encouraged us to share our work to help others learn something new.</p>
+<p style="text-align: justify;">We&#8217;ve been following Analytics Vidhya for a while now. Everyone knows, it&#8217;s probably the largest engine to share analytics knowledge. We tried and got lucky in connecting with their content team.</p>
+<p style="text-align: justify;">So, using this case study we&#8217;ve analyzed the crisis communication on Twitter happened during Chennai Floods. Also, we&#8217;ve discovered patterns &amp; themes of communication, the way in which the platform was used to share information and how it shaped response to the crisis. After successfully finishing our study, the following objectives were achieved:</p>
+<ol>
+<li style="text-align: justify;">Topic analysis of social media interactions to understand the different subjects of interactions, information sharing and grouping geographies into risk</li>
+<li>Grouping similar messages together with emphasis on predominant themes (rescue, food, supplies, ambulance calls)</li>
+</ol>
+<p style="text-align: justify;">This study is done on a set of social interactions limited to the first two days of December 2015, as these were the worst days of the crisis. The analysis was restricted to a set of 6000 tweets, for want of computing power. The tweets were extracted by looking for the hashtag <code>#ChennaiFloods</code>.</p>
+<p style="text-align: justify;">Among analytical approach &amp; tools used, Topic Analysis of tweets is done using Latent Dirichlet Allocation. K-Means &amp; Hierarchical Clustering is employed on the themes of tweets. <a href="https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/tableau-learning-path/" target="_blank" rel="noopener noreferrer">Tableau</a> is used to create word clouds. Microsoft Excel and Word is used to perform spellchecks on extracted words.</p>
+<p style="text-align: justify;">The findings of this study explores the viability of analyzing Twitter communication real-time with an aim of providing timely assistance to the affected areas.</p>
+<p>&nbsp;</p>
+<h2 style="text-align: justify;">Table of Contents</h2>
+<p style="text-align: justify;"><strong>Chennai Floods &#8211; Quick Story</strong></p>
+<p style="text-align: justify;"><strong>Exploratory Data Analysis</strong></p>
+<p style="text-align: justify; padding-left: 30px;">2.1 &#8211; The Typical Tweet</p>
+<p style="text-align: justify; padding-left: 30px;">2.2 &#8211; Data Extraction</p>
+<p style="text-align: justify; padding-left: 30px;">2.3 &#8211; Data Preparation &amp; Exploration</p>
+<p style="text-align: justify; padding-left: 30px;">2.4 &#8211; Text Preparation</p>
+<p style="text-align: justify; padding-left: 30px;">2.5 &#8211; Word Frequencies and Associations</p>
+<p style="text-align: justify;"><strong>Clustering and Topic Modeling</strong></p>
+<p style="text-align: justify; padding-left: 30px;">3.1 &#8211; Hierarchical Clustering</p>
+<p style="text-align: justify; padding-left: 30px;">3.1.1 &#8211; Interpretation</p>
+<p style="text-align: justify; padding-left: 30px;">3.2 &#8211; k-Means Clustering</p>
+<p style="text-align: justify; padding-left: 30px;">3.2.1 &#8211; Choosing k</p>
+<p style="text-align: justify; padding-left: 30px;">3.3 &#8211; Topic Modeling</p>
+<p style="text-align: justify; padding-left: 30px;">3.3.1 &#8211; Latent Dirichlet Association</p>
+<p style="text-align: justify;"><strong>Conclusion</strong></p>
+<p style="text-align: justify; padding-left: 30px;">4.1 &#8211; Limitations of this study</p>
+<p style="text-align: justify; padding-left: 30px;">4.2 &#8211; Challenges in Real Time Analysis of Tweets</p>
+<p style="text-align: justify; padding-left: 30px;">4.3 &#8211; Applications and Scope of Further Work</p>
+<p style="text-align: justify;"><strong>Our learning &amp; Journey</strong></p>
+<p>&nbsp;</p>
+<h2 style="text-align: justify;">1. Chennai Floods &#8211; Quick Story</h2>
+<p style="text-align: justify;">In November–December 2015, the annual northeast monsoon generated heavy rainfall in the <a href="https://en.wikipedia.org/wiki/Coromandel_Coast" target="_blank" rel="nofollow noopener noreferrer">Coromandel Coast</a> region of the South Indian States of Tamil Nadu and Andhra Pradesh, the union territory of Pondicherry with the city of Chennai particularly hard-hit.</p>
+<p style="text-align: justify;">Termed  <strong>2015 South Indian floods</strong> as the ‘black swan’ caused an enormous destruction. It is estimated that around 500 people lost their lives and over 18 lakh (1.8 million) people were displaced.</p>
+<p style="text-align: justify;">With approximations of damages and losses ranging from ₹50000 crore (US$7 billion) to ₹100000 crore (US$15 billion), the floods were the costliest to have occurred in 2015, and were among  the costliest natural disasters of the year. The flooding has been attributed to the <em>El Niño</em> phenomenon.</p>
+<p style="text-align: justify;">In the city of Chennai, the impact of the heavy rainfall was compounded by the overfull water reservoirs, which soon started to spill over into the city. Whole neighborhoods were inundated, with loss of power, communication and access to essentials. The National Disaster Response Force (NDRF), the Indian Army and disaster management units were pressed into service. Rescue and rehabilitation efforts spanned well over 2 weeks.</p>
+<p style="text-align: justify;">What emerged conspicuously during this unprecedented crisis was the coordination of relief efforts over social media platforms such as Twitter, Facebook and WhatsApp. Volunteers, NGOs and other rescue parties were observed to be sending out alerts, requests and sharing useful information related to the flooding on social media. Others used social media to check up on their loved ones, share information, express opinions and sending out requests for help.</p>
+<p>&nbsp;</p>
+<h2 style="text-align: justify;">2. Exploratory Data Analysis</h2>
+<h3 style="text-align: justify;">2.1   The typical tweet</h3>
+<p style="text-align: justify;">A tweet is a social media message posted on Twitter.com. It is restricted to 140 characters. Though most tweets contain mostly text, it is possible to embed URLs, pictures, videos, vines and GIFs.</p>
+<p style="text-align: justify;">Tweets contain components called hashtags, which are words that capture the subject of the tweet. They are prefixed by the ‘#’ character. They can also convey emotion (#sarcasm) or an event (#IndiaVsPakistan) or popular catchphrase in pop culture (#ICantBreathe).</p>
+<p style="text-align: justify;">Usernames or handles of those who post are recognized by the ‘@’ symbol. A user can direct a message to another user by adding the handle, with the ‘@’ symbol.</p>
+<p style="text-align: justify;">A retweet (‘rt’ for short) is a tweet by a user X that has been shared by user Y to all of Y’s followers. Thus, retweets are a way of measuring how popular the tweet is.</p>
+<p style="text-align: justify;">A user can ‘favorite’ a tweet; this is analogous to a ‘Like’ on Facebook.</p>
+<h3 style="text-align: justify;">2.2   Data Extraction</h3>
+<p style="text-align: justify;">Twitter has an official API called OAuth, a token-based authentication system that indexes  tweets that match a given search string and writes the output to a file. While this service is free and convenient to perform a quick and efficient extraction of tweets, it has a crucial limitation: it can retrieve tweets only from the previous week.</p>
+<p style="text-align: justify;">Hence, a repository on the code sharing portal <a href="https://github.com/Jefferson-Henrique/GetOldTweets-python" target="_blank" rel="nofollow noopener noreferrer">GitHub</a> was utilized to search for and extract tweets. The search term was the hashtag <code>#ChennaiFloods</code>. The python language was used (in an Ubuntu Linux environment) to perform the extraction; the extracted tweets were written to a comma-separated value file.</p>
+<h3 style="text-align: justify;">2.3 Data Preparation &amp; Exploration</h3>
+<p style="text-align: justify;">The information gathered contained hashtags and mentions of the users who tweeted about this event. These were separated in R using regular expressions.</p>
+<p style="text-align: justify;">The following wordcloud shows the hashtags used in the tweets.</p>
+<p style="text-align: justify;"><img class="alignnone size-full wp-image-25802" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/1-2.jpg" alt="1" width="844" height="545" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/1-2.jpg 844w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/1-2-300x194.jpg 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/1-2-768x496.jpg 768w" sizes="(max-width: 844px) 100vw, 844px" /></p>
+<p style="text-align: justify;">From the hashtags used, the following themes are evident, other than the disaster itself:</p>
+<p style="text-align: justify;">Sympathy (<code>#PrayForChennai</code>)</p>
+<p style="text-align: justify;">Requests for help (<code>#savechennai</code>, <code>#ChennaiRainsHelp</code>)</p>
+<p style="text-align: justify;">Information on further weather forecasts (<code>#chennaiweather</code>)</p>
+<p style="text-align: justify;">Information on specific areas in Chennai (<code>#airport</code>, <code>#Chromepet</code>)</p>
+<p style="text-align: justify;">Cautionary messages (<code>#ExerciseCaution</code>)</p>
+<p style="text-align: justify;">Various hashtags for the same topic are observable. This would make it challenging to separate all tweets on the subject.</p>
+<p style="text-align: justify;">The below chart shows the top 10 active Twitter users that participated in relief efforts. Some handles belong to prominent celebrities.</p>
+<p style="text-align: justify;">(It must be noted that these facts are true only with respect to the tweets collected; in reality, if  all the tweets on the subject were analyzed, it is likely the no. of retweets, tweets &amp; favorites per user may change.)</p>
+<p style="text-align: justify;"><img class="aligncenter wp-image-25803" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/2.png" alt="2" width="600" height="406" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/2.png 1022w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/2-300x203.png 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/2-768x519.png 768w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/2-850x575.png 850w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p style="text-align: justify;">Retweets are also likely to be heavily favorited.</p>
+<p style="text-align: justify;"><img class="aligncenter wp-image-25804" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/3.png" alt="3" width="600" height="332" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/3.png 1166w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/3-300x166.png 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/3-768x425.png 768w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/3-1024x566.png 1024w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/3-850x470.png 850w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<h3 style="text-align: justify;">2.4   Text Preparation</h3>
+<p style="text-align: justify;">The tweets were parsed into a corpus for text analysis. The following steps were executed to clean the corpus and prepare it for further analysis. Only the text portion of the tweet (the actual message) was considered.</p>
+<p style="text-align: justify;"><strong>Removing numbers: </strong>TweetIDs are number generated by Twitter to identify each tweet. Numbers as such don’t serve any purpose for text analysis and hence they are discarded.</p>
+<p style="text-align: justify;"><strong>Removing URLs &amp; links: </strong>Many tweets contained links to webpages and videos elsewhere on the Internet. These were removed with regular expressions.</p>
+<p style="text-align: justify;"><strong>Removing stopwords: </strong>Stopwords are words in English that are commonly used in every sentence, but have no analytical significance. Examples are ‘is’, ‘but’, ‘shall’, ‘by’ etc. These words were removed by matching the corpus with the stopwords list in the tm package of R. Expletives were also removed.</p>
+<p style="text-align: justify;"><strong>Removing non-English words: </strong>The corpus generated after performing the last 3 steps were broken into their constituent words and all English words and words less than 4 characters long were removed. What remained was the list of non-English words, words that mentioned areas in Chennai, words that are actually Tamil words written in English and misspellings of normal English words.</p>
+<p style="text-align: justify;">The non-English words that denoted the names of localities were used to form a wordcloud.</p>
+<p style="text-align: justify;"><img class="aligncenter wp-image-25805" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/4.jpg" alt="4" width="600" height="367" /></p>
+<p style="text-align: justify;"><strong>Stemming words: </strong>In text analysis, stemming is <em>‘the process of reducing inflected (or sometimes derived) words to their word stem, base or root form—generally a written word form’</em>. Stemming is done to reduce inflectional forms and sometimes derivationally related-forms of a word to a common base form. Many methods exist to stem words in a corpus.</p>
+<p style="text-align: justify;"><strong>Suffix-dropping algorithms:</strong> The last parts of all the words get truncated. For example, words like ‘programming’, ‘programmer’, ’programmed’, ‘programmable’ can all be stemmed to the root ‘program’. On the other hand, ‘rescuing’, ‘rescue’, ‘rescued’ are stemmed to form ‘rescu’, which is not a word or a root. This method was chosen for this study for simplicity.</p>
+<p style="text-align: justify;"><strong>Lemmatisation algorithms:</strong> Each word is the determination of the <em>lemma </em>for a word in the corpus. This is done with the understanding of the context, part of speech and the lexicon for the language. For example, ‘better’ is related to ‘good’, ‘running’ is related to ‘walk’ and so on.</p>
+<p style="text-align: justify;"><strong>n-gram analysis:</strong> Each word is broken into a part of its whole by ‘n’ characters, and the one that makes most sense is retained. For example, for n=1 (unigram), the letters ‘f’, ’l’, ’o’, ’o’, ’d’ are individually parsed from ‘flood’. For a higher n (say n=5), ‘flood’ is retained from ‘flooding’, although at n=4, ‘ding’ can also be construed as a word.</p>
+<p style="text-align: justify;"><strong>Removing punctuation: </strong>Punctuation marks make no impact to the analysis of text and are hence removed.</p>
+<p style="text-align: justify;"><strong>Stripping whitespace: </strong>Words that have extra whitespaces at the beginning, middle or end are subjected to a regular expression that removes the whitespace and retains only the words themselves.</p>
+<p style="text-align: justify;"><strong>Checking for impure characters: </strong>A check on the corpus after the modifications made thus far revealed that some URLs were left behind, due to the removal of whitespaces, numbers and punctuations. Regular expressions were used to remove them.</p>
+<h3 style="text-align: justify;">2.5   Word Frequencies and Associations</h3>
+<p style="text-align: justify;">After the necessary cleaning, another wordcloud was plotted to understand the most frequently used terms. The following observations are made:</p>
+<p style="text-align: justify;">A few simple words repeat more often than others: ‘people’, ‘stay’, ’safe’, ‘food’ etc. These are immediate reactions and responses to the crisis.</p>
+<p style="text-align: justify;">Some infrequent terms are ‘street’, ‘nagar’, ‘mudichur’, ‘road’ etc. that give information about the situation in a few areas.</p>
+<p style="text-align: justify;">Words like ‘pray’, ‘hope’ and ‘proud’ are also used, in messages that mostly convey sympathy or hope.</p>
+<p style="text-align: justify;">There were tweets about news reports covering the crisis, with words like ‘channel’, ‘media’ etc.</p>
+<p style="text-align: justify;">Words like ‘help’, ‘please’, ‘food’ etc. were used in tweets that requested for volunteers  to participate in rescue and rehabilitation efforts.</p>
+<p style="text-align: justify;"><img class="wp-image-25806 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/5.jpg" alt="5" width="600" height="368" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/5.jpg 1097w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/5-300x184.jpg 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/5-768x471.jpg 768w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/5-1024x628.jpg 1024w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/5-850x521.jpg 850w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<p style="text-align: justify;"><img class="size-full wp-image-25807 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/6.png" alt="6" width="514" height="503" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/6.png 514w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/6-300x294.png 300w" sizes="(max-width: 514px) 100vw, 514px" /></p>
+<p style="text-align: justify;">A few words are associated strongly with the most frequent words than others. The below table describes the most common word associations.</p>
+<p style="text-align: justify;"><img class="size-full wp-image-25811 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/11.png" alt="11" width="348" height="470" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/11.png 348w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/11-222x300.png 222w" sizes="(max-width: 348px) 100vw, 348px" /></p>
+<p style="text-align: justify;"><img class="size-full wp-image-25815 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/12-1.png" alt="12" width="341" height="381" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/12-1.png 341w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/12-1-269x300.png 269w" sizes="(max-width: 341px) 100vw, 341px" /></p>
+<p style="text-align: justify;"><img class="size-full wp-image-25813 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/13.png" alt="13" width="363" height="508" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/13.png 363w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/13-214x300.png 214w" sizes="(max-width: 363px) 100vw, 363px" /></p>
+<p style="text-align: justify;"><img class="size-full wp-image-25814 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/14.png" alt="14" width="350" height="170" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/14.png 350w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/14-300x146.png 300w" sizes="(max-width: 350px) 100vw, 350px" /></p>
+<p style="text-align: justify;">It was observed that the names of many localities feature in the associations list. These localities were mentioned with a lot less frequency than those in Figure 4. Considering these associations are from a list of 6303 tweets, more associations and localities are likely to emerge if the entire set of tweets on the crisis is considered.</p>
+<p style="text-align: justify;"><img class="alignnone wp-image-25808" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/7.png" alt="7" width="800" height="405" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/7.png 1006w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/7-300x152.png 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/7-768x389.png 768w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/7-850x430.png 850w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p>&nbsp;</p>
+<h2 style="text-align: justify;">3. Clustering and Topic Modeling</h2>
+<p style="text-align: justify;">When a crisis like the Chennai floods strikes, a large number of similar tweets get generated that it becomes challenging to make meaningful interpretations from the huge volumes of data that need to be processed.</p>
+<p style="text-align: justify;">One solution is to cluster similar tweets together after performing the necessary EDA operations that it becomes easier to manage the flow of information.</p>
+<h3 style="text-align: justify;">3.1   Hierarchical Clustering</h3>
+<p style="text-align: justify;">Hierarchical clustering attempts to build different levels of clusters. Strategies for hierarchical clustering fall into two types (Wikipedia, n.d.):</p>
+<p style="text-align: justify;"><strong>Agglomerative:</strong> where we start out with each document in its own cluster. The algorithm iteratively merges documents or clusters that are closest to each other until the entire corpus forms a single cluster. Each merge happens at a different (increasing) distance.</p>
+<p style="text-align: justify;"><strong>Divisive:</strong> where we start out with the entire set of documents in a single cluster. At each step the algorithm splits the cluster recursively until each document is in its own cluster. This is basically the inverse of an agglomerative strategy.</p>
+<p style="text-align: justify;">The results of hierarchical clustering are usually presented in a dendrogram.</p>
+<p style="text-align: justify;">The R function, hclust() was used to perform hierarchical clustering. It uses the agglomerative method. The following steps explain hierarchical clustering in simple terms:</p>
+<p style="text-align: justify;">Assign each document to its own (single member) cluster</p>
+<p style="text-align: justify;">Find the pair of clusters that are closest to each other and merge them, leaving us with one less cluster</p>
+<p style="text-align: justify;">Compute distances between the new cluster and each of the old clusters</p>
+<p style="text-align: justify;">Repeat steps 2 and 3 until you have a single cluster containing all documents</p>
+<p style="text-align: justify;">To perform this operation, the corpus was converted into a matrix with each tweet (or ‘document’) given an ID. Extremely sparse rows, i.e. rows with elements that are part of less than 2% of the entire corpus were removed. <strong>Ward’s method for hierarchical clustering </strong>was used.</p>
+<p style="text-align: justify;">The dendrogram output is to be interpreted as follows:</p>
+<p style="text-align: justify;">Farther the nodes, greater is the dissimilarity and more robust is that</p>
+<p style="text-align: justify;">The closer the node, the weaker is the</p>
+<p style="text-align: justify;">The height of each node in the plot is proportional to the value of the intergroup dissimilarity between its two</p>
+<p style="text-align: justify;"><img class="size-full wp-image-25816 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/21.png" alt="21" width="480" height="480" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/21.png 480w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/21-150x150.png 150w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/21-300x300.png 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/21-83x83.png 83w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/21-200x200.png 200w" sizes="(max-width: 480px) 100vw, 480px" /></p>
+<p style="text-align: justify;"><img class="size-full wp-image-25817 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/22.png" alt="22" width="480" height="480" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/22.png 480w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/22-150x150.png 150w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/22-300x300.png 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/22-83x83.png 83w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/22-200x200.png 200w" sizes="(max-width: 480px) 100vw, 480px" /></p>
+<h3 style="text-align: justify;">3.1.1    Interpretation</h3>
+<p style="text-align: justify;">The following distinct clusters of tweets are observable from the dendrogram:</p>
+<p style="text-align: justify;">Tweets that talk about general information about affected individuals, areas and news about the crisis.</p>
+<p style="text-align: justify;">Tweets that talk about food, supplies and rescue efforts.</p>
+<p style="text-align: justify;">Tweets that describe the weather, forecasts of rain and further developments.</p>
+<p style="text-align: justify;">Tweets that caution people on risky areas and share information on relief efforts.</p>
+<p style="text-align: justify;">It is also seen that there is a significant similarity between clusters of tweets; this is expected as the terms used across tweets are more or less similar.</p>
+<p style="text-align: justify;">No locality or specific names are mentioned as the clustering was performed on a matrix that did not contain such rarely-occurring terms.</p>
+<h3 style="text-align: justify;">3.2   K-Means Clustering</h3>
+<p style="text-align: justify;">As opposed hierarchical clustering, where one does not arrive at the number of clusters until after the dendrogram, in K-means, the number of clusters is decided beforehand. The algorithm then generates k document clusters in a way that ensures the within-cluster distances from each  cluster member to the centroid (or geometric mean) of the cluster is minimized.</p>
+<p style="text-align: justify;">A simplified description of the algorithm is as follows:</p>
+<p style="text-align: justify;">Assign the documents randomly to k bins</p>
+<p style="text-align: justify;">Compute the location of the centroid of each</p>
+<p style="text-align: justify;">Compute the distance between each document and each centroid</p>
+<p style="text-align: justify;">Assign each document to the bin corresponding to the centroid closest to</p>
+<p style="text-align: justify;">Stop if no document is moved to a new bin, else go to step</p>
+<h3 style="text-align: justify;">3.2.1 Choosing k</h3>
+<p style="text-align: justify;">The most significant factor of employing k-means clustering is choosing the no. of clusters, ‘k’. The ‘<em>elbow method’</em>, wherein the SUM of Squared Error (SSE, the sum of the squared distance between each member of the cluster and its centroid) decreases abruptly at that value that is theoretically the optimal value of k, is widely applied to arrive at k.</p>
+<p style="text-align: justify;">When k is plotted against the SSE, it will be seen that the error decreases as k gets larger; this is because when the number of clusters increases, they become smaller, and hence the distortion is also smaller.</p>
+<p style="text-align: justify;"><img class="aligncenter wp-image-25818" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/23.png" alt="23" width="800" height="401" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/23.png 1366w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/23-300x150.png 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/23-768x385.png 768w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/23-1024x513.png 1024w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/23-850x426.png 850w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p style="text-align: justify;">Here, the optimal value for k is shown to be 3, as that is where the SSE decreases abruptly. With k=3, the matrix of tweets was clustered using k-means.</p>
+<p style="text-align: justify;"><img class="aligncenter wp-image-25819" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/24.jpg" alt="24" width="800" height="401" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/24.jpg 1366w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/24-300x150.jpg 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/24-768x385.jpg 768w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/24-1024x513.jpg 1024w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/24-850x426.jpg 850w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p style="text-align: justify;">The plot clearly shows that there is only marginal dissimilarity with a corpus at 98% sparsity. This is evident from the top 10 words in each of the three clusters.</p>
+<p style="text-align: justify;"><code>cluster 1: rain need status flood helplin number contact stay safe atus</code><br />
+<code> cluster 2: food need contact avail peopl near water area call status </code><br />
+<code>cluster 3: peopl safe stay flood rain need near road contact media</code></p>
+<p style="text-align: justify;">With respect to clustering, subject matter and corpus knowledge is the best way to understand cluster themes. With the insights gleaned thus far, it is reasonable to assume the following:</p>
+<p style="text-align: justify;">Cluster 1 contains news updates and cautionary</p>
+<p style="text-align: justify;">Cluster 2 contains messages about requests for help and volunteers</p>
+<p style="text-align: justify;">Cluster 3 contains messages about area-specific updates and some cautionary</p>
+<h3 style="text-align: justify;">3.3 Topic Modeling</h3>
+<p style="text-align: justify;">Another technique that is employed to deduce the themes of text is topic modeling.</p>
+<p style="text-align: justify;">A topic model is a type of statistical model for discovering the abstract &#8220;topics&#8221; that occur in a collection of documents (tweets in this case). Intuitively, given that a document is about a particular topic, one would expect particular words to appear in the document more or less frequently: in this case, ‘help’ is quite common to almost every tweet.</p>
+<p style="text-align: justify;">A document typically concerns multiple topics in different proportions; thus, in a document that is 10% about subject A and 90% about subject B, there would probably be about 9 times more words about ‘B’ than words about ‘A’ (Wikipedia, n.d.).</p>
+<p style="text-align: justify;">Topic modeling has implementations in various algorithms, but the most common algorithm in use is Latent Dirichlet Allocation (LDA).</p>
+<h3 style="text-align: justify;">3.3.1 Latent Dirichlet Allocation</h3>
+<p style="text-align: justify;">Latent Dirichlet Allocation (LDA) is a statistical model that allows sets of observations to be explained by unobserved groups that explain why some parts of the data are similar. For example, if observations are words collected into documents, it posits that each document is a mixture of a small number of topics and that each word&#8217;s creation is attributable to one of the document&#8217;s topics.</p>
+<p style="text-align: justify;">LDA allows the possibility of a document to arise from a combination of topics. For example, the following tweet may be classified as (say) 90% information &amp; 10% sympathy/hope.</p>
+<p style="text-align: justify;"><img class="size-full wp-image-25820 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/25.jpg" alt="25" width="475" height="226" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/25.jpg 475w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/25-300x143.jpg 300w" sizes="(max-width: 475px) 100vw, 475px" /></p>
+<p style="text-align: justify;">LDA was performed with an objective to discover 6 topics. The output gives us following set of words for each topic.</p>
+<p style="text-align: justify;"><img class="alignnone size-full wp-image-25821" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/q1.png" alt="q1" width="549" height="133" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/q1.png 549w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/q1-300x73.png 300w" sizes="(max-width: 549px) 100vw, 549px" /></p>
+<p style="text-align: justify;">Topics 1 &amp; 3 are quite similar; this is in agreement with the results of the K-means exercise.</p>
+<p style="text-align: justify;"><img class="wp-image-25822 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/26.png" alt="26" width="800" height="401" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/26.png 1366w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/26-300x150.png 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/26-768x385.png 768w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/26-1024x513.png 1024w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/26-850x426.png 850w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p style="text-align: justify;">This plot graphs the probability associated with the top 100 words for each topic, sorted from most to least likely. Here too, the lines almost overlap, indicating the content similarity in the tweets.</p>
+<p style="text-align: justify;"><img class="wp-image-25823 aligncenter" src="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/27.png" alt="27" width="800" height="401" srcset="https://www.analyticsvidhya.com/wp-content/uploads/2016/06/27.png 1366w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/27-300x150.png 300w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/27-768x385.png 768w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/27-1024x513.png 1024w, https://www.analyticsvidhya.com/wp-content/uploads/2016/06/27-850x426.png 850w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p>&nbsp;</p>
+<h2 style="text-align: justify;">4. Conclusion</h2>
+<p style="text-align: justify;">It is clear that the general sentiment across the tweets render the tweets quite similar. It has been demonstrated that crucial information like the worst-hit areas can be identified by analyzing tweets and performing basic text analytics.</p>
+<p style="text-align: justify;">It is clear that the power of social media can be harnessed to great effect in times of crisis. This has not escaped Twitter’s notice; they have initiated the practice of creating hashtags specific to individual crises to index tweets easily. Facebook launches ‘Mark Safe’ feature to those who have listed a crisis-hit location as their place of residence.</p>
+<p style="text-align: justify;">The government agencies, NDRF and other relief agencies would do well to develop analytics capabilities focused on mining Twitter for real-time, tangible updates to take meaningful action.</p>
+<h3 style="text-align: justify;">4.1   Limitations of this study</h3>
+<p style="text-align: justify;"><strong> </strong>The study considers only 6000 tweets of the whole set of tweets that would have been sent on the subject.</p>
+<p style="text-align: justify;">The study also did not consider captions of pictures, news reports, and other social media reports which could have generated additional insights.</p>
+<p style="text-align: justify;">There exist other topic models and black box techniques for similar analysis that have a record of better performance. These have not been performed as they are beyond the scope of this exercise.</p>
+<h3 style="text-align: justify;">4.2   Challenges to Real-Time Analysis of Tweets</h3>
+<p style="text-align: justify;">The following points highlight a few challenges that will be faced by any researcher trying to solve the same problem.</p>
+<p style="text-align: justify;">Retweets contain information that many users find relevant. The subjectivity of this relevance to the crisis at hand is difficult, if not impossible to measure.</p>
+<p style="text-align: justify;">This problem is compounded if the tweets contain no hashtags. In the dataset generated for this analysis, 1399 tweets (22%) had no hashtags. These tweets may also be highly relevant to the crisis but may be missed due to the lack of hashtags.</p>
+<p style="text-align: justify;">Twitter has a 140 character-limit on all tweets (not including pictures and videos). This leads users to truncate or shorten words to forms that is easily interpretable to humans, but is challenging for a machine. Eg: ‘afcted ppl’ is easily understandable to mean ‘affected people’ for a human, but not for a program. One way to solve this problem is to maintain a dictionary of such terms and match them in real-time.</p>
+<h3 style="text-align: justify;">4.3   Applications &amp; Scope for Further Work</h3>
+<p style="text-align: justify;">As mentioned in the introductory chapter, this is an active field. The power of social media will continue to be researched and newer applications will continue to be built to harness its  power.</p>
+<p style="text-align: justify;">One area is quashing rumors. During the Chennai floods, quite a number of false ‘news reports’ and ‘alerts’ circulated on Facebook, Twitter and the mobile messaging application WhatsApp. Machine learning can be employed to check the veracity of social media by comparing contents from actual news reports and</p>
+<p style="text-align: justify;">During the 2011 Australia floods, the civic authorities were among the most prolific users of Twitter in disseminating safety tips, general information and coordinating volunteer relief work. Every civic authority would do well to develop a framework and system to manage crises also through social media. This covers all disasters, both natural (earthquakes, floods, hurricanes) and man-made (terror strikes, shootouts).</p>
+<p style="text-align: justify;">Media outlets and government agencies can work together in planning for incidents that are expected by creating distinct identifiers and hashtags for each scenario and making the public aware of the</p>
+<p style="text-align: justify;">Disasters may strike at any time. While it may not be possible to prevent them, it is prudent to be prepared for unfortunate eventualities. Having a dedicated social network analysis platform to analyze information in real-time will definitely aid in this endeavor.</p>
+<p>&nbsp;</p>
+<h2 style="text-align: justify;">Our learning &amp; journey</h2>
+<p style="text-align: justify;">We came to Great Lakes PGPBABI with very little knowledge about analytics a year ago. While this capstone project is just the starting of our career, we feel proud of our first project and the amount of learning it brought to us.</p>
+<p style="text-align: justify;">Here is what our mentor, Mr. Jatinder Bedi, had to say about our Capstone Project success<em>,” </em><em>Great Lakes group approached me with a conventional topic in hand for which they already had the data. It was a movie data, which they wanted to analyze to build a movie recommendation engine. We had a choice of doing this conventional project or picking some challenging topic which would help us apply the new concepts learnt in a Great Lakes Business Analytics program. As it was a Chennai group, so I suggested them a topic <strong>&#8220;Tapping Social Media Exchanges on Twitter: A Case-Study of the 2015 Chennai Floods&#8221;</strong> with which they can relate well as it was more aligned to recent floods in Chennai. As I shared the topic, students got excited &amp; everybody said yes. The idea was to build something from scratch and this was our chance to showcase our skills. Dr PKV, also liked the idea and gave us a go-ahead. I would say this project was a great success. Lastly, I feel very proud to be a mentor of this great project. <strong>Special thanks to Dr. PKV for his support and guidance</strong>.”</em></p>
+<p style="text-align: justify;"><em> </em></p>
+<p style="text-align: justify;">Also, Dr. P.K Viswanathan, Program Director – PGPBABI (Chennai) and Professor, remarked<em>, “</em><em>The Capstone Project titled <strong>Tapping Social Media Exchanges on Twitter: A Case-Study of the 2015 Chennai Floods </strong>undertaken by the BABI participants of Batch 3 is a great revelation to me in terms of innovation in approach to the entire concept of an Analytic Study. Typically, students think that analysis and modeling using quantitative data is the key to success in any Business Analytics Project. This study completely deviates from the orthodox path, yet rich in a very substantive manner what analytics could do in the ambit of Natural Language Processing(NLP) of social media messages in the form of tweets leading to actionable insights on a real time basis. </em></p>
+<p style="text-align: justify;"><em>Cohesive Themes, Cogent Presentation, Mining using Advanced Analytic Modeling, and Excellent Insights that can be leveraged by policy makers in Government are the hallmarks of this project. It was rated by the evaluation committee headed by me as the top ranking project among the many studies that were presented. </em></p>
+<p style="text-align: justify;"><em>I congratulate the team comprising Anandhi Venkat, Ashvin Kumar Elangovan, Vignesh Kumar and Vijay Somanath and the mentor Jatinder Bedi for this outstanding study. I also take this opportunity to  wish them all for many such original works.”</em></p>
+<p style="text-align: justify;">We hope this article would provide learners in analytics with a few ideas to do their own Capstone Projects and would have provided a glimpse of the program to those interested. You can read more details about the program <a href="http://www.greatlearning.in/great-lakes-pgpba/" target="_blank" rel="nofollow noopener noreferrer">here.</a></p>
+<p style="text-align: justify;">&#8212;</p>
+<p>This article was contributed by Anandhi Venkat, Ashvin Kumar Elangovan, Vignesh Kumar and Vijay Somanath and the mentor Jatinder Bedi and was done as part of their capstone project. They were part of the Great Lakes PGPBABI program in Chennai and finished their curriculum recently.</p>
+<h3>Got expertise in Business Intelligence  / Machine Learning / Big Data / Data Science? Showcase your knowledge and help Analytics Vidhya community by <a href="https://www.analyticsvidhya.com/about-me/write/" target="_blank" rel="noopener noreferrer">posting your blog</a>.</h3>
+You can also read this article on Analytics Vidhya's Android APP <a href='//play.google.com/store/apps/details?id=com.analyticsvidhya.android&utm_source=blog_article&utm_campaign=blog&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' onclick="ga('send', {'hitType': 'event', 'eventCategory': 'app-blog', 'eventAction': 'clicked'});"><img alt='Get it on Google Play' src='//play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style='height:65px'></a><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-linkedin"><a rel="nofollow noopener noreferrer" data-shared="sharing-linkedin-25771" class="share-linkedin sd-button share-icon no-text" href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-25771" class="share-facebook sd-button share-icon no-text" href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-25771" class="share-twitter sd-button share-icon no-text" href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-pocket"><a rel="nofollow noopener noreferrer" data-shared="" class="share-pocket sd-button share-icon no-text" href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/?share=pocket" target="_blank" title="Click to share on Pocket"><span></span><span class="sharing-screen-reader-text">Click to share on Pocket (Opens in new window)</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon no-text" href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/?share=reddit" target="_blank" title="Click to share on Reddit"><span></span><span class="sharing-screen-reader-text">Click to share on Reddit (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-157218717-25771-5cc38d7b18ff4' data-src='https://widgets.wp.com/likes/#blog_id=157218717&amp;post_id=25771&amp;origin=www.analyticsvidhya.com&amp;obj_id=157218717-25771-5cc38d7b18ff4' data-name='like-post-frame-157218717-25771-5cc38d7b18ff4'><h3 class="sd-title">Like this:</h3><div class='likes-widget-placeholder post-likes-widget-placeholder' style='height: 55px;'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div>
+<div id='jp-relatedposts' class='jp-relatedposts'>
+<h3>Related Articles</h3>
+</div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5229672700622157" data-ad-slot="7938033629"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<footer class="clearfix both">
+<div class="meta-tags clearfix">
+Tags : <a href="https://www.analyticsvidhya.com/blog/tag/analytics-case-study/" rel="tag">analytics case study</a><span>,</span> <a href="https://www.analyticsvidhya.com/blog/tag/analytics-projects/" rel="tag">Analytics projects</a><span>,</span> <a href="https://www.analyticsvidhya.com/blog/tag/chennai/" rel="tag">Chennai</a><span>,</span> <a href="https://www.analyticsvidhya.com/blog/tag/great-lakes-institute-of-management/" rel="tag">Great Lakes institute of management</a><span>,</span> <a href="https://www.analyticsvidhya.com/blog/tag/real-time-analysis/" rel="tag">real time analysis</a><span>,</span> <a href="https://www.analyticsvidhya.com/blog/tag/social-media-analytics/" rel="tag">Social Media Analytics</a><span>,</span> <a href="https://www.analyticsvidhya.com/blog/tag/twitter-sentiment/" rel="tag">twitter sentiment</a> </div>
+<div class="next-prev clearfix">
+<a class="next" href="https://www.analyticsvidhya.com/blog/2016/07/platt-scaling-isotonic-regression-minimize-logloss-error/" rel="next"><i class="tm-chevron-right"></i><div class="np-caption">Next Article</div><h3 class="np-title">Using Platt Scaling and Isotonic Regression to Minimize LogLoss Error in R</h3></a> <i class="tm-3dots"></i>
+<a class="prev" href="https://www.analyticsvidhya.com/blog/2016/07/solving-case-study-optimize-products-price-online-vendor-level-hard/" rel="prev"><i class="tm-chevron-left"></i><div class="np-caption">Previous Article</div><h3 class="np-title">Solving Case study : Optimize the Products Price for an Online Vendor (Level : Hard)</h3></a> </div>
+<div class="meta-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+<div class="author-thumb">
+<a href="https://www.analyticsvidhya.com/blog/author/guest-blog/">
+<img alt='' src='https://secure.gravatar.com/avatar/a8df32b7e4a5b0862132757918c78578?s=200&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a8df32b7e4a5b0862132757918c78578?s=400&#038;d=mm&#038;r=g 2x' class='avatar avatar-200 photo' height='200' width='200' /> </a>
+</div>
+<div class="author-info">
+<h3 class="author-name">
+<a itemprop="name" content="Guest Blog" href="https://www.analyticsvidhya.com/blog/author/guest-blog/">Guest Blog</a>
+</h3>
+<div class="author-desc">
+<span class="fn"></span>
+</div>
+<ul class="author-links">
+</ul>
+</div>
+</div>
+</footer>
+</article> 
+
+
+<div class="row">
+<div class="col-sm-12">
+<div class="message-article">This article is quite old and you might not get a prompt response from the author. We request you to post this comment on Analytics Vidhya's <a href="https://discuss.analyticsvidhya.com/"><b>Discussion portal</b></a> to get your queries resolved</div> </div>
+</div>
+<div class="comment-wrap">
+
+<div class="row">
+<div class="col-sm-12">
+<div class="block-cap" id="comments">
+<h3 id="comment">9 Comments</h3>
+</div>
+</div>
+</div>
+<div class="navigation">
+<div class="alignleft"></div>
+<div class="alignright"></div>
+</div>
+<ul class="comment-list" id="show-comments">
+<li class="comment even thread-even depth-1" id="comment-113201">
+<div id="div-comment-113201" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/81d01e8cbcae265c44e15c6a877355cf?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/81d01e8cbcae265c44e15c6a877355cf?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">Salman Ahmed</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113201">
+July 7, 2016 at 9:48 pm</a> </div>
+<p>Great Piece</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113201' onclick='return addComment.moveForm( "div-comment-113201", "113201", "respond", "25771" )' aria-label='Reply to Salman Ahmed'>Reply</a></div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-113213">
+<div id="div-comment-113213" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/0370faceaf76d4e552ac10557fdd7eee?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/0370faceaf76d4e552ac10557fdd7eee?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">bharath</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113213">
+July 8, 2016 at 6:44 am</a> </div>
+<p>Excellent Analysis, Social media helped a lot during chennai floods. Infact it was the only medium working as landlines and mobiles were dead. This gives clear info which areas are most affected and hope concerned authorities do something about it.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113213' onclick='return addComment.moveForm( "div-comment-113213", "113213", "respond", "25771" )' aria-label='Reply to bharath'>Reply</a></div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-113252">
+<div id="div-comment-113252" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/b3677b24d573f343fd46a2a4fb846c84?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/b3677b24d573f343fd46a2a4fb846c84?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">Anurag Reddy Gaddam Venkat</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113252">
+July 9, 2016 at 5:29 pm</a> </div>
+<p>Github link not working</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113252' onclick='return addComment.moveForm( "div-comment-113252", "113252", "respond", "25771" )' aria-label='Reply to Anurag Reddy Gaddam Venkat'>Reply</a></div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-113311">
+<div id="div-comment-113311" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/905939ef3f2f65429617bcc4a4fd2ae2?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/905939ef3f2f65429617bcc4a4fd2ae2?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">Mukul</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113311">
+July 11, 2016 at 9:41 am</a> </div>
+<p>Are codes available of that used for text cleaning?</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113311' onclick='return addComment.moveForm( "div-comment-113311", "113311", "respond", "25771" )' aria-label='Reply to Mukul'>Reply</a></div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-113345">
+<div id="div-comment-113345" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/bc5ff4cf949f6b7718a5125cebd2ba64?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/bc5ff4cf949f6b7718a5125cebd2ba64?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">Kuber</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113345">
+July 11, 2016 at 10:34 pm</a> </div>
+<p>Great post!! Can you share the code for above analysis ?</p>
+<p>Thanks!</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113345' onclick='return addComment.moveForm( "div-comment-113345", "113345", "respond", "25771" )' aria-label='Reply to Kuber'>Reply</a></div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-113397">
+<div id="div-comment-113397" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/48b3d4de7e7f29b279340aeba5601ffd?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/48b3d4de7e7f29b279340aeba5601ffd?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">Abhishek Sinha</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113397">
+July 13, 2016 at 8:16 am</a> </div>
+<p>Excellent post! One of the best ones i have read recently. Great if you could also share the code 🙂</p>
+<p>Thanks.</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113397' onclick='return addComment.moveForm( "div-comment-113397", "113397", "respond", "25771" )' aria-label='Reply to Abhishek Sinha'>Reply</a></div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-113404">
+<div id="div-comment-113404" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/905939ef3f2f65429617bcc4a4fd2ae2?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/905939ef3f2f65429617bcc4a4fd2ae2?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">Mukul</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113404">
+July 13, 2016 at 11:02 am</a> </div>
+<p>Can you share the codes used in this analysis</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113404' onclick='return addComment.moveForm( "div-comment-113404", "113404", "respond", "25771" )' aria-label='Reply to Mukul'>Reply</a></div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-113436">
+<div id="div-comment-113436" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/1d9983e2e6c12bb0c5a09e9a1fb3889d?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/1d9983e2e6c12bb0c5a09e9a1fb3889d?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">Rajesh Rajamani</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113436">
+July 14, 2016 at 5:39 am</a> </div>
+<p>Hi, Thanks for this article . I did a similar analysis along with the geo-tags associated with the tweets to see for trends from specific areas of the city . I couldn&#8217;t perform the k-means clustering and word association steps . Any ways a learning . My outcomes does match with that of those in the article in terms of the most active users . I couldn&#8217;t see the time range that was considered for the analysis anywhere in this article .Did I miss it ? Would you be able to add that to the article or point out .</p>
+<p>I&#8217;m a Chennaiite and was in Mumbai at the time of the floods . </p>
+<p>Thanks ,<br />
+Rajesh Rajamani</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113436' onclick='return addComment.moveForm( "div-comment-113436", "113436", "respond", "25771" )' aria-label='Reply to Rajesh Rajamani'>Reply</a></div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="comment-113472">
+<div id="div-comment-113472" class="comment-body">
+<div class="comment-author vcard">
+<img alt='' src='https://secure.gravatar.com/avatar/4820f1dfad173ee474c2c4340fa2c334?s=100&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/4820f1dfad173ee474c2c4340fa2c334?s=200&#038;d=mm&#038;r=g 2x' class='avatar avatar-100 photo' height='100' width='100' /> <cite class="fn">Suryanarayana</cite> <span class="says">says:</span> </div>
+<div class="comment-meta commentmetadata"><a href="https://www.analyticsvidhya.com/blog/2016/07/capstone-project/#comment-113472">
+July 14, 2016 at 4:05 pm</a> </div>
+<p>Great article..</p>
+<div class="reply"><a rel='nofollow' class='comment-reply-link' href='#comment-113472' onclick='return addComment.moveForm( "div-comment-113472", "113472", "respond", "25771" )' aria-label='Reply to Suryanarayana'>Reply</a></div>
+</div>
+</li>
+</ul>
+</div>
+<div id="write-comment"></div>
+<script>
+var hash = window.location.hash;
+if(hash!=""){
+jQuery.ajax ({
+	type: 'GET',
+    url: 'https://www.analyticsvidhya.com/comments-form/show-comments.php?rand='+Math.random()+'&id=25771',
+    success: function (data)
+	{
+		jQuery('#show-comments').html(data);
+	},
+	error: function (e) {
+		console.log(e);
+	}
+});
+}
+</script>
+</div>
+</div>
+<div class="col-sm-4 "><div class="sidebar"><div id="text-36" class="widget clearfix widget_text"> <div class="textwidget"><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><br />
+<br />
+<ins class="adsbygoogle" style="display: inline-block; width: 336px; height: 280px;" data-ad-client="ca-pub-5229672700622157" data-ad-slot="1620249624"></ins><br />
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+</div><div id="topuserswidget-3" class="widget clearfix TopUsersWidget"><div class="widget-title"><div class="block-cap"><h3>Top Analytics Vidhya Users</h3></div></div><table class="top_users"><tr><th>Rank</th><th colspan="2">Name</th><th>Points</th></tr><tr><td>1</td><td class='top_users_td_image'><img class='top_users_img' src='//www.analyticsvidhya.com/wp-content/plugins/top-av-users-widget/images/1.jpg?date=2019-04-27'></td><td class='top_users_name_td'><a target='_blank' class='top_users_name' href='https://datahack.analyticsvidhya.com/user/profile/SRK'>SRK</a></td><td class='top_users_points'>3770</td></tr><tr><td>2</td><td class='top_users_td_image'><img class='top_users_img' src='//www.analyticsvidhya.com/wp-content/plugins/top-av-users-widget/images/2.jpg?date=2019-04-27'></td><td class='top_users_name_td'><a target='_blank' class='top_users_name' href='https://datahack.analyticsvidhya.com/user/profile/mark12'>mark12</a></td><td class='top_users_points'>3372</td></tr><tr><td>3</td><td class='top_users_td_image'><img class='top_users_img' src='//www.analyticsvidhya.com/wp-content/plugins/top-av-users-widget/images/3.jpg?date=2019-04-27'></td><td class='top_users_name_td'><a target='_blank' class='top_users_name' href='https://datahack.analyticsvidhya.com/user/profile/nilabha'>nilabha</a></td><td class='top_users_points'>3133</td></tr><tr><td>4</td><td class='top_users_td_image'><img class='top_users_img' src='//www.analyticsvidhya.com/wp-content/plugins/top-av-users-widget/images/4.jpg?date=2019-04-27'></td><td class='top_users_name_td'><a target='_blank' class='top_users_name' href='https://datahack.analyticsvidhya.com/user/profile/Tezdhar'>Tezdhar</a></td><td class='top_users_points'>3130</td></tr><tr><td>5</td><td class='top_users_td_image'><img class='top_users_img' src='//www.analyticsvidhya.com/wp-content/plugins/top-av-users-widget/images/5.jpg?date=2019-04-27'></td><td class='top_users_name_td'><a target='_blank' class='top_users_name' href='https://datahack.analyticsvidhya.com/user/profile/nitish007'>nitish007</a></td><td class='top_users_points'>3123</td></tr></table><div><a class="top_users_more" target="_blank" href="https://datahack.analyticsvidhya.com/top-competitor/?utm_source=blog-navbar&utm_medium=web">More User Rankings</a></div></div><div id="text-16" class="widget clearfix widget_text"> <div class="textwidget"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display: inline-block; width: 336px; height: 280px;" data-ad-client="ca-pub-5229672700622157" data-ad-slot="1620249624"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><div id="text-24" class="widget clearfix widget_text"> <div class="textwidget"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5229672700622157" data-ad-slot="1620249624"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><div id="wmp_widget-2" class="widget clearfix widget_wmp_widget"><div class="widget-title"><div class="block-cap"><h3>Popular posts</h3></div></div><ul class="wp-most-popular">
+<li class="post-50922posttype-poststatus-publishformat-standardhas-post-thumbnailcategory-data-sciencecategory-data-visualizationcategory-machine-learningcategory-rtag-data-sciencetag-data-visualizationtag-machine-learningtag-rtag-r-package">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/8-useful-r-packages-data-science/" title="8 Useful R Packages for Data Science You Aren&#8217;t Using (But Should!)">
+8 Useful R Packages for Data Science You Aren&#8217;t Using (But Should!)
+</a>
+</li>
+<li class="post-28549posttype-poststatus-publishformat-standardhas-post-thumbnailcategory-machine-learningcategory-python-2category-rtag-analytics-projectstag-boston-housing-datatag-classification-datatag-data-explorationtag-data-mining-projectstag-data-science-projecttag-feature-engineeringtag-image-recognitiontag-machine-learningtag-machine-learning-projectstag-mnist-datatag-multi-classificationtag-object-recognitiontag-regression-datatag-text-mining-datatag-titanic-datatag-yelp-data">
+<a href="https://www.analyticsvidhya.com/blog/2018/05/24-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/" title="24 Ultimate Data Science Projects To Boost Your Knowledge and Skills (&#038; can be accessed freely)">
+24 Ultimate Data Science Projects To Boost Your Knowledge and Skills (&#038; can be accessed freely)
+</a>
+</li>
+<li class="post-20569posttype-poststatus-publishformat-standardhas-post-thumbnailcategory-machine-learningcategory-python-2category-rtag-e1071tag-kerneltag-machine-learningtag-scikit-learntag-svm">
+<a href="https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/" title="Understanding Support Vector Machine algorithm from examples (along with code)">
+Understanding Support Vector Machine algorithm from examples (along with code)
+</a>
+</li>
+<li class="post-22387posttype-poststatus-publishformat-standardhas-post-thumbnailcategory-machine-learningcategory-pandascategory-python-2tag-applytag-box-plotstag-categorical-variabletag-data-cleaningtag-data-explorationtag-data-framestag-data-miningtag-data-mungingtag-data-structuretag-data-wranglingtag-dictionarytag-distribution-analysistag-installing-pythontag-ipythontag-liststag-logistic-regressiontag-matplotlibtag-meantag-mergetag-numpytag-pandastag-pythontag-python-tutorialtag-scikit-learntag-scipytag-setstag-splittag-stacked-charttag-starting-pythontag-statisticstag-stringstag-tupletag-tuplestag-tutorial">
+<a href="https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-learn-data-science-python-scratch-2/" title="A Complete Tutorial to Learn Data Science with Python from Scratch">
+A Complete Tutorial to Learn Data Science with Python from Scratch
+</a>
+</li>
+<li class="post-18770posttype-poststatus-publishformat-standardhas-post-thumbnailcategory-business-analyticscategory-python-2category-rtag-c4-5tag-carttag-decision-treetag-gbmtag-k-meanstag-knntag-linear-regressiontag-logistic-regressiontag-machine-learningtag-naive-bayestag-neural-networktag-random-foresttag-reinforcementtag-supervised-learningtag-unsupervised">
+<a href="https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/" title="Essentials of Machine Learning Algorithms (with Python and R Codes)">
+Essentials of Machine Learning Algorithms (with Python and R Codes)
+</a>
+</li>
+<li class="post-18835posttype-poststatus-publishformat-standardhas-post-thumbnailcategory-business-analyticstag-elasticnet-regressiontag-lasso-regressiontag-linear-regressiontag-logistic-regressiontag-multinomial-logistic-rgressiontag-multiple-regressiontag-ordinal-logistic-regressiontag-polynomial-regressiontag-regressiontag-regularizationtag-ridge-regressiontag-stepwise-regression">
+<a href="https://www.analyticsvidhya.com/blog/2015/08/comprehensive-guide-regression/" title="7 Types of Regression Techniques you should know!">
+7 Types of Regression Techniques you should know!
+</a>
+</li>
+<li class="post-47846posttype-poststatus-publishformat-standardhas-post-thumbnailcategory-deep-learningcategory-machine-learningcategory-python-2category-time-seriestag-auto-arimatag-knntag-linear-regressiontag-lstmtag-moving-averagetag-prophettag-pythontag-stock-market-analysistag-stock-predictiontag-time-seriestag-time-series-forecasting">
+<a href="https://www.analyticsvidhya.com/blog/2018/10/predicting-stock-price-machine-learningnd-deep-learning-techniques-python/" title="Stock Prices Prediction Using Machine Learning and Deep Learning Techniques (with Python codes)">
+Stock Prices Prediction Using Machine Learning and Deep Learning Techniques (with Python codes)
+</a>
+</li>
+<li class="post-7576posttype-poststatus-publishformat-standardhas-post-thumbnailcategory-big-datacategory-business-analyticscategory-machine-learningcategory-python-2tag-k-nearesttag-knntag-knn-from-scratchtag-machine-learningtag-simplied-series">
+<a href="https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/" title="Introduction to k-Nearest Neighbors: Simplified (with implementation in Python)">
+Introduction to k-Nearest Neighbors: Simplified (with implementation in Python)
+</a>
+</li>
+</ul></div><div id="text-23" class="widget clearfix widget_text"> <div class="textwidget"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5229672700622157" data-ad-slot="1620249624"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><div id="maha_recent_posts-3" class="widget clearfix widget_recents"><div class="widget-title"><div class="block-cap"><h3>Recent Posts</h3></div></div>
+<article class="post-box-small recent-item clearfix">
+<div class="thumb-wrap zoom-zoom three">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/how-built-personalized-interactive-fitness-tracker-dashboard-r/" rel="bookmark" title="How I Built Animated Plots in R to Analyze my Fitness Data (and you can too!)">
+<img width="83" height="63" class="entry-thumb zoom-it three" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/health-copy-83x63.jpg" alt="How I Built Animated Plots in R to Analyze my Fitness Data (and you can too!)" title="How I Built Animated Plots in R to Analyze my Fitness Data (and you can too!)" />
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 class="entry-title short-bottom">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/how-built-personalized-interactive-fitness-tracker-dashboard-r/" rel="bookmark" title="How I Built Animated Plots in R to Analyze my Fitness Data (and you can too!)">
+How I Built Animated Plots in R to Analyze my Fitness Data (and you can too!) </a>
+</h3>
+<meta content="How I Built Animated Plots in R to Analyze my Fitness Data (and you can too!)" />
+<div class="meta-info">
+<time class="entry-date" datetime="2019-04-26T09:45:55+00:00">
+April 26, 2019 </time>
+</div>
+</div>
+</article>
+<article class="post-box-small recent-item clearfix">
+<div class="thumb-wrap zoom-zoom three">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/datahack-radio-exploring-computer-vision-data-engineering-podcast-dat-tran/" rel="bookmark" title="DataHack Radio #22: Exploring Computer Vision and Data Engineering with Dat Tran">
+<img width="83" height="63" class="entry-thumb zoom-it three" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/dat-cover--83x63.png" alt="DataHack Radio #22: Exploring Computer Vision and Data Engineering with Dat Tran" title="DataHack Radio #22: Exploring Computer Vision and Data Engineering with Dat Tran" />
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 class="entry-title short-bottom">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/datahack-radio-exploring-computer-vision-data-engineering-podcast-dat-tran/" rel="bookmark" title="DataHack Radio #22: Exploring Computer Vision and Data Engineering with Dat Tran">
+DataHack Radio #22: Exploring Computer Vision and Data Engineering with Dat Tran </a>
+</h3>
+<meta content="DataHack Radio #22: Exploring Computer Vision and Data Engineering with Dat Tran" />
+<div class="meta-info">
+<time class="entry-date" datetime="2019-04-25T08:53:03+00:00">
+April 25, 2019 </time>
+</div>
+</div>
+</article>
+<article class="post-box-small recent-item clearfix">
+<div class="thumb-wrap zoom-zoom three">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/predicting-movie-genres-nlp-multi-label-classification/" rel="bookmark" title="Predicting Movie Genres using NLP &#8211; An Awesome Introduction to Multi-Label Classification">
+<img width="83" height="63" class="entry-thumb zoom-it three" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/featured_image-83x63.jpg" alt="Predicting Movie Genres using NLP &#8211; An Awesome Introduction to Multi-Label Classification" title="Predicting Movie Genres using NLP &#8211; An Awesome Introduction to Multi-Label Classification" />
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 class="entry-title short-bottom">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/predicting-movie-genres-nlp-multi-label-classification/" rel="bookmark" title="Predicting Movie Genres using NLP &#8211; An Awesome Introduction to Multi-Label Classification">
+Predicting Movie Genres using NLP &#8211; An Awesome Introduction to Multi-Label Classification </a>
+</h3>
+<meta content="Predicting Movie Genres using NLP &#8211; An Awesome Introduction to Multi-Label Classification" />
+<div class="meta-info">
+<time class="entry-date" datetime="2019-04-22T09:57:56+00:00">
+April 22, 2019 </time>
+</div>
+</div>
+</article>
+<article class="post-box-small recent-item clearfix">
+ <div class="thumb-wrap zoom-zoom three">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/introduction-deep-q-learning-python/" rel="bookmark" title="A Hands-On Introduction to Deep Q-Learning using OpenAI Gym in Python">
+<img width="83" height="63" class="entry-thumb zoom-it three" src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/atari-game-copy1-83x63.png" alt="A Hands-On Introduction to Deep Q-Learning using OpenAI Gym in Python" title="A Hands-On Introduction to Deep Q-Learning using OpenAI Gym in Python" />
+</a>
+</div>
+<div class="box-small-wrap">
+<h3 class="entry-title short-bottom">
+<a href="https://www.analyticsvidhya.com/blog/2019/04/introduction-deep-q-learning-python/" rel="bookmark" title="A Hands-On Introduction to Deep Q-Learning using OpenAI Gym in Python">
+A Hands-On Introduction to Deep Q-Learning using OpenAI Gym in Python </a>
+</h3>
+<meta content="A Hands-On Introduction to Deep Q-Learning using OpenAI Gym in Python" />
+<div class="meta-info">
+<time class="entry-date" datetime="2019-04-18T09:57:11+00:00">
+April 18, 2019 </time>
+</div>
+</div>
+</article>
+</div><div id="text-19" class="widget clearfix widget_text"> <div class="textwidget"><a href="http://www.edvancer.in/certified-data-scientist-with-python-course?utm_source=AV&utm_medium=AVads&utm_campaign=AVadsnonfc&utm_content=pythonavad" rel="nofollow" target="_blank"><img src="https://www.analyticsvidhya.com/wp-content/uploads/2016/10/edvancer-oct-2016.gif" alt=""></a></div>
+</div><div id="text-37" class="widget clearfix widget_text"> <div class="textwidget"><p><a href="https://courses.analyticsvidhya.com/courses/introduction-to-data-science-2/?utm_source=Sticky_banner1&#038;utm_medium=display&#038;utm_campaign=IDS" target="_blank" rel="noopener"><img src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/data.gif" width="300px" /></a></p>
+</div>
+</div><div id="text-42" class="widget clearfix widget_text"> <div class="textwidget"><p><a href="https://datahack.analyticsvidhya.com/contest/club-mahindra-dataolympics/?utm_source=Sticky_banner2&#038;utm_medium=display" target="_blank" rel="noopener"><img src="https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2019/04/Hackathon.jpg" /></a></p>
+</div>
+</div></div></div> </div>
+</div>
+</div>
+</div>
+
+</div>
+
+<footer>
+<div id="footer">
+<div class="footer-container">
+<div class="upper-footer">
+<div class="logo">
+<img src="https://s3-ap-south-1.amazonaws.com/av-blog-media/2017/05/29093240/AV-white.d14465ee4af2.png" class="footer-logo">
+</div>
+<div class="navigation-content">
+<div class="footer-links-holder">
+<h5 class="links-hide">ANALYTICS VIDHYA</h5>
+<ul class="footer-links av-links">
+<li><a target="_blank" href="http://www.analyticsvidhya.com/about-me/">About Us</a></li>
+<li><a target="_blank" href="https://www.analyticsvidhya.com/about-me/team/">Our Team</a></li>
+<li><a target="_blank" href="https://www.analyticsvidhya.com/career-analytics-vidhya/">Career</a></li>
+<li><a target="_blank" href="https://www.analyticsvidhya.com/contact/">Contact Us</a></li>
+ <li><a target="_blank" href="https://www.analyticsvidhya.com/about-me/write/">Write for us</a></li>
+</ul>
+</div>
+<div class="mobile-links-holder">
+<div class="links">
+<a target="_blank" href="http://www.analyticsvidhya.com/about-me/">About Us</a>
+</div>
+<div class="links">
+<a target="_blank" href="https://www.analyticsvidhya.com/about-me/team/">•</a>
+</div>
+<div class="links">
+<a target="_blank" href="https://www.analyticsvidhya.com/about-me/team/">Our Team</a>
+</div>
+<div class="links">
+<a target="_blank" href="https://www.analyticsvidhya.com/about-me/team/">•</a>
+</div>
+<div class="links">
+<a target="_blank" href="https://www.analyticsvidhya.com/career-analytics-vidhya/">Careers</a>
+</div>
+<div class="links">
+<a target="_blank" href="https://www.analyticsvidhya.com/about-me/team/">•</a>
+</div>
+<div class="links">
+<a target="_blank" href="https://www.analyticsvidhya.com/contact/">Contact Us</a>
+</div>
+</div>
+<div class="footer-links-holder">
+<h5 class="links-show">DATA SCIENTISTS</h5>
+<ul class="footer-links">
+<li><a target="_blank" href="https://www.analyticsvidhya.com/blog">Blog</a></li>
+<li><a target="_blank" href="https://datahack.analyticsvidhya.com/">Hackathon</a></li>
+<li><a target="_blank" href="https://discuss.analyticsvidhya.com/">Discussions</a></li>
+<li><a target="_blank" href="https://www.analyticsvidhya.com/jobs/">Apply Jobs</a></li>
+<li><a target="_blank" href="https://datahack.analyticsvidhya.com/users/">Leaderboard</a></li>
+</ul>
+</div>
+<div class="footer-links-holder">
+<h5 class="links-show">COMPANIES</h5>
+<ul class="footer-links">
+<li><a target="_blank" href="https://www.analyticsvidhya.com/corporate/">Post Jobs</a></li>
+<li><a target="_blank" href="https://trainings.analyticsvidhya.com">Trainings</a></li>
+<li><a target="_blank" href="https://datahack.analyticsvidhya.com/">Hiring Hackathons</a></li>
+<li><a target="_blank" href="https://www.analyticsvidhya.com/contact/">Advertising</a></li>
+<li><a target="_blank" href="https://www.analyticsvidhya.com/contact/">Reach Us</a></li>
+</ul>
+</div>
+</div>
+<div class="mobile-signup">
+<p>Don't have an account? <a target="_blank" href="https://datahack.analyticsvidhya.com/signup/" class="signup-link">Sign up</a> here.</p>
+</div>
+<div class="footer-social">
+<div class="join">
+<h5> JOIN OUR COMMUNITY :</h5>
+</div>
+<div class="social-stats">
+<div class="social" id="wrapper">
+<a href="https://www.facebook.com/AnalyticsVidhya/" target="_blank" class="item facebook"><i class="fa fa-facebook social-img"></i></a>
+<a href="https://www.facebook.com/AnalyticsVidhya/" target="_blank" class="item facebook"><span class="count_followers" id="followers-count">46336</span></a>
+<a href="https://www.facebook.com/AnalyticsVidhya/" target="_blank" class="item facebook"><span id="followers">Followers</span></a>
+</div>
+<div class="social" id="wrapper">
+<a href="https://twitter.com/analyticsvidhya" target="_blank" class="item twitter"><i class="fa fa-twitter social-img"></i></a>
+<a href="https://twitter.com/analyticsvidhya" target="_blank" class="item twitter"><span class="count_followers" id="followers-count">20459</span></a>
+<a href="https://twitter.com/analyticsvidhya" target="_blank" class="item twitter"><span id="followers">Followers</span></a>
+</div>
+<div class="social" id="wrapper">
+<a href="https://plus.google.com/+Analyticsvidhya" target="_blank" class="item google"><i class="fa fa-google-plus social-img"></i></a>
+<a href="https://plus.google.com/+Analyticsvidhya" target="_blank" class="item google"><span class="count_followers" id="followers-count"></span></a>
+<a href="https://plus.google.com/+Analyticsvidhya" target="_blank" class="item google"><span id="followers">Followers</span></a>
+</div>
+<div class="social" id="wrapper">
+<a href="https://in.linkedin.com/company/analytics-vidhya" target="_blank" class="item linkedin"><i class="fa fa-linkedin social-img"></i></a>
+<a href="https://in.linkedin.com/company/analytics-vidhya" target="_blank" class="item linkedin"><span class="count_followers" id="followers-count">7513</span></a>
+<a href="https://in.linkedin.com/company/analytics-vidhya" target="_blank" class="item linkedin"><span id="followers">Followers</span></a>
+</div>
+</div>
+<div class="subscribe">
+<form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="_blank">
+<input name="uri" value="analyticsvidhya" type="hidden">
+<input name="loc" value="en_US" type="hidden">
+<input class="subscriber" placeholder="&nbsp; Subscribe to emailer" name="email" type="email" id="footer-email">
+<input class="subscriber-button" value=">" type="submit">
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="lower">
+<div class="container2">
+<div class="lower-footer">
+<p>© Copyright 2013-2019 Analytics Vidhya.</p>
+<ul class="lower-footer-links">
+<li><a target="_blank" href="https://www.analyticsvidhya.com/privacy-policy/">Privacy Policy</a></li>
+<li><a target="_blank" href="https://www.analyticsvidhya.com/terms/">Terms of Use</a></li>
+<li><a target="_blank" href="https://www.analyticsvidhya.com/refund-policy/">Refund Policy</a></li>
+</ul>
+</div>
+<div class="sign-up">
+<p>Don't have an account? <a target="_blank" href="https://id.analyticsvidhya.com/accounts/signup/" class="signup-link">Sign up</a> here</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</div>
+
+<div id="scrolltop">
+<a><i class="tm-go-top"></i></a>
+</div>
+</div>
+<script>
+ $(document).ready(function(){
+	     $.ajax({
+        url: "https://www.analyticsvidhya.com/back-channel/display-image.php",
+        data: {
+            image: '3'
+        },
+        type: "GET",
+				cache: false,
+        dataType: "html",
+        success: function (data) {
+            $('#ban3_av').html(data);
+        },
+        error: function (xhr, status) {
+					console.log("Image Failed!");
+        },
+    });
+});
+</script>
+<script type="text/javascript" src="https://www.analyticsvidhya.com/wp-content/themes/Curated/custom/oidc-client.js"></script>
+<script type="text/javascript" src="https://www.analyticsvidhya.com/back-channel/id-connect-v2.js"></script>
+<script>
+var img_path = "https://www.analyticsvidhya.com/wp-content/themes/Curated/";
+var bookmark_post_id = "25771"
+
+function user_logged_in(user)
+{
+    $.ajaxSetup({
+            beforeSend: function (xhr){
+                xhr.setRequestHeader("Authorization","Bearer "+user.access_token);
+             }
+    });//ajaxsetup
+    // Check if the article is already bookmarked
+    $.ajax({
+     type:"GET",
+     url:"https://id.analyticsvidhya.com/api/v1/resources/external_save_check?resource_ids=25771",
+     contentType: 'application/json',
+     success: function(data) {
+         if(data.results[0].is_bookmarked==true)
+            {
+              $(".save-for-later").html('<a id="bookmark-article" href="#"><img src="'+img_path+'/custom-design/images/bookmarked.svg" width="18px" alt="Article Bookmarked" title="Article Bookmarked" data-toggle="tooltip"></a>');
+            }
+     },
+        error: function(data) {
+        data =  JSON.stringify(data);
+//        $(".save-for-later").html(data);
+       }
+    });
+   // End Check if article already Bookmarked
+
+	// If user is logged in give option to bookmark article
+        $("#login1").html("<a href='https://id.analyticsvidhya.com/accounts/profile/' target='_blank'>" + user.profile.preferred_username + "</a>");
+        $(".save-for-later").html('<a id="bookmark-article" href="#"><img src="'+img_path+'/custom-design/images/do-bookmark.svg" width="18px" alt="Bookmark this story to read later" title="Bookmark this story to read later" data-toggle="tooltip"></a>');
+  // End If user is logged in give option to bookmark article
+
+}
+
+function user_logged_out()
+{
+    //console.log("logged out");
+    var page_url = $(location). attr("href");
+    $("#login1").html("<a href='https://id.analyticsvidhya.com/accounts/login/?next="+$(location).attr('href')+ "' target='_blank'> Login / Register</a>");
+    $(".save-for-later").html("<a href='https://id.analyticsvidhya.com/accounts/login/?next="+$(location).attr('href')+ "' target='_blank'>Login to Bookmark this article</a>");      
+}
+
+
+$(document).ready(function(){
+
+        var img_path = "https://www.analyticsvidhya.com/wp-content/themes/Curated/";
+
+
+mgr.getUser().then(function(user) {
+    // If user was already logged in
+    if (user!==null){
+        mgr.querySessionStatus().then(function(res) {
+        //console.log('Ohhh, its you again');
+        av_is_signed_in = true;
+        // Log the user in
+        user_logged_in(user);
+
+        }).catch(function(err){
+            // If user logged out from OP
+            av_is_signed_in = false;
+            user_logged_out();
+            mgr.removeUser();
+        });
+
+    } // End check if the user is not null
+    else{
+        mgr.signinRedirectCallback().then(function(user) {
+            // If user just logged in and redirected to this page
+            //console.log(user.profile.given_name, ' bro, how was login experience?');
+            av_is_signed_in = true;
+            // Call user_logged_in_functions
+            user_logged_in(user);
+        }).catch(function(err) {
+            // If user is NOT logged in
+            //console.log('Logged out');
+            user_logged_out();
+            mgr.signinSilent().then(function(user) {
+                av_is_signed_in = true;
+                //console.log("silent signed in", user);
+                user_logged_in(user);
+            }).catch(function(err) {
+                av_is_signed_in = false;
+                user_logged_out();
+                //console.log("Silentsignin Err");
+               // console.log(err);
+            });
+
+        });
+    }
+}).catch(function(err){
+    //console.log('Couldnt get user');
+    user_logged_out();
+});
+
+
+}); // document.ready
+
+// Bookmark Article
+
+    $('.save-for-later').on("click", "#bookmark-article",function(event){
+     event.preventDefault();
+     var bookmark_data = {resource_id:"25771", resource_type:"article",resource_permalink:"https://www.analyticsvidhya.com/blog/2016/07/capstone-project/",resource_title:"Tapping Twitter Sentiments: A Complete Case-Study on 2015 Chennai Floods",resource_medium: "blog"};
+
+    $.ajax({
+     type:"POST",
+     dataType:"json",
+     url:"https://id.analyticsvidhya.com/api/v1/resources/external_save",
+     data:JSON.stringify(bookmark_data),
+    contentType: 'application/json',
+     success: function(data) {
+         data =JSON.stringify(data);
+          $(".save-for-later").html('<a id="bookmark-article" href="#"><img src="'+img_path+'/custom-design/images/bookmarked.svg" width="18px" alt="Article Bookmarked" title="Article Bookmarked" data-toggle="tooltip"></a>');
+     },
+        error: function(data) {
+        data =  JSON.stringify(data);
+        //$(".save-for-later").html(data);
+        $(".save-for-later").html('Failed to Bookmark Article');
+       }
+    });
+});
+</script>
+<script>
+    $(document).ready(function() {
+
+        $('#brochure-btn').click(function(e) {
+
+					if ($('#dwn_bcr_name').val() == ""){
+									$("#error").empty();
+									$('#error').addClass('error-show');
+									$("#dwn_bcr_email").css("margin-top", "6%");
+									$('#error').append('Please Enter Name');
+									$('#dwn_bcr_name').focus();
+									return false;
+							}
+							else if ($('#dwn_bcr_email').val() == ""){
+									$("#error1").empty();
+									$("#dwn_bcr_email").css({ 'margin-top' : '', '6%' : '' });
+									$('#error1').addClass('error-show');
+									$('#error1').append('Please Enter Email Id');
+									$("#dwn_bcr_phone").css("margin-top", "6%");
+									$('#dwn_bcr_email').focus();
+									return false;
+							}
+							else if ($('#dwn_bcr_phone').val() == ""){
+									$("#error2").empty();
+									$("#dwn_bcr_phone").css({ 'margin-top' : '', '6%' : '' });
+									$('#error2').addClass('error-show');
+									$('#error2').append('Please Enter Phone Number');
+									$('#dwn_bcr_phone').focus();
+									return false;
+							}
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: 'https://www.analyticsvidhya.com/back-channel/download-brochure.php',
+                data: $('#download-brochure').serialize(),
+                beforeSend: function() {
+                    $("#loading-image").show();
+
+                },
+                success: function(data){
+                    $('#grdnt-clr').replaceWith('<div class="thnk-top">Thanks for showing your interest.</div>');
+                    $('#frm-cntnt').replaceWith('<div class="thnk-cntn">' + data + '</div>');
+                    // $('#frm-cntnt').html(data);
+                    $("#loading-image").hide();
+                }
+            });
+        });
+    });
+</script>
+<script>
+    function myFunction1() {
+        document.getElementById("error").innerHTML = "";
+    }
+    function myFunction2() {
+        var email = document.getElementById("dwn_bcr_email").value;
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(email.match(re)){
+            document.getElementById("error1").innerHTML = "";
+            return true;
+        }else{
+            document.getElementById("error1").classList.add("error-show");
+            document.getElementById("error1").innerHTML = "Please enter valid email id";
+            return false;
+        }
+    }
+    function myFunction3() {
+        document.getElementById("error2").innerHTML = "";
+    }
+</script>
+
+
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px;top:100px;background-color:transparent;"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_flipboard" href="https://www.addtoany.com/add_to/flipboard?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Flipboard" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="WhatsApp" rel="nofollow noopener" target="_blank"></a></div><div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:transparent;"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_flipboard" href="https://www.addtoany.com/add_to/flipboard?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Flipboard" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="WhatsApp" rel="nofollow noopener" target="_blank"></a></div>
+<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/www.analyticsvidhya.com\/blog\/2016\/07\/capstone-project\/":25771};
+	</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/www.analyticsvidhya.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0.4' defer='defer'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201917' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/themes/Curated/static/js/main.js?ver=1.0.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var MahaAjax = {"ajaxurl":"https:\/\/www.analyticsvidhya.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/themes/Curated/static/js/basix.js?ver=1.0.0' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/themes/Curated/static/js/add_to_cart.js?ver=1.0.0' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-includes/js/comment-reply.min.js?ver=5.0.3' defer='defer'></script>
+<!--[if IE 9]>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js?ver=1' defer='defer'></script>
+<![endif]-->
+<!--[if IE 9]>
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.min.js?ver=1' defer='defer'></script>
+<![endif]-->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var q2w3_sidebar_options = [{"sidebar":"blog-sidebar","margin_top":100,"margin_bottom":800,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["text-37","text-42"]}];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/q2w3-fixed-widget/js/q2w3-fixed-widget.min.js?ver=5.1.4' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/yith-topbar-countdown/assets/js/jquery.countdown.js?ver=5.0.3' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.4' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-includes/js/jquery/ui/effect-blind.min.js?ver=1.11.4' defer='defer'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var stbUserOptions = [];
+stbUserOptions = {"mode":"css","cssOptions":{"roundedCorners":true,"mbottom":10,"imgHide":"https:\/\/www.analyticsvidhya.com\/blog\/wp-content\/plugins\/wp-special-textboxes\/images\/minus.png","imgShow":"https:\/\/www.analyticsvidhya.com\/blog\/wp-content\/plugins\/wp-special-textboxes\/images\/plus.png","strHide":"Hide","strShow":"Show"}};;
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/wp-special-textboxes/js/wstb.min.js?ver=5.9.107' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-includes/js/wp-embed.min.js?ver=5.0.3' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/jetpack/_inc/build/postmessage.min.js?ver=7.0' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/jetpack/_inc/build/jquery.jetpack-resize.min.js?ver=7.0' defer='defer'></script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/jetpack/_inc/build/likes/queuehandler.min.js?ver=7.0' defer='defer'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.analyticsvidhya.com/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=7.0' defer='defer'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-linkedin', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-pocket', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+</script>
+<iframe src='https://widgets.wp.com/likes/master.html?ver=201917#ver=201917' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+
+<div class="dgd_overlay"></div>
+<div class="dgd_stb_box clean_white" id="dgd_scrollbox-49146"><a class="dgd_stb_box_close dgd_stb_box_x" href="javascript:void(0);"> </a><p id="showmsg">
+<div id="hide-cont">
+<div class="grdnt-clr" id="grdnt-clr">
+<h5 id="cat" class="heading-h5"></h5>
+<p><span id="dwn-btn" class="sb-head"></span></div>
+<p><img id="loading-image" src="https://www.analyticsvidhya.com/wp-content/themes/Curated/custom/images/loading.gif" style="display:none;" /></p>
+<div id="frm-cntnt">
+<form class="stbContactForm" id="download-brochure" method="post" action="">
+<input type="hidden" name="cat" id="cat1" /><input type="hidden" name="blog-title" id="cat2" class="blog-title" /><br />
+<input type="text" class="mrg-btm" name="name" required="" id="dwn_bcr_name" placeholder="Name" onkeyup="myFunction1()"><span id="error"></span></p>
+<p> <input name="email" type="email" class="mrg-btm" id="dwn_bcr_email" placeholder="Email Id" onkeyup="myFunction2()" /><span id="error1"></span></p>
+<p><input name="phone" required="" type="text" class="mrg-btm" id="dwn_bcr_phone" placeholder="Contact Number" onkeyup="myFunction3()" /><span id="error2"></span></p>
+<div>
+<span class="dwn-icon-btn"><i class="fa fa-arrow-circle-down"></i></span><br />
+<input class="sub-btn2" name="submit" type="button" id="brochure-btn" value="Download Resource" style="background-color: #ff2b27;
+    background-image: none;
+    width: 74%!important;
+    height: 44px!important;
+    cursor: pointer;
+    float: left!important;
+    color: #fff!important;
+    margin-left: 5px !important;
+    position: relative;
+    padding-left: 7%;
+    font-size: 18px;" />
+</div>
+</form>
+</div>
+<p class="stbMsgArea">
+</div>
+</div>
+<div class="dgd_stb_box clean_white" id="dgd_scrollbox-49146-tab">Download Resource</div>
+<div class="dgd_stb_box none" id="dgd_scrollbox-49848"><a class="dgd_stb_box_close dgd_stb_box_x" href="javascript:void(0);"> </a><div class="popup-bg-1"></div>
+<h5 class="h5-popup" style="text-align: center;">JOIN THE NEXTGEN DATA SCIENCE ECOSYSTEM</h5>
+<ul class="popup-ul">
+<li>Learn: Get access to some of the best courses on data science created by us</li>
+<li>Engage: Interact with thousands of data science professionals across the globe!</li>
+<li>Compete: Compete in our hackathons and win exciting prizes</li>
+<li>Get Hired: Get information of jobs in data science community and build your profile</li>
+</ul>
+<p><a href="https://id.analyticsvidhya.com/accounts/login/?next=https://www.analyticsvidhya.com/blog/&utm_source=blog-subscribe&utm_medium=web" target="_blank"><button class="popup-subscribe" style="background-color: #be1616;
+    background-image: none;
+    width: 35%!important;
+    height: 41px!important;
+    cursor: pointer;
+    float: right!important;
+    color: #fff!important;
+    font-size: 18px;
+    margin-right: 174px;
+    margin-top: -7px;">Join now</button></a></p>
+</div>
+<div class="dgd_stb_box none" id="dgd_scrollbox-49848-tab">Subscribe!</div>
+
+<script type='text/javascript' src='https://stats.wp.com/e-201917.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.0',blog:'157218717',post:'25771',tz:'5.5',srv:'www.analyticsvidhya.com'} ]);
+	_stq.push([ 'clickTrackerInit', '157218717', '25771' ]);
+</script>
+ <div id="yith-topbar-countdown" class="topbar-countdown-container"> <div class="wrapper_inner"> <div class="countdown_information"> <span class="countdown_slogan"><a href="https://courses.analyticsvidhya.com/bundles/ai-blackbelt-beginner-to-master?utm_source=blog&utm_medium=flashstrip" target="_blank">Registrations Closing: Certified AI & ML BlackBelt Program (Beginner to Master) Closes In</a></span> <span class="countdown"> <span class="num days">6</span> <span class="countdown-label">Days</span> <span class="num hours">0</span> <span class="countdown-label">Hours</span> <span class="num minutes">59</span> <span class="countdown-label">Minutes</span> <span class="num seconds">48</span> <span class="countdown-label no-margin">Seconds</span> </span> </div> <span class="countdown_button"> <a href="https://courses.analyticsvidhya.com/bundles/ai-blackbelt-beginner-to-master?utm_source=blog&utm_medium=flashstrip"> Enroll Now </a> </span> </div> </div> <script type="text/javascript">            jQuery(document).ready(function($){                var countdown_html = $('.countdown').clone();                $('.num.days', countdown_html).text('{dn}');                $('.num.hours', countdown_html).text('{hnn}');                $('.num.minutes', countdown_html).text('{mnn}');                $('.num.seconds', countdown_html).text('{snn}');                $('.countdown').countdown({until: 521988, layout: countdown_html.html() });            });    </script>  <script type="text/javascript" src="https://brahma.analyticsvidhya.com/static/js/events.js" defer></script>
+</body>
+</html>
+<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px;top:100px;background-color:transparent;"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_flipboard" href="https://www.addtoany.com/add_to/flipboard?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Flipboard" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="WhatsApp" rel="nofollow noopener" target="_blank"></a></div><div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" style="bottom:0px;left:0px;background-color:transparent;"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_flipboard" href="https://www.addtoany.com/add_to/flipboard?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="Flipboard" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fwww.analyticsvidhya.com%2Fblog%2F2016%2F07%2Fcapstone-project%2F&amp;linkname=Tapping%20Twitter%20Sentiments%3A%20A%20Complete%C2%A0Case-Study%20on%202015%20Chennai%20Floods" title="WhatsApp" rel="nofollow noopener" target="_blank"></a></div>
+<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/www.analyticsvidhya.com\/blog\/2016\/07\/capstone-project\/":25771};
+	</script>
+<iframe src='https://widgets.wp.com/likes/master.html?ver=201917#ver=201917' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+
+<div class="dgd_overlay"></div>
+<div class="dgd_stb_box clean_white" id="dgd_scrollbox-49146"><a class="dgd_stb_box_close dgd_stb_box_x" href="javascript:void(0);"> </a><p id="showmsg">
+<div id="hide-cont">
+<div class="grdnt-clr" id="grdnt-clr">
+<h5 id="cat" class="heading-h5"></h5>
+<p><span id="dwn-btn" class="sb-head"></span></div>
+<p><img id="loading-image" src="https://www.analyticsvidhya.com/wp-content/themes/Curated/custom/images/loading.gif" style="display:none;" /></p>
+<div id="frm-cntnt">
+<form class="stbContactForm" id="download-brochure" method="post" action="">
+<input type="hidden" name="cat" id="cat1" /><input type="hidden" name="blog-title" id="cat2" class="blog-title" /><br />
+<input type="text" class="mrg-btm" name="name" required="" id="dwn_bcr_name" placeholder="Name" onkeyup="myFunction1()"><span id="error"></span></p>
+<p> <input name="email" type="email" class="mrg-btm" id="dwn_bcr_email" placeholder="Email Id" onkeyup="myFunction2()" /><span id="error1"></span></p>
+<p><input name="phone" required="" type="text" class="mrg-btm" id="dwn_bcr_phone" placeholder="Contact Number" onkeyup="myFunction3()" /><span id="error2"></span></p>
+<div>
+<span class="dwn-icon-btn"><i class="fa fa-arrow-circle-down"></i></span><br />
+<input class="sub-btn2" name="submit" type="button" id="brochure-btn" value="Download Resource" style="background-color: #ff2b27;
+    background-image: none;
+    width: 74%!important;
+    height: 44px!important;
+    cursor: pointer;
+    float: left!important;
+    color: #fff!important;
+    margin-left: 5px !important;
+    position: relative;
+    padding-left: 7%;
+    font-size: 18px;" />
+</div>
+</form>
+</div>
+<p class="stbMsgArea">
+</div>
+</div>
+<div class="dgd_stb_box clean_white" id="dgd_scrollbox-49146-tab">Download Resource</div>
+<div class="dgd_stb_box none" id="dgd_scrollbox-49848"><a class="dgd_stb_box_close dgd_stb_box_x" href="javascript:void(0);"> </a><div class="popup-bg-1"></div>
+<h5 class="h5-popup" style="text-align: center;">JOIN THE NEXTGEN DATA SCIENCE ECOSYSTEM</h5>
+<ul class="popup-ul">
+<li>Learn: Get access to some of the best courses on data science created by us</li>
+<li>Engage: Interact with thousands of data science professionals across the globe!</li>
+<li>Compete: Compete in our hackathons and win exciting prizes</li>
+<li>Get Hired: Get information of jobs in data science community and build your profile</li>
+</ul>
+<p><a href="https://id.analyticsvidhya.com/accounts/login/?next=https://www.analyticsvidhya.com/blog/&utm_source=blog-subscribe&utm_medium=web" target="_blank"><button class="popup-subscribe" style="background-color: #be1616;
+    background-image: none;
+    width: 35%!important;
+    height: 41px!important;
+    cursor: pointer;
+    float: right!important;
+    color: #fff!important;
+    font-size: 18px;
+    margin-right: 174px;
+    margin-top: -7px;">Join now</button></a></p>
+</div>
+<div class="dgd_stb_box none" id="dgd_scrollbox-49848-tab">Subscribe!</div>
+
+ <div id="yith-topbar-countdown" class="topbar-countdown-container"> <div class="wrapper_inner"> <div class="countdown_information"> <span class="countdown_slogan"><a href="https://courses.analyticsvidhya.com/bundles/ai-blackbelt-beginner-to-master?utm_source=blog&utm_medium=flashstrip" target="_blank">Registrations Closing: Certified AI & ML BlackBelt Program (Beginner to Master) Closes In</a></span> <span class="countdown"> <span class="num days">6</span> <span class="countdown-label">Days</span> <span class="num hours">0</span> <span class="countdown-label">Hours</span> <span class="num minutes">59</span> <span class="countdown-label">Minutes</span> <span class="num seconds">48</span> <span class="countdown-label no-margin">Seconds</span> </span> </div> <span class="countdown_button"> <a href="https://courses.analyticsvidhya.com/bundles/ai-blackbelt-beginner-to-master?utm_source=blog&utm_medium=flashstrip"> Enroll Now </a> </span> </div> </div> <script type="text/javascript">            jQuery(document).ready(function($){                var countdown_html = $('.countdown').clone();                $('.num.days', countdown_html).text('{dn}');                $('.num.hours', countdown_html).text('{hnn}');                $('.num.minutes', countdown_html).text('{mnn}');                $('.num.seconds', countdown_html).text('{snn}');                $('.countdown').countdown({until: 521988, layout: countdown_html.html() });            });    </script>  </body>
+</html>

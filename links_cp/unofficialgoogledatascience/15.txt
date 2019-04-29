@@ -1,0 +1,7 @@
+Search This Blog 
+ Posts 
+ by ERIC HOLLINGSWORTHA large part of the data we data scientists are asked to analyze was not collected with any specific analysis in mind, or perhaps any particular purpose at all. This post describes the analytical issues which arise in such a setting, and what the data scientist can do about them.
+A landscape of promise and peril 
+ The data scientist working today lives in what Brad Efron has termed the "era of scientific mass production," of which he remarks, "But now the flood of data is accompanied by a deluge of questions, perhaps thousands of estimates or hypothesis tests that the statistician is charged with answering together; not at all what the classical masters had in mind. [1]" 
+ Statistics, as a discipline, was largely developed in a small data world. Data was expensive to gather, and therefore decisions to collect data were generally well-considered. Implicitly, there was a prior belief about some interesting causal mechanism or an underlying hypothesis… 
+ 

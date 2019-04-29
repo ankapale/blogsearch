@@ -1,0 +1,15 @@
+Feb 13 AI Learns to Solve Quantum State of Many Particles at Once 
+ The same type of artificial intelligence that mastered the ancient game of Go could help wrestle with the amazing complexity of quantum systems containing billions of particles. 
+ Google’s AlphaGo artificial neural network made headlines last year when it bested a world champion at Go. After marvelling at this feat, Giuseppe Carleo of ETH Zurich in Switzerland thought it might be possible to build a similar machine-learning tool to crack one of the knottiest problems in quantum physics. 
+ Now, he has built just such a neural network – which could turn out to be a game changer in understanding quantum systems. 
+ Go is far more complex than chess, in that the number of possible positions on a Go board could exceed the number of atoms in the universe. That’s why an approach based on brute-force calculation, while effective for chess, just doesn’t work for Go. 
+ In that sense, Go resembles a classic problem in quantum physics: how to describe a quantum system that consists of many billions of atoms, all of which interact with each other according to complicated equations. 
+ But the weird rules of quantum mechanics mean we can’t know a quantum particle’s precise location at every point in time. Many quantum particles also have a property called “spin”, which can be either up or down. The number of spin-based states that a group of just 100 such particles could inhabit is almost a million trillion trillion (1030). 
+ The current record for simulating such a system, using our most powerful supercomputers, is 48 spins. Carleo estimates that even if we could turn the entire planet into a giant hard drive, we would still only be able to do these calculations for 100 spins at most. 
+ That’s where artificial neural networks can help. Give such a network the rules of Go and it will figure out the optimal strategy to win the game. So perhaps it could do the same for quantum systems. 
+ Neural networks are very good at generalising, so they typically only need a limited amount of information to infer much more from that. 
+ — Giuseppe Carleo 
+ Feed a neural network a few pictures of Carleo, for example, and it will soon be able to recognise him in new pictures it has never “seen” before. 
+ It’s incredibly cool ... given the success of deep learning in pretty much every imaginable application domain, it’s a natural idea to try it for quantum many-body physics, but as far as I know this is the first time someone did. I expect to see a lot more of this in the future. 
+ Google’s AlphaGo artificial neural network made headlines last year when it bested a world champion at Go. After marvelling at this feat, Giuseppe Carleo of ETH Zurich in Switzerland thought it might be possible to build a similar machine-learning tool to crack one of the knottiest problems in quantum physics. 
+ 

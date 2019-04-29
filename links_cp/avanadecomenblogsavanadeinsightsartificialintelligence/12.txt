@@ -1,0 +1,16 @@
+Process automation unleashes the virtual workforce 
+ Article by 
+ By 
+ Why would you modernize IT and business processes through process automation when recent IDC research cites that 94% of global IT decision makers admit to various concerns? While you would think it is about technology, it is actually more about security (62%) and change management, which speaks to lack resources and skills available. However, more than nine out of ten (92%) global IT decision makers surveyed said that process automation is a key technology to address the emerging needs of the digital business. This is in line with what we are seeing. 
+ Companies worldwide are turning to process automation to help power their digital transformations—to innovate better, boost customer service and satisfaction, empower employees, and increase revenues and profits. Robotic process automation (RPA) was the first wave, and now the tide is turning to include intelligent and cognitive automations. 
+ So, to address the concerns brought up, many organizations plan to turn to service providers for implementation assistance. More than half (51%) will seek vendor support for RPA, and over six in ten will do so for intelligent (63%) and cognitive (64%) automation techniques. I invite you watch our video that brings this data to life. Working with a service provider helps to augment the knowledge and skills within businesses and address questions in applying security principles to process automation: 
+ What security permissions, for example, should be granted to bot workers? 
+ How does the change management function understand how to analyze the jobs affected by RPA, including how to account for both formal and informal job functions? 
+ What governance policies should be implemented? 
+ What disaster recovery and business continuity plans? And who will own all these new responsibilities? 
+ How will you ensure your automation strategy is future proofed, to infuse with AI over time? 
+ When businesses look around they see other companies achieving business goals such as increasing productivity (73%) and reducing costs (65%), with process automation technologies like RPA. 
+ RPA is a great place to start the modernization journey as it relates to process automation, but it does open up a new world of challenges, too. If you would like to understand both the benefits and challenges of process automation in more detail, and how you can use it to unlock your virtual workforce, take a look at our point of view on that very subject. 
+ Avanade is committed to protecting your information security. Your information will be used in accordance with any applicable data privacy law, our internal policies and our Privacy Policy, and will be held securely. Avanade will not share your personal information with any third party, except as needed to manage the events or features for which you register. By using this site you agree that we can place cookies on your device. Please review our complete Privacy Policy for additional information. 
+ Some of the required fields (*) are missing, please review your information. 
+ 

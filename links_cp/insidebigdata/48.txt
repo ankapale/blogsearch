@@ -1,0 +1,4 @@
+IT Asset Management is No Sweat for Under Armour with Absolute Manage 
+ BACKGROUND: In the last four years, the number of Mac computers at Under Armour has quadrupled. This increase in Apple devices proved problematic for IT since existing tools were unable to manage Mac computers with the same breadth and accuracy as their PC counterparts. 
+ THE CHALLENGE:The lack of any management infrastructure for Mac computers meant that the IT team was spending all of their time doing manual rollouts to end users. This was a slow and time consuming process  and it left them with little time to perform routine (but necessary) updates and maintenance. Of more concern was the lack of visibility they had to a growing portion of their overall deployment. 
+ 

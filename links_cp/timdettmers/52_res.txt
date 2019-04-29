@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head >
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- This site is optimized with the Yoast SEO plugin v9.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>TPUs vs GPUs for Transformers (BERT) &mdash; Tim Dettmers</title>
+<meta name="description" content="Here I develop a theoretical model of TPUs vs GPUs for transformers as used by BERT and show that current GPUs are about 32% to 54% slower for this task."/>
+<link rel="canonical" href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="TPUs vs GPUs for Transformers (BERT) &mdash; Tim Dettmers" />
+<meta property="og:description" content="Here I develop a theoretical model of TPUs vs GPUs for transformers as used by BERT and show that current GPUs are about 32% to 54% slower for this task." />
+<meta property="og:url" content="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/" />
+<meta property="og:site_name" content="Tim Dettmers" />
+<meta property="article:publisher" content="https://www.facebook.com/people/Tim-Dettmers/100004739865154" />
+<meta property="article:tag" content="Deep Learning" />
+<meta property="article:tag" content="hardware" />
+<meta property="article:section" content="Deep Learning" />
+<meta property="article:published_time" content="2018-10-17T18:13:03+00:00" />
+<meta property="article:modified_time" content="2019-02-20T22:25:46+00:00" />
+<meta property="og:updated_time" content="2019-02-20T22:25:46+00:00" />
+<meta property="og:image" content="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?fit=1123%2C620&#038;ssl=1" />
+<meta property="og:image:secure_url" content="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?fit=1123%2C620&#038;ssl=1" />
+<meta property="og:image:width" content="1123" />
+<meta property="og:image:height" content="620" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Here I develop a theoretical model of TPUs vs GPUs for transformers as used by BERT and show that current GPUs are about 32% to 54% slower for this task." />
+<meta name="twitter:title" content="TPUs vs GPUs for Transformers (BERT) &mdash; Tim Dettmers" />
+<meta name="twitter:site" content="@Tim_Dettmers" />
+<meta name="twitter:image" content="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?fit=1123%2C620&#038;ssl=1" />
+<meta name="twitter:creator" content="@Tim_dettmers" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Person","url":"https:\/\/timdettmers.com\/","sameAs":["https:\/\/www.facebook.com\/people\/Tim-Dettmers\/100004739865154","https:\/\/twitter.com\/Tim_Dettmers"],"@id":"#person","name":"Tim Dettmers"}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//timdettmers.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; Feed" href="https://timdettmers.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; Comments Feed" href="https://timdettmers.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Tim Dettmers &raquo; TPUs vs GPUs for Transformers (BERT) Comments Feed" href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/timdettmers.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.10"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='child-theme-css'  href='https://timdettmers.com/wp-content/themes/genesis/style.css?ver=2.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://timdettmers.com/wp-content/tablepress-combined.min.css?ver=3' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='https://timdettmers.com/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://timdettmers.com/wp-content/plugins/jetpack/css/jetpack.css?ver=6.8' type='text/css' media='all' />
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/related-posts/related-posts.min.js?ver=20150408'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/skip-links.js?ver=4.9.10'></script>
+<link rel='https://api.w.org/' href='https://timdettmers.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://timdettmers.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://timdettmers.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.10" />
+<link rel='shortlink' href='https://wp.me/p7dUt6-b4' />
+<link rel="alternate" type="application/json+oembed" href="https://timdettmers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftimdettmers.com%2F2018%2F10%2F17%2Ftpus-vs-gpus-for-transformers-bert%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://timdettmers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftimdettmers.com%2F2018%2F10%2F17%2Ftpus-vs-gpus-for-transformers-bert%2F&#038;format=xml" />
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-68592625-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//i0.wp.com'/>
+<link rel='dns-prefetch' href='//i1.wp.com'/>
+<link rel='dns-prefetch' href='//i2.wp.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><link rel="pingback" href="https://timdettmers.com/xmlrpc.php" />
+<!--[if lt IE 9]><script src="https://timdettmers.com/wp-content/themes/genesis/lib/js/html5shiv.min.js"></script><![endif]-->
+<style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; }
+/* ]]> */
+</style>
+<link rel="icon" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=32%2C32&#038;ssl=1" sizes="32x32" />
+<link rel="icon" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=192%2C192&#038;ssl=1" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=180%2C180&#038;ssl=1" />
+<meta name="msapplication-TileImage" content="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/05/cropped-profile_300kb.png?fit=270%2C270&#038;ssl=1" />
+</head>
+<body class="post-template-default single single-post postid-686 single-format-standard nolayout" itemscope itemtype="http://schema.org/WebPage"><div class="site-container"><section><h2 class="screen-reader-text">Skip links</h2><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to content</a></li><li><a href="#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li></ul></section>
+<header class="site-header" itemscope itemtype="http://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a href="https://timdettmers.com/">Tim Dettmers</a></p><p class="site-description" itemprop="description">Making deep learning accessible.</p></div><div class="widget-area header-widget-area"><h2 class="genesis-sidebar-title screen-reader-text">Header Right</h2><section id="categories-4" class="widget widget_categories"><div class="widget-wrap"><h3 class="widgettitle widget-title">Blog Posts Topics</h3>
+		<ul>
+	<li class="cat-item cat-item-2"><a href="https://timdettmers.com/category/deep-learning/" >Deep Learning</a> (7)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://timdettmers.com/category/featured/" >Featured</a> (1)
+</li>
+	<li class="cat-item cat-item-3"><a href="https://timdettmers.com/category/hardware/" >Hardware</a> (7)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://timdettmers.com/category/neuroscience/" >Neuroscience</a> (1)
+</li>
+		</ul>
+</div></section>
+</div></div></header><h2 class="screen-reader-text">Main navigation</h2><nav class="nav-primary" itemscope itemtype="http://schema.org/SiteNavigationElement" id="genesis-nav-primary" aria-label="Main navigation"><div class="wrap"><ul id="menu-menu" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-431" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-431"><a href="http://timdettmers.com" data-ps2id-api="true" itemprop="url"><span itemprop="name">Blog</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-434" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-434"><a href="https://timdettmers.com/category/deep-learning/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Deep Learning</span></a></li>
+	<li id="menu-item-436" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-436"><a href="https://timdettmers.com/category/hardware/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Hardware</span></a></li>
+	<li id="menu-item-435" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-435"><a href="https://timdettmers.com/category/neuroscience/" data-ps2id-api="true" itemprop="url"><span itemprop="name">Neuroscience</span></a></li>
+</ul>
+</li>
+<li id="menu-item-668" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-668"><a href="http://timdettmers.com/about/#Publications" data-ps2id-api="true" itemprop="url"><span itemprop="name">Publications</span></a></li>
+<li id="menu-item-433" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-433"><a href="https://timdettmers.com/about/" data-ps2id-api="true" itemprop="url"><span itemprop="name">About Me</span></a></li>
+</ul></div></nav><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-686 post type-post status-publish format-standard has-post-thumbnail category-deep-learning category-hardware tag-deep-learning tag-hardware-2 entry" itemscope itemtype="http://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">TPUs vs GPUs for Transformers (BERT)</h1> 
+<p class="entry-meta"><time class="entry-time" itemprop="datePublished" datetime="2018-10-17T11:13:03+00:00">2018-10-17</time> by <span class="entry-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="https://timdettmers.com/author/tim-dettmers/" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">Tim Dettmers</span></a></span> <span class="entry-comments-link"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comments">20 Comments</a></span> </p></header><div class="entry-content" itemprop="text"><p>On the computational side, there have been confusions about how TPUs and GPUs relate to <a href="https://arxiv.org/abs/1810.04805">BERT</a>. BERT was done with 4 TPU pods (256 TPU chips) in 4 days. Does this mean only Google can train a BERT model? Does this mean that GPUs are dead? There are two fundamental things to understand here: (1) A TPU is a matrix multiplication engine — it does matrix multiplication and matrix operations, but not much else. It is fast at computing matrix multiplication, but one has to understand that (2) the slowest thing in matrix multiplication is to get the elements from the main memory and load it into the processing unit. In other words, the most expensive part in matrix multiplication is memory loads. Note the computational load for BERT should be about 90% for matrix multiplication. From these facts, we can do a small technical analysis on this topic.</p>
+<p><span id="more-686"></span></p>
+<h2>Bandwidth Model for TPUs and GPUs</h2>
+<h3>Transformers for TPUs</h3>
+<p>A common operation in BERT is matrix multiplication A*B=C where A is 256&#215;1024 and B is 1024&#215;1024 in dimension. A TPU computes such a matrix multiplication by splitting the matrix into many smaller 128&#215;128 matrix multiplications. This means we need to load 16 128&#215;128 matrix tiles from matrix A — and due to the nature of matrix multiplication — we need to load 64 tiles from B for every tile in A. This is a total of 16*64=1024 128&#215;128 loads. At 16-bit that is a total of 32 MB of data.</p>
+<p><a href="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg"><img data-attachment-id="698" data-permalink="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/cloud-tpu-feature/" data-orig-file="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?fit=1123%2C620&amp;ssl=1" data-orig-size="1123,620" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Cloud-TPU-Feature" data-image-description="" data-medium-file="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?fit=300%2C166&amp;ssl=1" data-large-file="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?fit=1024%2C565&amp;ssl=1" class="aligncenter wp-image-698" title="TPU vs GPU" src="https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature-1024x565.jpg?resize=745%2C411" alt="TPU vs GPU" width="745" height="411" srcset="https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?resize=1024%2C565&amp;ssl=1 1024w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?resize=300%2C166&amp;ssl=1 300w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?resize=768%2C424&amp;ssl=1 768w, https://i0.wp.com/timdettmers.com/wp-content/uploads/2018/10/Cloud-TPU-Feature.jpg?w=1123&amp;ssl=1 1123w" sizes="(max-width: 745px) 100vw, 745px" data-recalc-dims="1" /></a></p>
+<p>Now we make a simplification: We assume that there is no latency if we do two memory loads after each other, which is actually not too unreasonable since often you can hide memory access latency under thread parallelism. In simple words, this means: While we wait for one 128&#215;128 matrix copy to complete, we already do the next one. In doing it this way, we only wait for the first memory copy and we do not wait for other copies. This is a <a href="https://www.quora.com/Why-are-GPUs-well-suited-to-deep-learning">core reason why GPUs are fast</a> and why we use many threads in GPUs thus 0 latency for overlapping memory transfers is not too far off from the real world. Using this simplification, we can now plainly use the memory bandwidth to compute the time needed to load the memory for the matrix multiplication. If we look at the bandwidth of the TPU we find that we have 600 GB/s, so we need 5.2e-05 seconds to transfer the 32 MB of data.</p>
+<h3>Transformers on GPUs</h3>
+<p>For a GPU we have the same process, but we use smaller tiles with more processors. Similarly to the TPU, we use two loads in parallel to hide memory latency. For GPUs, however, we would have a tile size of 96&#215;96 for 16-bit data. If we take a V100 Tesla GPU, then we can run 160 of these in parallel at full bandwidth with low memory latency. What this means compared to a TPU: Instead of 2 matrix units which can hold 128&#215;128 matrices, the GPU has 160 units (80 SMs, 160 thread blocks, each thread block has two 96&#215;96 matrices) which hold two 96&#215;96 matrices. Again this ensures that we can hide the memory latency through parallelism.</p>
+<p><a href="https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/010.jpg"><img data-attachment-id="697" data-permalink="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/attachment/010/" data-orig-file="https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/010.jpg?fit=1024%2C576&amp;ssl=1" data-orig-size="1024,576" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="010" data-image-description="" data-medium-file="https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/010.jpg?fit=300%2C169&amp;ssl=1" data-large-file="https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/010.jpg?fit=1024%2C576&amp;ssl=1" class="aligncenter wp-image-697" title="TPU vs GPU" src="https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/010-1024x576.jpg?resize=818%2C460" alt="TPU vs GPU" width="818" height="460" srcset="https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/010.jpg?w=1024&amp;ssl=1 1024w, https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/010.jpg?resize=300%2C169&amp;ssl=1 300w, https://i2.wp.com/timdettmers.com/wp-content/uploads/2018/10/010.jpg?resize=768%2C432&amp;ssl=1 768w" sizes="(max-width: 818px) 100vw, 818px" data-recalc-dims="1" /></a></p>
+<p>If we repeat the calculation from the top we receive the following: For matrix A with 256&#215;1024 we have 33 96&#215;96 tiles; for B with 1024&#215;1024 we have 121 96&#215;96 tiles. In total, we need to do 33*121=3993 loads of size 96&#215;96 for a total of 70 MB. A V100 runs at 900 GB/s and so the memory loads will take 7.6e-05 seconds. Thus our model predicts that a GPU is 32% slower than a TPU for this specific scenario. Note that matrix tiles stay the same for an RTX 2080 Ti GPU, but the memory bandwidth decreases to 616 GB/s. Which means an RTX 2080 Ti is 54% slower than a TPU.</p>
+<p>Note that both TPU and GPUs with Tensor Cores compute the respective matrix multiplication tile in one cycle. Thus the computation is about equally fast — the difference is only in how the memory is loaded.</p>
+<h3>BERT Training Time Estimate for GPUs</h3>
+<p>Using this data, a GPU cluster of V100s/RTX 2080 Tis with good networking (Infiniband +56GBits/s) and good parallelization algorithms (for example using Microsoft&#8217;s CNTK) we can expect to train BERT on 64 GPUs (the equivalent to 4 TPU pods) in 5 1/3 days or 8 1/2 days. On an 8 GPU machine for V100/RTX 2080 Tis with any software and any parallelization algorithm (PyTorch, TensorFlow) one can expect to train BERT in 42 days or 68 days. For a standard 4 GPU desktop with RTX 2080 Ti (much cheaper than other options), one can expect to replicate BERT in 99 days.</p>
+<h2>Limitations of the Bandwidth Model</h2>
+<p>Note that all models are wrong, but some are useful. I would expect that this bandwidth model is in about 30% of the correct runtime values for TPU vs GPU.</p>
+<p>The biggest limitation is that these calculations are for specific matrices sizes. Computational differences can be amplified for certain sizes. For example, if your batch-size is 128, there is a slight speedup for GPUs compared to TPUs. If you go below a batch size of 128 you can expect GPUs to be significantly faster; increasing the matrix B further makes TPUs better and better compared to GPUs. Decreasing the size of matrix B will make the performance of GPUs better. Note that the BERT paper optimized matrix A and B sizes for the TPU — one would not choose these dimensions if you train with a GPU. So this comparison might favor TPUs slightly.</p>
+<p>Further direct limitations include fused operations. The TPU can calculate additional element-wise operations such as a non-linear activation function or a bias on the fly within a matrix multiplication. This means that the TPU does not need to load from slow global memory as often as a GPU. The GPU also supports these operations but NVIDIA has not implemented them and thus GPU users will not be able to benefit from this. Thus one can expect a slowdown of about 1.6% (loading and storing a 256&#215;1024 matrix) for each element-wise operation for a GPU. For example, if you apply a non-linear function and a bias, then the TPU would be about 3.2% faster compared to GPUs in this scenario.</p>
+<h2>The Importance of 32-bit vs 16-bit vs 8-bit</h2>
+<p>If we repeat the same calculations from above for 32-bit values (64x64x tiles) we find that TPUs would be 5.3x faster. So the datatype size has a much larger effect than switching from TPU to GPU and vice versa.</p>
+<p>TPUs do not support 8-bit training, but Turing GPUs do. So we can also have a look at how 8-bit matrix multiplication would impact performance. <a href="https://arxiv.org/abs/1511.04561">I published research on 8-bit models</a> and it is not too difficult to train them with 8-bit alone. In fact, the <a href="https://arxiv.org/search/cs?searchtype=author&amp;query=Courbariaux%2C+M">literature</a> on <a href="https://arxiv.org/abs/1602.02830">low-bit</a> computing is <a href="https://dawn.cs.stanford.edu/2018/03/09/low-precision/">quite rich</a>. With 32-bit accumulation as supported by Turing GPUs 8-bit training should be even easier.  If we can make 8-bit computing work for general models this would entail huge speedups for transformers. If we repeat the above calculations for 8-bit for GPUs (128&#215;128 tile) we find that GPUs are 3.0x faster than TPUs. 8-bit computation on an affordable standard machine with 4 RTX 2080 Ti would take about 21 days. All of this makes 16-bit computational ability for a GPU and important criterion <a href="http://timdettmers.com/2018/08/21/which-gpu-for-deep-learning/">if you are looking for a GPU</a> to work with transformers.</p>
+<h2>Conclusion</h2>
+<p>TPUs are about 32% to 54% faster for training BERT-like models. One can expect to replicate BERT on an 8 GPU machine within about 40 to 70 days. On a standard, affordable GPU machine with 4 GPUs one can expect to train BERT for about 99 days using 16-bit or about 21 days using 8-bit.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-686" class="share-twitter sd-button share-icon no-text" href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-686" class="share-facebook sd-button share-icon no-text" href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/?share=facebook" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-google-plus-1"><a rel="nofollow noopener noreferrer" data-shared="sharing-google-686" class="share-google-plus-1 sd-button share-icon no-text" href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/?share=google-plus-1" target="_blank" title="Click to share on Google+"><span></span><span class="sharing-screen-reader-text">Click to share on Google+ (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id='jp-relatedposts' class='jp-relatedposts' >
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+</div><!--<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/"
+    dc:identifier="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/"
+    dc:title="TPUs vs GPUs for Transformers (BERT)"
+    trackback:ping="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/trackback/" />
+</rdf:RDF>-->
+</div><footer class="entry-footer"><p class="entry-meta"><span class="entry-categories">Filed Under: <a href="https://timdettmers.com/category/deep-learning/" rel="category tag">Deep Learning</a>, <a href="https://timdettmers.com/category/hardware/" rel="category tag">Hardware</a></span> <span class="entry-tags">Tagged With: <a href="https://timdettmers.com/tag/deep-learning/" rel="tag">Deep Learning</a>, <a href="https://timdettmers.com/tag/hardware-2/" rel="tag">hardware</a></span></p></footer></article><h2 class="screen-reader-text">Reader Interactions</h2><div class="entry-comments" id="comments"><h3>Comments</h3><ol class="comment-list">
+	<li class="comment even thread-even depth-1" id="comment-44528">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ad8bbf0e30f89bf79f0362afa8c0f04a?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ad8bbf0e30f89bf79f0362afa8c0f04a?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Michael</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-17T15:11:45+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44528" class="comment-time-link" itemprop="url">2018-10-17 at 15:11</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Tim, thanks for your post.  A couple of questions:</p>
+<p>1. You assume there&#8217;s no cache on GPU or TPU, because if there&#8217;s cache, then we wouldn&#8217;t necessarily need to load 64 tiles of B from main memory for each tile from A. Correct? This becomes especially relevant if A is input which changes for each computation, while B is weights which stay the same for many computations (for example, during batch training).</p>
+<p>2. GPU or TPU complete single tile multiplication in one cycle. How many cycles are needed to perform the entire A*B multiplication? In other words, how many tiles can be computed in parallel by TPU/GPU?  How does time to compute A*B compares to data transfer time (i.e. 5.3e-5s)?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44528' onclick='return addComment.moveForm( "comment-44528", "44528", "respond", "686" )' aria-label='Reply to Michael'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-44531">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-17T16:33:17+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44531" class="comment-time-link" itemprop="url">2018-10-17 at 16:33</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>1. Yes, my calculations assume that the tiles are loaded into shared memory which essentially programmable L1 cache. Normal L1 cache does play a role when you aggregate the values for matrix C, but not so much when you load from matrix A and B.<br />
+2. Theoretically, a TPU can compute one 128&#215;128 matrix multiplication per clock per MXU. There are two MXU on a TPU chip and thus two 128&#215;128 matrix multiply per clock. A GPU can compute 8 4&#215;4 per SM per clock or one 16&#215;16 matrix multiplication per two clocks per SM. There are 80 SMs on a Tesla V100 so you can compute 40 16&#215;16 matrix multiplications per clock which is the equivalent of about one 96&#215;96 matrix multiplication per clock. So TPUs have more than 2x higher theoretical throughput. Note that these numbers are theoretical and can never be reached for practical programs.</p>
+<p>Here a simple example to demonstrate that theoretical compute does not matter: A single L1 memory access costs about 5-6 clocks. A global memory access costs about 500 clocks. So loading a 96&#215;96 tile from GPU RAM costs 1000 clocks (144 copies of 128 bytes per SM or 2 sequential loads) to copy to shared memory, it costs 5 clocks to access the memory and write it to registers, and it costs 1 clock to do the matrix multiplication. In this simple example, the matrix multiplication computation used up 0.05% of computational resources. So the Tensor Cores utilization was 0.05% in this case. It will be even lower for a TPU. This improves for larger matrices, but usually, it is never higher than a few percents. This example demonstrates that the theoretical compute performance does not matter in practice because you cannot reach it — especially for matrix multiplication. For convolution, this is a bit different, but the differences in theoretical compute performance are not so different between TPUs and GPUs in the first place.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44531' onclick='return addComment.moveForm( "comment-44531", "44531", "respond", "686" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-3" id="comment-44619">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/697a0dc80a215d83314c653fc0a898a2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/697a0dc80a215d83314c653fc0a898a2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">basil thomas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-18T11:32:55+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44619" class="comment-time-link" itemprop="url">2018-10-18 at 11:32</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Interesting assessment but I think the real world performance of gpus may be much worse as you may have access to lots of VRAM but very small access to L1 cache. If the TPU has a huge cache near L1 speeds then the google tpu will still be an order of magnitude faster than a bunch of 2080Ti cards.</p>
+<p>I think you should look at the tensor cores primitives code as I think it is geared for warp wide processing from the get go and unless you are doing a huge amount of matrix multiplication in a row, i think the speedup is nowhere near the 12x speedup that Nvidia touts. The DLSS denoising algo is a good one for the tensor cores to apply and attain a more impressive speedup. Most of the benchmarks I have seen so far for for tensor cores generally attain a speedup of 2-4x which is not quite as efficient as it could be.</p>
+<p>I hope Nvidia continues to speed up the main SM cores with more parallel processing as much as they add more custom hardware like the tensor/ray tracing cores</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44619' onclick='return addComment.moveForm( "comment-44619", "44619", "respond", "686" )' aria-label='Reply to basil thomas'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-4" id="comment-44622">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-18T12:18:00+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44622" class="comment-time-link" itemprop="url">2018-10-18 at 12:18</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>One of the major advantages of GPUs is that they have very large amounts of L1 cache or shared memory. A Tesla V100 has 7.5 MB of L1 cache / shared memory. As I understand it, the TPU does not have a cache (it does not need one). So this is not an issue in my comparison.</p>
+<p>I agree that the 12x speedup of NVIDIA is unrealistic. It&#8217;s a biased comparison. As I noted in the blog post, Tensor Cores do not make a big difference here. The true winner is 16-bit compute units on the RTX 20 series which was previously only available on too expensive Volta cards.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44622' onclick='return addComment.moveForm( "comment-44622", "44622", "respond", "686" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment even depth-5" id="comment-44636">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ad8bbf0e30f89bf79f0362afa8c0f04a?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ad8bbf0e30f89bf79f0362afa8c0f04a?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Michael</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-18T14:55:52+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44636" class="comment-time-link" itemprop="url">2018-10-18 at 14:55</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>V100 has 6,144 KB of L2 cache. This means that, at least in theory, when multiplying two matrices [256, 1024] and [1024, 1024] at FP16, both can fit in cache.  Which  means we only need to transfer 2.5MB of data from main memory to L2 cache, and then 32MB of data from L2 to registers (and perhaps L1/shared cache makes this even more efficient, but I don&#8217;t know the details). </p>
+<p>By the way, correction: it takes 4-8 cycles to perform FMA instructions, depending on precision, 28 cycles to access L1 cache, and 193 cycles to access L2 [1].</p>
+<p>Also, it seems like  tensor cores operate on 16&#215;16 matrix chunks with higher throughput than regular FP16 FMA instructions. Tensor cores performance is probably more relevant for TPU comparison. </p>
+<p>Finally, I&#8217;m curious how do you explain results in Figure 4.8 in [1]. Tensor cores seems to be 90% utilized even for huge matrix sizes.</p>
+<p>[1] <a href="https://arxiv.org/abs/1804.06826" rel="nofollow">https://arxiv.org/abs/1804.06826</a></p>
+		</div>
+
+		
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-5" id="comment-44649">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-18T18:15:43+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44649" class="comment-time-link" itemprop="url">2018-10-18 at 18:15</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Indeed, I got the cycles wrong — thanks for the correction! I thought memory access was 1/5/120/600 but the paper shows for Volta it is 4/19/193/600(?). Note however that L2 access is still not much faster than global memory access. So L2 access will not help much for computation. </p>
+<p>It is a neat idea to do everything in L2 cache, but this is very difficult in practice. SMs work independently and you have no control over memory layout. If one SM lags behind your memory might be gone. If a register gets spilled out of L1 cache your memory might be gone. </p>
+<p>This is really what shared memory is for: It is programmable, so you can put memory there and can be sure that it will remain intact. For L1 and L2 cache, this is not guaranteed.</p>
+<p>Tensor Cores are can be utilized well if you use very large matrices that is right. My example uses very small matrices, and there of course Tensor Cores do badly. The example that you give is for a 4096&#215;4096 times 4096&#215;4096 matrix multiply. Utilization of 1024&#215;1024 times 1024&#215;1024 matrix multiplication is around 30%. This is 4 times larger than the matrix multiply that I analyze here. The graph shows Tensor Core utilization of about 10% for matrix multiplication which is comparable to what happens in BERT. Utilizations between 5-15% is what I meant in my last comment, which is sort of comparable what you can do without Tensor Cores. The 16-bit are really more important than Tensor Cores here.</p>
+		</div>
+
+		
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-5" id="comment-44643">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/697a0dc80a215d83314c653fc0a898a2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/697a0dc80a215d83314c653fc0a898a2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">basil thomas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-18T17:17:53+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44643" class="comment-time-link" itemprop="url">2018-10-18 at 17:17</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The huge advantage of the TPU architecture is the ability to execute way more math instructions without using any threads and the hardware to support threads. The TPU code is a very minimalist architecture that is dedicated to executing FMA instructions as fast as possible based directly on the number of ALU&#8217;s it can use per cycle. The Nvidia gpu depends on threading with the warp engine to execute as many matrix fma instructions with dedicated tensor core alu&#8217;s which are incredibility smaller in number as compared to the  number of TPU  alu&#8217;s.  Like i said before, I expect the performance of a TPU to be at least an order of magnitude better than Volta/Turing tensor cores. When, not if, each Nvidia sm can do what the tensor cores can do, only then would performance be comparable. By then I expect TPU to be able to execute millions fma instructions per cycle especially if they use 7nm fabricated chips. I think the tensor cores or more specifically fma capability should be built directly into each sm alu instead having seperate alu&#8217;s dedicated to tensor cores. They will never be able to match AI performance of the TPU if google continues their minimalist design of directly using a huge number of alu&#8217;s per clock cycle without any hardware thread support.</p>
+<p>Conversely, Nvidia gpu have a better advantage in that they are easily programmable in CUDA for a much larger number and range of algorithms  .</p>
+		</div>
+
+		
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-5" id="comment-44644">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-18T17:26:04+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44644" class="comment-time-link" itemprop="url">2018-10-18 at 17:26</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>See my reply to Michael&#8217;s comment on an analysis of TPU vs Tensor Cores on this matter.</p>
+		</div>
+
+		
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-5" id="comment-44647">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/697a0dc80a215d83314c653fc0a898a2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/697a0dc80a215d83314c653fc0a898a2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">basil thomas</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-18T18:04:11+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44647" class="comment-time-link" itemprop="url">2018-10-18 at 18:04</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>yes, I agree with your comment in general but the TPU overall has a much more simply dedicated architecture that Nvidia will be very hard to match unless the fma tensor core matrix alu&#8217;s  are directly embedded into all the sm cores.  The sm cores currently have 2 alu per core with only simultaneous access between an integer op and float op. The nvidia arch basically turns all the the sm&#8217;s into a variable length vector engine via it&#8217;s SIMT architecture. This very good for generally compute but not optimized for general purpose fma matrix math. Will be very interesting how Nvidia proceeds with their architecture as it is still basically geared to processing general instruction per thread without going to VLIW type instructiuons.</p>
+		</div>
+
+		
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-44717">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/51d59fb239e78dc5e9d31b22f4be4ebc?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/51d59fb239e78dc5e9d31b22f4be4ebc?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Bryan</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-19T15:09:12+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44717" class="comment-time-link" itemprop="url">2018-10-19 at 15:09</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>The BERT paper says 64 TPU chips and your post says 256 chips. What accounts for that difference?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44717' onclick='return addComment.moveForm( "comment-44717", "44717", "respond", "686" )' aria-label='Reply to Bryan'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-2" id="comment-44769">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-20T06:56:44+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44769" class="comment-time-link" itemprop="url">2018-10-20 at 06:56</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>One TPU has 4 TPU chips. One TPU chip is the equivalent of one GPU.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44769' onclick='return addComment.moveForm( "comment-44769", "44769", "respond", "686" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-3" id="comment-50028">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/1dfeffd85d5aa700f0abc31e5eee26c1?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/1dfeffd85d5aa700f0abc31e5eee26c1?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Juyong</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-01-05T10:44:44+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-50028" class="comment-time-link" itemprop="url">2019-01-05 at 10:44</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Hi. In the BERT paper, it says that 16 Cloud TPU Pods have 64 TPU chips total, so you don&#8217;t have to multiply additional 4 for compute the number of chips.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50028' onclick='return addComment.moveForm( "comment-50028", "50028", "respond", "686" )' aria-label='Reply to Juyong'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor even depth-4" id="comment-50152">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-01-07T19:47:33+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-50152" class="comment-time-link" itemprop="url">2019-01-07 at 19:47</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Each TPUv2 has 4 chips that are equivalent to 4 GPU chips. See this blog post for more info: <a href="https://blog.riseml.com/benchmarking-googles-new-tpuv2-121c03b71384" rel="nofollow">https://blog.riseml.com/benchmarking-googles-new-tpuv2-121c03b71384</a></p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-50152' onclick='return addComment.moveForm( "comment-50152", "50152", "respond", "686" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment odd alt depth-5" id="comment-50157">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/ad8bbf0e30f89bf79f0362afa8c0f04a?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ad8bbf0e30f89bf79f0362afa8c0f04a?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Michael</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-01-07T20:10:19+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-50157" class="comment-time-link" itemprop="url">2019-01-07 at 20:10</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>I just looked at the followup to the article you linked to: <a href="https://blog.riseml.com/comparing-google-tpuv2-against-nvidia-v100-on-resnet-50-c2bbb6a51e5e" rel="nofollow">https://blog.riseml.com/comparing-google-tpuv2-against-nvidia-v100-on-resnet-50-c2bbb6a51e5e</a> where they tested the performance of Resnet-50 on Imagenet, and the result is that V100 is about the same speed at batch size 1024 (optimal for TPUs), and better at larger batch sizes. </p>
+<p>This might seem surprising at first, but starts to make sense taking into account power consumption.</p>
+		</div>
+
+		
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment even depth-5" id="comment-55910">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/2f0cfe4a40dfbd5b03ed62ac7f3b5b6e?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/2f0cfe4a40dfbd5b03ed62ac7f3b5b6e?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Chester</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-04-15T04:51:56+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-55910" class="comment-time-link" itemprop="url">2019-04-15 at 04:51</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Why 64 GPUs is equivalent to 4 TPU pods? I don&#8217;t really get it.<br />
+Google says, 1 TPU pod = 64 TPU devices = 256 TPU chips = 512 cores.</p>
+		</div>
+
+		
+		
+	</article>
+	</li><!-- #comment-## -->
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-5" id="comment-55992">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-04-16T13:09:49+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-55992" class="comment-time-link" itemprop="url">2019-04-16 at 13:09</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>That is correct, however, the BERT paper is using the following compute resources:</p>
+<blockquote><p>
+Training of BERT BASE was performed on 4 Cloud TPUs in Pod configuration (16 TPU chips total).5 Training of BERTLARGE was performed on 16 Cloud TPUs (64 TPU chips total).
+</p></blockquote>
+		</div>
+
+		
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="comment-44915">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/8aa13a28fe794b2f67c79d63e6dbd244?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/8aa13a28fe794b2f67c79d63e6dbd244?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Otto Fazzl</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-22T09:46:33+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44915" class="comment-time-link" itemprop="url">2018-10-22 at 09:46</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Thank you for a great article!</p>
+<p>I have a question: when you say that large matrices are split into small pieces and multiplied, is that similar to the Strassen algorithm? Where can I learn more about how GPUs handle matrix multiplication that does not get too technical?</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44915' onclick='return addComment.moveForm( "comment-44915", "44915", "respond", "686" )' aria-label='Reply to Otto Fazzl'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-44948">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2018-10-22T19:50:26+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-44948" class="comment-time-link" itemprop="url">2018-10-22 at 19:50</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Usually, you do not use the Strassen algorithm. It is too difficult to optimize loads of tiles already and doing that well often does much better than a naively implemented Strassen algorithm. A good start for learning about matrix multiplication algorithms is first to read the two example kernels in the CUDA programming documentation. After that, you can have a look at Scott Gray&#8217;s fast matrix multiplication algorithms: <a href="https://github.com/NervanaSystems/maxas/wiki/SGEMM" rel="nofollow">https://github.com/NervanaSystems/maxas/wiki/SGEMM</a>. Scott Gray usually writes the fastest matrix multiplication algorithms and improved on his old algorithm further. These algorithms are also used by NVIDIA in their library.</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-44948' onclick='return addComment.moveForm( "comment-44948", "44948", "respond", "686" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="comment-51703">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/6c57fcc14fab40a96aabff17fcada551?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/6c57fcc14fab40a96aabff17fcada551?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Haibin</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-02-06T13:03:36+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-51703" class="comment-time-link" itemprop="url">2019-02-06 at 13:03</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>typo: 7.6r-05 seconds -&gt; 7.6e-05 seconds</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-51703' onclick='return addComment.moveForm( "comment-51703", "51703", "respond", "686" )' aria-label='Reply to Haibin'>Reply</a></div>
+		
+	</article>
+	<ul class="children">
+
+	<li class="comment byuser comment-author-tim-dettmers bypostauthor odd alt depth-2" id="comment-52558">
+	<article itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+
+		
+		<header class="comment-header">
+			<p class="comment-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+				<img alt='' src='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=48&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/a2403083d31517f7ad848c67a51cf2d2?s=96&#038;d=mm&#038;r=g 2x' class='avatar avatar-48 photo' height='48' width='48' /><span itemprop="name">Tim Dettmers</span> <span class="says">says</span>			</p>
+
+			<p class="comment-meta"><time class="comment-time" datetime="2019-02-20T14:26:08+00:00" itemprop="datePublished"><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/#comment-52558" class="comment-time-link" itemprop="url">2019-02-20 at 14:26</a></time></p>		</header>
+
+		<div class="comment-content" itemprop="text">
+			
+			<p>Fixed — thank you!</p>
+		</div>
+
+		<div class="comment-reply"><a rel='nofollow' class='comment-reply-link' href='#comment-52558' onclick='return addComment.moveForm( "comment-52558", "52558", "respond", "686" )' aria-label='Reply to Tim Dettmers'>Reply</a></div>
+		
+	</article>
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ol></div>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2018/10/17/tpus-vs-gpus-for-transformers-bert/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://timdettmers.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='686' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="7ee3b60c95" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="14"/></p>			</form>
+			</div><!-- #respond -->
+	</main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="http://schema.org/WPSideBar" id="genesis-sidebar-primary"><h2 class="genesis-sidebar-title screen-reader-text">Primary Sidebar</h2><section id="blog_subscription-5" class="widget jetpack_subscription_widget"><div class="widget-wrap"><h3 class="widgettitle widget-title">Subscribe to Blog via Email</h3>
+
+			<form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-5">
+				<div id="subscribe-text"><p>Enter your email address to subscribe to this blog and receive notifications of new posts by email.</p>
+</div><p>Join 1,406 other subscribers</p>
+					<p id="subscribe-email">
+						<label id="jetpack-subscribe-label" for="subscribe-field-blog_subscription-5">
+							Email Address						</label>
+						<input type="email" name="email" required="required" class="required" value="" id="subscribe-field-blog_subscription-5" placeholder="Email Address" />
+					</p>
+
+					<p id="subscribe-submit">
+						<input type="hidden" name="action" value="subscribe" />
+						<input type="hidden" name="source" value="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/" />
+						<input type="hidden" name="sub-type" value="widget" />
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-5" />
+												<input type="submit" value="Subscribe" name="jetpack_subscriptions_widget" />
+					</p>
+							</form>
+
+			<script>
+			/*
+			Custom functionality for safari and IE
+			 */
+			(function( d ) {
+				// In case the placeholder functionality is available we remove labels
+				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+					var label = d.querySelector( 'label[for=subscribe-field-blog_subscription-5]' );
+						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+						label.style.position = 'absolute';
+						label.style.height   = '1px';
+						label.style.width    = '1px';
+						label.style.overflow = 'hidden';
+				}
+
+				// Make sure the email value is filled in before allowing submit
+				var form = d.getElementById('subscribe-blog-blog_subscription-5'),
+					input = d.getElementById('subscribe-field-blog_subscription-5'),
+					handler = function( event ) {
+						if ( '' === input.value ) {
+							input.focus();
+
+							if ( event.preventDefault ){
+								event.preventDefault();
+							}
+
+							return false;
+						}
+					};
+
+				if ( window.addEventListener ) {
+					form.addEventListener( 'submit', handler, false );
+				} else {
+					form.attachEvent( 'onsubmit', handler );
+				}
+			})( document );
+			</script>
+				
+</div></section>
+<section id="jetpack_display_posts_widget-3" class="widget widget_jetpack_display_posts_widget"><div class="widget-wrap"><h3 class="widgettitle widget-title">Recent Posts: Tim Dettmers</h3>
+<div class="jetpack-display-remote-posts"><h4><a href="https://timdettmers.com/2019/04/03/which-gpu-for-deep-learning/">Which GPU(s) to Get for Deep Learning: My Experience and Advice for Using GPUs in Deep Learning</a></h4>
+<h4><a href="https://timdettmers.com/2018/12/16/deep-learning-hardware-guide/">A Full Hardware Guide to Deep Learning</a></h4>
+<h4><a href="https://timdettmers.com/2018/11/26/phd-applications/">Machine Learning PhD Applications — Everything You Need to Know</a></h4>
+<h4><a href="https://timdettmers.com/2018/10/17/tpus-vs-gpus-for-transformers-bert/">TPUs vs GPUs for Transformers (BERT)</a></h4>
+<h4><a href="https://timdettmers.com/2017/12/21/deep-learning-hardware-limbo/">Deep Learning Hardware Limbo</a></h4>
+<h4><a href="https://timdettmers.com/2017/09/16/credit-assignment-deep-learning/">Credit Assignment in Deep Learning</a></h4>
+</div><!-- .jetpack-display-remote-posts --></div></section>
+<section id="twitter_timeline-3" class="widget widget_twitter_timeline"><div class="widget-wrap"><a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-lang="EN" data-partner="jetpack" data-chrome="noheader nofooter noborders noscrollbar" href="https://twitter.com/@tim_dettmers" href="https://twitter.com/@tim_dettmers">My Tweets</a></div></section>
+</aside></div><aside class="sidebar sidebar-secondary widget-area" role="complementary" aria-label="Secondary Sidebar" itemscope itemtype="http://schema.org/WPSideBar" id="genesis-sidebar-secondary"><h2 class="genesis-sidebar-title screen-reader-text">Secondary Sidebar</h2><section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"></div></div></section>
+</aside></div><footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter"><div class="wrap"><p>Copyright &#x000A9;&nbsp;2019 &#x000B7;  <a href="http://www.studiopress.com/">Genesis Framework</a> &#x000B7; <a href="http://wordpress.org/">WordPress</a> &#x000B7; <a rel="nofollow" href="https://timdettmers.com/wp-login.php">Log in</a></p></div></footer></div>	<div style="display:none">
+	<div class="grofile-hash-map-ad8bbf0e30f89bf79f0362afa8c0f04a">
+	</div>
+	<div class="grofile-hash-map-a2403083d31517f7ad848c67a51cf2d2">
+	</div>
+	<div class="grofile-hash-map-697a0dc80a215d83314c653fc0a898a2">
+	</div>
+	<div class="grofile-hash-map-1b16cf1edafcf46f50c1c545b006da10">
+	</div>
+	<div class="grofile-hash-map-1dfeffd85d5aa700f0abc31e5eee26c1">
+	</div>
+	<div class="grofile-hash-map-2f0cfe4a40dfbd5b03ed62ac7f3b5b6e">
+	</div>
+	<div class="grofile-hash-map-8aa13a28fe794b2f67c79d63e6dbd244">
+	</div>
+	<div class="grofile-hash-map-6c57fcc14fab40a96aabff17fcada551">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/timdettmers.com\/2018\/10\/17\/tpus-vs-gpus-for-transformers-bert\/":686};
+	</script>
+				<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://timdettmers.com/wp-content/plugins/jetpack/modules/carousel/jetpack-carousel-ie8fix.css?ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/photon/photon.min.js?ver=20130122'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201917'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mPS2id_params = {"instances":{"mPS2id_instance_0":{"selector":"a[rel='m_PageScroll2id']","autoSelectorMenuLinks":"true","scrollSpeed":200,"autoScrollSpeed":"true","scrollEasing":"easeInOutQuint","scrollingEasing":"easeOutQuint","pageEndSmoothScroll":"true","stopScrollOnUserAction":"false","autoCorrectScroll":"false","layout":"vertical","offset":"200","highlightSelector":"","clickedClass":"mPS2id-clicked","targetClass":"mPS2id-target","highlightClass":"mPS2id-highlight","forceSingleHighlight":"false","keepHighlightUntilNext":"false","highlightByNextTarget":"false","appendHash":"false","scrollToHash":"true","scrollToHashForAll":"true","scrollToHashDelay":0,"scrollToHashUseElementData":"true","scrollToHashRemoveUrlHash":"false","disablePluginBelow":0,"adminDisplayWidgetsId":"true","adminTinyMCEbuttons":"true","unbindUnrelatedClickEvents":"false","normalizeAnchorPointTargets":"false"}},"total_instances":"1","shortcode_class":"_ps2id"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/page-scroll-to-id/js/page-scroll-to-id.min.js?ver=1.6.3'></script>
+<script type='text/javascript' src='https://secure.gravatar.com/js/gprofiles.js?ver=2019Apraa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/modules/wpgroho.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/comment-reply.min.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.5'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=2.2.6'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/twitter-timeline.min.js?ver=4.0.0'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-includes/js/wp-embed.min.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/spin.min.js?ver=1.3'></script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/jquery.spin.min.js?ver=1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/timdettmers.com\/wp-admin\/admin-ajax.php","nonce":"c942109c76","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/timdettmers.com\/wp-login.php?redirect_to=https%3A%2F%2Ftimdettmers.com%2F2018%2F10%2F17%2Ftpus-vs-gpus-for-transformers-bert%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/carousel/jetpack-carousel.min.js?ver=20170209'></script>
+<script async="async" type='text/javascript' src='https://timdettmers.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://timdettmers.com/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=6.8'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-twitter', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-google-plus-1', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-201917.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.8',blog:'106749684',post:'686',tz:'-7',srv:'timdettmers.com'} ]);
+	_stq.push([ 'clickTrackerInit', '106749684', '686' ]);
+</script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.552 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2019-04-26 15:00:39 -->
+
+<!-- super cache -->

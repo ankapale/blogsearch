@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="no-js mh-one-sb" lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://www.artificiallawyer.com/xmlrpc.php" />
+<title>Should Your Law Firm Back Legal Tech Start-ups? Nick West on Why His Firm Chose to Launch MDR LAB &#8211; Artificial Lawyer</title>
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Feed" href="https://www.artificiallawyer.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Comments Feed" href="https://www.artificiallawyer.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Artificial Lawyer &raquo; Should Your Law Firm Back Legal Tech Start-ups? Nick West on Why His Firm Chose to Launch MDR LAB Comments Feed" href="https://www.artificiallawyer.com/2017/01/30/7235/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.artificiallawyer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.10"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='chosen-css'  href='https://www.artificiallawyer.com/wp-content/plugins/wp-job-manager/assets/css/chosen.css?ver=1.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-job-manager-frontend-css'  href='https://www.artificiallawyer.com/wp-content/plugins/wp-job-manager/assets/css/frontend.css?ver=1.30.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-magazine-css'  href='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/style.css?ver=3.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-font-awesome-css'  href='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/includes/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='mh-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,400italic,600,700' type='text/css' media='all' />
+<link rel='stylesheet' id='social-logos-css'  href='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/social-logos/social-logos.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://www.artificiallawyer.com/wp-content/plugins/jetpack/css/jetpack.css?ver=7.1.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/themes/mh-magazine/js/scripts.js?ver=3.6.1'></script>
+<link rel='https://api.w.org/' href='https://www.artificiallawyer.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.artificiallawyer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.artificiallawyer.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='AL Interview: eBrevia Co-Founder, Ned Gannon, Legal AI Pioneer' href='https://www.artificiallawyer.com/2017/01/27/al-interview-ebrevia-co-founder-ned-gannon-legal-ai-pioneer/' />
+<link rel='next' title='Neota Nabs High Profile COO; Wins Global Law Firm Freshfields as Client' href='https://www.artificiallawyer.com/2017/01/30/neota-nabs-high-profile-coo-legal-tech-co-s-demand-for-top-talent-grows/' />
+<meta name="generator" content="WordPress 4.9.10" />
+<link rel="canonical" href="https://www.artificiallawyer.com/2017/01/30/7235/" />
+<link rel='shortlink' href='https://wp.me/s8cny6-7235' />
+<link rel="alternate" type="application/json+oembed" href="https://www.artificiallawyer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.artificiallawyer.com%2F2017%2F01%2F30%2F7235%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.artificiallawyer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.artificiallawyer.com%2F2017%2F01%2F30%2F7235%2F&#038;format=xml" />
+
+<!-- This site is using AdRotate v4.10 to display their advertisements - https://ajdg.solutions/products/adrotate-for-wordpress/ -->
+<!-- AdRotate CSS -->
+<style type="text/css" media="screen">
+	.g { margin:0px; padding:0px; overflow:hidden; line-height:1; zoom:1; }
+	.g img { height:auto; }
+	.g-col { position:relative; float:left; }
+	.g-col:first-child { margin-left: 0; }
+	.g-col:last-child { margin-right: 0; }
+	.g-1 { min-width:10px; max-width:340px; margin: 0 auto; }
+	.b-1 { margin:10px; }
+	@media only screen and (max-width: 480px) {
+		.g-col, .g-dyn, .g-single { width:100%; margin-left:0; margin-right:0; }
+	}
+</style>
+<!-- /AdRotate CSS -->
+
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><!--[if lt IE 9]>
+<script src="https://www.artificiallawyer.com/wp-content/themes/mh-magazine/js/css3-mediaqueries.js"></script>
+<![endif]-->
+<style type="text/css">
+h1, h2, h3, h4, h5, h6, .mh-custom-posts-small-title { font-family: "Ubuntu", sans-serif; }
+body { font-family: "Ubuntu", sans-serif; }
+</style>
+			<style type="text/css">
+				/* If html does not have either class, do not show lazy loaded images. */
+				html:not( .jetpack-lazy-images-js-enabled ):not( .js ) .jetpack-lazy-image {
+					display: none;
+				}
+			</style>
+			<script>
+				document.documentElement.classList.add(
+					'jetpack-lazy-images-js-enabled'
+				);
+			</script>
+		
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Should Your Law Firm Back Legal Tech Start-ups? Nick West on Why His Firm Chose to Launch MDR LAB" />
+<meta property="og:url" content="https://www.artificiallawyer.com/2017/01/30/7235/" />
+<meta property="og:description" content="Artificial Lawyer caught up with Nick West, Chief Strategy Officer of London-based law firm, Mishcon de Reya, which has become the first UK firm to set up its own legal tech incubator. The incubato…" />
+<meta property="article:published_time" content="2017-01-30T07:58:09+00:00" />
+<meta property="article:modified_time" content="2017-01-30T07:58:09+00:00" />
+<meta property="og:site_name" content="Artificial Lawyer" />
+<meta property="og:image" content="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-45-46.png" />
+<meta property="og:image:width" content="681" />
+<meta property="og:image:height" content="283" />
+<meta property="og:locale" content="en_GB" />
+<meta name="twitter:text:title" content="Should Your Law Firm Back Legal Tech Start-ups? Nick West on Why His Firm Chose to Launch MDR LAB" />
+<meta name="twitter:image" content="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-45-46.png?w=640" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- End Jetpack Open Graph Tags -->
+
+<!-- BEGIN GADWP v5.3.1.1 Universal Analytics - https://deconf.com/google-analytics-dashboard-wordpress/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-93892041-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END GADWP Universal Analytics -->
+			<style type="text/css" id="wp-custom-css">
+				/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+.mh-header-1 {
+    display: none;
+}
+
+#subscribe-submit {
+	margin-top: 10px;
+}
+
+.mh-custom-posts-xl-title {
+	display: none;
+}
+
+.heateor_sss_sharing_container {
+	margin: 0 0 20px 0;
+}			</style>
+		</head>
+<body id="mh-mobile" class="post-template-default single single-post postid-7235 single-format-standard mh-wide-layout mh-right-sb mh-loop-layout5 mh-widget-layout8 mh-magazine" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<div class="mh-header-nav-mobile clearfix"></div>
+<header class="mh-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<div class="mh-container mh-container-inner clearfix">
+		<div class="mh-custom-header clearfix">
+<div class="mh-header-columns mh-row clearfix">
+<div class="mh-col-1-3 mh-site-identity">
+<div class="mh-site-logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+<style type="text/css" id="mh-header-css">.mh-header-title, .mh-header-tagline { color: #606060; }</style>
+<div class="mh-header-text">
+<a class="mh-header-text-link" href="https://www.artificiallawyer.com/" title="Artificial Lawyer" rel="home">
+<h2 class="mh-header-title">Artificial Lawyer</h2>
+<h3 class="mh-header-tagline">Changing The Business Of Law</h3>
+</a>
+</div>
+</div>
+</div>
+<aside class="mh-col-2-3 mh-header-widget-2">
+<div id="adrotate_widgets-5" class="mh-widget mh-header-2 adrotate_widgets"><!-- Either there are no banners, they are disabled or none qualified for this location! --></div></aside>
+</div>
+</div>
+	</div>
+	<div class="mh-main-nav-wrap">
+		<nav class="mh-navigation mh-main-nav mh-container mh-container-inner clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<div class="menu-home-container"><ul id="menu-home" class="menu"><li id="menu-item-15787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15787"><a href="https://www.artificiallawyer.com/legal-innovators-conference/">Legal Innovators Conference</a></li>
+<li id="menu-item-13495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13495"><a href="https://www.artificiallawyer.com/jobs/">AL JOBS</a></li>
+<li id="menu-item-13105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13105"><a href="https://www.artificiallawyer.com/al-100-directory/">AL 100 Directory</a>
+<ul class="sub-menu">
+	<li id="menu-item-13106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13106"><a href="https://www.artificiallawyer.com/al-100-directory/billing-time-analysis/">Billing + Time Analysis</a></li>
+	<li id="menu-item-13158" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13158"><a href="https://www.artificiallawyer.com/al-100-directory/collaboration-legal-data-platforms/">Collaboration + Legal Data Platforms</a></li>
+	<li id="menu-item-13108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13108"><a href="https://www.artificiallawyer.com/al-100-directory/contracting-platforms/">Contracting Platforms (Document Automation)</a></li>
+	<li id="menu-item-13115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13115"><a href="https://www.artificiallawyer.com/al-100-directory/data-security-legal-risk/">Data Security + Legal Risk</a></li>
+	<li id="menu-item-13114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13114"><a href="https://www.artificiallawyer.com/al-100-directory/document-review-a-to-k/">Doc Review (A to K)</a></li>
+	<li id="menu-item-13113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13113"><a href="https://www.artificiallawyer.com/al-100-directory/document-review-l-to-z/">Doc Review (L to Z)</a></li>
+	<li id="menu-item-13112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13112"><a href="https://www.artificiallawyer.com/al-100-directory/expert-systems-legal-bots/">Expert Systems + Legal Bots</a></li>
+	<li id="menu-item-13111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13111"><a href="https://www.artificiallawyer.com/al-100-directory/legal-research-analytics/">Legal Research + Analytics</a></li>
+	<li id="menu-item-13216" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13216"><a href="https://www.artificiallawyer.com/al-100-directory/smart-contracts/">Smart Contracts + Blockchain</a></li>
+	<li id="menu-item-13110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13110"><a href="https://www.artificiallawyer.com/al-100-directory/workflow-automation/">Workflow Automation</a></li>
+</ul>
+</li>
+<li id="menu-item-7384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7384"><a href="http://www.artificiallawyer.com">Home</a></li>
+<li id="menu-item-7382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7382"><a href="https://www.artificiallawyer.com/about/">ABOUT</a>
+<ul class="sub-menu">
+	<li id="menu-item-7383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7383"><a href="https://www.artificiallawyer.com/contact/">CONTACT</a></li>
+</ul>
+</li>
+<li id="menu-item-12501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12501"><a href="https://www.artificiallawyer.com/legal-tech-courses/">LEGAL TECH COURSES</a></li>
+</ul></div>		</nav>
+	</div>
+	</header>
+	<div class="mh-subheader">
+		<div class="mh-container mh-container-inner mh-row clearfix">
+										<div class="mh-header-bar-content mh-header-bar-bottom-right mh-col-1-3 clearfix">
+											<aside class="mh-header-search mh-header-search-bottom">
+							<form role="search" method="get" class="search-form" action="https://www.artificiallawyer.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>						</aside>
+									</div>
+					</div>
+	</div>
+<div class="mh-container mh-container-outer">
+<div class="mh-wrapper clearfix">
+	<div class="mh-main clearfix">
+		<div id="main-content" class="mh-content" role="main" itemprop="mainContentOfPage"><article id="post-7235" class="post-7235 post type-post status-publish format-standard has-post-thumbnail hentry category-news">
+	<header class="entry-header clearfix"><h1 class="entry-title">Should Your Law Firm Back Legal Tech Start-ups? Nick West on Why His Firm Chose to Launch MDR LAB</h1><p class="mh-meta entry-meta">
+<span class="entry-meta-date updated"><i class="fa fa-clock-o"></i><a href="https://www.artificiallawyer.com/2017/01/">30th January 2017</a></span>
+<span class="entry-meta-author author vcard"><i class="fa fa-user"></i><a class="fn" href="https://www.artificiallawyer.com/author/artificiallawyer/">artificiallawyer</a></span>
+<span class="entry-meta-categories"><i class="fa fa-folder-open-o"></i><a href="https://www.artificiallawyer.com/category/news/" rel="category tag">News</a></span>
+<span class="entry-meta-comments"><i class="fa fa-comment-o"></i><a class="mh-comment-scroll" href="https://www.artificiallawyer.com/2017/01/30/7235/#mh-comments">1</a></span>
+</p>
+	</header>
+		<div class="entry-content clearfix">
+<figure class="entry-thumbnail">
+<img src="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-45-46-678x283.png" alt="" title="screen-shot-2017-01-30-at-07-45-46" />
+</figure>
+<p><strong>Artificial Lawyer</strong> caught up with <strong>Nick West</strong>, Chief Strategy Officer of London-based law firm, <strong>Mishcon de Reya, </strong>which has become the first UK firm to set up its own legal tech incubator. The incubator, called <a href="https://lab.mdr.london" target="_blank"><strong>MDR LAB</strong></a>, is now looking for start-ups that want to join the programme.</p>
+<p>MDR LAB joins the small fraternity of <strong><a href="https://artificiallawyer.com/2016/09/28/al-interview-dan-jansen-nextlaw-labs/" target="_blank">Nextlaw Labs</a>, </strong>which is the legal tech development platform of global firm, <strong>Dentons, </strong>as well as Australian law firm <strong><a href="https://artificiallawyer.com/2016/09/20/oz-firm-mills-oakley-launches-legal-tech-accelerator-plans-start-up-jvs/" target="_blank">Mills Oakley</a>, </strong>which has its own accelerator programme, to create funding and mentorship programmes for legal tech start-ups. Although, it should be noted, all three firms have taken different approaches.</p>
+<p>Nick and I talked about what Mishcon is trying to achieve with its programme; how important will legal AI companies be in this project; and what happens if they stumble upon a legal tech unicorn that ends up dwarfing their own firm?</p>
+<hr />
+<p>&nbsp;</p>
+<figure id="attachment_7249" style="width: 206px" class="wp-caption alignleft"><img class="  wp-image-7249 alignleft jetpack-lazy-image" src="https://artificiallawyer.files.wordpress.com/2017/01/screen-shot-2017-01-30-at-07-43-18.png" alt="screen-shot-2017-01-30-at-07-43-18" width="206" height="186" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-43-18.png 355w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-43-18-300x271.png 300w" data-lazy-sizes="(max-width: 206px) 100vw, 206px" data-lazy-src="https://artificiallawyer.files.wordpress.com/2017/01/screen-shot-2017-01-30-at-07-43-18.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img class="  wp-image-7249 alignleft" src="https://artificiallawyer.files.wordpress.com/2017/01/screen-shot-2017-01-30-at-07-43-18.png" alt="screen-shot-2017-01-30-at-07-43-18" width="206" height="186" srcset="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-43-18.png 355w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-43-18-300x271.png 300w" sizes="(max-width: 206px) 100vw, 206px" /></noscript><figcaption class="wp-caption-text">Nick West, CSO, Mishcon de Reya</figcaption></figure>
+<p><strong><em>First, congratulations on launching the MDR LAB. It’s great to see a UK law firm getting behind the development of legal tech start-ups. This leads to the question: Why do this? What is Mishcon hoping to get from this?</em></strong></p>
+<p>We spent a good deal of time in late 2015/early 2016 thinking about the evolution of the global economy and the legal market and the trends that were shaping both. That work culminated in us setting out a 10-year vision &#8211; not a plan or a strategy, but a picture of who we wanted to be as a Firm in 10 years&#8217; time. A central theme of that narrative is technological transformation – the ever-accelerating pace of technological change and its inevitable impact on our clients and on us.</p>
+<p>So, from that work came the conviction that we needed to take action &#8211; to do some R&amp;D, to learn about how new technologies could be applied to law. And to do it in a way that was visible throughout the Firm &#8211; to have as many people as possible at the coalface, seeing with their own eyes what the tech could do. That&#8217;s how the seed of the idea of an internal incubator evolved, which became MDR LAB.</p>
+<p><strong><em>Why should bright young start-up come to MDR LAB? (Given that there are several incubators and early stage investors in the market who invest in legal tech?)</em></strong></p>
+<p>Good question. The value prop of an incubator to an early stage company is access to expertise, network and capital. For companies who need those things, particularly if they are first time start-ups, incubators can provide a great deal of value. Our starting point was to make sure MDR LAB ticks those boxes – which I think it does &#8211; so that it is a credible choice for a start-up, amongst the many options they have.</p>
+<p>But then, in contrast to multi-market incubators, we are obviously single-minded about legal. So MDR LAB can offer more focus to a start-up that is serious about our industry &#8211; 12-weeks of intense product development alongside a building full of lawyers and their data and deep expertise in how the legal industry really works.</p>
+<p><strong><em>When you suggested the idea of a legal tech incubator to the partners, what was their reaction? Did you get any pushback? Or was it enthusiastic support? </em></strong></p>
+<p>It was wholehearted support, but then I probably wouldn&#8217;t tell you even if it wasn&#8217;t! We&#8217;re very proud of our culture and our core values at Mishcon. They give us room to be both entrepreneurial and to think about the long term &#8211; one of our core values is that the partners hold the business as trustees for the next generation. Against that backdrop, and particularly with Kevin&#8217;s (<strong>Kevin Gold, our Managing Partner</strong>) emphatic support, it was a relatively easy case to make.</p>
+<p><strong><em>You mentioned that MDR may make an investment in some of the legal tech companies that go through the Lab. How will this be structured? Will MDR make the investment as a firm, or will there be a separate vehicle to do this?</em></strong></p>
+<p>Yes, if we find some great companies who need funding, we may invest. But equally we&#8217;re aware that not everyone needs funding, so it&#8217;s not the sole focus of MDR LAB. The exact structure of any investment will depend on what stage the company is at and whether it&#8217;s a co-invest with <a href="https://lmarks.com/" target="_blank"><strong>L-Marks</strong></a> (see more below) and/or others, so at this stage we aren&#8217;t being specific.</p>
+<p><strong><em> </em><em>MDR LAB is welcoming a wide variety of legal start-ups, covering litigation, business of law and transactional applications. You also welcome ‘wild card’ ideas that may not have been explored before. This is great, but in terms of the types of technology, are there particular themes that excite you? For example, new ways of using AI technologies, such as NLP and Machine Learning?</em></strong></p>
+<p>Personally, I&#8217;m very bullish on machine learning. I think it&#8217;s simply inevitable that machine learning will have a transformational impact on the legal industry. Lawyers are never going to be early adopters of any new tech, so this story is going to take time to unfold, particularly if we remain relatively light on data to train models. For me, that&#8217;s really a big part of the story – we need to find ways to amass training sets and to free up currently hidden data.</p>
+<p><img class="alignnone size-full wp-image-7266 jetpack-lazy-image" src="https://artificiallawyer.files.wordpress.com/2017/01/screen-shot-2017-01-30-at-07-50-19.png" alt="screen-shot-2017-01-30-at-07-50-19" width="1342" height="486" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-50-19.png 1342w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-50-19-300x109.png 300w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-50-19-768x278.png 768w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-50-19-1024x371.png 1024w" data-lazy-sizes="(max-width: 1342px) 100vw, 1342px" data-lazy-src="https://artificiallawyer.files.wordpress.com/2017/01/screen-shot-2017-01-30-at-07-50-19.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><noscript><img class="alignnone size-full wp-image-7266" src="https://artificiallawyer.files.wordpress.com/2017/01/screen-shot-2017-01-30-at-07-50-19.png" alt="screen-shot-2017-01-30-at-07-50-19" width="1342" height="486" srcset="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-50-19.png 1342w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-50-19-300x109.png 300w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-50-19-768x278.png 768w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-30-at-07-50-19-1024x371.png 1024w" sizes="(max-width: 1342px) 100vw, 1342px" /></noscript></p>
+<p>And so whilst the machine learning story is unfolding there are huge productivity gains to be made with all sorts of other technology – really just replicating the progress that many other industries have made over the past 10 years, with tools to automate and streamline workflows and a shift from analogue to digital processes.</p>
+<p><strong><em>You are running this project with L Marks, which has helped create start-up platforms for companies such as John Lewis. What will they be doing for this project?</em></strong></p>
+<p>L Marks have a great deal of experience working with start-ups and running incubators and so their expertise is extremely helpful to us. There are really 3 roles that they play. First, a management role, helping us to run MDR LAB smoothly based on their previous experiences; second, a screening role, helping us to select the right start-ups for MDR LAB; and third, as a potential co-investment partner, they will help us nurture any companies we may commit to a longer-term relationship with.</p>
+<p><strong><em>And lastly a fun question: do you think it’s possible that MDR LAB could discover and back a runaway legal tech success, which could perhaps one day become larger than the law firm? Just a hypothetical, but an interesting idea to consider, perhaps?</em></strong></p>
+<p>Yes, absolutely, why not. In the UK alone there are millions of people and millions of companies who need legal or quasi legal services every year and yet many of these needs aren&#8217;t met at all or are met badly. So there&#8217;s plenty of opportunity for start-ups – whether by grabbing a piece of the existing £30bn market or creating (and monetizing) new interactions. I see a lot of start-ups focusing on the same thing &#8211; helping end users draft and review legal contracts without lawyers &#8211; but I think there are many more creative ways to play in the space. And I hope we&#8217;ll get to engage on some of them!</p>
+<p>&nbsp;</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-official sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><div class="fb-share-button" data-href="https://www.artificiallawyer.com/2017/01/30/7235/" data-layout="button_count"></div></li><li class="share-linkedin"><div class="linkedin_button"><script type="in/share" data-url="https://www.artificiallawyer.com/2017/01/30/7235/" data-counter="right"></script></div></li><li class="share-reddit"><div class="reddit_button"><iframe src="https://www.reddit.com/static/button/button1.html?newwindow=true&width=120&amp;url=https%3A%2F%2Fwww.artificiallawyer.com%2F2017%2F01%2F30%2F7235%2F&amp;title=Should%20Your%20Law%20Firm%20Back%20Legal%20Tech%20Start-ups%3F%20Nick%20West%20on%20Why%20His%20Firm%20Chose%20to%20Launch%20MDR%20LAB" height="22" width="120" scrolling="no" frameborder="0"></iframe></div></li><li class="share-twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.artificiallawyer.com/2017/01/30/7235/" data-text="Should Your Law Firm Back Legal Tech Start-ups? Nick West on Why His Firm Chose to Launch MDR LAB"  >Tweet</a></li><li class="share-email"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button" href="https://www.artificiallawyer.com/2017/01/30/7235/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li></ul></div></div></div>	</div></article><nav class="mh-post-nav mh-row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+<div class="mh-col-1-2 mh-post-nav-item mh-post-nav-prev">
+<a href="https://www.artificiallawyer.com/2017/01/27/al-interview-ebrevia-co-founder-ned-gannon-legal-ai-pioneer/" rel="prev"><img width="80" height="60" src="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-27-at-08-12-30-80x60.png" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-27-at-08-12-30-80x60.png 80w, https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-27-at-08-12-30-326x245.png 326w" data-lazy-sizes="(max-width: 80px) 100vw, 80px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2017/01/screen-shot-2017-01-27-at-08-12-30-80x60.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" /><span>Previous</span><p>AL Interview: eBrevia Co-Founder, Ned Gannon, Legal AI Pioneer</p></a></div>
+<div class="mh-col-1-2 mh-post-nav-item mh-post-nav-next">
+<a href="https://www.artificiallawyer.com/2017/01/30/neota-nabs-high-profile-coo-legal-tech-co-s-demand-for-top-talent-grows/" rel="next"><img width="80" height="60" src="https://www.artificiallawyer.com/wp-content/uploads/2016/09/screen-shot-2016-09-21-at-08-26-48-80x60.png" class="attachment-mh-magazine-small size-mh-magazine-small wp-post-image jetpack-lazy-image" alt="" data-lazy-srcset="https://www.artificiallawyer.com/wp-content/uploads/2016/09/screen-shot-2016-09-21-at-08-26-48-80x60.png 80w, https://www.artificiallawyer.com/wp-content/uploads/2016/09/screen-shot-2016-09-21-at-08-26-48-678x509.png 678w, https://www.artificiallawyer.com/wp-content/uploads/2016/09/screen-shot-2016-09-21-at-08-26-48-326x245.png 326w" data-lazy-sizes="(max-width: 80px) 100vw, 80px" data-lazy-src="https://www.artificiallawyer.com/wp-content/uploads/2016/09/screen-shot-2016-09-21-at-08-26-48-80x60.png?is-pending-load=1" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" /><span>Next</span><p>Neota Nabs High Profile COO; Wins Global Law Firm Freshfields as Client</p></a></div>
+</nav>
+		<h4 class="mh-widget-title">
+			<span class="mh-widget-title-inner">
+				1 Trackback / Pingback			</span>
+		</h4>
+		<ol class="pinglist mh-ping-list">
+        					<li id="comment-" class="">
+					<i class="fa fa-link"></i><a href='https://www.artificiallawyer.com/2017/03/01/law-firm-minterellison-launches-jv-to-develop-legal-ai-technology/' rel='external nofollow' class='url'>Law Firm MinterEllison Launches JV to Develop Legal AI Technology &#8211; Artificial Lawyer</a>				</li>
+			        </ol>	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2017/01/30/7235/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://www.artificiallawyer.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes">Your email address will not be published.</p><p class="comment-form-comment"><label for="comment">Comment</label><br/><textarea id="comment" name="comment" cols="45" rows="5" aria-required="true"></textarea></p><p class="comment-form-author"><label for="author">Name </label><span class="required">*</span><br/><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email </label><span class="required">*</span><br/><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><br/><input id="url" name="url" type="text" value="" size="30" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='7235' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="72f7d0c0fd" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="200"/></p>			</form>
+			</div><!-- #respond -->
+			</div>
+			<aside class="mh-widget-col-1 mh-sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar"><div id="blog_subscription-7" class="mh-widget widget_blog_subscription jetpack_subscription_widget"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">News Alerts</span></h4>
+            <form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-blog_subscription-7">
+				                    <div id="subscribe-text"><p>Enter your email to receive news alerts, plus info on Artificial Lawyer and 3rd party events.</p>
+</div>                    <p id="subscribe-email">
+                        <label id="jetpack-subscribe-label"
+                               class="screen-reader-text"
+                               for="subscribe-field-blog_subscription-7">
+							Email Address                        </label>
+                        <input type="email" name="email" required="required" class="required"
+                               value=""
+                               id="subscribe-field-blog_subscription-7"
+                               placeholder="Email Address"/>
+                    </p>
+
+                    <p id="subscribe-submit">
+                        <input type="hidden" name="action" value="subscribe"/>
+                        <input type="hidden" name="source" value="https://www.artificiallawyer.com/2017/01/30/7235/"/>
+                        <input type="hidden" name="sub-type" value="widget"/>
+                        <input type="hidden" name="redirect_fragment" value="blog_subscription-7"/>
+						                        <button type="submit"
+	                        		                    	                        name="jetpack_subscriptions_widget"
+	                    >
+	                        Subscribe                        </button>
+                    </p>
+				            </form>
+		
+</div><div id="adrotate_widgets-2" class="mh-widget adrotate_widgets"><div class="g g-1"><div class="g-col b-1 a-38"><a class="gofollow" data-track="MzgsMSwxLDYw" href="https://www.legalinnovators.co.uk"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/03/Legal-Innovators.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-32"><a class="gofollow" data-track="MzIsMSwxLDYw" href="https://content.thoughtriver.com/book-a-demo"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/04/new-TR-gif-.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-43"><a class="gofollow" data-track="NDMsMSwxLDYw" href="https://www.legalsifter.com/legalsifter-product"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/04/LegalSifter-Ad.png" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-6"><a class="gofollow" data-track="NiwxLDEsNjA=" href="https://www.lawgeex.com/?utm_source=artificiallawyer&utm_medium=display&utm_campaign=artificiallawyer_display"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/02/n50-frames-side-bar-LG.gif" /></a></div></div><div class="g g-1"><div class="g-col b-1 a-40"><a class="gofollow" data-track="NDAsMSwxLDYw" href="http://info.juro.com/tools"><img src="https://www.artificiallawyer.com/wp-content/uploads/2019/03/AL-list-of-tools-Ad.png" /></a></div></div></div><div id="twitter_timeline-5" class="mh-widget widget_twitter_timeline"><h4 class="mh-widget-title"><span class="mh-widget-title-inner">Follow me on Twitter</span></h4><a class="twitter-timeline" data-height="400" data-theme="light" data-link-color="#f96e5b" data-border-color="#e8e8e8" data-tweet-limit="1" data-lang="EN" data-partner="jetpack" data-chrome="transparent" href="https://twitter.com/artificiallawya" href="https://twitter.com/artificiallawya">My Tweets</a></div>	</aside>	</div>
+    </div>
+</div><!-- .mh-container-outer -->
+<footer class="mh-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+<div class="mh-container mh-container-inner mh-footer-widgets mh-row clearfix">
+<div class="mh-col-1-1 mh-home-wide  mh-footer-area mh-footer-3">
+<div id="text-3" class="mh-footer-widget widget_text"><h6 class="mh-widget-title mh-footer-widget-title"><span class="mh-widget-title-inner mh-footer-widget-title-inner">Artificial Lawyer</span></h6>			<div class="textwidget"></div>
+		</div></div>
+</div>
+</footer>
+<div class="mh-copyright-wrap">
+	<div class="mh-container mh-container-inner clearfix">
+		<p class="mh-copyright">
+			Copyright &copy; 2019 | MH Magazine WordPress Theme by <a href="https://www.mhthemes.com/" title="Premium WordPress Themes" rel="nofollow">MH Themes</a>		</p>
+	</div>
+</div>
+	<div style="display:none">
+	</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93892041-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/www.artificiallawyer.com\/2017\/01\/30\/7235\/":7235};
+	</script>
+				<div id="fb-root"></div>
+			<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=249643311490&version=v2.3'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+			<script>
+			jQuery( document.body ).on( 'post-load', function() {
+				if ( 'undefined' !== typeof FB ) {
+					FB.XFBML.parse();
+				}
+			} );
+			</script>
+			<script type="text/javascript">
+			jQuery( document ).ready( function() {
+				jQuery.getScript( 'https://platform.linkedin.com/in.js?async=true', function success() {
+					IN.init();
+				});
+			});
+			jQuery( document.body ).on( 'post-load', function() {
+				if ( typeof IN != 'undefined' )
+					IN.parse();
+			});
+			</script>			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<div id="sharing_email" style="display: none;">
+		<form action="/2017/01/30/7235/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="" />
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="" />
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="" />
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off" title="This field is for validation and should not be changed" />
+			
+			<img style="float: right; display: none" class="loading" src="https://www.artificiallawyer.com/wp-content/plugins/jetpack/modules/sharedaddy/images/loading.gif" alt="loading" width="16" height="16" />
+			<input type="submit" value="Send Email" class="sharing_send" />
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var click_object = {"ajax_url":"https:\/\/www.artificiallawyer.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/adrotate/library/jquery.adrotate.clicktracker.js'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201917'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/comment-reply.min.js?ver=4.9.10'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/twitter-timeline.min.js?ver=4.0.0'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/lazy-images/js/lazy-images.min.js?ver=7.1.1'></script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-includes/js/wp-embed.min.js?ver=4.9.10'></script>
+<script async="async" type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/akismet/_inc/form.js?ver=4.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.artificiallawyer.com/wp-content/plugins/jetpack/_inc/build/sharedaddy/sharing.min.js?ver=7.1.1'></script>
+<script type='text/javascript'>
+var windowOpen;
+			jQuery( document.body ).on( 'click', 'a.share-facebook', function() {
+				// If there's another sharing window open, close it.
+				if ( 'undefined' !== typeof windowOpen ) {
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery( this ).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+</script>
+<script type='text/javascript' src='https://stats.wp.com/e-201917.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:7.1.1',blog:'121161150',post:'7235',tz:'1',srv:'www.artificiallawyer.com'} ]);
+	_stq.push([ 'clickTrackerInit', '121161150', '7235' ]);
+</script>
+</body>
+</html>

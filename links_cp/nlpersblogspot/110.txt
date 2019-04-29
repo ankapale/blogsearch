@@ -1,0 +1,3 @@
+09 May 2007 
+ I've been using a small number of Perl scripts for helping me decide what papers to read and I just put them up on the web for people to play with. See http://hal3.name/WhatToSee. It's currently queued with a few recent years of ACL, NAACL, ICML and NIPS. Yes, it would be more useful if conferences were to publish the proceedings before the conference, but don't complain to me about that. Feel free to submit additional indices if you want (an index has to be an online webpage that contains links that point to online .PDF files -- if no such page exists, you can always create one on your own webpage and point to that). There are probably ways to break it, but hopefully that won't happen frequently. 
+ 

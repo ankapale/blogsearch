@@ -1,0 +1,27 @@
+Comments 
+ The AI winter is over 
+ Article by 
+ By 
+ Artificial intelligence is nothing new. We have already lived through two “AI winters” in the 70s and 80s when, contrary to hype, funding dropped and research was shelved. What’s different this time around? 
+ We’ve reached a tipping point in terms of the amount of data available and our ability to make sense of it. It’s estimated that 2.5 exabytes of data is created each day, which is equivalent to 90 years of HD video. When we’re at home, at work, on the move, we’re creating information that shines a light on how we behave and how we might be expected to behave in the future. 
+ Data, data everywhere
+Up until recently, businesses have been limited in terms of how much of that data they can store. However, the cloud has made it easier and cheaper for business to keep large volumes of data. Suddenly, companies don’t have to be as discerning when it comes to what they keep and what they discard. Instead they can store everything and work out what will be useful later 
+ At the same time, perhaps unsurprisingly, analytics technologies have become considerably more powerful. Companies are now far more proficient at turning all that unstructured data into insights that can be acted upon. Compared to previous decades, the opportunity is ripe for businesses who can quickly turn vast amounts of data into insights that can be used to rethink how people experience their business. 
+ Great expectations
+As a result, customers’ expectations are on the rise and each new AI-enabled experience raises the bar further still. A lot of the businesses we speak to realise this, but a lack of desire isn’t what’s holding them back, it’s figuring out the approach. 
+ According to our own research, 88% of c-level executives and IT decision-makers believe that most companies incorporate AI because it’s trendy but don’t actually know how to use it1 
+ Success in implementing AI isn’t just about having the right “trendy” technology. Businesses need to take a people-centric approach. That means putting the customer or, depending on what you’re hoping to achieve, the employee at the centre and then tying everything back to the experience that you want to create for that person. 
+ Think strategically – what ultimately do you want to do and therefore what questions should you be asking of your data? How are you going to use it and what will the desired outcome be? 
+ Start building a profile of the end user: what you know about them; how they’re behaving; and what you can do to improve their experience. Once a picture of the end user starts to form, find out what data you hold that can have an impact on each of those elements. 
+ Six steps to success
+It’s something we put a lot of work into with our customers. In our experience, those first steps are what really determine whether an AI implementation will be successful or not. Through a series of design-led workshops, we help clients to take a user-centric approach by working through a six-step process: 
+ Step 1: Take stock – we look at what data you currently have 
+ Step 2: Understand – we build context and map out the questions you want answered 
+ Step 3: Focus – we define the data that will have the biggest impact on your objectives 
+ Step 4: Prototype and prove - we start building and testing questions to find insights 
+ Step 5: Organise – we design how those insights will be used in real-life scenarios 
+ Step 6: Create and measure value – we put your data to work for the business 
+ Tags 
+ Avanade is committed to protecting your information security. Your information will be used in accordance with any applicable data privacy law, our internal policies and our Privacy Policy, and will be held securely. Avanade will not share your personal information with any third party, except as needed to manage the events or features for which you register. By using this site you agree that we can place cookies on your device. Please review our complete Privacy Policy for additional information. 
+ Some of the required fields (*) are missing, please review your information. 
+ 

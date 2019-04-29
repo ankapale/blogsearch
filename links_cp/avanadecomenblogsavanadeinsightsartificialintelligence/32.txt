@@ -1,0 +1,28 @@
+Comments 
+ Bot-building 101: Lessons from the Avanade Bot Center 
+ Article by 
+ By 
+ So many people worry about the rise of the machines that it’s easy to lose sight of the real, positive impact bot technology can have on our working lives. But, at Avanade, we’re now beginning to see just how powerful human-centered AI technology can be. 
+ With the recent launch of our Bot Center, we’re putting people at the heart of bot technology, crowdsourcing the skills that will augment the human talent and intelligence our organization depends on. 
+ Why build a Bot Center?
+This is partly a response to market demand. Not just demand from our clients, but from our internal IT customers, too. Our consultants are tech enthusiasts, so they’re keen to get involved in AI technology and try it out for themselves. 
+ We realized that to help our clients we needed to share and grow the AI expertise we have across the business – and to help our employees we needed a simple, secure way for them to take advantage of bot technology. 
+ So, what exactly is the Bot Center?
+Put simply, it’s a single, secure, standardized bot that makes it easier for our people to access critical data and be more productive. Instead of different business units developing their own bots for specific functions, everyone can now access one bot with extensible skills. The Bot Center gives us a centralized location that’s easy to use, simple to expand, and provides consistency across the organization. 
+ To start with, ITS (our internal IT organization) developed 20 core, universal skills, such as vacation balance checking. On top of these core skills, we also use crowdsourcing to enable people to develop and publish niche skills. For example, our HR team in France developed a new French-language bot skill that guides new hires through the onboarding process. 
+ Importantly, every user can also personalize their bot experience, downloading the skills they need to create a digital assistant that does everything they want. 
+ What’s the business impact?
+The productivity gains we’ve seen have been impressive. The 20 core skills draw data from 13 sources into a single interface, saving consultants time. 
+ Minimizing admin time so people can focus on working with clients is important for the efficiency of business, but it’s also a key factor behind a motivated workforce. And the Bot Center helps engage employees in other ways, too. 
+ Technophile employees like to see they’re part of an organization that’s developing cutting-edge tools to make their lives easier. Plus, we now have a platform for anyone in the business to get hands-on with AI and have an impact on how we provide internal services. 
+ From an external point of view, we’ve now got a significant AI asset that enables us to demonstrate our expertise, and share with clients the lessons we learned while developing it. 
+ What are clients doing with bots?We’re helping lots of our clients do exciting things with Microsoft bot technology. For example, a manufacturing firm we’ve been working with has been looking for more ways to maximize the business value it gets from the cloud. It’s found plenty of opportunities to get IT operational costs down by moving to Azure, and now it’s looking for ways to create value for lines of business, which is where bot tech comes in. 
+ Avanade helped the firm use bot capability to automate helpdesk assistance for internal IT services. The aim was to improve response times for business users, while freeing up IT staff to focus on value-adding activities. 
+ How difficult was it to get the bot up and running?
+It was easy to get the bot running because Azure has all the AI services and built-in security the client needed. So, the main job was to get all the global structure and unstructured data into a common framework for the bot to access. Plus, the bot needed a simple, intuitive UI for business users who want to get answers fast. 
+ Now the bot is in place, users are already noticing the improved speed and efficiency, and the IT team has reduced the time spent responding to routine requests. 
+ Next up, the company plans to expand its AI capabilities to other lines of business, such as supply chain management, and even to customer-facing processes. 
+ Tags 
+ Avanade is committed to protecting your information security. Your information will be used in accordance with any applicable data privacy law, our internal policies and our Privacy Policy, and will be held securely. Avanade will not share your personal information with any third party, except as needed to manage the events or features for which you register. By using this site you agree that we can place cookies on your device. Please review our complete Privacy Policy for additional information. 
+ Some of the required fields (*) are missing, please review your information. 
+ 

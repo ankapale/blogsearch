@@ -1,0 +1,36 @@
+08 July 2007 
+ (The contents of this post are largely due to a conversation with Percy Liang at ACL.) 
+ I'm a big fan of Gibbs sampling for Bayesian problems, just because it's so darn easy. The standard setup for Gibbs sampling over a space of variables a,b,c (I'll assume there are no exploitable independences) is: 
+ Draw a conditioned on b,c 
+ Draw b conditioned on a,c 
+ Draw c conditioned on a,b 
+ This is quite a simple story that, in some cases, be "improved." For instance, it is often possible to jointly draw a and b, yielding: 
+ Draw a,b conditioned on c 
+ Draw c conditioned on a,b 
+ This is the "blocked Gibbs sampler." Another variant, that is commonly used in our community, is when one of the variables (say, b) can be analytically integrated out, yielding: 
+ Draw a conditioned on c 
+ Draw b conditioned on a,c 
+ Draw c conditioned on a,b 
+ This is the "collapsed Gibbs sampler." In fact, we can often collapse b out entirely and, in cases where we don't actually care about it's value, we get: 
+ Draw a conditioned on c 
+ Draw c conditioned on a 
+ To make this concrete, consider Mark Johnson's EMNLP paper on unsupervised part of speech tagging. Here, there are essentially two types of variables. One set are the tags assigned to each word. The second set are the parameters (eg., probability of word given tag). The standard Gibbs sampler would perform the following actions: 
+ For each word token, draw a tag for that word conditioned on the word itself, the tag to the left, and the "probability of word given tag" parameters. 
+ For each tag type (not token), draw a multinomial parameter vector for "probability of word given tag" conditioned on the current assignment of tags to words. 
+ It turns out that if our prior on "p(word|tag)" is Dirichlet, we can collapse out the second step by integrating over these parameters. This yields a one-step collapsed Gibbs sampler: 
+ For each word token, draw a tag for that word conditioned on the word itself, the tag to the left, and all other current assignments of tags to words. 
+ My general M.O. has been: if you can collapse out a variable, you should. This seems intuitively reasonable because you're now sampling over a smaller space and so it should be easier. 
+ The point of this post is that acknowledge that this may not always be the case. In fact, it's sort of obvious in retrospect. There are many models for which auxiliary variables are added just to make the sampling easier. This is, in effect, un-collapsing the sampler. If "always collapse" is a good rule to follow, then people would never add auxiliary variables. 
+ While this is a convincing argument (for me, at least), it's not particularly intuitive. I think that the intuition comes from considering the mixing rate of the Markov chain specified by the standard Gibbs sampler and the collapsed Gibbs sampler. It seems that essentially what's happening by using a collapsed sampler is that the variance of the Markov chain is decreasing. In the tagging example, consider a frequent word. In the collapsed setting, the chance that the tag for a single token of this word will change in a Gibbs step is roughly inversely proportional to its term frequency. This means that the collapsed sampler is going to have a tendency to get stuck (and this is exactly what Mark's results seem to suggest). On the other hand, in the uncollapsed case, it is reasonably plausible that a large number of tags could change for a single word type "simultaneously" due to a slightly different draw of the "p(word|tag)" parameter vector. 
+ (Interestingly, in the case of LDA, the collapsed sampler is the standard approach and my sense is that it is actually somehow not causing serious problems here. But I actually haven't seen experiments that bear on this.) 
+ 10 comments: 
+ Yes, I think the issue is tricky. I had assumed that collapsing was always better since there are fewer variables to sample, but as you point out, if that were the case then introducing auxiliary variables should never help. (Of course there are other reasons for introducing auxiliary variables; perhaps the distribution you're interested in is more easily expressed as the marginal of some more complex distribution). 
+ Anyway, that EMNLP paper showed that alternating maximization (of the kind used by EM and Variational Bayes) seems to do better than collapsed Gibbs. Percy noted that an uncollapsed Gibbs has an alternating structure similar to EM and VB, so perhaps it will do as well as those other algorithms? Anyway, it's on my list of things to try real soon, but the uncollapsed Gibbs is actually harder to implement than collapsed Gibbs (see my NAACL 07 paper for how to do this for PCFGs). 
+ Sorry to monopolize this comment section, but I just implemented the uncollapsed Gibbs sampler for HMMs and it seems to do much better than collapsed Gibbs; in fact, it seems to be about the same as Variational Bayes. 
+ These results are only preliminary (I'm having trouble getting time on the cluster; our summer interns sure know how to burn cycles!), and as I noted in my EMNLP paper, you really need multiple runs with a large number of iterations to be sure of anything, but so far it looks good. 
+ Laura: I don't know of a formal definition of a "collapsed Gibbs sampler"; I think of a Gibbs sampler as "collapsed" whenever some of the variables in the model are integrated out rather than sampled. So I guess in principle there may be several different ways of constructing collapsed Gibbs samplers from a given model, depending on which variables you intended to integrate out and which ones you intend to sample. 
+ By the way, Sharon Goldwater visited Microsoft Research to give another of her cool talks on Monday, and I decided it was time to figure out what was going on between her ACL 07 paper and my EMNLP 07 paper. 
+ Sharon found that (collapsed) Gibbs did much better than EM on unsupervised POS tagging, while I found the reverse. Anyway, one big difference is in the size of the problems: Sharon was working with a 24K word subset of the PTB, while I was working with all 1M words, and Sharon was working with a reduced set of 17 tags, while I was working with all 45 tags. 
+ So I made up a corpus that looked as much like Sharon's as I could, and guess what: collapsed Gibbs works like a charm! (I was relieved, as it means I don't have a bug in my sampler). Variational Bayes, which with the full corpus worked best of all, didn't do as well, but uncollapsed Gibbs seems to work best of all. (These are still preliminary results, so take them with a grain of salt). 
+ My post-hoc rationalization of this is that with the smaller data set the posterior is markedly less peaked, and the Gibbs samplers are really sampling from the posterior, while VB is estimating an approximation to that posterior. In my EMNLP paper I was using a much larger data set, and the collapsed Gibbs sampler has mobility problems with large data sets, hence its poor results. Also, with large data sets the posterior is much more peaked, so the Variational Bayes approximation is much more accurate. 
+ 

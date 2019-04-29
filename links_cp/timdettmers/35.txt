@@ -1,0 +1,4 @@
+Main navigation 
+ Computational growth 
+ This blog post looks at the growth of computation, data, deep learning researcher demographics to show that the field of deep learning could stagnate over slowing growth. We will look at recent deep learning research papers which strike up similar problems but also demonstrate how one could to solve these problems. After discussion of these papers, I conclude with promising research directions which face these challenges head on. 
+ 

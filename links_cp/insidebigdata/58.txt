@@ -1,0 +1,3 @@
+Insiders Guide To Minimizing The Impact of Ransomware 
+ This IT guide provides actionable steps to reduce the impact of ransomware or other malware attacks. By quickly restoring data from time-indexed copies, organizations will be far less vulnerable to costly and debilitating ransom demands. 
+ 

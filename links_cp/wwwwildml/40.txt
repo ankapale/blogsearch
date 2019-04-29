@@ -1,0 +1,5 @@
+Category: Convolutional Neural Networks 
+ In this post we will implement a model similar to Kim Yoon’s Convolutional Neural Networks for Sentence Classification. The model presented in the paper achieves good classification performance across a range of text classification tasks (like Sentiment Analysis) and has since become a standard baseline for new text classification architectures. 
+ When we hear about Convolutional Neural Network (CNNs), we typically think of Computer Vision. CNNs were responsible for major breakthroughs in Image Classification and are the core of most Computer Vision systems today, from Facebook’s automated photo tagging to self-driving cars. 
+ More recently we’ve also started to apply CNNs to problems in Natural Language Processing and gotten some interesting results. In this post I’ll try to summarize what CNNs are, and how they’re used in NLP. The intuitions behind CNNs are somewhat easier to understand for the Computer Vision use case, so I’ll start there, and then slowly move towards NLP. 
+ 

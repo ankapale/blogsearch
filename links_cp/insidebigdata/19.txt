@@ -1,0 +1,3 @@
+Stanley Black and Decker Case Study 
+ Managing this scale of production and manufacturing complexity can be a challenge. Like many large enterprises, Stanley Black & Decker strives to bring together line- of-business decision makers with experts from operational technology (OT) and information technology (IT). In order to integrate technology solutions into business operations, the Stanley Black & Decker team relies on line-of-business, OT, and IT experts to determine which issues are the most pressing, how to approach these fixes and improvements, and what approaches are best suited for root cause remediation. As part of its continuous improvement strategy, Stanley Black & Decker sought to give all the plant managers an equal seat at the table to drive priorities. 
+ 

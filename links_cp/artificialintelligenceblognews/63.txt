@@ -1,0 +1,6 @@
+Jan 28 AI is About to Become Your Company's Digital Spokesperson 
+ Moving beyond a back-end tool for the enterprise, artificial intelligence (AI) is taking on more sophisticated roles within technology interfaces. From autonomous driving vehicles that use computer vision, to live translations made possible by machine learning, AI is making every interface both simple and smart–and setting a high bar for how future experiences will work. 
+ AI is poised to act as the face of a company’s digital brand and a key differentiator – and become a core competency demanding of C-level investment and strategy. 
+ Deploy AI well across company interfaces, and customers no longer need to understand complicated technology to use it: they can simply talk to, gesture at, or touch the AI that controls it. 
+ In deploying contextual intelligence to an interface to make it truly intuitive, companies should aim to make the technology it’s supporting disappear. That opens doors to greater adoption of complicated tools, just by providing access to them through a simpler AI-enabled experience. Put simply, invisible technology gets more use. 
+ 

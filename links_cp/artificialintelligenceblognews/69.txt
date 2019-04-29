@@ -1,0 +1,14 @@
+Feb 14 DeepMind's AI has Learnt how to Become Highly Aggressive 
+ Artificial intelligence changes the way it behaves based on the environment it is in, much like humans do, according to the latest research from DeepMind. 
+ Computer scientists have studied how their AI behaves in social situations by using principles from game theory and social sciences. During the work, they found it is possible for AI to act in an "aggressive manner" when it feels it is going to lose out, but agents will work as a team when there is more to be gained. 
+ For the research, the AI was tested on two games: a fruit gathering game and a Wolfpack hunting game. These are both basic, 2D games that used AI characters (known as agents) similar to those used in DeepMind's original work with Atari. 
+ Within DeepMind's work, the gathering game saw the systems trained using deep reinforcement learning to collect apples (represented by green pixels). When a player, or in this case an AI, collected an apple, it was rewarded with a '1' and the apple disappeared from the game's map. 
+ To beat competitors in the game it is possible to direct a 'beam' at an opposition player. When they are hit twice, the player is removed from the game for a set period. Naturally, the way to beat an opposing player is to knock them out of the game and collect all the apples. 
+ Two agents, Red and Blue, collect apples (green) and occasionally tag the other agent (yellow lines). 
+ Intuitively, a defecting policy in this game is one that is aggressive – i.e., involving frequent attempts to tag rival players to remove them from the game. 
+ After 40 million in-game steps, they found the agents learnt "highly aggressive" policies when there were few resources (apples) with the possibility of a costly action (not getting a reward). 
+ Less aggressive policies emerge from learning in relatively abundant environments with less possibility for costly action. The greed motivation reflects the temptation to take out a rival and collect all the apples oneself. 
+ In the second, Wolfpack game, two in-game characters acting as wolves chased a third character, the prey, around. If both wolves were near the prey when it was captured, they both received a reward. 
+ The idea is that the prey is dangerous, a lone wolf can overcome it, but is at risk of losing the carcass to scavengers. 
+ Two wolves working together could protect the prey from scavengers and get a higher reward. 
+ 

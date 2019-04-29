@@ -1,0 +1,3 @@
+CECL: Will you be ready? 
+ With the Financial Accounting Standards Board (FASB) Current Expected Credit Loss (CECL) impairment standard and Allowance for Loan and Lease Losses (ALLL) finalized, preparation and interpretation has begun. Having the right tools to help gather and organize the historical data, create pools and calculate loss rates is critical. In this webinar, well walk through Prologue Credit Loss Manager from Fiserv and how it will help you be prepared for CECL. 
+ 

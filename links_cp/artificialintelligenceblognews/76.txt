@@ -1,0 +1,14 @@
+Jan 3 Is Algorithmic Intelligence Different from Human Intelligence? 1 of 4 
+ I'll skip the equally hot debate about the definition of "intelligence" here and try to concentrate on the essence of this question... 
+ Algorithmic intelligence is by definition very limited in scope, though extremely efficient within its scope. Whereas human intelligence, well... humans can cope with almost anything if you don't rely on an optimal answer to a given question (pun intended). 
+ Let me elaborate... 
+ Algorithms are clearly defined steps about transforming well-defined input into desirable output. Therefore algorithms can be encoded into a machine (hardware or software) which can replicate those steps very efficiently. 
+ The trick here is: for an algorithm, in order to operate efficiently (here meaning fast and focussed), it must not be a subject to transformations caused by itself. As soon as the algorithm can change its very nature, all bets are off as we can't predict/optimize its way of working towards desired results anymore. 
+ And that's exactly what human intelligence is capable of: the human brain doesn't work strictly algorithmic but constantly adapts its pathways to deal with unexpected changes of input. 
+ There isn't a "program" or "operating system" working inside the human brain, no matter how many branch-conditions and variables you might define. The human brain is more of a giant pattern recognition engine (very simple abstraction!), constantly re-configuring its recognition and action triggers according to the input and the feedback about its actions' outcomes. 
+ So, to conclude ... 
+ If you want to transform data which can be logically and clearly defined into some output which is equally well defined, algorithms will always win hands down. 
+ That includes simple machines as well as computer software. All these winners can be summarized as "Von Neumann machines". 
+ If you want to transform potentially ambiguous, illogical and unexpected data into somewhat desirable, adaptive but essentially unpredictable and not entirely reliable output, you need a human as your general purpose "machine". 
+ If you want to transform data which can be logically and clearly defined into some output which is equally well defined, algorithms will always win hands down. If you want to transform potentially ambiguous, illogical and unexpected data into somewhat desirable, adaptive but essentially unpredictable and not entirely reliable output, you need a human as your general purpose "machine". 
+ 

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Chatbots News</title>
+    <meta name="description" content="The #1 Place to Discuss Chatbots, AI, NLP, Facebook Messenger, Slack, Telegram, and more.">
+    <meta name="author" content="">
+<meta name="generator" content="Discourse 2.3.0.beta9 - https://github.com/discourse/discourse version 7cbc4c1e4627edba0e128f8221962e341c7abce9">
+<link rel="icon" type="image/png" href="https://discourse-cdn-sjc2.com/standard11/uploads/chatbotsmagazine/original/1X/29ed6456f43a786214201ae194d86ad1381e11f9.jpg">
+<link rel="apple-touch-icon" type="image/png" href="https://discourse-cdn-sjc2.com/standard11/uploads/chatbotsmagazine/original/1X/29ed6456f43a786214201ae194d86ad1381e11f9.jpg">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://news.chatbotsmagazine.com","potentialAction":{"@type":"SearchAction","target":"https://news.chatbotsmagazine.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<link rel="search" type="application/opensearchdescription+xml" href="https://news.chatbotsmagazine.com/opensearch.xml" title="Chatbots News Search">
+
+      <link href="https://discourse-cdn-sjc2.com/standard11/stylesheets/desktop_2_f27074ca810015f78bbccdae62a85220215e62ce.css?__ws=news.chatbotsmagazine.com" media="all" rel="stylesheet" data-target="desktop" data-theme-id="1"/>
+      <link href="https://discourse-cdn-sjc2.com/standard11/stylesheets/desktop_theme_1_e386d045e0f68848fcc310df5122dda85b9065f4.css?__ws=news.chatbotsmagazine.com" media="all" rel="stylesheet" data-target="desktop_theme" data-theme-id="1"/>
+    <meta property="og:title" content="Chatbots News">
+<meta property="og:description" content="A private community of chatbot developers, designers, and enthusiasts.">
+<meta property="og:image" content="https://discourse-cdn-sjc2.com/standard11/uploads/chatbotsmagazine/optimized/1X/5b586def5c9fca82dad03caeb2397ddf18644ca3_1_690x482.png">
+    <meta id="data-ga-universal-analytics" data-tracking-code="UA-85094698-1" data-json="{&quot;cookieDomain&quot;:&quot;auto&quot;}" data-auto-link-domains="">
+
+<link rel='preload' href='https://discourse-cdn-sjc2.com/standard11/assets/google-universal-analytics-f35b4da49411e6f5559073523aab983da483976a3954c79c756f8579f6fbd6ef.js' as='script'/>
+<script src='https://discourse-cdn-sjc2.com/standard11/assets/google-universal-analytics-f35b4da49411e6f5559073523aab983da483976a3954c79c756f8579f6fbd6ef.js'></script>
+
+        <link rel="next" href="/latest?no_definitions=true&amp;no_subcategories=false&amp;page=1">
+    <link rel="alternate" type="application/rss+xml" title="Latest posts" href="https://news.chatbotsmagazine.com/posts.rss" />
+    <link rel="alternate" type="application/rss+xml" title="Latest topics" href="https://news.chatbotsmagazine.com/latest.rss" />
+    <meta property="og:site_name" content="Chatbots News" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://discourse-cdn-sjc2.com/standard11/uploads/chatbotsmagazine/original/1X/29ed6456f43a786214201ae194d86ad1381e11f9.jpg" />
+<meta property="og:image" content="https://discourse-cdn-sjc2.com/standard11/uploads/chatbotsmagazine/original/1X/29ed6456f43a786214201ae194d86ad1381e11f9.jpg" />
+<meta property="og:url" content="https://news.chatbotsmagazine.com/" />
+<meta name="twitter:url" content="https://news.chatbotsmagazine.com/" />
+<meta property="og:title" content="Chatbots News" />
+<meta name="twitter:title" content="Chatbots News" />
+<meta property="og:description" content="The #1 Place to Discuss Chatbots, AI, NLP, Facebook Messenger, Slack, Telegram, and more." />
+<meta name="twitter:description" content="The #1 Place to Discuss Chatbots, AI, NLP, Facebook Messenger, Slack, Telegram, and more." />
+
+
+    
+  </head>
+  <body class="crawler">
+    <div id="top-navbar" style="background-color:#ffc324;padding:10px;text-align:center;">
+<span id="top-navbar-links" style="height:20px;">
+  <a style="color:#ffffff;" target="_blank" href="https://chatbotsmagazine.com/">Chatbots Magazine</a>
+  <span style="color:#fddd86">•</span>
+  <a style="color:#ffffff;" target="_blank" href="https://chatbotsmagazine.com/be-featured-in-front-of-thousands-of-people-interested-in-bots-e7040c4080df#.k0m2hktsj">Become a Writer</a>
+  <span style="color:#fddd86">•</span>
+  <a style="color:#ffffff;" target="_blank" href="https://chatbotsmagazine.com/the-complete-beginner-s-guide-to-chatbots-8280b7b906ca">Intro to Chatbots</a>
+</span>
+</div>
+    <header>
+      <a href="/">
+          <img src="https://discourse-cdn-sjc2.com/standard11/uploads/chatbotsmagazine/original/2X/0/0afc619b3a2ac40f2042c433b8a1b418d2d255a1.png" alt="Chatbots News" id="site-logo" style="max-width: 150px;">
+      </a>
+    </header>
+    <div id="main-outlet" class="wrap">
+      
+
+
+
+
+<div itemscope itemtype='http://schema.org/ItemList'>
+  <table class='topic-list'>
+
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th>Replies</th>
+        <th>Activity</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <meta itemprop='itemListOrder' content='http://schema.org/ItemListOrderDescending'>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='0'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/solution-for-passing-over-a-conversation-to-a-human/3617'>
+            <meta itemprop='name' content='Solution for passing over a conversation to a human'>
+            <a href='https://news.chatbotsmagazine.com/t/solution-for-passing-over-a-conversation-to-a-human/3617' class='title raw-link raw-topic-link'>
+              <span>Solution for passing over a conversation to a human</span>
+            </a>
+              <div>
+                <a href='/c/building'><span class='category-name'>Building (Tech)</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            December 17, 2018
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='1'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/ready-for-chatbots-healthcare-marketers/3616'>
+            <meta itemprop='name' content='Ready for Chatbots, Healthcare Marketers?'>
+            <a href='https://news.chatbotsmagazine.com/t/ready-for-chatbots-healthcare-marketers/3616' class='title raw-link raw-topic-link'>
+              <span>Ready for Chatbots, Healthcare Marketers?</span>
+            </a>
+              <div>
+                <a href='/c/news'><span class='category-name'>News</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            May 12, 2018
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='2'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/looking-for-bots-with-great-persona-design/3615'>
+            <meta itemprop='name' content='Looking for bots with great persona design'>
+            <a href='https://news.chatbotsmagazine.com/t/looking-for-bots-with-great-persona-design/3615' class='title raw-link raw-topic-link'>
+              <span>Looking for bots with great persona design</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>4</span>
+          </td>
+          <td>
+            March 21, 2018
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='3'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/a-new-paper-comparing-watson-dialogflow-luis-and-the-others/3614'>
+            <meta itemprop='name' content='A new paper comparing Watson, Dialogflow, LUIS and the others'>
+            <a href='https://news.chatbotsmagazine.com/t/a-new-paper-comparing-watson-dialogflow-luis-and-the-others/3614' class='title raw-link raw-topic-link'>
+              <span>A new paper comparing Watson, Dialogflow, LUIS and the others</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>13</span>
+          </td>
+          <td>
+            February 27, 2018
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='4'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/conversacional-design-versioning/3613'>
+            <meta itemprop='name' content='Conversacional design versioning'>
+            <a href='https://news.chatbotsmagazine.com/t/conversacional-design-versioning/3613' class='title raw-link raw-topic-link'>
+              <span>Conversacional design versioning</span>
+            </a>
+              <div>
+                <a href='/c/design'><span class='category-name'>Design (UI/UX)</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            January 29, 2018
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='5'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/tool-method-to-design-conversation-diagram/915'>
+            <meta itemprop='name' content='Tool/method to design conversation &quot;diagram&quot;?'>
+            <a href='https://news.chatbotsmagazine.com/t/tool-method-to-design-conversation-diagram/915' class='title raw-link raw-topic-link'>
+              <span>Tool/method to design conversation &quot;diagram&quot;?</span>
+            </a>
+              <div>
+                <a href='/c/design'><span class='category-name'>Design (UI/UX)</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>22</span>
+          </td>
+          <td>
+            January 25, 2018
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='6'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/new-book-programming-the-microsoft-bot-framework-a-multiplatform-approach-to-building-chatbots/3612'>
+            <meta itemprop='name' content='New book: Programming the Microsoft Bot Framework: A Multiplatform Approach to Building Chatbots'>
+            <a href='https://news.chatbotsmagazine.com/t/new-book-programming-the-microsoft-bot-framework-a-multiplatform-approach-to-building-chatbots/3612' class='title raw-link raw-topic-link'>
+              <span>New book: Programming the Microsoft Bot Framework: A Multiplatform Approach to Building Chatbots</span>
+            </a>
+              <div>
+                <a href='/c/news'><span class='category-name'>News</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            November 29, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='7'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/feedback-wanted-check-out-alfie-a-fintech-chatbot-for-stake-australia/3611'>
+            <meta itemprop='name' content='[Feedback wanted] Check out Alfie, a FinTech chatbot for STAKE Australia'>
+            <a href='https://news.chatbotsmagazine.com/t/feedback-wanted-check-out-alfie-a-fintech-chatbot-for-stake-australia/3611' class='title raw-link raw-topic-link'>
+              <span>[Feedback wanted] Check out Alfie, a FinTech chatbot for STAKE Australia</span>
+            </a>
+              <div>
+                <a href='/c/news'><span class='category-name'>News</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            November 9, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='8'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/financial-institutions-bullish-on-chatbots/2740'>
+            <meta itemprop='name' content='Financial Institutions Bullish on Chatbots'>
+            <a href='https://news.chatbotsmagazine.com/t/financial-institutions-bullish-on-chatbots/2740' class='title raw-link raw-topic-link'>
+              <span>Financial Institutions Bullish on Chatbots</span>
+            </a>
+              <div>
+                <a href='/c/news'><span class='category-name'>News</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>4</span>
+          </td>
+          <td>
+            November 9, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='9'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/try-out-foozam-chatbot-for-recipe-ideas/3610'>
+            <meta itemprop='name' content='Try out Foozam - chatbot for recipe ideas'>
+            <a href='https://news.chatbotsmagazine.com/t/try-out-foozam-chatbot-for-recipe-ideas/3610' class='title raw-link raw-topic-link'>
+              <span>Try out Foozam - chatbot for recipe ideas</span>
+            </a>
+              <div>
+                <a href='/c/news'><span class='category-name'>News</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            October 6, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='10'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/any-botmakers-in-australia-and-nz/1688'>
+            <meta itemprop='name' content='Any botmakers in Australia and NZ?'>
+            <a href='https://news.chatbotsmagazine.com/t/any-botmakers-in-australia-and-nz/1688' class='title raw-link raw-topic-link'>
+              <span>Any botmakers in Australia and NZ?</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>14</span>
+          </td>
+          <td>
+            October 3, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='11'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/handover-dilemma-in-optimizing-for-self-service/3609'>
+            <meta itemprop='name' content='Handover dilemma in optimizing for self-service'>
+            <a href='https://news.chatbotsmagazine.com/t/handover-dilemma-in-optimizing-for-self-service/3609' class='title raw-link raw-topic-link'>
+              <span>Handover dilemma in optimizing for self-service</span>
+            </a>
+              <div>
+                <a href='/c/design'><span class='category-name'>Design (UI/UX)</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            September 29, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='12'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/personal-assistant-chatbot/3577'>
+            <meta itemprop='name' content='Personal Assistant Chatbot'>
+            <a href='https://news.chatbotsmagazine.com/t/personal-assistant-chatbot/3577' class='title raw-link raw-topic-link'>
+              <span>Personal Assistant Chatbot</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td>
+            September 18, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='13'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/pullstring-author-is-done-company-is-pivoting/3608'>
+            <meta itemprop='name' content='PullString Author is done. Company is pivoting'>
+            <a href='https://news.chatbotsmagazine.com/t/pullstring-author-is-done-company-is-pivoting/3608' class='title raw-link raw-topic-link'>
+              <span>PullString Author is done. Company is pivoting</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            September 18, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='14'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/looking-for-the-best-faq-bots-out-there/3599'>
+            <meta itemprop='name' content='Looking for the best FAQ bots out there'>
+            <a href='https://news.chatbotsmagazine.com/t/looking-for-the-best-faq-bots-out-there/3599' class='title raw-link raw-topic-link'>
+              <span>Looking for the best FAQ bots out there</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>5</span>
+          </td>
+          <td>
+            August 15, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='15'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/brand-new-to-chatbot/3607'>
+            <meta itemprop='name' content='Brand new to chatbot'>
+            <a href='https://news.chatbotsmagazine.com/t/brand-new-to-chatbot/3607' class='title raw-link raw-topic-link'>
+              <span>Brand new to chatbot</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>3</span>
+          </td>
+          <td>
+            August 1, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='16'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/find-a-car-insurance-using-a-chatbot/3605'>
+            <meta itemprop='name' content='Find a car insurance using a chatbot!'>
+            <a href='https://news.chatbotsmagazine.com/t/find-a-car-insurance-using-a-chatbot/3605' class='title raw-link raw-topic-link'>
+              <span>Find a car insurance using a chatbot!</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td>
+            July 31, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='17'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/chatbots-agencies-in-spain-and-latam/3606'>
+            <meta itemprop='name' content='Chatbots agencies in Spain and Latam?'>
+            <a href='https://news.chatbotsmagazine.com/t/chatbots-agencies-in-spain-and-latam/3606' class='title raw-link raw-topic-link'>
+              <span>Chatbots agencies in Spain and Latam?</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td>
+            July 31, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='18'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/post-a-link-to-the-chatbot-you-are-currently-working-on/86'>
+            <meta itemprop='name' content='Post a link to the chatbot you are currently working on!'>
+            <a href='https://news.chatbotsmagazine.com/t/post-a-link-to-the-chatbot-you-are-currently-working-on/86' class='title raw-link raw-topic-link'>
+              <span>Post a link to the chatbot you are currently working on!</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>116</span>
+          </td>
+          <td>
+            July 11, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='19'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/how-to-a-b-test-your-bot-or/3604'>
+            <meta itemprop='name' content='How to A/B test your bot? ...(🐼 or 🐨)'>
+            <a href='https://news.chatbotsmagazine.com/t/how-to-a-b-test-your-bot-or/3604' class='title raw-link raw-topic-link'>
+              <span>How to A/B test your bot? ...(🐼 or 🐨)</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            July 6, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='20'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/would-love-the-communitys-feedback-on-walkie-before-our-design-sprint/3603'>
+            <meta itemprop='name' content='Would love the community&#39;s feedback on Walkie before our Design Sprint'>
+            <a href='https://news.chatbotsmagazine.com/t/would-love-the-communitys-feedback-on-walkie-before-our-design-sprint/3603' class='title raw-link raw-topic-link'>
+              <span>Would love the community&#39;s feedback on Walkie before our Design Sprint</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            June 16, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='21'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/intent-at-what-time-is-entity-available/3601'>
+            <meta itemprop='name' content='INTENT: At what time is [ENTITY] available?'>
+            <a href='https://news.chatbotsmagazine.com/t/intent-at-what-time-is-entity-available/3601' class='title raw-link raw-topic-link'>
+              <span>INTENT: At what time is [ENTITY] available?</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td>
+            June 14, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='22'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/machinabot-the-smart-relay-gateway-designed-for-bots/3602'>
+            <meta itemprop='name' content='MachinaBot, the smart relay gateway designed for bots'>
+            <a href='https://news.chatbotsmagazine.com/t/machinabot-the-smart-relay-gateway-designed-for-bots/3602' class='title raw-link raw-topic-link'>
+              <span>MachinaBot, the smart relay gateway designed for bots</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            June 14, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='23'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/messenger-multiple-parametetric-code-help/3600'>
+            <meta itemprop='name' content='Messenger Multiple Parametetric Code Help'>
+            <a href='https://news.chatbotsmagazine.com/t/messenger-multiple-parametetric-code-help/3600' class='title raw-link raw-topic-link'>
+              <span>Messenger Multiple Parametetric Code Help</span>
+            </a>
+              <div>
+                <a href='/c/building'><span class='category-name'>Building (Tech)</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            June 13, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='24'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/what-are-the-best-way-to-grow-userbase-of-bot/3598'>
+            <meta itemprop='name' content='What are the best way to grow userbase of bot?'>
+            <a href='https://news.chatbotsmagazine.com/t/what-are-the-best-way-to-grow-userbase-of-bot/3598' class='title raw-link raw-topic-link'>
+              <span>What are the best way to grow userbase of bot?</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            June 13, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='25'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/chatbot-developers/1858'>
+            <meta itemprop='name' content='Chatbot developers'>
+            <a href='https://news.chatbotsmagazine.com/t/chatbot-developers/1858' class='title raw-link raw-topic-link'>
+              <span>Chatbot developers</span>
+            </a>
+              <div>
+                <a href='/c/jobs'><span class='category-name'>Jobs</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>9</span>
+          </td>
+          <td>
+            June 12, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='26'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/looking-for-your-help-finding-an-experienced-chatbot-programmer/2750'>
+            <meta itemprop='name' content='Looking for your help finding an experienced Chatbot programmer'>
+            <a href='https://news.chatbotsmagazine.com/t/looking-for-your-help-finding-an-experienced-chatbot-programmer/2750' class='title raw-link raw-topic-link'>
+              <span>Looking for your help finding an experienced Chatbot programmer</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>6</span>
+          </td>
+          <td>
+            June 12, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='27'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/nlp-chatbot-ecommerce-product-search-discovery/3597'>
+            <meta itemprop='name' content='NLP /Chatbot eCommerce Product Search &amp; Discovery'>
+            <a href='https://news.chatbotsmagazine.com/t/nlp-chatbot-ecommerce-product-search-discovery/3597' class='title raw-link raw-topic-link'>
+              <span>NLP /Chatbot eCommerce Product Search &amp; Discovery</span>
+            </a>
+              <div>
+                <a href='/c/jobs'><span class='category-name'>Jobs</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>1</span>
+          </td>
+          <td>
+            June 12, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='28'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/how-does-googles-assistant-sdk-affect-the-chatbots-scene/3596'>
+            <meta itemprop='name' content='How does Google&#39;s Assistant SDK affect the chatbots scene?'>
+            <a href='https://news.chatbotsmagazine.com/t/how-does-googles-assistant-sdk-affect-the-chatbots-scene/3596' class='title raw-link raw-topic-link'>
+              <span>How does Google&#39;s Assistant SDK affect the chatbots scene?</span>
+            </a>
+              <div>
+                <a href='/c/general'><span class='category-name'>General</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>2</span>
+          </td>
+          <td>
+            June 12, 2017
+          </td>
+        </tr>
+        <tr>
+          <td itemprop='itemListElement' itemscope itemtype='http://schema.org/ListItem'>
+            <meta itemprop='position' content='29'>
+            <meta itemprop='url' content='https://news.chatbotsmagazine.com/t/freelance-chatbot-developers/1191'>
+            <meta itemprop='name' content='Freelance Chatbot Developers'>
+            <a href='https://news.chatbotsmagazine.com/t/freelance-chatbot-developers/1191' class='title raw-link raw-topic-link'>
+              <span>Freelance Chatbot Developers</span>
+            </a>
+              <div>
+                <a href='/c/jobs'><span class='category-name'>Jobs</span></a>
+              </div>
+          </td>
+          <td>
+            <span class='posts' title='posts'>24</span>
+          </td>
+          <td>
+            June 8, 2017
+          </td>
+        </tr>
+    </tbody>
+
+  </table>
+</div>
+
+  <div role='navigation' itemscope itemtype='http://schema.org/SiteNavigationElement'>
+    <span itemprop='name'><b><a href='/latest?no_definitions=true&amp;no_subcategories=false&amp;page=1' rel='next' itemprop='url'>next page →</a></b></span>
+  </div>
+
+
+ <!-- include_crawler_content? -->
+
+
+
+
+    </div>
+    <footer class="container wrap">
+      <nav class='crawler-nav' itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <a href='/'>Home</a>
+        <a href="/categories">Categories</a>
+        <a href="/guidelines">FAQ/Guidelines</a>
+        <a href="/tos">Terms of Service</a>
+        <a href="/privacy">Privacy Policy</a>
+      </nav>
+      <p class='powered-by-link'>Powered by <a href="https://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled</p>
+    </footer>
+    
+  </body>
+  
+</html>

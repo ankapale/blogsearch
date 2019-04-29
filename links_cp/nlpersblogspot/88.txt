@@ -1,0 +1,8 @@
+08 August 2008 
+ I've been thinking a lot recently about how to do MCMC on massively parallel architectures, for instance in a (massively) multi-core setup (either with or without shared memory). 
+ There are several ways to approach this problem. 
+ The first is the "brain dead" approach. If you have N-many cores, just run N-many parallel (independent) samplers. Done. The problem here is that if N is really like (say 1000 or greater), then this is probably a complete waste of space/time. 
+ The next approach works if you're doing something like (uncollapsed) Gibbs sampling. Here, the Markov blankets usually separate in a fairly reasonable way. So you can literally distribute the work precisely as specified by the Markov blankets. With a bit of engineering, you can probably do this is a pretty effective manner. The problem, of course, is if you have strongly overlapping Markov blankets. (I.e., if you don't have good separation in the network.) This can happen either due to model structure, or due to collapsing certain variables. In this case, this approach just doesn't work at all. 
+ The third approach---and the only one that really seems plausible---would be to construct sampling schemes exclusively for a massively parallel architecture. For instance, if you can divide your variables in some reasonable way, you can probably run semi-independent samplers that communicate on an as-needed basis. The form of this communication might, for instance, look something like an MH-step, or perhaps something more complex. 
+ At any rate, I've done a bit of a literature survey to find examples of systems that work like this, but have turned up surprisingly little. I can't imagine that there's that little work on this problem, though. 
+ 

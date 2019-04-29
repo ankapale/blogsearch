@@ -1,0 +1,8 @@
+Feb 24 Is Apple’s AI Progress Stifled by Privacy Ambitions? 
+ Apple is known for their firm stance the preservation of their customers' privacy, but could it become a hindrance to their AI development goals? According to MIT Technology Review's San Francisco bureau chief Tom Simonite, the company's philosophy surrounding privacy might become a stumbling block to their AI goals. 
+ Cook’s steadfast aversion to the cloud presents a challenge as Apple tries to build up new features powered by machine learning and AI. Being able to promise your data stays private helps the company keep up its PR war on data gobblers and won’t hurt some uses of AI. But as machine learning becomes more important to all consumer tech companies, Apple devices may think different, but less deeply.” 
+ — Tom Simonite, MIT Technology Review 
+ At the 2017 Apple Worldwide Developers Conference, Apple's Software chief Craig Federighi introduced Apple's stepping into the AI game, he said, "We want to make powerful machine learning easy for you to incorporate in your apps." 
+ However, Apple's Siri, one of the first personal assistants in the market, and one that still one of the most popular ones has fallen behind rivals over the last year or so. 
+ Apple values user privacy, but it may just be a hindrance to the company's AI goals. Apple is known for their firm stance the preservation of their customers' privacy, but could it become a hindrance to their AI development goals? 
+ 

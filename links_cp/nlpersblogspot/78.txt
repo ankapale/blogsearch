@@ -1,0 +1,58 @@
+26 March 2008 
+ One thing that continually irks me about (some varieties of) n-best lists is duplicates. Duplicates typically arise due to an "arg max" approximation in a structured search process. In other words, we have some model that decomposes into . Here, "in" is the input, "out" is the desired output and "hid" is some hidden/latent variable. For example, in phrase-based MT, "in" is French, "out" in English and "hid" might be the phrasal segmentation. The problem that arises is that we typically do not compute by summing over hidden states; instead, we try to find the "out"/"hid" pair that maximizes the joint probability . 
+ Now, the first problem with this is that we're not actually after the out/hid pair that maximizes the joint; we're after the out that maximize the marginal. But this is largely a separate issue. 
+ The issue that I care about is that when we look at an N-best list, we get the top N out/hid pairs, rather than the top N outputs. This leads to "duplication" in the N-best list, where many of the top N are actually the same output, but with different latent variables. 
+ One might ask: is this a big problem? I suspect so. Below is a figure that shows how many unique outputs do we get in a top 5000 list from phrase-based translation (French to English). There are 2000 sentences being translated (along the x-axis) and each produces some number of unique outputs (along the y-axis). The sentences are sorted by the number of uniques they produce. So the ones on the left produce almost all 5000 unique outputs, but the ones on the right produce only one or two unique outputs. (Both axes are log-scaled.)What we observe is that the median number of unique outputs in the top 5000 list is only 56! The mean is only 178. Over 10% of then have ten or fewer uniques. Only six have over 2500 uniques. 
+ This does not bode well for any system that intends to pipeline the N-best list into some other module (whether it is a straightforward reranker or something more complex; for instance, like a summarization system or search system). 
+ One may ask: does the number of unique outputs correlate with the input sentence length. The answer is: sort of. The following figure plots input sentence length along the x-axis and number of unique translations along the y-axis. 
+ We see that there is some weak correlation. Pretty much all of the examples that lead to large numbers of uniques are short sentences (length 10 or less). "Average" sentence of length 30-50 seem to produce somewhere about 250 uniques, and long sentences (>100) tend to produce only a handful of outputs. Since average sentences are, in many ways, the most interesting, this is a bit frustrating. I don't particularly care about getting lots of translations for 10-word-long sentences because they're kind of boring anyway. 
+ So what can be done about this? Here are a few things that come to mind, though I'm not sure any is a complete solution: 
+ Generate more than 5000 total and hope to get more than 50 unique. Sure, this works (at the expense of computation and memory), but a 1% return is really quite bad. If we could even get, say, a 10% or 20% return I would be much much happier. 
+ Instead of using n-best lists, generate samples from the posterior (here, I assume that marginalization is still too much to ask for). Probably you'd want to take the 1-best as well, since there's no guarantee that the MAP would show up in a finite sample. I'm also not sure we know how to do this (efficiently) for arbitrary models. 
+ Try to optimize the n-best list for diversity, instead of simply optimality. You can write this down, but it seems hard to implement and may be computationally less pleasant than just generating 50,000 total. 
+ Improve hypothesis recombination inside the decoder. Here, my worry would be that it wouldn't be until the final step when we could combine everything, in which case this boils down to the "generate 50,000" approach. 
+ I'm sure there are other ways, but these are what come to mind. How do other people deal with this? What size n-best lists are popular? 
+ 22 March 2008 
+ See here for the current list. They include: Nonparametric Bayes (woohoo!), machine learning and music, Bayesian modeling applications, prior knowledge for text and language processing, sparse optimization and variable selection, as well as stand-alone workshops on the reinforcement learning competition and mining and learning with graphs. 
+ Limitations of purely data-driven learning techniques for text and language applications; performance gains due to incorporation of prior knowledge 
+ Typology of different forms of prior knowledge for NLP (knowledge embodied in generative Bayesian models, in MDL models, in ILP/logical models, in linguistic features, in representational frameworks, in grammatical rules…) 
+ Formal principles for combining rule-based and data-based approaches to NLP 
+ Linguistic science and cognitive models as sources of prior knowledge 
+ Yes, I know that's a shameless plug, but do you really expect better from me?! 
+ 19 March 2008 
+ Let's pretend that someone gave you one million document/summary pairs. If you like single-document, pretend they're single-document; if you like multi-document, pretend they're multi-document. 
+ For those of us who work on summarization, this seems like it would be a pretty cool gift. Most of the corpora we're used to using have, at best, a few hundred such pairs. Some (eg., for headline generation) have more, but then I didn't allow you to pretend that these were headlines (I can get you billions of these, if you really want them). 
+ So here's the question I pose: what would you do with a million summaries? 
+ I actually have a hard time answering this question. Sure, we have whatever our favorite sentence extraction method is. If it's learned at all, it's probably learned over a dozen or so features: position, length, similarity to query (if a query exists), similarity to document centroid, etc. This would probably be optimized against some automatic measure like one of the many flavors of Rouge. Fitting a dozen parameters on a corpus of 100 examples is probably pretty reasonable and we have some results that suggest that we've gone about as far as we can go with sentence extraction (at least with respect to the DUC corpora); see, for instance, section 6.6 of my thesis. Here, we see that we're pretty much matching oracle performance at sentence extraction on DUC04 data when evaluated using Rouge(I've independently seen other people present similar results, so I think it's replicable). (Yes, I'm aware there are caveats here: the use of Rouge, the fixation to one corpus, etc.) 
+ But now we have a million doc/sum pairs. Fitting a dozen parameters on a million examples seems a bit wasteful. It also seems a bit wasteful to continue to focus on sentence extraction in this case. Why? Well, first, we've already "solved" this problem (the quotes indicate the caveats hinted at above). Second, I have a seriously hard time thinking of too many more high level features that I could possibly tune (my best entry ever into DUC---I think we came in second or third, depending on the scoring---had about 25, many of which ended up getting very very small weights). 
+ So, being me, my next thought is: do word alignment on the summaries, like what they do in machine translation. It turns out that somebody has already tried this, with a reasonable amount of success. In all seriousness, if I were to try something like this again, I think I would throw out the "phrase" issue and deal with words; probably also consider throwing out the HMM issue and do something akin to Model 1. The key difference is that I would continue to include the additional features, like stem-identity, WordNet, etc. I might also throw in some word clustering just for fun. 
+ So let's say that the alignments worked. Now what? We could decode, of course, by intersecting the learned alignment model with a language model. I think this would be a really bad idea, essentially because I don't think there's enough information in the alignments to actually produce new summaries; just enough to get reasonable alignments. 
+ So now we've got a million document/summary pairs that have been aligned. What now? 
+ You could say "learn to create abstracts", but I'm actually not particularly thrilled with this idea, either. (Why? Well, there's a long story, but the basic problem is that if you ask humans to write summaries, they're lazy. What this means is that they do a lot of word copying, at least up to the stem. If you look in the alignments paper, there are some results that say that over half of the words in the summary are aligned to identical words (stems) in the document, even with a human doing the alignment. What this means is that if you're using a lexically-based scoring method, like Rouge, odds are against you if you ever change a word because chances are the human writing the summary didn't change it.) 
+ You could suggest trying to learn to do compression, which is probably what I'd look at most seriously. But I also don't think we have a really good understanding of this. In the Searn paper, we show how to use Searn to compute compressions, but to be honest it's really slow and I don't think it's really scalable to 1 million doc/sum pairs. But I suppose I would probably start with something like that. 
+ But that's what I would do. What would you do? 
+ (Incidentally, if you want to ask me: "do you have a million summaries?" the answer is "no." I have about 120,000. But there are some complications with this data. Maybe I'll post about it in the near future.) 
+ 12 March 2008 
+ As Chris Brew pointed out, ACL accepts have been posted. In keeping with tradition, here are some of the top key words (stemmed, with stop words, including things like "model" or "based" removed): 
+ translat (16) 
+ learn (14) 
+ word (12) 
+ gener (12) 
+ evalu (10) 
+ unsupervis (9) 
+ pars (9) 
+ machin (9) 
+ phrase (8) 
+ languag (8) 
+ grammar (8) 
+ depend (8) 
+ automat (8) 
+ segment (7) 
+ web (6) 
+ text (6) 
+ supervis (6) 
+ semant (6) 
+ question (6) 
+ featur (6) 
+ I'm happy to say that a cursory glance of the list includes at least a handful of topics that I don't consider the normal ACL fodder. I'm also happy to say that, as chair for the summarization track, we had a number of excellent summarization papers this year. 
+ 

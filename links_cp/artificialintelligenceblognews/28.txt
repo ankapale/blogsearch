@@ -1,0 +1,18 @@
+Nov 1 What Should Governments do about AI? 
+ There is little doubt that artificial intelligence (AI) is transforming almost every facet of human life. How far this transformation will go and what the full ramifications for society will be are still unknown but this hasn't prevented people from making both optimistic and dire predictions. 
+ Elon Musk's call for AI regulation has been matched by equal calls for governments not to. 
+ The Use of AI in Government 
+ While the original article focuses primarily on policy aspects of government and artificial intelligence I thought it would be worth while adding this video to also provide insight into how goverment is utilising AI. 
+ Daniel Castro, director of the Center for Data Innovation, discusses specific use cases, the social and economic benefits of AI, and potential pitfalls. 
+ AI's Problem with Definition 
+ One of the principal problems with AI has been the confusion that surrounds what it is exactly, and what it can and can't actually do. The single biggest problem in understanding AI, however, has been making it clear how current AI techniques (like deep learning) differ from human intelligence. 
+ Getting to the Facts 
+ In order to answer some of these questions, the OECD held a conference last week on AI. Government and industry representatives, AI academics and others met to review the state of AI and pose the question of what governments could and should do, in creating policies to take advantage of the benefits of AI whilst minimising the risks. 
+ The first thing that became clear is that the focus of discussion was mainly on machine learning and in particular, deep learning. Deep learning software learns to be able to recognise patterns from data. Google, for example, is using it to recognise pets by their faces. Another company, DeepL, uses deep learning to do high-quality language translation. 
+ Speakers emphasised that deep learning works only because it uses a large amount of data that is processed on powerful computers. It has become successful as a technique because companies have access to large amounts of data and at the same time, to large amounts of cheap processing power. 
+ So, what should governments be doing about AI? 
+ When it comes to what governments should be doing, there was an implied agreement at the conference that they should be enabling AI to be used for their obvious benefits to society. This has to be balanced by minimising the risks of the increased collection of personal data and also the risks of how the AI is actually using that data. 
+ There are much more areas of discussion that become important for governments and the public in considering the role of AI in their societies. What makes this a challenge is that AI touches every aspect of life to a greater or lesser extent. What we still don't know yet is how far the development of AI will go, and ultimately how successful it will be in becoming a generalised, human-like intelligence. 
+ Comments on: What Should Governments do about AI? 
+ There is little doubt that artificial intelligence (AI) is transforming almost every facet of human life. How far this transformation will go and what the full ramifications for society will be are still unknown but this hasn't prevented people from making both optimistic and dire predictions. 
+ 

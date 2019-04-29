@@ -1,0 +1,282 @@
+30 October 2015 
+ When I was working on what turned into an old short paper (Markov Random Topic Fields) I decided it might be pedagogically interesting to keep a journal of what I was doing. This journal ended when I ran out of steam and I never got back to it. My whole original idea was, after the paper got published, post everything: the journal, the code, the paper, the paper reviews, etc. It's now been 6 years and that's not going to happen, but in case anyone finds it interesting, here in the report. 
+ Anyway, here is the report. I'm posting this so that perhaps new students can see that things don't ever work the first time, faculty still have trouble getting their code to work, etc. 
+ The progress of a research idea
+============= DAY 1 =============
+* Idea
+Want to do a form of topic modeling, but where there is meta
+information. There are ways to do this, eg., Supervised LDA or
+Dirichlet-Multinomial Regression. These both operate on a *feature*
+level. For some tasks, it is more natural to operate over a graph.
+Along these lines, there's Pachinko Allocation, but this posits a
+graph over the vocabulary, not over the documents. (Plus, it is a
+DAG, which doesn't make sense for our application.)
+Question: how can we augment a standard topic model (eg., LDA), with
+an underlying graph, where we assume topics vary smoothly over the
+graph?
+* Technology
+What technology exists for statistical modeling over graphs? Sounds
+like a Markov Random Field. So let's marry topic models (LDA) with
+MRFs, to give a "Topical Markov Random Field" (TMRF).
+We think of LDA a generating documents by first choosing a topic
+mixture \theta, and then choosing topics z=k for each word w, where w
+is drawn from a multinomial \beta_k.
+Where can a graph fit in this? The first idea is to put an MRF over
+\theta.
+* MRF over \theta
+If we have an MRF over theta, then two issues arise. First, we almost
+certainly can't collapse out theta as we might like. Okay, we'll live
+with that.
+Second, from an MRF perspective, what do the potential functions look
+like?
+The simplest idea is to use pairwise potentials of the form e^{-dist},
+where dist is the distance between two thetas that touch on the
+graph. What Distance metric should we use? We could use
+Bhattacharyya, Hellinger, Euclidean, LogitEuclidean, etc. Let's start
+with Hellinger.
+What about a variance? We could have lengths in the graph that are
+either latent or known. Let's say they're latent and our potentials
+have the form e^{-dist/l}, where l is the length (so that if you're
+far away, distance doesn't matter.
+** Getting data together
+We have about 1000 docs and three graphs over those docs. We get them
+in a reasonable format and then subsample about 400 of the docs. We
+do this both for speed and to make sure we don't overfit the model on
+the data too much.
+============= DAY 2 =============
+** Implementation
+We implement this with an option to use or not use graphs (so we can
+tell if they're helping). We collapse out \beta, but not \theta in
+both cases, and we compute log posteriors.
+We run first on some simple test data (testW) from HBC and find that
+it seems to be doing something kind of reasonable. We then run on
+some real data and it puts everything in one cluster after about 20-30
+Gibbs iterations.
+Debugging: First, we turn off all graph stuff (sampling lengths) and
+things are still broken. Then we initialize optimally and things are
+still broken. Then we turn off resampling \theta and things are still
+broken. The problem is that I'm using the collapsed \beta incorrectly
+when sampling z. I fix it and things work as expected (i.e., not
+everything goes in the same cluster).
+** Evaluating
+So now the code seems to be working, so we want to evaluate. We run a
+model with an without a graph (where the graph is something we expect
+will help). The posterior probabilities coming out of the two
+different models are all over the place.
+So we do the standard trick of holding out 20% of the data as "test"
+data and then evaluating log likelihood on the test. Here, we do the
+"bad" thing and just use 20% of the words in each document (so that we
+already have \theta for all the documents). Not great, but easy to
+implement. This time, no bugs.
+At this point, it's a pain to recompile for every configuration change
+and we'd like to be able to run a bunch of configs simultaneously. So
+we add a simple command line interface.
+In order to evaluate, we plot either posteriors or held-out
+likelihoods (usually the latter) as a function of iteration using
+xgraph (interacts nicely with the shell and I'm used to it).
+Things now seem mixed. There's very little difference when you're not
+using a graph between sampling \theta from the true posterior versus
+using an MH proposal (this is good for us, since we have to use MH).
+There is also little difference between the baseline LDA model and the
+MRF models.
+We turn off sampling of the lengths and just fix them at one. For the
+three graphs we're trying, only one seems to be doing any better than
+the baseline LDA model.
+** Optimization
+Now that we're running experiments, we find that things are taking way
+too long to run. So we do some optimization. First, we cache the sum
+of all \beta_k posteriors. This helps. Second, we flip \beta from
+\beta_{k,w} to \beta_{w,k}, which we've heard helps. It doesn't. We
+put it back the other way.
+All the time is being spent in resample_z, so we waste a half day
+trying to figure out if there's a way to only resample a subset of the
+zs. For instance, track how often they change and only resample those
+that change a lot (probabilistically). This hurts. Resampling those
+with high entropy hurts. I think the issue is that there are three
+types of zs. (1) those that change a lot because they have high
+uncertainty but are rare enough that they don't really matter, (2)
+those that change a lot and do matter, (3) those that just don't
+change very much. Probably could do something intelligent, but have
+wasted too much time already.
+In order to really evaluate speed, we add some code that prints out
+timing.
+We do one more optimization that's maybe not very common. resample_z
+loops over docs, then words, then topics. For each word, the loop
+over topics is to compute p(z=k). But if the next word you loop over
+is the same word (they are both "the"), then you don't need to
+recompute all the p(z=k)s -- you can cache them. We do this, and then
+sort the words. This gives about a 20% speedup with no loss in
+performance (posterior or held-out likelihood).
+** Evaluating again
+Since we had some success fixing the lengths at 1, we try fixing them
+at 20. Now that one graph is doing noticably better than the baseline
+and the other two slightly better. We try 5 and 10 and 50 and nothing
+much seems to happen. 20 seems like a bit of a sweet spot.
+============= DAY 3 =============
+** A more rigorous evaluation
+Running with lengths fixed at 20 seems to work, but there's always
+variance due to randomness (both in the sampling and in the 80/20
+split) that we'd like to account for.
+So we run 8 copies of each of the four models (8 just because we
+happen to have an 8 core machine, so we can run them simultaneously).
+Now, we require more complex graphing technology than just xgraph.
+We'll probably eventually want to graph things in matlab, but for now
+all we really care about it how things do over time. So we write a
+small perl script to extract scores every 50 iterations (we've
+switched from 200 to 300 just to be safe) and show means and stddevs
+for each of the models.
+While we're waiting for this to run, we think about...
+* MRF over z?
+Our initial model which may or may not be doing so well (we're waiting
+on some experiments) assumes an MRF over \th. Maybe this is not the
+best place to put it. Can we put it over z instead?
+Why would we want to do this? There are some technological reasons:
+(1) this makes the MRF discrete and we know much better how to deal
+with discrete MRFs. (2) we can get rid of the MH step (though this
+doesn't seem to be screwing us up much). (3) we no longer have the
+arbitrary choice of which distance function to use. There are also
+some technological reasons *not* to do it: it seems like it would be
+computationally much more burdensome.
+But, let's think if this makes sense in the context of our
+application. We have a bunch of research papers and our graphs are
+authorship, citations, time or venue. These really do feel like
+graphs over *documents* not *words*.
+We could turn them in to graphs over words by, say, connecting all
+identical terms across documents, encouraging them to share the same
+topic. This could probably be done efficiently by storing an inverted
+index. On the other hand, would this really capture much? My gut
+tells me that for a given word "foo", it's probably pretty rare that
+"foo" is assigned to different topics in different documents. (Or at
+least just as rare as it being assigned to different topics in the
+same document.) Note that we could evaluate this: run simple LDA, and
+compute the fraction of times a word is assigned it's non-majority
+topic across all the data, versus just across one documents. I
+suspect the numbers would be pretty similar.
+The extreme alternative would be to link all words, but this is just
+going to be computationally infeasible. Moreover, this begins to look
+just like tying the \thetas.
+So for now, we put this idea on the back burner...
+* MRF over \theta, continued...
+We're still waiting for these experiments to run (they're about half
+of the way there). In thinking about the graph over z, though, it did
+occur to me that maybe you have to use far more topics than I've been
+using to really reap any benefits here. We begin running with 8, and
+then bumped it up to 20. But maybe we really need to run with a lot
+more.
+So, I log in to two other machines and run just one copy with 50, 100,
+150 and 200 topics, just for vanilla LDA. The larger ones will be
+slow, but we'll just have to go do something else for a while...
+============= DAY 4 =============
+* MRF over \theta, re-continued...
+Both experiments finish and we see that: (1) with 20 topics and
+lengths fixed at 10, there is no difference between raw LDA and TMRF.
+(2) More topics is better. Even 200 topics doesn't seem to be
+overfitting. Going 20, 50, 100, 150, 200, we get hidden log
+likelihoods of -1.43, -1.40, -1.38, -1.36, -1.36 (all e+06). The
+significance (from the first experiments) seems to be around .002
+(e+06), so these changes (even the last, which differs by 0.005) seem
+to be real. Since we weren't able to overfit, we also run with 300
+and 400, and wait some more...
+...and they finish and still aren't overfitting. We get -1.35 and
+-1.35 respectively (differing by about 0.004, again significant!).
+This is getting ridiculous -- is there a bug somewhere? Everything
+we've seen in LDA-like papers shows that you overfit when you have a
+ton of topics. Maybe this is because our documents are really long?
+** Model debugging
+One thing that could be going wrong is that when we hide 20% of the
+words, and evaluate on that 20%, we're skewing the evaluation to favor
+long documents. But long documents are probably precisely those that
+need/want lots of topics. Our mean document length is 2300, but the
+std is over 2500. The shortest document has 349 words, the longest
+has 37120. So, instead of hiding 20%, we try hiding a fixed number,
+which is 20% of the mean, or 460.
+============= DAY 5 =============
+** Read the papers, stupid!
+At this point, we've done a large number of evals, both with 20% hid,
+and 460 words/doc hid (actually, the min of this and doclen/2), and
+50-1600 (at *2) topics. We do actually see a tiny bit of overfitting
+at 800 or 1600 documents.
+Then we do something we should have done a long time ago: go back and
+skim through some LDA papers. We look at the BNJ 2003 JMLR paper. We
+see that one of the selling points of LDA over LSI is that
+it *doesn't* overfit! Aaargh! No wonder we haven't been able to get
+substantial overfitting.
+However, we also notice something else: aside from dropping 50 stop
+words (we've been dropping 100), on one data set they don't prune rare
+words at all, and on the other they prune df=1 words only. We've been
+pruning df<=5 or <=10 words (can't remember which). Perhaps what's
+going on is that the reason the graphs aren't helping is just because
+there vocabulary (around 3k) isn't big enough for them to make a
+difference!
+We recreate the text, pruning only the df=1 words. This leads to a
+vocab of about 10k (which means inference will be ~3 times slower).
+We run at 50, 100, 200 and 400 and we actualy see a tiny bit of
+overfitting (maybe) on 400. We accidentally only ran 100 iterations,
+so it's a bit hard to tell, but at the very least there's
+no *improvement* for going from 200 topics to 400 topics. Strangely
+(and I'd have to think about this more before I understand it),
+running on the new text is actually about 5-20% *faster*, despite the
+larger vocabulary!
+** Re-running with graphs
+At this point, we're ready to try running with graphs again. Despite
+the fact that it's slow, we settle on 200 topics (this took about 3.5
+hours without graphs, so we will be waiting a while). We also want to
+run for more iterations, just to see what's going to happen: we do 200
+again.
+And again there's not much difference. One of the graphs seems to be
+just barely one std above everyone else, but that's nothing to write
+home about.
+============= DAY 6 =============
+* Abstracts only?
+At this point, things are not looking so spectacular. Perhaps the
+problem is that the documents themselves are so big that there's
+really not much uncertainty. This is reflected, to some degree, by
+the lack of variance in the predictive perplexities.
+So we rebuild the data on abstracts only. This makes running
+significantly faster (yay). We run 5 copies each of 10, 20, 40, 80,
+160 and 320 topics. 40 is a clear winner. 80 and above overfit
+fairly badly.
+Now, we turn on graphs and get the following results (5 runs):
+40-top-nog.default -69239.4 (86.2629700392932)
+40-top-nog.auth -68920.0 (111.863756418243)
+40-top-nog.cite -68976.4 (174.920839238783)
+40-top-nog.year -69174.2 (133.769204228776)
+If we compare default (not graphs) to auth (best), we see that we get
+a 2-3 std separation. This is looking promising, FINALLY! Also, if
+we plot the results, it looks like auth and cite really dominate.
+Year is fairly useless.
+It suggests that, maybe, we just need more data to see more of a
+difference.
+* Getting More Data
+There are two ways we could get more data. First, we could crawl
+more. Second, we could switch over to, say, PubMed or ACM. This
+would work since we only need abstracts, not full texts. These sites
+have nice interfaces, so we start downloading from ACM.
+============= DAY 7 =============
+Okay, ACM is a pain. And it's really not that complete, so we switch
+over to CiteSeer (don't know why we didn't think of this before!). We
+seed with docs from acl, cl, emnlp, icml, jmlr, nips and uai. We
+notice that CiteSeer is apparently using some crappy PDF extractor (it
+misses ligatures! ugh!) but it's not worth (yet!) actually
+downloading the pdfs to do the extraction ourselves ala Braque. From
+these seeds, we run 10 iterations of reference crawling, eventually
+ending up with just over 44k documents. We extract a subset
+comprising 9277 abstracts, and six graphs: author, booktitle,
+citation, url, year and time (where you connect to year-1 and year+1).
+The 9k out of 44k are those that (a) have >=100 characters
+"reasonable" in the abstract and (b) have connections to at least 5
+other docs in *all* the graphs. (We're no longer favoring citations.)
+We then begin the runs again.... 
+ 05 October 2015 
+ The question of how "traditional conference publication" should react to arxiv prepublications is raised quite frequently. I'm not particularly shy about the fact that I'm not a fan, but that's not what this post is about. This post is about data. 
+ In any discussion about the "arxiv question," proponents of the idea typically cite the idea that by posting papers early on arxiv, they are able to get feedback from the community about their work. (See for example here, which at least tries to be balanced even if the phrasing is totally biased, for instance in the poll at the end :P.) 
+ At any rate, the question I was curious about is: is this actually borne out in practice? 
+ I did the following experiment. Arxiv nicely lets us see revision histories. So we can see, for instance, whether a paper that was placed on arxiv before notifications for the corresponding conference have gone out, is updated more than a paper that was placed on arxiv after notifications. 
+ For NIPS papers that were first posted to arxiv after camera ready, 75% were never updated and 19% were updated once (on average, they were updated 0.36 times +- 0.713 std). 
+ For papers that were first posted to arxiv before notification, all were updated at least once. The real question is: how many times were they updated between posting to arxiv and acceptance to the conference. The answer is that 82% were never updated during that period. Of course, all were updated at some point later (after the camera ready deadline), and 55% were updated only once, and another 18% were updated twice. 
+ [Note: I only count updated that come at least two week after the first posting to arxiv because before is more likely to be typo fixing, rather than real feedback from the community.] 
+ The sample size is small enough that I can actually look at all of the ones that were updated between posting to arxiv and notification. One of these seems was first posted in mid-Feb, updated twice is late March, and then again in Nov (acceptance) and Dec (camera ready). Another is very similar. Two were most likely posted the previous year when it was submitted to AIStats (the dates match up) and then updated when submitted to NIPS. Those were the only four, and two of them seem like a legit possible case of update due to community feedback. 
+ As far as the question of "rapid impact on the field" this is harder to answer. I took a random sample of ten papers from each of the groups (prepub versus non-prepub) and got citation counts from google scholar. The median citation count was 10 for both sets. The average was slightly higher for the prepub set (15 versus 11, but with giant standard deviations of 12 and 16). Considering the prepub set has been out at least 6 months longer (this is NIPS 2013 and 2014 so this is a sizeable percentage), this is a pretty small difference. And it's a difference that might be attributable to other factors like "famous people are perhaps more likely to prepub" [actually it's not clear the data play this out; in a totally unscientific study of "does Hal think this person is famous" and a sample of 20 for each, it's even split 10/10 in both sets]. 
+ Anyway, I'm posting this because I've heard this argument many times and I've always felt it's a bit dubious. I've never seen data to back it up. This data suggests it's not true. If someone really believes this argument, it would be nice to see it backed up with data! 
+ [Notes: I took only papers that were marked on arxiv as having appeared in NIPS, and which were first posted to arxiv in 2013 or 2014; this is 175 papers. I then hand-checked them all to exclude things like workshops or just submissions, and labeled them as to whether they appeared in 2013 or 2014. That left a sample of papers. The rest of the data was extracted automatically from the arxiv abstract. The total number that was posted before notification (the prepub cases) is 22 (or 27%) and the total number that were posted after notification is 59 (or 73%). So the sample is indeed small. Not much I can do about that.] 
+ 

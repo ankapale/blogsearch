@@ -1,0 +1,5 @@
+Jan 29 How Google Uses Machine Learning in its Search Algorithms 
+ One of the biggest buzzwords around Google and the overall technology market is machine learning. Google uses it with RankBrain for search and in other ways. We asked Gary Illyes from Google in part two of our interview how Google uses machine learning with search. 
+ Illyes said that Google uses it mostly for “coming up with new signals and signal aggregations.” So they may look at two or more different existing non-machine-learning signals and see if adding machine learning to the aggregation of them can help improve search rankings and quality. 
+ He also said, “RankBrain, where … which re-ranks based on based on historical signals,” is another way they use machine learning, and later explained how RankBrain works and that Penguin doesn’t really use machine learning. 
+ 

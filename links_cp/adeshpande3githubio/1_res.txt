@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="/assets/favicon-32x32.png" sizes="32x32" />
+    <title>About – Adit Deshpande – CS Undergrad at UCLA ('19)</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <link rel="image_src" type="image/png" href="img_path" />
+
+    
+    <meta name="description" content="CS Undergrad at UCLA ('19)">
+    <meta property="og:description" content="CS Undergrad at UCLA ('19)" />
+    
+    <meta name="author" content="Adit Deshpande" />
+
+    
+    <meta property="og:title" content="About" />
+    <meta property="twitter:title" content="About" />
+    
+
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/adeshpande3.github.io/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Adit Deshpande - CS Undergrad at UCLA ('19)" href="/adeshpande3.github.io/feed.xml" />
+
+
+
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-80811190-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/adeshpande3.github.io/about/',
+		  'title': 'About'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+
+
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/adeshpande3.github.io/" class="site-avatar"><img src="/images/pic.jpg" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/adeshpande3.github.io/">Adit Deshpande</a></h1>
+            <p class="site-description">CS Undergrad at UCLA ('19)</p>
+          </div>
+
+          <nav>
+            <a href="/adeshpande3.github.io/">Blog</a>
+            <a href="/adeshpande3.github.io/about">About</a>
+            <a href="https://github.com/adeshpande3">GitHub</a>
+            <a href="/adeshpande3.github.io/projects">Projects</a>
+            <a href="/adeshpande3.github.io/resume.pdf" target="_blank">Resume</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="page">
+
+  <h1>About</h1>
+
+  <div class="entry">
+    <p>I’m a 4th year undergraduate student currently studying at UCLA and majoring in computer science. Working to reinvent healthcare with <a href="https://goforward.com/">Forward</a> after graduation.</p>
+
+<h3 id="internships">Internships</h3>
+
+<p><img src="/assets/clarifai.png" width="250" />                    <img src="/assets/qualcomm.jpg" width="250" />                     <img src="/assets/nrl.png" width="80" />                     <img src="/assets/bu.gif" width="175" /></p>
+
+<ul>
+  <li>Applied Machine Learning Intern at Clarifai (June 2018 - August 2018)</li>
+  <li>Software Engineering Intern at Qualcomm (June 2017 - August 2017)</li>
+  <li>Computer Engineer Intern at U.S Naval Research Lab (June 2016 - September 2016)</li>
+  <li>Research Intern in Boston RISE program (June 2014 - August 2014)</li>
+</ul>
+
+<h3 id="experience">Experience</h3>
+<p><img src="/assets/oreily.png" />                    <img src="/assets/acmai.png" />                     <img src="/assets/specialo.jpg" />                                                                  <br />
+<img src="/assets/reslife.png" /></p>
+
+<ul>
+  <li>Author at O’Reilly Media</li>
+  <li>President(2018-2019), Vice President(2017-2018) of UCLA ACM Artificial Intelligence</li>
+  <li>Coach with UCLA Special Olympics</li>
+  <li>Peer Mentor with UCLA Engineering Mentorship Program</li>
+  <li>UCLA Lead Resident Assistant(2018-2019), UCLA Resident Assistant(2017-2018)</li>
+</ul>
+
+<h3 id="published-writing">Published Writing</h3>
+
+<ul>
+  <li><a href="http://www.kdnuggets.com/author/adit-deshpande" target="_blank">KDnuggets author page</a></li>
+  <li><a href="http://www.kdnuggets.com/2016/10/top-blogger-interview-adit-deshpande.html" target="_blank">Interview with KDnuggets</a></li>
+  <li><a href="https://dzone.com/users/2843746/adeshpande3.html" target="_blank">DZone author page</a></li>
+  <li><a href="https://www.oreilly.com/learning/generative-adversarial-networks-for-beginners" target="_blank">O’Reilly Generative Adversarial Network Tutorial</a></li>
+  <li><a href="https://www.oreilly.com/learning/perform-sentiment-analysis-with-lstms-using-tensorflow" target="_blank">O’Reilly LSTM Video Tutorial</a></li>
+</ul>
+
+<h3 id="teaching">Teaching</h3>
+
+<p>As a former president of UCLA’s ACM AI group, I’ve presented/co-presented on the following topics (with slides attached).</p>
+
+<ul>
+  <li><a href="http://bit.ly/2xw2T18" target="_blank">ACM AI Intro Meeting</a></li>
+  <li><a href="http://bit.ly/2hj5epX" target="_blank">Workshop #1: Linear Regression with Tensorflow</a></li>
+  <li><a href="http://bit.ly/2ybSdZW" target="_blank">Workshop #2: Logistic Regression with Tensorflow</a></li>
+  <li><a href="http://bit.ly/2zN49gV" target="_blank">Workshop #3: Pandas and Kaggle</a></li>
+  <li><a href="http://bit.ly/2yqN2W9" target="_blank">Workshop #4: Neural Networks with Tensorflow</a></li>
+  <li><a href="http://bit.ly/2zwwgUM" target="_blank">Workshop #5: Multi Layer Neural Networks with Tensorflow</a></li>
+  <li><a href="https://docs.google.com/presentation/d/12uEAa9Tpm660ggIVKtoPpyhVC_N41uVO5itMNsXA1Y8/edit?usp=sharing" target="_blank">Workshop #6: Convolutional Neural Networks with Tensorflow</a></li>
+  <li><a href="https://docs.google.com/presentation/d/1MmU6mNhX0fuOE_z02bTtiXlgslRYSljuaU2OMatM7bg/edit?usp=sharing" target="_blank">Workshop #7: Recurrent Neural Networks with Tensorflow</a></li>
+</ul>
+
+<p>As part of ACM AI, we hold research paper reading group meetings.</p>
+
+<ul>
+  <li><a href="https://docs.google.com/presentation/d/1I2B0TLEWjffEXZva6OEw1mfU4FWZ5vSjBnfxFXmXl6g/edit?usp=sharing" target="_blank">Meeting #1: A Few Useful Things to Know About ML</a></li>
+  <li><a href="https://docs.google.com/presentation/d/12AthaGiN669pe_6fvGz0DPb9emsJJK20xbOWu2l2ixo/edit?usp=sharing" target="_blank">Meeting #2: Deep Learning</a></li>
+</ul>
+
+<p><img src="/assets/Workshop.jpg" /></p>
+
+<h3 id="books-id-highly-recommend">Books I’d Highly Recommend</h3>
+
+<ul>
+  <li><em>When Breath Becomes Air</em> - Paul Kalanithi</li>
+  <li><em>Option B</em> - Sheryl Sandberg</li>
+  <li><em>Quiet: The Power of Introverts in a World That Can’t Stop Talking</em> - Susan Cain</li>
+  <li><em>Emotional Agility</em> - Susan David</li>
+  <li><em>Chasing the Scream</em> - Johann Hari</li>
+  <li><em>The Elegant Universe</em> - Brian Greene</li>
+  <li><em>10% Happier</em> - Dan Harris</li>
+  <li><em>Sapiens: A Brief History of Humankind</em> - Yuval Noah Harari</li>
+  <li><em>Homo Deus: A Brief History of Tomorrow</em> - Yuval Noah Harari</li>
+  <li><em>Born a Crime</em> - Trevor Noah</li>
+</ul>
+
+<h3 id="contact-me">Contact me</h3>
+
+<p><a href="mailto:adeshpande3@ucla.edu">adeshpande3@ucla.edu</a></p>
+
+  </div>
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:adeshpande3@g.ucla.edu"><i class="svg-icon email"></i></a>
+<a href="https://www.facebook.com/aditdeshpande3"><i class="svg-icon facebook"></i></a>
+
+<a href="https://github.com/adeshpande3"><i class="svg-icon github"></i></a>
+<a href="https://instagram.com/aditdeshpande3"><i class="svg-icon instagram"></i></a>
+<a href="https://www.linkedin.com/in/aditdeshpande3"><i class="svg-icon linkedin"></i></a>
+
+<a href="/adeshpande3.github.io/feed.xml"><i class="svg-icon rss"></i></a>
+<a href="https://www.twitter.com/aditdeshpande3"><i class="svg-icon twitter"></i></a>
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+	<!-- Google Analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-80811190-1', 'auto');
+		ga('send', 'pageview', {
+		  'page': '/adeshpande3.github.io/about/',
+		  'title': 'About'
+		});
+	</script>
+	<!-- End Google Analytics -->
+
+
+  </body>
+</html>

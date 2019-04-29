@@ -1,0 +1,5 @@
+Posts 
+ Large-scale live experimentation is a big part of online product development. In fact, this blog has published posts on this very topic. With the right experiment methodology, a product can make continuous improvements, as Google and others have done. But what works for established products may not work for a product that is still trying to find its audience. Many of the assumptions on which the "standard" experiment methodology is premised are not valid. This means a small and growing product has to use experimentation differently and very carefully. Indeed, failure to do so may cause experiments to mislead rather than guide. This blog post is about experimentation in this regime. 
+ Established versus fledgling products
+For the purpose of this post, "established products" are products that have found viable segments of their target user populations, and have sustained retention among those segments. These established products fill a particular need … 
+ 

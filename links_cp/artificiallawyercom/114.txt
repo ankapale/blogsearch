@@ -1,0 +1,56 @@
+LEGAL TECH COURSES 
+ Hello and welcome to the Artificial Lawyer Legal Tech Course Directory, which shows a range of educational options for those seeking to learn more about legal technology and/or to gain a recognised qualification in that area, or as part of a wider legal course subject. 
+ The main listings here at present are free and the number of courses appearing will steadily grow over time. This is just the start. If you would like to include your course, whether it’s for short term study, or a full-time LLM, whether it’s in Europe, North America, Asia-Pacific or South America, Artificial Lawyer would be glad to list your legal tech education programme. 
+ The courses below are listed as: short courses and post-graduate courses first, by region, then alphabetically. The following section includes law or other undergraduate courses which include a notable legal tech module, by region, then alphabetically. 
+ If you are an educational establishment and would like to include your course, or would like to know more about this Directory, please drop me a line: Contact. 
+ Graduate Level and Short Courses 
+ North America 
+ Location: This program is fully online and offered by Suffolk University Law School, which is in Boston, MA, USA 
+ Type of Course: certificate program for legal professionals 
+ Length: 6 courses that run for 10 weeks each. The courses are offered at a rate of 2 per semester, and a student can complete the certificate in less than 1 year (or can take longer if they choose). Participation takes 2-5 hours per week, per class. 
+ Fee: The cost to take all six courses and obtain the certificate is $15,887. If you do not plan to complete the certificate or are unsure if you will do so, you can simply pay for as many courses as you are interested in taking at this time. The price of the first course you take is $3,075, and each subsequent courses is discounted. 
+ Type of Course: Law school academic offering in the J.D. program (and an Exec Ed offering in a non-academic workshop setting ) 
+ Length: The academic offering is a semester long program of 13 weeks meeting 2 hours each week (the Exec Ed offering is a 3 day workshop) 
+ Fee: Both courses are priced at $3000 per student 
+ Description: The course examines the economic and technological state of the legal industry today. As Artificial Intelligence, blockchain technology and cryptocurrency continues to emerge, the traditional legal service delivery model is no longer adequate to meet heightened client expectations. Lean and Agile methodologies begin with a mindset change for the legal professional. The first segment of the course teaches the basics of legal project management performed manually in Excel and related static technologies. The second segment introduces the technology applications that automate legal project management and enable legal services to be delivered better, faster and cheaper with greater profitability for outside counsel and price certainty for clients. 
+ Both courses are certified to qualify the students (law students and Executive Education students) for the International Institute for Legal Project Management LPP and LPA certification. See: http://www.iilpm.com/ 
+ Location: David R. Cheriton School of Computer Science at the University of Waterloo and Osgoode Hall Law School at York University, respectively (both in Ontario, Canada) 
+ Type of Course: Joint graduate computer science and upper-class law school seminar 
+ Length: Full semester-length course 
+ Description of Course: 
+ This unique, multidisciplinary, cross-listed seminar brings together (through linked videoconference rooms at both locations) graduate students from the School of Computer Science at the University of Waterloo, and law students from Osgoode Hall Law School at York University, to explore cutting-edge legal, ethical, policy, and technical challenges implicated by the rise of artificial intelligence (“AI”), robotics, automation, and big data, in applications as diverse as autonomous vehicles, predictive policing and criminal law, sex robots, and lethal autonomous weapons. 
+ Students in the course (i) learn about what is technically feasible today—and will likely be possible tomorrow; (ii) identify significant challenges that individuals and society are likely to face as a result of emerging technologies; and most importantly, (iii) explore and grapple with how the legal system and public policy is responding—or should respond in the future—to the issues presented by AI, robots, automation, and big data. 
+ Legal technology is disrupting the delivery of legal services. So your legal training needs to stay one step ahead. 
+ Developed in close collaboration with law firms, the Legal Technology Innovation and Design optional module will introduce you to the innovation and project management skills desired by legal recruiters: 
+ Description: Social interactions, trade and services are moving to the Internet. Online sales cause novel conflicts, which are increasingly resolved through algorithmic dispute resolution platforms. At the same time the courts are updated to answer the challenges of digitalisation. Society turns to technology in order to find new ways for dispute resolution, but what does this mean in practice? 
+ The course will inspect the interactions between dispute resolution and technology by evaluating, primarily, the digitalisation of legal proceedings and online dispute resolution. The main questions revolve around digitalisation, privacy, due process and the wider legal implications of information technology. 
+ Contact:www.legaltechlab.fi is our website on which we are keeping up to date info on our workshops and events (upcoming courses would fall in here), and info@legaltechlab.fi is the best place of inquiry. 
+ Course title: Legal Design (Note: this is not strictly ‘tech’, but is closely related to the legal tech ecosystem.) 
+ Location: University of Helsinki School of Law and Laurea 
+ Type of course: Elective Bachelor’s and Master’s degree course 
+ Length: 5 credits (135h of effort) 
+ Fee: N/A 
+ Description: Anyone with a background in legal studies knows how alien regulations, sections and directives look to the layperson. Everyone has agreed to terms and conditions without reading them, signed contracts riddled with legalese and gotten spooked by official letters full of government jargon. The complexity of legal writing alienates the layperson from the legal system, and in the worst case scenario erodes the trust in the system itself. 
+ During the course students will grasp the basics of design thinking in an interdisciplinary setting. The course will introduce the students in the role of legal design in producing clear and understandable legal writing in the future. 
+ Contact:www.legaltechlab.fi is our website on which we are keeping up to date info on our workshops and events (upcoming courses would fall in here), and info@legaltechlab.fi is the best place of inquiry. 
+ Description: The Master in Legaltech of IE Law School is a cutting-edge, global program designed to empower lawyers, entrepreneurs and professionals from diverse backgrounds, to explore and harness the power of technology in the sector. 
+ The programme provides comprehensive academic and professional training in legal practice, as well as interdisciplinary analysis related to current developments in law and technology. The programme includes training in the areas of digital business, privacy regulation (EU & USA), disruptive technologies, big data, legalbots and machine learning; e-commerce, online dispute resolution, coding, blockchain, cybersecurity, entrepreneurship and startups. 
+ Through this Masters, students will also gain crucial technical knowledge and learn innovative management methodologies and new business models. 
+ The global experience provided by this programme will help participants build a powerful network, as it exposes them to a top-tier professional network and a global legaltech community by offering access to three elite and innovative ecosystems: IE Law School, IDL Radzyner Law School and Silicon Valley. More information on the syllabus and study plan here. 
+ Description: Swansea University’s School of Law is offering a brand new LLM in LegalTech from October 2018 – the first of its kind in the UK. This innovative postgraduate course will develop students into 21st century lawyers and legal service practitioners able to utilise technologies to drive innovation across the profession. 
+ The master of laws course will look at how Artificial Intelligence (AI) and other technologies are shaping the future of the legal profession and equip students with new skills. Teaching will be broken down into two general areas: how AI can be applied to the law and how the law is applied to AI. 
+ The LLM in LegalTech is aimed at law graduates and those currently practising at all levels within the legal profession. No prior knowledge or experience in coding or working with technology is needed, but legal knowledge is essential. 
+ Undergraduate Courses With Legal Tech Modules 
+ Europe 
+ Course/Module Title: ‘LegalTech and Access to Justice’ – Part of Undergraduate Course, for final year law students. 
+ Location: The University of Manchester School of Law, Manchester, UK 
+ Length: 12 weeks. 
+ Fee: N/A. 
+ Description: The emergence of LegalTech is one of the most significant trends in the legal services sector for decades. This project-based course aims to provide an academic and practical introduction to LegalTech. Student teams are assigned to non-profit clients, and work together under supervision on a project to build an app to solve a real-world ‘access to justice’ problem identified by their client. 
+ The apps are built using the Neota Logic software development platform. Weekly seminars will explore the access to justice crisis, how digital tools can help to address it, and how to design these tools using the Neota platform. The seminar classes are supported by weekly homework assignments. 
+ The course will end with a competition in which student teams present their apps to a panel of judges. The winners are selected based on criteria including effectiveness and creativity. After the course, the apps are deployed to leverage the students’ work to address real-world legal and/or justice challenges over and over again on behalf of the non-profit clients. 
+ Course title: A new core module to the second year cohort of our 3 year LLB (Hons) degree, called21st Century Law 
+ Location: Little Titchfield St, Fitzrovia, building, London. 
+ Type of Course/Module – It’s a 20 credit undergraduate module, that’s taken as part of a 360 credit degree, and is one semester long. Students then have to do other core modules – and can choose from a range of options to make up the other 340 credits. Hence, its not a stand alone component. 
+ Description: it’s a new module that I am currently designing for September 2018 wherein I’ll focus on the changing nature of legal practice over the last 1-2 decades to a diverse customer/service provider paradigm, what has driven this, especially in terms of policy and process innovation and LawTech, and the soft and hard practical legal skills, including entrepreneurship and technology, that students will need to succeed. 
+ 

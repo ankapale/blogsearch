@@ -1,0 +1,4 @@
+IBM WebSphere to JBoss EAP Migration Guide 
+ IT organizations are constantly faced with the challenge to produce high-quality solutions with a lower total cost of ownership (TCO). With the growing recognition that open source software provides quality, stable solutions, migrations of existing enterprise applications to products such as JBoss® Enterprise Application Platform have become increasingly popular. 
+ JBoss Enterprise Application Platform provides a holistic solution that includes tools for such business challenges as business process management, enterprise application integration, and serviceoriented architectures (SOA), enterprise portals, and data services solutions. 
+ 
