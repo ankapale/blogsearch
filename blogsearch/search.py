@@ -150,8 +150,21 @@ def search_form(request):
 
 def search_get(request):  
     request.encoding='utf-8'
+    message="<html><head><title>Search Result for "+request.GET['q']
+    message=message+"</title></head><body><div style=\"float:left; margin-top:10px;\">\
+    <img src=\"http://people.tamu.edu/~asd13003479/logo.png\" width=\"130\" height=\"45\" style=\"text-align:center;\"></div>\
+    <div height=\"50px\"><form action=\"/search\" method=\"get\" style=\"text-align:center;\">\
+        <input type=\"text\" name=\"q\" style=\" width:50%; padding: 12px 20px;border: 1px solid #ccc;border-radius: 4px;\">\
+        <input type=\"submit\" value=\"Search\" style=\"  width: 10%; padding: 12px 20px;margin: 8px 0;display: inline-block;\
+  border: 1px solid #ccc;border-radius: 4px;\">\
+    </form></div><hr><div style=\"MARGIN-RIGHT: auto; MARGIN-LEFT: 30%;\">"
     if 'q' in request.GET:
-        message = search(request.GET['q'], 20, "list_of_good_files.txt")
+        result = search(request.GET['q'], 20, "list_of_good_files.txt")
+        for line in result:
+            message+="<a href=\"https://www.artificial-intelligence.blog/news/capsule-networks\">"+line[0]+"</a><p>"
+           # message=message+(open(os.path.join(settings.BASE_DIR, line[0])).read())[0:20]
+            message=message+"<p>"
     else:
-        message = search("Reinforement learning", 20, "list_of_good_files.txt")
+        message = "Blank Input!"
+    message+="</div></body></html>"
     return HttpResponse(message)
